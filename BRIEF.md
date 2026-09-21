@@ -172,6 +172,14 @@ Traps already paid for (see memory `reference_espn_api_sept_2026.md`):
   is a loss, and it counts).
 - **TV windows** go back to **2013-14**, not just the current season.
 - **Repo:** public `kyeill/soccer-history`, Pages at kyeill.github.io/soccer-history.
+- **Qualifiers and the Super Cup are in.**
+- **Two score boxes**, his team's and the opponent's, each coloured from the
+  Sheet (Team BG / Team Font / Opp BG / Opp Font). No rank box.
+- **Knockouts** (not Finals): European knockout rounds, plus FA Cup and
+  League Cup semis and finals.
+- **USMNT and Atlanta cards need no TV** -- day, date and time only.
+- **Sheet:** `1sDNdbA0dlk7BBIoURKhwau4VJM7BXYxdUMo9aPdpfjo`, tabs Tottenham,
+  USMNT, Atlanta United, columns as in harvest.SHEET_COLS.
 - **TV windows:** defined by **UK kickoff time** — Saturday 17:30, Sunday
   16:30 UK.
 - **Atlanta United:** the 2020 "MLS is Back" tournament is **out**.
