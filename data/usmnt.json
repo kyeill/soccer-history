@@ -1,0 +1,3473 @@
+{
+"chain": {
+"264043": [
+"2010-06-12",
+"FIFA World Cup"
+],
+"264045": [
+"2010-06-18",
+"FIFA World Cup"
+],
+"264048": [
+"2010-06-23",
+"FIFA World Cup"
+],
+"264108": [
+"2010-06-26",
+"FIFA World Cup"
+],
+"284553": [
+"2009-11-18",
+"International Friendly"
+],
+"285662": [
+"2010-03-03",
+"International Friendly"
+],
+"285667": [
+"2010-01-24",
+"International Friendly"
+],
+"289058": [
+"2010-02-25",
+"International Friendly"
+],
+"289210": [
+"2010-05-29",
+"International Friendly"
+],
+"289371": [
+"2010-05-26",
+"International Friendly"
+],
+"290409": [
+"2010-06-05",
+"International Friendly"
+],
+"294875": [
+"2010-08-11",
+"International Friendly"
+],
+"306278": [
+"2010-10-10",
+"International Friendly"
+],
+"308850": [
+"2010-10-13",
+"International Friendly"
+],
+"309184": [
+"2010-11-17",
+"International Friendly"
+],
+"312253": [
+"2011-01-23",
+"International Friendly"
+],
+"314445": [
+"2011-03-26",
+"International Friendly"
+],
+"314446": [
+"2011-03-30",
+"International Friendly"
+],
+"315348": [
+"2011-06-04",
+"International Friendly"
+],
+"317200": [
+"2011-06-08",
+"Concacaf Gold Cup"
+],
+"317202": [
+"2011-06-12",
+"Concacaf Gold Cup"
+],
+"317204": [
+"2011-06-15",
+"Concacaf Gold Cup"
+],
+"317206": [
+"2011-06-22",
+"Concacaf Gold Cup"
+],
+"317207": [
+"2011-06-26",
+"Concacaf Gold Cup"
+],
+"317919": [
+"2011-06-19",
+"Concacaf Gold Cup"
+],
+"327499": [
+"2011-08-11",
+"International Friendly"
+],
+"331469": [
+"2011-09-06",
+"International Friendly"
+],
+"331470": [
+"2011-09-03",
+"International Friendly"
+],
+"332384": [
+"2011-10-08",
+"International Friendly"
+],
+"332386": [
+"2011-10-11",
+"International Friendly"
+],
+"333098": [
+"2011-11-11",
+"International Friendly"
+],
+"333129": [
+"2011-11-15",
+"International Friendly"
+],
+"333961": [
+"2012-06-08",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"333963": [
+"2012-06-13",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"333965": [
+"2012-09-08",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"333967": [
+"2012-09-12",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"333970": [
+"2012-10-12",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"333971": [
+"2012-10-16",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"336767": [
+"2012-01-22",
+"International Friendly"
+],
+"336769": [
+"2012-01-26",
+"International Friendly"
+],
+"337036": [
+"2012-05-31",
+"International Friendly"
+],
+"337224": [
+"2012-08-16",
+"International Friendly"
+],
+"337310": [
+"2012-02-29",
+"International Friendly"
+],
+"338719": [
+"2012-05-27",
+"International Friendly"
+],
+"338725": [
+"2012-06-03",
+"International Friendly"
+],
+"356167": [
+"2013-11-15",
+"International Friendly"
+],
+"357537": [
+"2013-02-06",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"357539": [
+"2013-03-23",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"357543": [
+"2013-03-27",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"357546": [
+"2013-06-08",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"357549": [
+"2013-06-12",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"357552": [
+"2013-06-19",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"357555": [
+"2013-09-07",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"357557": [
+"2013-09-11",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"357560": [
+"2013-10-11",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"357563": [
+"2013-10-16",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"360526": [
+"2013-01-30",
+"International Friendly"
+],
+"361585": [
+"2013-06-02",
+"International Friendly"
+],
+"363972": [
+"2013-05-30",
+"International Friendly"
+],
+"366600": [
+"2013-07-06",
+"International Friendly"
+],
+"370652": [
+"2013-07-17",
+"Concacaf Gold Cup"
+],
+"370659": [
+"2013-07-13",
+"Concacaf Gold Cup"
+],
+"370664": [
+"2013-07-10",
+"Concacaf Gold Cup"
+],
+"370689": [
+"2013-08-14",
+"International Friendly"
+],
+"373923": [
+"2013-07-21",
+"Concacaf Gold Cup"
+],
+"375655": [
+"2013-07-24",
+"Concacaf Gold Cup"
+],
+"376024": [
+"2013-07-28",
+"Concacaf Gold Cup"
+],
+"382102": [
+"2013-11-19",
+"International Friendly"
+],
+"383247": [
+"2014-07-01",
+"FIFA World Cup"
+],
+"383258": [
+"2014-06-26",
+"FIFA World Cup"
+],
+"383273": [
+"2014-06-22",
+"FIFA World Cup"
+],
+"383290": [
+"2014-06-16",
+"FIFA World Cup"
+],
+"384135": [
+"2014-02-01",
+"International Friendly"
+],
+"386723": [
+"2014-03-05",
+"International Friendly"
+],
+"388609": [
+"2014-04-03",
+"International Friendly"
+],
+"389007": [
+"2014-05-28",
+"International Friendly"
+],
+"389008": [
+"2014-06-01",
+"International Friendly"
+],
+"389009": [
+"2014-06-07",
+"International Friendly"
+],
+"404033": [
+"2014-09-03",
+"International Friendly"
+],
+"405057": [
+"2014-11-18",
+"International Friendly"
+],
+"406219": [
+"2014-10-10",
+"International Friendly"
+],
+"406228": [
+"2014-10-15",
+"International Friendly"
+],
+"408559": [
+"2014-11-14",
+"International Friendly"
+],
+"410367": [
+"2015-01-28",
+"International Friendly"
+],
+"413442": [
+"2015-02-08",
+"International Friendly"
+],
+"413443": [
+"2015-03-25",
+"International Friendly"
+],
+"413444": [
+"2015-03-31",
+"International Friendly"
+],
+"413445": [
+"2015-04-16",
+"International Friendly"
+],
+"413446": [
+"2015-06-05",
+"International Friendly"
+],
+"413447": [
+"2015-06-10",
+"International Friendly"
+],
+"418216": [
+"2015-07-14",
+"Concacaf Gold Cup"
+],
+"418222": [
+"2015-07-11",
+"Concacaf Gold Cup"
+],
+"418228": [
+"2015-07-08",
+"Concacaf Gold Cup"
+],
+"420727": [
+"2015-07-03",
+"International Friendly"
+],
+"429197": [
+"2015-09-04",
+"International Friendly"
+],
+"430266": [
+"2015-07-25",
+"Concacaf Gold Cup"
+],
+"430268": [
+"2015-07-22",
+"Concacaf Gold Cup"
+],
+"430272": [
+"2015-07-18",
+"Concacaf Gold Cup"
+],
+"432804": [
+"2015-09-09",
+"International Friendly"
+],
+"433566": [
+"2015-10-11",
+"Concacaf Cup"
+],
+"435286": [
+"2015-10-13",
+"International Friendly"
+],
+"435520": [
+"2016-09-07",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"435526": [
+"2016-09-02",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"435529": [
+"2016-03-29",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"435538": [
+"2016-03-26",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"435544": [
+"2015-11-17",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"435549": [
+"2015-11-14",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"439230": [
+"2016-01-31",
+"International Friendly"
+],
+"439231": [
+"2016-02-06",
+"International Friendly"
+],
+"444697": [
+"2016-06-26",
+"Copa América"
+],
+"444699": [
+"2016-06-22",
+"Copa América"
+],
+"444703": [
+"2016-06-17",
+"Copa América"
+],
+"444711": [
+"2016-06-11",
+"Copa América"
+],
+"444718": [
+"2016-06-08",
+"Copa América"
+],
+"444727": [
+"2016-06-04",
+"Copa América"
+],
+"448085": [
+"2016-05-22",
+"International Friendly"
+],
+"448760": [
+"2016-05-29",
+"International Friendly"
+],
+"448761": [
+"2016-05-26",
+"International Friendly"
+],
+"460625": [
+"2016-10-07",
+"International Friendly"
+],
+"464367": [
+"2016-10-12",
+"International Friendly"
+],
+"466968": [
+"2017-10-11",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"466970": [
+"2017-10-06",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"466974": [
+"2017-09-05",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"466975": [
+"2017-09-01",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"466980": [
+"2017-06-12",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"466983": [
+"2017-06-09",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"466986": [
+"2017-03-29",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"466988": [
+"2017-03-25",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"466992": [
+"2016-11-16",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"466994": [
+"2016-11-12",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"469914": [
+"2017-01-29",
+"International Friendly"
+],
+"471249": [
+"2017-02-04",
+"International Friendly"
+],
+"475833": [
+"2017-07-15",
+"Concacaf Gold Cup"
+],
+"475838": [
+"2017-07-13",
+"Concacaf Gold Cup"
+],
+"475844": [
+"2017-07-08",
+"Concacaf Gold Cup"
+],
+"475848": [
+"2017-07-27",
+"Concacaf Gold Cup"
+],
+"475850": [
+"2017-07-23",
+"Concacaf Gold Cup"
+],
+"475854": [
+"2017-07-20",
+"Concacaf Gold Cup"
+],
+"478640": [
+"2017-06-04",
+"International Friendly"
+],
+"478868": [
+"2017-07-01",
+"International Friendly"
+],
+"497781": [
+"2017-11-14",
+"International Friendly"
+],
+"498596": [
+"2018-01-29",
+"International Friendly"
+],
+"499988": [
+"2018-06-09",
+"International Friendly"
+],
+"507931": [
+"2018-06-02",
+"International Friendly"
+],
+"507941": [
+"2018-03-27",
+"International Friendly"
+],
+"509312": [
+"2018-05-28",
+"International Friendly"
+],
+"510037": [
+"2018-11-20",
+"International Friendly"
+],
+"510172": [
+"2018-11-15",
+"International Friendly"
+],
+"511015": [
+"2018-09-12",
+"International Friendly"
+],
+"518200": [
+"2018-09-07",
+"International Friendly"
+],
+"524080": [
+"2018-10-11",
+"International Friendly"
+],
+"527049": [
+"2018-10-17",
+"International Friendly"
+],
+"528542": [
+"2019-02-02",
+"International Friendly"
+],
+"529165": [
+"2019-07-08",
+"Concacaf Gold Cup"
+],
+"529167": [
+"2019-07-04",
+"Concacaf Gold Cup"
+],
+"529217": [
+"2019-01-28",
+"International Friendly"
+],
+"536008": [
+"2019-03-26",
+"International Friendly"
+],
+"536621": [
+"2019-03-22",
+"International Friendly"
+],
+"539041": [
+"2019-06-09",
+"International Friendly"
+],
+"539219": [
+"2019-06-27",
+"Concacaf Gold Cup"
+],
+"539227": [
+"2019-06-23",
+"Concacaf Gold Cup"
+],
+"539235": [
+"2019-06-19",
+"Concacaf Gold Cup"
+],
+"539481": [
+"2019-06-05",
+"International Friendly"
+],
+"540342": [
+"2019-11-20",
+"Concacaf Nations League"
+],
+"540346": [
+"2019-11-16",
+"Concacaf Nations League"
+],
+"540350": [
+"2019-10-15",
+"Concacaf Nations League"
+],
+"540354": [
+"2019-10-11",
+"Concacaf Nations League"
+],
+"547957": [
+"2019-07-01",
+"Concacaf Gold Cup"
+],
+"552070": [
+"2019-09-07",
+"International Friendly"
+],
+"554175": [
+"2019-09-11",
+"International Friendly"
+],
+"560935": [
+"2020-02-01",
+"International Friendly"
+],
+"570815": [
+"2021-06-03",
+"Concacaf Nations League"
+],
+"570981": [
+"2021-06-07",
+"Concacaf Nations League"
+],
+"587395": [
+"2020-11-12",
+"International Friendly"
+],
+"587943": [
+"2020-11-16",
+"International Friendly"
+],
+"589426": [
+"2020-12-10",
+"International Friendly"
+],
+"592927": [
+"2021-02-01",
+"International Friendly"
+],
+"594856": [
+"2021-03-28",
+"International Friendly"
+],
+"596312": [
+"2021-03-25",
+"International Friendly"
+],
+"597048": [
+"2021-05-30",
+"International Friendly"
+],
+"602264": [
+"2021-06-09",
+"International Friendly"
+],
+"602693": [
+"2021-07-29",
+"Concacaf Gold Cup"
+],
+"602694": [
+"2021-07-26",
+"Concacaf Gold Cup"
+],
+"602704": [
+"2021-07-18",
+"Concacaf Gold Cup"
+],
+"602710": [
+"2021-07-16",
+"Concacaf Gold Cup"
+],
+"602718": [
+"2021-07-12",
+"Concacaf Gold Cup"
+],
+"602722": [
+"2021-08-02",
+"Concacaf Gold Cup"
+],
+"606044": [
+"2022-03-31",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606048": [
+"2022-03-27",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606052": [
+"2022-03-25",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606055": [
+"2022-02-03",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606060": [
+"2022-01-30",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606062": [
+"2022-01-28",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606068": [
+"2021-11-16",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606071": [
+"2021-11-13",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606073": [
+"2021-10-13",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606080": [
+"2021-10-10",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606083": [
+"2021-10-07",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606088": [
+"2021-09-09",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606089": [
+"2021-09-06",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"606096": [
+"2021-09-03",
+"FIFA World Cup Qualifying - Concacaf"
+],
+"621433": [
+"2021-12-19",
+"International Friendly"
+],
+"633787": [
+"2022-11-21",
+"FIFA World Cup"
+],
+"633804": [
+"2022-11-25",
+"FIFA World Cup"
+],
+"633822": [
+"2022-11-29",
+"FIFA World Cup"
+],
+"633835": [
+"2022-12-03",
+"FIFA World Cup"
+],
+"634300": [
+"2022-06-11",
+"Concacaf Nations League"
+],
+"634303": [
+"2022-06-15",
+"Concacaf Nations League"
+],
+"634307": [
+"2023-03-25",
+"Concacaf Nations League"
+],
+"634311": [
+"2023-03-27",
+"Concacaf Nations League"
+],
+"634539": [
+"2022-06-01",
+"International Friendly"
+],
+"634642": [
+"2022-06-05",
+"International Friendly"
+],
+"641088": [
+"2022-09-23",
+"International Friendly"
+],
+"641090": [
+"2022-09-27",
+"International Friendly"
+],
+"656206": [
+"2023-01-26",
+"International Friendly"
+],
+"656207": [
+"2023-01-29",
+"International Friendly"
+],
+"667374": [
+"2023-04-20",
+"International Friendly"
+],
+"667789": [
+"2023-06-16",
+"Concacaf Nations League"
+],
+"667792": [
+"2023-06-19",
+"Concacaf Nations League"
+],
+"668477": [
+"2023-06-25",
+"Concacaf Gold Cup"
+],
+"668486": [
+"2023-06-29",
+"Concacaf Gold Cup"
+],
+"668494": [
+"2023-07-02",
+"Concacaf Gold Cup"
+],
+"669758": [
+"2023-10-14",
+"International Friendly"
+],
+"669759": [
+"2023-10-18",
+"International Friendly"
+],
+"676879": [
+"2023-07-12",
+"Concacaf Gold Cup"
+],
+"677566": [
+"2023-09-09",
+"International Friendly"
+],
+"677567": [
+"2023-09-13",
+"International Friendly"
+],
+"678986": [
+"2023-07-09",
+"Concacaf Gold Cup"
+],
+"689485": [
+"2023-11-17",
+"Concacaf Nations League"
+],
+"689486": [
+"2023-11-21",
+"Concacaf Nations League"
+],
+"690324": [
+"2024-03-21",
+"Concacaf Nations League"
+],
+"690424": [
+"2024-01-20",
+"International Friendly"
+],
+"690709": [
+"2024-06-23",
+"Copa América"
+],
+"690717": [
+"2024-06-27",
+"Copa América"
+],
+"690725": [
+"2024-07-02",
+"Copa América"
+],
+"699069": [
+"2024-06-08",
+"International Friendly"
+],
+"699281": [
+"2024-06-12",
+"International Friendly"
+],
+"701210": [
+"2024-03-25",
+"Concacaf Nations League"
+],
+"707615": [
+"2024-09-07",
+"International Friendly"
+],
+"707616": [
+"2024-09-10",
+"International Friendly"
+],
+"707617": [
+"2024-10-13",
+"International Friendly"
+],
+"719821": [
+"2024-10-16",
+"International Friendly"
+],
+"721462": [
+"2024-11-15",
+"Concacaf Nations League"
+],
+"721468": [
+"2024-11-19",
+"Concacaf Nations League"
+],
+"723617": [
+"2025-01-18",
+"International Friendly"
+],
+"723669": [
+"2025-03-20",
+"Concacaf Nations League"
+],
+"723671": [
+"2025-03-23",
+"Concacaf Nations League"
+],
+"724802": [
+"2025-01-23",
+"International Friendly"
+],
+"734219": [
+"2025-06-07",
+"International Friendly"
+],
+"734220": [
+"2025-06-11",
+"International Friendly"
+],
+"735319": [
+"2025-06-15",
+"Concacaf Gold Cup"
+],
+"735329": [
+"2025-06-20",
+"Concacaf Gold Cup"
+],
+"735335": [
+"2025-06-22",
+"Concacaf Gold Cup"
+],
+"735342": [
+"2025-06-29",
+"Concacaf Gold Cup"
+],
+"735346": [
+"2025-07-02",
+"Concacaf Gold Cup"
+],
+"735348": [
+"2025-07-06",
+"Concacaf Gold Cup"
+],
+"735765": [
+"2025-09-06",
+"International Friendly"
+],
+"735766": [
+"2025-09-09",
+"International Friendly"
+],
+"753161": [
+"2025-10-11",
+"International Friendly"
+],
+"753162": [
+"2025-10-15",
+"International Friendly"
+],
+"758376": [
+"2025-11-15",
+"International Friendly"
+],
+"758377": [
+"2025-11-19",
+"International Friendly"
+],
+"760417": [
+"2026-06-13",
+"FIFA World Cup"
+],
+"760442": [
+"2026-06-19",
+"FIFA World Cup"
+],
+"760470": [
+"2026-06-26",
+"FIFA World Cup"
+],
+"760494": [
+"2026-07-02",
+"FIFA World Cup"
+],
+"760507": [
+"2026-07-07",
+"FIFA World Cup"
+],
+"762258": [
+"2026-03-28",
+"International Friendly"
+],
+"762259": [
+"2026-03-31",
+"International Friendly"
+],
+"762260": [
+"2026-06-06",
+"International Friendly"
+],
+"762592": [
+"2026-05-31",
+"International Friendly"
+]
+},
+"matches": {
+"264043": {
+"city": "Rustenburg",
+"comp": "WC",
+"date": "2010-06-12",
+"dow": "Sat",
+"id": "264043",
+"opp": "448",
+"opp_name": "England",
+"result": "D",
+"stage": "Group Stage",
+"them": 1,
+"time": "14:30",
+"us": 1,
+"venue": "Royal Bafokeng Stadium",
+"where": "A",
+"year": 2010
+},
+"264045": {
+"city": "Johannesburg",
+"comp": "WC",
+"date": "2010-06-18",
+"dow": "Fri",
+"id": "264045",
+"opp": "472",
+"opp_name": "Slovenia",
+"result": "D",
+"stage": "Group Stage",
+"them": 2,
+"time": "10:00",
+"us": 2,
+"venue": "Emirates Airline Park",
+"where": "A",
+"year": 2010
+},
+"264048": {
+"city": "Pretoria",
+"comp": "WC",
+"date": "2010-06-23",
+"dow": "Wed",
+"id": "264048",
+"opp": "624",
+"opp_name": "Algeria",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "10:00",
+"us": 1,
+"venue": "Loftus Versfeld Stadium",
+"where": "H",
+"year": 2010
+},
+"264108": {
+"city": "Rustenburg",
+"comp": "WC",
+"date": "2010-06-26",
+"dow": "Sat",
+"id": "264108",
+"opp": "4469",
+"opp_name": "Ghana",
+"result": "L",
+"stage": "Second Round",
+"them": 2,
+"time": "14:30",
+"us": 1,
+"venue": "Royal Bafokeng Stadium",
+"where": "H",
+"year": 2010
+},
+"317200": {
+"city": "Detroit",
+"comp": "GC",
+"date": "2011-06-07",
+"dow": "Tue",
+"id": "317200",
+"opp": "206",
+"opp_name": "Canada",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "20:00",
+"us": 2,
+"venue": "Ford Field",
+"where": "H",
+"year": 2011
+},
+"317202": {
+"city": "Tampa, Florida",
+"comp": "GC",
+"date": "2011-06-11",
+"dow": "Sat",
+"id": "317202",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "L",
+"stage": "Group Stage",
+"them": 2,
+"time": "20:00",
+"us": 1,
+"venue": "Raymond James Stadium",
+"where": "H",
+"year": 2011
+},
+"317204": {
+"city": "Kansas City, Kansas",
+"comp": "GC",
+"date": "2011-06-14",
+"dow": "Tue",
+"id": "317204",
+"opp": "7657",
+"opp_name": "Guadeloupe",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "21:00",
+"us": 1,
+"venue": "Children's Mercy Park",
+"where": "A",
+"year": 2011
+},
+"317206": {
+"city": "Houston",
+"comp": "GC",
+"date": "2011-06-22",
+"dow": "Wed",
+"id": "317206",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "W",
+"stage": "Semi-finals",
+"them": 0,
+"time": "19:00",
+"us": 1,
+"venue": "Reliant Stadium",
+"where": "H",
+"year": 2011
+},
+"317207": {
+"city": "Pasadena",
+"comp": "GC",
+"date": "2011-06-25",
+"dow": "Sat",
+"id": "317207",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "L",
+"stage": "Final",
+"them": 4,
+"time": "21:00",
+"us": 2,
+"venue": "Rose Bowl",
+"where": "H",
+"year": 2011
+},
+"317919": {
+"city": "Washington",
+"comp": "GC",
+"date": "2011-06-19",
+"dow": "Sun",
+"id": "317919",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Quarter-finals",
+"them": 0,
+"time": "15:00",
+"us": 2,
+"venue": "RFK Memorial",
+"where": "A",
+"year": 2011
+},
+"333961": {
+"city": "Tampa, Florida",
+"comp": "WCQ",
+"date": "2012-06-08",
+"dow": "Fri",
+"id": "333961",
+"opp": "2638",
+"opp_name": "Antigua and Barbuda",
+"result": "W",
+"stage": "Third Round",
+"them": 1,
+"time": "19:00",
+"us": 3,
+"venue": "Raymond James Stadium",
+"where": "H",
+"year": 2012
+},
+"333963": {
+"city": "Estadio Cementos Progreso",
+"comp": "WCQ",
+"date": "2012-06-12",
+"dow": "Tue",
+"id": "333963",
+"opp": "2652",
+"opp_name": "Guatemala",
+"result": "D",
+"stage": "Third Round",
+"them": 1,
+"time": "22:00",
+"us": 1,
+"venue": "Estadio Nacional Mateo Flores",
+"where": "A",
+"year": 2012
+},
+"333965": {
+"city": "Kingston",
+"comp": "WCQ",
+"date": "2012-09-07",
+"dow": "Fri",
+"id": "333965",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "L",
+"stage": "Third Round",
+"them": 2,
+"time": "20:00",
+"us": 1,
+"venue": "Kingston National Stadium",
+"where": "A",
+"year": 2012
+},
+"333967": {
+"city": "Columbus, Ohio",
+"comp": "WCQ",
+"date": "2012-09-11",
+"dow": "Tue",
+"id": "333967",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Third Round",
+"them": 0,
+"time": "20:00",
+"us": 1,
+"venue": "Historic Crew Stadium",
+"where": "H",
+"year": 2012
+},
+"333970": {
+"city": "North Sound",
+"comp": "WCQ",
+"date": "2012-10-12",
+"dow": "Fri",
+"id": "333970",
+"opp": "2638",
+"opp_name": "Antigua and Barbuda",
+"result": "W",
+"stage": "Third Round",
+"them": 1,
+"time": "19:00",
+"us": 2,
+"venue": "Sir Vivian Richards Stadium",
+"where": "A",
+"year": 2012
+},
+"333971": {
+"city": "",
+"comp": "WCQ",
+"date": "2012-10-16",
+"dow": "Tue",
+"id": "333971",
+"opp": "2652",
+"opp_name": "Guatemala",
+"result": "W",
+"stage": "Third Round",
+"them": 1,
+"time": "19:15",
+"us": 3,
+"venue": "Sporting Park",
+"where": "H",
+"year": 2012
+},
+"357537": {
+"city": "",
+"comp": "WCQ",
+"date": "2013-02-06",
+"dow": "Wed",
+"id": "357537",
+"opp": "215",
+"opp_name": "Honduras",
+"result": "L",
+"stage": "Fourth Round",
+"them": 2,
+"time": "16:00",
+"us": 1,
+"venue": "San Pedro Sula",
+"where": "A",
+"year": 2013
+},
+"357539": {
+"city": "Commerce City, Colorado",
+"comp": "WCQ",
+"date": "2013-03-22",
+"dow": "Fri",
+"id": "357539",
+"opp": "214",
+"opp_name": "Costa Rica",
+"result": "W",
+"stage": "Fourth Round",
+"them": 0,
+"time": "22:11",
+"us": 1,
+"venue": "Dick's Sporting Goods Park",
+"where": "H",
+"year": 2013
+},
+"357543": {
+"city": "",
+"comp": "WCQ",
+"date": "2013-03-26",
+"dow": "Tue",
+"id": "357543",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "D",
+"stage": "Fourth Round",
+"them": 0,
+"time": "22:30",
+"us": 0,
+"venue": "Estadio Azteca",
+"where": "A",
+"year": 2013
+},
+"357546": {
+"city": "",
+"comp": "WCQ",
+"date": "2013-06-07",
+"dow": "Fri",
+"id": "357546",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Fourth Round",
+"them": 1,
+"time": "21:30",
+"us": 2,
+"venue": "National Stadium Kingston",
+"where": "A",
+"year": 2013
+},
+"357549": {
+"city": "Seattle, Washington",
+"comp": "WCQ",
+"date": "2013-06-11",
+"dow": "Tue",
+"id": "357549",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "W",
+"stage": "Fourth Round",
+"them": 0,
+"time": "21:30",
+"us": 2,
+"venue": "Lumen Field",
+"where": "H",
+"year": 2013
+},
+"357552": {
+"city": "Sandy, Utah",
+"comp": "WCQ",
+"date": "2013-06-18",
+"dow": "Tue",
+"id": "357552",
+"opp": "215",
+"opp_name": "Honduras",
+"result": "W",
+"stage": "Fourth Round",
+"them": 0,
+"time": "21:00",
+"us": 1,
+"venue": "America First Field",
+"where": "H",
+"year": 2013
+},
+"357555": {
+"city": "",
+"comp": "WCQ",
+"date": "2013-09-06",
+"dow": "Fri",
+"id": "357555",
+"opp": "214",
+"opp_name": "Costa Rica",
+"result": "L",
+"stage": "Fourth Round",
+"them": 3,
+"time": "22:00",
+"us": 1,
+"venue": "Estadio Ricardo Saprissa",
+"where": "A",
+"year": 2013
+},
+"357557": {
+"city": "Columbus, Ohio",
+"comp": "WCQ",
+"date": "2013-09-10",
+"dow": "Tue",
+"id": "357557",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "W",
+"stage": "Fourth Round",
+"them": 0,
+"time": "20:06",
+"us": 2,
+"venue": "Historic Crew Stadium",
+"where": "H",
+"year": 2013
+},
+"357560": {
+"city": "",
+"comp": "WCQ",
+"date": "2013-10-11",
+"dow": "Fri",
+"id": "357560",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Fourth Round",
+"them": 0,
+"time": "18:36",
+"us": 2,
+"venue": "Livestrong Sporting Park",
+"where": "H",
+"year": 2013
+},
+"357563": {
+"city": "Panama City",
+"comp": "WCQ",
+"date": "2013-10-15",
+"dow": "Tue",
+"id": "357563",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "W",
+"stage": "Fourth Round",
+"them": 2,
+"time": "21:30",
+"us": 3,
+"venue": "Estadio Rommel Fernández Gutiérrez",
+"where": "A",
+"year": 2013
+},
+"370652": {
+"city": "East Hartford, Connecticut",
+"comp": "GC",
+"date": "2013-07-16",
+"dow": "Tue",
+"id": "370652",
+"opp": "214",
+"opp_name": "Costa Rica",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "20:00",
+"us": 1,
+"venue": "Pratt & Whitney Stadium at Rentschler Field",
+"where": "H",
+"year": 2013
+},
+"370659": {
+"city": "Sandy, Utah",
+"comp": "GC",
+"date": "2013-07-13",
+"dow": "Sat",
+"id": "370659",
+"opp": "2647",
+"opp_name": "Cuba",
+"result": "W",
+"stage": "Group Stage",
+"them": 1,
+"time": "15:30",
+"us": 4,
+"venue": "America First Field",
+"where": "H",
+"year": 2013
+},
+"370664": {
+"city": "Portland, Oregon",
+"comp": "GC",
+"date": "2013-07-09",
+"dow": "Tue",
+"id": "370664",
+"opp": "2641",
+"opp_name": "Belize",
+"result": "W",
+"stage": "Group Stage",
+"them": 1,
+"time": "23:00",
+"us": 6,
+"venue": "Providence Park",
+"where": "A",
+"year": 2013
+},
+"373923": {
+"city": "Baltimore, Maryland",
+"comp": "GC",
+"date": "2013-07-21",
+"dow": "Sun",
+"id": "373923",
+"opp": "2650",
+"opp_name": "El Salvador",
+"result": "W",
+"stage": "Quarter-finals",
+"them": 1,
+"time": "16:00",
+"us": 5,
+"venue": "M&T Bank Stadium",
+"where": "H",
+"year": 2013
+},
+"375655": {
+"city": "Arlington, Texas",
+"comp": "GC",
+"date": "2013-07-24",
+"dow": "Wed",
+"id": "375655",
+"opp": "215",
+"opp_name": "Honduras",
+"result": "W",
+"stage": "Semi-finals",
+"them": 1,
+"time": "19:00",
+"us": 3,
+"venue": "AT&T Stadium",
+"where": "H",
+"year": 2013
+},
+"376024": {
+"city": "Sedan",
+"comp": "GC",
+"date": "2013-07-28",
+"dow": "Sun",
+"id": "376024",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "W",
+"stage": "Final",
+"them": 0,
+"time": "16:00",
+"us": 1,
+"venue": "Stade Louis-Dugauguez",
+"where": "H",
+"year": 2013
+},
+"383247": {
+"city": "Salvador",
+"comp": "WC",
+"date": "2014-07-01",
+"dow": "Tue",
+"id": "383247",
+"opp": "459",
+"opp_name": "Belgium",
+"result": "L",
+"stage": "Round of 16",
+"them": 2,
+"time": "16:00",
+"us": 1,
+"venue": "Casa de Apostas Arena Fonte Nova",
+"where": "A",
+"year": 2014
+},
+"383258": {
+"city": "Recife",
+"comp": "WC",
+"date": "2014-06-26",
+"dow": "Thu",
+"id": "383258",
+"opp": "481",
+"opp_name": "Germany",
+"result": "L",
+"stage": "Group Stage",
+"them": 1,
+"time": "12:00",
+"us": 0,
+"venue": "Arena Pernambuco",
+"where": "H",
+"year": 2014
+},
+"383273": {
+"city": "Manaus",
+"comp": "WC",
+"date": "2014-06-22",
+"dow": "Sun",
+"id": "383273",
+"opp": "482",
+"opp_name": "Portugal",
+"result": "D",
+"stage": "Group Stage",
+"them": 2,
+"time": "18:00",
+"us": 2,
+"venue": "Arena Amazonia",
+"where": "H",
+"year": 2014
+},
+"383290": {
+"city": "Natal",
+"comp": "WC",
+"date": "2014-06-16",
+"dow": "Mon",
+"id": "383290",
+"opp": "4469",
+"opp_name": "Ghana",
+"result": "W",
+"stage": "Group Stage",
+"them": 1,
+"time": "18:00",
+"us": 2,
+"venue": "Arena das Dunas",
+"where": "A",
+"year": 2014
+},
+"418216": {
+"city": "Kansas City, Kansas",
+"comp": "GC",
+"date": "2015-07-13",
+"dow": "Mon",
+"id": "418216",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "D",
+"stage": "Group Stage ",
+"them": 1,
+"time": "21:30",
+"us": 1,
+"venue": "Children's Mercy Park",
+"where": "A",
+"year": 2015
+},
+"418222": {
+"city": "Foxborough, Massachusetts",
+"comp": "GC",
+"date": "2015-07-10",
+"dow": "Fri",
+"id": "418222",
+"opp": "2654",
+"opp_name": "Haiti",
+"result": "W",
+"stage": "Group Stage ",
+"them": 0,
+"time": "20:30",
+"us": 1,
+"venue": "Gillette Stadium",
+"where": "H",
+"year": 2015
+},
+"418228": {
+"city": "Toyota",
+"comp": "GC",
+"date": "2015-07-07",
+"dow": "Tue",
+"id": "418228",
+"opp": "215",
+"opp_name": "Honduras",
+"result": "W",
+"stage": "Group Stage ",
+"them": 1,
+"time": "21:30",
+"us": 2,
+"venue": "Toyota Stadium",
+"where": "H",
+"year": 2015
+},
+"430266": {
+"city": "Chester, Pennsylvania",
+"comp": "GC",
+"date": "2015-07-25",
+"dow": "Sat",
+"id": "430266",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "D",
+"stage": "Third Place Game",
+"them": 1,
+"time": "16:00",
+"us": 1,
+"venue": "Subaru Park",
+"where": "H",
+"year": 2015
+},
+"430268": {
+"city": "Atlanta",
+"comp": "GC",
+"date": "2015-07-22",
+"dow": "Wed",
+"id": "430268",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "L",
+"stage": "Semi-finals",
+"them": 2,
+"time": "18:00",
+"us": 1,
+"venue": "Georgia Dome",
+"where": "H",
+"year": 2015
+},
+"430272": {
+"city": "Baltimore, Maryland",
+"comp": "GC",
+"date": "2015-07-18",
+"dow": "Sat",
+"id": "430272",
+"opp": "2647",
+"opp_name": "Cuba",
+"result": "W",
+"stage": "Quarter-finals",
+"them": 0,
+"time": "17:00",
+"us": 6,
+"venue": "M&T Bank Stadium",
+"where": "H",
+"year": 2015
+},
+"433566": {
+"city": "Pasadena, California",
+"comp": "CCUP",
+"date": "2015-10-10",
+"dow": "Sat",
+"id": "433566",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "L",
+"stage": "",
+"them": 3,
+"time": "21:30",
+"us": 2,
+"venue": "Rose Bowl",
+"where": "A",
+"year": 2015
+},
+"435520": {
+"city": "Jacksonville, Florida",
+"comp": "WCQ",
+"date": "2016-09-06",
+"dow": "Tue",
+"id": "435520",
+"opp": "2627",
+"opp_name": "Trinidad and Tobago",
+"result": "W",
+"stage": "Fourth Round",
+"them": 0,
+"time": "20:15",
+"us": 4,
+"venue": "TIAA Bank Field",
+"where": "H",
+"year": 2016
+},
+"435526": {
+"city": "Arnos Vale Stadium",
+"comp": "WCQ",
+"date": "2016-09-02",
+"dow": "Fri",
+"id": "435526",
+"opp": "13584",
+"opp_name": "St. Vincent and the Grenadines",
+"result": "W",
+"stage": "Fourth Round",
+"them": 0,
+"time": "15:30",
+"us": 6,
+"venue": "Arnos Vale Stadium",
+"where": "A",
+"year": 2016
+},
+"435529": {
+"city": "Columbus, Ohio",
+"comp": "WCQ",
+"date": "2016-03-29",
+"dow": "Tue",
+"id": "435529",
+"opp": "2652",
+"opp_name": "Guatemala",
+"result": "W",
+"stage": "Fourth Round",
+"them": 0,
+"time": "19:25",
+"us": 4,
+"venue": "Historic Crew Stadium",
+"where": "H",
+"year": 2016
+},
+"435538": {
+"city": "Estadio Cementos Progreso",
+"comp": "WCQ",
+"date": "2016-03-25",
+"dow": "Fri",
+"id": "435538",
+"opp": "2652",
+"opp_name": "Guatemala",
+"result": "L",
+"stage": "Fourth Round",
+"them": 2,
+"time": "22:06",
+"us": 0,
+"venue": "Estadio Nacional Mateo Flores",
+"where": "A",
+"year": 2016
+},
+"435544": {
+"city": "Port of Spain",
+"comp": "WCQ",
+"date": "2015-11-17",
+"dow": "Tue",
+"id": "435544",
+"opp": "2627",
+"opp_name": "Trinidad and Tobago",
+"result": "D",
+"stage": "Fourth Round",
+"them": 0,
+"time": "18:36",
+"us": 0,
+"venue": "Hasely Crawford Stadium",
+"where": "A",
+"year": 2015
+},
+"435549": {
+"city": "St. Louis",
+"comp": "WCQ",
+"date": "2015-11-13",
+"dow": "Fri",
+"id": "435549",
+"opp": "13584",
+"opp_name": "St. Vincent and the Grenadines",
+"result": "W",
+"stage": "Fourth Round",
+"them": 1,
+"time": "19:10",
+"us": 6,
+"venue": "Busch Stadium",
+"where": "H",
+"year": 2015
+},
+"444697": {
+"city": "Glendale, Arizona",
+"comp": "CA",
+"date": "2016-06-25",
+"dow": "Sat",
+"id": "444697",
+"opp": "208",
+"opp_name": "Colombia",
+"result": "L",
+"stage": "3rd-Place",
+"them": 1,
+"time": "20:00",
+"us": 0,
+"venue": "State Farm Stadium",
+"where": "H",
+"year": 2016
+},
+"444699": {
+"city": "Houston, Texas",
+"comp": "CA",
+"date": "2016-06-21",
+"dow": "Tue",
+"id": "444699",
+"opp": "202",
+"opp_name": "Argentina",
+"result": "L",
+"stage": "Semifinals",
+"them": 4,
+"time": "21:00",
+"us": 0,
+"venue": "NRG Stadium",
+"where": "H",
+"year": 2016
+},
+"444703": {
+"city": "Seattle, Washington",
+"comp": "CA",
+"date": "2016-06-16",
+"dow": "Thu",
+"id": "444703",
+"opp": "209",
+"opp_name": "Ecuador",
+"result": "W",
+"stage": "Quarterfinals",
+"them": 1,
+"time": "21:30",
+"us": 2,
+"venue": "Lumen Field",
+"where": "H",
+"year": 2016
+},
+"444711": {
+"city": "Philadelphia, Pennsylvania",
+"comp": "CA",
+"date": "2016-06-11",
+"dow": "Sat",
+"id": "444711",
+"opp": "210",
+"opp_name": "Paraguay",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "19:00",
+"us": 1,
+"venue": "Lincoln Financial Field",
+"where": "H",
+"year": 2016
+},
+"444718": {
+"city": "Chicago, Illinois",
+"comp": "CA",
+"date": "2016-06-07",
+"dow": "Tue",
+"id": "444718",
+"opp": "214",
+"opp_name": "Costa Rica",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "20:00",
+"us": 4,
+"venue": "Soldier Field",
+"where": "H",
+"year": 2016
+},
+"444727": {
+"city": "Santa Clara, California",
+"comp": "CA",
+"date": "2016-06-03",
+"dow": "Fri",
+"id": "444727",
+"opp": "208",
+"opp_name": "Colombia",
+"result": "L",
+"stage": "Group Stage",
+"them": 2,
+"time": "21:30",
+"us": 0,
+"venue": "Levi's Stadium",
+"where": "H",
+"year": 2016
+},
+"466968": {
+"city": "Ato Boldon Stadium",
+"comp": "WCQ",
+"date": "2017-10-10",
+"dow": "Tue",
+"id": "466968",
+"opp": "2627",
+"opp_name": "Trinidad and Tobago",
+"result": "L",
+"stage": "Hexagonal",
+"them": 2,
+"time": "20:00",
+"us": 1,
+"venue": "Ato Boldon Stadium",
+"where": "A",
+"year": 2017
+},
+"466970": {
+"city": "Orlando, Florida",
+"comp": "WCQ",
+"date": "2017-10-06",
+"dow": "Fri",
+"id": "466970",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "W",
+"stage": "Hexagonal",
+"them": 0,
+"time": "19:35",
+"us": 4,
+"venue": "Inter&Co Stadium",
+"where": "H",
+"year": 2017
+},
+"466974": {
+"city": "San Pedro Sula",
+"comp": "WCQ",
+"date": "2017-09-05",
+"dow": "Tue",
+"id": "466974",
+"opp": "215",
+"opp_name": "Honduras",
+"result": "D",
+"stage": "Hexagonal",
+"them": 1,
+"time": "17:36",
+"us": 1,
+"venue": "Estadio Olímpico Metropolitano",
+"where": "A",
+"year": 2017
+},
+"466975": {
+"city": "Harrison, New Jersey",
+"comp": "WCQ",
+"date": "2017-09-01",
+"dow": "Fri",
+"id": "466975",
+"opp": "214",
+"opp_name": "Costa Rica",
+"result": "L",
+"stage": "Hexagonal",
+"them": 2,
+"time": "18:55",
+"us": 0,
+"venue": "Sports Illustrated Stadium",
+"where": "H",
+"year": 2017
+},
+"466980": {
+"city": "Mexico City",
+"comp": "WCQ",
+"date": "2017-06-11",
+"dow": "Sun",
+"id": "466980",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "D",
+"stage": "Hexagonal",
+"them": 1,
+"time": "20:30",
+"us": 1,
+"venue": "Estadio Banorte",
+"where": "A",
+"year": 2017
+},
+"466983": {
+"city": "Commerce City, Colorado",
+"comp": "WCQ",
+"date": "2017-06-08",
+"dow": "Thu",
+"id": "466983",
+"opp": "2627",
+"opp_name": "Trinidad and Tobago",
+"result": "W",
+"stage": "Hexagonal",
+"them": 0,
+"time": "20:00",
+"us": 2,
+"venue": "Dick's Sporting Goods Park",
+"where": "H",
+"year": 2017
+},
+"466986": {
+"city": "Panama City",
+"comp": "WCQ",
+"date": "2017-03-28",
+"dow": "Tue",
+"id": "466986",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "D",
+"stage": "Hexagonal",
+"them": 1,
+"time": "22:05",
+"us": 1,
+"venue": "Estadio Rommel Fernández Gutiérrez",
+"where": "A",
+"year": 2017
+},
+"466988": {
+"city": "San Jose, California",
+"comp": "WCQ",
+"date": "2017-03-24",
+"dow": "Fri",
+"id": "466988",
+"opp": "215",
+"opp_name": "Honduras",
+"result": "W",
+"stage": "Hexagonal",
+"them": 0,
+"time": "22:55",
+"us": 6,
+"venue": "PayPal Park",
+"where": "H",
+"year": 2017
+},
+"466992": {
+"city": "Estadio Nacional de Costa Rica",
+"comp": "WCQ",
+"date": "2016-11-15",
+"dow": "Tue",
+"id": "466992",
+"opp": "214",
+"opp_name": "Costa Rica",
+"result": "L",
+"stage": "Hexagonal",
+"them": 4,
+"time": "21:05",
+"us": 0,
+"venue": "Estadio Nacional de Costa Rica",
+"where": "A",
+"year": 2016
+},
+"466994": {
+"city": "Columbus, Ohio",
+"comp": "WCQ",
+"date": "2016-11-11",
+"dow": "Fri",
+"id": "466994",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "L",
+"stage": "Hexagonal",
+"them": 2,
+"time": "20:01",
+"us": 1,
+"venue": "Historic Crew Stadium",
+"where": "H",
+"year": 2016
+},
+"475833": {
+"city": "Cleveland, Ohio",
+"comp": "GC",
+"date": "2017-07-15",
+"dow": "Sat",
+"id": "475833",
+"opp": "2658",
+"opp_name": "Nicaragua",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "19:00",
+"us": 3,
+"venue": "Huntington Bank Field",
+"where": "A",
+"year": 2017
+},
+"475838": {
+"city": "Tampa, Florida",
+"comp": "GC",
+"date": "2017-07-12",
+"dow": "Wed",
+"id": "475838",
+"opp": "2728",
+"opp_name": "Martinique",
+"result": "W",
+"stage": "Group Stage",
+"them": 2,
+"time": "21:00",
+"us": 3,
+"venue": "Raymond James Stadium",
+"where": "H",
+"year": 2017
+},
+"475844": {
+"city": "Nashville, Tennessee",
+"comp": "GC",
+"date": "2017-07-08",
+"dow": "Sat",
+"id": "475844",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "D",
+"stage": "Group Stage",
+"them": 1,
+"time": "16:30",
+"us": 1,
+"venue": "Nissan Stadium, Nashville",
+"where": "H",
+"year": 2017
+},
+"475848": {
+"city": "Santa Clara, California",
+"comp": "GC",
+"date": "2017-07-26",
+"dow": "Wed",
+"id": "475848",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Final",
+"them": 1,
+"time": "21:30",
+"us": 2,
+"venue": "Levi's Stadium",
+"where": "H",
+"year": 2017
+},
+"475850": {
+"city": "Arlington, Texas",
+"comp": "GC",
+"date": "2017-07-22",
+"dow": "Sat",
+"id": "475850",
+"opp": "214",
+"opp_name": "Costa Rica",
+"result": "W",
+"stage": "Semifinals",
+"them": 0,
+"time": "22:00",
+"us": 2,
+"venue": "AT&T Stadium",
+"where": "A",
+"year": 2017
+},
+"475854": {
+"city": "Philadelphia, Pennsylvania",
+"comp": "GC",
+"date": "2017-07-19",
+"dow": "Wed",
+"id": "475854",
+"opp": "2650",
+"opp_name": "El Salvador",
+"result": "W",
+"stage": "Quarterfinals",
+"them": 0,
+"time": "21:00",
+"us": 2,
+"venue": "Lincoln Financial Field",
+"where": "H",
+"year": 2017
+},
+"529165": {
+"city": "Chicago, Illinois",
+"comp": "GC",
+"date": "2019-07-07",
+"dow": "Sun",
+"id": "529165",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "L",
+"stage": "Final",
+"them": 1,
+"time": "21:00",
+"us": 0,
+"venue": "Soldier Field",
+"where": "A",
+"year": 2019
+},
+"529167": {
+"city": "Nashville, Tennessee",
+"comp": "GC",
+"date": "2019-07-03",
+"dow": "Wed",
+"id": "529167",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Semifinals",
+"them": 1,
+"time": "21:30",
+"us": 3,
+"venue": "Nissan Stadium, Nashville",
+"where": "A",
+"year": 2019
+},
+"539219": {
+"city": "Kansas City, Kansas",
+"comp": "GC",
+"date": "2019-06-26",
+"dow": "Wed",
+"id": "539219",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "21:00",
+"us": 1,
+"venue": "Children's Mercy Park",
+"where": "A",
+"year": 2019
+},
+"539227": {
+"city": "Cleveland, Ohio",
+"comp": "GC",
+"date": "2019-06-22",
+"dow": "Sat",
+"id": "539227",
+"opp": "2627",
+"opp_name": "Trinidad and Tobago",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "20:00",
+"us": 6,
+"venue": "Huntington Bank Field",
+"where": "H",
+"year": 2019
+},
+"539235": {
+"city": "Saint Paul, Minnesota",
+"comp": "GC",
+"date": "2019-06-18",
+"dow": "Tue",
+"id": "539235",
+"opp": "2653",
+"opp_name": "Guyana",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "22:00",
+"us": 4,
+"venue": "Allianz Field",
+"where": "H",
+"year": 2019
+},
+"540342": {
+"city": "George Town",
+"comp": "NL",
+"date": "2019-11-19",
+"dow": "Tue",
+"id": "540342",
+"opp": "2647",
+"opp_name": "Cuba",
+"result": "W",
+"stage": "League A",
+"them": 0,
+"time": "19:30",
+"us": 4,
+"venue": "Truman Bodden Sport Complex",
+"where": "A",
+"year": 2019
+},
+"540346": {
+"city": "Orlando, Florida",
+"comp": "NL",
+"date": "2019-11-15",
+"dow": "Fri",
+"id": "540346",
+"opp": "206",
+"opp_name": "Canada",
+"result": "W",
+"stage": "League A",
+"them": 1,
+"time": "19:00",
+"us": 4,
+"venue": "Inter&Co Stadium",
+"where": "H",
+"year": 2019
+},
+"540350": {
+"city": "Toronto",
+"comp": "NL",
+"date": "2019-10-15",
+"dow": "Tue",
+"id": "540350",
+"opp": "206",
+"opp_name": "Canada",
+"result": "L",
+"stage": "League A",
+"them": 2,
+"time": "19:30",
+"us": 0,
+"venue": "BMO Field",
+"where": "A",
+"year": 2019
+},
+"540354": {
+"city": "Washington, District of Columbia",
+"comp": "NL",
+"date": "2019-10-11",
+"dow": "Fri",
+"id": "540354",
+"opp": "2647",
+"opp_name": "Cuba",
+"result": "W",
+"stage": "League A",
+"them": 0,
+"time": "19:00",
+"us": 7,
+"venue": "Audi Field",
+"where": "H",
+"year": 2019
+},
+"547957": {
+"city": "Philadelphia, Pennsylvania",
+"comp": "GC",
+"date": "2019-06-30",
+"dow": "Sun",
+"id": "547957",
+"opp": "11678",
+"opp_name": "Curaçao",
+"result": "W",
+"stage": "Quarterfinals",
+"them": 0,
+"time": "20:30",
+"us": 1,
+"venue": "Lincoln Financial Field",
+"where": "H",
+"year": 2019
+},
+"570815": {
+"city": "Denver, Colorado",
+"comp": "NL",
+"date": "2021-06-03",
+"dow": "Thu",
+"id": "570815",
+"opp": "215",
+"opp_name": "Honduras",
+"result": "W",
+"stage": "Semifinals",
+"them": 0,
+"time": "19:30",
+"us": 1,
+"venue": "Empower Field at Mile High",
+"where": "A",
+"year": 2021
+},
+"570981": {
+"city": "Denver, Colorado",
+"comp": "NL",
+"date": "2021-06-06",
+"dow": "Sun",
+"id": "570981",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "W",
+"stage": "Final",
+"them": 2,
+"time": "21:36",
+"us": 3,
+"venue": "Empower Field at Mile High",
+"where": "H",
+"year": 2021
+},
+"602693": {
+"city": "Austin, Texas",
+"comp": "GC",
+"date": "2021-07-29",
+"dow": "Thu",
+"id": "602693",
+"opp": "4398",
+"opp_name": "Qatar",
+"result": "W",
+"stage": "Semifinals",
+"them": 0,
+"time": "19:30",
+"us": 1,
+"venue": "Q2 Stadium",
+"where": "A",
+"year": 2021
+},
+"602694": {
+"city": "Arlington, Texas",
+"comp": "GC",
+"date": "2021-07-25",
+"dow": "Sun",
+"id": "602694",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Quarterfinals",
+"them": 0,
+"time": "21:30",
+"us": 1,
+"venue": "AT&T Stadium",
+"where": "H",
+"year": 2021
+},
+"602704": {
+"city": "Kansas City, Kansas",
+"comp": "GC",
+"date": "2021-07-18",
+"dow": "Sun",
+"id": "602704",
+"opp": "206",
+"opp_name": "Canada",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "17:00",
+"us": 1,
+"venue": "Children's Mercy Park",
+"where": "H",
+"year": 2021
+},
+"602710": {
+"city": "Kansas City, Kansas",
+"comp": "GC",
+"date": "2021-07-15",
+"dow": "Thu",
+"id": "602710",
+"opp": "2728",
+"opp_name": "Martinique",
+"result": "W",
+"stage": "Group Stage",
+"them": 1,
+"time": "22:00",
+"us": 6,
+"venue": "Children's Mercy Park",
+"where": "A",
+"year": 2021
+},
+"602718": {
+"city": "Kansas City, Kansas",
+"comp": "GC",
+"date": "2021-07-11",
+"dow": "Sun",
+"id": "602718",
+"opp": "2654",
+"opp_name": "Haiti",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "20:30",
+"us": 1,
+"venue": "Children's Mercy Park",
+"where": "H",
+"year": 2021
+},
+"602722": {
+"city": "Las Vegas, Nevada",
+"comp": "GC",
+"date": "2021-08-01",
+"dow": "Sun",
+"id": "602722",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "W",
+"stage": "Final",
+"them": 0,
+"time": "21:00",
+"us": 1,
+"venue": "Allegiant Stadium",
+"where": "H",
+"year": 2021
+},
+"606044": {
+"city": "Estadio Nacional de Costa Rica",
+"comp": "WCQ",
+"date": "2022-03-30",
+"dow": "Wed",
+"id": "606044",
+"opp": "214",
+"opp_name": "Costa Rica",
+"result": "L",
+"stage": "Third Round",
+"them": 2,
+"time": "21:05",
+"us": 0,
+"venue": "Estadio Nacional de Costa Rica",
+"where": "A",
+"year": 2022
+},
+"606048": {
+"city": "Orlando, Florida",
+"comp": "WCQ",
+"date": "2022-03-27",
+"dow": "Sun",
+"id": "606048",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "W",
+"stage": "Third Round",
+"them": 1,
+"time": "19:00",
+"us": 5,
+"venue": "Inter&Co Stadium",
+"where": "H",
+"year": 2022
+},
+"606052": {
+"city": "Mexico City",
+"comp": "WCQ",
+"date": "2022-03-24",
+"dow": "Thu",
+"id": "606052",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "D",
+"stage": "Third Round",
+"them": 0,
+"time": "22:00",
+"us": 0,
+"venue": "Estadio Banorte",
+"where": "A",
+"year": 2022
+},
+"606055": {
+"city": "Saint Paul, Minnesota",
+"comp": "WCQ",
+"date": "2022-02-02",
+"dow": "Wed",
+"id": "606055",
+"opp": "215",
+"opp_name": "Honduras",
+"result": "W",
+"stage": "Third Round",
+"them": 0,
+"time": "19:30",
+"us": 3,
+"venue": "Allianz Field",
+"where": "H",
+"year": 2022
+},
+"606060": {
+"city": "Hamilton",
+"comp": "WCQ",
+"date": "2022-01-30",
+"dow": "Sun",
+"id": "606060",
+"opp": "206",
+"opp_name": "Canada",
+"result": "L",
+"stage": "Third Round",
+"them": 2,
+"time": "15:05",
+"us": 0,
+"venue": "Hamilton Stadium",
+"where": "A",
+"year": 2022
+},
+"606062": {
+"city": "Columbus, Ohio",
+"comp": "WCQ",
+"date": "2022-01-27",
+"dow": "Thu",
+"id": "606062",
+"opp": "2650",
+"opp_name": "El Salvador",
+"result": "W",
+"stage": "Third Round",
+"them": 0,
+"time": "19:00",
+"us": 1,
+"venue": "ScottsMiracle-Gro Field",
+"where": "H",
+"year": 2022
+},
+"606068": {
+"city": "Sabina Park",
+"comp": "WCQ",
+"date": "2021-11-16",
+"dow": "Tue",
+"id": "606068",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "D",
+"stage": "Third Round",
+"them": 1,
+"time": "17:00",
+"us": 1,
+"venue": "Independence Park",
+"where": "A",
+"year": 2021
+},
+"606071": {
+"city": "Cincinnati, Ohio",
+"comp": "WCQ",
+"date": "2021-11-12",
+"dow": "Fri",
+"id": "606071",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "W",
+"stage": "Third Round",
+"them": 0,
+"time": "21:10",
+"us": 2,
+"venue": "TQL Stadium",
+"where": "H",
+"year": 2021
+},
+"606073": {
+"city": "Columbus, Ohio",
+"comp": "WCQ",
+"date": "2021-10-13",
+"dow": "Wed",
+"id": "606073",
+"opp": "214",
+"opp_name": "Costa Rica",
+"result": "W",
+"stage": "Third Round",
+"them": 1,
+"time": "19:00",
+"us": 2,
+"venue": "ScottsMiracle-Gro Field",
+"where": "H",
+"year": 2021
+},
+"606080": {
+"city": "Panama City",
+"comp": "WCQ",
+"date": "2021-10-10",
+"dow": "Sun",
+"id": "606080",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "L",
+"stage": "Third Round",
+"them": 1,
+"time": "18:00",
+"us": 0,
+"venue": "Estadio Rommel Fernández Gutiérrez",
+"where": "A",
+"year": 2021
+},
+"606083": {
+"city": "Austin, Texas",
+"comp": "WCQ",
+"date": "2021-10-07",
+"dow": "Thu",
+"id": "606083",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Third Round",
+"them": 0,
+"time": "19:30",
+"us": 2,
+"venue": "Q2 Stadium",
+"where": "H",
+"year": 2021
+},
+"606088": {
+"city": "San Pedro Sula",
+"comp": "WCQ",
+"date": "2021-09-08",
+"dow": "Wed",
+"id": "606088",
+"opp": "215",
+"opp_name": "Honduras",
+"result": "W",
+"stage": "Third Round",
+"them": 1,
+"time": "22:30",
+"us": 4,
+"venue": "Estadio Olímpico Metropolitano",
+"where": "A",
+"year": 2021
+},
+"606089": {
+"city": "Nashville, Tennessee",
+"comp": "WCQ",
+"date": "2021-09-05",
+"dow": "Sun",
+"id": "606089",
+"opp": "206",
+"opp_name": "Canada",
+"result": "D",
+"stage": "Third Round",
+"them": 1,
+"time": "20:00",
+"us": 1,
+"venue": "Nissan Stadium, Nashville",
+"where": "H",
+"year": 2021
+},
+"606096": {
+"city": "San Salvador",
+"comp": "WCQ",
+"date": "2021-09-02",
+"dow": "Thu",
+"id": "606096",
+"opp": "2650",
+"opp_name": "El Salvador",
+"result": "D",
+"stage": "Third Round",
+"them": 0,
+"time": "22:05",
+"us": 0,
+"venue": "Estadio Cuscatlán",
+"where": "A",
+"year": 2021
+},
+"633787": {
+"city": "Doha",
+"comp": "WC",
+"date": "2022-11-21",
+"dow": "Mon",
+"id": "633787",
+"opp": "578",
+"opp_name": "Wales",
+"result": "D",
+"stage": "Group Stage",
+"them": 1,
+"time": "14:00",
+"us": 1,
+"venue": "Ahmad bin Ali Stadium",
+"where": "H",
+"year": 2022
+},
+"633804": {
+"city": "Al Khor",
+"comp": "WC",
+"date": "2022-11-25",
+"dow": "Fri",
+"id": "633804",
+"opp": "448",
+"opp_name": "England",
+"result": "D",
+"stage": "Group Stage",
+"them": 0,
+"time": "14:00",
+"us": 0,
+"venue": "Al Bayt Stadium",
+"where": "A",
+"year": 2022
+},
+"633822": {
+"city": "Ar-Rayyan",
+"comp": "WC",
+"date": "2022-11-29",
+"dow": "Tue",
+"id": "633822",
+"opp": "469",
+"opp_name": "Iran",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "14:00",
+"us": 1,
+"venue": "Al Thumama Stadium",
+"where": "A",
+"year": 2022
+},
+"633835": {
+"city": "Doha",
+"comp": "WC",
+"date": "2022-12-03",
+"dow": "Sat",
+"id": "633835",
+"opp": "449",
+"opp_name": "Netherlands",
+"result": "L",
+"stage": "Round of 16",
+"them": 3,
+"time": "10:00",
+"us": 1,
+"venue": "Khalifa International Stadium",
+"where": "A",
+"year": 2022
+},
+"634300": {
+"city": "Austin, Texas",
+"comp": "NL",
+"date": "2022-06-10",
+"dow": "Fri",
+"id": "634300",
+"opp": "2651",
+"opp_name": "Grenada",
+"result": "W",
+"stage": "League A",
+"them": 0,
+"time": "22:00",
+"us": 5,
+"venue": "Q2 Stadium",
+"where": "H",
+"year": 2022
+},
+"634303": {
+"city": "San Salvador",
+"comp": "NL",
+"date": "2022-06-14",
+"dow": "Tue",
+"id": "634303",
+"opp": "2650",
+"opp_name": "El Salvador",
+"result": "D",
+"stage": "League A",
+"them": 1,
+"time": "22:00",
+"us": 1,
+"venue": "Estadio Cuscatlán",
+"where": "A",
+"year": 2022
+},
+"634307": {
+"city": "St. George's",
+"comp": "NL",
+"date": "2023-03-24",
+"dow": "Fri",
+"id": "634307",
+"opp": "2651",
+"opp_name": "Grenada",
+"result": "W",
+"stage": "League A",
+"them": 1,
+"time": "20:00",
+"us": 7,
+"venue": "Kirani James National Stadium",
+"where": "A",
+"year": 2023
+},
+"634311": {
+"city": "Orlando, Florida",
+"comp": "NL",
+"date": "2023-03-27",
+"dow": "Mon",
+"id": "634311",
+"opp": "2650",
+"opp_name": "El Salvador",
+"result": "W",
+"stage": "League A",
+"them": 0,
+"time": "19:30",
+"us": 1,
+"venue": "Inter&Co Stadium",
+"where": "H",
+"year": 2023
+},
+"667789": {
+"city": "Las Vegas, Nevada",
+"comp": "NL",
+"date": "2023-06-15",
+"dow": "Thu",
+"id": "667789",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "W",
+"stage": "Semifinals",
+"them": 0,
+"time": "22:00",
+"us": 3,
+"venue": "Allegiant Stadium",
+"where": "H",
+"year": 2023
+},
+"667792": {
+"city": "Las Vegas, Nevada",
+"comp": "NL",
+"date": "2023-06-18",
+"dow": "Sun",
+"id": "667792",
+"opp": "206",
+"opp_name": "Canada",
+"result": "W",
+"stage": "Final",
+"them": 0,
+"time": "21:06",
+"us": 2,
+"venue": "Allegiant Stadium",
+"where": "A",
+"year": 2023
+},
+"668477": {
+"city": "Chicago, Illinois",
+"comp": "GC",
+"date": "2023-06-24",
+"dow": "Sat",
+"id": "668477",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "D",
+"stage": "Group Stage",
+"them": 1,
+"time": "22:00",
+"us": 1,
+"venue": "Soldier Field",
+"where": "H",
+"year": 2023
+},
+"668486": {
+"city": "St. Louis, Missouri",
+"comp": "GC",
+"date": "2023-06-28",
+"dow": "Wed",
+"id": "668486",
+"opp": "2662",
+"opp_name": "St. Kitts and Nevis",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "21:30",
+"us": 6,
+"venue": "Energizer Park",
+"where": "A",
+"year": 2023
+},
+"668494": {
+"city": "Charlotte, North Carolina",
+"comp": "GC",
+"date": "2023-07-02",
+"dow": "Sun",
+"id": "668494",
+"opp": "2627",
+"opp_name": "Trinidad and Tobago",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "19:00",
+"us": 6,
+"venue": "Bank of America Stadium",
+"where": "H",
+"year": 2023
+},
+"676879": {
+"city": "San Diego, California",
+"comp": "GC",
+"date": "2023-07-12",
+"dow": "Wed",
+"id": "676879",
+"opp": "2659",
+"opp_name": "Panama",
+"pens": "5-4",
+"result": "L",
+"stage": "Semifinals",
+"them": 1,
+"time": "19:30",
+"us": 1,
+"venue": "Snapdragon Stadium",
+"where": "H",
+"year": 2023
+},
+"678986": {
+"city": "Cincinnati, Ohio",
+"comp": "GC",
+"date": "2023-07-09",
+"dow": "Sun",
+"id": "678986",
+"opp": "206",
+"opp_name": "Canada",
+"pens": "3-2",
+"result": "W",
+"stage": "Quarterfinals",
+"them": 2,
+"time": "19:30",
+"us": 2,
+"venue": "TQL Stadium",
+"where": "H",
+"year": 2023
+},
+"689485": {
+"city": "Austin, Texas",
+"comp": "NL",
+"date": "2023-11-16",
+"dow": "Thu",
+"id": "689485",
+"opp": "2627",
+"opp_name": "Trinidad and Tobago",
+"result": "W",
+"stage": "Quarterfinals",
+"them": 0,
+"time": "21:00",
+"us": 3,
+"venue": "Q2 Stadium",
+"where": "H",
+"year": 2023
+},
+"689486": {
+"city": "Port of Spain",
+"comp": "NL",
+"date": "2023-11-20",
+"dow": "Mon",
+"id": "689486",
+"opp": "2627",
+"opp_name": "Trinidad and Tobago",
+"result": "L",
+"stage": "Quarterfinals",
+"them": 2,
+"time": "19:00",
+"us": 1,
+"venue": "Hasely Crawford Stadium",
+"where": "A",
+"year": 2023
+},
+"690324": {
+"city": "",
+"comp": "NL",
+"date": "2024-03-21",
+"dow": "Thu",
+"id": "690324",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Semifinals",
+"them": 1,
+"time": "19:00",
+"us": 3,
+"venue": "",
+"where": "H",
+"year": 2024
+},
+"690709": {
+"city": "Arlington, Texas",
+"comp": "CA",
+"date": "2024-06-23",
+"dow": "Sun",
+"id": "690709",
+"opp": "204",
+"opp_name": "Bolivia",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "18:00",
+"us": 2,
+"venue": "AT&T Stadium",
+"where": "H",
+"year": 2024
+},
+"690717": {
+"city": "Atlanta, Georgia",
+"comp": "CA",
+"date": "2024-06-27",
+"dow": "Thu",
+"id": "690717",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "L",
+"stage": "Group Stage",
+"them": 2,
+"time": "18:00",
+"us": 1,
+"venue": "Mercedes-Benz Stadium",
+"where": "A",
+"year": 2024
+},
+"690725": {
+"city": "Kansas City, Missouri",
+"comp": "CA",
+"date": "2024-07-01",
+"dow": "Mon",
+"id": "690725",
+"opp": "212",
+"opp_name": "Uruguay",
+"result": "L",
+"stage": "Group Stage",
+"them": 1,
+"time": "21:00",
+"us": 0,
+"venue": "GEHA Field at Arrowhead Stadium",
+"where": "H",
+"year": 2024
+},
+"701210": {
+"city": "Arlington, Texas",
+"comp": "NL",
+"date": "2024-03-24",
+"dow": "Sun",
+"id": "701210",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "W",
+"stage": "Final",
+"them": 0,
+"time": "21:15",
+"us": 2,
+"venue": "AT&T Stadium",
+"where": "A",
+"year": 2024
+},
+"721462": {
+"city": "Sabina Park",
+"comp": "NL",
+"date": "2024-11-14",
+"dow": "Thu",
+"id": "721462",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Quarterfinals",
+"them": 0,
+"time": "20:00",
+"us": 1,
+"venue": "Independence Park",
+"where": "A",
+"year": 2024
+},
+"721468": {
+"city": "St. Louis, Missouri",
+"comp": "NL",
+"date": "2024-11-18",
+"dow": "Mon",
+"id": "721468",
+"opp": "1038",
+"opp_name": "Jamaica",
+"result": "W",
+"stage": "Quarterfinals",
+"them": 2,
+"time": "20:00",
+"us": 4,
+"venue": "Energizer Park",
+"where": "H",
+"year": 2024
+},
+"723669": {
+"city": "Inglewood, California",
+"comp": "NL",
+"date": "2025-03-20",
+"dow": "Thu",
+"id": "723669",
+"opp": "2659",
+"opp_name": "Panama",
+"result": "L",
+"stage": "Semifinals",
+"them": 1,
+"time": "19:00",
+"us": 0,
+"venue": "SoFi Stadium",
+"where": "H",
+"year": 2025
+},
+"723671": {
+"city": "Inglewood, California",
+"comp": "NL",
+"date": "2025-03-23",
+"dow": "Sun",
+"id": "723671",
+"opp": "206",
+"opp_name": "Canada",
+"result": "L",
+"stage": "3rd-Place Match",
+"them": 2,
+"time": "18:00",
+"us": 1,
+"venue": "SoFi Stadium",
+"where": "A",
+"year": 2025
+},
+"735319": {
+"city": "San Jose, California",
+"comp": "GC",
+"date": "2025-06-15",
+"dow": "Sun",
+"id": "735319",
+"opp": "2627",
+"opp_name": "Trinidad and Tobago",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "18:00",
+"us": 5,
+"venue": "PayPal Park",
+"where": "H",
+"year": 2025
+},
+"735329": {
+"city": "Austin, Texas",
+"comp": "GC",
+"date": "2025-06-19",
+"dow": "Thu",
+"id": "735329",
+"opp": "655",
+"opp_name": "Saudi Arabia",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "21:15",
+"us": 1,
+"venue": "Q2 Stadium",
+"where": "A",
+"year": 2025
+},
+"735335": {
+"city": "Arlington, Texas",
+"comp": "GC",
+"date": "2025-06-22",
+"dow": "Sun",
+"id": "735335",
+"opp": "2654",
+"opp_name": "Haiti",
+"result": "W",
+"stage": "Group Stage",
+"them": 1,
+"time": "19:00",
+"us": 2,
+"venue": "AT&T Stadium",
+"where": "H",
+"year": 2025
+},
+"735342": {
+"city": "Minneapolis, Minnesota",
+"comp": "GC",
+"date": "2025-06-29",
+"dow": "Sun",
+"id": "735342",
+"opp": "214",
+"opp_name": "Costa Rica",
+"pens": "4-3",
+"result": "W",
+"stage": "Quarterfinals",
+"them": 2,
+"time": "19:00",
+"us": 2,
+"venue": "U.S. Bank Stadium",
+"where": "H",
+"year": 2025
+},
+"735346": {
+"city": "St. Louis, Missouri",
+"comp": "GC",
+"date": "2025-07-02",
+"dow": "Wed",
+"id": "735346",
+"opp": "2652",
+"opp_name": "Guatemala",
+"result": "W",
+"stage": "Semifinals",
+"them": 1,
+"time": "19:00",
+"us": 2,
+"venue": "Energizer Park",
+"where": "H",
+"year": 2025
+},
+"735348": {
+"city": "Houston, Texas",
+"comp": "GC",
+"date": "2025-07-06",
+"dow": "Sun",
+"id": "735348",
+"opp": "203",
+"opp_name": "Mexico",
+"result": "L",
+"stage": "Final",
+"them": 2,
+"time": "19:00",
+"us": 1,
+"venue": "NRG Stadium",
+"where": "H",
+"year": 2025
+},
+"760417": {
+"city": "Inglewood, California",
+"comp": "WC",
+"date": "2026-06-12",
+"dow": "Fri",
+"id": "760417",
+"opp": "210",
+"opp_name": "Paraguay",
+"result": "W",
+"stage": "Group Stage",
+"them": 1,
+"time": "21:00",
+"us": 4,
+"venue": "SoFi Stadium",
+"where": "H",
+"year": 2026
+},
+"760442": {
+"city": "Seattle, Washington",
+"comp": "WC",
+"date": "2026-06-19",
+"dow": "Fri",
+"id": "760442",
+"opp": "628",
+"opp_name": "Australia",
+"result": "W",
+"stage": "Group Stage",
+"them": 0,
+"time": "15:00",
+"us": 2,
+"venue": "Lumen Field",
+"where": "H",
+"year": 2026
+},
+"760470": {
+"city": "Inglewood, California",
+"comp": "WC",
+"date": "2026-06-25",
+"dow": "Thu",
+"id": "760470",
+"opp": "465",
+"opp_name": "Türkiye",
+"result": "L",
+"stage": "Group Stage",
+"them": 3,
+"time": "22:00",
+"us": 2,
+"venue": "SoFi Stadium",
+"where": "A",
+"year": 2026
+},
+"760494": {
+"city": "Santa Clara, California",
+"comp": "WC",
+"date": "2026-07-01",
+"dow": "Wed",
+"id": "760494",
+"opp": "452",
+"opp_name": "Bosnia-Herzegovina",
+"result": "W",
+"stage": "Round of 32",
+"them": 0,
+"time": "20:00",
+"us": 2,
+"venue": "Levi's Stadium",
+"where": "H",
+"year": 2026
+},
+"760507": {
+"city": "Seattle, Washington",
+"comp": "WC",
+"date": "2026-07-06",
+"dow": "Mon",
+"id": "760507",
+"opp": "459",
+"opp_name": "Belgium",
+"result": "L",
+"stage": "Round of 16",
+"them": 4,
+"time": "20:00",
+"us": 1,
+"venue": "Lumen Field",
+"where": "H",
+"year": 2026
+}
+}
+}

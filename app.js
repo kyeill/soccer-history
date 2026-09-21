@@ -73,6 +73,18 @@ function upcoming(m) { return !!m.upcoming || !!m.status; }
 function won(m) { return m.result === "W"; }
 function lost(m) { return m.result === "L"; }
 function isFinal(m) { return m.stage === "Final" || m.comp === "USC"; }
+/* KNOCKOUTS (his call 2026-09-21): every European knockout round -- not the
+   group stage or league phase, and not qualifying -- plus the semi-finals and
+   finals of the FA Cup and the League Cup, and the Super Cup */
+function isKnockout(m) {
+  if (m.comp === "USC") return true;
+  if (m.comp === "FAC" || m.comp === "LC") return /^(Semifinals|Final)/.test(m.stage || "");
+  if (m.comp === "UCL" || m.comp === "UEL" || m.comp === "UECL") {
+    return !m.qual && ["Group Stage", "League Phase", "Playoff Round", ""]
+      .indexOf(m.stage || "") < 0;
+  }
+  return false;
+}
 // the neutral-ground cards -- finals and FA Cup semi-finals -- lift the round
 // and the PLACE into the header, like a Michigan tournament card
 function bigStage(m) { return m.where === "N"; }
@@ -110,8 +122,41 @@ function cardHead(m) {
   return { head: lab + " | " + tv, date: null, down: m.dow.toUpperCase() + " " + fmtDate(m.date) };
 }
 
+/* ---------- colour words from his Sheet --------------------------------- */
+const COLOUR_WORDS = { white: "#ffffff", black: "#111114", navy: "#132257",
+  blue: "#1d4ed8", "light blue": "#6cabdd", "sky blue": "#6cabdd", red: "#c8102e",
+  yellow: "#fdd20e", gold: "#c28c19", grey: "#8a8a92", gray: "#8a8a92",
+  green: "#1d7a3a", orange: "#f68e1f", purple: "#5b2a86", pink: "#fd1272",
+  lilac: "#b7a4d6", teal: "#0f8b8d", maroon: "#7a1f2b", silver: "#c0c0c0",
+  claret: "#7a263a", cream: "#f3ead3" };
+function colourOf(v) {
+  const s = String(v || "").trim();
+  if (/^#?[0-9a-f]{6}$/i.test(s)) return "#" + s.replace("#", "");
+  return COLOUR_WORDS[s.toLowerCase()] || null;
+}
+function lum(hex) {
+  const v = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
+    .map(x => x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4));
+  return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2];
+}
+// white or near-black, whichever reads on the box
+function inkFor(bg) { return lum(bg) > 0.4 ? "#111114" : "#ffffff"; }
+function paintBox(bg, fg) {
+  return ' style="background:' + bg + ";color:" + (fg || inkFor(bg)) + '"';
+}
+function bright(hex, floor) {
+  // an opponent's colour made bright enough to read as a border
+  let h = hex.replace("#", "");
+  if (h.length !== 6) return "#8a8a92";
+  let p = [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16));
+  const top = Math.max.apply(null, p);
+  if (top < floor) p = p.map(c => Math.min(255, Math.round(c + (floor - top))));
+  return "#" + p.map(c => c.toString(16).padStart(2, "0")).join("");
+}
+
 function card(m) {
   const opp = TEAMS[m.opp] || { card: m.opp };
+  const mx = m.mx || {};
   const up = upcoming(m);
   const L = lost(m), W = won(m);
   const h = cardHead(m);
@@ -120,17 +165,29 @@ function card(m) {
   // its name on a knockout card, as a conference-tournament seed does
   const seed = m.opp_lp ? '<span class="rkin">' + m.opp_lp + "</span> " : "";
   const fin = m.fin || "";
-  // the score box: Spurs' score first. A loss is italic; extra time or a
-  // shootout underlines it
+  let name = opp.card || opp.name;
+  // his Case column: "UPPER" puts the opponent in capitals
+  if (String(mx.case || "").trim().toUpperCase() === "UPPER") name = name.toUpperCase();
+  // TWO SCORE BOXES (his call 2026-09-21): Spurs', then the opponent's, each
+  // coloured from his Sheet. Until he gives colours, Spurs is navy and white
+  // and the opponent wears its own colour. A loss is italic; extra time or a
+  // shootout underlines both.
   const u = !up && (m.aet || m.pens);
-  const box = '<span class="sc mbox' + (u ? " u" : "") + (L ? " l" : "") +
-    '" style="background:#132257;color:#ffffff">' +
-    (up ? "" : m.us + "-" + m.them) + "</span>";
+  const boxCls = "sc mbox" + (u ? " u" : "") + (L ? " l" : "");
+  const usBg = colourOf(mx.team_bg) || "#132257";
+  const themBg = colourOf(mx.opp_bg) || "#" + teamColour(m.opp).replace("#", "");
+  const boxes = '<span class="boxes"><span class="' + boxCls + '"' +
+    paintBox(usBg, colourOf(mx.team_font) || (mx.team_bg ? null : "#ffffff")) + ">" +
+    (up ? "" : m.us) + '</span><span class="' + boxCls + '"' +
+    paintBox(themBg, colourOf(mx.opp_font)) + ">" + (up ? "" : m.them) + "</span></span>";
   const oppLine = '<div class="tl' + (W ? " won" : "") + '"><span class="mstripe">' +
-    '<img class="crest" loading="lazy" src="' + esc(opp.logo || "") + '" alt="">' +
-    '<span class="nm mnm"><span class="mn">' + esc(where) + seed + esc(opp.card || opp.name) +
+    // a club ESPN keeps no crest for (Dnipro, dissolved) leaves a blank, not
+    // a broken-image icon
+    '<img class="crest" loading="lazy" src="' + esc(opp.logo || "") +
+      '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
+    '<span class="nm mnm"><span class="mn">' + esc(where) + seed + esc(name) +
     "</span>" + (fin ? '<span class="mfin">' + esc(fin) + "</span>" : "") +
-    "</span></span>" + box + "</div>";
+    "</span></span>" + boxes + "</div>";
 
   // THE THIRD ROW: plain grey details, pipes between
   const parts = [];
@@ -147,19 +204,33 @@ function card(m) {
   if (m.late_win) parts.push("Late Winner " + m.late_win);
   if (m.late_eq) parts.push("Late Equalizer " + m.late_eq);
   if (m.status) parts.push("Postponed");
+  // his Notes, and a Footer phrase that is its own text ("Pink Out")
+  if (mx.note) parts.push(mx.note);
+  const footer = String(mx.footer || "").trim();
+  if (footer.indexOf(" ") > -1 && parts.indexOf(footer) < 0) parts.push(footer);
   // the date drops to the third row when there is nothing else to say
   const dateDown = !bigStage(m) && !parts.length;
   if (dateDown) parts.push((h.date || "").replace(/<[^>]+>/g, ""));
   const head = h.head + (!dateDown && h.date ? ' | <span class="hdate">' + h.date + "</span>" : "");
+  // his Footer column: a colour word paints the whole third row
+  const footCol = colourOf(footer.split(/\s+/)[0]);
 
   // a FINAL wears a frame: grey, dashed on a loss, the competition's colour
-  // when won -- as the Michigan bowls and title games do
-  let cls = " mich" + (L ? " dimmed" : "");
+  // when won -- as the Michigan bowls and title games do. HIS BORDER COLUMN
+  // wins over it: a colour word, a hex, or "Opponent" for their colour.
+  let cls = " mich" + (L ? " dimmed" : "") + (mx.shade ? " mwash" : "");
   let ring = "";
-  if (bigStage(m) && !up) {
-    const c = W && isFinal(m) ? (COMP_COLOUR[m.comp] || "#e8e8e8") : "#8a8a92";
-    cls += " celebrate" + (L ? " predash" : "");
-    ring = ";--celeb:" + c + ";--celebring:" + c + "44";
+  let bc = null;
+  const bword = String(mx.border || "").trim().toLowerCase();
+  if (bword === "opponent") bc = bright("#" + teamColour(m.opp), 130);
+  else if (bword) bc = colourOf(bword) || COMP_COLOUR[bword.toUpperCase()] || null;
+  if (!bc && bigStage(m) && !up) {
+    bc = W && isFinal(m) ? (COMP_COLOUR[m.comp] || "#e8e8e8") : "#8a8a92";
+    if (L) cls += " predash";
+  }
+  if (bc) {
+    cls += " celebrate";
+    ring = ";--celeb:" + bc + ";--celebring:" + bc + "44";
   }
   const headCol = COMP_COLOUR[m.comp];
   return '<div class="row' + cls + '" data-id="' + m.id + '" style="--winwash:' +
@@ -167,20 +238,21 @@ function card(m) {
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + "><span>" +
     head + "</span></div>" +
     '<div class="teams">' + oppLine + "</div>" +
-    '<div class="tags mdets"><span class="mdl">' +
+    '<div class="tags mdets">' + (mx.attended ? '<span class="mstar">*</span>' : "") +
+    '<span class="mdl"' + (footCol ? ' style="color:' + footCol + '"' : "") + ">" +
     parts.map(p => '<span class="mdet">' + esc(p) + "</span>").join('<span class="msep">|</span>') +
     "</span></div></div>";
 }
 
 /* ---------- filters ------------------------------------------------------ */
 function defaults() {
-  return { season: CURRENT, comp: null, team: null, hl: null, finals: false };
+  return { season: CURRENT, comp: null, team: null, hl: null, ko: false };
 }
 function passes(m, skip) {
   if (skip !== "season" && FILT.season != null && m.season !== FILT.season) return false;
   if (skip !== "comp" && FILT.comp && m.comp !== FILT.comp) return false;
   if (skip !== "team" && FILT.team && m.opp !== FILT.team) return false;
-  if (FILT.finals && !isFinal(m)) return false;
+  if (FILT.ko && !isKnockout(m)) return false;
   if (skip !== "hl" && FILT.hl) {
     if (FILT.hl === "late_win" && !m.late_win) return false;
     if (FILT.hl === "late_eq" && !m.late_eq) return false;
@@ -234,8 +306,8 @@ function filterBar() {
     [].concat.apply([], groups.map((g, i) => (i ? [BAR] : []).concat(g))), FILT.team));
   const HL = [["Late Winners", "late_win"], ["Late Equalizers", "late_eq"]];
   h += group("Highlights", select("hl", "All Matches", HL, FILT.hl));
-  h += group("", '<button class="f" data-act="finals" aria-pressed="' + !!FILT.finals +
-    '">Finals</button><button class="f" data-act="sort">' +
+  h += group("", '<button class="f" data-act="ko" aria-pressed="' + !!FILT.ko +
+    '">Knockouts</button><button class="f" data-act="sort">' +
     (SORT === "asc" ? "Oldest First" : "Newest First") + "</button>");
   return h;
 }
@@ -284,15 +356,15 @@ async function init() {
     const b = e.target.closest("button.f[data-act]");
     if (!b) return;
     if (b.dataset.act === "sort") SORT = SORT === "asc" ? "desc" : "asc";
-    else if (b.dataset.act === "finals") {
-      FILT.finals = !FILT.finals;
-      // every final ever, not this season's none
-      if (FILT.finals) FILT.season = null;
+    else if (b.dataset.act === "ko") {
+      FILT.ko = !FILT.ko;
+      // every knockout ever, not just this season's
+      if (FILT.ko) FILT.season = null;
     }
     draw();
   });
   document.getElementById("clearbtn").addEventListener("click", () => {
-    FILT = { season: null, comp: null, team: null, hl: null, finals: false };
+    FILT = { season: null, comp: null, team: null, hl: null, ko: false };
     draw();
     window.scrollTo({ top: 0 });
   });

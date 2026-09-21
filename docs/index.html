@@ -101,6 +101,18 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
   white-space:nowrap;min-width:calc(5.4ch + 16px)}
 .sc.mbox.u{text-decoration:underline;text-underline-offset:3px}
 .sc.mbox.l{font-style:italic}
+/* two boxes, Spurs' then the opponent's (his call 2026-09-21), each sized for
+   two digits so a 10-goal night does not jump the card */
+.boxes{display:inline-flex;gap:4px}
+.boxes .sc.mbox{min-width:calc(2ch + 16px);padding:0 6px}
+/* his Shade column fills the whole card in the opponent's colour */
+.row.mwash{background:var(--winwash)}
+.row.mwash .tl.won .mstripe{background:transparent}
+/* HE WAS THERE: a star under the crest, grey on a loss */
+.tags.mdets{position:relative}
+.mstar{position:absolute;left:0;top:50%;transform:translateY(-50%);width:22px;
+  text-align:center;color:#f2f2f0;font-weight:700;font-size:16px;line-height:1}
+.row.dimmed .mstar{color:#8a8a92}
 .tags.mdets{grid-area:tags;display:flex;align-items:center;font-size:13px;
   letter-spacing:.05em;color:var(--muted);margin-top:5px}
 .tags.mdets:empty{display:none}
@@ -129,6 +141,6 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 <div id="list"></div>
 </div>
 
-<script src="app.js?v=20260921-130614"></script>
+<script src="app.js?v=20260921-132238"></script>
 </body>
 </html>

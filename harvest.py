@@ -531,6 +531,78 @@ def replays(matches):
             m["stage"] += " Replay"
 
 
+# ---------------------------------------------------------------- his Sheet
+SHEET_ID = "1sDNdbA0dlk7BBIoURKhwau4VJM7BXYxdUMo9aPdpfjo"
+# his columns, in the order the CSVs give them. Read by NAME, never position.
+SHEET_COLS = ["Year", "Date", "Opponent", "Comp", "Kit", "Case", "Attended", "Shade",
+              "Border", "Footer", "Notes", "Team BG", "Team Font", "Opp BG", "Opp Font"]
+
+
+def sheet_date(s):
+    """His Date column, M/D/YY."""
+    try:
+        mo, d, y = (s or "").strip().split("/")
+        y = "20" + y if len(y) == 2 else y
+        return "%s-%02d-%02d" % (y, int(mo), int(d))
+    except (ValueError, AttributeError):
+        return None
+
+
+_FIRST_TAB = []
+
+
+def load_sheet(tab):
+    """{date: his row} from one tab, via the gviz CSV export. A tab that does
+    not exist is not an error to gviz -- it silently answers with the FIRST
+    tab -- so a body identical to a surely-missing tab's is skipped."""
+    import csv, io
+    url = ("https://docs.google.com/spreadsheets/d/%s/gviz/tq?tqx=out:csv&headers=1&sheet=%s"
+           % (SHEET_ID, "%s"))
+    try:
+        if not _FIRST_TAB:
+            _FIRST_TAB.append(requests.get(url % "zz-no-such-tab-zz", timeout=60)
+                              .content.decode("utf-8-sig"))
+        r = requests.get(url % requests.utils.quote(tab), timeout=60)
+        r.raise_for_status()
+        body = r.content.decode("utf-8-sig")
+    except requests.RequestException as e:
+        print("  WARN: could not read the %s tab (%s)" % (tab, e), file=sys.stderr)
+        return {}
+    if body == _FIRST_TAB[0]:
+        print("  WARN: no %s tab in the Sheet yet -- skipped" % tab, file=sys.stderr)
+        return {}
+    rows = list(csv.reader(io.StringIO(body)))
+    if not rows:
+        return {}
+    head = rows[0]
+    # only the block before the first BLANK header is his
+    stop = next((i for i, x in enumerate(head) if not (x or "").strip()), len(head))
+    col = {}
+    for i, x in enumerate(head[:stop]):
+        k = (x or "").strip().lower()
+        if k and k not in col:
+            col[k] = i
+    if "date" not in col:
+        print("  WARN: the %s tab has no Date column" % tab, file=sys.stderr)
+        return {}
+    out = {}
+    for raw in rows[1:]:
+        cell = lambda k: (raw[col[k]] or "").strip() if k in col and col[k] < len(raw) else ""
+        d = sheet_date(cell("date"))
+        if not d:
+            continue
+        mx = {"kit": cell("kit"), "case": cell("case"), "attended": bool(cell("attended")),
+              "shade": bool(cell("shade")), "border": cell("border"), "footer": cell("footer"),
+              "note": cell("notes") or cell("note"),
+              "team_bg": cell("team bg"), "team_font": cell("team font"),
+              "opp_bg": cell("opp bg"), "opp_font": cell("opp font")}
+        mx = {k: v for k, v in mx.items() if v}
+        if mx:
+            out[d] = mx
+    print("  sheet: %s tab, %d rows marked" % (tab, len(out)))
+    return out
+
+
 def main():
     this = current_season()
     teams = load_data("teams.json", {})
@@ -570,6 +642,11 @@ def main():
     replays(matches)
     two_legged(matches)
     matches.sort(key=lambda m: (m["date"], m["time"]))
+    # his Sheet, matched on the date (Spurs never play twice in a day)
+    marks = load_sheet("Tottenham")
+    for m in matches:
+        if m["date"] in marks:
+            m["mx"] = marks[m["date"]]
 
     bad = [m["id"] for m in matches if m.get("goals_bad")]
     if bad:

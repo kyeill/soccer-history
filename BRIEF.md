@@ -195,6 +195,14 @@ Traps already paid for (see memory `reference_espn_api_sept_2026.md`):
   (each home/away pairing happens once a season). Club names need a mapping
   ("Arsenal FC" vs ESPN "Arsenal").
 
+## Built so far (2026-09-21)
+
+Tottenham view, 737 matches 2013-14 to the current fixtures: Year /
+Competition / Team / Highlights (Late Winners, Late Equalizers) filters, a
+Finals button, Oldest/Newest. Qualifiers and the 2025 Super Cup are included
+(pending Kyle's OK). Not yet: the Sheet, rivals, TV windows, USMNT, Atlanta,
+the daily build.
+
 ## Suggested order
 
 1. Confirm the OPEN items above with Kyle.
