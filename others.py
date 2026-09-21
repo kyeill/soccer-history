@@ -63,6 +63,9 @@ def record(team, eid, s, comps, stage_raw=None):
     m = {"id": eid, "comp": code, "stage": stage, "year": et.year,
          "date": et.strftime("%Y-%m-%d"), "time": et.strftime("%H:%M"), "dow": et.strftime("%a"),
          "where": "N" if c.get("neutralSite") else ("H" if us.get("homeAway") == "home" else "A"),
+         # the side ESPN lists as home, kept even on neutral ground: the score
+         # boxes always read home then away (his call 2026-09-21)
+         "home": us.get("homeAway") == "home",
          "venue": venue.get("fullName") or "",
          "city": (venue.get("address") or {}).get("city") or "",
          "opp": str(them["team"]["id"]), "opp_name": them["team"].get("displayName") or ""}

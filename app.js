@@ -221,14 +221,28 @@ function card(m) {
   // coloured from his Sheet. Until he gives colours, Spurs is navy and white
   // and the opponent wears its own colour. A loss is italic; extra time or a
   // shootout underlines both.
-  const u = !up && (m.aet || m.pens);
-  const boxCls = "sc mbox" + (u ? " u" : "") + (L ? " l" : "");
+  // THE BOXES READ HOME THEN AWAY (his call 2026-09-21) -- on neutral ground
+  // too, in the order ESPN lists the sides.
+  // ITALICS on both: any loss, and a Premier League draw with a club outside
+  // the Top Six.
+  // An UNDERLINE marks only the WINNER'S box when it took extra time or
+  // penalties.
+  const italic = !up && (L || (m.comp === "PL" && m.result === "D" &&
+    TOP_SIX.indexOf(m.opp) < 0));
+  const lineUs = !up && (m.aet || m.pens) && W;
+  const lineThem = !up && (m.aet || m.pens) && L;
+  const boxCls = line => "sc mbox" + (line ? " u" : "") + (italic ? " l" : "");
   const usBg = colourOf(mx.team_bg) || VIEWS[m.team].box;
   const themBg = colourOf(mx.opp_bg) || "#" + teamColour(m.opp).replace("#", "");
-  const boxes = '<span class="boxes"><span class="' + boxCls + '"' +
+  const usBox = '<span class="' + boxCls(lineUs) + '"' +
     paintBox(usBg, colourOf(mx.team_font) || (mx.team_bg ? null : "#ffffff")) + ">" +
-    (up ? "" : m.us) + '</span><span class="' + boxCls + '"' +
-    paintBox(themBg, colourOf(mx.opp_font)) + ">" + (up ? "" : m.them) + "</span></span>";
+    (up ? "" : m.us) + "</span>";
+  const themBox = '<span class="' + boxCls(lineThem) + '"' +
+    paintBox(themBg, colourOf(mx.opp_font)) + ">" + (up ? "" : m.them) + "</span>";
+  // a record from before the field existed falls back to the card's own side
+  const usHome = m.home != null ? m.home : m.where !== "A";
+  const boxes = '<span class="boxes">' + (usHome ? usBox + themBox : themBox + usBox) +
+    "</span>";
   const oppLine = '<div class="tl' + (W ? " won" : "") + '"><span class="mstripe">' +
     // a club ESPN keeps no crest for (Dnipro, dissolved) leaves a blank, not
     // a broken-image icon

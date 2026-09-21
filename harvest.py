@@ -439,6 +439,9 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
         "date": et.strftime("%Y-%m-%d"), "time": et.strftime("%H:%M") if e.get("timeValid", True) else "TBD",
         "dow": et.strftime("%a"), "uk": uk.strftime("%H:%M"), "ukdow": uk.strftime("%a"),
         "where": "N" if neutral else ("H" if us.get("homeAway") == "home" else "A"),
+        # the side ESPN lists as home, kept even on neutral ground: the score
+        # boxes always read home then away (his call 2026-09-21)
+        "home": us.get("homeAway") == "home",
         "venue": (c.get("venue") or {}).get("fullName") or "",
         "opp": tid,
         "nets": [n.get("media", {}).get("shortName") for n in c.get("broadcasts") or []
