@@ -1,14 +1,16 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20260921-132238. Modelled on games-history's Michigan view (michCard): one card
+   20260921-134036. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20260921-132238";
+const BUILD = "20260921-134036";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
 const TOP_SIX = ["359", "363", "364", "360", "382"];
-let MATCHES = [], TEAMS = {}, CURRENT = null;
+let ALL = [], MATCHES = [], TEAMS = {}, CURRENT = null;
 let FILT = {};
 let SORT = "asc";
+// the tab along the top: one view per team of his (2026-09-21)
+let VIEW = "spurs";
 
 const COMP = {
   PL: { name: "Premier League", short: "PL" },
@@ -18,8 +20,32 @@ const COMP = {
   UEL: { name: "Europa League", short: "UEL" },
   UECL: { name: "Conference League", short: "UECL" },
   USC: { name: "Super Cup", short: "Super Cup" },
+  // USMNT
+  WC: { name: "World Cup", short: "World Cup" },
+  WCQ: { name: "World Cup Qualifying", short: "WCQ" },
+  GC: { name: "Gold Cup", short: "Gold Cup" },
+  NL: { name: "Nations League", short: "Nations League" },
+  CA: { name: "Copa América", short: "Copa América" },
+  CCUP: { name: "CONCACAF Cup", short: "CONCACAF Cup" },
+  CONF: { name: "Confederations Cup", short: "Confed Cup" },
+  // Atlanta United
+  MLS: { name: "MLS Cup Playoffs", short: "MLS Playoffs" },
+  CCL: { name: "CONCACAF Champions League", short: "CCL" },
+  LGC: { name: "Leagues Cup", short: "Leagues Cup" },
+  USOC: { name: "U.S. Open Cup", short: "Open Cup" },
+  CAMP: { name: "Campeones Cup", short: "Campeones Cup" },
 };
-const COMP_ORDER = ["PL", "FAC", "LC", "UCL", "UEL", "UECL", "USC"];
+/* EACH VIEW: its competitions in his order, its own score box until the Sheet
+   colours it, and the clubs that lead its Team filter */
+const VIEWS = {
+  spurs: { team: SPURS, comps: ["PL", "FAC", "LC", "UCL", "UEL", "UECL", "USC"],
+           box: "#132257", lead: TOP_SIX },
+  // Mexico, then Canada
+  usmnt: { team: "660", comps: ["WC", "WCQ", "GC", "NL", "CA", "CCUP", "CONF"],
+           box: "#213065", lead: ["203", "206"] },
+  atlanta: { team: "18418", comps: ["MLS", "CCL", "LGC", "USOC", "CAMP"],
+             box: "#9d2235", lead: [] },
+};
 // a European header wears its competition's colour, lightened to read on a
 // card; the English cups stay plain
 const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#5b9bea" };
@@ -72,11 +98,18 @@ function primaryNet(nets) {
 function upcoming(m) { return !!m.upcoming || !!m.status; }
 function won(m) { return m.result === "W"; }
 function lost(m) { return m.result === "L"; }
-function isFinal(m) { return m.stage === "Final" || m.comp === "USC"; }
+function isFinal(m) {
+  return m.stage === "Final" || m.stage === "MLS Cup" || m.comp === "USC" || m.comp === "CAMP";
+}
 /* KNOCKOUTS (his call 2026-09-21): every European knockout round -- not the
    group stage or league phase, and not qualifying -- plus the semi-finals and
    finals of the FA Cup and the League Cup, and the Super Cup */
 function isKnockout(m) {
+  // USMNT and Atlanta: every round that is not a group, a league phase or
+  // qualifying
+  if (m.team !== "spurs") {
+    return m.comp !== "WCQ" && !/^(Group|League)/.test(m.stage || "");
+  }
   if (m.comp === "USC") return true;
   if (m.comp === "FAC" || m.comp === "LC") return /^(Semifinals|Final)/.test(m.stage || "");
   if (m.comp === "UCL" || m.comp === "UEL" || m.comp === "UECL") {
@@ -87,13 +120,22 @@ function isKnockout(m) {
 }
 // the neutral-ground cards -- finals and FA Cup semi-finals -- lift the round
 // and the PLACE into the header, like a Michigan tournament card
-function bigStage(m) { return m.where === "N"; }
+function bigStage(m) {
+  // ...for USMNT and Atlanta only a FINAL: every tournament match of the
+  // national team is neutral, and a frame on all of them would say nothing
+  return m.team === "spurs" ? m.where === "N" : m.where === "N" && isFinal(m);
+}
+// "Inglewood, California" -> "Inglewood"
+function cityOf(m) { return (m.place || "").split(",")[0]; }
 
 /* THE HEADER. The Premier League reads by MATCHWEEK; a cup match names its
    competition and round. A match off the weekend names its day. */
 function stageText(m) {
   const c = COMP[m.comp];
   if (m.comp === "USC") return { full: "UEFA Super Cup", short: "Super Cup" };
+  // a one-match event is its own name: MLS Cup, the Campeones Cup
+  if (m.stage === "MLS Cup") return { full: "MLS Cup", short: "MLS Cup" };
+  if (m.comp === "CAMP" || m.comp === "CCUP") return { full: c.name, short: c.short };
   let st = m.stage || "";
   if (m.comp === "UCL" || m.comp === "UEL" || m.comp === "UECL") {
     const full = c.name + " " + st, short = c.short + " " + st;
@@ -102,7 +144,8 @@ function stageText(m) {
   return { full: c.name + " " + st, short: c.short + " " + st };
 }
 function cardHead(m) {
-  const net = primaryNet(m.nets);
+  // USMNT and Atlanta carry no TV -- day, date and time only (his call)
+  const net = m.team === "spurs" ? primaryNet(m.nets) : "";
   const tv = (net ? esc(net) + " " : "") + fmtTime(m.time);
   if (m.comp === "PL") {
     const wk = m.mw != null ? "Matchweek " + m.mw : "Premier League";
@@ -115,10 +158,16 @@ function cardHead(m) {
     : esc(s.full);
   if (bigStage(m)) {
     // the year leads a final, as it does a Michigan tournament card
-    return { head: m.date.slice(0, 4) + " " + lab + (m.place ? " | " + esc(m.place) : ""),
+    return { head: m.date.slice(0, 4) + " " + lab + (m.place ? " | " + esc(cityOf(m)) : ""),
              date: null, tv: tv };
   }
   // a cup round is long enough on its own: the day and date lead the third row
+  if (m.team !== "spurs") {
+    // USMNT and Atlanta: the round alone up top; day, date, time and -- on
+    // neutral ground -- the city below
+    return { head: lab, date: null, down: m.dow.toUpperCase() + " " + fmtDate(m.date) +
+             "|" + fmtTime(m.time) + (m.where === "N" && m.place ? "|" + cityOf(m) : "") };
+  }
   return { head: lab + " | " + tv, date: null, down: m.dow.toUpperCase() + " " + fmtDate(m.date) };
 }
 
@@ -174,7 +223,7 @@ function card(m) {
   // shootout underlines both.
   const u = !up && (m.aet || m.pens);
   const boxCls = "sc mbox" + (u ? " u" : "") + (L ? " l" : "");
-  const usBg = colourOf(mx.team_bg) || "#132257";
+  const usBg = colourOf(mx.team_bg) || VIEWS[m.team].box;
   const themBg = colourOf(mx.opp_bg) || "#" + teamColour(m.opp).replace("#", "");
   const boxes = '<span class="boxes"><span class="' + boxCls + '"' +
     paintBox(usBg, colourOf(mx.team_font) || (mx.team_bg ? null : "#ffffff")) + ">" +
@@ -195,7 +244,7 @@ function card(m) {
     parts.push(m.dow.toUpperCase() + " " + fmtDate(m.date));
     parts.push(h.tv.replace(/<[^>]+>/g, ""));
   } else if (h.down) {
-    parts.push(h.down);
+    h.down.split("|").forEach(p => parts.push(p));
   }
   if (m.awarded) parts.push("Awarded");
   if (m.pens) parts.push((W ? "Won " : "Lost ") + m.pens + " on Pens");
@@ -246,8 +295,13 @@ function card(m) {
 
 /* ---------- filters ------------------------------------------------------ */
 function defaults() {
-  return { season: CURRENT, comp: null, team: null, hl: null, ko: false };
+  // Spurs open on the current season; USMNT and Atlanta on their latest year
+  // with a match (the national team plays in only some years)
+  const years = MATCHES.map(m => m.season);
+  const open = VIEW === "spurs" ? CURRENT : (years.length ? Math.max.apply(null, years) : null);
+  return { season: open, comp: null, team: null, hl: null, ko: false };
 }
+function yearLabel(y) { return VIEW === "spurs" ? seasonLabel(y) : String(y); }
 function passes(m, skip) {
   if (skip !== "season" && FILT.season != null && m.season !== FILT.season) return false;
   if (skip !== "comp" && FILT.comp && m.comp !== FILT.comp) return false;
@@ -284,28 +338,32 @@ function filterBar() {
   const seasons = Array.from(new Set(MATCHES.filter(m => passes(m, "season"))
     .map(m => m.season))).sort((a, b) => b - a);
   let h = group("Year", select("season", "All Years",
-    seasons.map(y => [seasonLabel(y), y]), FILT.season));
+    seasons.map(y => [yearLabel(y), y]), FILT.season));
   const comps = new Set(MATCHES.filter(m => passes(m, "comp")).map(m => m.comp));
   h += group("Competition", select("comp", "All Competitions",
-    COMP_ORDER.filter(c => comps.has(c) || c === FILT.comp).map(c => [COMP[c].name, c]),
+    VIEWS[VIEW].comps.filter(c => comps.has(c) || c === FILT.comp).map(c => [COMP[c].name, c]),
     FILT.comp));
-  // TEAM: the Top Six, then the other English clubs, then everyone abroad --
-  // a club counts as English if it ever met Spurs in an English competition
+  // TEAM: Spurs list the Top Six, then the other English clubs, then everyone
+  // abroad -- a club counts as English if it ever met Spurs in an English
+  // competition. USMNT leads with Mexico and Canada; Atlanta is alphabetical.
+  const lead = VIEWS[VIEW].lead;
   const seen = new Set(MATCHES.filter(m => passes(m, "team")).map(m => m.opp));
   if (FILT.team) seen.add(FILT.team);
-  const english = new Set(MATCHES.filter(m => ["PL", "FAC", "LC"].indexOf(m.comp) > -1)
-    .map(m => m.opp));
+  const english = VIEW === "spurs"
+    ? new Set(MATCHES.filter(m => ["PL", "FAC", "LC"].indexOf(m.comp) > -1).map(m => m.opp))
+    : new Set(MATCHES.map(m => m.opp));
   const nameOf = id => (TEAMS[id] || {}).card || id;
   const alpha = ids => ids.sort((a, b) => nameOf(a).localeCompare(nameOf(b)))
     .map(id => [nameOf(id), id]);
   const ids = Array.from(seen);
-  const groups = [TOP_SIX.filter(id => seen.has(id)).map(id => [nameOf(id), id]),
-                  alpha(ids.filter(id => TOP_SIX.indexOf(id) < 0 && english.has(id))),
+  const groups = [lead.filter(id => seen.has(id)).map(id => [nameOf(id), id]),
+                  alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id))),
                   alpha(ids.filter(id => !english.has(id)))].filter(g => g.length);
   h += group("Team", select("team", "All Teams",
     [].concat.apply([], groups.map((g, i) => (i ? [BAR] : []).concat(g))), FILT.team));
   const HL = [["Late Winners", "late_win"], ["Late Equalizers", "late_eq"]];
-  h += group("Highlights", select("hl", "All Matches", HL, FILT.hl));
+  // the late goals are read for Spurs only
+  if (VIEW === "spurs") h += group("Highlights", select("hl", "All Matches", HL, FILT.hl));
   h += group("", '<button class="f" data-act="ko" aria-pressed="' + !!FILT.ko +
     '">Knockouts</button><button class="f" data-act="sort">' +
     (SORT === "asc" ? "Oldest First" : "Newest First") + "</button>");
@@ -342,9 +400,22 @@ function draw() {
 
 async function init() {
   const r = await fetch("games.json?v=" + BUILD).then(x => x.json());
-  MATCHES = r.matches; TEAMS = r.teams; CURRENT = r.current;
+  ALL = r.matches; TEAMS = r.teams; CURRENT = r.current;
+  MATCHES = ALL.filter(m => m.team === VIEW);
   FILT = defaults();
   draw();
+  document.querySelector("nav").addEventListener("click", e => {
+    const b = e.target.closest("button[data-top]");
+    if (!b || b.dataset.top === VIEW) return;
+    VIEW = b.dataset.top;
+    document.querySelectorAll("nav button").forEach(x =>
+      x.setAttribute("aria-selected", String(x === b)));
+    MATCHES = ALL.filter(m => m.team === VIEW);
+    FILT = defaults();
+    SORT = "asc";
+    draw();
+    window.scrollTo({ top: 0 });
+  });
   document.getElementById("filters").addEventListener("change", e => {
     const k = e.target.dataset && e.target.dataset.kind;
     if (!k) return;

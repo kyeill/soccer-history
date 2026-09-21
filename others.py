@@ -183,6 +183,52 @@ def atlanta(store):
     return sorted(out.values(), key=lambda m: m["date"])
 
 
+def tidy_stage(code, s):
+    """One spelling per round, as for Spurs."""
+    s = (s or "").strip()
+    s = s.replace("Quarter-finals", "Quarterfinals").replace("Semi-finals", "Semifinals")
+    if re.match(r"^(3rd-Place|Third Place)", s):
+        return "Third Place"
+    if code == "MLS":
+        # ESPN has renamed the rounds almost every year
+        if s == "Final":
+            return "MLS Cup"
+        s = re.sub(r"^Eastern Conference Playoffs - ", "", s)
+        s = re.sub(r" - Eastern Conf$", "", s)
+        return {"Knockout": "Knockout Round", "First Round": "Round One",
+                "Semifinals": "Conference Semifinals", "Finals": "Conference Final",
+                "Wild Card": "Wild Card"}.get(s, s)
+    return s
+
+
+def neutral_for_usmnt(m):
+    """HIS CALL (2026-09-21): a tournament match is NEUTRAL wherever it is
+    played -- ESPN calls a Gold Cup match in Houston a US home game. Home and
+    away stay only where they are real: World Cup qualifying, and the Nations
+    League's group games and two-legged quarterfinals."""
+    if m["comp"] == "WCQ":
+        return False
+    if m["comp"] == "NL" and (m["stage"].startswith("League") or m["stage"] == "Quarterfinals"):
+        return False
+    return True
+
+
+def tidy(team_key, ms):
+    """The records as the page reads them."""
+    out = []
+    for m in ms:
+        m = dict(m)
+        m["team"] = team_key
+        m["season"] = m["year"]
+        m["stage"] = tidy_stage(m["comp"], m["stage"])
+        if team_key == "usmnt" and neutral_for_usmnt(m):
+            m["where"] = "N"
+        if m["where"] == "N" and m.get("city"):
+            m["place"] = m["city"]
+        out.append(m)
+    return out
+
+
 def main():
     us_store = h.load_data("usmnt.json", {})
     us = usmnt(us_store)

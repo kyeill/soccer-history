@@ -33,7 +33,7 @@ def spurs():
              "UCL": "Champions League", "UEL": "Europa League", "UECL": "Conference League",
              "USC": "Super Cup"}
     rows = []
-    for m in g["matches"]:
+    for m in (m for m in g["matches"] if m.get("team", "spurs") == "spurs"):
         t = g["teams"].get(m["opp"], {})
         comp = names[m["comp"]] + (" MW %d" % m["mw"] if m.get("mw") else
                                    (" " + m["stage"] if m.get("stage") else ""))

@@ -179,7 +179,12 @@ Traps already paid for (see memory `reference_espn_api_sept_2026.md`):
   League Cup semis and finals.
 - **USMNT and Atlanta cards need no TV** -- day, date and time only.
 - **Sheet:** `1sDNdbA0dlk7BBIoURKhwau4VJM7BXYxdUMo9aPdpfjo`, tabs Tottenham,
-  USMNT, Atlanta United, columns as in harvest.SHEET_COLS.
+  USMNT, Atlanta United, columns as in harvest.SHEET_COLS. **No Kit column**
+  (he dropped it). He deleted the Michigan tabs, so Tottenham is the FIRST
+  tab -- a missing tab is detected by its dates not matching, not by body.
+- **USMNT home/away:** every tournament match is neutral; only World Cup
+  qualifying and the Nations League group games and two-legged
+  quarterfinals keep home and away.
 - **TV windows:** defined by **UK kickoff time** — Saturday 17:30, Sunday
   16:30 UK.
 - **Atlanta United:** the 2020 "MLS is Back" tournament is **out**.
@@ -205,10 +210,10 @@ Traps already paid for (see memory `reference_espn_api_sept_2026.md`):
 
 ## Built so far (2026-09-21)
 
-Tottenham view, 737 matches 2013-14 to the current fixtures: Year /
+Tabs for Tottenham (737 matches), USMNT (140) and Atlanta (56). Tottenham: Year /
 Competition / Team / Highlights (Late Winners, Late Equalizers) filters, a
 Finals button, Oldest/Newest. Qualifiers and the 2025 Super Cup are included
-(pending Kyle's OK). Not yet: the Sheet, rivals, TV windows, USMNT, Atlanta,
+(confirmed). Not yet: rivals, TV windows,
 the daily build.
 
 ## Suggested order

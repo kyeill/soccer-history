@@ -139,6 +139,8 @@ BODY = """
 </header>
 <nav>
   <button data-top="spurs" aria-selected="true">Tottenham</button>
+  <button data-top="usmnt" aria-selected="false">USMNT</button>
+  <button data-top="atlanta" aria-selected="false">Atlanta</button>
 </nav>
 <div class="filters" id="filters"></div>
 <div id="list"></div>

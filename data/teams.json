@@ -15,6 +15,14 @@
 "name": "AC Milan",
 "short": "Milan"
 },
+"1038": {
+"abbr": "JAM",
+"alt": "f9e032",
+"color": "348b42",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/jam.png",
+"name": "Jamaica",
+"short": "Jamaica"
+},
 "104": {
 "abbr": "ROMA",
 "alt": "F5F3E5",
@@ -38,6 +46,14 @@
 "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
 "name": "Atlético Madrid",
 "short": "Atlético"
+},
+"10739": {
+"abbr": "PHI",
+"alt": "e0d0a6",
+"color": "051f31",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/10739.png",
+"name": "Philadelphia Union",
+"short": "Philadelphia"
 },
 "109": {
 "abbr": "FIO",
@@ -70,6 +86,22 @@
 "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11420.png",
 "name": "RB Leipzig",
 "short": "RB Leipzig"
+},
+"11678": {
+"abbr": "CUW",
+"alt": "0537e4",
+"color": "0537e4",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+"name": "Curaçao",
+"short": "Curaçao"
+},
+"12011": {
+"abbr": "ORL",
+"alt": "f0d283",
+"color": "60269e",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/12011.png",
+"name": "Orlando City SC",
+"short": "Orlando"
 },
 "124": {
 "abbr": "DOR",
@@ -119,6 +151,14 @@
 "name": "Wolfsberger",
 "short": "Wolfsberger"
 },
+"13584": {
+"abbr": "VIN",
+"alt": "C60000",
+"color": "32ad42",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/vin.png",
+"name": "St. Vincent and the Grenadines",
+"short": "St. Vincent "
+},
 "139": {
 "abbr": "AJA",
 "alt": "4d6286",
@@ -167,6 +207,22 @@
 "name": "Stade Rennais",
 "short": "Rennes"
 },
+"17360": {
+"abbr": "INDY",
+"alt": "C60000",
+"color": "13018c",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17360.png",
+"name": "Indy Eleven",
+"short": "Indy XI"
+},
+"17362": {
+"abbr": "MIN",
+"alt": "9bcde4",
+"color": "000000",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17362.png",
+"name": "Minnesota United FC",
+"short": "Minnesota"
+},
 "174": {
 "abbr": "MON",
 "alt": "004c37",
@@ -191,6 +247,78 @@
 "name": "Marseille",
 "short": "Marseille"
 },
+"17606": {
+"abbr": "NYC",
+"alt": "000229",
+"color": "9fd2ff",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17606.png",
+"name": "New York City FC",
+"short": "NYCFC"
+},
+"17826": {
+"abbr": "CLT",
+"alt": "f9f3c7",
+"color": "076aed",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17826.png",
+"name": "Charlotte Independence",
+"short": "Charlotte"
+},
+"17833": {
+"abbr": "STL",
+"alt": "029111",
+"color": "030d7c",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17833.png",
+"name": "Saint Louis FC",
+"short": "Saint Louis "
+},
+"18159": {
+"abbr": "MIA",
+"alt": "263895",
+"color": "f05123",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/18159.png",
+"name": "Miami FC",
+"short": "Miami FC"
+},
+"182": {
+"abbr": "CHI",
+"alt": "ff0000",
+"color": "7ccdef",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/182.png",
+"name": "Chicago Fire FC",
+"short": "Chicago"
+},
+"18268": {
+"abbr": "CHA",
+"alt": "C60000",
+"color": "000000",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/18268.png",
+"name": "Chattanooga FC",
+"short": "Chattanooga"
+},
+"183": {
+"abbr": "CLB",
+"alt": "fedd00",
+"color": "000000",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/183.png",
+"name": "Columbus Crew",
+"short": "Columbus"
+},
+"18418": {
+"abbr": "ATL",
+"alt": "aa9767",
+"color": "9d2235",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/18418.png",
+"name": "Atlanta United FC",
+"short": "Atlanta"
+},
+"189": {
+"abbr": "NE",
+"alt": "ce0e2d",
+"color": "022166",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/189.png",
+"name": "New England Revolution",
+"short": "New England"
+},
 "1895": {
 "abbr": "BES",
 "alt": "1a1a1a",
@@ -199,6 +327,22 @@
 "name": "Besiktas",
 "short": "Besiktas"
 },
+"18986": {
+"abbr": "NSH",
+"alt": "1f1646",
+"color": "ece83a",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/18986.png",
+"name": "Nashville SC",
+"short": "Nashville"
+},
+"190": {
+"abbr": "RBNY",
+"alt": "ffc72c",
+"color": "ba0c2f",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/190.png",
+"name": "Red Bull New York",
+"short": "Red Bull NY"
+},
 "1929": {
 "abbr": "SLB",
 "alt": "1a1a1a",
@@ -206,6 +350,22 @@
 "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1929.png",
 "name": "Benfica",
 "short": "Benfica"
+},
+"193": {
+"abbr": "DC",
+"alt": "d61018",
+"color": "000000",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
+"name": "D.C. United",
+"short": "D.C. United"
+},
+"19409": {
+"abbr": "MEM",
+"alt": "e50067",
+"color": "002363",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/19409.png",
+"name": "Memphis 901 FC",
+"short": "Memphis"
 },
 "1963": {
 "abbr": "CSK",
@@ -223,6 +383,54 @@
 "name": "NS Mura",
 "short": "Mura"
 },
+"202": {
+"abbr": "ARG",
+"alt": "173E69",
+"color": "74acdf",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+"name": "Argentina",
+"short": "Argentina"
+},
+"20232": {
+"abbr": "MIA",
+"alt": "f7b5cd",
+"color": "231f20",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20232.png",
+"name": "Inter Miami CF",
+"short": "Miami"
+},
+"203": {
+"abbr": "MEX",
+"alt": "000000",
+"color": "006847",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+"name": "Mexico",
+"short": "Mexico"
+},
+"204": {
+"abbr": "BOL",
+"alt": "ffffff",
+"color": "00843d",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/bol.png",
+"name": "Bolivia",
+"short": "Bolivia"
+},
+"2057": {
+"abbr": "ALA",
+"alt": "000000",
+"color": "000000",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2057.png",
+"name": "Alajuelense",
+"short": "Alajuelense"
+},
+"206": {
+"abbr": "CAN",
+"alt": "ed2224",
+"color": "000000",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+"name": "Canada",
+"short": "Canada"
+},
 "20771": {
 "abbr": "MAR",
 "alt": "C60000",
@@ -230,6 +438,94 @@
 "logo": "",
 "name": "Marine",
 "short": "Marine"
+},
+"208": {
+"abbr": "COL",
+"alt": "21418c",
+"color": "fbd632",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+"name": "Colombia",
+"short": "Colombia"
+},
+"209": {
+"abbr": "ECU",
+"alt": "034ea2",
+"color": "ffdd00",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+"name": "Ecuador",
+"short": "Ecuador"
+},
+"210": {
+"abbr": "PAR",
+"alt": "21418c",
+"color": "ea2300",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+"name": "Paraguay",
+"short": "Paraguay"
+},
+"212": {
+"abbr": "URU",
+"alt": "000080",
+"color": "55B5E5",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+"name": "Uruguay",
+"short": "Uruguay"
+},
+"21300": {
+"abbr": "CLT",
+"alt": "000000",
+"color": "0085ca",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/21300.png",
+"name": "Charlotte FC",
+"short": "Charlotte"
+},
+"214": {
+"abbr": "CRC",
+"alt": "ffffff",
+"color": "ce1126",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/crc.png",
+"name": "Costa Rica",
+"short": "Costa Rica"
+},
+"215": {
+"abbr": "HON",
+"alt": "000000",
+"color": "333ebd",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/hon.png",
+"name": "Honduras",
+"short": "Honduras"
+},
+"216": {
+"abbr": "ATS",
+"alt": "e1e1e1",
+"color": "EF0107",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/216.png",
+"name": "Atlas",
+"short": "Atlas"
+},
+"218": {
+"abbr": "CAZ",
+"alt": "ffffff",
+"color": "0000ff",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/218.png",
+"name": "Cruz Azul",
+"short": "Cruz Azul"
+},
+"220": {
+"abbr": "MTY",
+"alt": "ffffff",
+"color": "001C58",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/220.png",
+"name": "Monterrey",
+"short": "Monterrey"
+},
+"225": {
+"abbr": "SAN",
+"alt": "00331b",
+"color": "15926d",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/225.png",
+"name": "Santos",
+"short": "Santos"
 },
 "2250": {
 "abbr": "SCP",
@@ -239,6 +535,22 @@
 "name": "Sporting CP",
 "short": "Sporting"
 },
+"227": {
+"abbr": "AME",
+"alt": "001C58",
+"color": "ffff91",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/227.png",
+"name": "América",
+"short": "América"
+},
+"229": {
+"abbr": "NCX",
+"alt": "000000",
+"color": "EF0107",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/229.png",
+"name": "Necaxa",
+"short": "Necaxa"
+},
 "2290": {
 "abbr": "RSB",
 "alt": "0000dd",
@@ -246,6 +558,14 @@
 "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2290.png",
 "name": "Red Star Belgrade",
 "short": "Red Star"
+},
+"233": {
+"abbr": "UNAM",
+"alt": "060040",
+"color": "ffffff",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png",
+"name": "Pumas UNAM",
+"short": "UNAM"
 },
 "2497": {
 "abbr": "APO",
@@ -262,6 +582,110 @@
 "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/257.png",
 "name": "Rangers",
 "short": "Rangers"
+},
+"2627": {
+"abbr": "TRI",
+"alt": "000000",
+"color": "c8102e",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/tri.png",
+"name": "Trinidad and Tobago",
+"short": "Trin & Tob"
+},
+"2638": {
+"abbr": "ATG",
+"alt": "000000",
+"color": "c8102e",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/atg.png",
+"name": "Antigua and Barbuda",
+"short": "Antigua Barbuda"
+},
+"2641": {
+"abbr": "BLZ",
+"alt": "171696",
+"color": "D90F19",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/blz.png",
+"name": "Belize",
+"short": "Belize"
+},
+"2647": {
+"abbr": "CUB",
+"alt": "002a8f",
+"color": "cb1515",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/cub.png",
+"name": "Cuba",
+"short": "Cuba"
+},
+"2650": {
+"abbr": "SLV",
+"alt": "000000",
+"color": "0537e4",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/slv.png",
+"name": "El Salvador",
+"short": "El Salvador"
+},
+"2651": {
+"abbr": "GRN",
+"alt": "009739",
+"color": "EF3340",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/grn.png",
+"name": "Grenada",
+"short": "Grenada"
+},
+"2652": {
+"abbr": "GUA",
+"alt": "ffffff",
+"color": "4997d0",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/gua.png",
+"name": "Guatemala",
+"short": "Guatemala"
+},
+"2653": {
+"abbr": "GUY",
+"alt": "22b14c",
+"color": "fff200",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/guy.png",
+"name": "Guyana",
+"short": "Guyana"
+},
+"2654": {
+"abbr": "HAI",
+"alt": "FFFFFF",
+"color": "0033a0",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+"name": "Haiti",
+"short": "Haiti"
+},
+"2658": {
+"abbr": "NCA",
+"alt": "000000",
+"color": "333ebd",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/nca.png",
+"name": "Nicaragua",
+"short": "Nicaragua"
+},
+"2659": {
+"abbr": "PAN",
+"alt": "005293",
+"color": "d21034",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+"name": "Panama",
+"short": "Panama"
+},
+"2662": {
+"abbr": "SKN",
+"alt": "000000",
+"color": "228B22",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/skn.png",
+"name": "St. Kitts and Nevis",
+"short": "St Kitts & Nevis"
+},
+"2728": {
+"abbr": "MTQ",
+"alt": "000000",
+"color": "0537e4",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/marq.png",
+"name": "Martinique",
+"short": "Martinique"
 },
 "278": {
 "abbr": "MOR",
@@ -703,6 +1127,14 @@
 "name": "Olympiacos",
 "short": "Olympiacos"
 },
+"4398": {
+"abbr": "QAT",
+"alt": "FFFFFF",
+"color": "691a40",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+"name": "Qatar",
+"short": "Qatar"
+},
 "441": {
 "abbr": "AND",
 "alt": "fafafc",
@@ -718,6 +1150,86 @@
 "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4411.png",
 "name": "LASK Linz",
 "short": "LASK Linz"
+},
+"4469": {
+"abbr": "GHA",
+"alt": "000000",
+"color": "fbd632",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+"name": "Ghana",
+"short": "Ghana"
+},
+"448": {
+"abbr": "ENG",
+"alt": "EA1F29",
+"color": "FFFFFF",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+"name": "England",
+"short": "England"
+},
+"449": {
+"abbr": "NED",
+"alt": "fb5d00",
+"color": "fb5d00",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+"name": "Netherlands",
+"short": "Netherlands"
+},
+"452": {
+"abbr": "BIH",
+"alt": "ffffff",
+"color": "112855",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+"name": "Bosnia-Herzegovina",
+"short": "Bosnia-Herz"
+},
+"459": {
+"abbr": "BEL",
+"alt": "6ECFF6",
+"color": "E30613",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+"name": "Belgium",
+"short": "Belgium"
+},
+"465": {
+"abbr": "TUR",
+"alt": "ef3340",
+"color": "ffffff",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+"name": "Türkiye",
+"short": "Türkiye"
+},
+"469": {
+"abbr": "IRN",
+"alt": "da0000",
+"color": "FFFFFF",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+"name": "Iran",
+"short": "Iran"
+},
+"472": {
+"abbr": "SVN",
+"alt": "0c2fff",
+"color": "ffffff",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/svn.png",
+"name": "Slovenia",
+"short": "Slovenia"
+},
+"481": {
+"abbr": "GER",
+"alt": "00CED1",
+"color": "FFFFFF",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+"name": "Germany",
+"short": "Germany"
+},
+"482": {
+"abbr": "POR",
+"alt": "0D6938",
+"color": "da291c",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+"name": "Portugal",
+"short": "Portugal"
 },
 "494": {
 "abbr": "SLP",
@@ -758,6 +1270,14 @@
 "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/541.png",
 "name": "Partizan Belgrade",
 "short": "FK Partizan"
+},
+"578": {
+"abbr": "WAL",
+"alt": "174A3F",
+"color": "E70000",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/wal.png",
+"name": "Wales",
+"short": "Wales"
 },
 "593": {
 "abbr": "ANZ",
@@ -807,6 +1327,22 @@
 "name": "Ferencvaros",
 "short": "Ferencvaros"
 },
+"624": {
+"abbr": "ALG",
+"alt": "FFFFFF",
+"color": "4F9A44",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+"name": "Algeria",
+"short": "Algeria"
+},
+"628": {
+"abbr": "AUS",
+"alt": "FFCD00",
+"color": "FFCD00",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+"name": "Australia",
+"short": "Australia"
+},
 "635": {
 "abbr": "NEW",
 "alt": "cdcdcd",
@@ -822,6 +1358,46 @@
 "logo": "",
 "name": "Tamworth",
 "short": "Tamworth"
+},
+"655": {
+"abbr": "KSA",
+"alt": "125B34",
+"color": "FFFFFF",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+"name": "Saudi Arabia",
+"short": "Saudi Arabia"
+},
+"660": {
+"abbr": "USA",
+"alt": "d42339",
+"color": "213065",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+"name": "United States",
+"short": "USA"
+},
+"7242": {
+"abbr": "MOT",
+"alt": "000000",
+"color": "000000",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7242.png",
+"name": "FC Motagua",
+"short": "Motagua"
+},
+"7318": {
+"abbr": "TOR",
+"alt": "a2a9ad",
+"color": "aa182c",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7318.png",
+"name": "Toronto FC",
+"short": "Toronto"
+},
+"7657": {
+"abbr": "GDL",
+"alt": "fff200",
+"color": "509e2f",
+"logo": "https://a.espncdn.com/i/teamlogos/countries/500/gdl.png",
+"name": "Guadeloupe",
+"short": "Guadeloupe"
 },
 "7911": {
 "abbr": "TSG",
@@ -871,6 +1447,14 @@
 "name": "Real Madrid",
 "short": "Real Madrid"
 },
+"862": {
+"abbr": "HER",
+"alt": "000000",
+"color": "000000",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/862.png",
+"name": "Herediano",
+"short": "Herediano"
+},
 "909": {
 "abbr": "KBH",
 "alt": "1a1a1a",
@@ -878,5 +1462,29 @@
 "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/909.png",
 "name": "F.C. København",
 "short": "København"
+},
+"9720": {
+"abbr": "MTL",
+"alt": "c1c5c8",
+"color": "003da6",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9720.png",
+"name": "CF Montréal",
+"short": "CF Montréal"
+},
+"9723": {
+"abbr": "POR",
+"alt": "c99700",
+"color": "2c5234",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9723.png",
+"name": "Portland Timbers",
+"short": "Portland"
+},
+"9729": {
+"abbr": "CHS",
+"alt": "e9ed07",
+"color": "000000",
+"logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9729.png",
+"name": "Charleston Battery",
+"short": "Charleston"
 }
 }

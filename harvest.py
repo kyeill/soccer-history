@@ -534,7 +534,7 @@ def replays(matches):
 # ---------------------------------------------------------------- his Sheet
 SHEET_ID = "1sDNdbA0dlk7BBIoURKhwau4VJM7BXYxdUMo9aPdpfjo"
 # his columns, in the order the CSVs give them. Read by NAME, never position.
-SHEET_COLS = ["Year", "Date", "Opponent", "Comp", "Kit", "Case", "Attended", "Shade",
+SHEET_COLS = ["Year", "Date", "Opponent", "Comp", "Case", "Attended", "Shade",
               "Border", "Footer", "Notes", "Team BG", "Team Font", "Opp BG", "Opp Font"]
 
 
@@ -548,28 +548,23 @@ def sheet_date(s):
         return None
 
 
-_FIRST_TAB = []
+def load_sheet(tab, dates):
+    """{date: his row} from one tab, via the gviz CSV export.
 
-
-def load_sheet(tab):
-    """{date: his row} from one tab, via the gviz CSV export. A tab that does
-    not exist is not an error to gviz -- it silently answers with the FIRST
-    tab -- so a body identical to a surely-missing tab's is skipped."""
+    A TAB THAT DOES NOT EXIST IS NOT AN ERROR TO GVIZ: it silently answers
+    with the FIRST tab. Comparing against a made-up tab's answer is no test,
+    because the first tab is itself one he asks for (Tottenham, since he
+    deleted the Michigan tabs 2026-09-21). So the tab must PROVE itself: most
+    of its dates must be dates this team actually played (`dates`)."""
     import csv, io
     url = ("https://docs.google.com/spreadsheets/d/%s/gviz/tq?tqx=out:csv&headers=1&sheet=%s"
            % (SHEET_ID, "%s"))
     try:
-        if not _FIRST_TAB:
-            _FIRST_TAB.append(requests.get(url % "zz-no-such-tab-zz", timeout=60)
-                              .content.decode("utf-8-sig"))
         r = requests.get(url % requests.utils.quote(tab), timeout=60)
         r.raise_for_status()
         body = r.content.decode("utf-8-sig")
     except requests.RequestException as e:
         print("  WARN: could not read the %s tab (%s)" % (tab, e), file=sys.stderr)
-        return {}
-    if body == _FIRST_TAB[0]:
-        print("  WARN: no %s tab in the Sheet yet -- skipped" % tab, file=sys.stderr)
         return {}
     rows = list(csv.reader(io.StringIO(body)))
     if not rows:
@@ -585,13 +580,20 @@ def load_sheet(tab):
     if "date" not in col:
         print("  WARN: the %s tab has no Date column" % tab, file=sys.stderr)
         return {}
+    found = [sheet_date(r[col["date"]]) for r in rows[1:] if col["date"] < len(r)]
+    found = [d for d in found if d]
+    hits = sum(1 for d in found if d in dates)
+    if not found or hits < 0.5 * len(found):
+        print("  WARN: the %s tab is missing (Google sent another tab: %d of %d dates match)"
+              " -- skipped" % (tab, hits, len(found)), file=sys.stderr)
+        return {}
     out = {}
     for raw in rows[1:]:
         cell = lambda k: (raw[col[k]] or "").strip() if k in col and col[k] < len(raw) else ""
         d = sheet_date(cell("date"))
         if not d:
             continue
-        mx = {"kit": cell("kit"), "case": cell("case"), "attended": bool(cell("attended")),
+        mx = {"case": cell("case"), "attended": bool(cell("attended")),
               "shade": bool(cell("shade")), "border": cell("border"), "footer": cell("footer"),
               "note": cell("notes") or cell("note"),
               "team_bg": cell("team bg"), "team_font": cell("team font"),
@@ -643,10 +645,25 @@ def main():
     two_legged(matches)
     matches.sort(key=lambda m: (m["date"], m["time"]))
     # his Sheet, matched on the date (Spurs never play twice in a day)
-    marks = load_sheet("Tottenham")
+    marks = load_sheet("Tottenham", {m["date"] for m in matches})
     for m in matches:
+        m["team"] = "spurs"
         if m["date"] in marks:
             m["mx"] = marks[m["date"]]
+    # USMNT and Atlanta United (others.py), each with its own Sheet tab
+    import others
+    us, atl = others.main()
+    for key, tab, ms in (("usmnt", "USMNT", us), ("atlanta", "Atlanta United", atl)):
+        ms = others.tidy(key, ms)
+        marks = load_sheet(tab, {m["date"] for m in ms})
+        for m in ms:
+            team_info(m["opp"], teams)
+            m.pop("opp_name", None)
+            if m["date"] in marks:
+                m["mx"] = marks[m["date"]]
+        matches += ms
+    for t in (others.USA, others.ATL):
+        team_info(t, teams)
 
     bad = [m["id"] for m in matches if m.get("goals_bad")]
     if bad:
@@ -658,7 +675,7 @@ def main():
     save_data("goals.json", goal_store)
     save_data("finishes.json", finishes)
 
-    used = {m["opp"] for m in matches} | {SPURS}
+    used = {m["opp"] for m in matches} | {SPURS, others.USA, others.ATL}
     for t in used:
         if t in teams:
             teams[t]["card"] = CARD_NAME.get(teams[t]["name"], teams[t]["name"])
