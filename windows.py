@@ -133,7 +133,7 @@ def collect(teams):
             if uk_dow == "Sat" and f["uk"] == SATURDAY:
                 label = "NBC Saturday"
             elif uk_dow == "Sun" and sundays.get(f["md"]) is f:
-                label = "Super Sunday"
+                label = "Sky Super Sunday"
             else:
                 continue
             home, away = ids.get(h.flat(f["home"])), ids.get(h.flat(f["away"]))

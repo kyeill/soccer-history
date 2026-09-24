@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20260924-090340. Modelled on games-history's Michigan view (michCard): one card
+   20260924-093502. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20260924-090340";
+const BUILD = "20260924-093502";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -346,9 +346,16 @@ function twoCard(m) {
   const net = primaryNet(m.nets);
   let head;
   if (wins) {
-    head = '<span class="hstage" data-short="' + esc("MW " + m.mw) + '">Matchweek ' +
-      m.mw + "</span> | " + esc(m.window) + " | " + (net ? esc(net) + " " : "") +
-      fmtTime(m.time);
+    // HIS FORMAT (2026-09-24). Saturday is always NBC, so the window carries
+    // the time: "MW 5 | NBC Saturday 12:30pm". Sunday's US network changes
+    // year to year, so it reads between the window and the time:
+    // "MW 5 | Sky Super Sunday | USA 11:30am" -- and just the time when ESPN
+    // lists no network, which is most seasons before 2024-25.
+    const t = fmtTime(m.time);
+    const win = '<span class="hstage" data-short="' +
+      esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span>";
+    head = "MW " + m.mw + " | " + win +
+      (m.window === "NBC Saturday" ? " " + t : " | " + (net ? esc(net) + " " : "") + t);
   } else {
     const st = stageText(m);
     head = (m.comp === "PL"
