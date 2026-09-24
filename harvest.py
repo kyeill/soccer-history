@@ -528,10 +528,15 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
         if SPURS in t:
             m["us_lp"] = t[SPURS]
     if code == "PL":
-        home, away = (SPURS, tid) if m["where"] == "H" else (tid, SPURS)
+        home, away = (SPURS, tid) if m["home"] else (tid, SPURS)
         key = (flat(teams[home]["name"]), flat(teams[away]["name"]))
         if key in mw_map:
             m["mw"] = mw_map[key]
+        # ESPN has no US network before 2024-25; the Premier League's own
+        # listing has one for every match from 2016-17 (see tv.py)
+        if not m["nets"] and not upcoming:
+            import tv
+            m["nets"] = tv.networks(season, teams[home]["name"], teams[away]["name"])
     return m
 
 
@@ -708,6 +713,8 @@ def main():
     # a goal list that failed to add up is not stored as final -- retry next run
     for k in bad:
         goal_store.pop(k, None)
+    import tv
+    tv.save()
     save_data("teams.json", teams)
     save_data("goals.json", goal_store)
     save_data("finishes.json", finishes)

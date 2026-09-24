@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20260924-093502. Modelled on games-history's Michigan view (michCard): one card
+   20260924-095044. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20260924-093502";
+const BUILD = "20260924-095044";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -359,7 +359,7 @@ function twoCard(m) {
   } else {
     const st = stageText(m);
     head = (m.comp === "PL"
-      ? (m.mw != null ? "Matchweek " + m.mw : "Premier League")
+      ? (m.mw != null ? "MW " + m.mw : "Premier League")
       : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) + "</span>") +
       " | " + fmtTime(m.time);
   }

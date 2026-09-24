@@ -18,6 +18,7 @@ treated as top four -- the superset -- until it ends (his call).
 import datetime as dt
 import requests
 import harvest as h
+import tv
 
 ARSENAL, CHELSEA = "359", "363"
 LIVERPOOL, MAN_UTD, MAN_CITY = "364", "360", "382"
@@ -90,6 +91,8 @@ def build(rival, e, season, teams, pl_table, mw_map):
         key = (h.flat(teams[home]["name"]), h.flat(teams[away]["name"]))
         if key in mw_map:
             m["mw"] = mw_map[key]
+        if not m["nets"]:
+            m["nets"] = tv.networks(season, teams[home]["name"], teams[away]["name"])
     return m
 
 
@@ -128,6 +131,7 @@ def collect(teams):
             top_four = (not over) or pl_table.get(rival, 99) <= 4
             got = [build(rival, e, season, teams, pl_table, mw_map) for e in events]
             out += [m for m in got if m and keeps(rival, m, top_four)]
+    tv.save()
     out.sort(key=lambda m: (m["date"], m["time"]))
     print("  rivals: %d results (%d Arsenal, %d Chelsea)"
           % (len(out), sum(1 for m in out if m["rival"] == ARSENAL),

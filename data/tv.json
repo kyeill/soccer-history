@@ -1,0 +1,3976 @@
+{
+"2016|arsenal|bournemouth": [],
+"2016|arsenal|burnley": [
+"NBCSN"
+],
+"2016|arsenal|chelsea": [
+"NBC",
+"NBCSN"
+],
+"2016|arsenal|crystalpalace": [
+"NBCSN"
+],
+"2016|arsenal|everton": [
+"NBC"
+],
+"2016|arsenal|hull": [
+"NBCSN"
+],
+"2016|arsenal|leicester": [
+"USANBC"
+],
+"2016|arsenal|liverpool": [
+"NBC"
+],
+"2016|arsenal|mancity": [
+"NBCSN"
+],
+"2016|arsenal|manutd": [
+"NBCSN"
+],
+"2016|arsenal|middlesbrough": [
+"NBC",
+"NBCSN"
+],
+"2016|arsenal|southampton": [
+"NBC",
+"NBCSN"
+],
+"2016|arsenal|stoke": [
+"NBCSN"
+],
+"2016|arsenal|sunderland": [
+"NBCSN"
+],
+"2016|arsenal|swansea": [
+"NBC"
+],
+"2016|arsenal|tottenham": [
+"NBC",
+"NBCSN"
+],
+"2016|arsenal|watford": [],
+"2016|arsenal|westbrom": [],
+"2016|arsenal|westham": [
+"USANBC"
+],
+"2016|bournemouth|arsenal": [
+"NBCSN"
+],
+"2016|bournemouth|chelsea": [
+"NBC"
+],
+"2016|bournemouth|swansea": [
+"USANBC"
+],
+"2016|bournemouth|tottenham": [
+"NBC",
+"NBCSN"
+],
+"2016|burnley|arsenal": [
+"NBC",
+"NBCSN"
+],
+"2016|burnley|chelsea": [
+"NBCSN"
+],
+"2016|burnley|tottenham": [
+"USANBC"
+],
+"2016|chelsea|arsenal": [
+"NBCSN"
+],
+"2016|chelsea|bournemouth": [],
+"2016|chelsea|burnley": [
+"NBC"
+],
+"2016|chelsea|crystalpalace": [
+"NBCSN"
+],
+"2016|chelsea|everton": [
+"NBC"
+],
+"2016|chelsea|hull": [
+"NBCSN"
+],
+"2016|chelsea|leicester": [
+"NBC",
+"NBCSN"
+],
+"2016|chelsea|liverpool": [
+"NBC",
+"NBCSN"
+],
+"2016|chelsea|mancity": [
+"NBCSN"
+],
+"2016|chelsea|manutd": [
+"NBC",
+"NBCSN"
+],
+"2016|chelsea|middlesbrough": [
+"NBCSN"
+],
+"2016|chelsea|southampton": [
+"NBCSN"
+],
+"2016|chelsea|stoke": [],
+"2016|chelsea|sunderland": [
+"USANBC"
+],
+"2016|chelsea|swansea": [
+"NBCSN"
+],
+"2016|chelsea|tottenham": [
+"NBC"
+],
+"2016|chelsea|watford": [
+"NBCSN"
+],
+"2016|chelsea|westbrom": [
+"NBCSN"
+],
+"2016|chelsea|westham": [
+"NBC"
+],
+"2016|crystalpalace|arsenal": [
+"NBCSN"
+],
+"2016|crystalpalace|burnley": [
+"NBC"
+],
+"2016|crystalpalace|chelsea": [
+"NBCSN"
+],
+"2016|crystalpalace|liverpool": [
+"NBC"
+],
+"2016|crystalpalace|tottenham": [
+"NBCSN"
+],
+"2016|crystalpalace|westham": [
+"NBC"
+],
+"2016|everton|arsenal": [
+"NBCSN"
+],
+"2016|everton|chelsea": [
+"CNBC"
+],
+"2016|everton|leicester": [
+"NBCSN"
+],
+"2016|everton|manutd": [
+"NBCSN"
+],
+"2016|everton|middlesbrough": [
+"NBC"
+],
+"2016|everton|tottenham": [
+"NBC"
+],
+"2016|hull|arsenal": [
+"NBC"
+],
+"2016|hull|chelsea": [
+"NBC",
+"NBCSN"
+],
+"2016|hull|leicester": [
+"NBC"
+],
+"2016|hull|manutd": [
+"NBC"
+],
+"2016|hull|tottenham": [
+"USANBC"
+],
+"2016|leicester|arsenal": [
+"NBC"
+],
+"2016|leicester|chelsea": [
+"NBC"
+],
+"2016|leicester|mancity": [
+"NBC"
+],
+"2016|leicester|manutd": [
+"NBCSN"
+],
+"2016|leicester|tottenham": [
+"NBCSN"
+],
+"2016|leicester|westbrom": [
+"NBC",
+"NBCSN"
+],
+"2016|liverpool|arsenal": [
+"NBCSN"
+],
+"2016|liverpool|burnley": [
+"NBCSN"
+],
+"2016|liverpool|chelsea": [
+"NBCSN"
+],
+"2016|liverpool|crystalpalace": [
+"NBCSN"
+],
+"2016|liverpool|leicester": [
+"NBC",
+"NBCSN"
+],
+"2016|liverpool|mancity": [
+"NBC"
+],
+"2016|liverpool|tottenham": [
+"NBC"
+],
+"2016|liverpool|westbrom": [
+"NBC"
+],
+"2016|liverpool|westham": [
+"NBCSN"
+],
+"2016|mancity|arsenal": [
+"NBCSN"
+],
+"2016|mancity|chelsea": [
+"NBCSN"
+],
+"2016|mancity|liverpool": [
+"NBC"
+],
+"2016|mancity|sunderland": [
+"NBC"
+],
+"2016|mancity|tottenham": [
+"NBC"
+],
+"2016|mancity|westham": [
+"NBC"
+],
+"2016|manutd|arsenal": [
+"NBCSN"
+],
+"2016|manutd|chelsea": [
+"NBCSN"
+],
+"2016|manutd|liverpool": [
+"NBCSN"
+],
+"2016|manutd|tottenham": [
+"NBCSN"
+],
+"2016|manutd|westham": [
+"NBCSN"
+],
+"2016|middlesbrough|arsenal": [
+"NBCSN"
+],
+"2016|middlesbrough|chelsea": [
+"NBCSN"
+],
+"2016|middlesbrough|tottenham": [
+"NBC"
+],
+"2016|southampton|arsenal": [
+"NBCSN"
+],
+"2016|southampton|bournemouth": [
+"NBC"
+],
+"2016|southampton|burnley": [
+"NBC",
+"NBCSN"
+],
+"2016|southampton|chelsea": [
+"NBC"
+],
+"2016|southampton|mancity": [
+"NBC"
+],
+"2016|southampton|tottenham": [
+"NBCSN"
+],
+"2016|stoke|arsenal": [
+"NBCSN"
+],
+"2016|stoke|chelsea": [
+"NBCSN"
+],
+"2016|stoke|tottenham": [
+"NBC"
+],
+"2016|sunderland|arsenal": [
+"NBC",
+"NBCSN"
+],
+"2016|sunderland|chelsea": [],
+"2016|sunderland|mancity": [
+"NBCSN"
+],
+"2016|sunderland|tottenham": [],
+"2016|swansea|arsenal": [
+"NBCSN"
+],
+"2016|swansea|chelsea": [
+"NBC",
+"NBCSN"
+],
+"2016|swansea|everton": [
+"NBC"
+],
+"2016|swansea|leicester": [
+"NBCSN"
+],
+"2016|swansea|tottenham": [
+"USANBC"
+],
+"2016|tottenham|arsenal": [
+"NBCSN"
+],
+"2016|tottenham|bournemouth": [
+"NBCSN"
+],
+"2016|tottenham|burnley": [],
+"2016|tottenham|chelsea": [
+"NBCSN"
+],
+"2016|tottenham|crystalpalace": [
+"NBC"
+],
+"2016|tottenham|everton": [
+"NBCSN"
+],
+"2016|tottenham|hull": [],
+"2016|tottenham|leicester": [
+"NBC"
+],
+"2016|tottenham|liverpool": [
+"NBC"
+],
+"2016|tottenham|mancity": [
+"NBC",
+"NBCSN"
+],
+"2016|tottenham|manutd": [
+"NBCSN"
+],
+"2016|tottenham|middlesbrough": [
+"NBC"
+],
+"2016|tottenham|southampton": [
+"NBCSN"
+],
+"2016|tottenham|stoke": [
+"NBCSN"
+],
+"2016|tottenham|sunderland": [
+"NBC",
+"NBCSN"
+],
+"2016|tottenham|swansea": [
+"NBCSN"
+],
+"2016|tottenham|watford": [
+"NBCSN"
+],
+"2016|tottenham|westbrom": [
+"NBCSN"
+],
+"2016|tottenham|westham": [
+"NBC"
+],
+"2016|watford|arsenal": [
+"NBC"
+],
+"2016|watford|chelsea": [
+"NBC"
+],
+"2016|watford|tottenham": [
+"NBCSN"
+],
+"2016|watford|westham": [
+"NBC"
+],
+"2016|westbrom|arsenal": [
+"NBCSN"
+],
+"2016|westbrom|chelsea": [
+"NBCSN"
+],
+"2016|westbrom|manutd": [
+"NBC"
+],
+"2016|westbrom|tottenham": [
+"NBC"
+],
+"2016|westham|arsenal": [
+"NBC"
+],
+"2016|westham|bournemouth": [
+"NBC"
+],
+"2016|westham|chelsea": [
+"NBCSN"
+],
+"2016|westham|southampton": [
+"NBC",
+"NBCSN"
+],
+"2016|westham|tottenham": [
+"NBCSN"
+],
+"2017|arsenal|bournemouth": [
+"NBCSN"
+],
+"2017|arsenal|brighton": [
+"NBCSN"
+],
+"2017|arsenal|burnley": [
+"CNBC"
+],
+"2017|arsenal|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2017|arsenal|crystalpalace": [
+"CNBC"
+],
+"2017|arsenal|everton": [
+"NBC",
+"Telemundo"
+],
+"2017|arsenal|huddersfield": [
+"NBC Sports Gold"
+],
+"2017|arsenal|leicester": [
+"NBCSN"
+],
+"2017|arsenal|liverpool": [
+"NBCSN",
+"Universo"
+],
+"2017|arsenal|mancity": [
+"NBCSN",
+"Universo"
+],
+"2017|arsenal|manutd": [
+"NBC",
+"Universo"
+],
+"2017|arsenal|newcastle": [
+"CNBC"
+],
+"2017|arsenal|southampton": [
+"NBCSN"
+],
+"2017|arsenal|stoke": [
+"NBCSN",
+"Universo"
+],
+"2017|arsenal|swansea": [
+"NBC Sports Gold"
+],
+"2017|arsenal|tottenham": [
+"NBCSN"
+],
+"2017|arsenal|watford": [
+"NBCSN",
+"Telemundo"
+],
+"2017|arsenal|westbrom": [
+"NBCSN"
+],
+"2017|arsenal|westham": [
+"NBCSN",
+"Universo"
+],
+"2017|bournemouth|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2017|bournemouth|chelsea": [
+"NBC",
+"Universo"
+],
+"2017|bournemouth|liverpool": [
+"NBCSN"
+],
+"2017|bournemouth|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2017|brighton|arsenal": [
+"NBCSN"
+],
+"2017|brighton|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2017|brighton|mancity": [
+"NBC"
+],
+"2017|brighton|newcastle": [
+"NBCSN",
+"Telemundo"
+],
+"2017|brighton|tottenham": [
+"NBCSN"
+],
+"2017|burnley|arsenal": [
+"CNBC"
+],
+"2017|burnley|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2017|burnley|tottenham": [
+"NBC"
+],
+"2017|chelsea|arsenal": [
+"CNBC",
+"Telemundo"
+],
+"2017|chelsea|bournemouth": [
+"NBC Sports Gold"
+],
+"2017|chelsea|brighton": [
+"NBC Sports Gold"
+],
+"2017|chelsea|burnley": [
+"NBCSN"
+],
+"2017|chelsea|crystalpalace": [
+"NBCSN",
+"Universo"
+],
+"2017|chelsea|everton": [
+"NBCSN"
+],
+"2017|chelsea|huddersfield": [
+"NBCSN"
+],
+"2017|chelsea|leicester": [
+"NBCSN",
+"Universo"
+],
+"2017|chelsea|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2017|chelsea|mancity": [
+"NBCSN",
+"Universo"
+],
+"2017|chelsea|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2017|chelsea|newcastle": [
+"NBCSN"
+],
+"2017|chelsea|southampton": [
+"NBCSN"
+],
+"2017|chelsea|stoke": [
+"CNBC"
+],
+"2017|chelsea|swansea": [
+"NBC Sports Gold"
+],
+"2017|chelsea|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2017|chelsea|watford": [
+"NBCSN",
+"Universo"
+],
+"2017|chelsea|westbrom": [
+"NBCSN",
+"Universo"
+],
+"2017|chelsea|westham": [
+"NBCSN",
+"Telemundo"
+],
+"2017|crystalpalace|arsenal": [
+"NBCSN"
+],
+"2017|crystalpalace|chelsea": [
+"NBCSN"
+],
+"2017|crystalpalace|tottenham": [
+"NBCSN"
+],
+"2017|everton|arsenal": [
+"NBCSN"
+],
+"2017|everton|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2017|everton|mancity": [
+"NBCSN",
+"Universo"
+],
+"2017|everton|southampton": [
+"NBC"
+],
+"2017|everton|tottenham": [
+"CNBC"
+],
+"2017|huddersfield|arsenal": [
+"USANBC"
+],
+"2017|huddersfield|chelsea": [
+"NBCSN"
+],
+"2017|huddersfield|mancity": [
+"NBCSN"
+],
+"2017|huddersfield|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2017|leicester|arsenal": [
+"NBC Sports Gold"
+],
+"2017|leicester|chelsea": [
+"NBC Sports Gold"
+],
+"2017|leicester|everton": [
+"NBC",
+"Telemundo"
+],
+"2017|leicester|liverpool": [
+"NBC",
+"Universo"
+],
+"2017|leicester|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2017|liverpool|arsenal": [
+"NBCSN"
+],
+"2017|liverpool|bournemouth": [
+"NBC",
+"Universo"
+],
+"2017|liverpool|chelsea": [
+"NBC"
+],
+"2017|liverpool|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2017|liverpool|newcastle": [
+"NBCSN",
+"Universo"
+],
+"2017|liverpool|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2017|liverpool|watford": [
+"NBCSN",
+"Universo"
+],
+"2017|mancity|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2017|mancity|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2017|mancity|leicester": [
+"NBC",
+"Universo"
+],
+"2017|mancity|manutd": [
+"NBC",
+"Telemundo"
+],
+"2017|mancity|newcastle": [
+"NBC Sports Gold",
+"Universo"
+],
+"2017|mancity|swansea": [
+"NBCSN",
+"Telemundo"
+],
+"2017|mancity|tottenham": [
+"NBC"
+],
+"2017|mancity|westham": [
+"NBCSN",
+"Telemundo"
+],
+"2017|manutd|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2017|manutd|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2017|manutd|everton": [
+"NBCSN",
+"Telemundo"
+],
+"2017|manutd|leicester": [
+"NBC"
+],
+"2017|manutd|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2017|manutd|newcastle": [
+"NBC"
+],
+"2017|manutd|southampton": [
+"NBC",
+"Universo"
+],
+"2017|manutd|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2017|manutd|westbrom": [
+"NBCSN",
+"Telemundo"
+],
+"2017|manutd|westham": [
+"NBCSN"
+],
+"2017|newcastle|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2017|newcastle|chelsea": [
+"NBCSN"
+],
+"2017|newcastle|leicester": [
+"NBC"
+],
+"2017|newcastle|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2017|newcastle|tottenham": [
+"NBCSN"
+],
+"2017|southampton|arsenal": [
+"NBCSN"
+],
+"2017|southampton|chelsea": [
+"NBCSN"
+],
+"2017|southampton|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2017|southampton|newcastle": [
+"NBCSN"
+],
+"2017|southampton|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2017|southampton|westbrom": [
+"NBC"
+],
+"2017|stoke|arsenal": [
+"NBC",
+"Universo"
+],
+"2017|stoke|chelsea": [
+"CNBC"
+],
+"2017|stoke|manutd": [
+"NBC"
+],
+"2017|stoke|tottenham": [
+"NBC Sports Gold"
+],
+"2017|swansea|arsenal": [
+"NBC Sports Gold"
+],
+"2017|swansea|chelsea": [
+"NBC",
+"Universo"
+],
+"2017|swansea|newcastle": [
+"NBCSN"
+],
+"2017|swansea|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2017|tottenham|arsenal": [
+"CNBC",
+"Universo"
+],
+"2017|tottenham|bournemouth": [
+"CNBC"
+],
+"2017|tottenham|brighton": [
+"NBC Sports Gold"
+],
+"2017|tottenham|burnley": [
+"NBC Sports Gold"
+],
+"2017|tottenham|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2017|tottenham|crystalpalace": [
+"NBCSN",
+"Universo"
+],
+"2017|tottenham|everton": [
+"NBC",
+"Universo"
+],
+"2017|tottenham|huddersfield": [
+"NBCSN",
+"Universo"
+],
+"2017|tottenham|leicester": [
+"USANBC"
+],
+"2017|tottenham|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2017|tottenham|mancity": [
+"NBCSN",
+"Universo"
+],
+"2017|tottenham|manutd": [
+"NBCSN",
+"Universo"
+],
+"2017|tottenham|newcastle": [
+"NBC Sports Gold"
+],
+"2017|tottenham|southampton": [
+"NBCSN"
+],
+"2017|tottenham|stoke": [
+"NBCSN"
+],
+"2017|tottenham|swansea": [
+"NBC",
+"Universo"
+],
+"2017|tottenham|watford": [
+"NBCSN"
+],
+"2017|tottenham|westbrom": [
+"CNBC"
+],
+"2017|tottenham|westham": [
+"NBCSN",
+"Universo"
+],
+"2017|watford|arsenal": [
+"NBC"
+],
+"2017|watford|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2017|watford|everton": [
+"NBC",
+"Universo"
+],
+"2017|watford|tottenham": [
+"CNBC"
+],
+"2017|watford|westham": [
+"NBCSN"
+],
+"2017|westbrom|arsenal": [
+"NBCSN"
+],
+"2017|westbrom|chelsea": [
+"NBC Sports Gold"
+],
+"2017|westbrom|tottenham": [
+"CNBC"
+],
+"2017|westham|arsenal": [
+"NBC Sports Gold"
+],
+"2017|westham|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2017|westham|liverpool": [
+"NBC",
+"Universo"
+],
+"2017|westham|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2018|arsenal|bournemouth": [
+"NBC Sports Gold"
+],
+"2018|arsenal|brighton": [
+"NBCSN",
+"Telemundo"
+],
+"2018|arsenal|burnley": [
+"NBCSN"
+],
+"2018|arsenal|cardiff": [
+"NBC Sports Gold"
+],
+"2018|arsenal|chelsea": [
+"NBC",
+"Universo"
+],
+"2018|arsenal|crystalpalace": [
+"NBC Sports Gold"
+],
+"2018|arsenal|everton": [
+"NBCSN",
+"Telemundo"
+],
+"2018|arsenal|fulham": [
+"NBCSN"
+],
+"2018|arsenal|huddersfield": [
+"CNBC"
+],
+"2018|arsenal|leicester": [
+"NBCSN"
+],
+"2018|arsenal|liverpool": [
+"NBC",
+"Universo"
+],
+"2018|arsenal|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2018|arsenal|manutd": [
+"NBC",
+"Telemundo"
+],
+"2018|arsenal|newcastle": [
+"NBCSN"
+],
+"2018|arsenal|southampton": [
+"NBC Sports Gold"
+],
+"2018|arsenal|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2018|arsenal|watford": [
+"NBC Sports Gold"
+],
+"2018|arsenal|westham": [
+"NBCSN",
+"Universo"
+],
+"2018|arsenal|wolves": [
+"NBC Sports Gold"
+],
+"2018|bournemouth|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2018|bournemouth|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2018|bournemouth|tottenham": [
+"NBCSN"
+],
+"2018|brighton|arsenal": [
+"NBCSN"
+],
+"2018|brighton|burnley": [
+"NBCSN"
+],
+"2018|brighton|chelsea": [
+"NBCSN"
+],
+"2018|brighton|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2018|brighton|newcastle": [
+"NBC"
+],
+"2018|brighton|tottenham": [
+"NBC",
+"Universo"
+],
+"2018|burnley|arsenal": [
+"USANBC"
+],
+"2018|burnley|chelsea": [
+"NBC Sports Gold"
+],
+"2018|burnley|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2018|burnley|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2018|cardiff|arsenal": [
+"NBCSN"
+],
+"2018|cardiff|bournemouth": [
+"NBC"
+],
+"2018|cardiff|burnley": [
+"NBCSN"
+],
+"2018|cardiff|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2018|cardiff|crystalpalace": [
+"NBC"
+],
+"2018|cardiff|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2018|cardiff|manutd": [
+"NBC",
+"Universo"
+],
+"2018|cardiff|tottenham": [
+"NBCSN"
+],
+"2018|chelsea|arsenal": [
+"NBC",
+"Universo"
+],
+"2018|chelsea|bournemouth": [
+"NBCSN",
+"Universo"
+],
+"2018|chelsea|brighton": [
+"NBC Sports Gold"
+],
+"2018|chelsea|burnley": [
+"NBCSN"
+],
+"2018|chelsea|cardiff": [
+"CNBC"
+],
+"2018|chelsea|crystalpalace": [
+"NBC Sports Gold"
+],
+"2018|chelsea|everton": [
+"NBCSN",
+"Telemundo"
+],
+"2018|chelsea|fulham": [
+"NBCSN",
+"Universo"
+],
+"2018|chelsea|huddersfield": [
+"NBCSN",
+"Universo"
+],
+"2018|chelsea|leicester": [
+"CNBC"
+],
+"2018|chelsea|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2018|chelsea|mancity": [
+"NBC"
+],
+"2018|chelsea|manutd": [
+"NBCSN",
+"Universo"
+],
+"2018|chelsea|newcastle": [
+"NBC",
+"Universo"
+],
+"2018|chelsea|southampton": [
+"NBCSN",
+"Universo"
+],
+"2018|chelsea|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2018|chelsea|watford": [
+"CNBC"
+],
+"2018|chelsea|westham": [
+"NBCSN",
+"Universo"
+],
+"2018|chelsea|wolves": [
+"NBCSN",
+"Telemundo"
+],
+"2018|crystalpalace|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2018|crystalpalace|chelsea": [
+"NBC"
+],
+"2018|crystalpalace|tottenham": [
+"NBC",
+"Universo"
+],
+"2018|everton|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2018|everton|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2018|everton|crystalpalace": [
+"NBCSN"
+],
+"2018|everton|tottenham": [
+"NBCSN"
+],
+"2018|everton|westham": [
+"NBCSN"
+],
+"2018|fulham|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2018|fulham|burnley": [
+"NBC Sports Gold"
+],
+"2018|fulham|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2018|fulham|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2018|fulham|westham": [
+"NBC"
+],
+"2018|huddersfield|arsenal": [
+"CNBC"
+],
+"2018|huddersfield|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2018|huddersfield|liverpool": [
+"NBC",
+"Universo"
+],
+"2018|huddersfield|tottenham": [
+"CNBC"
+],
+"2018|leicester|arsenal": [
+"NBCSN"
+],
+"2018|leicester|chelsea": [
+"CNBC"
+],
+"2018|leicester|crystalpalace": [
+"NBC"
+],
+"2018|leicester|tottenham": [
+"NBCSN"
+],
+"2018|leicester|westham": [
+"NBC",
+"Universo"
+],
+"2018|liverpool|arsenal": [
+"NBC",
+"Universo"
+],
+"2018|liverpool|brighton": [
+"NBC",
+"Universo"
+],
+"2018|liverpool|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2018|liverpool|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2018|liverpool|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2018|liverpool|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2018|mancity|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2018|mancity|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2018|mancity|newcastle": [
+"NBC",
+"Universo"
+],
+"2018|mancity|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2018|mancity|watford": [
+"NBC",
+"Universo"
+],
+"2018|manutd|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2018|manutd|bournemouth": [
+"NBCSN",
+"Telemundo"
+],
+"2018|manutd|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2018|manutd|everton": [
+"NBC",
+"Telemundo"
+],
+"2018|manutd|newcastle": [
+"NBC",
+"Universo"
+],
+"2018|manutd|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2018|manutd|westham": [
+"NBC",
+"Universo"
+],
+"2018|newcastle|arsenal": [
+"NBC Sports Gold"
+],
+"2018|newcastle|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2018|newcastle|southampton": [
+"NBC"
+],
+"2018|newcastle|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2018|newcastle|wolves": [
+"NBCSN"
+],
+"2018|southampton|arsenal": [
+"NBC Sports Gold"
+],
+"2018|southampton|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2018|southampton|manutd": [
+"NBC",
+"Universo"
+],
+"2018|southampton|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2018|tottenham|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2018|tottenham|bournemouth": [
+"NBC Sports Gold"
+],
+"2018|tottenham|brighton": [
+"NBCSN"
+],
+"2018|tottenham|burnley": [
+"NBCSN"
+],
+"2018|tottenham|cardiff": [
+"NBCSN",
+"Universo"
+],
+"2018|tottenham|chelsea": [
+"NBC",
+"Universo"
+],
+"2018|tottenham|crystalpalace": [
+"NBCSN"
+],
+"2018|tottenham|everton": [
+"USANBC"
+],
+"2018|tottenham|fulham": [
+"NBCSN",
+"Universo"
+],
+"2018|tottenham|huddersfield": [
+"NBCSN",
+"Universo"
+],
+"2018|tottenham|leicester": [
+"NBCSN",
+"Telemundo"
+],
+"2018|tottenham|liverpool": [
+"NBCSN",
+"Universo"
+],
+"2018|tottenham|mancity": [
+"NBCSN",
+"Universo"
+],
+"2018|tottenham|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2018|tottenham|newcastle": [
+"NBCSN",
+"Universo"
+],
+"2018|tottenham|southampton": [
+"NBC Sports Gold"
+],
+"2018|tottenham|watford": [
+"NBC Sports Gold"
+],
+"2018|tottenham|westham": [
+"NBCSN",
+"Universo"
+],
+"2018|tottenham|wolves": [
+"NBCSN"
+],
+"2018|watford|arsenal": [
+"NBCSN"
+],
+"2018|watford|chelsea": [
+"NBCSN"
+],
+"2018|watford|manutd": [
+"NBC",
+"Universo"
+],
+"2018|watford|tottenham": [
+"NBC Sports Gold"
+],
+"2018|westham|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2018|westham|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2018|westham|everton": [
+"NBCSN",
+"Universo"
+],
+"2018|westham|newcastle": [
+"NBCSN",
+"Universo"
+],
+"2018|westham|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2018|wolves|arsenal": [
+"NBC Sports Gold"
+],
+"2018|wolves|chelsea": [
+"NBC Sports Gold"
+],
+"2018|wolves|everton": [
+"NBC"
+],
+"2018|wolves|huddersfield": [
+"NBCSN"
+],
+"2018|wolves|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2019|arsenal|astonvilla": [
+"NBC Sports Gold"
+],
+"2019|arsenal|bournemouth": [],
+"2019|arsenal|brighton": [
+"NBCSN",
+"USANBC"
+],
+"2019|arsenal|burnley": [
+"NBCSN"
+],
+"2019|arsenal|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2019|arsenal|crystalpalace": [
+"NBC Sports Gold"
+],
+"2019|arsenal|everton": [
+"NBCSN",
+"Telemundo"
+],
+"2019|arsenal|leicester": [
+"NBCSN",
+"Universo"
+],
+"2019|arsenal|liverpool": [
+"Peacock"
+],
+"2019|arsenal|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2019|arsenal|manutd": [
+"NBCSN",
+"Universo"
+],
+"2019|arsenal|newcastle": [
+"NBCSN",
+"Telemundo"
+],
+"2019|arsenal|norwich": [
+"NBCSN"
+],
+"2019|arsenal|sheffutd": [
+"NBCSN",
+"Universo"
+],
+"2019|arsenal|southampton": [
+"NBCSN",
+"Universo"
+],
+"2019|arsenal|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2019|arsenal|watford": [],
+"2019|arsenal|westham": [
+"NBCSN"
+],
+"2019|arsenal|wolves": [
+"Universo"
+],
+"2019|astonvilla|arsenal": [
+"NBCSN"
+],
+"2019|astonvilla|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2019|astonvilla|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2019|astonvilla|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2019|bournemouth|arsenal": [
+"NBC Sports Gold"
+],
+"2019|bournemouth|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2019|bournemouth|tottenham": [
+"NBCSN",
+"USANBC"
+],
+"2019|brighton|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2019|brighton|chelsea": [
+"NBCSN"
+],
+"2019|brighton|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2019|brighton|watford": [
+"NBC",
+"USANBC"
+],
+"2019|brighton|wolves": [
+"NBCSN",
+"Telemundo"
+],
+"2019|burnley|arsenal": [
+"NBCSN",
+"USANBC"
+],
+"2019|burnley|chelsea": [
+"NBC"
+],
+"2019|burnley|liverpool": [
+"NBC",
+"Universo"
+],
+"2019|burnley|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|astonvilla": [
+"NBC Sports Gold"
+],
+"2019|chelsea|bournemouth": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|brighton": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|burnley": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|crystalpalace": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|everton": [
+"NBCSN",
+"USANBC"
+],
+"2019|chelsea|leicester": [
+"NBCSN",
+"Telemundo"
+],
+"2019|chelsea|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2019|chelsea|mancity": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|manutd": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|newcastle": [
+"NBC Sports Gold"
+],
+"2019|chelsea|norwich": [
+"NBCSN"
+],
+"2019|chelsea|sheffutd": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|southampton": [
+"NBCSN"
+],
+"2019|chelsea|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2019|chelsea|watford": [
+"NBCSN"
+],
+"2019|chelsea|westham": [
+"NBC Sports Gold"
+],
+"2019|chelsea|wolves": [
+"Telemundo",
+"USA"
+],
+"2019|crystalpalace|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2019|crystalpalace|chelsea": [
+"NBCSN"
+],
+"2019|crystalpalace|mancity": [
+"NBC",
+"Universo"
+],
+"2019|crystalpalace|tottenham": [
+"Peacock"
+],
+"2019|everton|arsenal": [
+"NBCSN",
+"USANBC"
+],
+"2019|everton|chelsea": [
+"NBCSN",
+"USANBC"
+],
+"2019|everton|mancity": [
+"NBC",
+"Universo"
+],
+"2019|everton|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2019|leicester|arsenal": [
+"NBC"
+],
+"2019|leicester|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2019|leicester|everton": [
+"NBC Sports Gold"
+],
+"2019|leicester|mancity": [
+"NBC",
+"Universo"
+],
+"2019|leicester|newcastle": [
+"NBCSN",
+"Telemundo"
+],
+"2019|leicester|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2019|liverpool|arsenal": [
+"NBC",
+"Universo"
+],
+"2019|liverpool|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2019|liverpool|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2019|liverpool|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2019|liverpool|tottenham": [
+"NBC",
+"Telemundo"
+],
+"2019|liverpool|wolves": [
+"NBCSN",
+"Telemundo"
+],
+"2019|mancity|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2019|mancity|chelsea": [
+"NBC",
+"Telemundo"
+],
+"2019|mancity|leicester": [
+"NBC",
+"Universo"
+],
+"2019|mancity|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2019|mancity|tottenham": [
+"NBC",
+"Telemundo"
+],
+"2019|manutd|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2019|manutd|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2019|manutd|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2019|manutd|mancity": [
+"NBC",
+"Telemundo"
+],
+"2019|manutd|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2019|manutd|wolves": [
+"NBC",
+"Universo"
+],
+"2019|newcastle|arsenal": [
+"NBCSN"
+],
+"2019|newcastle|brighton": [
+"NBC"
+],
+"2019|newcastle|chelsea": [
+"NBC",
+"Universo"
+],
+"2019|newcastle|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2019|newcastle|tottenham": [
+"Peacock"
+],
+"2019|norwich|arsenal": [
+"NBCSN",
+"USANBC"
+],
+"2019|norwich|chelsea": [
+"NBCSN"
+],
+"2019|norwich|liverpool": [
+"NBC",
+"Universo"
+],
+"2019|norwich|mancity": [
+"NBC",
+"Universo"
+],
+"2019|norwich|tottenham": [
+"NBC",
+"USANBC"
+],
+"2019|sheffutd|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2019|sheffutd|chelsea": [
+"NBC",
+"Universo"
+],
+"2019|sheffutd|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2019|sheffutd|tottenham": [
+"NBCSN"
+],
+"2019|southampton|arsenal": [
+"NBC Sports Gold"
+],
+"2019|southampton|chelsea": [
+"NBC Sports Gold"
+],
+"2019|southampton|tottenham": [
+"NBCSN"
+],
+"2019|southampton|watford": [
+"NBC",
+"USANBC"
+],
+"2019|southampton|westham": [
+"NBC"
+],
+"2019|tottenham|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2019|tottenham|astonvilla": [
+"NBC",
+"Universo"
+],
+"2019|tottenham|bournemouth": [
+"NBCSN",
+"Universo"
+],
+"2019|tottenham|brighton": [
+"NBCSN"
+],
+"2019|tottenham|burnley": [
+"NBC Sports Gold"
+],
+"2019|tottenham|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2019|tottenham|crystalpalace": [
+"NBCSN",
+"Universo"
+],
+"2019|tottenham|everton": [
+"NBCSN",
+"USANBC"
+],
+"2019|tottenham|leicester": [
+"NBCSN",
+"Telemundo"
+],
+"2019|tottenham|liverpool": [
+"NBC",
+"Telemundo"
+],
+"2019|tottenham|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2019|tottenham|manutd": [
+"NBCSN",
+"Universo"
+],
+"2019|tottenham|newcastle": [
+"NBCSN",
+"Telemundo"
+],
+"2019|tottenham|norwich": [
+"NBC Sports Gold"
+],
+"2019|tottenham|sheffutd": [
+"NBCSN",
+"Universo"
+],
+"2019|tottenham|southampton": [
+"NBC Sports Gold"
+],
+"2019|tottenham|watford": [
+"NBCSN",
+"Universo"
+],
+"2019|tottenham|westham": [
+"NBCSN",
+"USANBC"
+],
+"2019|tottenham|wolves": [
+"NBC Sports Gold"
+],
+"2019|watford|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2019|watford|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2019|watford|liverpool": [
+"NBCSN",
+"Universo"
+],
+"2019|watford|southampton": [
+"NBCSN",
+"Telemundo"
+],
+"2019|watford|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2019|westham|arsenal": [
+"NBCSN",
+"USANBC"
+],
+"2019|westham|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2019|westham|crystalpalace": [
+"NBC"
+],
+"2019|westham|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2019|westham|wolves": [
+"NBC",
+"Telemundo"
+],
+"2019|wolves|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2019|wolves|chelsea": [
+"NBC Sports Gold"
+],
+"2019|wolves|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2020|arsenal|astonvilla": [
+"Peacock"
+],
+"2020|arsenal|brighton": [
+"Peacock"
+],
+"2020|arsenal|burnley": [
+"NBCSN",
+"Universo"
+],
+"2020|arsenal|chelsea": [
+"NBC",
+"Universo"
+],
+"2020|arsenal|crystalpalace": [
+"NBCSN"
+],
+"2020|arsenal|everton": [
+"NBCSN",
+"Universo"
+],
+"2020|arsenal|fulham": [
+"NBCSN"
+],
+"2020|arsenal|leeds": [
+"NBCSN",
+"Telemundo"
+],
+"2020|arsenal|leicester": [
+"Peacock"
+],
+"2020|arsenal|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2020|arsenal|mancity": [
+"Peacock"
+],
+"2020|arsenal|manutd": [
+"NBC",
+"Telemundo"
+],
+"2020|arsenal|newcastle": [
+"NBCSN"
+],
+"2020|arsenal|sheffutd": [
+"Peacock"
+],
+"2020|arsenal|southampton": [
+"NBCSN",
+"Universo"
+],
+"2020|arsenal|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2020|arsenal|westbrom": [
+"NBC"
+],
+"2020|arsenal|westham": [
+"NBCSN",
+"Universo"
+],
+"2020|arsenal|wolves": [
+"NBCSN",
+"Universo"
+],
+"2020|astonvilla|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2020|astonvilla|chelsea": [
+"Peacock",
+"USA"
+],
+"2020|astonvilla|fulham": [
+"NBCSN"
+],
+"2020|astonvilla|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2020|astonvilla|wolves": [
+"NBCSN",
+"Universo"
+],
+"2020|brighton|arsenal": [
+"NBCSN"
+],
+"2020|brighton|chelsea": [
+"Peacock"
+],
+"2020|brighton|tottenham": [
+"Peacock"
+],
+"2020|brighton|wolves": [
+"NBC"
+],
+"2020|burnley|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2020|burnley|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2020|burnley|tottenham": [
+"Peacock"
+],
+"2020|chelsea|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2020|chelsea|astonvilla": [
+"NBCSN",
+"Universo"
+],
+"2020|chelsea|brighton": [
+"Peacock"
+],
+"2020|chelsea|burnley": [
+"Peacock"
+],
+"2020|chelsea|crystalpalace": [
+"Peacock"
+],
+"2020|chelsea|everton": [
+"NBCSN",
+"Universo"
+],
+"2020|chelsea|fulham": [
+"NBC",
+"Universo"
+],
+"2020|chelsea|leeds": [
+"NBCSN",
+"Universo"
+],
+"2020|chelsea|leicester": [
+"NBCSN",
+"Peacock",
+"Universo"
+],
+"2020|chelsea|liverpool": [
+"Peacock"
+],
+"2020|chelsea|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2020|chelsea|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2020|chelsea|newcastle": [
+"NBCSN",
+"Universo"
+],
+"2020|chelsea|sheffutd": [
+"NBC",
+"Universo"
+],
+"2020|chelsea|southampton": [
+"NBCSN",
+"Universo"
+],
+"2020|chelsea|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2020|chelsea|westbrom": [
+"NBCSN",
+"Peacock",
+"Universo"
+],
+"2020|chelsea|westham": [
+"NBC",
+"Universo"
+],
+"2020|chelsea|wolves": [
+"Peacock"
+],
+"2020|crystalpalace|arsenal": [
+"Peacock"
+],
+"2020|crystalpalace|chelsea": [
+"NBC",
+"Universo"
+],
+"2020|crystalpalace|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2020|everton|arsenal": [
+"NBC",
+"Universo"
+],
+"2020|everton|burnley": [
+"Peacock"
+],
+"2020|everton|chelsea": [
+"Peacock"
+],
+"2020|everton|leeds": [
+"NBC",
+"Telemundo"
+],
+"2020|everton|tottenham": [
+"NBCSN"
+],
+"2020|fulham|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2020|fulham|chelsea": [
+"NBC",
+"Universo"
+],
+"2020|fulham|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2020|fulham|newcastle": [
+"Peacock"
+],
+"2020|fulham|tottenham": [
+"Peacock"
+],
+"2020|fulham|westham": [
+"NBC",
+"Universo"
+],
+"2020|leeds|arsenal": [
+"NBCSN",
+"Telemundo"
+],
+"2020|leeds|astonvilla": [
+"Peacock"
+],
+"2020|leeds|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2020|leeds|mancity": [
+"NBC",
+"Universo"
+],
+"2020|leeds|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2020|leicester|arsenal": [
+"NBCSN"
+],
+"2020|leicester|chelsea": [
+"NBCSN"
+],
+"2020|leicester|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2020|leicester|tottenham": [
+"NBCSN",
+"Peacock",
+"Universo"
+],
+"2020|liverpool|arsenal": [
+"Peacock"
+],
+"2020|liverpool|chelsea": [
+"Peacock"
+],
+"2020|liverpool|everton": [
+"NBC",
+"Universo"
+],
+"2020|liverpool|leeds": [
+"NBC",
+"Telemundo"
+],
+"2020|liverpool|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2020|liverpool|manutd": [
+"Peacock"
+],
+"2020|liverpool|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2020|liverpool|westbrom": [
+"NBCSN",
+"Telemundo"
+],
+"2020|liverpool|westham": [
+"NBC",
+"Universo"
+],
+"2020|mancity|arsenal": [
+"NBC",
+"Universo"
+],
+"2020|mancity|chelsea": [
+"NBC",
+"Universo"
+],
+"2020|mancity|leicester": [
+"NBCSN",
+"Telemundo"
+],
+"2020|mancity|liverpool": [
+"Peacock"
+],
+"2020|mancity|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2020|mancity|tottenham": [
+"NBC",
+"Universo"
+],
+"2020|manutd|arsenal": [
+"Peacock"
+],
+"2020|manutd|burnley": [
+"NBCSN"
+],
+"2020|manutd|chelsea": [
+"NBC",
+"Telemundo"
+],
+"2020|manutd|crystalpalace": [
+"Peacock"
+],
+"2020|manutd|leeds": [
+"NBCSN",
+"Telemundo"
+],
+"2020|manutd|mancity": [
+"NBC",
+"Telemundo"
+],
+"2020|manutd|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2020|newcastle|arsenal": [
+"NBCSN"
+],
+"2020|newcastle|chelsea": [
+"Peacock"
+],
+"2020|newcastle|tottenham": [
+"NBCSN"
+],
+"2020|sheffutd|arsenal": [
+"Peacock"
+],
+"2020|sheffutd|chelsea": [
+"Peacock"
+],
+"2020|sheffutd|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2020|southampton|arsenal": [
+"Peacock"
+],
+"2020|southampton|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2020|southampton|tottenham": [
+"Peacock"
+],
+"2020|tottenham|arsenal": [
+"Peacock"
+],
+"2020|tottenham|astonvilla": [
+"Peacock"
+],
+"2020|tottenham|brighton": [
+"Peacock"
+],
+"2020|tottenham|burnley": [
+"NBCSN",
+"Telemundo"
+],
+"2020|tottenham|chelsea": [
+"Peacock"
+],
+"2020|tottenham|crystalpalace": [
+"Peacock"
+],
+"2020|tottenham|everton": [
+"Peacock"
+],
+"2020|tottenham|fulham": [
+"NBCSN",
+"Universo"
+],
+"2020|tottenham|leeds": [
+"NBCSN"
+],
+"2020|tottenham|leicester": [
+"NBCSN",
+"Telemundo"
+],
+"2020|tottenham|liverpool": [
+"NBCSN",
+"Universo"
+],
+"2020|tottenham|mancity": [
+"NBC",
+"Universo"
+],
+"2020|tottenham|manutd": [
+"Peacock"
+],
+"2020|tottenham|newcastle": [
+"NBCSN",
+"Telemundo"
+],
+"2020|tottenham|sheffutd": [
+"NBCSN"
+],
+"2020|tottenham|southampton": [
+"Peacock"
+],
+"2020|tottenham|westbrom": [
+"NBCSN"
+],
+"2020|tottenham|westham": [
+"NBCSN",
+"Telemundo"
+],
+"2020|tottenham|wolves": [
+"NBCSN",
+"Telemundo"
+],
+"2020|westbrom|arsenal": [
+"Peacock"
+],
+"2020|westbrom|chelsea": [
+"NBC",
+"Universo"
+],
+"2020|westbrom|liverpool": [
+"NBCSN",
+"Peacock",
+"Telemundo"
+],
+"2020|westbrom|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2020|westham|arsenal": [
+"Peacock"
+],
+"2020|westham|chelsea": [
+"NBC",
+"Universo"
+],
+"2020|westham|everton": [
+"NBCSN",
+"Telemundo"
+],
+"2020|westham|liverpool": [
+"Peacock"
+],
+"2020|westham|manutd": [
+"NBC",
+"Universo"
+],
+"2020|westham|tottenham": [
+"Peacock"
+],
+"2020|wolves|arsenal": [
+"NBCSN"
+],
+"2020|wolves|chelsea": [
+"NBCSN"
+],
+"2020|wolves|newcastle": [
+"NBC",
+"Telemundo"
+],
+"2020|wolves|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2021|arsenal|astonvilla": [
+"NBCSN",
+"Universo"
+],
+"2021|arsenal|brentford": [
+"Peacock"
+],
+"2021|arsenal|brighton": [
+"Peacock"
+],
+"2021|arsenal|burnley": [
+"Telemundo",
+"USA"
+],
+"2021|arsenal|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2021|arsenal|crystalpalace": [
+"Peacock"
+],
+"2021|arsenal|everton": [
+"CNBC",
+"Peacock"
+],
+"2021|arsenal|leeds": [
+"Peacock"
+],
+"2021|arsenal|leicester": [
+"Telemundo",
+"USA"
+],
+"2021|arsenal|liverpool": [
+"Peacock"
+],
+"2021|arsenal|mancity": [
+"USA",
+"Universo"
+],
+"2021|arsenal|manutd": [
+"USA",
+"Universo"
+],
+"2021|arsenal|newcastle": [
+"NBCSN",
+"Universo"
+],
+"2021|arsenal|norwich": [
+"Peacock"
+],
+"2021|arsenal|southampton": [
+"NBCSN"
+],
+"2021|arsenal|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2021|arsenal|watford": [
+"Peacock"
+],
+"2021|arsenal|westham": [
+"NBCSN",
+"Universo"
+],
+"2021|arsenal|wolves": [
+"Peacock"
+],
+"2021|astonvilla|arsenal": [
+"USA",
+"Universo"
+],
+"2021|astonvilla|chelsea": [
+"NBC",
+"Telemundo",
+"Universo"
+],
+"2021|astonvilla|everton": [
+"NBC",
+"Universo"
+],
+"2021|astonvilla|leicester": [
+"NBCSN",
+"Telemundo"
+],
+"2021|astonvilla|manutd": [
+"NBC",
+"Universo"
+],
+"2021|astonvilla|tottenham": [
+"NBC",
+"Universo"
+],
+"2021|astonvilla|westham": [
+"NBCSN",
+"Telemundo"
+],
+"2021|brentford|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2021|brentford|chelsea": [
+"NBC",
+"Universo"
+],
+"2021|brentford|liverpool": [
+"NBCSN",
+"Universo"
+],
+"2021|brentford|tottenham": [
+"NBC",
+"Universo"
+],
+"2021|brighton|arsenal": [
+"NBC",
+"Universo"
+],
+"2021|brighton|chelsea": [
+"USA"
+],
+"2021|brighton|leeds": [
+"NBC",
+"Universo"
+],
+"2021|brighton|mancity": [
+"NBC",
+"Universo"
+],
+"2021|brighton|manutd": [
+"NBC",
+"Universo"
+],
+"2021|brighton|newcastle": [
+"NBC",
+"Universo"
+],
+"2021|brighton|tottenham": [
+"Peacock"
+],
+"2021|brighton|watford": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2021|burnley|arsenal": [
+"NBCSN"
+],
+"2021|burnley|chelsea": [
+"USA",
+"Universo"
+],
+"2021|burnley|tottenham": [
+"Peacock"
+],
+"2021|chelsea|arsenal": [
+"USA",
+"Universo"
+],
+"2021|chelsea|astonvilla": [
+"NBC",
+"Universo"
+],
+"2021|chelsea|brentford": [
+"USA"
+],
+"2021|chelsea|brighton": [
+"Peacock"
+],
+"2021|chelsea|burnley": [
+"Peacock"
+],
+"2021|chelsea|crystalpalace": [
+"Peacock"
+],
+"2021|chelsea|everton": [
+"NBCSN",
+"Universo"
+],
+"2021|chelsea|leeds": [
+"Peacock"
+],
+"2021|chelsea|leicester": [
+"Peacock"
+],
+"2021|chelsea|liverpool": [
+"Telemundo",
+"USA"
+],
+"2021|chelsea|mancity": [
+"NBCSN",
+"Universo"
+],
+"2021|chelsea|manutd": [
+"Peacock"
+],
+"2021|chelsea|newcastle": [
+"Peacock"
+],
+"2021|chelsea|norwich": [
+"NBCSN",
+"Universo"
+],
+"2021|chelsea|southampton": [
+"USA",
+"Universo"
+],
+"2021|chelsea|tottenham": [
+"Peacock"
+],
+"2021|chelsea|watford": [
+"Peacock"
+],
+"2021|chelsea|westham": [
+"USA"
+],
+"2021|chelsea|wolves": [
+"USA",
+"Universo"
+],
+"2021|crystalpalace|arsenal": [
+"USA",
+"Universo"
+],
+"2021|crystalpalace|chelsea": [
+"USA",
+"Universo"
+],
+"2021|crystalpalace|everton": [
+"NBCSN",
+"Telemundo"
+],
+"2021|crystalpalace|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2021|crystalpalace|westham": [
+"USA",
+"Universo"
+],
+"2021|everton|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2021|everton|brentford": [
+"Telemundo",
+"USA"
+],
+"2021|everton|chelsea": [
+"Telemundo",
+"USA"
+],
+"2021|everton|mancity": [
+"Peacock"
+],
+"2021|everton|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2021|leeds|arsenal": [
+"NBC",
+"Universo"
+],
+"2021|leeds|chelsea": [
+"Peacock"
+],
+"2021|leeds|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2021|leeds|mancity": [
+"NBC",
+"Universo"
+],
+"2021|leeds|tottenham": [
+"USA",
+"Universo"
+],
+"2021|leicester|arsenal": [
+"NBCSN",
+"Universo"
+],
+"2021|leicester|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2021|leicester|tottenham": [
+"USA"
+],
+"2021|leicester|westham": [
+"Peacock",
+"Telemundo"
+],
+"2021|liverpool|arsenal": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2021|liverpool|burnley": [
+"Peacock"
+],
+"2021|liverpool|chelsea": [
+"NBC",
+"Peacock",
+"Telemundo"
+],
+"2021|liverpool|everton": [
+"Telemundo",
+"USA"
+],
+"2021|liverpool|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2021|liverpool|tottenham": [
+"USA",
+"Universo"
+],
+"2021|liverpool|westham": [
+"NBC",
+"Universo"
+],
+"2021|mancity|arsenal": [
+"Peacock"
+],
+"2021|mancity|chelsea": [
+"Peacock"
+],
+"2021|mancity|liverpool": [
+"Telemundo",
+"USA"
+],
+"2021|mancity|manutd": [
+"Telemundo",
+"USA"
+],
+"2021|mancity|newcastle": [
+"Telemundo",
+"USA"
+],
+"2021|mancity|tottenham": [
+"NBC",
+"Universo"
+],
+"2021|manutd|arsenal": [
+"Peacock"
+],
+"2021|manutd|chelsea": [
+"USA",
+"Universo"
+],
+"2021|manutd|leicester": [
+"USA",
+"Universo"
+],
+"2021|manutd|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2021|manutd|tottenham": [
+"Peacock"
+],
+"2021|newcastle|arsenal": [
+"USA",
+"Universo"
+],
+"2021|newcastle|chelsea": [
+"Peacock"
+],
+"2021|newcastle|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2021|norwich|arsenal": [
+"Peacock"
+],
+"2021|norwich|chelsea": [
+"Peacock"
+],
+"2021|norwich|liverpool": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2021|norwich|mancity": [
+"NBC",
+"Universo"
+],
+"2021|norwich|manutd": [
+"NBC",
+"Universo"
+],
+"2021|norwich|tottenham": [
+"Peacock"
+],
+"2021|southampton|arsenal": [
+"Peacock"
+],
+"2021|southampton|chelsea": [
+"USA",
+"Universo"
+],
+"2021|southampton|mancity": [
+"NBC",
+"Universo"
+],
+"2021|southampton|tottenham": [
+"NBCSN",
+"Universo"
+],
+"2021|tottenham|arsenal": [
+"USA",
+"Universo"
+],
+"2021|tottenham|astonvilla": [
+"Peacock"
+],
+"2021|tottenham|brentford": [
+"Peacock"
+],
+"2021|tottenham|brighton": [
+"USA",
+"Universo"
+],
+"2021|tottenham|burnley": [
+"USA"
+],
+"2021|tottenham|chelsea": [
+"Peacock"
+],
+"2021|tottenham|crystalpalace": [
+"Telemundo",
+"USA",
+"Universo"
+],
+"2021|tottenham|everton": [
+"USA",
+"Universo"
+],
+"2021|tottenham|leeds": [
+"NBCSN",
+"Telemundo"
+],
+"2021|tottenham|leicester": [
+"Peacock"
+],
+"2021|tottenham|liverpool": [
+"Peacock"
+],
+"2021|tottenham|mancity": [
+"NBCSN",
+"Telemundo"
+],
+"2021|tottenham|manutd": [
+"NBC",
+"Universo"
+],
+"2021|tottenham|newcastle": [
+"Telemundo",
+"USA"
+],
+"2021|tottenham|norwich": [
+"Peacock"
+],
+"2021|tottenham|southampton": [
+"USA",
+"Universo"
+],
+"2021|tottenham|watford": [
+"Peacock"
+],
+"2021|tottenham|westham": [
+"Telemundo",
+"USA"
+],
+"2021|tottenham|wolves": [
+"Peacock",
+"Telemundo"
+],
+"2021|watford|arsenal": [
+"USA"
+],
+"2021|watford|chelsea": [
+"Peacock"
+],
+"2021|watford|mancity": [
+"NBC",
+"Universo"
+],
+"2021|watford|tottenham": [
+"USA",
+"Universo"
+],
+"2021|westham|arsenal": [
+"Telemundo",
+"USA"
+],
+"2021|westham|chelsea": [
+"NBCSN",
+"Universo"
+],
+"2021|westham|liverpool": [
+"NBCSN",
+"Telemundo"
+],
+"2021|westham|tottenham": [
+"NBCSN"
+],
+"2021|wolves|arsenal": [
+"Peacock"
+],
+"2021|wolves|chelsea": [
+"USA",
+"Universo"
+],
+"2021|wolves|leicester": [
+"Telemundo",
+"USA"
+],
+"2021|wolves|manutd": [
+"NBCSN",
+"Telemundo"
+],
+"2021|wolves|tottenham": [
+"NBCSN",
+"Telemundo"
+],
+"2022|arsenal|astonvilla": [
+"Peacock"
+],
+"2022|arsenal|bournemouth": [
+"Peacock"
+],
+"2022|arsenal|brentford": [
+"Peacock"
+],
+"2022|arsenal|brighton": [
+"Telemundo",
+"USA"
+],
+"2022|arsenal|chelsea": [
+"USA",
+"Universo"
+],
+"2022|arsenal|crystalpalace": [
+"Telemundo",
+"USA"
+],
+"2022|arsenal|everton": [
+"USA",
+"Universo"
+],
+"2022|arsenal|fulham": [
+"NBC",
+"Universo"
+],
+"2022|arsenal|leeds": [
+"USA",
+"Universo"
+],
+"2022|arsenal|leicester": [
+"Peacock"
+],
+"2022|arsenal|liverpool": [
+"Telemundo",
+"USA"
+],
+"2022|arsenal|mancity": [
+"Peacock"
+],
+"2022|arsenal|manutd": [
+"NBC",
+"Telemundo"
+],
+"2022|arsenal|newcastle": [
+"USA",
+"Universo"
+],
+"2022|arsenal|nottinghamforest": [
+"Telemundo",
+"USA"
+],
+"2022|arsenal|southampton": [
+"USA",
+"Universo"
+],
+"2022|arsenal|tottenham": [
+"USA",
+"Universo"
+],
+"2022|arsenal|westham": [
+"Peacock"
+],
+"2022|arsenal|wolves": [
+"Peacock"
+],
+"2022|astonvilla|arsenal": [
+"USA",
+"Universo"
+],
+"2022|astonvilla|chelsea": [
+"Peacock"
+],
+"2022|astonvilla|mancity": [
+"NBC",
+"Universo"
+],
+"2022|astonvilla|tottenham": [
+"Peacock"
+],
+"2022|bournemouth|arsenal": [
+"NBC",
+"Universo"
+],
+"2022|bournemouth|chelsea": [
+"Peacock"
+],
+"2022|bournemouth|mancity": [
+"USA",
+"Universo"
+],
+"2022|bournemouth|newcastle": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2022|bournemouth|tottenham": [
+"Peacock"
+],
+"2022|brentford|arsenal": [
+"Telemundo",
+"USA"
+],
+"2022|brentford|bournemouth": [
+"NBC",
+"Universo"
+],
+"2022|brentford|chelsea": [
+"USA",
+"Universo"
+],
+"2022|brentford|manutd": [
+"NBC",
+"Universo"
+],
+"2022|brentford|tottenham": [
+"USA",
+"Universo"
+],
+"2022|brighton|arsenal": [
+"NBC",
+"Universo"
+],
+"2022|brighton|chelsea": [
+"USA",
+"Universo"
+],
+"2022|brighton|tottenham": [
+"NBC",
+"Universo"
+],
+"2022|chelsea|arsenal": [
+"Telemundo",
+"USA"
+],
+"2022|chelsea|astonvilla": [
+"USA",
+"Universo"
+],
+"2022|chelsea|bournemouth": [
+"USA",
+"Universo"
+],
+"2022|chelsea|brentford": [
+"Peacock"
+],
+"2022|chelsea|brighton": [
+"Peacock"
+],
+"2022|chelsea|crystalpalace": [
+"Telemundo",
+"USA"
+],
+"2022|chelsea|everton": [
+"USA",
+"Universo"
+],
+"2022|chelsea|fulham": [
+"USA",
+"Universo"
+],
+"2022|chelsea|leeds": [
+"USA",
+"Universo"
+],
+"2022|chelsea|leicester": [
+"Peacock"
+],
+"2022|chelsea|liverpool": [
+"Peacock"
+],
+"2022|chelsea|mancity": [
+"Peacock"
+],
+"2022|chelsea|manutd": [
+"NBC",
+"Universo"
+],
+"2022|chelsea|newcastle": [
+"Peacock"
+],
+"2022|chelsea|nottinghamforest": [
+"USA",
+"Universo"
+],
+"2022|chelsea|southampton": [
+"Peacock"
+],
+"2022|chelsea|tottenham": [
+"Telemundo",
+"USA"
+],
+"2022|chelsea|westham": [
+"Peacock"
+],
+"2022|chelsea|wolves": [
+"Peacock"
+],
+"2022|crystalpalace|arsenal": [
+"USA",
+"Universo"
+],
+"2022|crystalpalace|chelsea": [
+"USA",
+"Universo"
+],
+"2022|crystalpalace|mancity": [
+"USA",
+"Universo"
+],
+"2022|crystalpalace|newcastle": [
+"NBC",
+"Universo"
+],
+"2022|crystalpalace|tottenham": [
+"USA"
+],
+"2022|everton|arsenal": [
+"USA",
+"Universo"
+],
+"2022|everton|chelsea": [
+"USA",
+"Universo"
+],
+"2022|everton|leicester": [
+"NBC",
+"Universo"
+],
+"2022|everton|tottenham": [
+"USA",
+"Universo"
+],
+"2022|fulham|arsenal": [
+"Peacock"
+],
+"2022|fulham|chelsea": [
+"Peacock"
+],
+"2022|fulham|everton": [
+"NBC",
+"Universo"
+],
+"2022|fulham|manutd": [
+"USA",
+"Universo"
+],
+"2022|fulham|tottenham": [
+"USA",
+"Universo"
+],
+"2022|leeds|arsenal": [
+"Peacock"
+],
+"2022|leeds|astonvilla": [
+"USA",
+"Universo"
+],
+"2022|leeds|chelsea": [
+"Telemundo",
+"USA"
+],
+"2022|leeds|tottenham": [
+"CNBC",
+"Peacock",
+"Telemundo"
+],
+"2022|leicester|arsenal": [
+"Peacock"
+],
+"2022|leicester|chelsea": [
+"USA",
+"Universo"
+],
+"2022|leicester|tottenham": [
+"Peacock"
+],
+"2022|liverpool|arsenal": [
+"Peacock"
+],
+"2022|liverpool|brentford": [
+"USA",
+"Universo"
+],
+"2022|liverpool|chelsea": [
+"Peacock"
+],
+"2022|liverpool|mancity": [
+"Telemundo",
+"USA"
+],
+"2022|liverpool|manutd": [
+"Telemundo",
+"USA"
+],
+"2022|liverpool|tottenham": [
+"Telemundo",
+"USA"
+],
+"2022|mancity|arsenal": [
+"Peacock"
+],
+"2022|mancity|astonvilla": [
+"Telemundo",
+"USA"
+],
+"2022|mancity|chelsea": [
+"Telemundo",
+"USA"
+],
+"2022|mancity|leicester": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2022|mancity|tottenham": [
+"Peacock"
+],
+"2022|manutd|arsenal": [
+"Telemundo",
+"USA"
+],
+"2022|manutd|chelsea": [
+"Peacock"
+],
+"2022|manutd|tottenham": [
+"Peacock"
+],
+"2022|newcastle|arsenal": [
+"Telemundo",
+"USA"
+],
+"2022|newcastle|chelsea": [
+"NBC",
+"Universo"
+],
+"2022|newcastle|liverpool": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2022|newcastle|mancity": [
+"Telemundo",
+"USA"
+],
+"2022|newcastle|manutd": [
+"Telemundo",
+"USA"
+],
+"2022|newcastle|tottenham": [
+"Telemundo",
+"USA"
+],
+"2022|newcastle|westham": [
+"NBC",
+"Universo"
+],
+"2022|newcastle|wolves": [
+"Telemundo",
+"USA"
+],
+"2022|nottinghamforest|arsenal": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2022|nottinghamforest|chelsea": [
+"Peacock"
+],
+"2022|nottinghamforest|manutd": [
+"Telemundo",
+"USA"
+],
+"2022|nottinghamforest|tottenham": [
+"Telemundo",
+"USA"
+],
+"2022|southampton|arsenal": [
+"Peacock"
+],
+"2022|southampton|chelsea": [
+"Peacock"
+],
+"2022|southampton|leicester": [
+"NBC",
+"Peacock"
+],
+"2022|southampton|liverpool": [
+"Peacock"
+],
+"2022|southampton|mancity": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2022|southampton|tottenham": [
+"USA",
+"Universo"
+],
+"2022|tottenham|arsenal": [
+"Peacock"
+],
+"2022|tottenham|astonvilla": [
+"Peacock"
+],
+"2022|tottenham|bournemouth": [
+"USA",
+"Universo"
+],
+"2022|tottenham|brentford": [
+"USA"
+],
+"2022|tottenham|brighton": [
+"Peacock"
+],
+"2022|tottenham|chelsea": [
+"Telemundo",
+"USA"
+],
+"2022|tottenham|crystalpalace": [
+"Peacock"
+],
+"2022|tottenham|everton": [
+"NBC",
+"Universo"
+],
+"2022|tottenham|fulham": [
+"Peacock"
+],
+"2022|tottenham|leeds": [
+"Peacock"
+],
+"2022|tottenham|leicester": [
+"NBC",
+"Universo"
+],
+"2022|tottenham|liverpool": [
+"Peacock"
+],
+"2022|tottenham|mancity": [
+"NBC",
+"Telemundo"
+],
+"2022|tottenham|manutd": [
+"Peacock"
+],
+"2022|tottenham|newcastle": [
+"Telemundo",
+"USA"
+],
+"2022|tottenham|nottinghamforest": [
+"Peacock"
+],
+"2022|tottenham|southampton": [
+"Peacock"
+],
+"2022|tottenham|westham": [
+"Telemundo",
+"USA"
+],
+"2022|tottenham|wolves": [
+"USA",
+"Universo"
+],
+"2022|westham|arsenal": [
+"Telemundo",
+"USA"
+],
+"2022|westham|chelsea": [
+"USA",
+"Universo"
+],
+"2022|westham|mancity": [
+"Peacock"
+],
+"2022|westham|tottenham": [
+"Peacock"
+],
+"2022|westham|wolves": [
+"USA",
+"Universo"
+],
+"2022|wolves|arsenal": [
+"USA",
+"Universo"
+],
+"2022|wolves|chelsea": [
+"USA",
+"Universo"
+],
+"2022|wolves|tottenham": [
+"Peacock"
+],
+"2023|arsenal|astonvilla": [
+"Telemundo",
+"USA"
+],
+"2023|arsenal|bournemouth": [
+"USA",
+"Universo"
+],
+"2023|arsenal|brentford": [
+"NBCSN",
+"Peacock",
+"Universo"
+],
+"2023|arsenal|brighton": [
+"Telemundo",
+"USA"
+],
+"2023|arsenal|burnley": [
+"Peacock"
+],
+"2023|arsenal|chelsea": [
+"USA",
+"Universo"
+],
+"2023|arsenal|crystalpalace": [
+"USA",
+"Universo"
+],
+"2023|arsenal|everton": [
+"Peacock",
+"USA",
+"Universo"
+],
+"2023|arsenal|fulham": [
+"USA",
+"Universo"
+],
+"2023|arsenal|liverpool": [
+"Peacock"
+],
+"2023|arsenal|luton": [
+"USA",
+"Universo"
+],
+"2023|arsenal|mancity": [
+"Peacock"
+],
+"2023|arsenal|manutd": [
+"NBC",
+"Telemundo"
+],
+"2023|arsenal|newcastle": [
+"Peacock"
+],
+"2023|arsenal|nottinghamforest": [
+"Peacock"
+],
+"2023|arsenal|sheffutd": [
+"USA",
+"Universo"
+],
+"2023|arsenal|tottenham": [
+"Peacock"
+],
+"2023|arsenal|westham": [
+"Peacock"
+],
+"2023|arsenal|wolves": [
+"USA",
+"Universo"
+],
+"2023|astonvilla|arsenal": [
+"NBC",
+"Peacock",
+"Telemundo"
+],
+"2023|astonvilla|chelsea": [
+"Peacock"
+],
+"2023|astonvilla|manutd": [
+"Telemundo",
+"USA"
+],
+"2023|astonvilla|tottenham": [
+"Telemundo",
+"USA"
+],
+"2023|astonvilla|westham": [
+"Telemundo",
+"USA"
+],
+"2023|astonvilla|wolves": [
+"NBC",
+"Peacock",
+"Telemundo",
+"Universo"
+],
+"2023|bournemouth|arsenal": [
+"Peacock"
+],
+"2023|bournemouth|chelsea": [
+"Telemundo",
+"USA"
+],
+"2023|bournemouth|mancity": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2023|bournemouth|manutd": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2023|bournemouth|newcastle": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2023|bournemouth|tottenham": [
+"USA",
+"Universo"
+],
+"2023|brentford|arsenal": [
+"USA",
+"Universo"
+],
+"2023|brentford|chelsea": [
+"Peacock"
+],
+"2023|brentford|everton": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2023|brentford|nottinghamforest": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2023|brentford|tottenham": [
+"Peacock"
+],
+"2023|brighton|arsenal": [
+"USA"
+],
+"2023|brighton|chelsea": [
+"Peacock"
+],
+"2023|brighton|newcastle": [
+"NBC",
+"Universo"
+],
+"2023|brighton|tottenham": [
+"USA",
+"Universo"
+],
+"2023|brighton|westham": [
+"NBC",
+"Universo"
+],
+"2023|burnley|arsenal": [
+"USA",
+"Universo"
+],
+"2023|burnley|chelsea": [
+"Peacock"
+],
+"2023|burnley|everton": [
+"NBC",
+"Peacock"
+],
+"2023|burnley|tottenham": [
+"Peacock"
+],
+"2023|chelsea|arsenal": [
+"NBC",
+"Peacock",
+"Telemundo"
+],
+"2023|chelsea|astonvilla": [
+"Peacock"
+],
+"2023|chelsea|bournemouth": [
+"Peacock"
+],
+"2023|chelsea|brentford": [
+"USA",
+"Universo"
+],
+"2023|chelsea|brighton": [
+"Telemundo",
+"USA"
+],
+"2023|chelsea|burnley": [
+"Peacock"
+],
+"2023|chelsea|crystalpalace": [
+"Peacock"
+],
+"2023|chelsea|everton": [
+"USA",
+"Universo"
+],
+"2023|chelsea|fulham": [
+"USA",
+"Universo"
+],
+"2023|chelsea|liverpool": [
+"Peacock"
+],
+"2023|chelsea|luton": [
+"Peacock"
+],
+"2023|chelsea|mancity": [
+"Telemundo",
+"USA"
+],
+"2023|chelsea|manutd": [
+"USA",
+"Universo"
+],
+"2023|chelsea|newcastle": [
+"USA",
+"Universo"
+],
+"2023|chelsea|nottinghamforest": [
+"USA",
+"Universo"
+],
+"2023|chelsea|sheffutd": [
+"Peacock"
+],
+"2023|chelsea|tottenham": [
+"USA"
+],
+"2023|chelsea|westham": [
+"Peacock"
+],
+"2023|chelsea|wolves": [
+"Telemundo",
+"USA"
+],
+"2023|crystalpalace|arsenal": [
+"Peacock"
+],
+"2023|crystalpalace|chelsea": [
+"USA",
+"Universo"
+],
+"2023|crystalpalace|nottinghamforest": [
+"NBC",
+"Universo"
+],
+"2023|crystalpalace|tottenham": [
+"USA",
+"Universo"
+],
+"2023|everton|arsenal": [
+"Telemundo",
+"USA"
+],
+"2023|everton|brentford": [
+"NBC",
+"Peacock"
+],
+"2023|everton|chelsea": [
+"Telemundo",
+"USA"
+],
+"2023|everton|manutd": [
+"Telemundo",
+"USA"
+],
+"2023|everton|tottenham": [
+"Telemundo",
+"USA",
+"Universo"
+],
+"2023|fulham|arsenal": [
+"Peacock"
+],
+"2023|fulham|chelsea": [
+"USA",
+"Universo"
+],
+"2023|fulham|liverpool": [
+"Telemundo",
+"USA"
+],
+"2023|fulham|tottenham": [
+"Telemundo",
+"USA",
+"Universo"
+],
+"2023|liverpool|arsenal": [
+"NBC",
+"Peacock",
+"Telemundo"
+],
+"2023|liverpool|chelsea": [
+"Peacock"
+],
+"2023|liverpool|manutd": [
+"NBC",
+"Peacock",
+"Telemundo"
+],
+"2023|liverpool|tottenham": [
+"Peacock",
+"Telemundo"
+],
+"2023|luton|arsenal": [
+"Peacock"
+],
+"2023|luton|astonvilla": [
+"USA",
+"Universo"
+],
+"2023|luton|chelsea": [
+"USA"
+],
+"2023|luton|liverpool": [
+"Telemundo",
+"USA"
+],
+"2023|luton|manutd": [
+"Telemundo",
+"USA"
+],
+"2023|luton|tottenham": [
+"USA",
+"Universo"
+],
+"2023|mancity|arsenal": [
+"NBC",
+"Peacock",
+"Telemundo"
+],
+"2023|mancity|chelsea": [
+"NBC",
+"Peacock",
+"Telemundo"
+],
+"2023|mancity|tottenham": [
+"Peacock"
+],
+"2023|mancity|wolves": [
+"Peacock",
+"Telemundo",
+"USA"
+],
+"2023|manutd|arsenal": [
+"Peacock",
+"Telemundo"
+],
+"2023|manutd|chelsea": [
+"Peacock"
+],
+"2023|manutd|tottenham": [
+"Peacock"
+],
+"2023|newcastle|arsenal": [
+"Peacock",
+"USANBC",
+"Universo"
+],
+"2023|newcastle|astonvilla": [
+"NBC",
+"Universo"
+],
+"2023|newcastle|brentford": [
+"NBC",
+"Universo"
+],
+"2023|newcastle|chelsea": [
+"Peacock"
+],
+"2023|newcastle|liverpool": [
+"Telemundo",
+"USA"
+],
+"2023|newcastle|mancity": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2023|newcastle|tottenham": [
+"USA",
+"Universo"
+],
+"2023|nottinghamforest|arsenal": [
+"Peacock"
+],
+"2023|nottinghamforest|chelsea": [
+"NBC",
+"Peacock"
+],
+"2023|nottinghamforest|everton": [
+"NBC",
+"Universo"
+],
+"2023|nottinghamforest|mancity": [
+"Telemundo",
+"USA"
+],
+"2023|nottinghamforest|manutd": [
+"NBC",
+"Peacock",
+"Telemundo",
+"Universo"
+],
+"2023|nottinghamforest|newcastle": [
+"NBC",
+"Universo"
+],
+"2023|nottinghamforest|tottenham": [
+"USA",
+"Universo"
+],
+"2023|sheffutd|arsenal": [
+"USA",
+"Universo"
+],
+"2023|sheffutd|astonvilla": [
+"Peacock",
+"Universo"
+],
+"2023|sheffutd|chelsea": [
+"NBCSN",
+"Peacock",
+"Telemundo"
+],
+"2023|sheffutd|newcastle": [
+"Telemundo",
+"USA"
+],
+"2023|sheffutd|tottenham": [
+"Peacock"
+],
+"2023|tottenham|arsenal": [
+"Telemundo",
+"USA"
+],
+"2023|tottenham|astonvilla": [
+"Telemundo",
+"USA"
+],
+"2023|tottenham|bournemouth": [
+"Telemundo",
+"USA"
+],
+"2023|tottenham|brentford": [
+"USA",
+"Universo"
+],
+"2023|tottenham|brighton": [
+"Peacock"
+],
+"2023|tottenham|burnley": [
+"Peacock"
+],
+"2023|tottenham|chelsea": [
+"Peacock"
+],
+"2023|tottenham|crystalpalace": [
+"Peacock"
+],
+"2023|tottenham|everton": [
+"Peacock"
+],
+"2023|tottenham|fulham": [
+"USA",
+"Universo"
+],
+"2023|tottenham|liverpool": [
+"USA",
+"Universo"
+],
+"2023|tottenham|luton": [
+"Peacock"
+],
+"2023|tottenham|mancity": [
+"USA",
+"Universo"
+],
+"2023|tottenham|manutd": [
+"NBC",
+"Telemundo"
+],
+"2023|tottenham|newcastle": [
+"Telemundo",
+"USA"
+],
+"2023|tottenham|nottinghamforest": [
+"USA",
+"Universo"
+],
+"2023|tottenham|sheffutd": [
+"Peacock"
+],
+"2023|tottenham|westham": [
+"USA",
+"Universo"
+],
+"2023|tottenham|wolves": [
+"Peacock"
+],
+"2023|westham|arsenal": [
+"Telemundo",
+"USA"
+],
+"2023|westham|chelsea": [
+"Telemundo",
+"USA"
+],
+"2023|westham|tottenham": [
+"Peacock"
+],
+"2023|wolves|arsenal": [
+"USA",
+"Universo"
+],
+"2023|wolves|chelsea": [
+"Telemundo",
+"USA"
+],
+"2023|wolves|newcastle": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2023|wolves|tottenham": [
+"USA",
+"Universo"
+],
+"2025|tottenham|burnley": []
+}

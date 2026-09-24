@@ -1,0 +1,96 @@
+name: Daily build
+
+# 6am EASTERN, every day. GitHub schedules in UTC only, so this fires at both
+# 10:00 and 11:00 UTC and the job bails unless it is really 6am in New York --
+# one run a day across daylight saving, instead of drifting an hour twice a
+# year. (The same guard games-history uses.)
+on:
+  schedule:
+    - cron: "0 10 * * *"
+    - cron: "0 11 * * *"
+  workflow_dispatch:          # the Run workflow button, any time
+
+permissions:
+  contents: write             # the job commits the rebuilt site
+
+concurrency:
+  group: daily-build
+  cancel-in-progress: false   # never let two builds race to push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Is it 6am in New York?
+        id: clock
+        run: |
+          hour=$(TZ=America/New_York date +%H)
+          echo "New York hour: $hour"
+          if [ "$hour" != "06" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "not 6am -- skipping"
+            echo "go=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=yes" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.clock.outputs.go == 'yes'
+
+      - uses: actions/setup-python@v5
+        if: steps.clock.outputs.go == 'yes'
+        with:
+          python-version: "3.12"
+
+      - name: Install requests
+        if: steps.clock.outputs.go == 'yes'
+        run: pip install requests
+
+      # cache/ holds raw ESPN answers for FINISHED seasons, which never change.
+      # With it restored a run only asks about the current season and anything
+      # new; without it, every run would re-download thirteen years.
+      # (data/ is committed instead -- the goal lists, opponent finishes, team
+      # details and TV listings the site is built from.)
+      - name: Restore the ESPN cache
+        if: steps.clock.outputs.go == 'yes'
+        uses: actions/cache/restore@v4
+        with:
+          path: cache
+          key: espn-cache-${{ github.run_id }}
+          restore-keys: |
+            espn-cache-
+
+      - name: Harvest
+        if: steps.clock.outputs.go == 'yes'
+        run: python harvest.py
+
+      - name: Build the site
+        if: steps.clock.outputs.go == 'yes'
+        run: python site.py
+
+      - name: Refresh the Sheet CSVs
+        if: steps.clock.outputs.go == 'yes'
+        run: python sheet_csv.py
+
+      - name: Commit and push
+        if: steps.clock.outputs.go == 'yes'
+        run: |
+          git config user.name "soccer-history bot"
+          git config user.email "actions@github.com"
+          git add docs data sheet || true
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+            exit 0
+          fi
+          git commit -m "Daily build $(TZ=America/New_York date '+%Y-%m-%d %H:%M %Z')"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
+
+      # ALWAYS save, even if the harvest died partway: a cold run that fails on
+      # one bad ESPN answer must not throw away the hundreds of files it did
+      # fetch.
+      - name: Save the ESPN cache
+        if: always() && steps.clock.outputs.go == 'yes'
+        uses: actions/cache/save@v4
+        with:
+          path: cache
+          key: espn-cache-${{ github.run_id }}

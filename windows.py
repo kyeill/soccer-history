@@ -12,6 +12,7 @@ only really has from 2024-25 on, and the ESPN ids behind the crests.
 import datetime as dt
 import re
 import harvest as h
+import tv
 
 # SATURDAY is 17:30 UK in every season. SUNDAY MOVED: the late Sky game was
 # 16:00 UK to 2018-19 and 16:30 from 2019-20, so the window is read per era --
@@ -150,10 +151,15 @@ def collect(teams):
                  "dow": et.strftime("%a"), "uk": f["uk"],
                  "home": home, "away": away, "hs": f["hs"], "as": f["as"],
                  "id": "w%s-%s-%s" % (f["date"], home, away)}
+            # ESPN for the newest seasons, the Premier League's own listing
+            # for 2016-17 to 2023-24 (see tv.py). Nothing before that exists.
+            nets = []
             if season >= TV_FROM:
                 nets, _ = nets_for(f["date"], home, away)
-                if nets:
-                    m["nets"] = nets
+            if not nets:
+                nets = tv.networks(season, f["home"], f["away"])
+            if nets:
+                m["nets"] = nets
             out.append(m)
         if missing:
             print("  WARN: %s clubs not matched to ESPN: %s"
@@ -163,6 +169,7 @@ def collect(teams):
     today = dt.datetime.now(h.ET).date()
     horizon = (today + dt.timedelta(days=(6 - today.weekday()) % 7)).isoformat()
     out = [m for m in out if m["hs"] is not None or m["date"] <= horizon]
+    tv.save()
     out.sort(key=lambda m: (m["date"], m["time"]))
     played = [m for m in out if m["hs"] is not None]
     print("  windows: %d matches (%d played)" % (len(out), len(played)))

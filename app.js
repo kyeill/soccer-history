@@ -359,7 +359,7 @@ function twoCard(m) {
   } else {
     const st = stageText(m);
     head = (m.comp === "PL"
-      ? (m.mw != null ? "Matchweek " + m.mw : "Premier League")
+      ? (m.mw != null ? "MW " + m.mw : "Premier League")
       : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) + "</span>") +
       " | " + fmtTime(m.time);
   }
