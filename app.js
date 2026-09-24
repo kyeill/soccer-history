@@ -9,8 +9,14 @@ const TOP_SIX = ["359", "363", "364", "360", "382"];
 let ALL = [], MATCHES = [], TEAMS = {}, CURRENT = null;
 let FILT = {};
 let SORT = "asc";
-// the tab along the top: one view per team of his (2026-09-21)
+// the tab along the top: one view per team of his, plus EPL/Rivals, which
+// holds two views of its own (2026-09-24)
 let VIEW = "spurs";
+let SUB = "tv";
+// which population each tab reads out of the one file
+function population() {
+  return VIEW === "epl" ? (SUB === "tv" ? "windows" : "rivals") : VIEW;
+}
 
 const COMP = {
   PL: { name: "Premier League", short: "PL" },
@@ -45,7 +51,12 @@ const VIEWS = {
            box: "#213065", lead: ["203", "206"] },
   atlanta: { team: "18418", comps: ["MLS", "CCL", "LGC", "USOC", "CAMP"],
              box: "#9d2235", lead: [] },
+  // the two EPL/Rivals views draw two-team cards, so they need no box colour
+  rivals: { comps: ["PL", "FAC", "LC", "UCL", "UEL", "UECL", "USC"], lead: [] },
+  windows: { comps: ["PL"], lead: [] },
 };
+const ARSENAL = "359", CHELSEA = "363";
+const WINDOWS = ["NBC Saturday", "Super Sunday"];
 // a European header wears its competition's colour, lightened to read on a
 // card; the English cups stay plain
 const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#5b9bea" };
@@ -307,19 +318,78 @@ function card(m) {
     "</span></div></div>";
 }
 
+/* A TWO-TEAM CARD, for the matches that are nobody's of his: the TV windows
+   and the rivals' results. Away line then home line, as games-history's cards
+   read, the winner's line washed in its own colour. */
+function twoCard(m) {
+  const wins = m.team === "windows";
+  const homeId = wins ? m.home : (m.home ? m.rival : m.opp);
+  const awayId = wins ? m.away : (m.home ? m.opp : m.rival);
+  const hs = wins ? m.hs : (m.home ? m.us : m.them);
+  const as = wins ? m.as : (m.home ? m.them : m.us);
+  const up = hs === null || hs === undefined;
+  // a shootout decides who won: the RESULT knows it, the score does not
+  const rivalWon = !wins && m.result === "W", rivalLost = !wins && m.result === "L";
+  const winId = up ? null
+    : wins ? (hs > as ? homeId : as > hs ? awayId : null)
+    : rivalWon ? m.rival : rivalLost ? m.opp : null;
+  const line = (id, score, other) => {
+    const t = TEAMS[id] || {};
+    const win = !up && (winId ? id === winId : score > other);
+    return '<div class="tl2' + (win ? " won" : "") + '">' +
+      '<img class="crest" loading="lazy" src="' + esc(t.logo || "") +
+      '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
+      '<span class="nm">' + esc(t.card || t.name || id) + "</span>" +
+      '<span class="sc">' + (up ? "" : score) + "</span></div>";
+  };
+  // the header: the matchweek and the window, or the rival's competition
+  const net = primaryNet(m.nets);
+  let head;
+  if (wins) {
+    head = '<span class="hstage" data-short="' + esc("MW " + m.mw) + '">Matchweek ' +
+      m.mw + "</span> | " + esc(m.window) + " | " + (net ? esc(net) + " " : "") +
+      fmtTime(m.time);
+  } else {
+    const st = stageText(m);
+    head = (m.comp === "PL"
+      ? (m.mw != null ? "Matchweek " + m.mw : "Premier League")
+      : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) + "</span>") +
+      " | " + fmtTime(m.time);
+  }
+  const winner = winId;
+  if (m.pens) head += " | Pens " + esc(m.pens);
+  const headCol = COMP_COLOUR[m.comp];
+  return '<div class="row two" data-id="' + m.id + '" style="--winwash:' +
+    (winner ? shade(teamColour(winner)) : "transparent") + '">' +
+    '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + "><span>" +
+    head + '</span><span class="hdate">' + fmtDate(m.date) + "</span></div>" +
+    '<div class="teams">' + line(awayId, as, hs) + line(homeId, hs, as) + "</div></div>";
+}
+
 /* ---------- filters ------------------------------------------------------ */
+function isEpl() { return VIEW === "epl"; }
 function defaults() {
   // Spurs open on the current season; USMNT and Atlanta on their latest year
   // with a match (the national team plays in only some years)
   const years = MATCHES.map(m => m.season);
-  const open = VIEW === "spurs" ? CURRENT : (years.length ? Math.max.apply(null, years) : null);
-  return { season: open, comp: null, team: null, hl: null, ko: false };
+  // RIVALS opens on every year, newest first -- their bad results are a list
+  // to browse, not a season to follow (as in games-history)
+  const open = VIEW === "epl" && SUB === "rivals" ? null
+    : VIEW === "spurs" ? CURRENT
+    : (years.length ? Math.max.apply(null, years) : null);
+  return { season: open, comp: null, team: null, hl: null, ko: false,
+           window: null, rival: null };
 }
 function yearLabel(y) { return VIEW === "spurs" ? seasonLabel(y) : String(y); }
 function passes(m, skip) {
   if (skip !== "season" && FILT.season != null && m.season !== FILT.season) return false;
   if (skip !== "comp" && FILT.comp && m.comp !== FILT.comp) return false;
-  if (skip !== "team" && FILT.team && m.opp !== FILT.team) return false;
+  if (skip !== "team" && FILT.team) {
+    const ids = m.team === "windows" ? [m.home, m.away] : [m.opp];
+    if (ids.indexOf(FILT.team) < 0) return false;
+  }
+  if (skip !== "window" && FILT.window && m.window !== FILT.window) return false;
+  if (skip !== "rival" && FILT.rival && m.rival !== FILT.rival) return false;
   if (FILT.ko && !isKnockout(m)) return false;
   if (skip !== "hl" && FILT.hl) {
     if (FILT.hl === "late_win" && !m.late_win) return false;
@@ -353,17 +423,31 @@ function filterBar() {
     .map(m => m.season))).sort((a, b) => b - a);
   let h = group("Year", select("season", "All Years",
     seasons.map(y => [yearLabel(y), y]), FILT.season));
+  // TV Windows picks a window instead of a competition; Rivals picks the club
+  if (VIEW === "epl" && SUB === "tv") {
+    h += group("Window", select("window", "Both Windows",
+      WINDOWS.map(w => [w, w]), FILT.window));
+  }
+  if (VIEW === "epl" && SUB === "rivals") {
+    h += group("Rival", select("rival", "Both Rivals",
+      [[(TEAMS[ARSENAL] || {}).card || "Arsenal", ARSENAL],
+       [(TEAMS[CHELSEA] || {}).card || "Chelsea", CHELSEA]], FILT.rival));
+  }
   const comps = new Set(MATCHES.filter(m => passes(m, "comp")).map(m => m.comp));
-  h += group("Competition", select("comp", "All Competitions",
-    VIEWS[VIEW].comps.filter(c => comps.has(c) || c === FILT.comp).map(c => [COMP[c].name, c]),
+  if (!(VIEW === "epl" && SUB === "tv")) h += group("Competition", select("comp", "All Competitions",
+    VIEWS[population()].comps.filter(c => comps.has(c) || c === FILT.comp).map(c => [COMP[c].name, c]),
     FILT.comp));
   // TEAM: Spurs list the Top Six, then the other English clubs, then everyone
   // abroad -- a club counts as English if it ever met Spurs in an English
   // competition. USMNT leads with Mexico and Canada; Atlanta is alphabetical.
-  const lead = VIEWS[VIEW].lead;
-  const seen = new Set(MATCHES.filter(m => passes(m, "team")).map(m => m.opp));
+  const lead = VIEWS[population()].lead;
+  const seen = new Set();
+  MATCHES.filter(m => passes(m, "team")).forEach(m => {
+    if (m.team === "windows") { seen.add(m.home); seen.add(m.away); }
+    else seen.add(m.opp);
+  });
   if (FILT.team) seen.add(FILT.team);
-  const english = VIEW === "spurs"
+  const english = VIEW === "spurs" || isEpl()
     ? new Set(MATCHES.filter(m => ["PL", "FAC", "LC"].indexOf(m.comp) > -1).map(m => m.opp))
     : new Set(MATCHES.map(m => m.opp));
   const nameOf = id => (TEAMS[id] || {}).card || id;
@@ -376,6 +460,10 @@ function filterBar() {
   h += group("Team", select("team", "All Teams",
     [].concat.apply([], groups.map((g, i) => (i ? [BAR] : []).concat(g))), FILT.team));
   const HL = [["Late Winners", "late_win"], ["Late Equalizers", "late_eq"]];
+  if (isEpl()) {
+    return h + group("", '<button class="f" data-act="sort">' +
+      (SORT === "asc" ? "Oldest First" : "Newest First") + "</button>");
+  }
   // the late goals are read for Spurs only
   if (VIEW === "spurs") h += group("Highlights", select("hl", "All Matches", HL, FILT.hl));
   h += group("", '<button class="f" data-act="ko" aria-pressed="' + !!FILT.ko +
@@ -399,23 +487,34 @@ function trimHeads() {
   });
 }
 
+function viewBar() {
+  const bar = document.getElementById("viewbar");
+  if (VIEW !== "epl") { bar.innerHTML = ""; bar.style.display = "none"; return; }
+  bar.style.display = "";
+  bar.innerHTML = [["tv", "TV Windows"], ["rivals", "Rivals"]].map(v =>
+    '<button data-sub="' + v[0] + '" aria-selected="' + (SUB === v[0]) + '">' +
+    v[1] + "</button>").join("");
+}
 function draw() {
+  viewBar();
   document.getElementById("filters").innerHTML = filterBar();
   const list = visible();
   const n = list.filter(m => !upcoming(m)).length;
   const w = list.filter(won).length, d = list.filter(m => m.result === "D").length,
     l = list.filter(lost).length;
-  document.getElementById("count").textContent = n
-    ? w + "-" + d + "-" + l : list.length + " upcoming";
+  document.getElementById("count").textContent = VIEW === "epl"
+    ? list.length + (list.length === 1 ? " match" : " matches")
+    : (n ? w + "-" + d + "-" + l : list.length + " upcoming");
+  const render = VIEW === "epl" ? twoCard : card;
   document.getElementById("list").innerHTML = list.length
-    ? list.map(card).join("") : '<div class="empty">No matches.</div>';
+    ? list.map(render).join("") : '<div class="empty">No matches.</div>';
   trimHeads();
 }
 
 async function init() {
   const r = await fetch("games.json?v=" + BUILD).then(x => x.json());
   ALL = r.matches; TEAMS = r.teams; CURRENT = r.current;
-  MATCHES = ALL.filter(m => m.team === VIEW);
+  MATCHES = ALL.filter(m => m.team === population());
   FILT = defaults();
   draw();
   document.querySelector("nav").addEventListener("click", e => {
@@ -424,9 +523,19 @@ async function init() {
     VIEW = b.dataset.top;
     document.querySelectorAll("nav button").forEach(x =>
       x.setAttribute("aria-selected", String(x === b)));
-    MATCHES = ALL.filter(m => m.team === VIEW);
+    MATCHES = ALL.filter(m => m.team === population());
     FILT = defaults();
-    SORT = "asc";
+    SORT = VIEW === "epl" && SUB === "rivals" ? "desc" : "asc";
+    draw();
+    window.scrollTo({ top: 0 });
+  });
+  document.getElementById("viewbar").addEventListener("click", e => {
+    const b = e.target.closest("button[data-sub]");
+    if (!b || b.dataset.sub === SUB) return;
+    SUB = b.dataset.sub;
+    MATCHES = ALL.filter(m => m.team === population());
+    FILT = defaults();
+    SORT = SUB === "rivals" ? "desc" : "asc";
     draw();
     window.scrollTo({ top: 0 });
   });
@@ -449,7 +558,8 @@ async function init() {
     draw();
   });
   document.getElementById("clearbtn").addEventListener("click", () => {
-    FILT = { season: null, comp: null, team: null, hl: null, ko: false };
+    FILT = { season: null, comp: null, team: null, hl: null, ko: false,
+             window: null, rival: null };
     draw();
     window.scrollTo({ top: 0 });
   });

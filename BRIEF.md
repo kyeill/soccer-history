@@ -216,6 +216,23 @@ Finals button, Oldest/Newest. Qualifiers and the 2025 Super Cup are included
 (confirmed). Not yet: rivals, TV windows,
 the daily build.
 
+## EPL/Rivals tab (built 2026-09-24)
+
+Second tab, two views (a segmented bar, as in games-history):
+
+- **TV Windows** -- every Saturday and Sunday window match since 2013-14,
+  748 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
+  ESPN gives the US network (2024-25 on) and the crests. THE SUNDAY WINDOW
+  MOVED: 16:00 UK to 2018-19, 16:30 from 2019-20 -- read per season, with the
+  other time taken when a matchweek has nothing at the usual one (2016-18 used
+  both). Saturday is 17:30 UK throughout. Upcoming only to the coming Sunday.
+- **Rivals** -- 281 results: Arsenal 203, Chelsea 78, opening on every year,
+  newest first. Arsenal's rule is applied across ALL competitions.
+
+Both draw a TWO-TEAM card (away line over home line, the winner washed), not
+his one-opponent card. A shootout decides the winner, and the header says
+"Pens 5-4".
+
 ## Suggested order
 
 1. Confirm the OPEN items above with Kyle.

@@ -79,6 +79,8 @@ def record(team, eid, s, comps, stage_raw=None):
         return m
     notes = [n.get("text") or n.get("headline") or "" for n in c.get("notes") or []]
     so = h.shootout_of(notes) if team == h.SPURS else shootout_for(notes, us["team"])
+    if not so and m["us"] == m["them"]:
+        so = h.pens_from_summary(eid, team)
     if so:
         m["pens"], m["result"] = so[1], ("W" if so[0] else "L")
     else:

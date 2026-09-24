@@ -242,19 +242,23 @@ def flat(name):
             "coventrycity": "coventry"}.get(s, s)
 
 
-def matchweeks(season):
-    """{(home flat, away flat): matchweek} from openfootball."""
-    url = OPENFOOTBALL % season_label(season)
-    # openfootball is plain text, not JSON, so it has its own tiny cache
+def openfootball_text(season):
+    """That season's openfootball file. It is plain text, not JSON, so it has
+    its own tiny cache; a finished season is never re-fetched."""
     path = os.path.join(CACHE, "of-%d.txt" % season)
     if season_over(season) and os.path.exists(path):
-        text = open(path, encoding="utf-8").read()
-    else:
-        r = requests.get(url, timeout=60)
-        r.raise_for_status()
-        text = r.content.decode("utf-8")
-        os.makedirs(CACHE, exist_ok=True)
-        open(path, "w", encoding="utf-8").write(text)
+        return open(path, encoding="utf-8").read()
+    r = requests.get(OPENFOOTBALL % season_label(season), timeout=60)
+    r.raise_for_status()
+    text = r.content.decode("utf-8")
+    os.makedirs(CACHE, exist_ok=True)
+    open(path, "w", encoding="utf-8").write(text)
+    return text
+
+
+def matchweeks(season):
+    """{(home flat, away flat): matchweek} from openfootball."""
+    text = openfootball_text(season)
     # Two layouts. To 2023-24 the score sits between the clubs:
     #     15:00  Arsenal FC               1-3 (1-1)  Aston Villa
     # From 2024-25 a "v" does, and the score trails:
@@ -407,6 +411,27 @@ def shootout_of(notes):
     return None
 
 
+def pens_from_summary(eid, team):
+    """The shootout, from the match summary: {team: score} on the competitors.
+    ESPN's NOTE is not always there -- the 2013 Super Cup has none -- but the
+    summary carries shootoutScore whenever penalties were taken. Returns
+    (this team won it, "5-4") or None."""
+    try:
+        s = fetch("%s/all/summary" % BASE, {"event": eid})
+    except requests.RequestException:
+        return None
+    comps = ((s.get("header") or {}).get("competitions") or [{}])[0].get("competitors") or []
+    got = {str(c["team"]["id"]): c.get("shootoutScore") for c in comps
+           if c.get("team") and c.get("shootoutScore") is not None}
+    if len(got) != 2 or str(team) not in got:
+        return None
+    mine = got[str(team)]
+    theirs = next(v for k, v in got.items() if k != str(team))
+    if mine == theirs:
+        return None
+    return mine > theirs, "%d-%d" % (max(mine, theirs), min(mine, theirs))
+
+
 def venue_place(venue):
     """A neutral ground is named by city -- except Wembley, which is the story."""
     name = (venue or {}).get("fullName") or ""
@@ -457,6 +482,10 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
     else:
         m["us"], m["them"] = score_of(us), score_of(them)
         so = shootout_of(notes)
+        # a drawn CUP tie was settled somehow: ask the summary, which carries
+        # the shootout even when the note does not
+        if not so and m["us"] == m["them"] and code != "PL":
+            so = pens_from_summary(e["id"], SPURS)
         if so:
             m["pens"] = so[1]
             m["result"] = "W" if so[0] else "L"
@@ -667,6 +696,11 @@ def main():
         matches += ms
     for t in (others.USA, others.ATL):
         team_info(t, teams)
+    # the EPL/Rivals tab: Arsenal and Chelsea's bad results, and the two
+    # Premier League TV windows
+    import rivals, windows
+    matches += rivals.collect(teams)
+    matches += windows.collect(teams)
 
     bad = [m["id"] for m in matches if m.get("goals_bad")]
     if bad:
@@ -678,7 +712,11 @@ def main():
     save_data("goals.json", goal_store)
     save_data("finishes.json", finishes)
 
-    used = {m["opp"] for m in matches} | {SPURS, others.USA, others.ATL}
+    used = ({m["opp"] for m in matches if m.get("opp")} |
+            {m["home"] for m in matches if m.get("team") == "windows"} |
+            {m["away"] for m in matches if m.get("team") == "windows"} |
+            {m["rival"] for m in matches if m.get("team") == "rivals"} |
+            {SPURS, others.USA, others.ATL})
     for t in used:
         if t in teams:
             teams[t]["card"] = CARD_NAME.get(teams[t]["name"], teams[t]["name"])

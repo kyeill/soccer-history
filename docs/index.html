@@ -40,6 +40,25 @@ nav button{flex:1;background:none;border:0;border-bottom:2px solid transparent;
   padding:9px 4px;cursor:pointer}
 nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
 
+/* the two views inside EPL/Rivals -- a segmented control, not more tabs */
+.viewbar{display:inline-flex;gap:0;margin:0 0 12px;border:1px solid var(--line);
+  border-radius:8px;overflow:hidden;background:var(--card)}
+.viewbar button{background:none;border:0;color:var(--muted);font:inherit;
+  font-size:13.5px;font-weight:600;padding:6px 16px;cursor:pointer;white-space:nowrap}
+.viewbar button[aria-selected="true"]{background:#2e3a48;color:#cfe0f2}
+
+/* A TWO-TEAM CARD (TV Windows, Rivals): away line over home line, the
+   winner's line washed in its own colour */
+.row.two .tl2{display:grid;grid-template-columns:22px minmax(0,1fr) auto;
+  column-gap:8px;align-items:center;height:26px;padding:0 6px 0 7px;
+  margin-left:-7px;border-radius:5px}
+.row.two .tl2.won{background:var(--winwash)}
+.row.two .tl2.won .nm{font-weight:600}
+.row.two .tl2:not(.won) .nm{color:#a5a5a0}
+.row.two .sc{font-size:15px;font-variant-numeric:tabular-nums;font-weight:600;
+  min-width:18px;text-align:right}
+.row.two .sport{justify-content:space-between;flex-wrap:nowrap;gap:8px}
+
 .filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
 .f{border:1px solid var(--line);background:var(--card);color:var(--muted);
   border-radius:999px;padding:3px 11px;font:inherit;font-size:13px;
@@ -136,13 +155,15 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 </header>
 <nav>
   <button data-top="spurs" aria-selected="true">Tottenham</button>
+  <button data-top="epl" aria-selected="false">EPL/Rivals</button>
   <button data-top="usmnt" aria-selected="false">USMNT</button>
   <button data-top="atlanta" aria-selected="false">Atlanta</button>
 </nav>
+<div class="viewbar" id="viewbar" style="display:none"></div>
 <div class="filters" id="filters"></div>
 <div id="list"></div>
 </div>
 
-<script src="app.js?v=20260921-145606"></script>
+<script src="app.js?v=20260924-090340"></script>
 </body>
 </html>
