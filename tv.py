@@ -280,7 +280,9 @@ CANON = {
 # SPANISH-LANGUAGE AND FOREIGN CHANNELS ARE DROPPED (his call 2026-09-26)
 HIDE = {"Telemundo", "Universo", "TeleXitos", "Univision", "UniMas", "TUDN",
         "Galavision", "FOX Deportes", "ESPN Deportes", "Azteca America",
-        "Disney+", "UniMás"}
+        "Disney+", "UniMás",
+        # his call 2026-09-26
+        "beIN", "GOLTV", "FOX Soccer Plus", "ESPN App"}
 # what a card prefers when a match was on more than one
 ORDER = ["NBC", "NBCSN", "USA", "CNBC", "Syfy", "FOX", "FS1", "FS2",
          "FOX Soccer Plus", "CBS", "CBSSN", "ESPN", "ESPN2", "ESPNEWS", "TNT",
