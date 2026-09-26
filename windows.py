@@ -158,6 +158,9 @@ def collect(teams):
                 nets, _ = nets_for(f["date"], home, away)
             if not nets:
                 nets = tv.networks(season, f["home"], f["away"])
+            if not nets:
+                # 2013-14 to 2015-16, which nothing else has
+                nets = tv.networks_any(m["date"], f["home"], f["away"])
             if nets:
                 m["nets"] = nets
             out.append(m)

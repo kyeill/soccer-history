@@ -33,9 +33,16 @@ lists, opponent finishes, team details, the USMNT chain, TV listings.
 - **The Sunday TV window moved**: 16:00 UK to 2018-19, 16:30 from 2019-20.
   Saturday has been 17:30 UK throughout. The windows are defined by UK kickoff
   time so the clock-change weeks are not lost.
-- **US networks**: ESPN has none before 2024-25 anywhere (public API, core API,
-  scoreboards). The Premier League's own service has every match from 2016-17.
-  Nothing has 2013-14 to 2015-16.
+- **US networks**, in three layers (`tv.py`): ESPN from 2024-25; the Premier
+  League's own service (footballapi.pulselive.com) for league matches from
+  2016-17; and livesoccertv's daily schedule pages for everything else,
+  including 2013-16 and the older cup and European nights. livesoccertv
+  refuses a plain fetcher, needs a browser User-Agent, and writes a channel a
+  dozen ways ("Fox Sports 2 USA", "NBCSN (United States)"), so names are
+  cleaned and looked up in a table; radio, carriers and club sites are
+  dropped. Its rows carry `class="matchrow"` OR an empty class, so rows are
+  found by `data-ko`. NEVER cache a failed page as "no TV" -- that silently
+  blanked 657 matches on the first run.
 - **Shootouts**: read `shootoutScore` from the match summary. ESPN's text note
   is missing on some matches (Chelsea's 2013 Super Cup) and names Spurs
   inconsistently ("Spurs win 8-7 on penalties").

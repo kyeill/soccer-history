@@ -537,6 +537,12 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
         if not m["nets"] and not upcoming:
             import tv
             m["nets"] = tv.networks(season, teams[home]["name"], teams[away]["name"])
+    # ...and livesoccertv for whatever is still blank -- the 2013-16 seasons,
+    # and the cup and European matches of every season before 2024-25
+    if not m["nets"] and not upcoming and not postponed:
+        import tv
+        home, away = (SPURS, tid) if m["home"] else (tid, SPURS)
+        m["nets"] = tv.networks_any(m["date"], teams[home]["name"], teams[away]["name"])
     return m
 
 

@@ -93,6 +93,9 @@ def build(rival, e, season, teams, pl_table, mw_map):
             m["mw"] = mw_map[key]
         if not m["nets"]:
             m["nets"] = tv.networks(season, teams[home]["name"], teams[away]["name"])
+    if not m["nets"]:
+        home, away = (rival, tid) if m["home"] else (tid, rival)
+        m["nets"] = tv.networks_any(m["date"], teams[home]["name"], teams[away]["name"])
     return m
 
 
