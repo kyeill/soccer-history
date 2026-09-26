@@ -441,6 +441,7 @@ def venue_place(venue):
 
 
 def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tables):
+    import tv
     slug = e["league"]["slug"]
     code, comp_name = COMPS[slug]
     c = e["competitions"][0]
@@ -535,14 +536,13 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
         # ESPN has no US network before 2024-25; the Premier League's own
         # listing has one for every match from 2016-17 (see tv.py)
         if not m["nets"] and not upcoming:
-            import tv
             m["nets"] = tv.networks(season, teams[home]["name"], teams[away]["name"])
     # ...and livesoccertv for whatever is still blank -- the 2013-16 seasons,
     # and the cup and European matches of every season before 2024-25
     if not m["nets"] and not upcoming and not postponed:
-        import tv
         home, away = (SPURS, tid) if m["home"] else (tid, SPURS)
         m["nets"] = tv.networks_any(m["date"], teams[home]["name"], teams[away]["name"])
+    m["nets"] = tv.clean(m["nets"])
     return m
 
 

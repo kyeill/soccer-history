@@ -264,3 +264,37 @@ def networks_any(date, home_name, away_name, final=True):
     if final:
         st[key] = nets
     return nets
+
+
+# ---------------------------------------------------------------- one list
+# Every source spells a channel its own way -- ESPN says "USA Net" and "Tele",
+# the Premier League "USANBC", livesoccertv "Fox Sports 2 USA" -- so every
+# list of networks passes through here before it reaches a card.
+CANON = {
+    "USA Net": "USA", "USA Network": "USA", "USANET": "USA",
+    "USANBC": "NBC", "USANBCSN": "NBCSN", "NBC Sports Network": "NBCSN",
+    "USACNBC": "CNBC", "USPEA": "Peacock", "NBCGOLD": "NBC Sports Gold",
+    "Tele": "Telemundo", "TELEMUND": "Telemundo", "UNIVERSO": "Universo",
+    "Fox Sports 1": "FS1", "Fox Sports 2": "FS2",
+}
+# SPANISH-LANGUAGE AND FOREIGN CHANNELS ARE DROPPED (his call 2026-09-26)
+HIDE = {"Telemundo", "Universo", "TeleXitos", "Univision", "UniMas", "TUDN",
+        "Galavision", "FOX Deportes", "ESPN Deportes", "Azteca America",
+        "Disney+", "UniMás"}
+# what a card prefers when a match was on more than one
+ORDER = ["NBC", "NBCSN", "USA", "CNBC", "Syfy", "FOX", "FS1", "FS2",
+         "FOX Soccer Plus", "CBS", "CBSSN", "ESPN", "ESPN2", "ESPNEWS", "TNT",
+         "beIN", "GOLTV", "Peacock", "Paramount+", "ESPN+", "B/R Live",
+         "CBS All Access", "NBC Sports Gold", "ESPN3", "PL Extra Time",
+         "NBC Sports App", "ESPN App", "FOX Sports GO", "CBS Sports Golazo"]
+
+
+def clean(nets):
+    """Canonical names, the hidden ones dropped, in the order a card wants."""
+    got = []
+    for n in nets or []:
+        n = CANON.get(n, n)
+        if n and n not in HIDE and n not in got:
+            got.append(n)
+    known = [n for n in ORDER if n in got]
+    return known + [n for n in got if n not in ORDER]
