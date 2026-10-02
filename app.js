@@ -151,10 +151,13 @@ function stageText(m) {
   // a one-match event is its own name: MLS Cup, the Campeones Cup
   if (m.stage === "MLS Cup") return { full: "MLS Cup", short: "MLS Cup" };
   if (m.comp === "CAMP" || m.comp === "CCUP") return { full: c.name, short: c.short };
-  let st = m.stage || "";
+  let st = (m.stage || "").replace(/ Replay$/, " (Replay)");
+  // the leg of a two-legged tie, where there is one
+  const leg = m.leg ? " (" + m.leg + (m.leg === 1 ? "st" : "nd") + " Leg)" : "";
   if (m.comp === "UCL" || m.comp === "UEL" || m.comp === "UECL") {
-    const full = c.name + " " + st, short = c.short + " " + st;
-    return { full: full, short: short };
+    const yr = seasonLabel(m.season) + " ";
+    return { full: yr + c.name + ": " + st + leg,
+             short: yr + c.short + ": " + st + leg };
   }
   // a domestic cup round shortens only if the header would wrap: "League Cup
   // Third Round" -> "League Cup R3" (his overflow check 2026-10-02)
@@ -165,7 +168,7 @@ function stageText(m) {
   Object.keys(ROUND_SHORT).forEach(k => {
     if (shortSt.indexOf(k) === 0) shortSt = ROUND_SHORT[k] + shortSt.slice(k.length);
   });
-  return { full: c.name + " " + st, short: c.short + " " + shortSt };
+  return { full: c.name + " " + st + leg, short: c.short + " " + shortSt + leg };
 }
 /* HIS HEADER (2026-10-02). On his teams' cards:
      in a TV window   MW5 | NBC Saturday 12:30pm
@@ -202,8 +205,12 @@ function cardHead(m) {
     ? '<span class="hstage" data-short="' + esc(s.short) + '">' + esc(s.full) + "</span>"
     : esc(s.full);
   if (bigStage(m)) {
-    // the year leads a final, as it does a Michigan tournament card
-    return { head: m.date.slice(0, 4) + " " + lab + (m.place ? " | " + esc(cityOf(m)) : ""),
+    // the year leads a final, as it does a Michigan tournament card -- except
+    // in Europe, whose label already carries the season ("2018-19 Champions
+    // League: Final")
+    const euro = ["UCL", "UEL", "UECL"].indexOf(m.comp) > -1;
+    return { head: (euro ? "" : m.date.slice(0, 4) + " ") + lab +
+                   (m.place ? " | " + esc(cityOf(m)) : ""),
              date: null, tv: tv };
   }
   // a cup round is long enough on its own: the day and date lead the third row
@@ -294,7 +301,12 @@ function card(m) {
     paintBox(themBg, colourOf(mx.opp_font)) + ">" + (up ? "" : m.them) + "</span>";
   // a record from before the field existed falls back to the card's own side
   const usHome = m.home != null ? m.home : m.where !== "A";
+  // the aggregate of a tie, and a shootout, read right after the boxes
+  const tie = m.agg ? "AGG " + m.agg : (m.pens ? "PENS " + m.pens : "");
   const boxes = '<span class="boxes">' + (usHome ? usBox + themBox : themBox + usBox) +
+    (tie ? '<span class="tiebox' +
+      (m.through === true ? " won" : m.through === false ? " lost"
+        : W ? " won" : L ? " lost" : "") + '">' + esc(tie) + "</span>" : "") +
     "</span>";
   const oppLine = '<div class="tl' + (W ? " won" : "") + '"><span class="mstripe">' +
     // a club ESPN keeps no crest for (Dnipro, dissolved) leaves a blank, not
@@ -315,9 +327,7 @@ function card(m) {
     h.down.split("|").forEach(p => parts.push(p));
   }
   if (m.awarded) parts.push("Awarded");
-  if (m.pens) parts.push((W ? "Won " : "Lost ") + m.pens + " on Pens");
-  else if (m.aet) parts.push("AET");
-  if (m.agg) parts.push("Agg. " + m.agg);
+  if (!m.pens && m.aet) parts.push("AET");
   // the scorer and minute, already worded by the harvest ("Kane 86'")
   if (m.late_win && !m.scorers) parts.push(m.late_win);
   if (m.late_eq) parts.push(m.late_eq);

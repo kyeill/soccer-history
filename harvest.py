@@ -649,6 +649,15 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
             m["result"] = "D"
         if any("extra time" in (n or "").lower() or "aet" in (n or "").lower() for n in notes):
             m["aet"] = True
+        # WHO WENT THROUGH, from ESPN's note -- a tie can be won on a night the
+        # match was lost (Man City 2019: beaten 4-3, through on away goals), so
+        # the aggregate must not read as a defeat (his catch 2026-10-02)
+        for n in notes:
+            low = (n or "").lower()
+            if ("advance" in low or "on away goals" in low or "on penalties" in low
+                    or "wins on" in low):
+                m["through"] = bool(re.search(r"Tottenham|Spurs", n or ""))
+                break
         # goals, kept forever once read
         if e["id"] not in goal_store:
             g = goals_of(slug, e["id"], SPURS, {SPURS: m["us"], tid: m["them"]})
@@ -734,8 +743,28 @@ def two_legged(matches):
     for legs in ties.values():
         legs.sort(key=lambda m: m["date"])
         if len(legs) == 2 and all("us" in m for m in legs):
-            legs[1]["agg"] = "%d-%d" % (sum(m["us"] for m in legs), sum(m["them"] for m in legs))
+            ours, theirs = sum(m["us"] for m in legs), sum(m["them"] for m in legs)
+            legs[1]["agg"] = "%d-%d" % (ours, theirs)
             legs[0]["leg"], legs[1]["leg"] = 1, 2
+            # WHO WENT THROUGH. A tie can be won on a night the match was lost
+            # (Man City 2019: beaten 4-3, through on away goals), so it is
+            # worked out here rather than read off the second leg's result.
+            # ESPN's note wins when it has one; then the aggregate; then away
+            # goals, which UEFA used through 2020-21; then the shootout.
+            if "through" not in legs[1]:
+                away = next((m for m in legs if not m["home"]), None)
+                home = next((m for m in legs if m["home"]), None)
+                # AWAY GOALS ONLY IN EUROPE, and only to 2020-21: the League
+                # Cup never used them, so the 2019 Chelsea semi is decided by
+                # its shootout, not by Spurs' away goal (caught 2026-10-02)
+                euro = legs[1]["comp"] in ("UCL", "UEL", "UECL")
+                if ours != theirs:
+                    legs[1]["through"] = ours > theirs
+                elif legs[1].get("pens"):
+                    legs[1]["through"] = legs[1]["result"] == "W"
+                elif euro and legs[1]["season"] <= 2020 and away and home and \
+                        away["us"] != home["them"]:
+                    legs[1]["through"] = away["us"] > home["them"]
 
 
 def replays(matches):
