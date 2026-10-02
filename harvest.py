@@ -295,7 +295,7 @@ CARD_NAME = {
     # United", "Brighton & Hove Albion", "Paris Saint-Germain". Only names
     # ESPN itself abbreviates or writes oddly are mapped here, and the
     # club-type letters in front of a name ("AS", "IF", "KAA") are dropped.
-    "Internazionale": "Inter Milan", "F.C. Kobenhavn": "Copenhagen",
+    "AFC Bournemouth": "Bournemouth", "Internazionale": "Inter Milan", "F.C. Kobenhavn": "Copenhagen",
     "AEL": "AEL Limassol", "Apoel Nicosia": "APOEL Nicosia", "NS Mura": "Mura",
     "IF Elfsborg": "Elfsborg", "KAA Gent": "Gent", "TSG Hoffenheim": "Hoffenheim",
     "FK Qarabag": "Qarabag", "Stade Rennais": "Rennes", "Ajax Amsterdam": "Ajax",
@@ -304,6 +304,18 @@ CARD_NAME = {
 # the English divisions under the Premier League, for a cup opponent's league
 ENG_LEAGUES = [("eng.2", "EFL"), ("eng.3", "Lg One"), ("eng.4", "Lg Two"),
                ("eng.5", "Natl Lg")]
+# Spain, France, Italy and Germany: their clubs share a section of the Team
+# filter, between the English clubs and everyone else (his call 2026-10-02)
+BIG_FOUR = ["esp.1", "fra.1", "ita.1", "ger.1"]
+
+
+def big_four_ids():
+    """Every club that played in those four leagues over the archive's years."""
+    out = set()
+    for slug in BIG_FOUR:
+        for season in range(FIRST_SEASON, current_season() + 1):
+            out |= set(league_table(slug, season))
+    return out
 
 
 def team_info(tid, teams):
@@ -350,13 +362,15 @@ def league_table(slug, season):
     return out
 
 
+# his wording (2026-10-02): every qualifying exit reads "Qual", the 2024-25
+# knockout play-off reads "Playoff", and the league phase "Lg Phase"
 STAGE_SHORT = {"Final": "Final", "Semifinals": "SF", "Quarterfinals": "QF",
                "Round of 16": "R16", "Round of 32": "R32", "Group Stage": "Group",
-               "League Phase": "League", "Knockout Round Playoffs": "KO PO",
-               "Playoff Round": "PO", "Fifth Round": "R5", "Fourth Round": "R4",
+               "League Phase": "Lg Phase", "Knockout Round Playoffs": "Playoff",
+               "Playoff Round": "Qual", "Fifth Round": "R5", "Fourth Round": "R4",
                "Third Round": "R3", "Second Round": "R2", "First Round": "R1",
-               "Sixth Round": "R6", "Second Qualifying Round": "Q2",
-               "Third Qualifying Round": "Q3"}
+               "Sixth Round": "R6", "Second Qualifying Round": "Qual",
+               "Third Qualifying Round": "Qual"}
 QUAL_SLUG = {"UCL": "uefa.champions_qual", "UEL": "uefa.europa_qual",
              "UECL": "uefa.europa.conf_qual"}
 
@@ -747,6 +761,7 @@ def main():
     save_data("goals.json", goal_store)
     save_data("finishes.json", finishes)
 
+    big4 = big_four_ids()
     used = ({m["opp"] for m in matches if m.get("opp")} |
             {m["home"] for m in matches if m.get("team") == "windows"} |
             {m["away"] for m in matches if m.get("team") == "windows"} |
@@ -757,6 +772,7 @@ def main():
             teams[t]["card"] = CARD_NAME.get(teams[t]["name"], teams[t]["name"])
             # a few clubs (PSG) come back with no logo link; ESPN's crest is
             # still at its usual address
+            teams[t]["grp"] = "euro4" if t in big4 else ""
             if not teams[t].get("logo"):
                 teams[t]["logo"] = "https://a.espncdn.com/i/teamlogos/soccer/500/%s.png" % t
     os.makedirs(OUT, exist_ok=True)

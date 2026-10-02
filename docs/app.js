@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-154336. Modelled on games-history's Michigan view (michCard): one card
+   20261002-155135. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-154336";
+const BUILD = "20261002-155135";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -461,9 +461,14 @@ function filterBar() {
   const alpha = ids => ids.sort((a, b) => nameOf(a).localeCompare(nameOf(b)))
     .map(id => [nameOf(id), id]);
   const ids = Array.from(seen);
+  // ...then the clubs of Spain, France, Italy and Germany together, and
+  // everyone else last (his call 2026-10-02)
+  const euro4 = id => ((TEAMS[id] || {}).grp === "euro4");
   const groups = [lead.filter(id => seen.has(id)).map(id => [nameOf(id), id]),
                   alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id))),
-                  alpha(ids.filter(id => !english.has(id)))].filter(g => g.length);
+                  alpha(ids.filter(id => !english.has(id) && euro4(id))),
+                  alpha(ids.filter(id => !english.has(id) && !euro4(id)))]
+    .filter(g => g.length);
   h += group("Team", select("team", "All Teams",
     [].concat.apply([], groups.map((g, i) => (i ? [BAR] : []).concat(g))), FILT.team));
   const HL = [["Late Winners", "late_win"], ["Late Equalizers", "late_eq"]];

@@ -461,9 +461,14 @@ function filterBar() {
   const alpha = ids => ids.sort((a, b) => nameOf(a).localeCompare(nameOf(b)))
     .map(id => [nameOf(id), id]);
   const ids = Array.from(seen);
+  // ...then the clubs of Spain, France, Italy and Germany together, and
+  // everyone else last (his call 2026-10-02)
+  const euro4 = id => ((TEAMS[id] || {}).grp === "euro4");
   const groups = [lead.filter(id => seen.has(id)).map(id => [nameOf(id), id]),
                   alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id))),
-                  alpha(ids.filter(id => !english.has(id)))].filter(g => g.length);
+                  alpha(ids.filter(id => !english.has(id) && euro4(id))),
+                  alpha(ids.filter(id => !english.has(id) && !euro4(id)))]
+    .filter(g => g.length);
   h += group("Team", select("team", "All Teams",
     [].concat.apply([], groups.map((g, i) => (i ? [BAR] : []).concat(g))), FILT.team));
   const HL = [["Late Winners", "late_win"], ["Late Equalizers", "late_eq"]];
