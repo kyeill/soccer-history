@@ -132,8 +132,11 @@ def norm_stage(comp, raw, season, qual=False):
         return re.sub(r"^(\w+) Round$", r"\1 Qualifying Round", s)
     s = re.sub(r"^Football League Cup - ", "", s)
     s = s.replace("Quarter-finals", "Quarterfinals").replace("Semi-finals", "Semifinals")
-    s = s.replace("Play-off Round", "Playoff Round").replace("Playoff", "Playoff Round") \
-         .replace("Playoff Round Round", "Playoff Round")
+    # "Play-off" -> "Playoff"; the bare round is "Playoff Round", but a longer
+    # name keeps its own words ("Knockout Round Playoffs", the 2024-25 format)
+    s = s.replace("Play-off", "Playoff")
+    if s in ("Playoff", "Playoff Round"):
+        s = "Playoff Round"
     m = re.match(r"^(\d)(?:st|nd|rd|th) Round$", s)
     if m:
         s = NUMBER[m.group(1)] + " Round"
@@ -288,18 +291,19 @@ def matchweeks(season):
 # anyone says. ESPN's own short names read worse ("Boro", "C Palace",
 # "Lokomotiv Pl"), so they are not used.
 CARD_NAME = {
-    "Manchester United": "Man United", "Manchester City": "Man City",
-    "Brighton & Hove Albion": "Brighton", "Wolverhampton Wanderers": "Wolves",
-    "AFC Bournemouth": "Bournemouth", "West Bromwich Albion": "West Brom",
-    "Queens Park Rangers": "QPR", "Paris Saint-Germain": "PSG",
-    "Internazionale": "Inter Milan", "F.C. København": "FC Copenhagen",
-    "Dnipro Dnipropetrovsk": "Dnipro", "Anzhi Makhachkala": "Anzhi",
-    "Ludogorets Razgrad": "Ludogorets", "Apoel Nicosia": "APOEL",
-    "AEL": "AEL Limassol", "Ajax Amsterdam": "Ajax", "Stade Rennais": "Rennes",
-    "TSG Hoffenheim": "Hoffenheim", "KAA Gent": "Gent", "IF Elfsborg": "Elfsborg",
-    "NS Mura": "Mura", "FK Qarabag": "Qarabag", "Tromso": "Tromsø",
-    "Bodo/Glimt": "Bodø/Glimt", "Partizan Belgrade": "Partizan",
+    # ESPN's displayName is used in FULL (his call 2026-10-02): "Manchester
+    # United", "Brighton & Hove Albion", "Paris Saint-Germain". Only names
+    # ESPN itself abbreviates or writes oddly are mapped here, and the
+    # club-type letters in front of a name ("AS", "IF", "KAA") are dropped.
+    "Internazionale": "Inter Milan", "F.C. Kobenhavn": "Copenhagen",
+    "AEL": "AEL Limassol", "Apoel Nicosia": "APOEL Nicosia", "NS Mura": "Mura",
+    "IF Elfsborg": "Elfsborg", "KAA Gent": "Gent", "TSG Hoffenheim": "Hoffenheim",
+    "FK Qarabag": "Qarabag", "Stade Rennais": "Rennes", "Ajax Amsterdam": "Ajax",
+    "AS Monaco": "Monaco", "AS Roma": "Roma", "AC Milan": "Milan",
 }
+# the English divisions under the Premier League, for a cup opponent's league
+ENG_LEAGUES = [("eng.2", "EFL"), ("eng.3", "Lg One"), ("eng.4", "Lg Two"),
+               ("eng.5", "Natl Lg")]
 
 
 def team_info(tid, teams):
@@ -323,7 +327,10 @@ def team_info(tid, teams):
 
 # ---------------------------------------------------------------- finishes
 def ordinal(n):
+    """A league finish; FIRST reads "Winner" (his call 2026-10-02)."""
     n = int(n)
+    if n == 1:
+        return "Winner"
     return "%d%s" % (n, "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th"))
 
 
@@ -440,7 +447,8 @@ def venue_place(venue):
     return ((venue or {}).get("address") or {}).get("city") or name
 
 
-def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tables):
+def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tables,
+                eng_tables=None):
     import tv
     slug = e["league"]["slug"]
     code, comp_name = COMPS[slug]
@@ -519,6 +527,16 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
     # far it went in THIS competition when it is not a Premier League club
     if tid in pl_table:
         m["fin"] = ordinal(pl_table[tid])
+    elif code in ("FAC", "LC"):
+        # A DOMESTIC CUP NEVER SHOWS A CUP RUN (his call 2026-10-02): a club
+        # Spurs knocked out would only read back the round it just lost. A club
+        # below the Premier League shows its LEAGUE instead, "+" if it won it.
+        m["fin"] = "Non-Lg"          # below the National League (Marine, 2021)
+        for slug, label in ENG_LEAGUES:
+            table = (eng_tables or {}).get(slug) or {}
+            if tid in table:
+                m["fin"] = label + ("+" if table[tid] == 1 else "")
+                break
     elif code in MAIN_SLUG:
         m["fin"] = cup_run(code, season, tid, finishes)
     # the league phase (2024-25 on): both clubs' positions, on knockout cards
@@ -673,8 +691,12 @@ def main():
                                ("UECL", "uefa.europa.conf")):
                 if any(COMPS[e["league"]["slug"]][0] == code for e in events):
                     lp_tables[code] = league_table(slug, season)
-        got = [build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tables)
-               for e in events]
+        eng_tables = {}
+        if any(COMPS[x["league"]["slug"]][0] in ("FAC", "LC") for x in events):
+            for slug, _label in ENG_LEAGUES:
+                eng_tables[slug] = league_table(slug, season)
+        got = [build_match(e, season, teams, goal_store, finishes, pl_table, mw_map,
+                           lp_tables, eng_tables) for e in events]
         played = [m for m in got if "us" in m]
         missing_mw = [m for m in got if m["comp"] == "PL" and "mw" not in m]
         print("  %s  %d matches (%d played)%s" % (
