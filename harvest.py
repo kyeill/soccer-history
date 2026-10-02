@@ -301,6 +301,16 @@ CARD_NAME = {
     "FK Qarabag": "Qarabag", "Stade Rennais": "Rennes", "Ajax Amsterdam": "Ajax",
     "AS Monaco": "Monaco", "AS Roma": "Roma", "AC Milan": "Milan",
 }
+# ESPN gives a handful of clubs a PURE BLUE (0000fa), which darkens to purple
+# on a card (his catch 2026-10-02). These are their real blues.
+COLOUR_FIX = {
+    "Cardiff City": "0070b5", "Crystal Palace": "1b458f", "Everton": "003399",
+    "Ipswich Town": "3a64a3", "Leicester City": "003090",
+    "Brighton & Hove Albion": "0057b8", "Portsmouth": "001489",
+    "Sheffield Wednesday": "1c3f94", "Gent": "1f4ba5", "Cruz Azul": "003b7f",
+}
+
+
 # the English divisions under the Premier League, for a cup opponent's league
 ENG_LEAGUES = [("eng.2", "EFL"), ("eng.3", "Lg One"), ("eng.4", "Lg Two"),
                ("eng.5", "Natl Lg")]
@@ -773,6 +783,9 @@ def main():
             # a few clubs (PSG) come back with no logo link; ESPN's crest is
             # still at its usual address
             teams[t]["grp"] = "euro4" if t in big4 else ""
+            fix = COLOUR_FIX.get(teams[t]["name"]) or COLOUR_FIX.get(teams[t]["card"])
+            if fix:
+                teams[t]["color"] = fix
             if not teams[t].get("logo"):
                 teams[t]["logo"] = "https://a.espncdn.com/i/teamlogos/soccer/500/%s.png" % t
     os.makedirs(OUT, exist_ok=True)

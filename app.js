@@ -464,8 +464,13 @@ function filterBar() {
   // ...then the clubs of Spain, France, Italy and Germany together, and
   // everyone else last (his call 2026-10-02)
   const euro4 = id => ((TEAMS[id] || {}).grp === "euro4");
+  // the English clubs split in two (his call 2026-10-02): those Spurs have met
+  // in the PREMIER LEAGUE at least once, then the cup-only ones. Read off the
+  // whole archive, not the current view, so the lists do not shuffle.
+  const inPL = new Set(ALL.filter(m => m.team === "spurs" && m.comp === "PL").map(m => m.opp));
   const groups = [lead.filter(id => seen.has(id)).map(id => [nameOf(id), id]),
-                  alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id))),
+                  alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id) && inPL.has(id))),
+                  alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id) && !inPL.has(id))),
                   alpha(ids.filter(id => !english.has(id) && euro4(id))),
                   alpha(ids.filter(id => !english.has(id) && !euro4(id)))]
     .filter(g => g.length);
