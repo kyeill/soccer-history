@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-162846. Modelled on games-history's Michigan view (michCard): one card
+   20261002-163113. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-162846";
+const BUILD = "20261002-163113";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -289,8 +289,11 @@ function card(m) {
   const footer = String(mx.footer || "").trim();
   if (footer.indexOf(" ") > -1 && parts.indexOf(footer) < 0) parts.push(footer);
   // the date drops to the third row when there is nothing else to say
+  // A FOOTER DATE ALWAYS CARRIES ITS DAY (his call 2026-10-02): "SAT 8/16/2025"
   const dateDown = !bigStage(m) && !parts.length;
-  if (dateDown) parts.push((h.date || "").replace(/<[^>]+>/g, ""));
+  if (dateDown) {
+    parts.push(m.dow.toUpperCase() + " " + (h.date || "").replace(/<[^>]+>/g, ""));
+  }
   const head = h.head + (!dateDown && h.date ? ' | <span class="hdate">' + h.date + "</span>" : "");
   // his Footer column: a colour word paints the whole third row
   const footCol = colourOf(footer.split(/\s+/)[0]);
