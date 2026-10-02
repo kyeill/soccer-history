@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-155704. Modelled on games-history's Michigan view (michCard): one card
+   20261002-160408. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-155704";
+const BUILD = "20261002-160408";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -275,8 +275,15 @@ function card(m) {
   if (m.pens) parts.push((W ? "Won " : "Lost ") + m.pens + " on Pens");
   else if (m.aet) parts.push("AET");
   if (m.agg) parts.push("Agg. " + m.agg);
-  if (m.late_win) parts.push("Late Winner " + m.late_win);
-  if (m.late_eq) parts.push("Late Equalizer " + m.late_eq);
+  // the scorer and minute, already worded by the harvest ("Kane 86'")
+  if (m.late_win) parts.push(m.late_win);
+  if (m.late_eq) parts.push(m.late_eq);
+  // every Tottenham scorer, on a win over the Top Six
+  if (m.scorers && !m.late_win) parts.push(m.scorers.join(", "));
+  else if (m.scorers && m.late_win) {
+    const rest = m.scorers.filter(x => x !== m.late_win);
+    if (rest.length) parts.push(rest.join(", "));
+  }
   if (m.status) parts.push("Postponed");
   // his Notes, and a Footer phrase that is its own text ("Pink Out")
   if (mx.note) parts.push(mx.note);
@@ -464,6 +471,10 @@ function filterBar() {
   // ...then the clubs of Spain, France, Italy and Germany together, and
   // everyone else last (his call 2026-10-02)
   const euro4 = id => ((TEAMS[id] || {}).grp === "euro4");
+  // his order at the head of that group (2026-10-02)
+  const EURO_LEAD = ["Atlético Madrid", "Barcelona", "Real Madrid", "Bayern Munich",
+                     "Borussia Dortmund", "Milan", "Inter Milan", "Juventus",
+                     "Paris Saint-Germain"];
   // the English clubs split in two (his call 2026-10-02): those Spurs have met
   // in the PREMIER LEAGUE at least once, then the cup-only ones. Read off the
   // whole archive, not the current view, so the lists do not shuffle.
@@ -471,7 +482,13 @@ function filterBar() {
   const groups = [lead.filter(id => seen.has(id)).map(id => [nameOf(id), id]),
                   alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id) && inPL.has(id))),
                   alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id) && !inPL.has(id))),
-                  alpha(ids.filter(id => !english.has(id) && euro4(id))),
+                  (() => {
+                    const mine = ids.filter(id => !english.has(id) && euro4(id));
+                    const lead4 = EURO_LEAD.map(n => mine.find(id => nameOf(id) === n))
+                      .filter(Boolean);
+                    return lead4.map(id => [nameOf(id), id])
+                      .concat(alpha(mine.filter(id => lead4.indexOf(id) < 0)));
+                  })(),
                   alpha(ids.filter(id => !english.has(id) && !euro4(id)))]
     .filter(g => g.length);
   h += group("Team", select("team", "All Teams",

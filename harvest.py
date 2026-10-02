@@ -168,10 +168,63 @@ def minute_of(clock):
     return (int(m.group(1)), int(m.group(2) or 0)) if m else (0, 0)
 
 
+# a name that does not end in the family name (his cards want "Son 86'")
+SHORT_NAME = {"Son Heung-Min": "Son", "Heung-Min Son": "Son", "Son Heung-min": "Son",
+              "Hwang Hee-Chan": "Hwang", "Kim Min-Jae": "Kim"}
+
+
+# the lowercase words that belong to the family name: "Micky van de Ven" is
+# Van de Ven, not Ven (caught 2026-10-02)
+PARTICLES = {"van", "von", "de", "del", "della", "di", "da", "dos", "den", "der",
+             "ten", "ter", "el", "al", "le", "la", "mac", "mc", "bin"}
+
+
+def short_name(full):
+    """"Dejan Kulusevski" -> "Kulusevski", "Micky van de Ven" -> "Van de Ven";
+    a one-word name stays whole."""
+    full = (full or "").strip()
+    if not full:
+        return ""
+    if full in SHORT_NAME:
+        return SHORT_NAME[full]
+    parts = full.split()
+    if len(parts) < 2:
+        return full
+    start = next((i for i, w in enumerate(parts[1:], 1) if w.lower() in PARTICLES),
+                 len(parts) - 1)
+    name = " ".join(parts[start:])
+    return name[0].upper() + name[1:]
+
+
+def scorers_from_commentary(summary):
+    """[(clock, scorer)] from the commentary, which names who scored -- the
+    keyEvents do not (their athletesInvolved is empty). The TEXT is parsed, not
+    the participants: on older matches participants[0] is not the scorer.
+
+        Goal!  Crystal Palace 0, Tottenham Hotspur 1. Roberto Soldado (Totten...
+        Own Goal by Gareth McAuley, West Bromwich Albion.  Tottenham 2, ...
+    """
+    out = []
+    for c in summary.get("commentary") or []:
+        text = (c.get("text") or "").strip()
+        clock = ((c.get("time") or {}).get("displayValue") or "").strip()
+        m = re.match(r"^Own Goal by ([^,]+),", text)
+        if m:
+            out.append((clock, short_name(m.group(1)) + " (OG)"))
+            continue
+        if not text.startswith("Goal!"):
+            continue
+        m = re.search(r"\d+[,.]\s*[^.]*?\d+\.\s*([^(]+?)\s*\(", text)
+        out.append((clock, short_name(m.group(1)) if m else ""))
+    return out
+
+
 def goals_of(slug, eid, home_id, final):
-    """[(minute, added, team_id)] in order, from the match summary. Checked
-    against the final score: a mismatch returns None rather than a wrong flag."""
+    """[(minute, added, team_id, scorer)] in order, from the match summary.
+    Checked against the final score: a mismatch returns None rather than a
+    wrong flag."""
     s = fetch("%s/%s/summary" % (BASE, slug), {"event": eid})
+    named = scorers_from_commentary(s)
     out = []
     for k in s.get("keyEvents") or []:
         if not k.get("scoringPlay") or k.get("shootout"):
@@ -179,8 +232,10 @@ def goals_of(slug, eid, home_id, final):
         if (k.get("period") or {}).get("number") == 5:
             continue
         tid = str((k.get("team") or {}).get("id") or "")
-        mn, add = minute_of((k.get("clock") or {}).get("displayValue"))
-        out.append([mn, add, tid])
+        clock = (k.get("clock") or {}).get("displayValue")
+        mn, add = minute_of(clock)
+        who = next((n for c, n in named if c == (clock or "").strip()), "")
+        out.append([mn, add, tid, who])
     out.sort(key=lambda g: (g[0], g[1]))
     adds_up = lambda gs: [collections.Counter(g[2] for g in gs).get(t, 0)
                           for t in final] == list(final.values())
@@ -208,21 +263,25 @@ def late_flags(goals, us, them_id, result):
     if goals is None:
         return None, None
     lead, ahead_since = 0, None
-    for mn, add, tid in goals:
+    for mn, add, tid, who in goals:
         before = lead
         lead += 1 if tid == us else -1
         if lead > 0 and before <= 0:
-            ahead_since = (mn, add)
+            ahead_since = (mn, add, who)
         if lead <= 0:
             ahead_since = None
-    fmt = lambda m: "%d'" % m[0] + ("+%d" % m[1] if m[1] else "")
+    # HIS WORDING (2026-10-02): the card names the scorer -- "Kane 86'" --
+    # and falls back to "Late Winner 86'" when the commentary did not name one
+    def fmt(mn, add, who):
+        when = "%d'" % mn + ("+%d" % add if add else "")
+        return ((who + " " + when) if who else "Late Winner " + when)
     winner = eq = None
     if result == "W" and lead > 0 and ahead_since and ahead_since[0] >= 80:
-        winner = fmt(ahead_since)
+        winner = fmt(*ahead_since)
     if lead == 0 and goals and them_id in TOP_SIX:
-        mn, add, tid = goals[-1]
+        mn, add, tid, who = goals[-1]
         if tid == us and mn >= 80:
-            eq = fmt((mn, add))
+            eq = (who + " " + "%d'" % mn + ("+%d" % add if add else "")) if who else                  "Late Equalizer %d'" % mn + ("+%d" % add if add else "")
     return winner, eq
 
 
@@ -547,6 +606,11 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
             m["late_win"] = w
         if q:
             m["late_eq"] = q
+        # A WIN OVER THE TOP SIX lists every Tottenham scorer (his call
+        # 2026-10-02): "Son 12', Kane 45'+2, Johnson 77'"
+        if goals and m["result"] == "W" and tid in TOP_SIX:
+            m["scorers"] = ["%s %d'%s" % (who or "Goal", mn, "+%d" % add if add else "")
+                            for mn, add, team, who in goals if team == SPURS]
     # the opponent's finish: its Premier League position that season, or how
     # far it went in THIS competition when it is not a Premier League club
     if tid in pl_table:
