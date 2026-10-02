@@ -5,7 +5,8 @@ const BUILD = "__BUILD__";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
-const TOP_SIX = ["359", "363", "364", "360", "382"];
+// Arsenal, Chelsea, Liverpool, Man City, Man United (his order 2026-10-02)
+const TOP_SIX = ["359", "363", "364", "382", "360"];
 let ALL = [], MATCHES = [], TEAMS = {}, CURRENT = null;
 let FILT = {};
 let SORT = "asc";
@@ -276,14 +277,12 @@ function card(m) {
   else if (m.aet) parts.push("AET");
   if (m.agg) parts.push("Agg. " + m.agg);
   // the scorer and minute, already worded by the harvest ("Kane 86'")
-  if (m.late_win) parts.push(m.late_win);
+  if (m.late_win && !m.scorers) parts.push(m.late_win);
   if (m.late_eq) parts.push(m.late_eq);
-  // every Tottenham scorer, on a win over the Top Six
-  if (m.scorers && !m.late_win) parts.push(m.scorers.join(", "));
-  else if (m.scorers && m.late_win) {
-    const rest = m.scorers.filter(x => x !== m.late_win);
-    if (rest.length) parts.push(rest.join(", "));
-  }
+  // every Tottenham scorer, on a win over the Top Six -- always the whole
+  // list, in order, even when one of them was the late winner (his call
+  // 2026-10-02), so the late-winner line is left off those cards
+  if (m.scorers) parts.push(m.scorers.join(", "));
   if (m.status) parts.push("Postponed");
   // his Notes, and a Footer phrase that is its own text ("Pink Out")
   if (mx.note) parts.push(mx.note);

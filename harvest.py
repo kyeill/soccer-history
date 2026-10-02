@@ -214,8 +214,28 @@ def scorers_from_commentary(summary):
             continue
         if not text.startswith("Goal!"):
             continue
-        m = re.search(r"\d+[,.]\s*[^.]*?\d+\.\s*([^(]+?)\s*\(", text)
-        out.append((clock, short_name(m.group(1)) if m else ""))
+        # two wordings across the years:
+        #   Goal!  Spurs 2, Sheffield United 1. Dejan Kulusevski (Tottenham)...
+        #   Goal!! Roberto Soldado hits a right footed shot high through...
+        # Two wordings across the years, and each pattern can misfire on
+        # the other's text -- the verb pattern swallows a whole sentence
+        # ("Tottenham Hotspur 1, Hull City 0. Roberto Soldado (Tottenham
+        # Hotspur) converts"), the score pattern grabs the "Assisted by"
+        # tail -- so whatever is captured must LOOK like a name.
+        def name_like(x):
+            x = (x or "").strip()
+            return x if re.match(r"^[^\d,().]{2,40}$", x) else ""
+
+        who = ""
+        m = re.match(r"^Goal!+\s+(.+?)\s+(?:hits|scores|converts|heads|fires|"
+                     r"slots|taps|shoots|curls|drills|chips|blasts|strikes)", text)
+        if m:
+            who = name_like(m.group(1))
+        if not who:
+            m = re.search(r"\d+[,.]\s*[^.]*?\d+\.\s*([^(]+?)\s*\(", text)
+            if m and "Assisted by" not in m.group(1):
+                who = name_like(m.group(1))
+        out.append((clock, short_name(who)))
     return out
 
 
@@ -234,9 +254,24 @@ def goals_of(slug, eid, home_id, final):
         tid = str((k.get("team") or {}).get("id") or "")
         clock = (k.get("clock") or {}).get("displayValue")
         mn, add = minute_of(clock)
-        who = next((n for c, n in named if c == (clock or "").strip()), "")
-        out.append([mn, add, tid, who])
+        out.append([mn, add, tid, (clock or "").strip()])
     out.sort(key=lambda g: (g[0], g[1]))
+    # THE COMMENTARY CLOCK DRIFTS from the event clock by a minute or two
+    # (Cardiff 2013: 90'+3' against 90'+4'), so names are matched BY ORDER when
+    # both lists are the same length, and by the nearest clock otherwise.
+    if len(named) == len(out):
+        for g, (_c, who) in zip(out, named):
+            g[3] = who
+    else:
+        for g in out:
+            want = minute_of(g[3])[0] + minute_of(g[3])[1]
+            best, gap = "", 99
+            for c, who in named:
+                mn2, add2 = minute_of(c)
+                d = abs((mn2 + add2) - want)
+                if who and d < gap:
+                    best, gap = who, d
+            g[3] = best if gap <= 3 else ""
     adds_up = lambda gs: [collections.Counter(g[2] for g in gs).get(t, 0)
                           for t in final] == list(final.values())
     if adds_up(out):
@@ -363,7 +398,7 @@ CARD_NAME = {
 # ESPN gives a handful of clubs a PURE BLUE (0000fa), which darkens to purple
 # on a card (his catch 2026-10-02). These are their real blues.
 COLOUR_FIX = {
-    "Cardiff City": "0070b5", "Crystal Palace": "1b458f", "Everton": "003399",
+    "Cardiff City": "0070b5", "Norwich City": "00a650", "Crystal Palace": "1b458f", "Everton": "003399",
     "Ipswich Town": "3a64a3", "Leicester City": "003090",
     "Brighton & Hove Albion": "0057b8", "Portsmouth": "001489",
     "Sheffield Wednesday": "1c3f94", "Gent": "1f4ba5", "Cruz Azul": "003b7f",
@@ -609,8 +644,16 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
         # A WIN OVER THE TOP SIX lists every Tottenham scorer (his call
         # 2026-10-02): "Son 12', Kane 45'+2, Johnson 77'"
         if goals and m["result"] == "W" and tid in TOP_SIX:
-            m["scorers"] = ["%s %d'%s" % (who or "Goal", mn, "+%d" % add if add else "")
-                            for mn, add, team, who in goals if team == SPURS]
+            order, mins = [], {}
+            for mn, add, team, who in goals:
+                if team != SPURS:
+                    continue
+                who = who or "Goal"
+                if who not in mins:
+                    order.append(who)
+                    mins[who] = []
+                mins[who].append("%d'%s" % (mn, "+%d" % add if add else ""))
+            m["scorers"] = ["%s %s" % (who, ", ".join(mins[who])) for who in order]
     # the opponent's finish: its Premier League position that season, or how
     # far it went in THIS competition when it is not a Premier League club
     if tid in pl_table:
