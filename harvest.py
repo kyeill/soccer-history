@@ -168,6 +168,11 @@ def minute_of(clock):
     return (int(m.group(1)), int(m.group(2) or 0)) if m else (0, 0)
 
 
+# ESPN carries no commentary at all for a few matches, so their scorers are
+# written out here, by match id: minute -> name (his, 2026-10-02)
+GOAL_NAMES = {
+    "581809": {80: "Kane", 84: "Ndombele"},     # Lokomotiv Plovdiv, Sep 2020
+}
 # a name that does not end in the family name (his cards want "Son 86'")
 SHORT_NAME = {"Son Heung-Min": "Son", "Heung-Min Son": "Son", "Son Heung-min": "Son",
               "Hwang Hee-Chan": "Hwang", "Kim Min-Jae": "Kim"}
@@ -210,7 +215,7 @@ def scorers_from_commentary(summary):
         clock = ((c.get("time") or {}).get("displayValue") or "").strip()
         m = re.match(r"^Own Goal by ([^,]+),", text)
         if m:
-            out.append((clock, short_name(m.group(1)) + " (OG)"))
+            out.append((clock, "OG"))          # no name on an own goal
             continue
         if not text.startswith("Goal!"):
             continue
@@ -259,7 +264,12 @@ def goals_of(slug, eid, home_id, final):
     # THE COMMENTARY CLOCK DRIFTS from the event clock by a minute or two
     # (Cardiff 2013: 90'+3' against 90'+4'), so names are matched BY ORDER when
     # both lists are the same length, and by the nearest clock otherwise.
-    if len(named) == len(out):
+    by_hand = GOAL_NAMES.get(str(eid)) or {}
+    if by_hand:
+        for g in out:
+            if g[0] in by_hand:
+                g[3] = by_hand[g[0]]
+    elif len(named) == len(out):
         for g, (_c, who) in zip(out, named):
             g[3] = who
     else:
@@ -307,12 +317,27 @@ def late_flags(goals, us, them_id, result):
             ahead_since = None
     # HIS WORDING (2026-10-02): the card names the scorer -- "Kane 86'" --
     # and falls back to "Late Winner 86'" when the commentary did not name one
-    def fmt(mn, add, who):
-        when = "%d'" % mn + ("+%d" % add if add else "")
-        return ((who + " " + when) if who else "Late Winner " + when)
+    def when_of(mn, add):
+        return "%d'" % mn + ("+%d" % add if add else "")
+
+    def listed(gs):
+        """"Kane 80', Ndombele 84'", a brace grouped: "Kane 86', 90'"."""
+        order, mins = [], {}
+        for mn, add, who in gs:
+            who = who or "Late Winner"
+            if who not in mins:
+                order.append(who)
+                mins[who] = []
+            mins[who].append(when_of(mn, add))
+        return ", ".join("%s %s" % (w, ", ".join(mins[w])) for w in order)
+
     winner = eq = None
     if result == "W" and lead > 0 and ahead_since and ahead_since[0] >= 80:
-        winner = fmt(*ahead_since)
+        # EVERY Spurs goal from the 80th minute on, not only the one that put
+        # them ahead (his call 2026-10-02): Lokomotiv 2020 reads
+        # "Kane 80', Ndombele 84'" even though the 84th won it
+        late = [(mn, add, who) for mn, add, tid, who in goals if tid == us and mn >= 80]
+        winner = listed(late) if late else "Late Winner " + when_of(*ahead_since[:2])
     if lead == 0 and goals and them_id in TOP_SIX:
         mn, add, tid, who = goals[-1]
         if tid == us and mn >= 80:
@@ -393,7 +418,7 @@ CARD_NAME = {
     "AEL": "AEL Limassol", "Apoel Nicosia": "APOEL Nicosia", "NS Mura": "Mura",
     "IF Elfsborg": "Elfsborg", "KAA Gent": "Gent", "TSG Hoffenheim": "Hoffenheim",
     "FK Qarabag": "Qarabag", "Stade Rennais": "Rennes", "Ajax Amsterdam": "Ajax",
-    "AS Monaco": "Monaco", "AS Roma": "Roma", "AC Milan": "Milan",
+    "AS Monaco": "Monaco", "AS Roma": "Roma",
 }
 # ESPN gives a handful of clubs a PURE BLUE (0000fa), which darkens to purple
 # on a card (his catch 2026-10-02). These are their real blues.
@@ -643,7 +668,7 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
             m["late_eq"] = q
         # A WIN OVER THE TOP SIX lists every Tottenham scorer (his call
         # 2026-10-02): "Son 12', Kane 45'+2, Johnson 77'"
-        if goals and m["result"] == "W" and tid in TOP_SIX:
+        if goals and m["result"] == "W":
             order, mins = [], {}
             for mn, add, team, who in goals:
                 if team != SPURS:
@@ -839,6 +864,9 @@ def main():
         matches += got
     replays(matches)
     two_legged(matches)
+    for m in matches:
+        if m.get("leg") == 1:
+            m.pop("late_win", None)
     matches.sort(key=lambda m: (m["date"], m["time"]))
     # his Sheet, matched on the date (Spurs never play twice in a day)
     marks = load_sheet("Tottenham", {m["date"] for m in matches})

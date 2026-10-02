@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-161629. Modelled on games-history's Michigan view (michCard): one card
+   20261002-162425. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-161629";
+const BUILD = "20261002-162425";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -160,7 +160,7 @@ function cardHead(m) {
   const net = m.team === "spurs" ? primaryNet(m.nets) : "";
   const tv = (net ? esc(net) + " " : "") + fmtTime(m.time);
   if (m.comp === "PL") {
-    const wk = m.mw != null ? "Matchweek " + m.mw : "Premier League";
+    const wk = m.mw != null ? "MW" + m.mw : "Premier League";
     const day = (m.dow !== "Sat" && m.dow !== "Sun") ? " (" + esc(m.dow) + ")" : "";
     return { head: wk + day + " | " + tv, date: fmtDate(m.date) };
   }
@@ -360,12 +360,12 @@ function twoCard(m) {
     const t = fmtTime(m.time);
     const win = '<span class="hstage" data-short="' +
       esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span>";
-    head = "MW " + m.mw + " | " + win +
+    head = "MW" + m.mw + " | " + win +
       (m.window === "NBC Saturday" ? " " + t : " | " + (net ? esc(net) + " " : "") + t);
   } else {
     const st = stageText(m);
     head = (m.comp === "PL"
-      ? (m.mw != null ? "MW " + m.mw : "Premier League")
+      ? (m.mw != null ? "MW" + m.mw : "Premier League")
       : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) + "</span>") +
       " | " + fmtTime(m.time);
   }

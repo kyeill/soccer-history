@@ -160,7 +160,7 @@ function cardHead(m) {
   const net = m.team === "spurs" ? primaryNet(m.nets) : "";
   const tv = (net ? esc(net) + " " : "") + fmtTime(m.time);
   if (m.comp === "PL") {
-    const wk = m.mw != null ? "Matchweek " + m.mw : "Premier League";
+    const wk = m.mw != null ? "MW" + m.mw : "Premier League";
     const day = (m.dow !== "Sat" && m.dow !== "Sun") ? " (" + esc(m.dow) + ")" : "";
     return { head: wk + day + " | " + tv, date: fmtDate(m.date) };
   }
@@ -360,12 +360,12 @@ function twoCard(m) {
     const t = fmtTime(m.time);
     const win = '<span class="hstage" data-short="' +
       esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span>";
-    head = "MW " + m.mw + " | " + win +
+    head = "MW" + m.mw + " | " + win +
       (m.window === "NBC Saturday" ? " " + t : " | " + (net ? esc(net) + " " : "") + t);
   } else {
     const st = stageText(m);
     head = (m.comp === "PL"
-      ? (m.mw != null ? "MW " + m.mw : "Premier League")
+      ? (m.mw != null ? "MW" + m.mw : "Premier League")
       : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) + "</span>") +
       " | " + fmtTime(m.time);
   }
