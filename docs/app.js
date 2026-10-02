@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-164206. Modelled on games-history's Michigan view (michCard): one card
+   20261002-164643. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-164206";
+const BUILD = "20261002-164643";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -212,6 +212,15 @@ function cardHead(m) {
     // neutral ground -- the city below
     return { head: lab, date: null, down: m.dow.toUpperCase() + " " + fmtDate(m.date) +
              "|" + fmtTime(m.time) + (m.where === "N" && m.place ? "|" + cityOf(m) : "") };
+  }
+  // THE DOMESTIC CUPS carry nothing but the round up top (his call
+  // 2026-10-02); the day, date, network and time read below:
+  //     League Cup Third Round
+  //     SUN 9/24/2025 | Paramount+ 2:45pm
+  if (m.comp === "FAC" || m.comp === "LC") {
+    return { head: lab, date: null,
+             down: m.dow.toUpperCase() + " " + fmtDate(m.date) + "|" +
+                   (net ? esc(net) + " " : "") + fmtTime(m.time) };
   }
   return { head: lab + " | " + dayTime, date: fmtDate(m.date) };
 }
