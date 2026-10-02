@@ -1,13 +1,16 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-163113. Modelled on games-history's Michigan view (michCard): one card
+   20261002-164206. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-163113";
+const BUILD = "20261002-164206";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
 // Arsenal, Chelsea, Liverpool, Man City, Man United (his order 2026-10-02)
 const TOP_SIX = ["359", "363", "364", "382", "360"];
 let ALL = [], MATCHES = [], TEAMS = {}, CURRENT = null;
+// "date|home|away" -> "NBC Saturday" / "Sky Super Sunday", built at load from
+// the TV Windows population so his teams' cards agree with that view
+let WINDOW_OF = {};
 let FILT = {};
 let SORT = "asc";
 // the tab along the top: one view per team of his, plus EPL/Rivals, which
@@ -153,16 +156,46 @@ function stageText(m) {
     const full = c.name + " " + st, short = c.short + " " + st;
     return { full: full, short: short };
   }
-  return { full: c.name + " " + st, short: c.short + " " + st };
+  // a domestic cup round shortens only if the header would wrap: "League Cup
+  // Third Round" -> "League Cup R3" (his overflow check 2026-10-02)
+  const ROUND_SHORT = { "First Round": "R1", "Second Round": "R2",
+    "Third Round": "R3", "Fourth Round": "R4", "Fifth Round": "R5",
+    "Sixth Round": "R6", "Quarterfinals": "QF", "Semifinals": "SF" };
+  let shortSt = st;
+  Object.keys(ROUND_SHORT).forEach(k => {
+    if (shortSt.indexOf(k) === 0) shortSt = ROUND_SHORT[k] + shortSt.slice(k.length);
+  });
+  return { full: c.name + " " + st, short: c.short + " " + shortSt };
+}
+/* HIS HEADER (2026-10-02). On his teams' cards:
+     in a TV window   MW5 | NBC Saturday 12:30pm
+                      MW5 | Sky Super Sunday | USA 11:30am
+     otherwise        MW5 | SAT 10:00am | Peacock
+                      UCL League Phase | TUE 3:00pm | Paramount+
+   and the DATE joins the end of the header whenever the third row has
+   something of its own; when it does not, the date reads there instead,
+   with its day. The day in brackets after the matchweek is gone -- the day
+   is in the line now. */
+function windowOf(m) {
+  if (m.team !== "spurs" || m.comp !== "PL") return null;
+  const home = m.home ? SPURS : m.opp, away = m.home ? m.opp : SPURS;
+  return WINDOW_OF[m.date + "|" + home + "|" + away] || null;
 }
 function cardHead(m) {
   // USMNT and Atlanta carry no TV -- day, date and time only (his call)
   const net = m.team === "spurs" ? primaryNet(m.nets) : "";
   const tv = (net ? esc(net) + " " : "") + fmtTime(m.time);
+  // the day and time, then the network: "SAT 10:00am | Peacock"
+  const dayTime = m.dow.toUpperCase() + " " + fmtTime(m.time) +
+    (net ? " | " + esc(net) : "");
+  const win = windowOf(m);
+  const winText = !win ? null
+    : win === "NBC Saturday" ? esc(win) + " " + fmtTime(m.time)
+    : '<span class="hstage" data-short="' + esc(win.replace("Sky ", "")) + '">' +
+      esc(win) + "</span> | " + (net ? esc(net) + " " : "") + fmtTime(m.time);
   if (m.comp === "PL") {
     const wk = m.mw != null ? "MW" + m.mw : "Premier League";
-    const day = (m.dow !== "Sat" && m.dow !== "Sun") ? " (" + esc(m.dow) + ")" : "";
-    return { head: wk + day + " | " + tv, date: fmtDate(m.date) };
+    return { head: wk + " | " + (winText || dayTime), date: fmtDate(m.date) };
   }
   const s = stageText(m);
   const lab = s.full !== s.short
@@ -180,7 +213,7 @@ function cardHead(m) {
     return { head: lab, date: null, down: m.dow.toUpperCase() + " " + fmtDate(m.date) +
              "|" + fmtTime(m.time) + (m.where === "N" && m.place ? "|" + cityOf(m) : "") };
   }
-  return { head: lab + " | " + tv, date: null, down: m.dow.toUpperCase() + " " + fmtDate(m.date) };
+  return { head: lab + " | " + dayTime, date: fmtDate(m.date) };
 }
 
 /* ---------- colour words from his Sheet --------------------------------- */
@@ -270,6 +303,7 @@ function card(m) {
     parts.push(m.dow.toUpperCase() + " " + fmtDate(m.date));
     parts.push(h.tv.replace(/<[^>]+>/g, ""));
   } else if (h.down) {
+    // USMNT and Atlanta only: their cards carry the day, date and time below
     h.down.split("|").forEach(p => parts.push(p));
   }
   if (m.awarded) parts.push("Awarded");
@@ -550,6 +584,9 @@ function draw() {
 async function init() {
   const r = await fetch("games.json?v=" + BUILD).then(x => x.json());
   ALL = r.matches; TEAMS = r.teams; CURRENT = r.current;
+  ALL.forEach(m => {
+    if (m.team === "windows") WINDOW_OF[m.date + "|" + m.home + "|" + m.away] = m.window;
+  });
   MATCHES = ALL.filter(m => m.team === population());
   FILT = defaults();
   draw();
