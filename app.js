@@ -213,16 +213,15 @@ function cardHead(m) {
     return { head: lab, date: null, down: m.dow.toUpperCase() + " " + fmtDate(m.date) +
              "|" + fmtTime(m.time) + (m.where === "N" && m.place ? "|" + cityOf(m) : "") };
   }
-  // THE DOMESTIC CUPS carry nothing but the round up top (his call
-  // 2026-10-02); the day, date, network and time read below:
-  //     League Cup Third Round
-  //     SUN 9/24/2025 | Paramount+ 2:45pm
-  if (m.comp === "FAC" || m.comp === "LC") {
-    return { head: lab, date: null,
-             down: m.dow.toUpperCase() + " " + fmtDate(m.date) + "|" +
-                   (net ? esc(net) + " " : "") + fmtTime(m.time) };
-  }
-  return { head: lab + " | " + dayTime, date: fmtDate(m.date) };
+  // EVERY CUP -- the domestic ones and Europe (his calls 2026-10-02) -- carries
+  // nothing but the round up top; the day, date, network and time read below:
+  //     Champions League League Phase
+  //     TUE 9/16/2025 | Paramount+ 3:00pm
+  // Only the Premier League keeps its line up there, where the matchweek and
+  // the TV window belong together.
+  return { head: lab, date: null,
+           down: m.dow.toUpperCase() + " " + fmtDate(m.date) + "|" +
+                 (net ? esc(net) + " " : "") + fmtTime(m.time) };
 }
 
 /* ---------- colour words from his Sheet --------------------------------- */
