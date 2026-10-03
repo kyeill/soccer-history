@@ -242,3 +242,32 @@ his one-opponent card. A shootout decides the winner, and the header says
 4. Generate the Sheet CSVs; wire the Sheet in.
 5. Rivals, then Premier League TV windows, then USMNT, then Atlanta United.
 6. The daily build.
+
+## Card shapes (Kyle, 2026-10-02)
+
+The matchweek sits in BRACKETS and loses its bar: `[MW1] Sunday 9:00 AM`.
+The channel is spelled out: USA is **USA Network**.
+
+A LEAGUE match keeps the day up top and the rest below:
+
+    [MW1] Sunday 9:00 AM
+    4/12/2026 | USA Network
+
+and when the card has something of its own to say, the date and network move
+up beside a shortened day so the bottom line is his alone:
+
+    [MW1] SUN 9:00 AM | 4/12/2026 | USA Network
+    Son 12', Kane 64'
+
+A CUP OR A EUROPEAN NIGHT names the round up top, so its day, date and network
+already have a line to themselves -- and his details take a FOURTH line:
+
+    2018-19 CHAMPIONS LEAGUE: SEMIFINALS (2ND LEG)
+    Ajax  2  3
+    WED 5/8/2019 | TNT 3:00pm
+    Llorente 87', Moura 90'+5
+
+Two exceptions, both to keep the header on one line at 410px: the Sky Sunday
+window fills its line with the window, the network and the time, so its date
+reads below with his details; and the TV Windows / Rivals cards carry their
+date on a grey line under the two teams rather than at the end of the header.

@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-165612. Modelled on games-history's Michigan view (michCard): one card
+   20261002-200455. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-165612";
+const BUILD = "20261002-200455";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -98,7 +98,7 @@ function seasonLabel(y) { return y + "-" + String((y + 1) % 100).padStart(2, "0"
 
 // ESPN lists the network beside its streams ("NBC, Peacock"); the TV channel
 // wins, the stream only when there is nothing else
-const NET_RANK = ["NBC", "CBS", "USA Net", "CNBC", "NBCSN", "ESPN", "ESPN2", "FS1",
+const NET_RANK = ["NBC", "CBS", "USA Network", "CNBC", "NBCSN", "ESPN", "ESPN2", "FS1",
                   "FOX", "TNT", "truTV", "CBSSN", "Telemundo", "Universo", "UniMás"];
 const STREAMERS = ["Peacock", "Paramount+", "ESPN+", "Max", "HBO Max", "fuboTV"];
 function primaryNet(nets) {
@@ -107,7 +107,8 @@ function primaryNet(nets) {
     : STREAMERS.indexOf(n) > -1 ? 900 + STREAMERS.indexOf(n) : 500;
   let best = nets[0];
   nets.forEach(n => { if (rank(n) < rank(best)) best = n; });
-  return best === "USA Net" ? "USA" : best;
+  // every source's spelling of the channel reads as he says it (2026-10-02)
+  return best === "USA Net" || best === "USA" ? "USA Network" : best;
 }
 
 function upcoming(m) { return !!m.upcoming || !!m.status; }
@@ -170,15 +171,25 @@ function stageText(m) {
   });
   return { full: c.name + " " + st + leg, short: c.short + " " + shortSt + leg };
 }
-/* HIS HEADER (2026-10-02). On his teams' cards:
-     in a TV window   MW5 | NBC Saturday 12:30pm
-                      MW5 | Sky Super Sunday | USA 11:30am
-     otherwise        MW5 | SAT 10:00am | Peacock
-                      UCL League Phase | TUE 3:00pm | Paramount+
-   and the DATE joins the end of the header whenever the third row has
-   something of its own; when it does not, the date reads there instead,
-   with its day. The day in brackets after the matchweek is gone -- the day
-   is in the line now. */
+/* HIS HEADER AND HIS LINES BELOW (2026-10-02).
+
+   A PREMIER LEAGUE match spells its day out and keeps the date and network
+   underneath:
+       [MW1] Sunday 9:00 AM
+       4/12/2026 | USA Network
+   and when the card has something of its own to say, those move up beside a
+   shortened day, leaving the bottom line to him:
+       [MW1] SUN 9:00 AM | 4/12/2026 | USA Network
+       Son 12', Kane 64'
+   A CUP OR A EUROPEAN NIGHT names the round up top, so its day, date and
+   network already have a line to themselves -- and anything else takes a
+   FOURTH line (his call 2026-10-02):
+       2018-19 CHAMPIONS LEAGUE: SEMIFINALS (2ND LEG)
+       Ajax 2  3
+       WED 5/8/2019 | TNT 3:00pm
+       Llorente 87', Moura 90'+5 */
+const DAY_FULL = { SUN: "Sunday", MON: "Monday", TUE: "Tuesday",
+  WED: "Wednesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday" };
 function windowOf(m) {
   if (m.team !== "spurs" || m.comp !== "PL") return null;
   const home = m.home ? SPURS : m.opp, away = m.home ? m.opp : SPURS;
@@ -188,47 +199,47 @@ function cardHead(m) {
   // USMNT and Atlanta carry no TV -- day, date and time only (his call)
   const net = m.team === "spurs" ? primaryNet(m.nets) : "";
   const tv = (net ? esc(net) + " " : "") + fmtTime(m.time);
-  // the day and time, then the network: "SAT 10:00am | Peacock"
-  const dayTime = m.dow.toUpperCase() + " " + fmtTime(m.time) +
-    (net ? " | " + esc(net) : "");
+  const dow = m.dow.toUpperCase();
+  // the day spells itself out while it has the line to itself, and shortens
+  // when the date and network move up beside it
+  const dayTime = { long: (DAY_FULL[dow] || dow) + " " + fmtTime(m.time),
+                    short: dow + " " + fmtTime(m.time) };
   const win = windowOf(m);
-  const winText = !win ? null
-    : win === "NBC Saturday" ? esc(win) + " " + fmtTime(m.time)
-    : '<span class="hstage" data-short="' + esc(win.replace("Sky ", "")) + '">' +
-      esc(win) + "</span> | " + (net ? esc(net) + " " : "") + fmtTime(m.time);
   if (m.comp === "PL") {
-    const wk = m.mw != null ? "MW" + m.mw : "Premier League";
-    return { head: wk + " | " + (winText || dayTime), date: fmtDate(m.date) };
+    const wk = m.mw != null ? "[MW" + m.mw + "]" : "Premier League";
+    if (win === "NBC Saturday") {
+      // the window names its own day and its network; only the date is left
+      return { head: wk + " " + esc(win) + " " + fmtTime(m.time),
+               tail: [fmtDate(m.date)] };
+    }
+    if (win) {
+      // Sunday's window, network and time fill the line on a phone, so its
+      // date stays below whatever else the card says (410px, 2026-10-02)
+      return { head: wk + ' <span class="hstage" data-short="' +
+                 esc(win.replace("Sky ", "")) + '">' + esc(win) + "</span> | " +
+                 (net ? esc(net) + " " : "") + fmtTime(m.time),
+               tail: [], lead: [fmtDate(m.date)] };
+    }
+    return { head: wk, dayTime: dayTime,
+             tail: [fmtDate(m.date)].concat(net ? [esc(net)] : []) };
   }
   const s = stageText(m);
   const lab = s.full !== s.short
     ? '<span class="hstage" data-short="' + esc(s.short) + '">' + esc(s.full) + "</span>"
     : esc(s.full);
-  if (bigStage(m)) {
-    // the year leads a final, as it does a Michigan tournament card -- except
-    // in Europe, whose label already carries the season ("2018-19 Champions
-    // League: Final")
-    const euro = ["UCL", "UEL", "UECL"].indexOf(m.comp) > -1;
-    return { head: (euro ? "" : m.date.slice(0, 4) + " ") + lab +
-                   (m.place ? " | " + esc(cityOf(m)) : ""),
-             date: null, tv: tv };
-  }
-  // a cup round is long enough on its own: the day and date lead the third row
-  if (m.team !== "spurs") {
-    // USMNT and Atlanta: the round alone up top; day, date, time and -- on
-    // neutral ground -- the city below
-    return { head: lab, date: null, down: m.dow.toUpperCase() + " " + fmtDate(m.date) +
-             "|" + fmtTime(m.time) + (m.where === "N" && m.place ? "|" + cityOf(m) : "") };
-  }
-  // EVERY CUP -- the domestic ones and Europe (his calls 2026-10-02) -- carries
-  // nothing but the round up top; the day, date, network and time read below:
-  //     Champions League League Phase
-  //     TUE 9/16/2025 | Paramount+ 3:00pm
-  // Only the Premier League keeps its line up there, where the matchweek and
-  // the TV window belong together.
-  return { head: lab, date: null,
-           down: m.dow.toUpperCase() + " " + fmtDate(m.date) + "|" +
-                 (net ? esc(net) + " " : "") + fmtTime(m.time) };
+  const big = bigStage(m);
+  // the year leads a final, as it does a Michigan tournament card -- except in
+  // Europe, whose label already carries the season ("2018-19 Champions League:
+  // Final"); the city of a final rides up there with it
+  const head = !big ? lab
+    : (["UCL", "UEL", "UECL"].indexOf(m.comp) > -1 ? "" : m.date.slice(0, 4) + " ") +
+      lab + (m.place ? " | " + esc(cityOf(m)) : "");
+  // EVERY CUP -- the domestic ones, Europe, and his other teams' tournaments --
+  // carries nothing but the round up top, so the day, date, network and time
+  // have a line of their own below the score.
+  const down = [dow + " " + fmtDate(m.date), tv];
+  if (!big && m.team !== "spurs" && m.where === "N" && m.place) down.push(cityOf(m));
+  return { head: head, down: down };
 }
 
 /* ---------- colour words from his Sheet --------------------------------- */
@@ -317,15 +328,10 @@ function card(m) {
     "</span>" + (fin ? '<span class="mfin">' + esc(fin) + "</span>" : "") +
     "</span></span>" + boxes + "</div>";
 
-  // THE THIRD ROW: plain grey details, pipes between
+  // THE LINES BELOW THE SCORE: plain grey details, pipes between. What the
+  // card has of its own goes in parts; the day, date and network find their
+  // place around it (see cardHead's note).
   const parts = [];
-  if (bigStage(m)) {
-    parts.push(m.dow.toUpperCase() + " " + fmtDate(m.date));
-    parts.push(h.tv.replace(/<[^>]+>/g, ""));
-  } else if (h.down) {
-    // USMNT and Atlanta only: their cards carry the day, date and time below
-    h.down.split("|").forEach(p => parts.push(p));
-  }
   if (m.awarded) parts.push("Awarded");
   if (!m.pens && m.aet) parts.push("AET");
   // the scorer and minute, already worded by the harvest ("Kane 86'")
@@ -340,13 +346,24 @@ function card(m) {
   if (mx.note) parts.push(mx.note);
   const footer = String(mx.footer || "").trim();
   if (footer.indexOf(" ") > -1 && parts.indexOf(footer) < 0) parts.push(footer);
-  // the date drops to the third row when there is nothing else to say
-  // A FOOTER DATE ALWAYS CARRIES ITS DAY (his call 2026-10-02): "SAT 8/16/2025"
-  const dateDown = !bigStage(m) && !parts.length;
-  if (dateDown) {
-    parts.push(m.dow.toUpperCase() + " " + (h.date || "").replace(/<[^>]+>/g, ""));
+  // HIS SHAPES (2026-10-02). A cup's day/date/network line is always there and
+  // his own details take a fourth; a league match keeps the day up top and
+  // sends the date and network below -- unless it needs that line for him.
+  const rows = [];
+  let head = h.head;
+  if (h.down) {
+    rows.push(h.down.map(p => String(p).replace(/<[^>]+>/g, "")));
+    if (parts.length) rows.push(parts);
+  } else if (parts.length) {
+    const bits = h.dayTime ? [h.dayTime.short] : [];
+    (h.tail || []).forEach((t, i) => bits.push(
+      i ? t : '<span class="hdate">' + t + "</span>"));
+    if (bits.length) head += " " + bits.join(" | ");
+    rows.push((h.lead || []).concat(parts));
+  } else {
+    head += h.dayTime ? " " + h.dayTime.long : "";
+    rows.push((h.lead || []).concat(h.tail || []));
   }
-  const head = h.head + (!dateDown && h.date ? ' | <span class="hdate">' + h.date + "</span>" : "");
   // his Footer column: a colour word paints the whole third row
   const footCol = colourOf(footer.split(/\s+/)[0]);
 
@@ -374,9 +391,12 @@ function card(m) {
     head + "</span></div>" +
     '<div class="teams">' + oppLine + "</div>" +
     '<div class="tags mdets">' + (mx.attended ? '<span class="mstar">*</span>' : "") +
-    '<span class="mdl"' + (footCol ? ' style="color:' + footCol + '"' : "") + ">" +
-    parts.map(p => '<span class="mdet">' + esc(p) + "</span>").join('<span class="msep">|</span>') +
-    "</span></div></div>";
+    // his Footer colour word paints the line his own details sit on
+    rows.map((r, i) => '<span class="mdl"' +
+      (footCol && i === rows.length - 1 ? ' style="color:' + footCol + '"' : "") + ">" +
+      r.map(p => '<span class="mdet">' + esc(p) + "</span>")
+        .join('<span class="msep">|</span>') + "</span>").join("") +
+    "</div></div>";
 }
 
 /* A TWO-TEAM CARD, for the matches that are nobody's of his: the TV windows
@@ -415,23 +435,27 @@ function twoCard(m) {
     const t = fmtTime(m.time);
     const win = '<span class="hstage" data-short="' +
       esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span>";
-    head = "MW" + m.mw + " | " + win +
+    head = "[MW" + m.mw + "] " + win +
       (m.window === "NBC Saturday" ? " " + t : " | " + (net ? esc(net) + " " : "") + t);
   } else {
     const st = stageText(m);
-    head = (m.comp === "PL"
-      ? (m.mw != null ? "MW" + m.mw : "Premier League")
-      : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) + "</span>") +
-      " | " + fmtTime(m.time);
+    head = m.comp === "PL"
+      ? (m.mw != null ? "[MW" + m.mw + "] " : "Premier League | ") + fmtTime(m.time)
+      : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) +
+        "</span> | " + fmtTime(m.time);
   }
   const winner = winId;
   if (m.pens) head += " | Pens " + esc(m.pens);
   const headCol = COMP_COLOUR[m.comp];
+  // THE DATE READS BELOW, as it does on his own cards: the window, its network
+  // and its time already fill the line on a phone (410px, 2026-10-02)
   return '<div class="row two" data-id="' + m.id + '" style="--winwash:' +
     (winner ? shade(teamColour(winner)) : "transparent") + '">' +
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + "><span>" +
-    head + '</span><span class="hdate">' + fmtDate(m.date) + "</span></div>" +
-    '<div class="teams">' + line(awayId, as, hs) + line(homeId, hs, as) + "</div></div>";
+    head + "</span></div>" +
+    '<div class="teams">' + line(awayId, as, hs) + line(homeId, hs, as) + "</div>" +
+    '<div class="tags mdets"><span class="mdl"><span class="mdet">' +
+    esc(m.dow.toUpperCase() + " " + fmtDate(m.date)) + "</span></span></div></div>";
 }
 
 /* ---------- filters ------------------------------------------------------ */

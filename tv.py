@@ -22,7 +22,7 @@ HEADERS = {"Origin": "https://www.premierleague.com",
            "User-Agent": "Mozilla/5.0", "Account": "premierleague"}
 FIRST = 2016                       # the first season with US listings
 # their abbreviations -> the names the cards use
-NAMES = {"NBC": "NBC", "USANBCSN": "NBCSN", "USANET": "USA", "USACNBC": "CNBC",
+NAMES = {"NBC": "NBC", "USANBCSN": "NBCSN", "USANET": "USA Network", "USACNBC": "CNBC",
          "USPEA": "Peacock", "NBCGOLD": "NBC Sports Gold", "USASYFY": "Syfy",
          "UNIVERSO": "Universo", "TELEMUND": "Telemundo", "USATELEXITOS": "TeleXitos"}
 
@@ -139,7 +139,7 @@ LSTV_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 # and regional channels are simply absent from the table, so they are dropped.
 LSTV_NAMES = {
     "nbc": "NBC", "nbcsn": "NBCSN", "nbc sports network": "NBCSN",
-    "nbc sports": "NBCSN", "usa network": "USA", "cnbc": "CNBC", "syfy": "Syfy",
+    "nbc sports": "NBCSN", "usa network": "USA Network", "cnbc": "CNBC", "syfy": "Syfy",
     "peacock": "Peacock", "nbc sports gold": "NBC Sports Gold",
     "premier league extra time": "PL Extra Time",
     "nbc sports app": "NBC Sports App", "nbc sports live extra": "NBC Sports App",
@@ -166,7 +166,7 @@ LSTV_NAMES = {
 }
 # what a card prefers when a match was on several: the networks he watches
 # first, the streams next, Spanish last
-LSTV_ORDER = ["NBC", "NBCSN", "USA", "CNBC", "Syfy", "FS1", "FS2", "FOX",
+LSTV_ORDER = ["NBC", "NBCSN", "USA Network", "CNBC", "Syfy", "FS1", "FS2", "FOX",
               "FOX Soccer Plus", "ESPN", "ESPN2", "ESPNEWS", "CBS", "CBSSN",
               "beIN", "GOLTV", "Peacock", "Paramount+", "ESPN+", "ESPN3",
               "ESPN App", "CBS Sports Golazo", "NBC Sports Gold", "TNT",
@@ -271,7 +271,7 @@ def networks_any(date, home_name, away_name, final=True):
 # the Premier League "USANBC", livesoccertv "Fox Sports 2 USA" -- so every
 # list of networks passes through here before it reaches a card.
 CANON = {
-    "USA Net": "USA", "USA Network": "USA", "USANET": "USA",
+    "USA Net": "USA Network", "USA": "USA Network", "USANET": "USA Network",
     "USANBC": "NBC", "USANBCSN": "NBCSN", "NBC Sports Network": "NBCSN",
     "USACNBC": "CNBC", "USPEA": "Peacock", "NBCGOLD": "NBC Sports Gold",
     "Tele": "Telemundo", "TELEMUND": "Telemundo", "UNIVERSO": "Universo",
@@ -284,7 +284,7 @@ HIDE = {"Telemundo", "Universo", "TeleXitos", "Univision", "UniMas", "TUDN",
         # his call 2026-09-26
         "beIN", "GOLTV", "FOX Soccer Plus", "ESPN App"}
 # what a card prefers when a match was on more than one
-ORDER = ["NBC", "NBCSN", "USA", "CNBC", "Syfy", "FOX", "FS1", "FS2",
+ORDER = ["NBC", "NBCSN", "USA Network", "CNBC", "Syfy", "FOX", "FS1", "FS2",
          "FOX Soccer Plus", "CBS", "CBSSN", "ESPN", "ESPN2", "ESPNEWS", "TNT",
          "beIN", "GOLTV", "Peacock", "Paramount+", "ESPN+", "B/R Live",
          "CBS All Access", "NBC Sports Gold", "ESPN3", "PL Extra Time",

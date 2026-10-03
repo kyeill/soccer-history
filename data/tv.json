@@ -1613,7 +1613,7 @@
 ],
 "2019|chelsea|wolves": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2019|crystalpalace|arsenal": [
 "NBCSN",
@@ -1996,7 +1996,7 @@
 ],
 "2020|astonvilla|chelsea": [
 "Peacock",
-"USA"
+"USA Network"
 ],
 "2020|astonvilla|fulham": [
 "NBCSN"
@@ -2427,7 +2427,7 @@
 ],
 "2021|arsenal|burnley": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|arsenal|chelsea": [
 "NBCSN",
@@ -2445,17 +2445,17 @@
 ],
 "2021|arsenal|leicester": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|arsenal|liverpool": [
 "Peacock"
 ],
 "2021|arsenal|mancity": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|arsenal|manutd": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|arsenal|newcastle": [
@@ -2483,7 +2483,7 @@
 "Peacock"
 ],
 "2021|astonvilla|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|astonvilla|chelsea": [
@@ -2532,7 +2532,7 @@
 "Universo"
 ],
 "2021|brighton|chelsea": [
-"USA"
+"USA Network"
 ],
 "2021|brighton|leeds": [
 "NBC",
@@ -2562,14 +2562,14 @@
 "NBCSN"
 ],
 "2021|burnley|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|burnley|tottenham": [
 "Peacock"
 ],
 "2021|chelsea|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|chelsea|astonvilla": [
@@ -2577,7 +2577,7 @@
 "Universo"
 ],
 "2021|chelsea|brentford": [
-"USA"
+"USA Network"
 ],
 "2021|chelsea|brighton": [
 "Peacock"
@@ -2600,7 +2600,7 @@
 ],
 "2021|chelsea|liverpool": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|chelsea|mancity": [
 "NBCSN",
@@ -2617,7 +2617,7 @@
 "Universo"
 ],
 "2021|chelsea|southampton": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|chelsea|tottenham": [
@@ -2627,18 +2627,18 @@
 "Peacock"
 ],
 "2021|chelsea|westham": [
-"USA"
+"USA Network"
 ],
 "2021|chelsea|wolves": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|crystalpalace|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|crystalpalace|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|crystalpalace|everton": [
@@ -2650,7 +2650,7 @@
 "Universo"
 ],
 "2021|crystalpalace|westham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|everton|arsenal": [
@@ -2659,11 +2659,11 @@
 ],
 "2021|everton|brentford": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|everton|chelsea": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|everton|mancity": [
 "Peacock"
@@ -2688,7 +2688,7 @@
 "Universo"
 ],
 "2021|leeds|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|leicester|arsenal": [
@@ -2700,7 +2700,7 @@
 "Universo"
 ],
 "2021|leicester|tottenham": [
-"USA"
+"USA Network"
 ],
 "2021|leicester|westham": [
 "Peacock",
@@ -2721,14 +2721,14 @@
 ],
 "2021|liverpool|everton": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|liverpool|mancity": [
 "NBCSN",
 "Telemundo"
 ],
 "2021|liverpool|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|liverpool|westham": [
@@ -2743,15 +2743,15 @@
 ],
 "2021|mancity|liverpool": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|mancity|manutd": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|mancity|newcastle": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|mancity|tottenham": [
 "NBC",
@@ -2761,11 +2761,11 @@
 "Peacock"
 ],
 "2021|manutd|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|manutd|leicester": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|manutd|liverpool": [
@@ -2776,7 +2776,7 @@
 "Peacock"
 ],
 "2021|newcastle|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|newcastle|chelsea": [
@@ -2812,7 +2812,7 @@
 "Peacock"
 ],
 "2021|southampton|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|southampton|mancity": [
@@ -2824,7 +2824,7 @@
 "Universo"
 ],
 "2021|tottenham|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|tottenham|astonvilla": [
@@ -2834,22 +2834,22 @@
 "Peacock"
 ],
 "2021|tottenham|brighton": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|tottenham|burnley": [
-"USA"
+"USA Network"
 ],
 "2021|tottenham|chelsea": [
 "Peacock"
 ],
 "2021|tottenham|crystalpalace": [
 "Telemundo",
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|tottenham|everton": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|tottenham|leeds": [
@@ -2872,13 +2872,13 @@
 ],
 "2021|tottenham|newcastle": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|tottenham|norwich": [
 "Peacock"
 ],
 "2021|tottenham|southampton": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|tottenham|watford": [
@@ -2886,14 +2886,14 @@
 ],
 "2021|tottenham|westham": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|tottenham|wolves": [
 "Peacock",
 "Telemundo"
 ],
 "2021|watford|arsenal": [
-"USA"
+"USA Network"
 ],
 "2021|watford|chelsea": [
 "Peacock"
@@ -2903,12 +2903,12 @@
 "Universo"
 ],
 "2021|watford|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|westham|arsenal": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|westham|chelsea": [
 "NBCSN",
@@ -2925,12 +2925,12 @@
 "Peacock"
 ],
 "2021|wolves|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2021|wolves|leicester": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2021|wolves|manutd": [
 "NBCSN",
@@ -2951,18 +2951,18 @@
 ],
 "2022|arsenal|brighton": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|arsenal|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|arsenal|crystalpalace": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|arsenal|everton": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|arsenal|fulham": [
@@ -2970,7 +2970,7 @@
 "Universo"
 ],
 "2022|arsenal|leeds": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|arsenal|leicester": [
@@ -2978,7 +2978,7 @@
 ],
 "2022|arsenal|liverpool": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|arsenal|mancity": [
 "Peacock"
@@ -2988,19 +2988,19 @@
 "Telemundo"
 ],
 "2022|arsenal|newcastle": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|arsenal|nottinghamforest": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|arsenal|southampton": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|arsenal|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|arsenal|westham": [
@@ -3010,7 +3010,7 @@
 "Peacock"
 ],
 "2022|astonvilla|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|astonvilla|chelsea": [
@@ -3031,7 +3031,7 @@
 "Peacock"
 ],
 "2022|bournemouth|mancity": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|bournemouth|newcastle": [
@@ -3044,14 +3044,14 @@
 ],
 "2022|brentford|arsenal": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|brentford|bournemouth": [
 "NBC",
 "Universo"
 ],
 "2022|brentford|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|brentford|manutd": [
@@ -3059,7 +3059,7 @@
 "Universo"
 ],
 "2022|brentford|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|brighton|arsenal": [
@@ -3067,7 +3067,7 @@
 "Universo"
 ],
 "2022|brighton|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|brighton|tottenham": [
@@ -3076,14 +3076,14 @@
 ],
 "2022|chelsea|arsenal": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|chelsea|astonvilla": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|chelsea|bournemouth": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|chelsea|brentford": [
@@ -3094,18 +3094,18 @@
 ],
 "2022|chelsea|crystalpalace": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|chelsea|everton": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|chelsea|fulham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|chelsea|leeds": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|chelsea|leicester": [
@@ -3125,7 +3125,7 @@
 "Peacock"
 ],
 "2022|chelsea|nottinghamforest": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|chelsea|southampton": [
@@ -3133,7 +3133,7 @@
 ],
 "2022|chelsea|tottenham": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|chelsea|westham": [
 "Peacock"
@@ -3142,15 +3142,15 @@
 "Peacock"
 ],
 "2022|crystalpalace|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|crystalpalace|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|crystalpalace|mancity": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|crystalpalace|newcastle": [
@@ -3158,14 +3158,14 @@
 "Universo"
 ],
 "2022|crystalpalace|tottenham": [
-"USA"
+"USA Network"
 ],
 "2022|everton|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|everton|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|everton|leicester": [
@@ -3173,7 +3173,7 @@
 "Universo"
 ],
 "2022|everton|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|fulham|arsenal": [
@@ -3187,23 +3187,23 @@
 "Universo"
 ],
 "2022|fulham|manutd": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|fulham|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|leeds|arsenal": [
 "Peacock"
 ],
 "2022|leeds|astonvilla": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|leeds|chelsea": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|leeds|tottenham": [
 "CNBC",
@@ -3214,7 +3214,7 @@
 "Peacock"
 ],
 "2022|leicester|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|leicester|tottenham": [
@@ -3224,7 +3224,7 @@
 "Peacock"
 ],
 "2022|liverpool|brentford": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|liverpool|chelsea": [
@@ -3232,26 +3232,26 @@
 ],
 "2022|liverpool|mancity": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|liverpool|manutd": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|liverpool|tottenham": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|mancity|arsenal": [
 "Peacock"
 ],
 "2022|mancity|astonvilla": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|mancity|chelsea": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|mancity|leicester": [
 "NBC",
@@ -3263,7 +3263,7 @@
 ],
 "2022|manutd|arsenal": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|manutd|chelsea": [
 "Peacock"
@@ -3273,7 +3273,7 @@
 ],
 "2022|newcastle|arsenal": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|newcastle|chelsea": [
 "NBC",
@@ -3286,15 +3286,15 @@
 ],
 "2022|newcastle|mancity": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|newcastle|manutd": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|newcastle|tottenham": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|newcastle|westham": [
 "NBC",
@@ -3302,7 +3302,7 @@
 ],
 "2022|newcastle|wolves": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|nottinghamforest|arsenal": [
 "NBC",
@@ -3314,11 +3314,11 @@
 ],
 "2022|nottinghamforest|manutd": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|nottinghamforest|tottenham": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|southampton|arsenal": [
 "Peacock"
@@ -3339,7 +3339,7 @@
 "Universo"
 ],
 "2022|southampton|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|tottenham|arsenal": [
@@ -3349,18 +3349,18 @@
 "Peacock"
 ],
 "2022|tottenham|bournemouth": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|tottenham|brentford": [
-"USA"
+"USA Network"
 ],
 "2022|tottenham|brighton": [
 "Peacock"
 ],
 "2022|tottenham|chelsea": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|tottenham|crystalpalace": [
 "Peacock"
@@ -3391,7 +3391,7 @@
 ],
 "2022|tottenham|newcastle": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|tottenham|nottinghamforest": [
 "Peacock"
@@ -3401,18 +3401,18 @@
 ],
 "2022|tottenham|westham": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|tottenham|wolves": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|westham|arsenal": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2022|westham|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|westham|mancity": [
@@ -3422,15 +3422,15 @@
 "Peacock"
 ],
 "2022|westham|wolves": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|wolves|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|wolves|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2022|wolves|tottenham": [
@@ -3438,10 +3438,10 @@
 ],
 "2023|arsenal|astonvilla": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|arsenal|bournemouth": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|arsenal|brentford": [
@@ -3451,33 +3451,33 @@
 ],
 "2023|arsenal|brighton": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|arsenal|burnley": [
 "Peacock"
 ],
 "2023|arsenal|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|arsenal|crystalpalace": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|arsenal|everton": [
 "Peacock",
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|arsenal|fulham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|arsenal|liverpool": [
 "Peacock"
 ],
 "2023|arsenal|luton": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|arsenal|mancity": [
@@ -3494,7 +3494,7 @@
 "Peacock"
 ],
 "2023|arsenal|sheffutd": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|arsenal|tottenham": [
@@ -3504,7 +3504,7 @@
 "Peacock"
 ],
 "2023|arsenal|wolves": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|astonvilla|arsenal": [
@@ -3517,15 +3517,15 @@
 ],
 "2023|astonvilla|manutd": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|astonvilla|tottenham": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|astonvilla|westham": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|astonvilla|wolves": [
 "NBC",
@@ -3538,7 +3538,7 @@
 ],
 "2023|bournemouth|chelsea": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|bournemouth|mancity": [
 "NBC",
@@ -3556,11 +3556,11 @@
 "Universo"
 ],
 "2023|bournemouth|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|brentford|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|brentford|chelsea": [
@@ -3580,7 +3580,7 @@
 "Peacock"
 ],
 "2023|brighton|arsenal": [
-"USA"
+"USA Network"
 ],
 "2023|brighton|chelsea": [
 "Peacock"
@@ -3590,7 +3590,7 @@
 "Universo"
 ],
 "2023|brighton|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|brighton|westham": [
@@ -3598,7 +3598,7 @@
 "Universo"
 ],
 "2023|burnley|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|burnley|chelsea": [
@@ -3623,12 +3623,12 @@
 "Peacock"
 ],
 "2023|chelsea|brentford": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|chelsea|brighton": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|chelsea|burnley": [
 "Peacock"
@@ -3637,11 +3637,11 @@
 "Peacock"
 ],
 "2023|chelsea|everton": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|chelsea|fulham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|chelsea|liverpool": [
@@ -3652,38 +3652,38 @@
 ],
 "2023|chelsea|mancity": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|chelsea|manutd": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|chelsea|newcastle": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|chelsea|nottinghamforest": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|chelsea|sheffutd": [
 "Peacock"
 ],
 "2023|chelsea|tottenham": [
-"USA"
+"USA Network"
 ],
 "2023|chelsea|westham": [
 "Peacock"
 ],
 "2023|chelsea|wolves": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|crystalpalace|arsenal": [
 "Peacock"
 ],
 "2023|crystalpalace|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|crystalpalace|nottinghamforest": [
@@ -3691,12 +3691,12 @@
 "Universo"
 ],
 "2023|crystalpalace|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|everton|arsenal": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|everton|brentford": [
 "NBC",
@@ -3704,31 +3704,31 @@
 ],
 "2023|everton|chelsea": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|everton|manutd": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|everton|tottenham": [
 "Telemundo",
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|fulham|arsenal": [
 "Peacock"
 ],
 "2023|fulham|chelsea": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|fulham|liverpool": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|fulham|tottenham": [
 "Telemundo",
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|liverpool|arsenal": [
@@ -3752,22 +3752,22 @@
 "Peacock"
 ],
 "2023|luton|astonvilla": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|luton|chelsea": [
-"USA"
+"USA Network"
 ],
 "2023|luton|liverpool": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|luton|manutd": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|luton|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|mancity|arsenal": [
@@ -3786,7 +3786,7 @@
 "2023|mancity|wolves": [
 "Peacock",
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|manutd|arsenal": [
 "Peacock",
@@ -3816,7 +3816,7 @@
 ],
 "2023|newcastle|liverpool": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|newcastle|mancity": [
 "NBC",
@@ -3824,7 +3824,7 @@
 "Universo"
 ],
 "2023|newcastle|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|nottinghamforest|arsenal": [
@@ -3840,7 +3840,7 @@
 ],
 "2023|nottinghamforest|mancity": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|nottinghamforest|manutd": [
 "NBC",
@@ -3853,11 +3853,11 @@
 "Universo"
 ],
 "2023|nottinghamforest|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|sheffutd|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|sheffutd|astonvilla": [
@@ -3871,25 +3871,25 @@
 ],
 "2023|sheffutd|newcastle": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|sheffutd|tottenham": [
 "Peacock"
 ],
 "2023|tottenham|arsenal": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|tottenham|astonvilla": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|tottenham|bournemouth": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|tottenham|brentford": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|tottenham|brighton": [
@@ -3908,18 +3908,18 @@
 "Peacock"
 ],
 "2023|tottenham|fulham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|tottenham|liverpool": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|tottenham|luton": [
 "Peacock"
 ],
 "2023|tottenham|mancity": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|tottenham|manutd": [
@@ -3928,17 +3928,17 @@
 ],
 "2023|tottenham|newcastle": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|tottenham|nottinghamforest": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|tottenham|sheffutd": [
 "Peacock"
 ],
 "2023|tottenham|westham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|tottenham|wolves": [
@@ -3946,22 +3946,22 @@
 ],
 "2023|westham|arsenal": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|westham|chelsea": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|westham|tottenham": [
 "Peacock"
 ],
 "2023|wolves|arsenal": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2023|wolves|chelsea": [
 "Telemundo",
-"USA"
+"USA Network"
 ],
 "2023|wolves|newcastle": [
 "NBC",
@@ -3969,7 +3969,7 @@
 "Universo"
 ],
 "2023|wolves|tottenham": [
-"USA",
+"USA Network",
 "Universo"
 ],
 "2025|tottenham|burnley": [],
@@ -4394,11 +4394,11 @@
 "NBC Sports App"
 ],
 "d2014-02-08|chelsea|newcastle": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2014-02-08|liverpool|arsenal": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2014-02-08|swansea|cardiff": [
@@ -4406,11 +4406,11 @@
 "NBC Sports App"
 ],
 "d2014-02-09|manutd|fulham": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2014-02-09|tottenham|everton": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2014-02-11|westbrom|chelsea": [
@@ -4434,7 +4434,7 @@
 ],
 "d2014-02-19|arsenal|bayernmunich": [],
 "d2014-02-22|arsenal|sunderland": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2014-02-22|chelsea|everton": [
@@ -4619,7 +4619,7 @@
 "NBC Sports App"
 ],
 "d2014-05-11|tottenham|astonvilla": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2014-05-17|arsenal|hull": [
@@ -5350,7 +5350,7 @@
 "Telemundo"
 ],
 "d2015-08-23|westbrom|chelsea": [
-"USA",
+"USA Network",
 "NBC Sports App",
 "Universo"
 ],
@@ -5360,7 +5360,7 @@
 "Universo"
 ],
 "d2015-08-29|chelsea|crystalpalace": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2015-08-29|newcastle|arsenal": [
@@ -5379,7 +5379,7 @@
 "Telemundo"
 ],
 "d2015-09-12|arsenal|stoke": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2015-09-12|everton|chelsea": [
@@ -5416,7 +5416,7 @@
 ],
 "d2015-09-20|liverpool|norwich": [],
 "d2015-09-20|tottenham|crystalpalace": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2015-09-23|tottenham|arsenal": [
@@ -5424,7 +5424,7 @@
 ],
 "d2015-09-23|walsall|chelsea": [],
 "d2015-09-26|leicester|arsenal": [
-"USA",
+"USA Network",
 "NBC Sports App",
 "Universo"
 ],
@@ -5462,7 +5462,7 @@
 "NBC Sports App"
 ],
 "d2015-10-17|chelsea|astonvilla": [
-"USA",
+"USA Network",
 "NBC Sports App",
 "Universo"
 ],
@@ -5508,12 +5508,12 @@
 "Telemundo"
 ],
 "d2015-10-31|swansea|arsenal": [
-"USA",
+"USA Network",
 "NBC Sports App",
 "Universo"
 ],
 "d2015-11-01|southampton|bournemouth": [
-"USA",
+"USA Network",
 "NBC Sports App",
 "Universo"
 ],
@@ -5542,7 +5542,7 @@
 "Telemundo"
 ],
 "d2015-11-21|westbrom|arsenal": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2015-11-22|tottenham|westham": [
@@ -5565,12 +5565,12 @@
 "NBC Sports App"
 ],
 "d2015-11-29|tottenham|chelsea": [
-"USA",
+"USA Network",
 "NBC Sports App",
 "Telemundo"
 ],
 "d2015-12-05|arsenal|sunderland": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2015-12-05|chelsea|bournemouth": [
@@ -5633,7 +5633,7 @@
 "Universo"
 ],
 "d2015-12-26|chelsea|watford": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2015-12-26|newcastle|everton": [
@@ -5710,7 +5710,7 @@
 "NBC Sports App"
 ],
 "d2016-01-16|chelsea|everton": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2016-01-16|tottenham|sunderland": [
@@ -5727,7 +5727,7 @@
 "FOX Deportes"
 ],
 "d2016-01-23|crystalpalace|tottenham": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2016-01-23|westham|mancity": [
@@ -5884,7 +5884,7 @@
 "FOX Soccer Plus"
 ],
 "d2016-03-19|chelsea|westham": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2016-03-19|everton|arsenal": [
@@ -5920,7 +5920,7 @@
 "Universo"
 ],
 "d2016-04-03|manutd|everton": [
-"USA",
+"USA Network",
 "NBC Sports App",
 "Telemundo"
 ],
@@ -5966,7 +5966,7 @@
 "NBC Sports App"
 ],
 "d2016-04-23|bournemouth|chelsea": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2016-04-24|sunderland|arsenal": [
@@ -5995,12 +5995,12 @@
 "Universo"
 ],
 "d2016-05-07|leicester|everton": [
-"USA",
+"USA Network",
 "NBC Sports App",
 "Universo"
 ],
 "d2016-05-07|sunderland|chelsea": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2016-05-08|liverpool|watford": [
@@ -6031,7 +6031,7 @@
 "Telemundo"
 ],
 "d2016-05-15|newcastle|tottenham": [
-"USA",
+"USA Network",
 "NBC Sports App"
 ],
 "d2016-08-23|chelsea|bristolrovers": [],
