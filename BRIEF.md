@@ -284,6 +284,17 @@ window still says NBC, since that is the window's name. The header is built as
 separate fields, so where one does wrap it breaks between them and the bar
 leads the line it continues onto.
 
+`[MW1] Sky Sunday 11:30am | 8/23/2026`: the Sunday window is called SKY SUNDAY
+(his call 2026-10-02). The filter's options must read exactly as windows.py
+labels a match -- an option saying "Super Sunday" while the matches said "Sky
+Super Sunday" found nothing, which is how he caught it.
+
+HIS TOTTENHAM MARKS on the TV Windows cards, as Michigan's TV windows read:
+a WHITE border on a Tottenham win or a draw with the Top Six, a DASHED GREY
+one on a loss or a draw with anyone else, and a win over the Top Six FILLS
+the card. ESPN paints Tottenham white, which washes out to a flat grey, so
+the fill uses the navy. Cards without Spurs wear nothing.
+
 SCORERS: every Tottenham goal, on a WIN OR A DRAW with the Top Six (65 cards).
 Not on a loss. ARSENAL AND CHELSEA ARE NEVER IN BOLD -- a win of theirs is
 washed like anyone's, but their name and score stay plain.

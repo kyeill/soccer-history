@@ -62,6 +62,9 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 .row.two .sport{gap:7px}
 .row.two .sport>span{white-space:nowrap}
 .row.two .sport>span.msep{margin:0 -2px}
+/* a filled card: the whole thing wears the winner's colour, so the winner's
+   own line stops wearing it too (his call 2026-10-02) */
+.row.two.mwash .tl2.won{background:transparent}
 /* HIS TWO CLUBS ARE NEVER IN BOLD (his call 2026-10-02) */
 .row.two .tl2.won.nobold .nm,.row.two .tl2.nobold .sc{font-weight:400}
 
@@ -181,6 +184,6 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 <div id="list"></div>
 </div>
 
-<script src="app.js?v=20261002-204503"></script>
+<script src="app.js?v=20261002-205512"></script>
 </body>
 </html>

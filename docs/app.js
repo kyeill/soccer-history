@@ -1,14 +1,14 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-204503. Modelled on games-history's Michigan view (michCard): one card
+   20261002-205512. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-204503";
+const BUILD = "20261002-205512";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
 // Arsenal, Chelsea, Liverpool, Man City, Man United (his order 2026-10-02)
 const TOP_SIX = ["359", "363", "364", "382", "360"];
 let ALL = [], MATCHES = [], TEAMS = {}, CURRENT = null;
-// "date|home|away" -> "NBC Saturday" / "Sky Super Sunday", built at load from
+// "date|home|away" -> "NBC Saturday" / "Sky Sunday", built at load from
 // the TV Windows population so his teams' cards agree with that view
 let WINDOW_OF = {};
 let FILT = {};
@@ -60,7 +60,10 @@ const VIEWS = {
   windows: { comps: ["PL"], lead: [] },
 };
 const ARSENAL = "359", CHELSEA = "363";
-const WINDOWS = ["NBC Saturday", "Super Sunday"];
+// these must read exactly as windows.py labels a match: the filter
+// compares them, and an option that said "Super Sunday" while the
+// matches said "Sky Super Sunday" found nothing (his catch 2026-10-02)
+const WINDOWS = ["NBC Saturday", "Sky Sunday"];
 // a European header wears its competition's colour, lightened to read on a
 // card; the English cups stay plain
 const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#5b9bea" };
@@ -209,7 +212,7 @@ function cardHead(m) {
     const wk = m.mw != null ? "[MW" + m.mw + "]" : "Premier League";
     if (win) {
       // HIS WINDOW SHAPE (2026-10-02):
-      //     [MW9] Sky Super Sunday 12:30pm
+      //     [MW9] Sky Sunday 12:30pm
       //     10/26/2025 | USA Network
       // The window names the day, so the time is all the header needs; the
       // date and network read below, where every other league card puts them,
@@ -435,7 +438,7 @@ function twoCard(m) {
     // HIS WINDOW HEADER (2026-10-02). The window, the time and the date, and
     // NO NETWORK -- naming it as well was what pushed a phone to two lines:
     //     [MW1] NBC Saturday 12:30pm | 8/22/2026
-    //     [MW1] Sky Super Sunday 11:30am | 8/23/2026
+    //     [MW1] Sky Sunday 11:30am | 8/23/2026
     // Saturday's window still says NBC, since it is part of the window's name.
     segs.push("[MW" + m.mw + "] " + '<span class="hstage" data-short="' +
       esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span> " +
@@ -452,15 +455,34 @@ function twoCard(m) {
   }
   const winner = winId;
   if (m.pens) segs.push("Pens " + esc(m.pens));
+  // HIS TOTTENHAM MARKS (2026-10-02), the way Michigan's TV windows read: a
+  // white border on a Tottenham win or a draw with the Top Six, a dashed grey
+  // one on a loss or a draw with anyone else, and a win over the Top Six
+  // fills the card in Spurs' own colour. Cards without Spurs wear nothing.
+  let cls = "", ring = "";
+  let wash = winner ? shade(teamColour(winner)) : "transparent";
+  if (wins && !up && (m.home === SPURS || m.away === SPURS)) {
+    const usHome = m.home === SPURS;
+    const us = usHome ? hs : as, them = usHome ? as : hs;
+    const big = TOP_SIX.indexOf(usHome ? m.away : m.home) > -1;
+    if (us > them || (us === them && big)) {
+      cls = " celebrate";
+      ring = ";--celeb:#ffffff;--celebring:#ffffff22";
+      // ESPN paints Tottenham WHITE, which washes out to a flat grey, so a
+      // filled card wears the navy instead (his call 2026-10-02)
+      if (us > them && big) { cls += " mwash"; wash = shade(VIEWS.spurs.box); }
+    } else {
+      cls = " celebrate predash";
+      ring = ";--celeb:#8a8a92";
+    }
+  }
   // the bar belongs to the field it introduces, so a wrap never leaves one
   // dangling at the end of a line
   const head = segs.map((x, i) => "<span>" +
     (i ? '<span class="msep">|</span> ' : "") + x + "</span>").join("");
   const headCol = COMP_COLOUR[m.comp];
-  // THE DATE READS BELOW, as it does on his own cards: the window, its network
-  // and its time already fill the line on a phone (410px, 2026-10-02)
-  return '<div class="row two" data-id="' + m.id + '" style="--winwash:' +
-    (winner ? shade(teamColour(winner)) : "transparent") + '">' +
+  return '<div class="row two' + cls + '" data-id="' + m.id +
+    '" style="--winwash:' + wash + ring + '">' +
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + ">" +
     head + "</div>" +
     '<div class="teams">' + line(awayId, as, hs) + line(homeId, hs, as) + "</div>" +
