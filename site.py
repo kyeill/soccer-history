@@ -60,8 +60,13 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 .row.two .tl2:not(.won) .nm{color:#a5a5a0}
 .row.two .sc{font-size:15px;font-variant-numeric:tabular-nums;font-weight:600;
   min-width:18px;text-align:right}
-.row.two .sport{gap:8px}
-.row.two .mdl{padding-left:0}
+/* the two-team header is a row of fields: it breaks between them, never
+   inside a channel's name (410px, 2026-10-02) */
+.row.two .sport{gap:7px}
+.row.two .sport>span{white-space:nowrap}
+.row.two .sport>span.msep{margin:0 -2px}
+/* HIS TWO CLUBS ARE NEVER IN BOLD (his call 2026-10-02) */
+.row.two .tl2.won.nobold .nm,.row.two .tl2.nobold .sc{font-weight:400}
 
 .filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
 .f{border:1px solid var(--line);background:var(--card);color:var(--muted);

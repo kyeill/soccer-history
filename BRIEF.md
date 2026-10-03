@@ -273,6 +273,14 @@ A TV WINDOW keeps that shape, the window standing in for the day:
     10/26/2025 | USA Network
 
 and his details take a third line below. Saturday's window already says NBC,
-so its line below says the network only when it was somewhere else. The TV
-Windows and Rivals cards read the same way, their date on a grey line under
-the two clubs rather than at the end of the header.
+so its line below says the network only when it was somewhere else.
+
+THE TV WINDOWS AND RIVALS CARDS put the lot in the header instead, since they
+have nothing below the two clubs: `[MW1] NBC Saturday 12:30pm | 8/22/2026`,
+`[MW1] Sky Super Sunday 11:30am | 8/23/2026 | NBCSN`. The header is built as
+separate fields so a phone breaks it between them, the bar leading the line it
+continues onto; 126 of the 748 take two lines at 410px.
+
+SCORERS: every Tottenham goal, on a WIN OR A DRAW with the Top Six (65 cards).
+Not on a loss. ARSENAL AND CHELSEA ARE NEVER IN BOLD -- a win of theirs is
+washed like anyone's, but their name and score stay plain.

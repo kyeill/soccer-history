@@ -675,11 +675,11 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
             m["late_win"] = w
         if q:
             m["late_eq"] = q
-        # A WIN OVER THE TOP SIX lists every Tottenham scorer (his call
-        # 2026-10-02): "Son 12', Kane 45'+2, Johnson 77'"
-        # ONLY against the Top Six (his call 2026-10-02, after every win was
-        # tried and read as too much)
-        if goals and m["result"] == "W" and tid in TOP_SIX:
+        # A WIN OR A DRAW WITH THE TOP SIX lists every Tottenham scorer (his
+        # calls 2026-10-02): "Son 12', Kane 45'+2, Johnson 77'"
+        # ONLY against the Top Six -- every win was tried once and read as too
+        # much -- and not on a loss.
+        if goals and m["result"] in ("W", "D") and tid in TOP_SIX:
             order, mins = [], {}
             for mn, add, team, who in goals:
                 if team != SPURS:

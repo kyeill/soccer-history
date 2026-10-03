@@ -338,10 +338,10 @@ function card(m) {
   if (!m.pens && m.aet) parts.push("AET");
   // the scorer and minute, already worded by the harvest ("Kane 86'")
   if (m.late_win && !m.scorers) parts.push(m.late_win);
-  if (m.late_eq) parts.push(m.late_eq);
-  // every Tottenham scorer, on a win over the Top Six -- always the whole
-  // list, in order, even when one of them was the late winner (his call
-  // 2026-10-02), so the late-winner line is left off those cards
+  if (m.late_eq && !m.scorers) parts.push(m.late_eq);
+  // every Tottenham scorer, on a win or a draw with the Top Six -- always the
+  // whole list, in order, even when one of them won or saved it late (his
+  // calls 2026-10-02), so the late line is left off those cards
   if (m.scorers) parts.push(m.scorers.join(", "));
   if (m.status) parts.push("Postponed");
   // his Notes, and a Footer phrase that is its own text ("Pink Out")
@@ -416,52 +416,57 @@ function twoCard(m) {
   const winId = up ? null
     : wins ? (hs > as ? homeId : as > hs ? awayId : null)
     : rivalWon ? m.rival : rivalLost ? m.opp : null;
+  // HIS TWO CLUBS ARE NEVER IN BOLD (2026-10-02): a win of Arsenal's or
+  // Chelsea's is washed like any other, but their name and score stay plain
   const line = (id, score, other) => {
     const t = TEAMS[id] || {};
     const win = !up && (winId ? id === winId : score > other);
-    return '<div class="tl2' + (win ? " won" : "") + '">' +
+    return '<div class="tl2' + (win ? " won" : "") +
+      (win && (id === "359" || id === "363") ? " nobold" : "") + '">' +
       '<img class="crest" loading="lazy" src="' + esc(t.logo || "") +
       '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
       '<span class="nm">' + esc(t.card || t.name || id) + "</span>" +
       '<span class="sc">' + (up ? "" : score) + "</span></div>";
   };
-  // the header: the matchweek and the window, or the rival's competition
+  // THE HEADER, IN PIECES so a phone breaks it between fields and never in
+  // the middle of a channel's name (410px, 2026-10-02)
   const net = primaryNet(m.nets);
-  let head;
+  const segs = [];
   if (wins) {
-    // HIS FORMAT (2026-09-24). Saturday is always NBC, so the window carries
-    // the time: "MW 5 | NBC Saturday 12:30pm". Sunday's US network changes
-    // year to year, so it reads between the window and the time:
-    // "MW 5 | Sky Super Sunday | USA 11:30am" -- and just the time when ESPN
-    // lists no network, which is most seasons before 2024-25.
-    const t = fmtTime(m.time);
-    const win = '<span class="hstage" data-short="' +
-      esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span>";
-    head = "[MW" + m.mw + "] " + win + " " + t;
+    // HIS WINDOW HEADER (2026-10-02) says the lot, since these cards have
+    // nothing below the two clubs:
+    //     [MW1] NBC Saturday 12:30pm | 8/22/2026
+    //     [MW1] Sky Super Sunday 11:30am | 8/23/2026 | NBCSN
+    // Saturday's window already names NBC, so it does not say it twice.
+    segs.push("[MW" + m.mw + "] " + '<span class="hstage" data-short="' +
+      esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span> " +
+      fmtTime(m.time));
+    segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
+    if (net && net !== "NBC") segs.push(esc(net));
   } else {
     const st = stageText(m);
-    head = m.comp === "PL"
-      ? (m.mw != null ? "[MW" + m.mw + "] " : "Premier League | ") + fmtTime(m.time)
+    segs.push(m.comp === "PL"
+      ? (m.mw != null ? "[MW" + m.mw + "] " + fmtTime(m.time)
+                      : "Premier League " + fmtTime(m.time))
       : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) +
-        "</span> | " + fmtTime(m.time);
+        "</span> " + fmtTime(m.time));
+    segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
   }
   const winner = winId;
-  if (m.pens) head += " | Pens " + esc(m.pens);
+  if (m.pens) segs.push("Pens " + esc(m.pens));
+  // the bar belongs to the field it introduces, so a wrap never leaves one
+  // dangling at the end of a line
+  const head = segs.map((x, i) => "<span>" +
+    (i ? '<span class="msep">|</span> ' : "") + x + "</span>").join("");
   const headCol = COMP_COLOUR[m.comp];
   // THE DATE READS BELOW, as it does on his own cards: the window, its network
   // and its time already fill the line on a phone (410px, 2026-10-02)
   return '<div class="row two" data-id="' + m.id + '" style="--winwash:' +
     (winner ? shade(teamColour(winner)) : "transparent") + '">' +
-    '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + "><span>" +
-    head + "</span></div>" +
+    '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + ">" +
+    head + "</div>" +
     '<div class="teams">' + line(awayId, as, hs) + line(homeId, hs, as) + "</div>" +
-    '<div class="tags mdets"><span class="mdl">' +
-    // the window names the day, so its card needs only the date and the
-    // network below -- the shape his own cards wear (2026-10-02)
-    (wins ? [fmtDate(m.date)].concat(net && net !== "NBC" ? [net] : [])
-          : [m.dow.toUpperCase() + " " + fmtDate(m.date)])
-      .map(p => '<span class="mdet">' + esc(p) + "</span>")
-      .join('<span class="msep">|</span>') + "</span></div></div>";
+    "</div>";
 }
 
 /* ---------- filters ------------------------------------------------------ */
