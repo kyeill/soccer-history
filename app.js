@@ -430,19 +430,17 @@ function twoCard(m) {
   };
   // THE HEADER, IN PIECES so a phone breaks it between fields and never in
   // the middle of a channel's name (410px, 2026-10-02)
-  const net = primaryNet(m.nets);
   const segs = [];
   if (wins) {
-    // HIS WINDOW HEADER (2026-10-02) says the lot, since these cards have
-    // nothing below the two clubs:
+    // HIS WINDOW HEADER (2026-10-02). The window, the time and the date, and
+    // NO NETWORK -- naming it as well was what pushed a phone to two lines:
     //     [MW1] NBC Saturday 12:30pm | 8/22/2026
-    //     [MW1] Sky Super Sunday 11:30am | 8/23/2026 | NBCSN
-    // Saturday's window already names NBC, so it does not say it twice.
+    //     [MW1] Sky Super Sunday 11:30am | 8/23/2026
+    // Saturday's window still says NBC, since it is part of the window's name.
     segs.push("[MW" + m.mw + "] " + '<span class="hstage" data-short="' +
       esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span> " +
       fmtTime(m.time));
     segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
-    if (net && net !== "NBC") segs.push(esc(net));
   } else {
     const st = stageText(m);
     segs.push(m.comp === "PL"
