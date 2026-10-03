@@ -1,12 +1,15 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-205512. Modelled on games-history's Michigan view (michCard): one card
+   20261002-214726. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-205512";
+const BUILD = "20261002-214726";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
 // Arsenal, Chelsea, Liverpool, Man City, Man United (his order 2026-10-02)
 const TOP_SIX = ["359", "363", "364", "382", "360"];
+// and the six WITH Spurs, who wear capitals on the EPL/Rivals cards and
+// lead that tab's Team filter (his calls 2026-10-02)
+const BIG_SIX = ["367", "359", "363", "364", "382", "360"];
 let ALL = [], MATCHES = [], TEAMS = {}, CURRENT = null;
 // "date|home|away" -> "NBC Saturday" / "Sky Sunday", built at load from
 // the TV Windows population so his teams' cards agree with that view
@@ -56,8 +59,10 @@ const VIEWS = {
   atlanta: { team: "18418", comps: ["MLS", "CCL", "LGC", "USOC", "CAMP"],
              box: "#9d2235", lead: [] },
   // the two EPL/Rivals views draw two-team cards, so they need no box colour
-  rivals: { comps: ["PL", "FAC", "LC", "UCL", "UEL", "UECL", "USC"], lead: [] },
-  windows: { comps: ["PL"], lead: [] },
+  // both EPL/Rivals views lead with Tottenham, then the Top Six, and group
+  // the rest as his own tab does (his call 2026-10-02)
+  rivals: { comps: ["PL", "FAC", "LC", "UCL", "UEL", "UECL", "USC"], lead: BIG_SIX },
+  windows: { comps: ["PL"], lead: BIG_SIX },
 };
 const ARSENAL = "359", CHELSEA = "363";
 // these must read exactly as windows.py labels a match: the filter
@@ -407,6 +412,11 @@ function card(m) {
 /* A TWO-TEAM CARD, for the matches that are nobody's of his: the TV windows
    and the rivals' results. Away line then home line, as games-history's cards
    read, the winner's line washed in its own colour. */
+// THE TOP SIX IN CAPITALS on these cards (his call 2026-10-02)
+function bigName(id, t) {
+  const n = (t || TEAMS[id] || {}).card || (t || {}).name || id;
+  return BIG_SIX.indexOf(id) > -1 ? n.toUpperCase() : n;
+}
 function twoCard(m) {
   const wins = m.team === "windows";
   const homeId = wins ? m.home : (m.home ? m.rival : m.opp);
@@ -428,7 +438,7 @@ function twoCard(m) {
       (win && (id === "359" || id === "363") ? " nobold" : "") + '">' +
       '<img class="crest" loading="lazy" src="' + esc(t.logo || "") +
       '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
-      '<span class="nm">' + esc(t.card || t.name || id) + "</span>" +
+      '<span class="nm">' + esc(bigName(id, t)) + "</span>" +
       '<span class="sc">' + (up ? "" : score) + "</span></div>";
   };
   // THE HEADER, IN PIECES so a phone breaks it between fields and never in
@@ -503,7 +513,11 @@ function defaults() {
   return { season: open, comp: null, team: null, hl: null, ko: false,
            window: null, rival: null };
 }
-function yearLabel(y) { return VIEW === "spurs" ? seasonLabel(y) : String(y); }
+// a Premier League year is a season: 2026-27, not 2026 (his call
+// 2026-10-02). USMNT and Atlanta play calendar years, so they keep theirs.
+function yearLabel(y) {
+  return VIEW === "spurs" || isEpl() ? seasonLabel(y) : String(y);
+}
 function passes(m, skip) {
   if (skip !== "season" && FILT.season != null && m.season !== FILT.season) return false;
   if (skip !== "comp" && FILT.comp && m.comp !== FILT.comp) return false;
@@ -570,8 +584,12 @@ function filterBar() {
     else seen.add(m.opp);
   });
   if (FILT.team) seen.add(FILT.team);
+  // a TV Windows match names no opponent -- it names two clubs, and both are
+  // English, so they are read off the card itself (2026-10-02)
   const english = VIEW === "spurs" || isEpl()
-    ? new Set(MATCHES.filter(m => ["PL", "FAC", "LC"].indexOf(m.comp) > -1).map(m => m.opp))
+    ? new Set([].concat.apply([], MATCHES
+        .filter(m => ["PL", "FAC", "LC"].indexOf(m.comp) > -1)
+        .map(m => m.team === "windows" ? [m.home, m.away] : [m.opp])))
     : new Set(MATCHES.map(m => m.opp));
   const nameOf = id => (TEAMS[id] || {}).card || id;
   const alpha = ids => ids.sort((a, b) => nameOf(a).localeCompare(nameOf(b)))

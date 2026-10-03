@@ -289,6 +289,12 @@ leads the line it continues onto.
 labels a match -- an option saying "Super Sunday" while the matches said "Sky
 Super Sunday" found nothing, which is how he caught it.
 
+THE EPL/RIVALS TAB (his calls 2026-10-02): its Year menu reads seasons,
+2026-27, as his own tab does; the Top Six AND TOTTENHAM wear capitals on the
+cards; and the Team menu is grouped exactly as the Tottenham tab's, Tottenham
+at the head of the Top Six. A TV Windows match names two clubs rather than an
+opponent, so the English set reads both off the card.
+
 HIS TOTTENHAM MARKS on the TV Windows cards, as Michigan's TV windows read:
 a WHITE border on a Tottenham win or a draw with the Top Six, a DASHED GREY
 one on a loss or a draw with anyone else, and a win over the Top Six FILLS
