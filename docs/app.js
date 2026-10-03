@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261002-200455. Modelled on games-history's Michigan view (michCard): one card
+   20261002-203508. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261002-200455";
+const BUILD = "20261002-203508";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -207,18 +207,20 @@ function cardHead(m) {
   const win = windowOf(m);
   if (m.comp === "PL") {
     const wk = m.mw != null ? "[MW" + m.mw + "]" : "Premier League";
-    if (win === "NBC Saturday") {
-      // the window names its own day and its network; only the date is left
-      return { head: wk + " " + esc(win) + " " + fmtTime(m.time),
-               tail: [fmtDate(m.date)] };
-    }
     if (win) {
-      // Sunday's window, network and time fill the line on a phone, so its
-      // date stays below whatever else the card says (410px, 2026-10-02)
-      return { head: wk + ' <span class="hstage" data-short="' +
-                 esc(win.replace("Sky ", "")) + '">' + esc(win) + "</span> | " +
-                 (net ? esc(net) + " " : "") + fmtTime(m.time),
-               tail: [], lead: [fmtDate(m.date)] };
+      // HIS WINDOW SHAPE (2026-10-02):
+      //     [MW9] Sky Super Sunday 12:30pm
+      //     10/26/2025 | USA Network
+      // The window names the day, so the time is all the header needs; the
+      // date and network read below, where every other league card puts them,
+      // and his details take a line under that. Saturday's window already
+      // says NBC, so it does not say it twice.
+      return { head: wk + " " + (win === "NBC Saturday" ? esc(win)
+                 : '<span class="hstage" data-short="' +
+                   esc(win.replace("Sky ", "")) + '">' + esc(win) + "</span>") +
+                 " " + fmtTime(m.time),
+               down: [fmtDate(m.date)].concat(
+                 net && net !== "NBC" ? [net] : []) };
     }
     return { head: wk, dayTime: dayTime,
              tail: [fmtDate(m.date)].concat(net ? [esc(net)] : []) };
@@ -359,10 +361,10 @@ function card(m) {
     (h.tail || []).forEach((t, i) => bits.push(
       i ? t : '<span class="hdate">' + t + "</span>"));
     if (bits.length) head += " " + bits.join(" | ");
-    rows.push((h.lead || []).concat(parts));
+    rows.push(parts);
   } else {
     head += h.dayTime ? " " + h.dayTime.long : "";
-    rows.push((h.lead || []).concat(h.tail || []));
+    rows.push(h.tail || []);
   }
   // his Footer column: a colour word paints the whole third row
   const footCol = colourOf(footer.split(/\s+/)[0]);
@@ -435,8 +437,7 @@ function twoCard(m) {
     const t = fmtTime(m.time);
     const win = '<span class="hstage" data-short="' +
       esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span>";
-    head = "[MW" + m.mw + "] " + win +
-      (m.window === "NBC Saturday" ? " " + t : " | " + (net ? esc(net) + " " : "") + t);
+    head = "[MW" + m.mw + "] " + win + " " + t;
   } else {
     const st = stageText(m);
     head = m.comp === "PL"
@@ -454,8 +455,13 @@ function twoCard(m) {
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + "><span>" +
     head + "</span></div>" +
     '<div class="teams">' + line(awayId, as, hs) + line(homeId, hs, as) + "</div>" +
-    '<div class="tags mdets"><span class="mdl"><span class="mdet">' +
-    esc(m.dow.toUpperCase() + " " + fmtDate(m.date)) + "</span></span></div></div>";
+    '<div class="tags mdets"><span class="mdl">' +
+    // the window names the day, so its card needs only the date and the
+    // network below -- the shape his own cards wear (2026-10-02)
+    (wins ? [fmtDate(m.date)].concat(net && net !== "NBC" ? [net] : [])
+          : [m.dow.toUpperCase() + " " + fmtDate(m.date)])
+      .map(p => '<span class="mdet">' + esc(p) + "</span>")
+      .join('<span class="msep">|</span>') + "</span></div></div>";
 }
 
 /* ---------- filters ------------------------------------------------------ */

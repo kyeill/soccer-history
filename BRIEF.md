@@ -267,7 +267,12 @@ already have a line to themselves -- and his details take a FOURTH line:
     WED 5/8/2019 | TNT 3:00pm
     Llorente 87', Moura 90'+5
 
-Two exceptions, both to keep the header on one line at 410px: the Sky Sunday
-window fills its line with the window, the network and the time, so its date
-reads below with his details; and the TV Windows / Rivals cards carry their
-date on a grey line under the two teams rather than at the end of the header.
+A TV WINDOW keeps that shape, the window standing in for the day:
+
+    [MW9] Sky Super Sunday 12:30pm
+    10/26/2025 | USA Network
+
+and his details take a third line below. Saturday's window already says NBC,
+so its line below says the network only when it was somewhere else. The TV
+Windows and Rivals cards read the same way, their date on a grey line under
+the two clubs rather than at the end of the header.
