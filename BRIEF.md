@@ -289,6 +289,9 @@ leads the line it continues onto.
 labels a match -- an option saying "Super Sunday" while the matches said "Sky
 Super Sunday" found nothing, which is how he caught it.
 
+HIS TEAM'S SCORE BOX ALWAYS COMES FIRST (his call 2026-10-05), home, away or
+on neutral ground. The cards read home-then-away from 2026-09-21 until then.
+
 THE EPL/RIVALS TAB (his calls 2026-10-02): its Year menu reads seasons,
 2026-27, as his own tab does; the Top Six AND TOTTENHAM wear capitals on the
 cards; and the Team menu is grouped exactly as the Tottenham tab's, Tottenham

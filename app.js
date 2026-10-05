@@ -302,8 +302,9 @@ function card(m) {
   // coloured from his Sheet. Until he gives colours, Spurs is navy and white
   // and the opponent wears its own colour. A loss is italic; extra time or a
   // shootout underlines both.
-  // THE BOXES READ HOME THEN AWAY (his call 2026-09-21) -- on neutral ground
-  // too, in the order ESPN lists the sides.
+  // HIS TEAM'S BOX ALWAYS COMES FIRST (his call 2026-10-05), home or away or
+  // on neutral ground -- the card is read down his column, not the fixture's.
+  // It read home-then-away from 2026-09-21 until then.
   // ITALICS on both: any loss, and a Premier League draw with a club outside
   // the Top Six.
   // An UNDERLINE marks only the WINNER'S box when it took extra time or
@@ -320,11 +321,9 @@ function card(m) {
     (up ? "" : m.us) + "</span>";
   const themBox = '<span class="' + boxCls(lineThem) + '"' +
     paintBox(themBg, colourOf(mx.opp_font)) + ">" + (up ? "" : m.them) + "</span>";
-  // a record from before the field existed falls back to the card's own side
-  const usHome = m.home != null ? m.home : m.where !== "A";
   // the aggregate of a tie, and a shootout, read right after the boxes
   const tie = m.agg ? "AGG " + m.agg : (m.pens ? "PENS " + m.pens : "");
-  const boxes = '<span class="boxes">' + (usHome ? usBox + themBox : themBox + usBox) +
+  const boxes = '<span class="boxes">' + usBox + themBox +
     (tie ? '<span class="tiebox' +
       (m.through === true ? " won" : m.through === false ? " lost"
         : W ? " won" : L ? " lost" : "") + '">' + esc(tie) + "</span>" : "") +
