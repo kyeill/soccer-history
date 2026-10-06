@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261006-123053. Modelled on games-history's Michigan view (michCard): one card
+   20261006-124539. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261006-123053";
+const BUILD = "20261006-124539";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -109,6 +109,20 @@ function esc(s) {
 function fmtDate(d) {
   return String(+d.slice(5, 7)) + "/" + String(+d.slice(8, 10)) + "/" + d.slice(0, 4);
 }
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+/* THE DATES HE SPELLS OUT (2026-10-06): one match of his own -- City away,
+   19 February 2022 -- and EVERY WIN ON 21 SEPTEMBER, whatever the year. */
+const SPELLED = ["2022-02-19"];
+function spelled(m) {
+  return SPELLED.indexOf(m.date) > -1 ||
+    (m.date.slice(5) === "09-21" && m.result === "W");
+}
+function dateOf(m) {
+  if (!spelled(m)) return fmtDate(m.date);
+  return MONTHS[+m.date.slice(5, 7) - 1] + " " + (+m.date.slice(8, 10)) +
+    ", " + m.date.slice(0, 4);
+}
 function fmtTime(t) {
   if (!t || t === "TBD") return "TBD";
   const p = t.split(":"), h = +p[0] % 12 || 12;
@@ -138,6 +152,9 @@ function borderWord(m) {
   return String(((m.mx || {}).border || "")).trim();
 }
 function isSpecial(m) {
+  // EVERY TROPHY IS SPECIAL (his call 2026-10-06), border or no border --
+  // which today means the 2025 Europa League and nothing else
+  if (isFinal(m) && m.result === "W") return true;
   const w = borderWord(m);
   return !!w && colourOf(w) === "#ffffff";
 }
@@ -272,11 +289,11 @@ function cardHead(m) {
                  : '<span class="hstage" data-short="' +
                    esc(win.replace("Sky ", "")) + '">' + esc(win) + "</span>") +
                  " " + fmtTime(m.time),
-               down: [fmtDate(m.date)].concat(
+               down: [dateOf(m)].concat(
                  net && net !== "NBC" ? [net] : []) };
     }
     return { head: wk, dayTime: dayTime,
-             tail: [fmtDate(m.date)].concat(net ? [esc(net)] : []) };
+             tail: [dateOf(m)].concat(net ? [esc(net)] : []) };
   }
   const s = stageText(m);
   const lab = s.full !== s.short
@@ -293,7 +310,7 @@ function cardHead(m) {
   // EVERY CUP -- the domestic ones, Europe, and his other teams' tournaments --
   // carries nothing but the round up top, so the day, date, network and time
   // have a line of their own below the score.
-  const down = [dow + " " + fmtDate(m.date), tv];
+  const down = [dow + " " + dateOf(m), tv];
   if (!big && m.team !== "spurs" && m.where === "N" && m.place) down.push(cityOf(m));
   return { head: head, down: down };
 }
@@ -317,8 +334,29 @@ function lum(hex) {
 }
 // white or near-black, whichever reads on the box
 function inkFor(bg) { return lum(bg) > 0.4 ? "#111114" : "#ffffff"; }
+function contrast(a, b) {
+  const x = lum(a), y = lum(b);
+  return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
+}
+/* INK THAT VANISHES INTO A LIGHT BOX (his call 2026-10-06). His European
+   kits put a near-white number on the white shirt -- #d9d9d9 on #ffffff reads
+   at 1.4:1 and simply is not there on a phone. On a LIGHT box only, the ink
+   is darkened a step at a time until it can be seen, which leaves it silver
+   rather than navy. A dark box is left alone: Palace's red on blue and City's
+   white on sky are his kits and his business. */
+function visibleInk(bg, fg) {
+  if (!fg || fg.length !== 7 || !bg || bg.length !== 7) return fg;
+  if (lum(bg) <= 0.6 || contrast(bg, fg) >= 2.4) return fg;
+  let p = [1, 3, 5].map(i => parseInt(fg.slice(i, i + 2), 16));
+  const hex = q => "#" + q.map(c => c.toString(16).padStart(2, "0")).join("");
+  for (let n = 0; n < 40 && contrast(bg, hex(p)) < 2.4; n++) {
+    p = p.map(c => Math.max(0, Math.round(c * 0.94) - 1));
+  }
+  return hex(p);
+}
 function paintBox(bg, fg) {
-  return ' style="background:' + bg + ";color:" + (fg || inkFor(bg)) + '"';
+  return ' style="background:' + bg + ";color:" +
+    visibleInk(bg, fg || inkFor(bg)) + '"';
 }
 function bright(hex, floor) {
   // an opponent's colour made bright enough to read as a border
@@ -698,8 +736,9 @@ function filterBar() {
     .filter(g => g.length);
   h += group("Team", select("team", "All Teams",
     [].concat.apply([], groups.map((g, i) => (i ? [BAR] : []).concat(g))), FILT.team));
-  const HL = [["Late Winners", "late_win"], ["Late Equalizers", "late_eq"],
-              ["Special", "special"], ["Memorable", "memorable"]];
+  // HIS OWN MARKS LEAD (2026-10-06); the late goals the harvest found follow
+  const HL = [["Special", "special"], ["Memorable", "memorable"],
+              ["Late Winners", "late_win"], ["Late Equalizers", "late_eq"]];
   if (isEpl()) {
     return h + group("", '<button class="f" data-act="sort">' +
       (SORT === "asc" ? "Oldest First" : "Newest First") + "</button>");

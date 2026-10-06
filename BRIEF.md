@@ -363,8 +363,18 @@ That was the last tie whose outcome was unknown; all 25 are now settled.
 
 ## Highlights: his own two marks (Kyle, 2026-10-06)
 
-The Highlights menu reads Late Winners, Late Equalizers, SPECIAL and
-MEMORABLE. Special is a WHITE border in his sheet (8 nights); Memorable is
-any shade or border at all (62). Every special night is memorable too. Both
-are read live off the Border and Shade columns, so colouring a row in the
-sheet is all it takes to add one.
+The Highlights menu leads with his own two marks and follows with the late
+goals the harvest found: SPECIAL, MEMORABLE, Late Winners, Late Equalizers.
+Special is a WHITE border in his sheet OR a trophy won -- 9 nights, the
+trophy being the 2025 Europa League. Memorable is any shade or border at all,
+62. Every special night is memorable too. Both read live off the Border and
+Shade columns, so colouring a row in the sheet is all it takes to add one.
+
+TWO DATES ARE SPELLED OUT (2026-10-06): City away on `Feb 19, 2022`, and
+every WIN on 21 September whatever the year -- `Sep 21, 2016`, `Sep 21,
+2024`. Everything else stays 9/22/2013.
+
+INK THAT VANISHES INTO A LIGHT BOX is darkened until it can be seen: his
+European kits put #d9d9d9 on #ffffff, which reads at 1.4:1 and is simply not
+there on a phone, and comes out around #a6a6a6. A DARK box is left alone --
+Palace's red on blue and City's white on sky are his kits and his business.
