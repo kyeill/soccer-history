@@ -1,11 +1,13 @@
 Date,Season,Competition,Opponent,Box,Background,Font,Contrast
-2026-01-10,2025,FAC,Aston Villa,Tottenham,#ffffff,#ffffff,1.0
+2018-10-03,2018,UCL,Barcelona,Opponent,#a50044,#004d98,1.07
+2018-12-11,2018,UCL,Barcelona,Opponent,#a50044,#004d98,1.07
+2021-05-16,2020,PL,Wolverhampton Wanderers,Opponent,#75001a,#003926,1.1
+2017-03-12,2016,FAC,Millwall,Opponent,#ffd100,#ffff00,1.36
 2013-08-22,2013,UEL,Dinamo Tbilisi,Tottenham,#ffffff,#d9d9d9,1.41
 2013-08-29,2013,UEL,Dinamo Tbilisi,Tottenham,#ffffff,#d9d9d9,1.41
 2013-09-19,2013,UEL,Tromso,Tottenham,#ffffff,#d9d9d9,1.41
 2013-10-03,2013,UEL,Anzhi Makhachkala,Tottenham,#ffffff,#d9d9d9,1.41
 2013-10-24,2013,UEL,Sheriff Tiraspol,Tottenham,#ffffff,#d9d9d9,1.41
-2013-10-27,2013,PL,Hull City,Tottenham,#ffffff,#d9d9d9,1.41
 2013-11-03,2013,PL,Everton,Tottenham,#ffffff,#d9d9d9,1.41
 2013-11-07,2013,UEL,Sheriff Tiraspol,Tottenham,#ffffff,#d9d9d9,1.41
 2013-12-12,2013,UEL,Anzhi Makhachkala,Tottenham,#ffffff,#d9d9d9,1.41
@@ -20,13 +22,165 @@ Date,Season,Competition,Opponent,Box,Background,Font,Contrast
 2014-11-27,2014,UEL,Partizan Belgrade,Tottenham,#ffffff,#d9d9d9,1.41
 2015-02-19,2014,UEL,Fiorentina,Tottenham,#ffffff,#d9d9d9,1.41
 2015-02-26,2014,UEL,Fiorentina,Tottenham,#ffffff,#d9d9d9,1.41
+2015-09-17,2015,UEL,FK Qarabag,Tottenham,#ffffff,#d9d9d9,1.41
+2015-10-22,2015,UEL,Anderlecht,Tottenham,#ffffff,#d9d9d9,1.41
+2015-11-05,2015,UEL,Anderlecht,Tottenham,#ffffff,#d9d9d9,1.41
+2015-11-26,2015,UEL,FK Qarabag,Tottenham,#ffffff,#d9d9d9,1.41
+2015-12-10,2015,UEL,AS Monaco,Tottenham,#ffffff,#d9d9d9,1.41
+2016-02-18,2015,UEL,Fiorentina,Tottenham,#ffffff,#d9d9d9,1.41
+2016-02-25,2015,UEL,Fiorentina,Tottenham,#ffffff,#d9d9d9,1.41
+2016-03-10,2015,UEL,Borussia Dortmund,Tottenham,#ffffff,#d9d9d9,1.41
+2016-03-17,2015,UEL,Borussia Dortmund,Tottenham,#ffffff,#d9d9d9,1.41
+2016-09-14,2016,UCL,AS Monaco,Tottenham,#ffffff,#d9d9d9,1.41
+2016-09-27,2016,UCL,CSKA Moscow,Tottenham,#ffffff,#d9d9d9,1.41
+2016-10-18,2016,UCL,Bayer Leverkusen,Tottenham,#ffffff,#d9d9d9,1.41
+2016-11-02,2016,UCL,Bayer Leverkusen,Tottenham,#ffffff,#d9d9d9,1.41
+2016-12-07,2016,UCL,CSKA Moscow,Tottenham,#ffffff,#d9d9d9,1.41
+2017-02-16,2016,UEL,KAA Gent,Tottenham,#ffffff,#d9d9d9,1.41
+2017-02-23,2016,UEL,KAA Gent,Tottenham,#ffffff,#d9d9d9,1.41
+2017-09-13,2017,UCL,Borussia Dortmund,Tottenham,#ffffff,#d9d9d9,1.41
+2017-09-26,2017,UCL,Apoel Nicosia,Tottenham,#ffffff,#d9d9d9,1.41
+2017-11-01,2017,UCL,Real Madrid,Tottenham,#ffffff,#d9d9d9,1.41
+2017-11-21,2017,UCL,Borussia Dortmund,Tottenham,#ffffff,#d9d9d9,1.41
+2017-12-06,2017,UCL,Apoel Nicosia,Tottenham,#ffffff,#d9d9d9,1.41
+2018-03-07,2017,UCL,Juventus,Tottenham,#ffffff,#d9d9d9,1.41
+2018-09-18,2018,UCL,Internazionale,Tottenham,#ffffff,#d9d9d9,1.41
+2018-10-03,2018,UCL,Barcelona,Tottenham,#ffffff,#d9d9d9,1.41
+2018-11-06,2018,UCL,PSV Eindhoven,Tottenham,#ffffff,#d9d9d9,1.41
+2018-11-28,2018,UCL,Internazionale,Tottenham,#ffffff,#d9d9d9,1.41
+2018-12-11,2018,UCL,Barcelona,Tottenham,#ffffff,#d9d9d9,1.41
+2019-02-13,2018,UCL,Borussia Dortmund,Tottenham,#ffffff,#d9d9d9,1.41
+2019-03-05,2018,UCL,Borussia Dortmund,Tottenham,#ffffff,#d9d9d9,1.41
+2019-04-09,2018,UCL,Manchester City,Tottenham,#ffffff,#d9d9d9,1.41
+2019-04-30,2018,UCL,Ajax Amsterdam,Tottenham,#ffffff,#d9d9d9,1.41
+2019-06-01,2018,UCL,Liverpool,Tottenham,#ffffff,#d9d9d9,1.41
+2019-10-01,2019,UCL,Bayern Munich,Tottenham,#ffffff,#d9d9d9,1.41
+2019-10-22,2019,UCL,Red Star Belgrade,Tottenham,#ffffff,#d9d9d9,1.41
+2019-11-26,2019,UCL,Olympiacos,Tottenham,#ffffff,#d9d9d9,1.41
+2019-12-11,2019,UCL,Bayern Munich,Tottenham,#ffffff,#d9d9d9,1.41
+2020-02-19,2019,UCL,RB Leipzig,Tottenham,#ffffff,#d9d9d9,1.41
+2020-10-01,2020,UEL,Maccabi Haifa,Tottenham,#ffffff,#d9d9d9,1.41
+2020-10-22,2020,UEL,LASK Linz,Tottenham,#ffffff,#d9d9d9,1.41
+2020-10-29,2020,UEL,Antwerp,Tottenham,#ffffff,#d9d9d9,1.41
+2020-11-05,2020,UEL,Ludogorets Razgrad,Tottenham,#ffffff,#d9d9d9,1.41
+2020-11-26,2020,UEL,Ludogorets Razgrad,Tottenham,#ffffff,#d9d9d9,1.41
+2020-12-10,2020,UEL,Antwerp,Tottenham,#ffffff,#d9d9d9,1.41
+2021-02-24,2020,UEL,Wolfsberger,Tottenham,#ffffff,#d9d9d9,1.41
+2021-03-11,2020,UEL,Dinamo Zagreb,Tottenham,#ffffff,#d9d9d9,1.41
+2021-09-16,2021,UECL,Stade Rennais,Tottenham,#ffffff,#d9d9d9,1.41
+2021-09-30,2021,UECL,NS Mura,Tottenham,#ffffff,#d9d9d9,1.41
+2021-11-04,2021,UECL,Vitesse,Tottenham,#ffffff,#d9d9d9,1.41
+2022-09-07,2022,UCL,Marseille,Tottenham,#ffffff,#d9d9d9,1.41
+2022-10-04,2022,UCL,Eintracht Frankfurt,Tottenham,#ffffff,#d9d9d9,1.41
+2022-10-12,2022,UCL,Eintracht Frankfurt,Tottenham,#ffffff,#d9d9d9,1.41
+2022-10-26,2022,UCL,Sporting CP,Tottenham,#ffffff,#d9d9d9,1.41
+2023-02-14,2022,UCL,AC Milan,Tottenham,#ffffff,#d9d9d9,1.41
+2023-03-08,2022,UCL,AC Milan,Tottenham,#ffffff,#d9d9d9,1.41
+2023-08-19,2023,PL,Manchester United,Tottenham,#ffffff,#d9d9d9,1.41
+2023-08-26,2023,PL,AFC Bournemouth,Tottenham,#ffffff,#d9d9d9,1.41
+2023-09-16,2023,PL,Sheffield United,Tottenham,#ffffff,#d9d9d9,1.41
+2023-09-30,2023,PL,Liverpool,Tottenham,#ffffff,#d9d9d9,1.41
+2023-10-23,2023,PL,Fulham,Tottenham,#ffffff,#d9d9d9,1.41
+2023-10-27,2023,PL,Crystal Palace,Tottenham,#ffffff,#d9d9d9,1.41
+2023-11-06,2023,PL,Chelsea,Tottenham,#ffffff,#d9d9d9,1.41
+2023-12-07,2023,PL,West Ham United,Tottenham,#ffffff,#d9d9d9,1.41
+2023-12-10,2023,PL,Newcastle United,Tottenham,#ffffff,#d9d9d9,1.41
+2023-12-15,2023,PL,Nottingham Forest,Tottenham,#ffffff,#d9d9d9,1.41
+2023-12-23,2023,PL,Everton,Tottenham,#ffffff,#d9d9d9,1.41
+2023-12-31,2023,PL,AFC Bournemouth,Tottenham,#ffffff,#d9d9d9,1.41
+2024-01-05,2023,FAC,Burnley,Tottenham,#ffffff,#d9d9d9,1.41
+2024-01-14,2023,PL,Manchester United,Tottenham,#ffffff,#d9d9d9,1.41
+2024-01-26,2023,FAC,Manchester City,Tottenham,#ffffff,#d9d9d9,1.41
+2024-01-31,2023,PL,Brentford,Tottenham,#ffffff,#d9d9d9,1.41
+2024-02-10,2023,PL,Brighton & Hove Albion,Tottenham,#ffffff,#d9d9d9,1.41
+2024-02-17,2023,PL,Wolverhampton Wanderers,Tottenham,#ffffff,#d9d9d9,1.41
+2024-03-02,2023,PL,Crystal Palace,Tottenham,#ffffff,#d9d9d9,1.41
+2024-05-11,2023,PL,Burnley,Tottenham,#ffffff,#d9d9d9,1.41
+2024-05-14,2023,PL,Manchester City,Tottenham,#ffffff,#d9d9d9,1.41
+2024-09-26,2024,UEL,FK Qarabag,Tottenham,#ffffff,#d9d9d9,1.41
+2024-10-24,2024,UEL,AZ Alkmaar,Tottenham,#ffffff,#d9d9d9,1.41
+2024-11-28,2024,UEL,AS Roma,Tottenham,#ffffff,#d9d9d9,1.41
+2025-01-23,2024,UEL,TSG Hoffenheim,Tottenham,#ffffff,#d9d9d9,1.41
+2025-01-30,2024,UEL,IF Elfsborg,Tottenham,#ffffff,#d9d9d9,1.41
+2025-03-13,2024,UEL,AZ Alkmaar,Tottenham,#ffffff,#d9d9d9,1.41
+2025-04-10,2024,UEL,Eintracht Frankfurt,Tottenham,#ffffff,#d9d9d9,1.41
+2025-05-01,2024,UEL,Bodo/Glimt,Tottenham,#ffffff,#d9d9d9,1.41
+2025-05-21,2024,UEL,Manchester United,Tottenham,#ffffff,#d9d9d9,1.41
+2025-08-13,2025,USC,Paris Saint-Germain,Tottenham,#ffffff,#d9d9d9,1.41
+2025-09-16,2025,UCL,Villarreal,Tottenham,#ffffff,#d9d9d9,1.41
+2025-11-04,2025,UCL,F.C. København,Tottenham,#ffffff,#d9d9d9,1.41
+2025-12-09,2025,UCL,Slavia Prague,Tottenham,#ffffff,#d9d9d9,1.41
+2026-01-10,2025,FAC,Aston Villa,Tottenham,#ffffff,#d9d9d9,1.41
+2026-01-20,2025,UCL,Borussia Dortmund,Tottenham,#ffffff,#d9d9d9,1.41
+2026-01-28,2025,UCL,Eintracht Frankfurt,Tottenham,#ffffff,#d9d9d9,1.41
+2026-03-18,2025,UCL,Atlético Madrid,Tottenham,#ffffff,#d9d9d9,1.41
+2024-12-29,2024,PL,Wolverhampton Wanderers,Opponent,#c200bc,#fc3822,1.42
+2019-02-02,2018,PL,Newcastle United,Opponent,#800000,#002040,1.5
 2013-08-18,2013,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
 2014-12-06,2014,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
 2015-01-10,2014,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2015-09-20,2015,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2016-01-23,2015,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2016-02-21,2015,FAC,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2016-08-20,2016,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2017-04-26,2016,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2017-11-05,2017,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2018-02-25,2017,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2018-11-10,2018,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2019-01-27,2018,FAC,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2019-04-03,2018,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2019-09-14,2019,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2020-07-26,2019,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2020-12-13,2020,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2021-03-07,2020,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2021-09-11,2021,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2023-01-04,2022,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2023-05-06,2022,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2023-10-27,2023,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2024-03-02,2023,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2024-10-27,2024,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2025-05-11,2024,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2025-12-28,2025,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2026-03-05,2025,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2024-11-10,2024,PL,Ipswich Town,Opponent,#ffc0cb,#ffffff,1.54
+2024-02-17,2023,PL,Wolverhampton Wanderers,Opponent,#d00207,#285151,1.55
+2025-01-04,2024,PL,Newcastle United,Opponent,#800000,#001053,1.6
+2024-03-30,2023,PL,Luton Town,Tottenham,#ffffff,#cccccc,1.61
+2024-04-02,2023,PL,West Ham United,Tottenham,#ffffff,#cccccc,1.61
+2024-04-07,2023,PL,Nottingham Forest,Tottenham,#ffffff,#cccccc,1.61
+2024-04-28,2023,PL,Arsenal,Tottenham,#ffffff,#cccccc,1.61
+2024-05-02,2023,PL,Chelsea,Tottenham,#ffffff,#cccccc,1.61
+2024-05-05,2023,PL,Liverpool,Tottenham,#ffffff,#cccccc,1.61
+2019-11-26,2019,UCL,Olympiacos,Opponent,#0000ff,#e50000,1.77
+2025-09-27,2025,PL,Wolverhampton Wanderers,Opponent,#00b1ff,#ffdd00,1.79
+2022-05-01,2021,PL,Leicester City,Opponent,#667378,#fb7abc,2.01
+2021-02-24,2020,UEL,Wolfsberger,Opponent,#33c0ff,#ffffff,2.07
 2013-10-27,2013,PL,Hull City,Opponent,#0000ff,#ff0000,2.15
 2013-10-30,2013,LC,Hull City,Opponent,#0000ff,#ff0000,2.15
+2025-08-13,2025,USC,Paris Saint-Germain,Opponent,#004170,#da291c,2.17
+2025-11-26,2025,UCL,Paris Saint-Germain,Opponent,#004170,#da291c,2.17
+2016-09-27,2016,UCL,CSKA Moscow,Opponent,#e01b22,#293484,2.27
+2016-12-07,2016,UCL,CSKA Moscow,Opponent,#e01b22,#293484,2.27
+2017-10-17,2017,UCL,Real Madrid,Opponent,#ffffff,#2fb9cf,2.34
+2025-04-06,2024,PL,Southampton,Opponent,#f185c8,#ffffff,2.35
+2018-04-14,2017,PL,Manchester City,Opponent,#851152,#7877bf,2.36
+2021-01-05,2020,LC,Brentford,Opponent,#444444,#ff0000,2.44
 2013-11-24,2013,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
 2014-01-29,2013,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
 2014-10-18,2014,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
 2015-05-03,2014,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2016-02-14,2015,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2017-01-21,2016,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2017-12-16,2017,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2019-04-17,2018,UCL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2019-04-20,2018,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2019-08-17,2019,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2021-02-13,2020,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2021-04-25,2020,LC,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2021-08-15,2021,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2022-02-19,2021,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2023-01-19,2022,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2023-12-03,2023,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2024-11-23,2024,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2025-08-23,2025,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
 2013-09-19,2013,UEL,Tromso,Opponent,#50abef,#ffffff,2.5
