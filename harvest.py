@@ -751,6 +751,8 @@ def two_legged(matches):
             # worked out here rather than read off the second leg's result.
             # ESPN's note wins when it has one; then the aggregate; then away
             # goals, which UEFA used through 2020-21; then the shootout.
+            # the FIRST leg needs the tie's outcome too: how its card reads
+            # depends on it (his call 2026-10-06)
             if "through" not in legs[1]:
                 away = next((m for m in legs if not m["home"]), None)
                 home = next((m for m in legs if m["home"]), None)
@@ -765,6 +767,18 @@ def two_legged(matches):
                 elif euro and legs[1]["season"] <= 2020 and away and home and \
                         away["us"] != home["them"]:
                     legs[1]["through"] = away["us"] > home["them"]
+                else:
+                    # A SHOOTOUT AFTER THE SECOND LEG settles the TIE, not the
+                    # match, so it is never read while the match is built: the
+                    # 2019 League Cup semi was a 1-2 defeat on the night, 2-2
+                    # over the two, and Chelsea took it 4-2 on penalties (his
+                    # leg rules turned this up, 2026-10-06)
+                    so = pens_from_summary(legs[1]["id"], SPURS)
+                    if so:
+                        legs[1]["pens"] = so[1]
+                        legs[1]["through"] = so[0]
+            if "through" in legs[1]:
+                legs[0]["through"] = legs[1]["through"]
 
 
 def replays(matches):

@@ -112,12 +112,16 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 .mstripe .crest{align-self:center}
 .tl.won .mstripe{background:var(--winwash)}
 .nm{font-size:15.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.tl.won .nm{font-weight:600}
+/* THE COLOUR BAR, THE BOLD AND THE STRIKE ARE THREE SEPARATE MARKS (his leg
+   rules 2026-10-06): a tie can be won on a night that was drawn, and lost on
+   a night that was won, so each card sets them for itself. */
+.tl.bold .nm{font-weight:600}
 .tl:not(.won) .nm{color:#a5a5a0}
 .nm.mnm{display:flex;align-items:baseline;min-width:0}
 .mn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-/* a loss strikes the opponent through, as a Michigan loss does */
-.row.dimmed .mn{text-decoration:line-through;text-decoration-thickness:1.5px}
+/* a loss strikes the opponent through, as a Michigan loss does -- unless the
+   tie it belongs to says otherwise (his leg rules 2026-10-06) */
+.tl.struck .mn{text-decoration:line-through;text-decoration-thickness:1.5px}
 .mfin{flex:none;margin-left:6px;font-size:12px;font-weight:400;
   color:var(--muted);font-style:normal}
 /* the league-phase position in front of the name */
@@ -184,6 +188,6 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 <div id="list"></div>
 </div>
 
-<script src="app.js?v=20261006-091034"></script>
+<script src="app.js?v=20261006-093101"></script>
 </body>
 </html>

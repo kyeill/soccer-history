@@ -161,23 +161,29 @@ function stageText(m) {
   if (m.stage === "MLS Cup") return { full: "MLS Cup", short: "MLS Cup" };
   if (m.comp === "CAMP" || m.comp === "CCUP") return { full: c.name, short: c.short };
   let st = (m.stage || "").replace(/ Replay$/, " (Replay)");
-  // the leg of a two-legged tie, where there is one
-  const leg = m.leg ? " (" + m.leg + (m.leg === 1 ? "st" : "nd") + " Leg)" : "";
-  if (m.comp === "UCL" || m.comp === "UEL" || m.comp === "UECL") {
-    const yr = seasonLabel(m.season) + " ";
-    return { full: yr + c.name + ": " + st + leg,
-             short: yr + c.short + ": " + st + leg };
-  }
-  // a domestic cup round shortens only if the header would wrap: "League Cup
-  // Third Round" -> "League Cup R3" (his overflow check 2026-10-02)
+  // THE LEG OF A TIE (his call 2026-10-06): the first leg says only which leg
+  // it is, because nothing is settled yet; the second carries the aggregate,
+  // which is the whole point of it -- "(2nd Leg: 3-2 agg)".
+  const leg = !m.leg ? ""
+    : m.leg === 1 ? " (1st Leg)"
+    : " (2nd Leg" + (m.agg ? ": " + m.agg + " agg" : "") + ")";
+  // Europe reads SHORT and without its season (his call 2026-10-06): "UEL
+  // Group Stage", not "2015-16 Europa League: Group Stage". A final keeps its
+  // year, which cardHead puts in front: "2019 UCL Final".
+  const euro = m.comp === "UCL" || m.comp === "UEL" || m.comp === "UECL";
+  const name = euro ? c.short : c.name;
+  // a round shortens further only if the header would wrap: "League Cup Third
+  // Round" -> "League Cup R3" (his overflow check 2026-10-02)
   const ROUND_SHORT = { "First Round": "R1", "Second Round": "R2",
     "Third Round": "R3", "Fourth Round": "R4", "Fifth Round": "R5",
-    "Sixth Round": "R6", "Quarterfinals": "QF", "Semifinals": "SF" };
+    "Sixth Round": "R6", "Quarterfinals": "QF", "Semifinals": "SF",
+    "Round of 32": "R32", "Round of 16": "R16", "League Phase": "Lg Phase" };
   let shortSt = st;
   Object.keys(ROUND_SHORT).forEach(k => {
     if (shortSt.indexOf(k) === 0) shortSt = ROUND_SHORT[k] + shortSt.slice(k.length);
   });
-  return { full: c.name + " " + st + leg, short: c.short + " " + shortSt + leg };
+  return { full: name + " " + st + leg,
+           short: c.short + " " + shortSt + leg };
 }
 /* HIS HEADER AND HIS LINES BELOW (2026-10-02).
 
@@ -238,12 +244,11 @@ function cardHead(m) {
     ? '<span class="hstage" data-short="' + esc(s.short) + '">' + esc(s.full) + "</span>"
     : esc(s.full);
   const big = bigStage(m);
-  // the year leads a final, as it does a Michigan tournament card -- except in
-  // Europe, whose label already carries the season ("2018-19 Champions League:
-  // Final"); the city of a final rides up there with it
+  // the year leads a final, as it does a Michigan tournament card -- in Europe
+  // too, now that the label no longer carries the season: "2019 UCL Final".
+  // The city of a final rides up there with it.
   const head = !big ? lab
-    : (["UCL", "UEL", "UECL"].indexOf(m.comp) > -1 ? "" : m.date.slice(0, 4) + " ") +
-      lab + (m.place ? " | " + esc(cityOf(m)) : "");
+    : m.date.slice(0, 4) + " " + lab + (m.place ? " | " + esc(cityOf(m)) : "");
   // EVERY CUP -- the domestic ones, Europe, and his other teams' tournaments --
   // carries nothing but the round up top, so the day, date, network and time
   // have a line of their own below the score.
@@ -321,14 +326,35 @@ function card(m) {
     (up ? "" : m.us) + "</span>";
   const themBox = '<span class="' + boxCls(lineThem) + '"' +
     paintBox(themBg, colourOf(mx.opp_font)) + ">" + (up ? "" : m.them) + "</span>";
-  // the aggregate of a tie, and a shootout, read right after the boxes
-  const tie = m.agg ? "AGG " + m.agg : (m.pens ? "PENS " + m.pens : "");
+  // A SHOOTOUT still reads after the boxes; the aggregate does not, because
+  // the header carries it now (his call 2026-10-06)
+  const tie = m.pens ? "PENS " + m.pens : "";
   const boxes = '<span class="boxes">' + usBox + themBox +
     (tie ? '<span class="tiebox' +
       (m.through === true ? " won" : m.through === false ? " lost"
         : W ? " won" : L ? " lost" : "") + '">' + esc(tie) + "</span>" : "") +
     "</span>";
-  const oppLine = '<div class="tl' + (W ? " won" : "") + '"><span class="mstripe">' +
+  // HIS LEG RULES (2026-10-06). A two-legged tie is one result, so the TIE
+  // decides how each night reads, not the night's own score:
+  //   WON the tie   leg 1 lost  -- grey, but NOT struck through
+  //                 leg 1 level -- the colour bar, not bold
+  //                 leg 2       -- always coloured; bold only if it was a win
+  //   LOST the tie  leg 1 won   -- coloured, never bold
+  //                 leg 1 lost  -- grey and struck, as any defeat
+  //                 leg 2 won   -- no colour, but not struck either
+  //                 leg 2 else  -- struck
+  // A level first leg of a LOST tie settled nothing either way: grey, plain.
+  let bar = W, bold = W, struck = L;
+  if (m.leg && m.through === true) {
+    struck = false;
+    if (m.leg === 2) bar = true;
+    else bar = W || m.result === "D";
+  } else if (m.leg && m.through === false) {
+    if (m.leg === 2) { bar = false; bold = false; struck = m.result !== "W"; }
+    else bold = false;
+  }
+  const oppLine = '<div class="tl' + (bar ? " won" : "") + (bold ? " bold" : "") +
+    (struck ? " struck" : "") + '"><span class="mstripe">' +
     // a club ESPN keeps no crest for (Dnipro, dissolved) leaves a blank, not
     // a broken-image icon
     '<img class="crest" loading="lazy" src="' + esc(opp.logo || "") +

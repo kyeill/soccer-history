@@ -307,3 +307,40 @@ the fill uses the navy. Cards without Spurs wear nothing.
 SCORERS: every Tottenham goal, on a WIN OR A DRAW with the Top Six (65 cards).
 Not on a loss. ARSENAL AND CHELSEA ARE NEVER IN BOLD -- a win of theirs is
 washed like anyone's, but their name and score stay plain.
+
+## European cards and two-legged ties (Kyle, 2026-10-06)
+
+Europe reads SHORT, with no season and no colon: `UEL Group Stage`,
+`UCL Round of 16 (1st Leg)`. Only a FINAL keeps a year, and a single one:
+`2019 UCL Final | Madrid`.
+
+THE SECOND LEG CARRIES THE AGGREGATE in its header --
+`UEL Round of 32 (2nd Leg: 3-2 agg)` -- so the AGG chip beside the scores is
+gone. A shootout still shows there, `PENS 4-2`.
+
+A TIE IS ONE RESULT, so the tie decides how each night reads, not the night's
+own score. Three marks, set separately: the colour bar, the bold name, the
+strike through it.
+
+| tie   | leg | that night | bar | bold | struck |
+|-------|-----|------------|-----|------|--------|
+| won   | 1   | won        | yes | yes  | no     |
+| won   | 1   | level      | yes | no   | no     |
+| won   | 1   | lost       | no  | no   | **no** |
+| won   | 2   | won        | yes | yes  | no     |
+| won   | 2   | level/lost | yes | no   | no     |
+| lost  | 1   | won        | yes | **no** | no   |
+| lost  | 1   | level      | no  | no   | no     |
+| lost  | 1   | lost       | no  | no   | yes    |
+| lost  | 2   | won        | no  | no   | no     |
+| lost  | 2   | level/lost | no  | no   | yes    |
+
+A level first leg of a LOST tie settled nothing either way, so it reads plain
+grey -- he did not rule on that one.
+
+WHO WON THE TIE is worked out in two_legged(): the aggregate, then a shootout,
+then away goals (Europe only, to 2020-21), and BOTH legs carry the answer. A
+SHOOTOUT AFTER THE SECOND LEG settles the tie and not the match, so it is
+never read while the match is built -- the 2019 League Cup semi was a 1-2
+defeat on the night, 2-2 over the two, and Chelsea took it 4-2 on penalties.
+That was the last tie whose outcome was unknown; all 25 are now settled.
