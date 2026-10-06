@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261006-093101. Modelled on games-history's Michigan view (michCard): one card
+   20261006-093629. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261006-093101";
+const BUILD = "20261006-093629";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -156,17 +156,29 @@ function cityOf(m) { return (m.place || "").split(",")[0]; }
    competition and round. A match off the weekend names its day. */
 function stageText(m) {
   const c = COMP[m.comp];
-  if (m.comp === "USC") return { full: "UEFA Super Cup", short: "Super Cup" };
+  // HOW IT ENDED, at the end of the header (his calls 2026-10-06):
+  //     FA Cup Quarterfinals (4-3 Pen)
+  //     League Cup Fourth Round (ET)
+  //     UEL Round of 16 (2nd Leg: 3-3 agg, 4-3 Pen)
+  // A shootout always follows extra time, so ET is said only when there was
+  // no shootout. The first leg settles nothing, so it says only which leg.
+  const end = m.pens ? m.pens + " Pen" : (m.aet ? "ET" : "");
+  let tail;
+  if (m.leg === 1) tail = "1st Leg";
+  else if (m.leg === 2) {
+    const inner = [];
+    if (m.agg) inner.push(m.agg + " agg");
+    if (end) inner.push(end);
+    tail = "2nd Leg" + (inner.length ? ": " + inner.join(", ") : "");
+  } else tail = end;
+  const leg = tail ? " (" + tail + ")" : "";
+  if (m.comp === "USC") return { full: "UEFA Super Cup" + leg,
+                                 short: "Super Cup" + leg };
   // a one-match event is its own name: MLS Cup, the Campeones Cup
-  if (m.stage === "MLS Cup") return { full: "MLS Cup", short: "MLS Cup" };
-  if (m.comp === "CAMP" || m.comp === "CCUP") return { full: c.name, short: c.short };
+  if (m.stage === "MLS Cup") return { full: "MLS Cup" + leg, short: "MLS Cup" + leg };
+  if (m.comp === "CAMP" || m.comp === "CCUP") return { full: c.name + leg,
+                                                       short: c.short + leg };
   let st = (m.stage || "").replace(/ Replay$/, " (Replay)");
-  // THE LEG OF A TIE (his call 2026-10-06): the first leg says only which leg
-  // it is, because nothing is settled yet; the second carries the aggregate,
-  // which is the whole point of it -- "(2nd Leg: 3-2 agg)".
-  const leg = !m.leg ? ""
-    : m.leg === 1 ? " (1st Leg)"
-    : " (2nd Leg" + (m.agg ? ": " + m.agg + " agg" : "") + ")";
   // Europe reads SHORT and without its season (his call 2026-10-06): "UEL
   // Group Stage", not "2015-16 Europa League: Group Stage". A final keeps its
   // year, which cardHead puts in front: "2019 UCL Final".
@@ -314,8 +326,10 @@ function card(m) {
   // the Top Six.
   // An UNDERLINE marks only the WINNER'S box when it took extra time or
   // penalties.
-  const italic = !up && (L || (m.comp === "PL" && m.result === "D" &&
-    TOP_SIX.indexOf(m.opp) < 0));
+  // A NIGHT INSIDE A TIE HE WON IS NOT A DEFEAT (his call 2026-10-06): City
+  // 2019 was beaten 4-3 and the score stands upright, like the card around it
+  const italic = !up && m.through !== true && (L || (m.comp === "PL" &&
+    m.result === "D" && TOP_SIX.indexOf(m.opp) < 0));
   const lineUs = !up && (m.aet || m.pens) && W;
   const lineThem = !up && (m.aet || m.pens) && L;
   const boxCls = line => "sc mbox" + (line ? " u" : "") + (italic ? " l" : "");
@@ -326,14 +340,9 @@ function card(m) {
     (up ? "" : m.us) + "</span>";
   const themBox = '<span class="' + boxCls(lineThem) + '"' +
     paintBox(themBg, colourOf(mx.opp_font)) + ">" + (up ? "" : m.them) + "</span>";
-  // A SHOOTOUT still reads after the boxes; the aggregate does not, because
-  // the header carries it now (his call 2026-10-06)
-  const tie = m.pens ? "PENS " + m.pens : "";
-  const boxes = '<span class="boxes">' + usBox + themBox +
-    (tie ? '<span class="tiebox' +
-      (m.through === true ? " won" : m.through === false ? " lost"
-        : W ? " won" : L ? " lost" : "") + '">' + esc(tie) + "</span>" : "") +
-    "</span>";
+  // NOTHING RIDES BESIDE THE BOXES any more: the header carries the aggregate
+  // and the shootout both (his calls 2026-10-06)
+  const boxes = '<span class="boxes">' + usBox + themBox + "</span>";
   // HIS LEG RULES (2026-10-06). A two-legged tie is one result, so the TIE
   // decides how each night reads, not the night's own score:
   //   WON the tie   leg 1 lost  -- grey, but NOT struck through
@@ -368,7 +377,6 @@ function card(m) {
   // place around it (see cardHead's note).
   const parts = [];
   if (m.awarded) parts.push("Awarded");
-  if (!m.pens && m.aet) parts.push("AET");
   // the scorer and minute, already worded by the harvest ("Kane 86'")
   if (m.late_win && !m.scorers) parts.push(m.late_win);
   if (m.late_eq && !m.scorers) parts.push(m.late_eq);

@@ -140,13 +140,6 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
    two digits so a 10-goal night does not jump the card */
 .boxes{display:inline-flex;gap:4px}
 .boxes .sc.mbox{min-width:calc(2ch + 16px);padding:0 6px}
-/* the tie's own result beside the score: the aggregate of a two-legged tie,
-   or a shootout. Green when Spurs went through, red when they did not. */
-.tiebox{display:inline-flex;align-items:center;height:26px;padding:0 7px;
-  border-radius:4px;font-size:11.5px;font-weight:600;letter-spacing:.03em;
-  white-space:nowrap;background:#2c2c31;color:#bcbcb7;border:1px solid #414147}
-.tiebox.won{background:#1f2e28;border-color:#2f4539;color:#9ecab0}
-.tiebox.lost{background:#3a1d1f;border-color:#5a2c2f;color:#e69a9a}
 
 /* his Shade column fills the whole card in the opponent's colour */
 .row.mwash{background:var(--winwash)}

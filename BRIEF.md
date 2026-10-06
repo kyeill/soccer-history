@@ -314,9 +314,17 @@ Europe reads SHORT, with no season and no colon: `UEL Group Stage`,
 `UCL Round of 16 (1st Leg)`. Only a FINAL keeps a year, and a single one:
 `2019 UCL Final | Madrid`.
 
-THE SECOND LEG CARRIES THE AGGREGATE in its header --
-`UEL Round of 32 (2nd Leg: 3-2 agg)` -- so the AGG chip beside the scores is
-gone. A shootout still shows there, `PENS 4-2`.
+HOW IT ENDED GOES AT THE END OF THE HEADER (2026-10-06), so nothing rides
+beside the score boxes any more:
+
+    FA Cup Quarterfinals (4-3 Pen)
+    FA Cup Fifth Round (ET)
+    UEL Round of 16 (2nd Leg: 3-3 agg, 4-3 Pen)
+    2025 UEFA Super Cup (4-3 Pen) | Udine
+
+A shootout always follows extra time, so ET is said only when there was no
+shootout. A NIGHT INSIDE A TIE HE WON IS NOT A DEFEAT, so its score is not
+italic either -- City 2019 stands upright at 3-4.
 
 A TIE IS ONE RESULT, so the tie decides how each night reads, not the night's
 own score. Three marks, set separately: the colour bar, the bold name, the
