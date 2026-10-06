@@ -161,6 +161,19 @@ function isSpecial(m) {
 function isMemorable(m) {
   return !!(m.mx || {}).shade || !!borderWord(m);
 }
+/* A NETWORK'S SHORT NAME, kept for last (his call 2026-10-06). It is used
+   only when his line still wraps with the full one -- "Paramount+ 3:00pm |
+   Solanke 15', 54', Kulusevski 46', Son 88'" is the one card that needs it
+   today, and it reads "P+ 3:00pm" there and nowhere else. */
+const NET_SHORT = { "Paramount+": "P+", "NBC Sports Gold": "NBC Gold",
+  "NBC Sports App": "NBC App", "PL Extra Time": "PL Extra",
+  "CBS Sports Golazo": "Golazo", "CBS All Access": "CBS AA",
+  "FOX Sports GO": "FOX GO", "FOX Soccer Plus": "FOX+" };
+function shortNets(s) {
+  let out = String(s);
+  Object.keys(NET_SHORT).forEach(k => { out = out.split(k).join(NET_SHORT[k]); });
+  return out;
+}
 function upcoming(m) { return !!m.upcoming || !!m.status; }
 function won(m) { return m.result === "W"; }
 function lost(m) { return m.result === "L"; }
@@ -535,7 +548,9 @@ function card(m) {
         // the bar in FRONT of a hidden piece goes with it, so a line never
         // opens with a stray one (caught on his cards 2026-10-06)
         (j ? '<span class="msep' + (j <= r.tv ? " mtv" : "") + '">|</span>' : "") +
-        '<span class="mdet' + (j < r.tv ? " mtv" : "") + '">' + esc(p) + "</span>")
+        '<span class="mdet' + (j < r.tv ? " mtv" : "") + '"' +
+          (shortNets(p) !== p ? ' data-net="' + esc(p) + '" data-net-short="' +
+            esc(shortNets(p)) + '"' : "") + ">" + esc(p) + "</span>")
         .join("") + "</span>").join("") +
     "</div></div>";
 }
@@ -789,6 +804,19 @@ function trimHeads() {
     if (tall() && s) {
       s.dataset.full = s.dataset.full || s.textContent;
       s.textContent = s.dataset.short;
+    }
+  });
+  // LAST OF ALL, the network gives up its full name -- but only on a line
+  // that still wraps with it (his call 2026-10-06)
+  document.querySelectorAll(".row .mdl").forEach(row => {
+    row.querySelectorAll("[data-net]").forEach(el => {
+      el.textContent = el.dataset.net;
+    });
+    const lh = parseFloat(getComputedStyle(row).lineHeight) || 18;
+    if (row.getBoundingClientRect().height > lh * 1.5) {
+      row.querySelectorAll("[data-net-short]").forEach(el => {
+        el.textContent = el.dataset.netShort;
+      });
     }
   });
 }
