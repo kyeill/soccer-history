@@ -262,6 +262,15 @@ up beside a shortened day so the bottom line is his alone:
 A CUP OR A EUROPEAN NIGHT names the round up top, so its day, date and network
 already have a line to themselves -- and his details take a FOURTH line:
 
+A LONE LATE WINNER IS NOT WORTH THAT FOURTH LINE (2026-10-06): its date goes
+up to the end of the header and the line below opens with the network --
+
+    UEL Group Stage | THU 11/5/2015
+    Anderlecht                    2  1
+    ESPN3 3:05pm | Dembele 87'
+
+A SCORER LIST still takes a line of its own.
+
     2018-19 CHAMPIONS LEAGUE: SEMIFINALS (2ND LEG)
     Ajax  2  3
     WED 5/8/2019 | TNT 3:00pm
