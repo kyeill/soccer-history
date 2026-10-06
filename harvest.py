@@ -26,12 +26,28 @@ OPENFOOTBALL = ("https://raw.githubusercontent.com/openfootball/england/master/"
                 "%s/1-premierleague.txt")
 
 SPURS = "367"
-# A MATCH WHOSE US NETWORK HE HAS CORRECTED HIMSELF (2026-10-06), by date --
-# livesoccertv had only "NBC Sports App" for these four
+# A MATCH WHOSE US NETWORK HE HAS CORRECTED HIMSELF (2026-10-06), by date.
+# The first four were listed only as "NBC Sports App"; the 2016-17 ones all
+# came back as NBC from the Premier League's own feed, which over-reports the
+# broadcast network for that season.
 TV_FIX = {"2015-12-13": ["PL Extra Time"],
           "2016-02-02": ["PL Extra Time"],
           "2016-03-13": ["NBCSN"],
-          "2016-03-20": ["PL Extra Time"]}
+          "2016-03-20": ["PL Extra Time"],
+          "2016-08-13": ["CNBC"],
+          "2016-08-20": ["PL Extra Time"],
+          "2016-08-27": ["NBCSN"],
+          "2016-09-10": ["CNBC"],
+          "2016-09-18": ["NBCSN"],
+          "2016-09-24": ["PL Extra Time"],
+          "2016-10-02": ["NBCSN"],
+          "2016-10-15": ["PL Extra Time"],
+          "2016-10-22": ["NBCSN"],
+          "2016-10-29": ["CNBC"],
+          "2016-11-06": ["NBCSN"],
+          "2017-04-01": ["PL Extra Time"],
+          "2017-04-05": ["PL Extra Time"],
+          "2017-05-21": ["MSNBC"]}
 FIRST_SEASON = 2013
 # Arsenal, Chelsea, Liverpool, Man United, Man City -- the Top Six bar Spurs,
 # for late equalizers (BRIEF: only against these)

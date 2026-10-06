@@ -163,23 +163,23 @@ Date,Day,Season,Competition,Round,Leg,Venue,Opponent,Tottenham,Them,Result,Netwo
 2016-05-02,Mon,2015-16,Premier League,,,Away,Chelsea,2,2,D,NBCSN,"NBCSN, NBC Sports App"
 2016-05-08,Sun,2015-16,Premier League,,,Home,Southampton,1,2,L,NBCSN,"NBCSN, NBC Sports App"
 2016-05-15,Sun,2015-16,Premier League,,,Away,Newcastle United,1,5,L,USA Network,"USA Network, NBC Sports App"
-2016-08-13,Sat,2016-17,Premier League,,,Away,Everton,1,1,D,NBC,NBC
-2016-08-20,Sat,2016-17,Premier League,,,Home,Crystal Palace,1,0,W,NBC,NBC
-2016-08-27,Sat,2016-17,Premier League,,,Home,Liverpool,1,1,D,NBC,NBC
-2016-09-10,Sat,2016-17,Premier League,,,Away,Stoke City,4,0,W,NBC,NBC
+2016-08-13,Sat,2016-17,Premier League,,,Away,Everton,1,1,D,CNBC,CNBC
+2016-08-20,Sat,2016-17,Premier League,,,Home,Crystal Palace,1,0,W,PL Extra Time,PL Extra Time
+2016-08-27,Sat,2016-17,Premier League,,,Home,Liverpool,1,1,D,NBCSN,NBCSN
+2016-09-10,Sat,2016-17,Premier League,,,Away,Stoke City,4,0,W,CNBC,CNBC
 2016-09-14,Wed,2016-17,Champions League,Group Stage,,Home,AS Monaco,1,2,L,ESPN3,ESPN3
-2016-09-18,Sun,2016-17,Premier League,,,Home,Sunderland,1,0,W,NBC,"NBC, NBCSN"
+2016-09-18,Sun,2016-17,Premier League,,,Home,Sunderland,1,0,W,NBCSN,NBCSN
 2016-09-21,Wed,2016-17,League Cup,Third Round,,Home,Gillingham,5,0,W,beIN,beIN
-2016-09-24,Sat,2016-17,Premier League,,,Away,Middlesbrough,2,1,W,NBC,NBC
+2016-09-24,Sat,2016-17,Premier League,,,Away,Middlesbrough,2,1,W,PL Extra Time,PL Extra Time
 2016-09-27,Tue,2016-17,Champions League,Group Stage,,Away,CSKA Moscow,1,0,W,FS2,FS2
-2016-10-02,Sun,2016-17,Premier League,,,Home,Manchester City,2,0,W,NBC,"NBC, NBCSN"
-2016-10-15,Sat,2016-17,Premier League,,,Away,West Bromwich Albion,1,1,D,NBC,NBC
+2016-10-02,Sun,2016-17,Premier League,,,Home,Manchester City,2,0,W,NBCSN,NBCSN
+2016-10-15,Sat,2016-17,Premier League,,,Away,West Bromwich Albion,1,1,D,PL Extra Time,PL Extra Time
 2016-10-18,Tue,2016-17,Champions League,Group Stage,,Away,Bayer Leverkusen,0,0,D,FS1,FS1
-2016-10-22,Sat,2016-17,Premier League,,,Away,AFC Bournemouth,0,0,D,NBC,"NBC, NBCSN"
+2016-10-22,Sat,2016-17,Premier League,,,Away,AFC Bournemouth,0,0,D,NBCSN,NBCSN
 2016-10-25,Tue,2016-17,League Cup,Fourth Round,,Away,Liverpool,1,2,L,beIN,beIN
-2016-10-29,Sat,2016-17,Premier League,,,Home,Leicester City,1,1,D,NBC,NBC
+2016-10-29,Sat,2016-17,Premier League,,,Home,Leicester City,1,1,D,CNBC,CNBC
 2016-11-02,Wed,2016-17,Champions League,Group Stage,,Home,Bayer Leverkusen,0,1,L,FS1,"FS1, ESPN3"
-2016-11-06,Sun,2016-17,Premier League,,,Away,Arsenal,1,1,D,NBC,"NBC, NBCSN"
+2016-11-06,Sun,2016-17,Premier League,,,Away,Arsenal,1,1,D,NBCSN,NBCSN
 2016-11-19,Sat,2016-17,Premier League,,,Home,West Ham United,3,2,W,NBC,NBC
 2016-11-22,Tue,2016-17,Champions League,Group Stage,,Away,AS Monaco,1,2,L,FS1,FS1
 2016-11-26,Sat,2016-17,Premier League,,,Away,Chelsea,1,2,L,NBC,NBC
@@ -205,8 +205,8 @@ Date,Day,Season,Competition,Round,Leg,Venue,Opponent,Tottenham,Them,Result,Netwo
 2017-03-05,Sun,2016-17,Premier League,,,Home,Everton,3,2,W,NBCSN,NBCSN
 2017-03-12,Sun,2016-17,FA Cup,Quarterfinals,,Home,Millwall,6,0,W,FS1,FS1
 2017-03-19,Sun,2016-17,Premier League,,,Home,Southampton,2,1,W,NBCSN,NBCSN
-2017-04-01,Sat,2016-17,Premier League,,,Away,Burnley,2,0,W,NBC,NBC
-2017-04-05,Wed,2016-17,Premier League,,,Away,Swansea City,3,1,W,NBC,NBC
+2017-04-01,Sat,2016-17,Premier League,,,Away,Burnley,2,0,W,PL Extra Time,PL Extra Time
+2017-04-05,Wed,2016-17,Premier League,,,Away,Swansea City,3,1,W,PL Extra Time,PL Extra Time
 2017-04-08,Sat,2016-17,Premier League,,,Home,Watford,4,0,W,NBCSN,NBCSN
 2017-04-15,Sat,2016-17,Premier League,,,Home,AFC Bournemouth,4,0,W,NBCSN,NBCSN
 2017-04-22,Sat,2016-17,FA Cup,Semifinals,,Neutral,Chelsea,2,4,L,FOX,FOX
@@ -215,7 +215,7 @@ Date,Day,Season,Competition,Round,Leg,Venue,Opponent,Tottenham,Them,Result,Netwo
 2017-05-05,Fri,2016-17,Premier League,,,Away,West Ham United,0,1,L,NBCSN,NBCSN
 2017-05-14,Sun,2016-17,Premier League,,,Home,Manchester United,2,1,W,NBCSN,NBCSN
 2017-05-18,Thu,2016-17,Premier League,,,Away,Leicester City,6,1,W,NBCSN,NBCSN
-2017-05-21,Sun,2016-17,Premier League,,,Away,Hull City,7,1,W,NBC,NBC
+2017-05-21,Sun,2016-17,Premier League,,,Away,Hull City,7,1,W,MSNBC,MSNBC
 2017-08-13,Sun,2017-18,Premier League,,,Away,Newcastle United,2,0,W,NBCSN,NBCSN
 2017-08-20,Sun,2017-18,Premier League,,,Home,Chelsea,1,2,L,NBCSN,NBCSN
 2017-08-27,Sun,2017-18,Premier League,,,Home,Burnley,1,1,D,NBC Sports Gold,NBC Sports Gold

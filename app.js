@@ -132,11 +132,18 @@ function seasonLabel(y) { return y + "-" + String((y + 1) % 100).padStart(2, "0"
 
 // ESPN lists the network beside its streams ("NBC, Peacock"); the TV channel
 // wins, the stream only when there is nothing else
-const NET_RANK = ["NBC", "CBS", "USA Network", "CNBC", "NBCSN", "ESPN", "ESPN2", "FS1",
+const NET_RANK = ["NBC", "CBS", "USA Network", "CNBC", "MSNBC", "NBCSN",
+                  "ESPN", "ESPN2", "FS1",
                   "FOX", "TNT", "truTV", "CBSSN", "Telemundo", "Universo", "UniMás"];
 const STREAMERS = ["Peacock", "Paramount+", "ESPN+", "Max", "HBO Max", "fuboTV"];
-function primaryNet(nets) {
+function primaryNet(nets, season) {
   if (!nets || !nets.length) return "";
+  // PEACOCK WINS OVER NBCSN FROM 2025-26 (his call 2026-10-06): the pair
+  // is listed on four of his matches, and by then it is where he watched it
+  if (season >= 2025 && nets.indexOf("Peacock") > -1 &&
+      nets.indexOf("NBCSN") > -1) {
+    return "Peacock";
+  }
   const rank = n => NET_RANK.indexOf(n) > -1 ? NET_RANK.indexOf(n)
     : STREAMERS.indexOf(n) > -1 ? 900 + STREAMERS.indexOf(n) : 500;
   let best = nets[0];
@@ -281,7 +288,7 @@ function windowOf(m) {
 }
 function cardHead(m) {
   // USMNT and Atlanta carry no TV -- day, date and time only (his call)
-  const net = m.team === "spurs" ? primaryNet(m.nets) : "";
+  const net = m.team === "spurs" ? primaryNet(m.nets, m.season) : "";
   const tv = (net ? net + " " : "") + fmtTime(m.time);
   const dow = m.dow.toUpperCase();
   // the day spells itself out while it has the line to itself, and shortens
