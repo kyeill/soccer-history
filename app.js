@@ -411,10 +411,12 @@ function card(m) {
 /* A TWO-TEAM CARD, for the matches that are nobody's of his: the TV windows
    and the rivals' results. Away line then home line, as games-history's cards
    read, the winner's line washed in its own colour. */
-// THE TOP SIX IN CAPITALS on these cards (his call 2026-10-02)
+// THE TOP SIX IN CAPITALS on these cards (his call 2026-10-02) -- the five
+// without Spurs, who read in plain case like everyone else (his call
+// 2026-10-05). BIG_SIX still leads that tab's Team filter.
 function bigName(id, t) {
   const n = (t || TEAMS[id] || {}).card || (t || {}).name || id;
-  return BIG_SIX.indexOf(id) > -1 ? n.toUpperCase() : n;
+  return TOP_SIX.indexOf(id) > -1 ? n.toUpperCase() : n;
 }
 function twoCard(m) {
   const wins = m.team === "windows";

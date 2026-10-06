@@ -145,6 +145,7 @@ LSTV_NAMES = {
     "nbc sports app": "NBC Sports App", "nbc sports live extra": "NBC Sports App",
     "fox sports 1": "FS1", "fs1": "FS1", "fox sports 2": "FS2", "fs2": "FS2",
     "fox soccer plus": "FOX Soccer Plus", "fox": "FOX", "fox sports": "FOX",
+    "fox network": "FOX",
     "espn": "ESPN", "espn2": "ESPN2", "espnews": "ESPNEWS", "espn3": "ESPN3",
     "espn+": "ESPN+", "espn plus": "ESPN+", "espn app": "ESPN App",
     "cbs": "CBS", "cbs sports network": "CBSSN", "cbssn": "CBSSN",
@@ -221,10 +222,17 @@ _days = {}
 
 
 def lstv_day(date):
-    """{(home flat, away flat): [networks]} for one date."""
+    """({(home flat, away flat): [networks]}, [(home, away, networks)]).
+
+    The list is kept because the two sites spell clubs differently -- Sheriff
+    Tiraspol is their "Sheriff", CSKA Moscow their "CSKA Moskva", Red Star
+    Belgrade their "Crvena Zvezda" -- so a match is found by whichever side
+    DOES match (see lstv_find).
+    """
     if date in _days:
         return _days[date]
     out = {}
+    rows = []
     try:
         body = lstv_page(date)
     except Exception as e:
@@ -245,10 +253,29 @@ def lstv_day(date):
                  _re.findall(r'<a href="/channels/[^"]*"\s+title="([^"]+)"\s+class="homech"', row)}
         got = {lstv_channel(n) for n in names} - {None}
         nets = [n for n in LSTV_ORDER if n in got]
+        rows.append((h.flat(home), h.flat(away), nets))
         if nets:
             out[(h.flat(home), h.flat(away))] = nets
-    _days[date] = out
-    return out
+    _days[date] = (out, rows)
+    return _days[date]
+
+
+def lstv_find(day, home, away):
+    """That day's US channels for one match, however the two sites spell it.
+
+    The pair is tried as written first. Failing that, a club plays at most one
+    senior match a day, so a row whose HOME is ours, or whose AWAY is ours,
+    names the match -- as long as exactly one row does. A youth side keeps its
+    U19 in the name and so never matches. This is what was blanking 34 of his
+    European nights: their Sheriff is our Sheriff Tiraspol, their CSKA Moskva
+    our CSKA Moscow, their Crvena Zvezda our Red Star Belgrade (2026-10-05).
+    """
+    keyed, rows = day
+    hf, af = h.flat(home), h.flat(away)
+    if (hf, af) in keyed:
+        return keyed[(hf, af)]
+    hit = [r for r in rows if r[0] == hf or r[1] == af]
+    return hit[0][2] if len(hit) == 1 else []
 
 
 def networks_any(date, home_name, away_name, final=True):
@@ -260,7 +287,7 @@ def networks_any(date, home_name, away_name, final=True):
     day = lstv_day(date)
     if day is None:
         return []                     # unknown, not empty -- nothing is stored
-    nets = day.get((h.flat(home_name), h.flat(away_name)), [])
+    nets = lstv_find(day, home_name, away_name)
     if final:
         st[key] = nets
     return nets

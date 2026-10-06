@@ -59,3 +59,30 @@ lists, opponent finishes, team details, the USMNT chain, TV listings.
 - **`output/` must not go stale**: if the daily build has run since your last
   local harvest, re-harvest before building, or a build will overwrite fresh
   data with old.
+
+## livesoccertv names clubs its own way (2026-10-05)
+
+Its day pages carried a US channel for 38 Tottenham cup and European nights
+that were reading as "no TV", under a name the harvest did not recognise:
+their Sheriff is our Sheriff Tiraspol, their CSKA Moskva our CSKA Moscow,
+their Crvena Zvezda our Red Star Belgrade, their Ajax our Ajax Amsterdam,
+their Skendija 79 our KF Shkendija. Matching both club names will always lose
+that race, so lstv_find falls back to ONE side: a club plays at most one
+senior match a day, so a row whose home is ours or whose away is ours names
+the match, as long as exactly one row does. A youth side keeps its U19 and so
+never matches.
+
+TWO TRAPS while fixing it:
+- A STORED ANSWER THAT CLEANED TO NOTHING was never recomputed. Three FA Cup
+  ties held ["FOX Deportes"] from an earlier run, which his hidden list drops,
+  so the card stayed blank even after "FOX Network" was taught to the channel
+  table. Entries whose clean() is empty have to be dropped, not just the
+  empty ones.
+- A DAY PAGE THAT FAILED TO FETCH stays missing, since nothing is stored for
+  it. 2015-12-10 had been missing since the first run and came down on the
+  first retry.
+
+71 -> 33 (95.3% of his 704 played matches carry a network). What is left is
+his own doing or genuinely nothing: 15 list only a channel he removed (beIN,
+FOX Deportes, FOX Soccer Plus, TUDN, Univision), 8 carry no US channel at
+all, 8 only a carrier or a regional network, 2 only SiriusXM radio.
