@@ -150,7 +150,8 @@ LSTV_NAMES = {
     "espn+": "ESPN+", "espn plus": "ESPN+", "espn app": "ESPN App",
     "cbs": "CBS", "cbs sports network": "CBSSN", "cbssn": "CBSSN",
     "paramount+": "Paramount+", "cbs sports golazo": "CBS Sports Golazo",
-    "bein sports": "beIN", "goltv": "GOLTV",
+    "bein sports": "beIN", "bein sports connect": "beIN",
+    "goltv": "GOLTV",
     "tnt": "TNT", "b/r live": "B/R Live", "bleacher report live": "B/R Live",
     "bleacher report app": "B/R Live", "univision now": "Univision",
     "unimas": "UniMas", "galavision": "Galavision", "tudn app": "TUDN",
@@ -309,7 +310,12 @@ HIDE = {"Telemundo", "Universo", "TeleXitos", "Univision", "UniMas", "TUDN",
         "Galavision", "FOX Deportes", "ESPN Deportes", "Azteca America",
         "Disney+", "UniMás",
         # his call 2026-09-26
-        "beIN", "GOLTV", "FOX Soccer Plus", "ESPN App"}
+        "GOLTV", "ESPN App"}
+# ...BUT THESE TWO COME BACK WHERE THERE IS NOTHING ELSE (his call
+# 2026-10-06). He does not want to read beIN or FOX Soccer Plus on a card
+# that also had a channel he watches, but a blank card is worse: these were
+# where the League Cup lived for years.
+FALLBACK = {"beIN", "FOX Soccer Plus"}
 # what a card prefers when a match was on more than one
 ORDER = ["NBC", "NBCSN", "USA Network", "CNBC", "Syfy", "FOX", "FS1", "FS2",
          "FOX Soccer Plus", "CBS", "CBSSN", "ESPN", "ESPN2", "ESPNEWS", "TNT",
@@ -319,11 +325,21 @@ ORDER = ["NBC", "NBCSN", "USA Network", "CNBC", "Syfy", "FOX", "FS1", "FS2",
 
 
 def clean(nets):
-    """Canonical names, the hidden ones dropped, in the order a card wants."""
-    got = []
+    """Canonical names, the hidden ones dropped, in the order a card wants.
+
+    A FALLBACK name is held back and used only when nothing else survives.
+    """
+    got, held = [], []
     for n in nets or []:
         n = CANON.get(n, n)
-        if n and n not in HIDE and n not in got:
+        if not n or n in got or n in held:
+            continue
+        if n in FALLBACK:
+            held.append(n)
+        elif n not in HIDE:
             got.append(n)
-    known = [n for n in ORDER if n in got]
-    return known + [n for n in got if n not in ORDER]
+
+    def ordered(xs):
+        return [n for n in ORDER if n in xs] + [n for n in xs if n not in ORDER]
+
+    return ordered(got) or ordered(held)

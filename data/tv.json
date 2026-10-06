@@ -4063,7 +4063,9 @@
 "PL Extra Time",
 "NBC Sports App"
 ],
-"d2013-09-24|astonvilla|tottenham": [],
+"d2013-09-24|astonvilla|tottenham": [
+"beIN"
+],
 "d2013-09-24|swindontown|chelsea": [
 "beIN"
 ],
@@ -4280,7 +4282,9 @@
 "d2013-12-17|sunderland|chelsea": [
 "beIN"
 ],
-"d2013-12-18|tottenham|westham": [],
+"d2013-12-18|tottenham|westham": [
+"beIN"
+],
 "d2013-12-22|southampton|tottenham": [
 "NBCSN",
 "NBC Sports App"
@@ -4670,7 +4674,9 @@
 "d2014-08-19|besiktas|arsenal": [
 "FS1"
 ],
-"d2014-08-21|ael|tottenham": [],
+"d2014-08-21|ael|tottenham": [
+"beIN"
+],
 "d2014-08-23|chelsea|leicester": [
 "NBCSN",
 "NBC Sports App"
@@ -4764,8 +4770,12 @@
 "PL Extra Time",
 "NBC Sports App"
 ],
-"d2014-09-23|arsenal|southampton": [],
-"d2014-09-24|chelsea|bolton": [],
+"d2014-09-23|arsenal|southampton": [
+"beIN"
+],
+"d2014-09-24|chelsea|bolton": [
+"beIN"
+],
 "d2014-09-24|tottenham|nottinghamforest": [],
 "d2014-09-27|arsenal|tottenham": [
 "NBCSN",
@@ -4834,8 +4844,12 @@
 "NBCSN",
 "NBC Sports App"
 ],
-"d2014-10-28|shrewsburytown|chelsea": [],
-"d2014-10-29|tottenham|brighton": [],
+"d2014-10-28|shrewsburytown|chelsea": [
+"beIN"
+],
+"d2014-10-29|tottenham|brighton": [
+"beIN"
+],
 "d2014-11-01|arsenal|burnley": [
 "PL Extra Time",
 "NBC Sports App"
@@ -4949,7 +4963,9 @@
 "d2014-12-16|derbycounty|chelsea": [
 "beIN"
 ],
-"d2014-12-17|tottenham|newcastle": [],
+"d2014-12-17|tottenham|newcastle": [
+"beIN"
+],
 "d2014-12-20|tottenham|burnley": [
 "PL Extra Time",
 "NBC Sports App"
@@ -5040,7 +5056,9 @@
 "d2015-01-20|liverpool|chelsea": [
 "beIN"
 ],
-"d2015-01-21|tottenham|sheffutd": [],
+"d2015-01-21|tottenham|sheffutd": [
+"beIN"
+],
 "d2015-01-24|chelsea|bradfordcity": [],
 "d2015-01-24|tottenham|leicester": [],
 "d2015-01-25|brighton|arsenal": [
@@ -5472,7 +5490,9 @@
 "d2015-09-23|tottenham|arsenal": [
 "beIN"
 ],
-"d2015-09-23|walsall|chelsea": [],
+"d2015-09-23|walsall|chelsea": [
+"beIN"
+],
 "d2015-09-26|leicester|arsenal": [
 "USA Network",
 "NBC Sports App",
@@ -5553,7 +5573,9 @@
 "PL Extra Time",
 "NBC Sports App"
 ],
-"d2015-10-27|sheffieldwednesday|arsenal": [],
+"d2015-10-27|sheffieldwednesday|arsenal": [
+"beIN"
+],
 "d2015-10-27|stoke|chelsea": [
 "beIN"
 ],
@@ -6101,8 +6123,12 @@
 "d2016-09-20|leicester|chelsea": [
 "beIN"
 ],
-"d2016-09-20|nottinghamforest|arsenal": [],
-"d2016-09-21|tottenham|gillingham": [],
+"d2016-09-20|nottinghamforest|arsenal": [
+"beIN"
+],
+"d2016-09-21|tottenham|gillingham": [
+"beIN"
+],
 "d2016-09-27|cskamoscow|tottenham": [
 "FS2"
 ],
@@ -6113,11 +6139,15 @@
 "ESPN Deportes"
 ],
 "d2016-10-19|arsenal|ludogoretsrazgrad": [],
-"d2016-10-25|arsenal|reading": [],
+"d2016-10-25|arsenal|reading": [
+"beIN"
+],
 "d2016-10-25|liverpool|tottenham": [
 "beIN"
 ],
-"d2016-10-26|westham|chelsea": [],
+"d2016-10-26|westham|chelsea": [
+"beIN"
+],
 "d2016-11-01|ludogoretsrazgrad|arsenal": [
 "FS2"
 ],
@@ -6135,7 +6165,9 @@
 "NBC Sports App",
 "Telemundo"
 ],
-"d2016-11-30|arsenal|southampton": [],
+"d2016-11-30|arsenal|southampton": [
+"beIN"
+],
 "d2016-12-07|tottenham|cskamoscow": [
 "FS2"
 ],

@@ -728,6 +728,14 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
         home, away = (SPURS, tid) if m["home"] else (tid, SPURS)
         m["nets"] = tv.networks_any(m["date"], teams[home]["name"], teams[away]["name"])
     m["nets"] = tv.clean(m["nets"])
+    # WHERE THE LISTINGS RUN OUT, he knows who held the rights (his call
+    # 2026-10-06): the 2020-21 Europa League was CBS All Access in the US and
+    # the 2021-22 Conference League Paramount+, whatever livesoccertv kept.
+    if not m["nets"] and not upcoming and not postponed:
+        if code == "UEL" and season == 2020:
+            m["nets"] = ["CBS All Access"]
+        elif code == "UECL" and season == 2021:
+            m["nets"] = ["Paramount+"]
     return m
 
 
