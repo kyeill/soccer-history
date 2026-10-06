@@ -268,7 +268,7 @@ function windowOf(m) {
 function cardHead(m) {
   // USMNT and Atlanta carry no TV -- day, date and time only (his call)
   const net = m.team === "spurs" ? primaryNet(m.nets) : "";
-  const tv = (net ? esc(net) + " " : "") + fmtTime(m.time);
+  const tv = (net ? net + " " : "") + fmtTime(m.time);
   const dow = m.dow.toUpperCase();
   // the day spells itself out while it has the line to itself, and shortens
   // when the date and network move up beside it
@@ -293,7 +293,7 @@ function cardHead(m) {
                  net && net !== "NBC" ? [net] : []) };
     }
     return { head: wk, dayTime: dayTime,
-             tail: [dateOf(m)].concat(net ? [esc(net)] : []) };
+             tail: [dateOf(m)].concat(net ? [net] : []) };
   }
   const s = stageText(m);
   const lab = s.full !== s.short
@@ -471,31 +471,33 @@ function card(m) {
   // HIS SHAPES (2026-10-02). A cup's day/date/network line is always there and
   // his own details take a fourth; a league match keeps the day up top and
   // sends the date and network below -- unless it needs that line for him.
+  // NO CARD REACHES A FOURTH LINE (his call 2026-10-06). Whatever he has to
+  // say -- scorers, a late winner, a note -- is the THIRD line and nothing
+  // else, so the date goes up to the end of the header and the network goes
+  // with it. When the header cannot hold the network, trimHeads drops it back
+  // down in front of his line, where it loses nothing by being.
   const rows = [];
   let head = h.head;
+  const dateUp = d => ' | <span class="hdate">' + esc(d) + "</span>";
+  const tvUp = c => '<span class="htv"> | ' + esc(c.join(" | ")) + "</span>";
   if (h.down) {
-    // A LONE LATE WINNER IS NOT WORTH A FOURTH LINE (his call 2026-10-06):
-    // the date goes up to the end of the header, and the line below opens
-    // with the network and reads his note after it. A SCORER LIST still takes
-    // a line of its own, as he asked on 2026-10-02.
-    const plain = p => String(p).replace(/<[^>]+>/g, "");
-    const lone = parts.length === 1 && !m.scorers && (m.late_win || m.late_eq);
-    if (lone) {
-      head += ' | <span class="hdate">' + esc(plain(h.down[0])) + "</span>";
-      rows.push(h.down.slice(1).map(plain).concat(parts));
+    if (parts.length) {
+      const chunk = h.down.slice(1);
+      head += dateUp(h.down[0]) + (chunk.length ? tvUp(chunk) : "");
+      rows.push({ items: chunk.concat(parts), tv: chunk.length });
     } else {
-      rows.push(h.down.map(plain));
-      if (parts.length) rows.push(parts);
+      rows.push({ items: h.down, tv: 0 });
     }
   } else if (parts.length) {
-    const bits = h.dayTime ? [h.dayTime.short] : [];
-    (h.tail || []).forEach((t, i) => bits.push(
-      i ? t : '<span class="hdate">' + t + "</span>"));
-    if (bits.length) head += " " + bits.join(" | ");
-    rows.push(parts);
+    const tail = h.tail || [];
+    head += (h.dayTime ? " " + h.dayTime.short : "") +
+      (tail.length ? dateUp(tail[0]) : "");
+    const chunk = tail.slice(1);
+    if (chunk.length) head += tvUp(chunk);
+    rows.push({ items: chunk.concat(parts), tv: chunk.length });
   } else {
     head += h.dayTime ? " " + h.dayTime.long : "";
-    rows.push(h.tail || []);
+    rows.push({ items: h.tail || [], tv: 0 });
   }
   // his Footer column: a colour word paints the whole third row
   const footCol = colourOf(footer.split(/\s+/)[0]);
@@ -527,8 +529,14 @@ function card(m) {
     // his Footer colour word paints the line his own details sit on
     rows.map((r, i) => '<span class="mdl"' +
       (footCol && i === rows.length - 1 ? ' style="color:' + footCol + '"' : "") + ">" +
-      r.map(p => '<span class="mdet">' + esc(p) + "</span>")
-        .join('<span class="msep">|</span>') + "</span>").join("") +
+      // the network's own pieces carry .mtv: hidden here while the header
+      // holds them, shown when trimHeads sends them down
+      r.items.map((p, j) =>
+        // the bar in FRONT of a hidden piece goes with it, so a line never
+        // opens with a stray one (caught on his cards 2026-10-06)
+        (j ? '<span class="msep' + (j <= r.tv ? " mtv" : "") + '">|</span>' : "") +
+        '<span class="mdet' + (j < r.tv ? " mtv" : "") + '">' + esc(p) + "</span>")
+        .join("") + "</span>").join("") +
     "</div></div>";
 }
 
@@ -589,7 +597,8 @@ function twoCard(m) {
     segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
   }
   const winner = winId;
-  if (m.pens) segs.push("Pens " + esc(m.pens));
+  // the shootout is in the round's own label now ("League Cup Final (4-3
+  // Pen)"), so this card no longer says it twice (2026-10-06)
   // HIS TOTTENHAM MARKS (2026-10-02), the way Michigan's TV windows read: a
   // white border on a Tottenham win or a draw with the Top Six, a dashed grey
   // one on a loss or a draw with anyone else, and a win over the Top Six
@@ -762,15 +771,22 @@ function filterBar() {
   return h;
 }
 
-/* A header too long for the phone gives up its competition's full name --
-   "Champions League Round of 16" -> "UCL Round of 16" -- only when it wraps */
+/* A HEADER TOO LONG FOR THE PHONE gives things up in order (2026-10-06):
+   first the network, which only moves down a line and loses nothing, then
+   the competition's full name -- "Champions League Round of 16" -> "UCL
+   Round of 16". Both are restored first, so a wider window gets them back. */
 function trimHeads() {
-  document.querySelectorAll(".row .sport").forEach(head => {
+  document.querySelectorAll(".row").forEach(row => {
+    const head = row.querySelector(".sport");
+    if (!head) return;
     const s = head.querySelector("[data-short]");
-    if (!s) return;
-    if (s.dataset.full) s.textContent = s.dataset.full;
+    row.classList.remove("tvdown");
+    if (s && s.dataset.full) s.textContent = s.dataset.full;
     const lh = parseFloat(getComputedStyle(head).lineHeight) || 19;
-    if (head.getBoundingClientRect().height > lh * 1.5) {
+    const tall = () => head.getBoundingClientRect().height > lh * 1.5;
+    if (!tall()) return;
+    if (head.querySelector(".htv")) row.classList.add("tvdown");
+    if (tall() && s) {
       s.dataset.full = s.dataset.full || s.textContent;
       s.textContent = s.dataset.short;
     }

@@ -164,6 +164,13 @@ def collect(teams):
             nets = tv.clean(nets)
             if nets:
                 m["nets"] = nets
+            # AN NBC SATURDAY IS ON NBC (his call 2026-10-06). The 17:30 UK
+            # kickoff went to USA Network, NBCSN or Peacock often enough --
+            # 89 of 385 -- and a window named for a network it was not on is
+            # no window of his. A match whose US network is simply unknown
+            # stays, since nothing says it was not NBC.
+            if label == "NBC Saturday" and nets and "NBC" not in nets:
+                continue
             out.append(m)
         if missing:
             print("  WARN: %s clubs not matched to ESPN: %s"

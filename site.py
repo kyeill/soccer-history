@@ -158,6 +158,11 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 .mdl{display:flex;flex-wrap:wrap;gap:7px;align-items:center;min-width:0;
   padding-left:29px}
 .msep{color:var(--muted)}
+/* THE NETWORK LIVES IN THE HEADER and only comes down when the header cannot
+   hold it -- trimHeads puts .tvdown on the card (2026-10-06) */
+.mtv{display:none}
+.row.tvdown .mtv{display:inline}
+.row.tvdown .htv{display:none}
 .hdow{text-transform:uppercase}
 
 .empty{color:var(--muted);text-align:center;padding:44px 10px;font-size:14.5px}
