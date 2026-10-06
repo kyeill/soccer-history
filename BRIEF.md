@@ -371,7 +371,12 @@ That was the last tie whose outcome was unknown; all 25 are now settled.
 ## Highlights: his own two marks (Kyle, 2026-10-06)
 
 The Highlights menu leads with his own two marks and follows with the late
-goals the harvest found: SPECIAL, MEMORABLE, Late Winners, Late Equalizers.
+goals the harvest found: SPECIAL, MEMORABLE, LATE WINNERS -- the equalizers
+sit under the winners too, loose label and all (2026-10-06). A LATE GOAL
+INSIDE A TIE counts only on the second leg of a tie he went through: it
+settles nothing in a first leg, and nothing in a second leg he went out of.
+A NETWORK menu sits beside them on his own tab, his six first, then a bar,
+then the rest alphabetically.
 Special is a WHITE border in his sheet OR a trophy won -- 9 nights, the
 trophy being the 2025 Europa League. Memorable is any shade or border at all,
 62. Every special night is memorable too. Both read live off the Border and

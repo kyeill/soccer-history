@@ -946,9 +946,14 @@ def main():
         matches += got
     replays(matches)
     two_legged(matches)
+    # A LATE GOAL INSIDE A TIE (his call 2026-10-06): it settles nothing in a
+    # first leg, and nothing in a second leg his side went out of -- Simons in
+    # the 90th against Atletico in 2026 did not win anything. It counts only
+    # on the second leg of a tie Tottenham went through.
     for m in matches:
-        if m.get("leg") == 1:
+        if m.get("leg") == 1 or (m.get("leg") == 2 and not m.get("through")):
             m.pop("late_win", None)
+            m.pop("late_eq", None)
     matches.sort(key=lambda m: (m["date"], m["time"]))
     # his Sheet, matched on the date (Spurs never play twice in a day)
     marks = load_sheet("Tottenham", {m["date"] for m in matches})

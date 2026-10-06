@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261006-140758. Modelled on games-history's Michigan view (michCard): one card
+   20261006-141927. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261006-140758";
+const BUILD = "20261006-141927";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -138,9 +138,10 @@ const NET_RANK = ["NBC", "CBS", "USA Network", "CNBC", "MSNBC", "NBCSN",
 const STREAMERS = ["Peacock", "Paramount+", "ESPN+", "Max", "HBO Max", "fuboTV"];
 function primaryNet(nets, season) {
   if (!nets || !nets.length) return "";
-  // PEACOCK WINS OVER NBCSN FROM 2025-26 (his call 2026-10-06): the pair
-  // is listed on four of his matches, and by then it is where he watched it
-  if (season >= 2025 && nets.indexOf("Peacock") > -1 &&
+  // PEACOCK WINS OVER NBCSN FROM 2021-22 (his call 2026-10-06), the season
+  // NBCSN closed -- a listing naming it after that is the feed's memory, not
+  // where he watched
+  if (season >= 2021 && nets.indexOf("Peacock") > -1 &&
       nets.indexOf("NBCSN") > -1) {
     return "Peacock";
   }
@@ -668,7 +669,7 @@ function defaults() {
     : VIEW === "spurs" ? CURRENT
     : (years.length ? Math.max.apply(null, years) : null);
   return { season: open, comp: null, team: null, hl: null, ko: false,
-           window: null, rival: null };
+           window: null, rival: null, net: null };
 }
 // a Premier League year is a season: 2026-27, not 2026 (his call
 // 2026-10-02). USMNT and Atlanta play calendar years, so they keep theirs.
@@ -682,12 +683,16 @@ function passes(m, skip) {
     const ids = m.team === "windows" ? [m.home, m.away] : [m.opp];
     if (ids.indexOf(FILT.team) < 0) return false;
   }
+  if (skip !== "net" && FILT.net && primaryNet(m.nets, m.season) !== FILT.net) {
+    return false;
+  }
   if (skip !== "window" && FILT.window && m.window !== FILT.window) return false;
   if (skip !== "rival" && FILT.rival && m.rival !== FILT.rival) return false;
   if (FILT.ko && !isKnockout(m)) return false;
   if (skip !== "hl" && FILT.hl) {
-    if (FILT.hl === "late_win" && !m.late_win) return false;
-    if (FILT.hl === "late_eq" && !m.late_eq) return false;
+    // the equalizers sit under Late Winners, loose label and all (his call
+    // 2026-10-06)
+    if (FILT.hl === "late_win" && !m.late_win && !m.late_eq) return false;
     if (FILT.hl === "special" && !isSpecial(m)) return false;
     if (FILT.hl === "memorable" && !isMemorable(m)) return false;
   }
@@ -781,10 +786,31 @@ function filterBar() {
     [].concat.apply([], groups.map((g, i) => (i ? [BAR] : []).concat(g))), FILT.team));
   // HIS OWN MARKS LEAD (2026-10-06); the late goals the harvest found follow
   const HL = [["Special", "special"], ["Memorable", "memorable"],
-              ["Late Winners", "late_win"], ["Late Equalizers", "late_eq"]];
+              ["Late Winners", "late_win"]];
   if (isEpl()) {
     return h + group("", '<button class="f" data-act="sort">' +
       (SORT === "asc" ? "Oldest First" : "Newest First") + "</button>");
+  }
+  // HIS NETWORKS (2026-10-06): the six he watches lead, then a bar, then
+  // whatever else a match in view was on, alphabetically. Only his own cards
+  // show a network, so only his own tab offers the filter.
+  if (VIEW === "spurs") {
+    const NET_LEAD = ["NBC", "USA Network", "Peacock", "NBCSN", "Paramount+",
+                      "ESPN+"];
+    const seenNet = new Set();
+    MATCHES.filter(x => passes(x, "net")).forEach(x => {
+      const n = primaryNet(x.nets, x.season);
+      if (n) seenNet.add(n);
+    });
+    if (FILT.net) seenNet.add(FILT.net);
+    const lead = NET_LEAD.filter(n => seenNet.has(n));
+    // alphabetical as he would read it, so beIN sits with the Bs
+    const rest = Array.from(seenNet).filter(n => NET_LEAD.indexOf(n) < 0)
+      .sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
+    const opts = lead.map(n => [n, n])
+      .concat(lead.length && rest.length ? [BAR] : [])
+      .concat(rest.map(n => [n, n]));
+    h += group("Network", select("net", "All Networks", opts, FILT.net));
   }
   // the late goals are read for Spurs only
   if (VIEW === "spurs") h += group("Highlights", select("hl", "All Matches", HL, FILT.hl));
