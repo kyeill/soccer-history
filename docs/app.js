@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261006-115833. Modelled on games-history's Michigan view (michCard): one card
+   20261006-123053. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261006-115833";
+const BUILD = "20261006-123053";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -131,6 +131,19 @@ function primaryNet(nets) {
   return best === "USA Net" || best === "USA" ? "USA Network" : best;
 }
 
+// HIS OWN TWO MARKS (2026-10-06), both read straight off his Sheet: a WHITE
+// border makes a night SPECIAL, and any shade or border at all makes it
+// MEMORABLE -- so every special night is a memorable one too.
+function borderWord(m) {
+  return String(((m.mx || {}).border || "")).trim();
+}
+function isSpecial(m) {
+  const w = borderWord(m);
+  return !!w && colourOf(w) === "#ffffff";
+}
+function isMemorable(m) {
+  return !!(m.mx || {}).shade || !!borderWord(m);
+}
 function upcoming(m) { return !!m.upcoming || !!m.status; }
 function won(m) { return m.result === "W"; }
 function lost(m) { return m.result === "L"; }
@@ -594,6 +607,8 @@ function passes(m, skip) {
   if (skip !== "hl" && FILT.hl) {
     if (FILT.hl === "late_win" && !m.late_win) return false;
     if (FILT.hl === "late_eq" && !m.late_eq) return false;
+    if (FILT.hl === "special" && !isSpecial(m)) return false;
+    if (FILT.hl === "memorable" && !isMemorable(m)) return false;
   }
   return true;
 }
@@ -683,7 +698,8 @@ function filterBar() {
     .filter(g => g.length);
   h += group("Team", select("team", "All Teams",
     [].concat.apply([], groups.map((g, i) => (i ? [BAR] : []).concat(g))), FILT.team));
-  const HL = [["Late Winners", "late_win"], ["Late Equalizers", "late_eq"]];
+  const HL = [["Late Winners", "late_win"], ["Late Equalizers", "late_eq"],
+              ["Special", "special"], ["Memorable", "memorable"]];
   if (isEpl()) {
     return h + group("", '<button class="f" data-act="sort">' +
       (SORT === "asc" ? "Oldest First" : "Newest First") + "</button>");

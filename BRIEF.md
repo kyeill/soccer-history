@@ -360,3 +360,11 @@ SHOOTOUT AFTER THE SECOND LEG settles the tie and not the match, so it is
 never read while the match is built -- the 2019 League Cup semi was a 1-2
 defeat on the night, 2-2 over the two, and Chelsea took it 4-2 on penalties.
 That was the last tie whose outcome was unknown; all 25 are now settled.
+
+## Highlights: his own two marks (Kyle, 2026-10-06)
+
+The Highlights menu reads Late Winners, Late Equalizers, SPECIAL and
+MEMORABLE. Special is a WHITE border in his sheet (8 nights); Memorable is
+any shade or border at all (62). Every special night is memorable too. Both
+are read live off the Border and Shade columns, so colouring a row in the
+sheet is all it takes to add one.
