@@ -26,6 +26,12 @@ OPENFOOTBALL = ("https://raw.githubusercontent.com/openfootball/england/master/"
                 "%s/1-premierleague.txt")
 
 SPURS = "367"
+# A MATCH WHOSE US NETWORK HE HAS CORRECTED HIMSELF (2026-10-06), by date --
+# livesoccertv had only "NBC Sports App" for these four
+TV_FIX = {"2015-12-13": ["PL Extra Time"],
+          "2016-02-02": ["PL Extra Time"],
+          "2016-03-13": ["NBCSN"],
+          "2016-03-20": ["PL Extra Time"]}
 FIRST_SEASON = 2013
 # Arsenal, Chelsea, Liverpool, Man United, Man City -- the Top Six bar Spurs,
 # for late equalizers (BRIEF: only against these)
@@ -728,6 +734,10 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
         home, away = (SPURS, tid) if m["home"] else (tid, SPURS)
         m["nets"] = tv.networks_any(m["date"], teams[home]["name"], teams[away]["name"])
     m["nets"] = tv.clean(m["nets"])
+    # HIS OWN CORRECTIONS (2026-10-06). livesoccertv kept only the streaming
+    # app for these four 2015-16 nights; he knows where they really were.
+    if m["date"] in TV_FIX:
+        m["nets"] = TV_FIX[m["date"]]
     # WHERE THE LISTINGS RUN OUT, he knows who held the rights (his call
     # 2026-10-06): the 2020-21 Europa League was CBS All Access in the US and
     # the 2021-22 Conference League Paramount+, whatever livesoccertv kept.
