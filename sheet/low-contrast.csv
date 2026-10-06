@@ -1,0 +1,32 @@
+Date,Season,Competition,Opponent,Box,Background,Font,Contrast
+2026-01-10,2025,FAC,Aston Villa,Tottenham,#ffffff,#ffffff,1.0
+2013-08-22,2013,UEL,Dinamo Tbilisi,Tottenham,#ffffff,#d9d9d9,1.41
+2013-08-29,2013,UEL,Dinamo Tbilisi,Tottenham,#ffffff,#d9d9d9,1.41
+2013-09-19,2013,UEL,Tromso,Tottenham,#ffffff,#d9d9d9,1.41
+2013-10-03,2013,UEL,Anzhi Makhachkala,Tottenham,#ffffff,#d9d9d9,1.41
+2013-10-24,2013,UEL,Sheriff Tiraspol,Tottenham,#ffffff,#d9d9d9,1.41
+2013-10-27,2013,PL,Hull City,Tottenham,#ffffff,#d9d9d9,1.41
+2013-11-03,2013,PL,Everton,Tottenham,#ffffff,#d9d9d9,1.41
+2013-11-07,2013,UEL,Sheriff Tiraspol,Tottenham,#ffffff,#d9d9d9,1.41
+2013-12-12,2013,UEL,Anzhi Makhachkala,Tottenham,#ffffff,#d9d9d9,1.41
+2014-02-20,2013,UEL,Dnipro Dnipropetrovsk,Tottenham,#ffffff,#d9d9d9,1.41
+2014-02-27,2013,UEL,Dnipro Dnipropetrovsk,Tottenham,#ffffff,#d9d9d9,1.41
+2014-03-13,2013,UEL,Benfica,Tottenham,#ffffff,#d9d9d9,1.41
+2014-08-21,2014,UEL,AEL,Tottenham,#ffffff,#d9d9d9,1.41
+2014-08-28,2014,UEL,AEL,Tottenham,#ffffff,#d9d9d9,1.41
+2014-10-02,2014,UEL,Besiktas,Tottenham,#ffffff,#d9d9d9,1.41
+2014-10-23,2014,UEL,Asteras Tripoli,Tottenham,#ffffff,#d9d9d9,1.41
+2014-11-06,2014,UEL,Asteras Tripoli,Tottenham,#ffffff,#d9d9d9,1.41
+2014-11-27,2014,UEL,Partizan Belgrade,Tottenham,#ffffff,#d9d9d9,1.41
+2015-02-19,2014,UEL,Fiorentina,Tottenham,#ffffff,#d9d9d9,1.41
+2015-02-26,2014,UEL,Fiorentina,Tottenham,#ffffff,#d9d9d9,1.41
+2013-08-18,2013,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2014-12-06,2014,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2015-01-10,2014,PL,Crystal Palace,Opponent,#1b458f,#c4122e,1.51
+2013-10-27,2013,PL,Hull City,Opponent,#0000ff,#ff0000,2.15
+2013-10-30,2013,LC,Hull City,Opponent,#0000ff,#ff0000,2.15
+2013-11-24,2013,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2014-01-29,2013,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2014-10-18,2014,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2015-05-03,2014,PL,Manchester City,Opponent,#6cabdd,#ffffff,2.47
+2013-09-19,2013,UEL,Tromso,Opponent,#50abef,#ffffff,2.5

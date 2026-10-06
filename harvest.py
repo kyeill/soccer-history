@@ -818,10 +818,13 @@ def load_sheet(tab, dates):
     if not rows:
         return {}
     head = rows[0]
-    # only the block before the first BLANK header is his
-    stop = next((i for i, x in enumerate(head) if not (x or "").strip()), len(head))
+    # EVERY COLUMN IS READ BY ITS NAME, and a headerless one is simply skipped
+    # -- he keeps working columns of his own in the sheet and asked that their
+    # position not matter (2026-10-06). Reading stopped at the first blank
+    # header until then, which would have hidden anything to its right.
+    # Where a name repeats, the leftmost wins.
     col = {}
-    for i, x in enumerate(head[:stop]):
+    for i, x in enumerate(head):
         k = (x or "").strip().lower()
         if k and k not in col:
             col[k] = i

@@ -86,3 +86,10 @@ TWO TRAPS while fixing it:
 his own doing or genuinely nothing: 15 list only a channel he removed (beIN,
 FOX Deportes, FOX Soccer Plus, TUDN, Univision), 8 carry no US channel at
 all, 8 only a carrier or a regional network, 2 only SiriusXM radio.
+
+## A blank header used to hide every column after it (2026-10-06)
+
+load_sheet read only the block BEFORE the first headerless column, so working
+columns he keeps in the middle of his sheet would have hidden his kit colours
+to their right. Every column is read by its NAME now and a headerless one is
+skipped; where a name repeats, the leftmost wins. 10 marked rows became 135.
