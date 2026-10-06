@@ -23,7 +23,7 @@ HEADERS = {"Origin": "https://www.premierleague.com",
 FIRST = 2016                       # the first season with US listings
 # their abbreviations -> the names the cards use
 NAMES = {"NBC": "NBC", "USANBCSN": "NBCSN", "USANET": "USA Network", "USACNBC": "CNBC",
-         "USPEA": "Peacock", "NBCGOLD": "NBC Gold", "USASYFY": "Syfy",
+         "USPEA": "Peacock", "NBCGOLD": "NBC Sports Gold", "USASYFY": "Syfy",
          "UNIVERSO": "Universo", "TELEMUND": "Telemundo", "USATELEXITOS": "TeleXitos"}
 
 _seasons = {}
@@ -140,16 +140,16 @@ LSTV_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 LSTV_NAMES = {
     "nbc": "NBC", "nbcsn": "NBCSN", "nbc sports network": "NBCSN",
     "nbc sports": "NBCSN", "usa network": "USA Network", "cnbc": "CNBC", "syfy": "Syfy",
-    "peacock": "Peacock", "nbc sports gold": "NBC Gold",
-    "premier league extra time": "PL Extra",
-    "nbc sports app": "NBC App", "nbc sports live extra": "NBC App",
+    "peacock": "Peacock", "nbc sports gold": "NBC Sports Gold",
+    "premier league extra time": "PL Extra Time",
+    "nbc sports app": "NBC Sports App", "nbc sports live extra": "NBC Sports App",
     "fox sports 1": "FS1", "fs1": "FS1", "fox sports 2": "FS2", "fs2": "FS2",
     "fox soccer plus": "FOX Soccer Plus", "fox": "FOX", "fox sports": "FOX",
     "fox network": "FOX",
     "espn": "ESPN", "espn2": "ESPN2", "espnews": "ESPNEWS", "espn3": "ESPN3",
     "espn+": "ESPN+", "espn plus": "ESPN+", "espn app": "ESPN App",
     "cbs": "CBS", "cbs sports network": "CBSSN", "cbssn": "CBSSN",
-    "paramount+": "P+", "cbs sports golazo": "CBS Golazo",
+    "paramount+": "Paramount+", "cbs sports golazo": "CBS Sports Golazo",
     "bein sports": "beIN", "goltv": "GOLTV",
     "tnt": "TNT", "b/r live": "B/R Live", "bleacher report live": "B/R Live",
     "bleacher report app": "B/R Live", "univision now": "Univision",
@@ -169,10 +169,10 @@ LSTV_NAMES = {
 # first, the streams next, Spanish last
 LSTV_ORDER = ["NBC", "NBCSN", "USA Network", "CNBC", "Syfy", "FS1", "FS2", "FOX",
               "FOX Soccer Plus", "ESPN", "ESPN2", "ESPNEWS", "CBS", "CBSSN",
-              "beIN", "GOLTV", "Peacock", "P+", "ESPN+", "ESPN3",
-              "ESPN App", "CBS Golazo", "NBC Gold", "TNT",
+              "beIN", "GOLTV", "Peacock", "Paramount+", "ESPN+", "ESPN3",
+              "ESPN App", "CBS Sports Golazo", "NBC Sports Gold", "TNT",
               "B/R Live", "CBS All Access", "FOX Sports GO",
-              "PL Extra", "NBC App", "Telemundo", "Universo",
+              "PL Extra Time", "NBC Sports App", "Telemundo", "Universo",
               "TeleXitos", "Univision", "UniMas", "TUDN", "Galavision",
               "FOX Deportes",
               "ESPN Deportes", "Azteca America"]
@@ -297,17 +297,10 @@ def networks_any(date, home_name, away_name, final=True):
 # Every source spells a channel its own way -- ESPN says "USA Net" and "Tele",
 # the Premier League "USANBC", livesoccertv "Fox Sports 2 USA" -- so every
 # list of networks passes through here before it reaches a card.
-# HIS NAMES (2026-10-06): the long ones read short on every card, so they are
-# shortened HERE rather than at the card, and the sheet and the no-TV list
-# agree with what he sees. CBS All Access and FOX Soccer Plus he wants spelled
-# out, so they are left alone.
 CANON = {
-    "Paramount+": "P+", "NBC Sports Gold": "NBC Gold",
-    "NBC Sports App": "NBC App", "PL Extra Time": "PL Extra",
-    "CBS Sports Golazo": "CBS Golazo",
     "USA Net": "USA Network", "USA": "USA Network", "USANET": "USA Network",
     "USANBC": "NBC", "USANBCSN": "NBCSN", "NBC Sports Network": "NBCSN",
-    "USACNBC": "CNBC", "USPEA": "Peacock", "NBCGOLD": "NBC Gold",
+    "USACNBC": "CNBC", "USPEA": "Peacock", "NBCGOLD": "NBC Sports Gold",
     "Tele": "Telemundo", "TELEMUND": "Telemundo", "UNIVERSO": "Universo",
     "Fox Sports 1": "FS1", "Fox Sports 2": "FS2",
 }
@@ -320,9 +313,9 @@ HIDE = {"Telemundo", "Universo", "TeleXitos", "Univision", "UniMas", "TUDN",
 # what a card prefers when a match was on more than one
 ORDER = ["NBC", "NBCSN", "USA Network", "CNBC", "Syfy", "FOX", "FS1", "FS2",
          "FOX Soccer Plus", "CBS", "CBSSN", "ESPN", "ESPN2", "ESPNEWS", "TNT",
-         "beIN", "GOLTV", "Peacock", "P+", "ESPN+", "B/R Live",
-         "CBS All Access", "NBC Gold", "ESPN3", "PL Extra",
-         "NBC App", "ESPN App", "FOX Sports GO", "CBS Golazo"]
+         "beIN", "GOLTV", "Peacock", "Paramount+", "ESPN+", "B/R Live",
+         "CBS All Access", "NBC Sports Gold", "ESPN3", "PL Extra Time",
+         "NBC Sports App", "ESPN App", "FOX Sports GO", "CBS Sports Golazo"]
 
 
 def clean(nets):
