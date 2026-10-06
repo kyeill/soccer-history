@@ -71,7 +71,15 @@ const ARSENAL = "359", CHELSEA = "363";
 const WINDOWS = ["NBC Saturday", "Sky Sunday"];
 // a European header wears its competition's colour, lightened to read on a
 // card; the English cups stay plain
-const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#5b9bea" };
+const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#5b9bea",
+                      FAC: "#d71921", LC: "#008f5e" };
+// HIS CUP COLOURS (2026-10-06): the League Cup wears its green throughout,
+// the FA Cup its red only from the SEMIFINALS -- the rounds before are league
+// clubs against non-league ones, and he wants the colour to mean Wembley.
+function headColour(m) {
+  if (m.comp === "FAC" && m.stage !== "Semifinals" && m.stage !== "Final") return null;
+  return COMP_COLOUR[m.comp] || null;
+}
 const DAYS = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday",
                Fri: "Friday", Sat: "Saturday", Sun: "Sunday" };
 
@@ -162,28 +170,31 @@ function stageText(m) {
   //     UEL Round of 16 (2nd Leg: 3-3 agg, 4-3 Pen)
   // A shootout always follows extra time, so ET is said only when there was
   // no shootout. The first leg settles nothing, so it says only which leg.
-  const end = m.pens ? m.pens + " Pen" : (m.aet ? "ET" : "");
+  const how = m.pens ? m.pens + " Pen" : (m.aet ? "ET" : "");
   let tail;
   if (m.leg === 1) tail = "1st Leg";
   else if (m.leg === 2) {
     const inner = [];
     if (m.agg) inner.push(m.agg + " agg");
-    if (end) inner.push(end);
+    if (how) inner.push(how);
     tail = "2nd Leg" + (inner.length ? ": " + inner.join(", ") : "");
-  } else tail = end;
-  const leg = tail ? " (" + tail + ")" : "";
-  if (m.comp === "USC") return { full: "UEFA Super Cup" + leg,
-                                 short: "Super Cup" + leg };
+  } else tail = how;
+  // IT IS HANDED BACK SEPARATELY (his call 2026-10-06), because it belongs at
+  // the very END of the header -- after a final's city: "2025 UEFA Super Cup |
+  // Udine (4-3 Pen)".
+  const end = tail ? " (" + tail + ")" : "";
+  if (m.comp === "USC") return { full: "UEFA Super Cup", short: "Super Cup", end: end };
   // a one-match event is its own name: MLS Cup, the Campeones Cup
-  if (m.stage === "MLS Cup") return { full: "MLS Cup" + leg, short: "MLS Cup" + leg };
-  if (m.comp === "CAMP" || m.comp === "CCUP") return { full: c.name + leg,
-                                                       short: c.short + leg };
+  if (m.stage === "MLS Cup") return { full: "MLS Cup", short: "MLS Cup", end: end };
+  if (m.comp === "CAMP" || m.comp === "CCUP") return { full: c.name, short: c.short,
+                                                       end: end };
   let st = (m.stage || "").replace(/ Replay$/, " (Replay)");
   // Europe reads SHORT and without its season (his call 2026-10-06): "UEL
-  // Group Stage", not "2015-16 Europa League: Group Stage". A final keeps its
-  // year, which cardHead puts in front: "2019 UCL Final".
+  // Group Stage", not "2015-16 Europa League: Group Stage". A FINAL is spelled
+  // out and keeps its year, which cardHead puts in front: "2019 Champions
+  // League Final".
   const euro = m.comp === "UCL" || m.comp === "UEL" || m.comp === "UECL";
-  const name = euro ? c.short : c.name;
+  const name = euro && !isFinal(m) ? c.short : c.name;
   // a round shortens further only if the header would wrap: "League Cup Third
   // Round" -> "League Cup R3" (his overflow check 2026-10-02)
   const ROUND_SHORT = { "First Round": "R1", "Second Round": "R2",
@@ -194,8 +205,7 @@ function stageText(m) {
   Object.keys(ROUND_SHORT).forEach(k => {
     if (shortSt.indexOf(k) === 0) shortSt = ROUND_SHORT[k] + shortSt.slice(k.length);
   });
-  return { full: name + " " + st + leg,
-           short: c.short + " " + shortSt + leg };
+  return { full: name + " " + st, short: c.short + " " + shortSt, end: end };
 }
 /* HIS HEADER AND HIS LINES BELOW (2026-10-02).
 
@@ -256,11 +266,13 @@ function cardHead(m) {
     ? '<span class="hstage" data-short="' + esc(s.short) + '">' + esc(s.full) + "</span>"
     : esc(s.full);
   const big = bigStage(m);
+  // how it ended reads LAST, after a final's city (his call 2026-10-06)
+  const end = esc(s.end || "");
   // the year leads a final, as it does a Michigan tournament card -- in Europe
   // too, now that the label no longer carries the season: "2019 UCL Final".
   // The city of a final rides up there with it.
-  const head = !big ? lab
-    : m.date.slice(0, 4) + " " + lab + (m.place ? " | " + esc(cityOf(m)) : "");
+  const head = (!big ? lab
+    : m.date.slice(0, 4) + " " + lab + (m.place ? " | " + esc(cityOf(m)) : "")) + end;
   // EVERY CUP -- the domestic ones, Europe, and his other teams' tournaments --
   // carries nothing but the round up top, so the day, date, network and time
   // have a line of their own below the score.
@@ -427,7 +439,7 @@ function card(m) {
     cls += " celebrate";
     ring = ";--celeb:" + bc + ";--celebring:" + bc + "44";
   }
-  const headCol = COMP_COLOUR[m.comp];
+  const headCol = headColour(m);
   return '<div class="row' + cls + '" data-id="' + m.id + '" style="--winwash:' +
     shade(teamColour(m.opp)) + ring + '">' +
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + "><span>" +
@@ -495,7 +507,7 @@ function twoCard(m) {
       ? (m.mw != null ? "[MW" + m.mw + "] " + fmtTime(m.time)
                       : "Premier League " + fmtTime(m.time))
       : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) +
-        "</span> " + fmtTime(m.time));
+        "</span>" + esc(st.end || "") + " " + fmtTime(m.time));
     segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
   }
   const winner = winId;
@@ -525,7 +537,7 @@ function twoCard(m) {
   // dangling at the end of a line
   const head = segs.map((x, i) => "<span>" +
     (i ? '<span class="msep">|</span> ' : "") + x + "</span>").join("");
-  const headCol = COMP_COLOUR[m.comp];
+  const headCol = headColour(m);
   return '<div class="row two' + cls + '" data-id="' + m.id +
     '" style="--winwash:' + wash + ring + '">' +
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + ">" +

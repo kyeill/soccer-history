@@ -323,7 +323,13 @@ beside the score boxes any more:
     2025 UEFA Super Cup (4-3 Pen) | Udine
 
 A shootout always follows extra time, so ET is said only when there was no
-shootout. A NIGHT INSIDE A TIE HE WON IS NOT A DEFEAT, so its score is not
+shootout, and it reads LAST -- after a final's city, as the Super Cup shows.
+
+HEADER COLOURS (2026-10-06): the League Cup wears #008f5e throughout, the FA
+Cup #d71921 from the SEMIFINALS on and nothing before. Europe keeps its own:
+UCL #5b9bea, UEL #f68e1f, UECL #2fc27a. A EUROPEAN FINAL spells its
+competition out -- `2019 Champions League Final | Madrid` -- where every other
+European night is short. A NIGHT INSIDE A TIE HE WON IS NOT A DEFEAT, so its score is not
 italic either -- City 2019 stands upright at 3-4.
 
 A TIE IS ONE RESULT, so the tie decides how each night reads, not the night's
