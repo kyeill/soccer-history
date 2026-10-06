@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261006-094616. Modelled on games-history's Michigan view (michCard): one card
+   20261006-105408. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261006-094616";
+const BUILD = "20261006-105408";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -357,8 +357,12 @@ function card(m) {
   const themBox = '<span class="' + boxCls(lineThem) + '"' +
     paintBox(themBg, colourOf(mx.opp_font)) + ">" + (up ? "" : m.them) + "</span>";
   // NOTHING RIDES BESIDE THE BOXES any more: the header carries the aggregate
-  // and the shootout both (his calls 2026-10-06)
-  const boxes = '<span class="boxes">' + usBox + themBox + "</span>";
+  // and the shootout both (his calls 2026-10-06).
+  // AN AWARDED MATCH SHOWS NO SCORE AT ALL (his call 2026-10-06): Rennes at
+  // home in 2021 was never played -- UEFA gave it to them 3-0 -- so a score
+  // on the card would say it was.
+  const boxes = m.awarded ? "" :
+    '<span class="boxes">' + usBox + themBox + "</span>";
   // HIS LEG RULES (2026-10-06). A two-legged tie is one result, so the TIE
   // decides how each night reads, not the night's own score:
   //   WON the tie   leg 1 lost  -- grey, but NOT struck through
@@ -392,7 +396,6 @@ function card(m) {
   // card has of its own goes in parts; the day, date and network find their
   // place around it (see cardHead's note).
   const parts = [];
-  if (m.awarded) parts.push("Awarded");
   // the scorer and minute, already worded by the harvest ("Kane 86'")
   if (m.late_win && !m.scorers) parts.push(m.late_win);
   if (m.late_eq && !m.scorers) parts.push(m.late_eq);
