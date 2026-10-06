@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261006-113733. Modelled on games-history's Michigan view (michCard): one card
+   20261006-114659. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261006-113733";
+const BUILD = "20261006-114659";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -349,13 +349,22 @@ function card(m) {
   const lineUs = !up && (m.aet || m.pens) && W;
   const lineThem = !up && (m.aet || m.pens) && L;
   const boxCls = line => "sc mbox" + (line ? " u" : "") + (italic ? " l" : "");
-  const usBg = colourOf(mx.team_bg) || VIEWS[m.team].box;
-  const themBg = colourOf(mx.opp_bg) || "#" + teamColour(m.opp).replace("#", "");
+  // NO KIT, NO COLOUR (his call 2026-10-06): a match still to come wears plain
+  // grey boxes, and so does a Tottenham match he has not given a kit. USMNT
+  // and Atlanta keep their own colours for the matches they have played,
+  // since he has coloured nothing there yet.
+  const GREY = "#6a6a70";
+  const plain = up || (m.team === "spurs" && !mx.team_bg);
+  const usBg = plain ? GREY : (colourOf(mx.team_bg) || VIEWS[m.team].box);
+  const themBg = plain ? GREY
+    : (colourOf(mx.opp_bg) || "#" + teamColour(m.opp).replace("#", ""));
   const usBox = '<span class="' + boxCls(lineUs) + '"' +
-    paintBox(usBg, colourOf(mx.team_font) || (mx.team_bg ? null : "#ffffff")) + ">" +
+    paintBox(usBg, plain ? null
+      : (colourOf(mx.team_font) || (mx.team_bg ? null : "#ffffff"))) + ">" +
     (up ? "" : m.us) + "</span>";
   const themBox = '<span class="' + boxCls(lineThem) + '"' +
-    paintBox(themBg, colourOf(mx.opp_font)) + ">" + (up ? "" : m.them) + "</span>";
+    paintBox(themBg, plain ? null : colourOf(mx.opp_font)) + ">" +
+    (up ? "" : m.them) + "</span>";
   // NOTHING RIDES BESIDE THE BOXES any more: the header carries the aggregate
   // and the shootout both (his calls 2026-10-06).
   // AN AWARDED MATCH SHOWS NO SCORE AT ALL (his call 2026-10-06): Rennes at
