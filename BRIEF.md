@@ -325,9 +325,11 @@ beside the score boxes any more:
 A shootout always follows extra time, so ET is said only when there was no
 shootout, and it reads LAST -- after a final's city, as the Super Cup shows.
 
-HEADER COLOURS (2026-10-06): the League Cup wears #008f5e throughout, the FA
-Cup #d71921 from the SEMIFINALS on and nothing before. Europe keeps its own:
-UCL #5b9bea, UEL #f68e1f, UECL #2fc27a. A EUROPEAN FINAL spells its
+HEADER COLOURS (2026-10-06): both domestic cups wear theirs only from the
+SEMIFINALS, where the ties move to Wembley -- the FA Cup #d71921, the League
+Cup #008f5e -- and read plain grey before that. Europe wears its colour
+throughout: UCL #5b9bea, UEL #f68e1f, UECL #2fc27a, and the Super Cup a gold
+of its own, #d4af37. A EUROPEAN FINAL spells its
 competition out -- `2019 Champions League Final | Madrid` -- where every other
 European night is short. A NIGHT INSIDE A TIE HE WON IS NOT A DEFEAT, so its score is not
 italic either -- City 2019 stands upright at 3-4.

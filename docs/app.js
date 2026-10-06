@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261006-094324. Modelled on games-history's Michigan view (michCard): one card
+   20261006-094616. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261006-094324";
+const BUILD = "20261006-094616";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -71,13 +71,17 @@ const ARSENAL = "359", CHELSEA = "363";
 const WINDOWS = ["NBC Saturday", "Sky Sunday"];
 // a European header wears its competition's colour, lightened to read on a
 // card; the English cups stay plain
-const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#5b9bea",
+const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#d4af37",
                       FAC: "#d71921", LC: "#008f5e" };
-// HIS CUP COLOURS (2026-10-06): the League Cup wears its green throughout,
-// the FA Cup its red only from the SEMIFINALS -- the rounds before are league
-// clubs against non-league ones, and he wants the colour to mean Wembley.
+// HIS CUP COLOURS (2026-10-06): BOTH domestic cups wear theirs only from the
+// SEMIFINALS, where the ties move to Wembley -- the rounds before are league
+// clubs against non-league ones and read plain grey. Europe wears its colour
+// throughout, and the Super Cup has a gold of its own.
+const WEMBLEY = ["FAC", "LC"];
 function headColour(m) {
-  if (m.comp === "FAC" && m.stage !== "Semifinals" && m.stage !== "Final") return null;
+  if (WEMBLEY.indexOf(m.comp) > -1 && m.stage !== "Semifinals" && m.stage !== "Final") {
+    return null;
+  }
   return COMP_COLOUR[m.comp] || null;
 }
 const DAYS = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday",
