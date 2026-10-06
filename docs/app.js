@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261006-124539. Modelled on games-history's Michigan view (michCard): one card
+   20261006-125341. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261006-124539";
+const BUILD = "20261006-125341";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -474,8 +474,19 @@ function card(m) {
   const rows = [];
   let head = h.head;
   if (h.down) {
-    rows.push(h.down.map(p => String(p).replace(/<[^>]+>/g, "")));
-    if (parts.length) rows.push(parts);
+    // A LONE LATE WINNER IS NOT WORTH A FOURTH LINE (his call 2026-10-06):
+    // the date goes up to the end of the header, and the line below opens
+    // with the network and reads his note after it. A SCORER LIST still takes
+    // a line of its own, as he asked on 2026-10-02.
+    const plain = p => String(p).replace(/<[^>]+>/g, "");
+    const lone = parts.length === 1 && !m.scorers && (m.late_win || m.late_eq);
+    if (lone) {
+      head += ' | <span class="hdate">' + esc(plain(h.down[0])) + "</span>";
+      rows.push(h.down.slice(1).map(plain).concat(parts));
+    } else {
+      rows.push(h.down.map(plain));
+      if (parts.length) rows.push(parts);
+    }
   } else if (parts.length) {
     const bits = h.dayTime ? [h.dayTime.short] : [];
     (h.tail || []).forEach((t, i) => bits.push(
