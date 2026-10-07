@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261007-113054. Modelled on games-history's Michigan view (michCard): one card
+   20261007-140240. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261007-113054";
+const BUILD = "20261007-140240";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -422,12 +422,12 @@ function card(m) {
   const lineUs = !up && (m.aet || m.pens) && W;
   const lineThem = !up && (m.aet || m.pens) && L;
   const boxCls = line => "sc mbox" + (line ? " u" : "") + (italic ? " l" : "");
-  // NO KIT, NO COLOUR (his call 2026-10-06): a match still to come wears plain
-  // grey boxes, and so does a Tottenham match he has not given a kit. USMNT
-  // and Atlanta keep their own colours for the matches they have played,
-  // since he has coloured nothing there yet.
+  // NO KIT, NO COLOUR (his calls 2026-10-06, extended to every tab
+  // 2026-10-07): a match still to come wears plain grey boxes, and so does
+  // any match he has not given a kit -- which today means all of USMNT and
+  // Atlanta, until he colours them.
   const GREY = "#6a6a70";
-  const plain = up || (m.team === "spurs" && !mx.team_bg);
+  const plain = up || !mx.team_bg;
   const usBg = plain ? GREY : (colourOf(mx.team_bg) || VIEWS[m.team].box);
   const themBg = plain ? GREY
     : (colourOf(mx.opp_bg) || "#" + teamColour(m.opp).replace("#", ""));
@@ -455,7 +455,10 @@ function card(m) {
   //                 leg 2 won   -- no colour, but not struck either
   //                 leg 2 else  -- struck
   // A level first leg of a LOST tie settled nothing either way: grey, plain.
-  let bar = W, bold = W, struck = L;
+  // A MATCH NOBODY PLAYED IS NOT STRUCK THROUGH (his call 2026-10-07):
+  // Rennes at home in 2021 was awarded 3-0 and never kicked off, so the card
+  // reads plain -- no score, no colour, no line through their name.
+  let bar = W, bold = W, struck = L && !m.awarded;
   if (m.leg && m.through === true) {
     struck = false;
     if (m.leg === 2) bar = true;

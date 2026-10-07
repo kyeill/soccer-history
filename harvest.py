@@ -1071,6 +1071,30 @@ def main():
     le = sum(1 for m in matches if m.get("late_eq"))
     print("output/games.json  %d matches, %d opponents, %d late winners, %d late equalizers"
           % (len(matches), len(used) - 1, lw, le))
+    # WHERE EACH SCORER LINE CAME FROM (his call 2026-10-07): he wants to hear
+    # it on every refresh, so he can close the gap and read one source.
+    asks = {"scorers", "late winner", "late equalizer"}
+    auto = []
+    for m in matches:
+        if m.get("team") != "spurs":
+            continue
+        kind = ("scorers" if m.get("scorers")
+                else "late" if m.get("late_win") or m.get("late_eq") else None)
+        if not kind:
+            continue
+        cell = str((m.get("mx") or {}).get("footer") or "")
+        got = {p.strip().lower() for p in cell.split("|")} & asks
+        if kind == "scorers":
+            ok = "scorers" in got
+        else:
+            ok = bool(got)
+        if not ok:
+            auto.append(m["date"])
+    if auto:
+        print("  %d scorer lines the sheet does not ask for, still coming from"
+              " the old rules: %s" % (len(auto), ", ".join(auto)))
+    else:
+        print("  every scorer line comes from his sheet")
 
 
 if __name__ == "__main__":
