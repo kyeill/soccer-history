@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261006-142709. Modelled on games-history's Michigan view (michCard): one card
+   20261007-095145. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261006-142709";
+const BUILD = "20261007-095145";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -489,7 +489,13 @@ function card(m) {
   // his Notes, and a Footer phrase that is its own text ("Pink Out")
   if (mx.note) parts.push(mx.note);
   const footer = String(mx.footer || "").trim();
-  if (footer.indexOf(" ") > -1 && parts.indexOf(footer) < 0) parts.push(footer);
+  // "Scorers" and "Late Winner" are instructions to the harvest, not phrases
+  // to print (2026-10-07)
+  const ASKS = ["scorers", "late winner"];
+  if (footer.indexOf(" ") > -1 && ASKS.indexOf(footer.toLowerCase()) < 0 &&
+      parts.indexOf(footer) < 0) {
+    parts.push(footer);
+  }
   // HIS SHAPES (2026-10-02). A cup's day/date/network line is always there and
   // his own details take a fourth; a league match keeps the day up top and
   // sends the date and network below -- unless it needs that line for him.

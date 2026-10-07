@@ -489,7 +489,13 @@ function card(m) {
   // his Notes, and a Footer phrase that is its own text ("Pink Out")
   if (mx.note) parts.push(mx.note);
   const footer = String(mx.footer || "").trim();
-  if (footer.indexOf(" ") > -1 && parts.indexOf(footer) < 0) parts.push(footer);
+  // "Scorers" and "Late Winner" are instructions to the harvest, not phrases
+  // to print (2026-10-07)
+  const ASKS = ["scorers", "late winner"];
+  if (footer.indexOf(" ") > -1 && ASKS.indexOf(footer.toLowerCase()) < 0 &&
+      parts.indexOf(footer) < 0) {
+    parts.push(footer);
+  }
   // HIS SHAPES (2026-10-02). A cup's day/date/network line is always there and
   // his own details take a fourth; a league match keeps the day up top and
   // sends the date and network below -- unless it needs that line for him.

@@ -390,3 +390,15 @@ INK THAT VANISHES INTO A LIGHT BOX is darkened until it can be seen: his
 European kits put #d9d9d9 on #ffffff, which reads at 1.4:1 and is simply not
 there on a phone, and comes out around #a6a6a6. A DARK box is left alone --
 Palace's red on blue and City's white on sky are his kits and his business.
+
+## His Footer column asks for a line (Kyle, 2026-10-07)
+
+FOOTER = "Scorers" puts the whole Tottenham list on a card the Top Six rule
+would not give one: every West Ham meeting, the 5-4 at Leicester, the 4-0 at
+Villa. FOOTER = "Late Winner" puts the late goals there, as on the 2-2 at
+Sheffield United that won the tie but was no win on the night. Neither word
+is printed -- it is an instruction, not a note. A Footer value that is a
+COLOUR WORD still paints the line, and one that is a PHRASE still prints.
+
+Every match therefore keeps its scorer list and its late goals through the
+harvest, under _scorers and _late, dropped before the file is written.

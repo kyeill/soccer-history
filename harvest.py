@@ -320,6 +320,26 @@ def goals_of(slug, eid, home_id, final):
     return None
 
 
+def when_of(mn, add):
+    return "%d'" % mn + ("+%d" % add if add else "")
+
+
+def listed_goals(gs):
+    """"Kane 80', Ndombele 84'", a brace grouped: "Kane 86', 90'".
+
+    Lifted out of late_flags (2026-10-07) because his Sheet can ask for a
+    late line on a card the rule would not give one.
+    """
+    order, mins = [], {}
+    for mn, add, who in gs:
+        who = who or "Late Winner"
+        if who not in mins:
+            order.append(who)
+            mins[who] = []
+        mins[who].append(when_of(mn, add))
+    return ", ".join("%s %s" % (w, ", ".join(mins[w])) for w in order)
+
+
 def late_flags(goals, us, them_id, result):
     """(late winner minute, late equalizer minute) as display strings or None.
 
@@ -339,27 +359,13 @@ def late_flags(goals, us, them_id, result):
             ahead_since = None
     # HIS WORDING (2026-10-02): the card names the scorer -- "Kane 86'" --
     # and falls back to "Late Winner 86'" when the commentary did not name one
-    def when_of(mn, add):
-        return "%d'" % mn + ("+%d" % add if add else "")
-
-    def listed(gs):
-        """"Kane 80', Ndombele 84'", a brace grouped: "Kane 86', 90'"."""
-        order, mins = [], {}
-        for mn, add, who in gs:
-            who = who or "Late Winner"
-            if who not in mins:
-                order.append(who)
-                mins[who] = []
-            mins[who].append(when_of(mn, add))
-        return ", ".join("%s %s" % (w, ", ".join(mins[w])) for w in order)
-
     winner = eq = None
     if result == "W" and lead > 0 and ahead_since and ahead_since[0] >= 80:
         # EVERY Spurs goal from the 80th minute on, not only the one that put
         # them ahead (his call 2026-10-02): Lokomotiv 2020 reads
         # "Kane 80', Ndombele 84'" even though the 84th won it
         late = [(mn, add, who) for mn, add, tid, who in goals if tid == us and mn >= 80]
-        winner = listed(late) if late else "Late Winner " + when_of(*ahead_since[:2])
+        winner = listed_goals(late) if late else "Late Winner " + when_of(*ahead_since[:2])
     if lead == 0 and goals and them_id in TOP_SIX:
         mn, add, tid, who = goals[-1]
         if tid == us and mn >= 80:
@@ -701,7 +707,10 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
         # calls 2026-10-02): "Son 12', Kane 45'+2, Johnson 77'"
         # ONLY against the Top Six -- every win was tried once and read as too
         # much -- and not on a loss.
-        if goals and m["result"] in ("W", "D") and tid in TOP_SIX:
+        # EVERY match keeps its scorer list and its late goals under a private
+        # name, because his Sheet can ask for either on any card (2026-10-07).
+        # They are dropped again before the file is written.
+        if goals:
             order, mins = [], {}
             for mn, add, team, who in goals:
                 if team != SPURS:
@@ -711,7 +720,14 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
                     order.append(who)
                     mins[who] = []
                 mins[who].append("%d'%s" % (mn, "+%d" % add if add else ""))
-            m["scorers"] = ["%s %s" % (who, ", ".join(mins[who])) for who in order]
+            if order:
+                m["_scorers"] = ["%s %s" % (w, ", ".join(mins[w])) for w in order]
+            late = [(mn, add, who) for mn, add, team, who in goals
+                    if team == SPURS and mn >= 80]
+            if late:
+                m["_late"] = listed_goals(late)
+            if m.get("_scorers") and m["result"] in ("W", "D") and tid in TOP_SIX:
+                m["scorers"] = m["_scorers"]
     # the opponent's finish: its Premier League position that season, or how
     # far it went in THIS competition when it is not a Premier League club
     if tid in pl_table:
@@ -961,6 +977,20 @@ def main():
         m["team"] = "spurs"
         if m["date"] in marks:
             m["mx"] = marks[m["date"]]
+    # HIS FOOTER COLUMN CAN ASK FOR A LINE (2026-10-07). "Scorers" puts the
+    # whole Tottenham list on a card the Top Six rule would not give one --
+    # every West Ham meeting, the 5-4 at Leicester -- and "Late Winner" puts
+    # the late goals there, as on the 2-2 at Sheffield United that won the
+    # tie. Neither word is printed; it is an instruction, not a note.
+    for m in matches:
+        ask = str((m.get("mx") or {}).get("footer") or "").strip().lower()
+        if ask == "scorers" and m.get("_scorers"):
+            m["scorers"] = m["_scorers"]
+        elif ask == "late winner" and m.get("_late"):
+            m["late_win"] = m["_late"]
+    for m in matches:
+        m.pop("_scorers", None)
+        m.pop("_late", None)
     # USMNT and Atlanta United (others.py), each with its own Sheet tab
     import others
     us, atl = others.main()
