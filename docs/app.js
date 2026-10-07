@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261007-100254. Modelled on games-history's Michigan view (michCard): one card
+   20261007-100818. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261007-100254";
+const BUILD = "20261007-100818";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -177,7 +177,7 @@ function isMemorable(m) {
 // asked (2026-10-06), so they are not in here
 const NET_SHORT = { "Paramount+": "P+", "NBC Sports Gold": "NBC Gold",
   "NBC Sports App": "NBC App", "PL Extra Time": "PL Extra",
-  "CBS Sports Golazo": "CBS Golazo" };
+  "CBS Sports Golazo": "CBS Golazo", "B/R Live": "B/R" };
 function shortNets(s) {
   let out = String(s);
   Object.keys(NET_SHORT).forEach(k => { out = out.split(k).join(NET_SHORT[k]); });

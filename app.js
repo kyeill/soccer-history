@@ -177,7 +177,7 @@ function isMemorable(m) {
 // asked (2026-10-06), so they are not in here
 const NET_SHORT = { "Paramount+": "P+", "NBC Sports Gold": "NBC Gold",
   "NBC Sports App": "NBC App", "PL Extra Time": "PL Extra",
-  "CBS Sports Golazo": "CBS Golazo" };
+  "CBS Sports Golazo": "CBS Golazo", "B/R Live": "B/R" };
 function shortNets(s) {
   let out = String(s);
   Object.keys(NET_SHORT).forEach(k => { out = out.split(k).join(NET_SHORT[k]); });
