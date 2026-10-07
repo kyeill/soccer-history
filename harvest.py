@@ -988,6 +988,8 @@ def main():
             m["scorers"] = m["_scorers"]
         elif ask == "late winner" and m.get("_late"):
             m["late_win"] = m["_late"]
+        elif ask == "late equalizer" and m.get("_late"):
+            m["late_eq"] = m["_late"]
     for m in matches:
         m.pop("_scorers", None)
         m.pop("_late", None)

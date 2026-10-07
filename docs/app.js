@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261007-095145. Modelled on games-history's Michigan view (michCard): one card
+   20261007-100254. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261007-095145";
+const BUILD = "20261007-100254";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -491,7 +491,7 @@ function card(m) {
   const footer = String(mx.footer || "").trim();
   // "Scorers" and "Late Winner" are instructions to the harvest, not phrases
   // to print (2026-10-07)
-  const ASKS = ["scorers", "late winner"];
+  const ASKS = ["scorers", "late winner", "late equalizer"];
   if (footer.indexOf(" ") > -1 && ASKS.indexOf(footer.toLowerCase()) < 0 &&
       parts.indexOf(footer) < 0) {
     parts.push(footer);
