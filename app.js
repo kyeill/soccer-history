@@ -490,7 +490,13 @@ function card(m) {
   // his Footer column was not an instruction -- the harvest has already told
   // them apart and left the text in `say`.
   if (mx.note) parts.push(mx.note);
+  // his Footer column paints the line when the WHOLE cell is a colour word --
+  // anything longer is words of his, and words are printed, not read (his
+  // call 2026-10-07). This has to happen HERE, while parts is still being
+  // filled: it read after the rows were built, and five cards said nothing.
   const footer = String(mx.footer || "").trim();
+  const footCol = colourOf(footer);
+  if (mx.say && !footCol) parts.push(mx.say);
   // HIS SHAPES (2026-10-02). A cup's day/date/network line is always there and
   // his own details take a fourth; a league match keeps the day up top and
   // sends the date and network below -- unless it needs that line for him.
@@ -522,13 +528,6 @@ function card(m) {
     head += h.dayTime ? " " + h.dayTime.long : "";
     rows.push({ items: h.tail || [], tv: 0 });
   }
-  // his Footer column paints the line when the WHOLE cell is a colour word --
-  // anything longer is words of his, and words are printed, not read (his
-  // call 2026-10-07)
-  const footCol = colourOf(footer);
-  // ...and a cell that IS a colour word is a colour, so it is not also read
-  // out on the line
-  if (mx.say && !footCol) parts.push(mx.say);
 
   // a FINAL wears a frame: grey, dashed on a loss, the competition's colour
   // when won -- as the Michigan bowls and title games do. HIS BORDER COLUMN
