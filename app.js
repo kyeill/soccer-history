@@ -261,6 +261,9 @@ function stageText(m) {
   Object.keys(ROUND_SHORT).forEach(k => {
     if (shortSt.indexOf(k) === 0) shortSt = ROUND_SHORT[k] + shortSt.slice(k.length);
   });
+  // the matchday rides at the end of a group or league phase (his call
+  // 2026-10-07): "UEL Group Stage MD4"
+  if (m.md) { st += " MD" + m.md; shortSt += " MD" + m.md; }
   return { full: name + " " + st, short: c.short + " " + shortSt, end: end };
 }
 /* HIS HEADER AND HIS LINES BELOW (2026-10-02).
@@ -544,6 +547,17 @@ function card(m) {
   if (!bc && bigStage(m) && !up) {
     bc = W && isFinal(m) ? (COMP_COLOUR[m.comp] || "#e8e8e8") : "#8a8a92";
     if (L) cls += " predash";
+  }
+  // ELIMINATED (his call 2026-10-07): the night Tottenham went out of a
+  // knockout wears a dashed grey border, and so does the first leg of that
+  // tie -- the two of them are one result. A group or league phase is not a
+  // knockout, so a defeat there is just a defeat.
+  const CUPS = ["FAC", "LC", "UCL", "UEL", "UECL"];
+  const phase = m.stage === "Group Stage" || m.stage === "League Phase";
+  if (!bc && !up && CUPS.indexOf(m.comp) > -1 && !phase &&
+      (m.leg ? m.through === false : L)) {
+    bc = "#8a8a92";
+    cls += " predash";
   }
   if (bc) {
     cls += " celebrate";

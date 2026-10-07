@@ -460,6 +460,13 @@ COLOUR_FIX = {
     "Ipswich Town": "3a64a3", "Leicester City": "003090",
     "Brighton & Hove Albion": "0057b8", "Portsmouth": "001489",
     "Sheffield Wednesday": "1c3f94", "Gent": "1f4ba5", "Cruz Azul": "003b7f",
+    # his shades (2026-10-07): ESPN paints half of these plain white, which
+    # washes out to the same grey on every card
+    "Manchester City": "1c6bb0", "Manchester United": "f0a02c",
+    "Fulham": "141418", "Leeds United": "ffcd00", "Swansea City": "101014",
+    "Real Madrid": "efc444", "Eintracht Frankfurt": "0f0f12",
+    "Marseille": "2fa0dc", "F.C. K\u00f8benhavn": "1a4f9c",
+    "Wolfsberger": "1a8a3c",
 }
 
 
@@ -976,6 +983,18 @@ def main():
             m.pop("late_win", None)
             m.pop("late_eq", None)
     matches.sort(key=lambda m: (m["date"], m["time"]))
+    # THE MATCHDAY OF A GROUP OR LEAGUE PHASE (his call 2026-10-07). ESPN does
+    # not number them, but Tottenham play every one, so the order within a
+    # season's competition IS the number: "UEL Group Stage MD4".
+    seen_md = {}
+    for m in matches:
+        if m["comp"] not in ("UCL", "UEL", "UECL"):
+            continue
+        if m["stage"] not in ("Group Stage", "League Phase"):
+            continue
+        key = (m["season"], m["comp"])
+        seen_md[key] = seen_md.get(key, 0) + 1
+        m["md"] = seen_md[key]
     # his Sheet, matched on the date (Spurs never play twice in a day)
     marks = load_sheet("Tottenham", {m["date"] for m in matches})
     for m in matches:
