@@ -691,7 +691,7 @@ function defaults() {
     : VIEW === "spurs" ? CURRENT
     : (years.length ? Math.max.apply(null, years) : null);
   return { season: open, comp: null, team: null, hl: null, ko: false,
-           window: null, rival: null, net: null };
+           window: null, rival: null, net: null, kit: null };
 }
 // a Premier League year is a season: 2026-27, not 2026 (his call
 // 2026-10-02). USMNT and Atlanta play calendar years, so they keep theirs.
@@ -708,6 +708,7 @@ function passes(m, skip) {
   if (skip !== "net" && FILT.net && primaryNet(m.nets, m.season) !== FILT.net) {
     return false;
   }
+  if (skip !== "kit" && FILT.kit && (m.mx || {}).kit !== FILT.kit) return false;
   if (skip !== "window" && FILT.window && m.window !== FILT.window) return false;
   if (skip !== "rival" && FILT.rival && m.rival !== FILT.rival) return false;
   if (FILT.ko && !isKnockout(m)) return false;
@@ -833,6 +834,24 @@ function filterBar() {
       .concat(lead.length && rest.length ? [BAR] : [])
       .concat(rest.map(n => [n, n]));
     h += group("Network", select("net", "All Networks", opts, FILT.net));
+    // HIS KIT COLUMN (2026-10-07), in the order he wears them rather than
+    // alphabetically; anything else he writes there follows
+    const KIT_LEAD = ["home", "away", "third"];
+    const kits = new Set();
+    MATCHES.filter(x => passes(x, "kit")).forEach(x => {
+      const k = (x.mx || {}).kit;
+      if (k) kits.add(k);
+    });
+    if (FILT.kit) kits.add(FILT.kit);
+    if (kits.size) {
+      const rank = k => {
+        const i = KIT_LEAD.indexOf(String(k).toLowerCase());
+        return i < 0 ? KIT_LEAD.length : i;
+      };
+      const list = Array.from(kits).sort((a, b) =>
+        rank(a) - rank(b) || a.localeCompare(b, "en", { sensitivity: "base" }));
+      h += group("Kit", select("kit", "All Kits", list.map(k => [k, k]), FILT.kit));
+    }
   }
   // the late goals are read for Spurs only
   if (VIEW === "spurs") h += group("Highlights", select("hl", "All Matches", HL, FILT.hl));

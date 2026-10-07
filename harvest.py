@@ -920,7 +920,8 @@ def load_sheet(tab, dates):
         d = sheet_date(cell("date"))
         if not d:
             continue
-        mx = {"case": cell("case"), "attended": bool(cell("attended")),
+        mx = {"case": cell("case"), "kit": cell("kit"),
+              "attended": bool(cell("attended")),
               "shade": bool(cell("shade")), "border": cell("border"), "footer": cell("footer"),
               "note": cell("notes") or cell("note"),
               "team_bg": cell("team bg"), "team_font": cell("team font"),
