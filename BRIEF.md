@@ -393,12 +393,19 @@ Palace's red on blue and City's white on sky are his kits and his business.
 
 ## His Footer column asks for a line (Kyle, 2026-10-07)
 
-FOOTER = "Scorers" puts the whole Tottenham list on a card the Top Six rule
-would not give one: every West Ham meeting, the 5-4 at Leicester, the 4-0 at
-Villa. FOOTER = "Late Winner" puts the late goals there, as on the 2-2 at
-Sheffield United that won the tie but was no win on the night. Neither word
-is printed -- it is an instruction, not a note. A Footer value that is a
-COLOUR WORD still paints the line, and one that is a PHRASE still prints.
+THE FOOTER CELL IS THE WHOLE LINE. It is split on a BAR, and each part is
+either an INSTRUCTION or WORDS OF HIS OWN:
+
+    Scorers              the whole Tottenham list, on a card the Top Six rule
+                         would not give one
+    Late Winner          the goals from the 80th
+    Late Equalizer       the same, read as a point saved
+    anything else        printed exactly as written, and always LAST
+
+So `Scorers | Clinched UCL` reads "Son 12', Kane 64' | Clinched UCL". An
+instruction is never printed. A cell that is nothing BUT a colour word paints
+the line instead of printing, as it always did; a longer phrase is words, and
+words are printed. The Notes column still works and reads just before them.
 
 Every match therefore keeps its scorer list and its late goals through the
 harvest, under _scorers and _late, dropped before the file is written.

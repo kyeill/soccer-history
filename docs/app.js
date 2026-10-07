@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261007-100818. Modelled on games-history's Michigan view (michCard): one card
+   20261007-101754. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261007-100818";
+const BUILD = "20261007-101754";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -486,16 +486,11 @@ function card(m) {
   // calls 2026-10-02), so the late line is left off those cards
   if (m.scorers) parts.push(m.scorers.join(", "));
   if (m.status) parts.push("Postponed");
-  // his Notes, and a Footer phrase that is its own text ("Pink Out")
+  // HIS OWN WORDS COME LAST (2026-10-06): the Notes column, and whatever of
+  // his Footer column was not an instruction -- the harvest has already told
+  // them apart and left the text in `say`.
   if (mx.note) parts.push(mx.note);
   const footer = String(mx.footer || "").trim();
-  // "Scorers" and "Late Winner" are instructions to the harvest, not phrases
-  // to print (2026-10-07)
-  const ASKS = ["scorers", "late winner", "late equalizer"];
-  if (footer.indexOf(" ") > -1 && ASKS.indexOf(footer.toLowerCase()) < 0 &&
-      parts.indexOf(footer) < 0) {
-    parts.push(footer);
-  }
   // HIS SHAPES (2026-10-02). A cup's day/date/network line is always there and
   // his own details take a fourth; a league match keeps the day up top and
   // sends the date and network below -- unless it needs that line for him.
@@ -527,8 +522,13 @@ function card(m) {
     head += h.dayTime ? " " + h.dayTime.long : "";
     rows.push({ items: h.tail || [], tv: 0 });
   }
-  // his Footer column: a colour word paints the whole third row
-  const footCol = colourOf(footer.split(/\s+/)[0]);
+  // his Footer column paints the line when the WHOLE cell is a colour word --
+  // anything longer is words of his, and words are printed, not read (his
+  // call 2026-10-07)
+  const footCol = colourOf(footer);
+  // ...and a cell that IS a colour word is a colour, so it is not also read
+  // out on the line
+  if (mx.say && !footCol) parts.push(mx.say);
 
   // a FINAL wears a frame: grey, dashed on a loss, the competition's colour
   // when won -- as the Michigan bowls and title games do. HIS BORDER COLUMN

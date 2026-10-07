@@ -977,19 +977,32 @@ def main():
         m["team"] = "spurs"
         if m["date"] in marks:
             m["mx"] = marks[m["date"]]
-    # HIS FOOTER COLUMN CAN ASK FOR A LINE (2026-10-07). "Scorers" puts the
-    # whole Tottenham list on a card the Top Six rule would not give one --
-    # every West Ham meeting, the 5-4 at Leicester -- and "Late Winner" puts
-    # the late goals there, as on the 2-2 at Sheffield United that won the
-    # tie. Neither word is printed; it is an instruction, not a note.
+    # HIS FOOTER COLUMN IS THE WHOLE LINE (2026-10-07). Each part, split on a
+    # bar, is either an INSTRUCTION -- "Scorers" puts the whole Tottenham list
+    # on a card the Top Six rule would not give one, "Late Winner" and "Late
+    # Equalizer" put the late goals there -- or TEXT OF HIS OWN, printed
+    # exactly as written and always last. So "Scorers | Clinched UCL" reads
+    # "Son 12', Kane 64' | Clinched UCL".
+    ASKS = {"scorers": "scorers", "late winner": "late_win",
+            "late equalizer": "late_eq"}
     for m in matches:
-        ask = str((m.get("mx") or {}).get("footer") or "").strip().lower()
-        if ask == "scorers" and m.get("_scorers"):
-            m["scorers"] = m["_scorers"]
-        elif ask == "late winner" and m.get("_late"):
-            m["late_win"] = m["_late"]
-        elif ask == "late equalizer" and m.get("_late"):
-            m["late_eq"] = m["_late"]
+        cell = str((m.get("mx") or {}).get("footer") or "").strip()
+        if not cell:
+            continue
+        say = []
+        for part in cell.split("|"):
+            part = part.strip()
+            if not part:
+                continue
+            field = ASKS.get(part.lower())
+            if field == "scorers" and m.get("_scorers"):
+                m["scorers"] = m["_scorers"]
+            elif field and m.get("_late"):
+                m[field] = m["_late"]
+            elif not field:
+                say.append(part)
+        if say:
+            m["mx"]["say"] = " | ".join(say)
     for m in matches:
         m.pop("_scorers", None)
         m.pop("_late", None)
