@@ -71,7 +71,7 @@ const ARSENAL = "359", CHELSEA = "363";
 const WINDOWS = ["NBC Saturday", "Sky Sunday"];
 // a European header wears its competition's colour, lightened to read on a
 // card; the English cups stay plain
-const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#d4af37",
+const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#dcdce6",
                       FAC: "#d71921", LC: "#008f5e" };
 // HIS CUP COLOURS (2026-10-06): BOTH domestic cups wear theirs only from the
 // SEMIFINALS, where the ties move to Wembley -- the rounds before are league
