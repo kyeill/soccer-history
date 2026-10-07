@@ -324,7 +324,7 @@ def when_of(mn, add):
     return "%d'" % mn + ("+%d" % add if add else "")
 
 
-def listed_goals(gs):
+def listed_goals(gs, unknown="Late Winner"):
     """"Kane 80', Ndombele 84'", a brace grouped: "Kane 86', 90'".
 
     Lifted out of late_flags (2026-10-07) because his Sheet can ask for a
@@ -332,7 +332,7 @@ def listed_goals(gs):
     """
     order, mins = [], {}
     for mn, add, who in gs:
-        who = who or "Late Winner"
+        who = who or unknown
         if who not in mins:
             order.append(who)
             mins[who] = []
@@ -369,7 +369,12 @@ def late_flags(goals, us, them_id, result):
     if lead == 0 and goals and them_id in TOP_SIX:
         mn, add, tid, who = goals[-1]
         if tid == us and mn >= 80:
-            eq = (who + " " + "%d'" % mn + ("+%d" % add if add else "")) if who else                  "Late Equalizer %d'" % mn + ("+%d" % add if add else "")
+            # EVERY goal from the 80th, as the winner's line is (his call
+            # 2026-10-07): Wanyama's 80th at Liverpool in 2018 belongs with
+            # Kane's 90'+5, both of them equalizers on the night
+            late = [(g[0], g[1], g[3]) for g in goals
+                    if g[2] == us and g[0] >= 80]
+            eq = listed_goals(late, "Late Equalizer")
     return winner, eq
 
 
