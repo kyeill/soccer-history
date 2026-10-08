@@ -78,7 +78,14 @@ const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#dc
 // clubs against non-league ones and read plain grey. Europe wears its colour
 // throughout, and the Super Cup has a gold of its own.
 const WEMBLEY = ["FAC", "LC"];
+// A TV WINDOW STANDS OUT on his own cards (his call 2026-10-08). Violet is
+// the one hue the cups have not taken: the FA Cup wears red, the League Cup
+// and the Conference League green, the Champions League blue, the Europa
+// League orange, the Super Cup silver. Both windows share it, because the
+// header already says which one it was.
+const WINDOW_COLOUR = "#a78bfa";
 function headColour(m) {
+  if (windowOf(m)) return WINDOW_COLOUR;
   if (WEMBLEY.indexOf(m.comp) > -1 && m.stage !== "Semifinals" && m.stage !== "Final") {
     return null;
   }
