@@ -83,7 +83,10 @@ const WEMBLEY = ["FAC", "LC"];
    THE PURPLE IS LIFTED. #37003c is a background in that palette, not ink: at
    13px on this card it sits at 1.0:1, the same luminance as the card itself,
    and cannot be seen at all. #c08cff is the same hue where it can be read. */
-const WINDOW_COLOUR = { "NBC Saturday": "#c08cff", "Sky Sunday": "#14dcff" };
+// THE TWO ARE EVENED (his call 2026-10-08): the league's cyan dropped from
+// #14dcff to #00b4d8 so both windows read at 6.7:1, the weight the rest of
+// the palette sits at, instead of the cyan shouting over the purple at 10.
+const WINDOW_COLOUR = { "NBC Saturday": "#c08cff", "Sky Sunday": "#00b4d8" };
 function headColour(m) {
   const win = windowOf(m);
   if (win) return WINDOW_COLOUR[win] || null;
