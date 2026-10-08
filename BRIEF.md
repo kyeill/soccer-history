@@ -336,9 +336,11 @@ HEADER COLOURS (2026-10-06): both domestic cups wear theirs only from the
 SEMIFINALS, where the ties move to Wembley -- the FA Cup #d71921, the League
 Cup #008f5e -- and read plain grey before that. Europe wears its colour
 throughout: UCL #5b9bea, UEL #f68e1f, UECL #2fc27a, and the Super Cup a silver
-of its own, #dcdce6. A TV WINDOW on his own cards wears VIOLET #a78bfa, the
-one hue the cups had not taken; both windows share it, since the header
-already says which one it was -- brighter than the plain grey a cup round reads in. A EUROPEAN FINAL spells its
+of its own, #dcdce6. A TV WINDOW on his own cards wears the
+Premier League's own palette (2026-10-08): Sky Sunday its cyan #14dcff, NBC
+Saturday its purple LIFTED to #c08cff. #37003c is a background in that
+palette, not ink -- at 13px on this card it is 1.0:1 against the card itself
+and cannot be seen -- brighter than the plain grey a cup round reads in. A EUROPEAN FINAL spells its
 competition out -- `2019 Champions League Final | Madrid` -- where every other
 European night is short. A NIGHT INSIDE A TIE HE WON IS NOT A DEFEAT, so its score is not
 italic either -- City 2019 stands upright at 3-4.

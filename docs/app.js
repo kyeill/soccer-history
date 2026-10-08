@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261008-151047. Modelled on games-history's Michigan view (michCard): one card
+   20261008-151716. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261008-151047";
+const BUILD = "20261008-151716";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -78,14 +78,15 @@ const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#dc
 // clubs against non-league ones and read plain grey. Europe wears its colour
 // throughout, and the Super Cup has a gold of its own.
 const WEMBLEY = ["FAC", "LC"];
-// A TV WINDOW STANDS OUT on his own cards (his call 2026-10-08). Violet is
-// the one hue the cups have not taken: the FA Cup wears red, the League Cup
-// and the Conference League green, the Champions League blue, the Europa
-// League orange, the Super Cup silver. Both windows share it, because the
-// header already says which one it was.
-const WINDOW_COLOUR = "#a78bfa";
+/* A TV WINDOW STANDS OUT on his own cards (his colours, 2026-10-08), out of
+   the Premier League's own palette: its cyan for Sky, its purple for NBC.
+   THE PURPLE IS LIFTED. #37003c is a background in that palette, not ink: at
+   13px on this card it sits at 1.0:1, the same luminance as the card itself,
+   and cannot be seen at all. #c08cff is the same hue where it can be read. */
+const WINDOW_COLOUR = { "NBC Saturday": "#c08cff", "Sky Sunday": "#14dcff" };
 function headColour(m) {
-  if (windowOf(m)) return WINDOW_COLOUR;
+  const win = windowOf(m);
+  if (win) return WINDOW_COLOUR[win] || null;
   if (WEMBLEY.indexOf(m.comp) > -1 && m.stage !== "Semifinals" && m.stage !== "Final") {
     return null;
   }
