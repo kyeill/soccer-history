@@ -515,6 +515,14 @@ def ordinal(n):
     return "%d%s" % (n, "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th"))
 
 
+def place(n):
+    """A position in a table, 1st and all: ordinal() reads 1 as "Winner",
+    which a league phase never means (his call 2026-10-07)."""
+    n = int(n)
+    return "%d%s" % (n, "th" if 10 <= n % 100 <= 20
+                     else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th"))
+
+
 def league_table(slug, season):
     """{team id: position}. A finished season is cached for good."""
     try:
@@ -631,7 +639,7 @@ def venue_place(venue):
 
 
 def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tables,
-                eng_tables=None):
+                eng_tables=None, holder=None):
     import tv
     slug = e["league"]["slug"]
     code, comp_name = COMPS[slug]
@@ -740,9 +748,18 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
                 m["_late"] = listed_goals(late)
             if m.get("_scorers") and m["result"] in ("W", "D") and tid in TOP_SIX:
                 m["scorers"] = m["_scorers"]
-    # the opponent's finish: its Premier League position that season, or how
-    # far it went in THIS competition when it is not a Premier League club
-    if tid in pl_table:
+    # THE OPPONENT'S FINISH: its Premier League position that season, or how
+    # far it went in THIS competition when it is not a Premier League club.
+    # A SEASON STILL BEING PLAYED SETTLES NOTHING (his call 2026-10-07), so it
+    # shows no finish at all -- only a caret on the holder, the club that won
+    # it last season, or in Europe the one that won the Champions League.
+    euro = code in ("UCL", "UEL", "UECL")
+    held = (cup_run("UCL", season - 1, tid, finishes) == "Winner" if euro
+            else tid == holder)
+    if season == current_season() and not season_over(season):
+        if held:
+            m["fin"] = "^"
+    elif tid in pl_table:
         m["fin"] = ordinal(pl_table[tid])
     elif code in ("FAC", "LC"):
         # A DOMESTIC CUP NEVER SHOWS A CUP RUN (his call 2026-10-02): a club
@@ -755,7 +772,14 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
                 m["fin"] = label + ("+" if table[tid] == 1 else "")
                 break
     elif code in MAIN_SLUG:
-        m["fin"] = cup_run(code, season, tid, finishes)
+        run = cup_run(code, season, tid, finishes)
+        # A CLUB THAT DID NOT COME THROUGH THE LEAGUE PHASE shows its PLACE in
+        # it, which says far more than the words do (his call 2026-10-07)
+        if run == "Lg Phase":
+            t = (lp_tables.get(code) or {})
+            if tid in t:
+                run = place(t[tid])
+        m["fin"] = run
     # the league phase (2024-25 on): both clubs' positions, on knockout cards
     if code in ("UCL", "UEL", "UECL") and season >= 2024 and stage not in ("League Phase", ""):
         t = lp_tables.get(code) or {}
@@ -951,6 +975,11 @@ def main():
             events += [e for e in more if e["id"] not in ids]
         events = [e for e in events if (e.get("league") or {}).get("slug") in COMPS]
         pl_table = league_table("eng.1", season)
+        # WHO HELD THE LEAGUE going into this season: in a season still being
+        # played nothing is settled, so the champions wear a caret and nobody
+        # else wears anything (his call 2026-10-07)
+        last = league_table("eng.1", season - 1) if season > FIRST_SEASON else {}
+        holder = next((t for t, r in last.items() if r == 1), None)
         mw_map = matchweeks(season)
         lp_tables = {}
         if season >= 2024:
@@ -963,7 +992,7 @@ def main():
             for slug, _label in ENG_LEAGUES:
                 eng_tables[slug] = league_table(slug, season)
         got = [build_match(e, season, teams, goal_store, finishes, pl_table, mw_map,
-                           lp_tables, eng_tables) for e in events]
+                           lp_tables, eng_tables, holder) for e in events]
         played = [m for m in got if "us" in m]
         missing_mw = [m for m in got if m["comp"] == "PL" and "mw" not in m]
         print("  %s  %d matches (%d played)%s" % (
@@ -975,6 +1004,17 @@ def main():
         matches += got
     replays(matches)
     two_legged(matches)
+    # A EUROPEAN KNOCKOUT HE WON SHOWS NO FINISH (his call 2026-10-07), as a
+    # domestic cup does not: the club would only read back the round it lost
+    # to him. The caret on a holder stays.
+    for m in matches:
+        if m.get("comp") not in ("UCL", "UEL", "UECL"):
+            continue
+        if m.get("stage") in ("Group Stage", "League Phase"):
+            continue
+        won = m.get("through") if m.get("leg") else (m.get("result") == "W")
+        if won and m.get("fin") != "^":
+            m.pop("fin", None)
     # A LATE GOAL INSIDE A TIE (his call 2026-10-06): it settles nothing in a
     # first leg, and nothing in a second leg his side went out of -- Simons in
     # the 90th against Atletico in 2026 did not win anything. It counts only

@@ -409,3 +409,17 @@ words are printed. The Notes column still works and reads just before them.
 
 Every match therefore keeps its scorer list and its late goals through the
 harvest, under _scorers and _late, dropped before the file is written.
+
+## The finish behind the name (Kyle, 2026-10-07)
+
+A SEASON STILL BEING PLAYED SETTLES NOTHING, so it shows no finish at all --
+only a CARET on the holder, the club that won it last season (Arsenal, in
+2026-27), or in Europe the one that won the Champions League.
+
+A EUROPEAN KNOCKOUT OR QUALIFYING TIE HE WON shows no finish either, as a
+domestic cup does not: the club would only read back the round it just lost
+to him. Both legs, since the tie is one result. A caret survives it.
+
+A CLUB THAT DID NOT COME THROUGH A LEAGUE PHASE shows its PLACE in that
+table rather than the words -- Qarabag 36th, Hoffenheim 27th, Elfsborg 26th
+-- while one that did keeps its run: R16, QF, Playoff, Winner.
