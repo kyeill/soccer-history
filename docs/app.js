@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-142437. Modelled on games-history's Michigan view (michCard): one card
+   20261009-143123. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-142437";
+const BUILD = "20261009-143123";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -754,10 +754,14 @@ function twoCard(m) {
   // white border on a Tottenham win or a draw with the Top Six, a dashed grey
   // one on a loss or a draw with anyone else, and a win over the Top Six
   // fills the card in Spurs' own colour. Cards without Spurs wear nothing.
-  let cls = "", ring = "";
+  // NBC KEEPS THE LEFT COLUMN AND SKY THE RIGHT (his call 2026-10-09), so a
+  // matchweek with two Sundays and no Saturday leaves the gap it really had.
+  // Only where there are two columns to keep it in: a phone has one.
+  let cls = wins ? (m.window === "NBC Saturday" ? " col-nbc" : " col-sky") : "";
+  let ring = "";
   let wash = winner ? shade(teamColour(winner)) : "transparent";
   const mark = (colour, fill) => {
-    cls = " celebrate" + (fill ? " mwash" : "");
+    cls += " celebrate" + (fill ? " mwash" : "");
     ring = ";--celeb:" + colour + ";--celebring:" + colour + "44";
     if (fill) wash = shade(colour);
   };
@@ -771,8 +775,12 @@ function twoCard(m) {
     const euro = ["UCL", "UEL", "UECL"].indexOf(m.comp) > -1;
     const col = COMP_COLOUR[m.comp] || "#8a8a92";
     if (m.comp === "FAC" || m.comp === "LC") {
-      if (m.stage === "Final") mark(col, true);
-      else if (m.stage === "Semifinals") mark(col, false);
+      if (m.stage === "Final") {
+        mark(col, true);
+        // the fill is the club that beat them, as it is in Europe (his call
+        // 2026-10-09); the border stays the competition's
+        wash = shade(teamColour(m.opp));
+      } else if (m.stage === "Semifinals") mark(col, false);
     }
     // a tie they went out of counts however the second leg itself ended
     if (euro && KNOCK && (m.legs || m.result === "L")) {
@@ -782,8 +790,8 @@ function twoCard(m) {
       if (m.comp === "UCL") wash = shade(teamColour(m.opp));
     }
     if (m.opp === SPURS && m.result === "L") {
+      // a Tottenham win fills the card WHITE, not navy (his call 2026-10-09)
       mark("#ffffff", true);
-      wash = shade(VIEWS.spurs.box);
     } else if (m.opp === SPURS && m.result === "D") {
       mark("#ffffff", false);
     }

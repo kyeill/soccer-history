@@ -132,7 +132,17 @@ def build(rival, e, season, teams, pl_table, mw_map, goal_store, lp=None):
             if w:
                 m["late_win"] = w
             if q:
-                m["late_eq"] = q
+                # ONLY THE GOALS THAT STOOD (his call 2026-10-09): an
+                # equalizer the rival answered settled nothing, so the line
+                # starts after the rival's last goal. PSG levelled twice
+                # against Chelsea in 2015 and only the second one, in extra
+                # time, decided anything.
+                mine = [(g[0], g[1]) for g in goals if g[2] == rival]
+                after = max(mine) if mine else (0, 0)
+                stood = [(mn, add, who) for mn, add, team, who in goals
+                         if team == tid and mn >= 80 and (mn, add) > after]
+                m["late_eq"] = h.listed_goals(stood, "Late Equalizer") \
+                    if stood else q
     return m
 
 

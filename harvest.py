@@ -465,7 +465,7 @@ COLOUR_FIX = {
     "Manchester City": "1c6bb0", "Manchester United": "f0a02c",
     "Fulham": "141418", "Leeds United": "ffcd00", "Swansea City": "101014",
     "Real Madrid": "efc444", "Eintracht Frankfurt": "0f0f12",
-    "Marseille": "2fa0dc", "F.C. K\u00f8benhavn": "1a4f9c",
+    "Marseille": "2fa0dc", "F.C. K\u00f8benhavn": "1a4f9c", "Valencia": "141418",
     "Wolfsberger": "1a8a3c",
 }
 
