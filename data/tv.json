@@ -1147,6 +1147,10 @@
 "2018|everton|crystalpalace": [
 "NBCSN"
 ],
+"2018|everton|liverpool": [
+"NBCSN",
+"Telemundo"
+],
 "2018|everton|tottenham": [
 "NBCSN"
 ],
@@ -1210,6 +1214,10 @@
 "Universo"
 ],
 "2018|liverpool|chelsea": [
+"NBCSN",
+"Telemundo"
+],
+"2018|liverpool|everton": [
 "NBCSN",
 "Telemundo"
 ],
@@ -3271,6 +3279,10 @@
 "2022|manutd|tottenham": [
 "Peacock"
 ],
+"2022|manutd|westham": [
+"Telemundo",
+"USA Network"
+],
 "2022|newcastle|arsenal": [
 "Telemundo",
 "USA Network"
@@ -3739,6 +3751,10 @@
 "2023|liverpool|chelsea": [
 "Peacock"
 ],
+"2023|liverpool|mancity": [
+"Telemundo",
+"USA Network"
+],
 "2023|liverpool|manutd": [
 "NBC",
 "Peacock",
@@ -3780,6 +3796,9 @@
 "Peacock",
 "Telemundo"
 ],
+"2023|mancity|manutd": [
+"Peacock"
+],
 "2023|mancity|tottenham": [
 "Peacock"
 ],
@@ -3793,6 +3812,9 @@
 "Telemundo"
 ],
 "2023|manutd|chelsea": [
+"Peacock"
+],
+"2023|manutd|mancity": [
 "Peacock"
 ],
 "2023|manutd|tottenham": [
@@ -4358,6 +4380,7 @@
 "NBCSN",
 "NBC Sports App"
 ],
+"d2014-01-12|stoke|liverpool": [],
 "d2014-01-13|astonvilla|arsenal": [
 "NBCSN",
 "NBC Sports App"
@@ -4595,6 +4618,10 @@
 "NBCSN",
 "NBC Sports App"
 ],
+"d2014-04-20|everton|manutd": [
+"NBCSN",
+"NBC Sports App"
+],
 "d2014-04-20|hull|arsenal": [
 "NBCSN",
 "NBC Sports App"
@@ -4609,6 +4636,10 @@
 ],
 "d2014-04-26|stoke|tottenham": [
 "PL Extra Time",
+"NBC Sports App"
+],
+"d2014-04-27|crystalpalace|mancity": [
+"NBCSN",
 "NBC Sports App"
 ],
 "d2014-04-27|liverpool|chelsea": [
@@ -4807,6 +4838,10 @@
 "PL Extra Time",
 "NBC Sports App"
 ],
+"d2014-10-05|westham|qpr": [
+"NBCSN",
+"NBC Sports App"
+],
 "d2014-10-18|arsenal|hull": [
 "PL Extra Time",
 "NBC Sports App"
@@ -4817,6 +4852,10 @@
 ],
 "d2014-10-18|mancity|tottenham": [
 "NBCSN",
+"NBC Sports App"
+],
+"d2014-10-18|newcastle|leicester": [
+"PL Extra Time",
 "NBC Sports App"
 ],
 "d2014-10-19|stoke|swansea": [
@@ -4991,6 +5030,11 @@
 "PL Extra Time",
 "NBC Sports App"
 ],
+"d2014-12-28|newcastle|everton": [
+"NBCSN",
+"NBC Sports App",
+"Telemundo"
+],
 "d2014-12-28|southampton|chelsea": [
 "NBCSN",
 "NBC Sports App"
@@ -5099,6 +5143,11 @@
 "NBCSN",
 "NBC Sports App"
 ],
+"d2015-02-08|westham|manutd": [
+"NBCSN",
+"NBC Sports App",
+"Telemundo"
+],
 "d2015-02-10|arsenal|leicester": [
 "PL Extra Time",
 "NBC Sports App"
@@ -5137,6 +5186,11 @@
 "NBC",
 "NBC Sports App",
 "Universo"
+],
+"d2015-02-22|southampton|liverpool": [
+"NBCSN",
+"NBC Sports App",
+"Telemundo"
 ],
 "d2015-02-22|tottenham|westham": [
 "NBCSN",
@@ -5573,6 +5627,11 @@
 "PL Extra Time",
 "NBC Sports App"
 ],
+"d2015-10-25|liverpool|southampton": [
+"NBC",
+"NBC Sports App",
+"Telemundo"
+],
 "d2015-10-27|sheffieldwednesday|arsenal": [
 "beIN"
 ],
@@ -5638,6 +5697,11 @@
 "NBC",
 "NBC Sports App",
 "Universo"
+],
+"d2015-11-29|liverpool|swansea": [
+"NBCSN",
+"NBC Sports App",
+"Telemundo"
 ],
 "d2015-11-29|norwich|arsenal": [
 "PL Extra Time",
@@ -6052,6 +6116,11 @@
 "d2016-04-23|bournemouth|chelsea": [
 "USA Network",
 "NBC Sports App"
+],
+"d2016-04-24|leicester|swansea": [
+"NBCSN",
+"NBC Sports App",
+"Telemundo"
 ],
 "d2016-04-24|sunderland|arsenal": [
 "NBCSN",
@@ -7103,5 +7172,6 @@
 "d2026-12-27|manutd|nottinghamforest": [],
 "d2027-01-02|bournemouth|astonvilla": [],
 "d2027-01-03|mancity|tottenham": [],
+"d2027-05-23|brentford|hull": [],
 "d2027-05-30|ipswich|everton": []
 }

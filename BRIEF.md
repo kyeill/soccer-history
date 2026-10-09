@@ -221,11 +221,25 @@ the daily build.
 Second tab, two views (a segmented bar, as in games-history):
 
 - **TV Windows** -- every Saturday and Sunday window match since 2013-14,
-  748 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
+  688 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
   ESPN gives the US network (2024-25 on) and the crests. THE SUNDAY WINDOW
   MOVED: 16:00 UK to 2018-19, 16:30 from 2019-20 -- read per season, with the
   other time taken when a matchweek has nothing at the usual one (2016-18 used
   both). Saturday is 17:30 UK throughout. Upcoming only to the coming Sunday.
+
+  MATCHWEEK 38 IS NEVER A WINDOW (his call 2026-10-09): all ten matches kick
+  off together, so neither broadcaster has a game of its own that afternoon.
+
+  A WEEK WHOSE SHOWCASE MOVED STILL HAS ONE (his call 2026-10-09). 2025-26
+  slid the late Sunday game to 15:30 in MW3 and MW8 and to 17:30 in MW20 and
+  MW37, and one Saturday to 16:30 -- Liverpool v Fulham in MW32, which NBC
+  duly showed at 11:30 ET. So a matchweek with nothing at the usual time
+  falls back to its LAST kickoff that day inside the window's own stretch of
+  the afternoon: 15:00-17:30 on a Sunday, 16:00-17:29 on a Saturday. Sunday
+  evening (19:00 on) and Saturday night (20:00) are their own slots and never
+  stand in. A midweek round with no weekend fixture at all still has no
+  window, and neither has a Saturday whose only 17:30 games were on something
+  other than NBC -- MW30 of 2025-26, where both were.
 - **Rivals** -- 281 results: Arsenal 203, Chelsea 78, opening on every year,
   newest first. Arsenal's rule is applied across ALL competitions.
 
@@ -327,9 +341,20 @@ THE SCORES TAKE THE CFB RANKING COLOURS (his call 2026-10-09), the ones
 games-history uses: TWO OF THE TOP SIX meeting reads light blue (#8fb0d8),
 and one of them BEATEN OR HELD by anyone else reads the upset orange
 (#e0834f). Tottenham is left out of the orange -- their own marks say it
-already. Both scores on the card change, never one. 194 blue, 107 orange.
+already. Both scores on the card change, never one. 203 blue, 113 orange.
 TOTTENHAM here means the whole BIG SIX, Spurs included, not the TOP_SIX
 constant that leaves them out.
+
+THE WEIGHT SAYS IT TOO (his call 2026-10-09):
+
+  A BAD NIGHT FOR TOTTENHAM -- a loss, or a draw with anyone outside the top
+  six, the same cards that take the dashed grey border -- greys BOTH scores
+  and takes their weight off. It outranks the blue and the orange, so its
+  rule is written last. 50 cards.
+
+  A GOOD NIGHT FOR ARSENAL OR CHELSEA -- a win of theirs, or a draw with the
+  top six -- takes the weight off BOTH scores. Only their own line lost it
+  before 2026-10-09; the opponent's stayed bold. 144 cards.
 
 THE DATE SITS AT THE FAR RIGHT of a windows header (his call 2026-10-09),
 its last digit flush with the scores below it, and so wears no bar. It is the

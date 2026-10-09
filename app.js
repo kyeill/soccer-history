@@ -828,6 +828,15 @@ function twoCard(m) {
       // bright enough to read as a border: Fulham's black would not
       mark(bright("#" + teamColour(them), 130), false);
     });
+    // ...and a GOOD night of theirs is played down (his call 2026-10-09):
+    // a win of theirs, or a draw with the top six, takes the weight off BOTH
+    // scores, not just their own
+    if (["359", "363"].some(r => {
+      if (m.home !== r && m.away !== r) return false;
+      const rs = m.home === r ? hs : as, os = m.home === r ? as : hs;
+      const them = m.home === r ? m.away : m.home;
+      return rs > os || (rs === os && BIG_SIX.indexOf(them) > -1);
+    })) cls += " scsoft";
     // HIS RANKING COLOURS, the ones the CFB cards wear (2026-10-09): two of
     // the top six meeting reads light blue, and one of them beaten or held by
     // anyone else reads the upset orange. Tottenham stays out of the orange --
@@ -851,7 +860,10 @@ function twoCard(m) {
       // it was the navy from 2026-10-02 until then)
       if (us > them && big) { cls += " mwash"; wash = shade("#ffffff"); }
     } else {
-      cls += " celebrate predash";
+      // A LOSS, OR A DRAW WITH ANYONE OUTSIDE THE TOP SIX: the dashed grey
+      // border, and the scores go grey and lose their weight too (his call
+      // 2026-10-09), which outranks the blue and the orange
+      cls += " celebrate predash scgrey";
       ring = ";--celeb:#8a8a92";
     }
   }

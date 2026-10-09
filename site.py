@@ -75,6 +75,11 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
    anyone else reads the upset orange */
 .row.two.scbig .sc{color:#8fb0d8}
 .row.two.scup .sc{color:#e0834f}
+/* A GOOD NIGHT FOR ARSENAL OR CHELSEA takes the weight off BOTH scores (his
+   call 2026-10-09), where before only their own lost it; A BAD ONE FOR
+   TOTTENHAM greys both, which outranks the blue and the orange -- hence last */
+.row.two.scsoft .sc{font-weight:400}
+.row.two.scgrey .sc{color:var(--muted);font-weight:400}
 /* THE DATE SITS AT THE FAR RIGHT of a windows header (his call 2026-10-09),
    lined up with the scores below it, which is why it wears no bar */
 .row.two .hright{margin-left:auto;padding-right:6px;white-space:nowrap}

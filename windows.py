@@ -23,6 +23,15 @@ SATURDAY, SUNDAY_LATE, SUNDAY_EARLY = "17:30", "16:30", "16:00"
 
 def sunday_time(season):
     return SUNDAY_LATE if season >= 2019 else SUNDAY_EARLY
+
+
+def dow(f):
+    return dt.date(*map(int, f["date"].split("-"))).strftime("%a")
+
+
+# THE LAST DAY HAS NO WINDOW (his call 2026-10-09): all ten matches kick off
+# together, so neither broadcaster has a game of its own that afternoon.
+LAST_MD = 38
 # ESPN carries next to no US broadcast before this (3-11 matches a season), so
 # the older windows are not worth a call a day for
 TV_FROM = 2024
@@ -123,17 +132,41 @@ def collect(teams):
         fixtures = parse(season)
         sundays = {}
         for f in fixtures:
-            if dt.date(*map(int, f["date"].split("-"))).strftime("%a") != "Sun":
+            if dow(f) != "Sun":
                 continue
             if f["uk"] in (sun_pref, sun_other):
                 have = sundays.get(f["md"])
                 if not have or (have["uk"] != sun_pref and f["uk"] == sun_pref):
                     sundays[f["md"]] = f
+        saturdays = {}
         for f in fixtures:
-            uk_dow = dt.date(*map(int, f["date"].split("-"))).strftime("%a")
-            if uk_dow == "Sat" and f["uk"] == SATURDAY:
+            if dow(f) == "Sat" and f["uk"] == SATURDAY:
+                saturdays.setdefault(f["md"], []).append(f)
+        # A WEEK WHOSE SHOWCASE MOVED STILL HAS ONE (his call 2026-10-09).
+        # 2025-26 slid the late Sunday game to 15:30 twice and to 17:30 twice,
+        # and one Saturday to 16:30 -- Liverpool v Fulham in MW32, which NBC
+        # duly showed at 11:30 ET. So a matchweek with nothing at the usual
+        # time falls back to its LAST kickoff that day inside the window's
+        # own stretch of the afternoon: 15:00-17:30 on a Sunday, 16:00-17:30
+        # on a Saturday. Sunday evening (19:00 on) and Saturday night (20:00)
+        # are their own slots and never stand in.
+        mds = {f["md"] for f in fixtures}
+        for md in mds - set(sundays):
+            late = [f for f in fixtures if f["md"] == md and dow(f) == "Sun"
+                    and "15:00" <= f["uk"] <= "17:30"]
+            if late:
+                sundays[md] = max(late, key=lambda f: f["uk"])
+        for md in mds - set(saturdays):
+            late = [f for f in fixtures if f["md"] == md and dow(f) == "Sat"
+                    and "16:00" <= f["uk"] < SATURDAY]
+            if late:
+                saturdays[md] = [max(late, key=lambda f: f["uk"])]
+        for f in fixtures:
+            if f["md"] == LAST_MD:
+                continue
+            if dow(f) == "Sat" and any(x is f for x in saturdays.get(f["md"], ())):
                 label = "NBC Saturday"
-            elif uk_dow == "Sun" and sundays.get(f["md"]) is f:
+            elif dow(f) == "Sun" and sundays.get(f["md"]) is f:
                 label = "Sky Sunday"
             else:
                 continue
