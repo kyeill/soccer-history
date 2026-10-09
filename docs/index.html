@@ -106,6 +106,9 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 .tl{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:6px;
   align-items:center}
 .crest{width:21px;height:21px;object-fit:contain;display:block}
+/* ESPN's Tottenham crest is dark on nothing: on the two-team cards it is
+   shown as a white silhouette instead (his call 2026-10-09) */
+.row.two .crest.spurs{filter:brightness(0) invert(1)}
 .mstripe{display:grid;grid-template-columns:22px minmax(0,1fr);column-gap:7px;
   align-items:baseline;align-content:center;min-width:0;height:26px;
   padding:0 6px 0 7px;margin-left:-7px;border-radius:5px}
@@ -192,6 +195,6 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 <div id="list"></div>
 </div>
 
-<script src="app.js?v=20261009-111515"></script>
+<script src="app.js?v=20261009-134800"></script>
 </body>
 </html>

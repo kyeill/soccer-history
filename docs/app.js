@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-111515. Modelled on games-history's Michigan view (michCard): one card
+   20261009-134800. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-111515";
+const BUILD = "20261009-134800";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -90,7 +90,10 @@ const WINDOW_COLOUR = { "NBC Saturday": "#c08cff", "Sky Sunday": "#00b4d8" };
 function headColour(m) {
   const win = windowOf(m);
   if (win) return WINDOW_COLOUR[win] || null;
-  if (WEMBLEY.indexOf(m.comp) > -1 && m.stage !== "Semifinals" && m.stage !== "Final") {
+  // ...except on the RIVALS tab, where the cups wear theirs from the first
+  // round: the card itself carries how far they went (his call 2026-10-09)
+  if (m.team !== "rivals" && WEMBLEY.indexOf(m.comp) > -1 &&
+      m.stage !== "Semifinals" && m.stage !== "Final") {
     return null;
   }
   return COMP_COLOUR[m.comp] || null;
@@ -297,8 +300,12 @@ function stageText(m) {
 const DAY_FULL = { SUN: "Sunday", MON: "Monday", TUE: "Tuesday",
   WED: "Wednesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday" };
 function windowOf(m) {
-  if (m.team !== "spurs" || m.comp !== "PL") return null;
-  const home = m.home ? SPURS : m.opp, away = m.home ? m.opp : SPURS;
+  if (m.comp !== "PL") return null;
+  // his own cards and the rivals' both name two clubs; the windows
+  // population knows its window already (2026-10-09)
+  const me = m.team === "spurs" ? SPURS : m.team === "rivals" ? m.rival : null;
+  if (!me) return null;
+  const home = m.home ? me : m.opp, away = m.home ? m.opp : me;
   return WINDOW_OF[m.date + "|" + home + "|" + away] || null;
 }
 function cardHead(m) {
@@ -640,9 +647,12 @@ function card(m) {
 // THE TOP SIX IN CAPITALS on these cards (his call 2026-10-02) -- the five
 // without Spurs, who read in plain case like everyone else (his call
 // 2026-10-05). BIG_SIX still leads that tab's Team filter.
-function bigName(id, t) {
+function bigName(id, t, rivals) {
   const n = (t || TEAMS[id] || {}).card || (t || {}).name || id;
-  return TOP_SIX.indexOf(id) > -1 ? n.toUpperCase() : n;
+  // the RIVALS tab capitalises Tottenham and nobody else (his call
+  // 2026-10-09); the TV Windows tab still shouts the Top Six
+  const caps = rivals ? id === SPURS : TOP_SIX.indexOf(id) > -1;
+  return caps ? n.toUpperCase() : n;
 }
 function twoCard(m) {
   const wins = m.team === "windows";
@@ -658,14 +668,18 @@ function twoCard(m) {
     : rivalWon ? m.rival : rivalLost ? m.opp : null;
   // HIS TWO CLUBS ARE NEVER IN BOLD (2026-10-02): a win of Arsenal's or
   // Chelsea's is washed like any other, but their name and score stay plain
+  const rivals = m.team === "rivals";
   const line = (id, score, other) => {
     const t = TEAMS[id] || {};
     const win = !up && (winId ? id === winId : score > other);
     return '<div class="tl2' + (win ? " won" : "") +
       (win && (id === "359" || id === "363") ? " nobold" : "") + '">' +
-      '<img class="crest" loading="lazy" src="' + esc(t.logo || "") +
+      // ESPN's Tottenham crest is dark on nothing and vanishes on these
+      // cards, so it is shown as a white silhouette (his call 2026-10-09)
+      '<img class="crest' + (id === SPURS ? " spurs" : "") +
+      '" loading="lazy" src="' + esc(t.logo || "") +
       '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
-      '<span class="nm">' + esc(bigName(id, t)) + "</span>" +
+      '<span class="nm">' + esc(bigName(id, t, rivals)) + "</span>" +
       '<span class="sc">' + (up ? "" : score) + "</span></div>";
   };
   // THE HEADER, IN PIECES so a phone breaks it between fields and never in
@@ -683,12 +697,24 @@ function twoCard(m) {
     segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
   } else {
     const st = stageText(m);
-    segs.push(m.comp === "PL"
-      ? (m.mw != null ? "[MW" + m.mw + "] " + fmtTime(m.time)
-                      : "Premier League " + fmtTime(m.time))
-      : '<span class="hstage" data-short="' + esc(st.short) + '">' + esc(st.full) +
-        "</span>" + esc(st.end || "") + " " + fmtTime(m.time));
-    segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
+    const win = windowOf(m);
+    if (m.comp === "PL" && win) {
+      // a window reads as it does on his own tab, colour and all
+      segs.push("[MW" + m.mw + "] " + '<span class="hstage" data-short="' +
+        esc(win.replace("Sky ", "")) + '">' + esc(win) + "</span> " +
+        fmtTime(m.time));
+      segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
+    } else if (m.comp === "PL") {
+      // HIS SHAPE (2026-10-09): "[MW5] SAT 9/19/2026 | 10:00am"
+      segs.push((m.mw != null ? "[MW" + m.mw + "] " : "Premier League ") +
+        m.dow.toUpperCase() + ' <span class="hdate">' + fmtDate(m.date) +
+        "</span>");
+      segs.push(fmtTime(m.time));
+    } else {
+      segs.push('<span class="hstage" data-short="' + esc(st.short) + '">' +
+        esc(st.full) + "</span>" + esc(st.end || "") + " " + fmtTime(m.time));
+      segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
+    }
   }
   const winner = winId;
   // the shootout is in the round's own label now ("League Cup Final (4-3
@@ -699,6 +725,32 @@ function twoCard(m) {
   // fills the card in Spurs' own colour. Cards without Spurs wear nothing.
   let cls = "", ring = "";
   let wash = winner ? shade(teamColour(winner)) : "transparent";
+  const mark = (colour, fill) => {
+    cls = " celebrate" + (fill ? " mwash" : "");
+    ring = ";--celeb:" + colour + ";--celebring:" + colour + "44";
+    if (fill) wash = shade(colour);
+  };
+  if (rivals && !up) {
+    // HIS MARKS ON A RIVAL'S CARD (2026-10-09). A cup counts from the
+    // semifinal; a European knockout counts when they went out of it, the
+    // Champions League filled and the others bordered. And a Tottenham
+    // result outranks all of it: a win fills the card in his navy, a draw
+    // takes the white border.
+    const KNOCK = m.stage !== "Group Stage" && m.stage !== "League Phase";
+    const euro = ["UCL", "UEL", "UECL"].indexOf(m.comp) > -1;
+    const col = COMP_COLOUR[m.comp] || "#8a8a92";
+    if (m.comp === "FAC" || m.comp === "LC") {
+      if (m.stage === "Final") mark(col, true);
+      else if (m.stage === "Semifinals") mark(col, false);
+    }
+    if (euro && KNOCK && m.result === "L") mark(col, m.comp === "UCL");
+    if (m.opp === SPURS && m.result === "L") {
+      mark("#ffffff", true);
+      wash = shade(VIEWS.spurs.box);
+    } else if (m.opp === SPURS && m.result === "D") {
+      mark("#ffffff", false);
+    }
+  }
   if (wins && !up && (m.home === SPURS || m.away === SPURS)) {
     const usHome = m.home === SPURS;
     const us = usHome ? hs : as, them = usHome ? as : hs;
@@ -733,13 +785,14 @@ function defaults() {
   // Spurs open on the current season; USMNT and Atlanta on their latest year
   // with a match (the national team plays in only some years)
   const years = MATCHES.map(m => m.season);
-  // RIVALS opens on every year, newest first -- their bad results are a list
-  // to browse, not a season to follow (as in games-history)
-  const open = VIEW === "epl" && SUB === "rivals" ? null
-    : VIEW === "spurs" ? CURRENT
+  // RIVALS OPENS ON ARSENAL, THIS SEASON, OLDEST FIRST (his call
+  // 2026-10-09). It opened on every year, newest first, until then.
+  const rivals = VIEW === "epl" && SUB === "rivals";
+  const open = rivals || VIEW === "spurs" ? CURRENT
     : (years.length ? Math.max.apply(null, years) : null);
   return { season: open, comp: null, team: null, hl: null, ko: false,
-           window: null, rival: null, net: null, kit: null };
+           window: null, rival: rivals ? ARSENAL : null, net: null,
+           kit: null };
 }
 // a Premier League year is a season: 2026-27, not 2026 (his call
 // 2026-10-02). USMNT and Atlanta play calendar years, so they keep theirs.
@@ -993,7 +1046,7 @@ async function init() {
       x.setAttribute("aria-selected", String(x === b)));
     MATCHES = ALL.filter(m => m.team === population());
     FILT = defaults();
-    SORT = VIEW === "epl" && SUB === "rivals" ? "desc" : "asc";
+    SORT = "asc";
     draw();
     window.scrollTo({ top: 0 });
   });
@@ -1003,7 +1056,7 @@ async function init() {
     SUB = b.dataset.sub;
     MATCHES = ALL.filter(m => m.team === population());
     FILT = defaults();
-    SORT = SUB === "rivals" ? "desc" : "asc";
+    SORT = "asc";
     draw();
     window.scrollTo({ top: 0 });
   });
