@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-152324. Modelled on games-history's Michigan view (michCard): one card
+   20261009-154444. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-152324";
+const BUILD = "20261009-154444";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -715,6 +715,7 @@ function twoCard(m) {
   // THE HEADER, IN PIECES so a phone breaks it between fields and never in
   // the middle of a channel's name (410px, 2026-10-02)
   const segs = [];
+  let right = "";
   if (wins) {
     // HIS WINDOW HEADER (2026-10-02). The window, the time and the date, and
     // NO NETWORK -- naming it as well was what pushed a phone to two lines:
@@ -724,7 +725,9 @@ function twoCard(m) {
     segs.push("[MW" + m.mw + "] " + '<span class="hstage" data-short="' +
       esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span> " +
       fmtTime(m.time));
-    segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
+    // THE DATE SITS AT THE FAR RIGHT (his call 2026-10-09), lined up with the
+    // scores below it, which is why it wears no bar
+    right = '<span class="hdate">' + fmtDate(m.date) + "</span>";
   } else {
     const st = stageText(m);
     const win = windowOf(m);
@@ -809,6 +812,34 @@ function twoCard(m) {
       mark("#ffffff", false);
     }
   }
+  if (wins && !up) {
+    // A BAD NIGHT FOR EITHER OF THEM (his call 2026-10-09): Arsenal or
+    // Chelsea beaten, or held by anyone outside the top six, borders the card
+    // in the colour of the club that did it. The two of them playing each
+    // other is nobody's bad night, so it wears nothing, and a draw with the
+    // top six is a point dropped by both.
+    ["359", "363"].forEach(r => {
+      if (m.home !== r && m.away !== r) return;
+      const rHome = m.home === r, them = rHome ? m.away : m.home;
+      if (them === "359" || them === "363") return;
+      const rs = rHome ? hs : as, os = rHome ? as : hs;
+      if (rs > os) return;
+      if (rs === os && BIG_SIX.indexOf(them) > -1) return;
+      // bright enough to read as a border: Fulham's black would not
+      mark(bright("#" + teamColour(them), 130), false);
+    });
+    // HIS RANKING COLOURS, the ones the CFB cards wear (2026-10-09): two of
+    // the top six meeting reads light blue, and one of them beaten or held by
+    // anyone else reads the upset orange. Tottenham stays out of the orange --
+    // their own marks say it already.
+    const hBig = BIG_SIX.indexOf(m.home) > -1, aBig = BIG_SIX.indexOf(m.away) > -1;
+    if (hBig && aBig) cls += " scbig";
+    else if (hBig || aBig) {
+      const big = hBig ? m.home : m.away;
+      const bs = hBig ? hs : as, os = hBig ? as : hs;
+      if (os >= bs && big !== SPURS) cls += " scup";
+    }
+  }
   if (wins && !up && (m.home === SPURS || m.away === SPURS)) {
     const usHome = m.home === SPURS;
     const us = usHome ? hs : as, them = usHome ? as : hs;
@@ -827,7 +858,8 @@ function twoCard(m) {
   // the bar belongs to the field it introduces, so a wrap never leaves one
   // dangling at the end of a line
   const head = segs.map((x, i) => "<span>" +
-    (i ? '<span class="msep">|</span> ' : "") + x + "</span>").join("");
+    (i ? '<span class="msep">|</span> ' : "") + x + "</span>").join("") +
+    (right ? '<span class="hright">' + right + "</span>" : "");
   const headCol = headColour(m);
   return '<div class="row two' + cls + '" data-id="' + m.id +
     '" style="--winwash:' + wash + ring + '">' +

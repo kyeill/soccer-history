@@ -315,6 +315,27 @@ SCORERS: every Tottenham goal, on a WIN OR A DRAW with the Top Six (65 cards).
 Not on a loss. ARSENAL AND CHELSEA ARE NEVER IN BOLD -- a win of theirs is
 washed like anyone's, but their name and score stay plain.
 
+A BAD NIGHT FOR ARSENAL OR CHELSEA (his call 2026-10-09) borders the card in
+the colour of the club that did it -- beaten by anyone, or held by anyone
+outside the top six. Two exceptions: the two of them playing EACH OTHER wears
+nothing, and a DRAW WITH THE TOP SIX is a point dropped by both. The colour is
+brightened to a floor of 130, as the Tottenham cards' opponent borders are, so
+Fulham's black still reads. A Tottenham mark outranks it: Spurs are marked
+last and overwrite.
+
+THE SCORES TAKE THE CFB RANKING COLOURS (his call 2026-10-09), the ones
+games-history uses: TWO OF THE TOP SIX meeting reads light blue (#8fb0d8),
+and one of them BEATEN OR HELD by anyone else reads the upset orange
+(#e0834f). Tottenham is left out of the orange -- their own marks say it
+already. Both scores on the card change, never one. 194 blue, 107 orange.
+TOTTENHAM here means the whole BIG SIX, Spurs included, not the TOP_SIX
+constant that leaves them out.
+
+THE DATE SITS AT THE FAR RIGHT of a windows header (his call 2026-10-09),
+its last digit flush with the scores below it, and so wears no bar. It is the
+only field outside the bar-separated run, which is why `twoCard` carries it in
+`right` rather than in `segs`.
+
 ## European cards and two-legged ties (Kyle, 2026-10-06)
 
 Europe reads SHORT, with no season and no colon: `UEL Group Stage`,

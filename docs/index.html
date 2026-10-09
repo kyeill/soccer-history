@@ -67,6 +67,14 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 .row.two.mwash .tl2.won{background:transparent}
 /* HIS TWO CLUBS ARE NEVER IN BOLD (his call 2026-10-02) */
 .row.two .tl2.won.nobold .nm,.row.two .tl2.nobold .sc{font-weight:400}
+/* HIS RANKING COLOURS, the ones the CFB cards wear (his call 2026-10-09):
+   two of the top six meeting reads light blue, one of them beaten or held by
+   anyone else reads the upset orange */
+.row.two.scbig .sc{color:#8fb0d8}
+.row.two.scup .sc{color:#e0834f}
+/* THE DATE SITS AT THE FAR RIGHT of a windows header (his call 2026-10-09),
+   lined up with the scores below it, which is why it wears no bar */
+.row.two .hright{margin-left:auto;padding-right:6px;white-space:nowrap}
 
 .filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
 .f{border:1px solid var(--line);background:var(--card);color:var(--muted);
@@ -207,6 +215,6 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 <div id="list"></div>
 </div>
 
-<script src="app.js?v=20261009-152324"></script>
+<script src="app.js?v=20261009-154444"></script>
 </body>
 </html>
