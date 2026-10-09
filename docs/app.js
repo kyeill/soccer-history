@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-111310. Modelled on games-history's Michigan view (michCard): one card
+   20261009-111515. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-111310";
+const BUILD = "20261009-111515";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -488,7 +488,8 @@ function card(m) {
     '<img class="crest" loading="lazy" src="' + esc(opp.logo || "") +
       '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
     '<span class="nm mnm"><span class="mn">' + esc(where) + seed + esc(name) +
-    "</span>" + (fin ? '<span class="mfin">' + esc(fin) + "</span>" : "") +
+    "</span>" + (fin ? '<span class="mfin' + (fin === "^" ? " tight" : "") +
+      '">' + esc(fin) + "</span>" : "") +
     "</span></span>" + boxes + "</div>";
 
   // THE LINES BELOW THE SCORE: plain grey details, pipes between. What the

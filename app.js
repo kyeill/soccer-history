@@ -488,7 +488,8 @@ function card(m) {
     '<img class="crest" loading="lazy" src="' + esc(opp.logo || "") +
       '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
     '<span class="nm mnm"><span class="mn">' + esc(where) + seed + esc(name) +
-    "</span>" + (fin ? '<span class="mfin">' + esc(fin) + "</span>" : "") +
+    "</span>" + (fin ? '<span class="mfin' + (fin === "^" ? " tight" : "") +
+      '">' + esc(fin) + "</span>" : "") +
     "</span></span>" + boxes + "</div>";
 
   // THE LINES BELOW THE SCORE: plain grey details, pipes between. What the

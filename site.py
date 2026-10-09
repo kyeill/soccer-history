@@ -125,6 +125,8 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 /* a loss strikes the opponent through, as a Michigan loss does -- unless the
    tie it belongs to says otherwise (his leg rules 2026-10-06) */
 .tl.struck .mn{text-decoration:line-through;text-decoration-thickness:1.5px}
+/* the holder's caret sits against the name, not spaced off it (2026-10-09) */
+.mfin.tight{margin-left:0}
 .mfin{flex:none;margin-left:6px;font-size:12px;font-weight:400;
   color:var(--muted);font-style:normal}
 /* the league-phase position in front of the name */
