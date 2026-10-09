@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-143713. Modelled on games-history's Michigan view (michCard): one card
+   20261009-152324. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-143713";
+const BUILD = "20261009-152324";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -814,13 +814,13 @@ function twoCard(m) {
     const us = usHome ? hs : as, them = usHome ? as : hs;
     const big = TOP_SIX.indexOf(usHome ? m.away : m.home) > -1;
     if (us > them || (us === them && big)) {
-      cls = " celebrate";
+      cls += " celebrate";
       ring = ";--celeb:#ffffff;--celebring:#ffffff22";
-      // ESPN paints Tottenham WHITE, which washes out to a flat grey, so a
-      // filled card wears the navy instead (his call 2026-10-02)
-      if (us > them && big) { cls += " mwash"; wash = shade(VIEWS.spurs.box); }
+      // a win over the Top Six fills the card WHITE (his call 2026-10-09;
+      // it was the navy from 2026-10-02 until then)
+      if (us > them && big) { cls += " mwash"; wash = shade("#ffffff"); }
     } else {
-      cls = " celebrate predash";
+      cls += " celebrate predash";
       ring = ";--celeb:#8a8a92";
     }
   }
