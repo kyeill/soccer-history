@@ -431,10 +431,15 @@ table rather than the words -- Qarabag 36th, Hoffenheim 27th, Elfsborg 26th
 
 ## The day itself (Kyle, 2026-10-09)
 
-Two days are named at the end of the header, after everything else:
+Two days LEAD THE LINE BELOW (moved there 2026-10-09), and the date goes with
+them, dropping its three-letter day -- the holiday has already said which day
+it was:
 
-    UEL Group Stage MD5 | Thanksgiving
-    [MW18] Saturday 10:00am | Boxing Day
+    UEL Group Stage MD5
+    Thanksgiving | 11/27/2014 | ESPN3 3:05pm
+
+    [MW18] Saturday 10:00am
+    Boxing Day | 12/26/2014 | PL Extra Time
 
 THANKSGIVING is the fourth Thursday of November, which is why all six of his
 fall in Europe -- Thursday is Europa League night. BOXING DAY is ten matches,

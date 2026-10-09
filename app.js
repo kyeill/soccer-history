@@ -526,7 +526,19 @@ function card(m) {
   let head = h.head;
   const dateUp = d => ' | <span class="hdate">' + esc(d) + "</span>";
   const tvUp = c => '<span class="htv"> | ' + esc(c.join(" | ")) + "</span>";
-  if (h.down) {
+  if (m.holiday) {
+    // THE DAY ITSELF LEADS THE LINE BELOW (his call 2026-10-09), and the date
+    // with it, which drops its three-letter day -- the holiday has already
+    // said which day it was:
+    //     UEL Group Stage MD5
+    //     THANKSGIVING | 11/27/2014 | ESPN 3:05pm
+    //     [MW18] Saturday 10:00am
+    //     BOXING DAY | 12/26/2014 | PL Extra Time
+    const base = (h.down || h.tail || []).map(p => String(p));
+    if (h.down && base.length) base[0] = base[0].replace(/^[A-Za-z]{3} /, "");
+    head += h.dayTime ? " " + h.dayTime.long : "";
+    rows.push({ items: [m.holiday].concat(base, parts), tv: 0 });
+  } else if (h.down) {
     if (parts.length) {
       const chunk = h.down.slice(1);
       head += dateUp(h.down[0]) + (chunk.length ? tvUp(chunk) : "");
@@ -545,10 +557,6 @@ function card(m) {
     head += h.dayTime ? " " + h.dayTime.long : "";
     rows.push({ items: h.tail || [], tv: 0 });
   }
-
-  // THE DAY ITSELF, last of all in the header (his call 2026-10-09):
-  // "[MW18] SATURDAY 10:00AM | BOXING DAY"
-  if (m.holiday) head += " | " + esc(m.holiday);
 
   // a FINAL wears a frame: grey, dashed on a loss, the competition's colour
   // when won -- as the Michigan bowls and title games do. HIS BORDER COLUMN
