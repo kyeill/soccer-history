@@ -91,6 +91,8 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 @media (min-width:1240px){
   #list{grid-template-columns:repeat(3,1fr);gap:9px}
   #list .row{padding:10px 11px}
+  /* the TV Windows view stops at two (his call 2026-10-09) */
+  #list.two-up{grid-template-columns:1fr 1fr}
 }
 #list .empty{grid-column:1/-1}
 

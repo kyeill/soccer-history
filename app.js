@@ -664,10 +664,15 @@ function euroYear(m) {
 }
 function twoCard(m) {
   const wins = m.team === "windows";
-  const homeId = wins ? m.home : (m.home ? m.rival : m.opp);
-  const awayId = wins ? m.away : (m.home ? m.opp : m.rival);
-  const hs = wins ? m.hs : (m.home ? m.us : m.them);
-  const as = wins ? m.as : (m.home ? m.them : m.us);
+  // A TIE OVER TWO LEGS HAS NO HOME SIDE (his call 2026-10-09): neither
+  // night is the card, so it reads opponent first and rival second, as the
+  // two leg scores in the header do.
+  const homeId = m.legs ? m.rival
+    : wins ? m.home : (m.home ? m.rival : m.opp);
+  const awayId = m.legs ? m.opp
+    : wins ? m.away : (m.home ? m.opp : m.rival);
+  const hs = m.legs ? m.us : wins ? m.hs : (m.home ? m.us : m.them);
+  const as = m.legs ? m.them : wins ? m.as : (m.home ? m.them : m.us);
   const up = hs === null || hs === undefined;
   // a shootout decides who won: the RESULT knows it, the score does not
   const rivalWon = !wins && m.result === "W", rivalLost = !wins && m.result === "L";
@@ -1059,6 +1064,10 @@ function draw() {
     ? list.length + (list.length === 1 ? " match" : " matches")
     : (n ? w + "-" + d + "-" + l : list.length + " upcoming");
   const render = VIEW === "epl" ? twoCard : card;
+  // THE TV WINDOWS VIEW KEEPS TO TWO COLUMNS on a desktop (his call
+  // 2026-10-09): three of these cards in a row reads as a wall
+  document.getElementById("list").classList.toggle(
+    "two-up", VIEW === "epl" && SUB === "tv");
   document.getElementById("list").innerHTML = list.length
     ? list.map(render).join("") : '<div class="empty">No matches.</div>';
   trimHeads();

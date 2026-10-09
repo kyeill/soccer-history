@@ -481,7 +481,9 @@ his navy with a white border, a draw takes the border alone.
 A EUROPEAN TIE THEY WENT OUT OF IS ONE CARD, the second leg, with the
 AGGREGATE in the boxes and both legs in the header, the rival's score second
 in each: `UCL Round of 16 (2-0, 1-1)`, `(1-0, 1-1 ET)`, `(1-0, 0-1; 4-3
-pen)`. No date, no time -- neither night is the whole story. 18 of them.
+pen)`. No date, no time -- neither night is the whole story, and no home
+side either: the card reads OPPONENT FIRST, RIVAL SECOND, as the two leg
+scores do. 22 of them.
 
 EVERY TWO-LEGGED TIE IS ONE RESULT, in any competition: a tie they CAME
 THROUGH shows nothing at all, and a tie they went OUT of shows one card. The
