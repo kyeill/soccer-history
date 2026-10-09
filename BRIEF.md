@@ -468,9 +468,15 @@ It opens on ARSENAL, THIS SEASON, OLDEST FIRST. Only Tottenham is in
 capitals; everyone else reads in proper case, and ESPN's dark Tottenham crest
 is shown as a white silhouette.
 
-THE HEADER: the Premier League reads `[MW5] SAT 9/19/2026 | 10:00am`, and a
-TV window takes the window's own shape and colour, as on his tab. The cups
-wear their colour from the FIRST round here.
+THE HEADER (2026-10-09): the Premier League reads `[MW5] 9/19/2026 | SAT
+10:00am`, the TV window standing in for the day where there was one and
+keeping its colour. Europe reads `UCL Group Stage | 12/11/2013 | WED 2:45pm`.
+A DOMESTIC CUP CARRIES THE ROUND AND NOTHING ELSE -- no date, no time. The
+cups wear their colour from the FIRST round here.
+
+AN ELIMINATION BUBBLE sits before Oldest/Newest First and isolates the
+nights they went out of Europe: the collapsed ties and the one-off knockouts
+they lost, 19 of them.
 
 WHAT THE CARD WEARS: a cup semifinal takes the border, a final the border and
 the fill. A European knockout they went OUT of is marked -- the Champions

@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-143123. Modelled on games-history's Michigan view (michCard): one card
+   20261009-143713. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-143123";
+const BUILD = "20261009-143713";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -196,6 +196,15 @@ function shortNets(s) {
   let out = String(s);
   Object.keys(NET_SHORT).forEach(k => { out = out.split(k).join(NET_SHORT[k]); });
   return out;
+}
+/* A EUROPEAN TIE THEY WENT OUT OF (his filter, 2026-10-09): the collapsed
+   ties, and the one-off knockouts they lost -- a final, a qualifying round
+   played once. A group or league phase is not a knockout. */
+function isElim(m) {
+  if (m.team !== "rivals") return false;
+  if (["UCL", "UEL", "UECL"].indexOf(m.comp) < 0) return false;
+  if (m.stage === "Group Stage" || m.stage === "League Phase") return false;
+  return !!m.legs || m.result === "L";
 }
 function upcoming(m) { return !!m.upcoming || !!m.status; }
 function won(m) { return m.result === "W"; }
@@ -719,18 +728,21 @@ function twoCard(m) {
   } else {
     const st = stageText(m);
     const win = windowOf(m);
-    if (m.comp === "PL" && win) {
-      // a window reads as it does on his own tab, colour and all
-      segs.push("[MW" + m.mw + "] " + '<span class="hstage" data-short="' +
+    const lab = '<span class="hstage" data-short="' + esc(st.short) + '">' +
+      esc(st.full) + "</span>";
+    const date = '<span class="hdate">' + fmtDate(m.date) + "</span>";
+    const dayTime = m.dow.toUpperCase() + " " + fmtTime(m.time);
+    if (m.comp === "PL") {
+      // HIS ORDER (2026-10-09): "[MW5] 9/19/2026 | SAT 10:00am", the window
+      // standing in for the day where there was one
+      segs.push((m.mw != null ? "[MW" + m.mw + "] " : "Premier League ") + date);
+      segs.push(win ? '<span class="hstage" data-short="' +
         esc(win.replace("Sky ", "")) + '">' + esc(win) + "</span> " +
-        fmtTime(m.time));
-      segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
-    } else if (m.comp === "PL") {
-      // HIS SHAPE (2026-10-09): "[MW5] SAT 9/19/2026 | 10:00am"
-      segs.push((m.mw != null ? "[MW" + m.mw + "] " : "Premier League ") +
-        m.dow.toUpperCase() + ' <span class="hdate">' + fmtDate(m.date) +
-        "</span>");
-      segs.push(fmtTime(m.time));
+        fmtTime(m.time) : dayTime);
+    } else if (m.comp === "FAC" || m.comp === "LC") {
+      // A DOMESTIC CUP CARRIES THE ROUND AND NOTHING ELSE (his call
+      // 2026-10-09): no date, no time
+      segs.push(lab + esc(st.end || ""));
     } else if (m.legs) {
       // A TIE THEY WENT OUT OF (his call 2026-10-09): the round, then both
       // legs with the rival's score second -- "(1-0, 2-2)", "(1-0, 1-1 ET)",
@@ -741,9 +753,10 @@ function twoCard(m) {
         (m.legs_aet ? " ET" : "") +
         (m.pens ? "; " + esc(m.pens) + " pen" : "") + ")");
     } else {
-      segs.push(euroYear(m) + '<span class="hstage" data-short="' + esc(st.short) +
-        '">' + esc(st.full) + "</span>" + esc(st.end || "") + " " + fmtTime(m.time));
-      segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
+      // "UCL Group Stage | 12/11/2013 | WED 2:45pm"
+      segs.push(euroYear(m) + lab + esc(st.end || ""));
+      segs.push(date);
+      segs.push(dayTime);
     }
   }
   const winner = winId;
@@ -840,7 +853,7 @@ function defaults() {
     : (years.length ? Math.max.apply(null, years) : null);
   return { season: open, comp: null, team: null, hl: null, ko: false,
            window: null, rival: rivals ? ARSENAL : null, net: null,
-           kit: null };
+           kit: null, elim: false };
 }
 // a Premier League year is a season: 2026-27, not 2026 (his call
 // 2026-10-02). USMNT and Atlanta play calendar years, so they keep theirs.
@@ -861,6 +874,7 @@ function passes(m, skip) {
   if (skip !== "window" && FILT.window && m.window !== FILT.window) return false;
   if (skip !== "rival" && FILT.rival && m.rival !== FILT.rival) return false;
   if (FILT.ko && !isKnockout(m)) return false;
+  if (FILT.elim && !isElim(m)) return false;
   if (skip !== "hl" && FILT.hl) {
     // the equalizers sit under Late Winners, loose label and all (his call
     // 2026-10-06)
@@ -960,7 +974,11 @@ function filterBar() {
   const HL = [["Special", "special"], ["Memorable", "memorable"],
               ["Late Winners", "late_win"]];
   if (isEpl()) {
-    return h + group("", '<button class="f" data-act="sort">' +
+    // the Rivals view can isolate the nights they went out of Europe
+    const elim = SUB === "rivals"
+      ? '<button class="f" data-act="elim" aria-pressed="' + !!FILT.elim +
+        '">Elimination</button>' : "";
+    return h + group("", elim + '<button class="f" data-act="sort">' +
       (SORT === "asc" ? "Oldest First" : "Newest First") + "</button>");
   }
   // HIS NETWORKS (2026-10-06): the six he watches lead, then a bar, then
@@ -1123,7 +1141,11 @@ async function init() {
     const b = e.target.closest("button.f[data-act]");
     if (!b) return;
     if (b.dataset.act === "sort") SORT = SORT === "asc" ? "desc" : "asc";
-    else if (b.dataset.act === "ko") {
+    else if (b.dataset.act === "elim") {
+      FILT.elim = !FILT.elim;
+      // every one of them, not just this season's
+      if (FILT.elim) FILT.season = null;
+    } else if (b.dataset.act === "ko") {
       FILT.ko = !FILT.ko;
       // every knockout ever, not just this season's
       if (FILT.ko) FILT.season = null;
