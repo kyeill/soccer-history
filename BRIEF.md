@@ -428,3 +428,14 @@ to him. Both legs, since the tie is one result. A caret survives it.
 A CLUB THAT DID NOT COME THROUGH A LEAGUE PHASE shows its PLACE in that
 table rather than the words -- Qarabag 36th, Hoffenheim 27th, Elfsborg 26th
 -- while one that did keeps its run: R16, QF, Playoff, Winner.
+
+## The day itself (Kyle, 2026-10-09)
+
+Two days are named at the end of the header, after everything else:
+
+    UEL Group Stage MD5 | Thanksgiving
+    [MW18] Saturday 10:00am | Boxing Day
+
+THANKSGIVING is the fourth Thursday of November, which is why all six of his
+fall in Europe -- Thursday is Europa League night. BOXING DAY is ten matches,
+all Premier League. New Year's Day he looked at and did not want.

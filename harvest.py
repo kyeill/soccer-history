@@ -515,6 +515,22 @@ def ordinal(n):
     return "%d%s" % (n, "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th"))
 
 
+def holiday_of(date):
+    """The two days he wants named on a card (2026-10-09): THANKSGIVING, the
+    fourth Thursday of November -- which is why every one of his falls in
+    Europe, Thursday being Europa League night -- and BOXING DAY. New Year's
+    Day he did not want.
+    """
+    y, mth, day = (int(x) for x in date.split("-"))
+    if mth == 12 and day == 26:
+        return "Boxing Day"
+    if mth == 11:
+        first = dt.date(y, 11, 1)
+        if day == 1 + ((3 - first.weekday()) % 7) + 21:
+            return "Thanksgiving"
+    return None
+
+
 def place(n):
     """A position in a table, 1st and all: ordinal() reads 1 as "Winner",
     which a league phase never means (his call 2026-10-07)."""
@@ -753,6 +769,9 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
     # A SEASON STILL BEING PLAYED SETTLES NOTHING (his call 2026-10-07), so it
     # shows no finish at all -- only a caret on the holder, the club that won
     # it last season, or in Europe the one that won the Champions League.
+    hol = holiday_of(m["date"])
+    if hol:
+        m["holiday"] = hol
     euro = code in ("UCL", "UEL", "UECL")
     held = (cup_run("UCL", season - 1, tid, finishes) == "Winner" if euro
             else tid == holder)

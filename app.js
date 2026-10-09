@@ -546,6 +546,10 @@ function card(m) {
     rows.push({ items: h.tail || [], tv: 0 });
   }
 
+  // THE DAY ITSELF, last of all in the header (his call 2026-10-09):
+  // "[MW18] SATURDAY 10:00AM | BOXING DAY"
+  if (m.holiday) head += " | " + esc(m.holiday);
+
   // a FINAL wears a frame: grey, dashed on a loss, the competition's colour
   // when won -- as the Michigan bowls and title games do. HIS BORDER COLUMN
   // wins over it: a colour word, a hex, or "Opponent" for their colour.
