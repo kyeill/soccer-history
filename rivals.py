@@ -153,14 +153,20 @@ EURO = ("UCL", "UEL", "UECL")
 
 
 def collapse(ms):
-    """A European knockout tie they went OUT of reads as ONE card: the second
-    leg, with the AGGREGATE as the score and both legs in the header, the
-    rival's score second in each -- "(1-0, 2-2)". The first leg settled
-    nothing on its own, so it goes (his call 2026-10-09).
+    """EVERY TWO-LEGGED TIE IS ONE RESULT (his call 2026-10-09):
+
+      they came through it   nothing is shown; neither night was a bad result
+      they went out of it    ONE card -- the second leg, with the AGGREGATE as
+                             the score and both legs in the header, the
+                             rival's score second in each: "(1-0, 2-2)"
+
+    A tie is two matches against the same club in the same round, which is why
+    the round carries " Replay" where ESPN means a replay: an FA Cup tie
+    played twice is not a tie over two legs.
     """
     ties = {}
     for m in ms:
-        if m["comp"] not in EURO:
+        if m["comp"] == "PL" or not m["stage"]:
             continue
         if m["stage"] in ("Group Stage", "League Phase", "Final"):
             continue
@@ -176,6 +182,14 @@ def collapse(ms):
             through = ours > theirs
         elif legs[1].get("pens"):
             through = legs[1]["result"] == "W"
+        elif h.pens_from_summary(legs[1]["id"], legs[1]["rival"]):
+            # A SHOOTOUT AFTER THE SECOND LEG settles the TIE, not the match,
+            # so it is never read while the match is built -- Chelsea beat
+            # Tottenham on penalties in 2019 after losing the night 1-2, and
+            # the tie was reading as an elimination (2026-10-09)
+            so = h.pens_from_summary(legs[1]["id"], legs[1]["rival"])
+            legs[1]["pens"] = so[1]
+            through = so[0]
         else:
             away = next((x for x in legs if not x["home"]), None)
             home = next((x for x in legs if x["home"]), None)
@@ -185,10 +199,9 @@ def collapse(ms):
             else:
                 through = None
         if through:
-            # A FIRST LEG OF A TIE THEY CAME THROUGH IS NOT A BAD RESULT (his
-            # call 2026-10-09): nothing was settled that night, and they went
-            # on to win it. The second leg stands on its own.
-            gone.append(id(legs[0]))
+            # NOTHING AT ALL from a tie they came through: neither night was
+            # a bad result, whatever either score said
+            gone += [id(x) for x in legs]
             continue
         if through is None:
             continue

@@ -483,8 +483,11 @@ AGGREGATE in the boxes and both legs in the header, the rival's score second
 in each: `UCL Round of 16 (2-0, 1-1)`, `(1-0, 1-1 ET)`, `(1-0, 0-1; 4-3
 pen)`. No date, no time -- neither night is the whole story. 18 of them.
 
-A FIRST LEG OF A TIE THEY CAME THROUGH IS NOT A BAD RESULT and is dropped:
-nothing was settled that night and they went on to win it. A EUROPEAN
+EVERY TWO-LEGGED TIE IS ONE RESULT, in any competition: a tie they CAME
+THROUGH shows nothing at all, and a tie they went OUT of shows one card. The
+League Cup semifinals are in it too -- four of them. A tie is two matches
+against the same club in the same round, which is why an FA Cup replay is
+safe: ESPN's round carries " Replay". A EUROPEAN
 KNOCKOUT NAMES ITS SEASON here -- `2024-25 UCL Quarterfinals` -- where a group
 or league phase does not, the date beside it saying which season already.
 And from 2024-25 BOTH clubs carry their LEAGUE-PHASE SEED in front of the
