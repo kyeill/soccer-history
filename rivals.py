@@ -40,7 +40,7 @@ def keeps(rival, m, top_four):
     return True
 
 
-def build(rival, e, season, teams, pl_table, mw_map, goal_store):
+def build(rival, e, season, teams, pl_table, mw_map, goal_store, lp=None):
     slug = e["league"]["slug"]
     code, _name = h.COMPS[slug]
     c = e["competitions"][0]
@@ -89,6 +89,14 @@ def build(rival, e, season, teams, pl_table, mw_map, goal_store):
         m["result"] = "D"
     if tid in pl_table:
         m["fin"] = h.ordinal(pl_table[tid])
+    # THE SEEDS OF A LEAGUE-PHASE KNOCKOUT (his call 2026-10-09): from 2024-25
+    # both clubs carry where they finished that phase, in front of the name
+    if code in EURO and season >= 2024 and stage not in ("League Phase", ""):
+        t = (lp or {}).get(code) or {}
+        if rival in t:
+            m["rival_lp"] = t[rival]
+        if tid in t:
+            m["opp_lp"] = t[tid]
     if code == "PL":
         home, away = (rival, tid) if m["home"] else (tid, rival)
         key = (h.flat(teams[home]["name"]), h.flat(teams[away]["name"]))
@@ -176,7 +184,13 @@ def collapse(ms):
                 through = away["us"] > home["them"]
             else:
                 through = None
-        if through is not False:
+        if through:
+            # A FIRST LEG OF A TIE THEY CAME THROUGH IS NOT A BAD RESULT (his
+            # call 2026-10-09): nothing was settled that night, and they went
+            # on to win it. The second leg stands on its own.
+            gone.append(id(legs[0]))
+            continue
+        if through is None:
             continue
         second = legs[1]
         second["legs"] = ["%d-%d" % (x["them"], x["us"]) for x in legs]
@@ -197,6 +211,11 @@ def collect(teams):
         over = h.season_over(season)
         pl_table = h.league_table("eng.1", season)
         mw_map = h.matchweeks(season)
+        lp = {}
+        if season >= 2024:
+            for code, slug in (("UCL", "uefa.champions"), ("UEL", "uefa.europa"),
+                               ("UECL", "uefa.europa.conf")):
+                lp[code] = h.league_table(slug, season)
         for rival in RIVALS:
             h.team_info(rival, teams)
             try:
@@ -209,7 +228,7 @@ def collect(teams):
             # a season still being played has no final table: treat it as top
             # four, which is the wider rule, until it ends
             top_four = (not over) or pl_table.get(rival, 99) <= 4
-            got = [build(rival, e, season, teams, pl_table, mw_map, goal_store)
+            got = [build(rival, e, season, teams, pl_table, mw_map, goal_store, lp)
                    for e in events]
             got = collapse([m for m in got if m])
             # a tie they went out of is kept whatever the second leg's own

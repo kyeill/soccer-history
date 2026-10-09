@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-135905. Modelled on games-history's Michigan view (michCard): one card
+   20261009-140628. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-135905";
+const BUILD = "20261009-140628";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -654,6 +654,14 @@ function bigName(id, t, rivals) {
   const caps = rivals ? id === SPURS : TOP_SIX.indexOf(id) > -1;
   return caps ? n.toUpperCase() : n;
 }
+/* A EUROPEAN KNOCKOUT ON THE RIVALS TAB NAMES ITS SEASON (his call
+   2026-10-09): "2024-25 UCL Quarterfinals". A group or league phase does
+   not -- the date beside it already says which season it was. */
+function euroYear(m) {
+  const euro = ["UCL", "UEL", "UECL"].indexOf(m.comp) > -1;
+  if (!euro || m.stage === "Group Stage" || m.stage === "League Phase") return "";
+  return seasonLabel(m.season) + " ";
+}
 function twoCard(m) {
   const wins = m.team === "windows";
   const homeId = wins ? m.home : (m.home ? m.rival : m.opp);
@@ -672,6 +680,11 @@ function twoCard(m) {
   // HIS TWO CLUBS ARE NEVER IN BOLD (2026-10-02): a win of Arsenal's or
   // Chelsea's is washed like any other, but their name and score stay plain
   const rivals = m.team === "rivals";
+  // the league-phase seed, in front of the name as it is on his own cards
+  const seedOf = id => {
+    const n = id === m.rival ? m.rival_lp : id === m.opp ? m.opp_lp : null;
+    return n ? '<span class="rkin">' + n + "</span> " : "";
+  };
   const line = (id, score, other) => {
     const t = TEAMS[id] || {};
     const win = !up && (winId ? id === winId : score > other);
@@ -682,7 +695,7 @@ function twoCard(m) {
       '<img class="crest' + (id === SPURS ? " spurs" : "") +
       '" loading="lazy" src="' + esc(t.logo || "") +
       '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
-      '<span class="nm">' + esc(bigName(id, t, rivals)) + "</span>" +
+      '<span class="nm">' + seedOf(id) + esc(bigName(id, t, rivals)) + "</span>" +
       '<span class="sc">' + (up ? "" : score) + "</span></div>";
   };
   // THE HEADER, IN PIECES so a phone breaks it between fields and never in
@@ -718,13 +731,13 @@ function twoCard(m) {
       // legs with the rival's score second -- "(1-0, 2-2)", "(1-0, 1-1 ET)",
       // "(1-0, 0-1; 4-3 pen)". The score boxes carry the aggregate, and the
       // date and time go, because neither night is the whole story.
-      segs.push('<span class="hstage" data-short="' + esc(st.short) + '">' +
-        esc(st.full) + "</span> (" + esc(m.legs[0]) + ", " + esc(m.legs[1]) +
+      segs.push(euroYear(m) + '<span class="hstage" data-short="' + esc(st.short) +
+        '">' + esc(st.full) + "</span> (" + esc(m.legs[0]) + ", " + esc(m.legs[1]) +
         (m.legs_aet ? " ET" : "") +
         (m.pens ? "; " + esc(m.pens) + " pen" : "") + ")");
     } else {
-      segs.push('<span class="hstage" data-short="' + esc(st.short) + '">' +
-        esc(st.full) + "</span>" + esc(st.end || "") + " " + fmtTime(m.time));
+      segs.push(euroYear(m) + '<span class="hstage" data-short="' + esc(st.short) +
+        '">' + esc(st.full) + "</span>" + esc(st.end || "") + " " + fmtTime(m.time));
       segs.push('<span class="hdate">' + fmtDate(m.date) + "</span>");
     }
   }

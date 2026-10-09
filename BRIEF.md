@@ -483,6 +483,13 @@ AGGREGATE in the boxes and both legs in the header, the rival's score second
 in each: `UCL Round of 16 (2-0, 1-1)`, `(1-0, 1-1 ET)`, `(1-0, 0-1; 4-3
 pen)`. No date, no time -- neither night is the whole story. 18 of them.
 
+A FIRST LEG OF A TIE THEY CAME THROUGH IS NOT A BAD RESULT and is dropped:
+nothing was settled that night and they went on to win it. A EUROPEAN
+KNOCKOUT NAMES ITS SEASON here -- `2024-25 UCL Quarterfinals` -- where a group
+or league phase does not, the date beside it saying which season already.
+And from 2024-25 BOTH clubs carry their LEAGUE-PHASE SEED in front of the
+name: `14 PSV Eindhoven` against `3 Arsenal`.
+
 THE GOAL THAT DID FOR THEM: the opponent's goals from the 80th, when the last
 of them won the match or levelled it. 44 cards. The goals are read per match
 and kept in data/rival-goals.json.
