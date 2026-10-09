@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-103120. Modelled on games-history's Michigan view (michCard): one card
+   20261009-103847. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-103120";
+const BUILD = "20261009-103847";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -547,11 +547,15 @@ function card(m) {
       head += h.dayTime ? " " + h.dayTime.short : "";
       if (!dated && base.length) head += dateUp(base.shift());
       if (base.length) head += tvUp(base);
-      rows.push({ items: [m.holiday].concat(parts), tv: 0 });
+      rows.push({ items: [m.holiday].concat(parts), tv: 0, hol: true });
     } else {
       head += h.dayTime ? " " + h.dayTime.long : "";
-      rows.push({ items: [m.holiday].concat(base), tv: 0 });
+      rows.push({ items: [m.holiday].concat(base), tv: 0, hol: true });
     }
+    // AND THE DAY IS KEPT UP HERE TOO, hidden: if that line still will not
+    // hold it -- the 5-3 against Chelsea, five scorers deep -- trimHeads
+    // shows this one instead (his call 2026-10-09)
+    head += '<span class="hhol"> | ' + esc(m.holiday) + "</span>";
   } else if (h.down) {
     if (parts.length) {
       const chunk = h.down.slice(1);
@@ -612,13 +616,17 @@ function card(m) {
       (footCol && i === rows.length - 1 ? ' style="color:' + footCol + '"' : "") + ">" +
       // the network's own pieces carry .mtv: hidden here while the header
       // holds them, shown when trimHeads sends them down
-      r.items.map((p, j) =>
+      r.items.map((p, j) => {
         // the bar in FRONT of a hidden piece goes with it, so a line never
         // opens with a stray one (caught on his cards 2026-10-06)
-        (j ? '<span class="msep' + (j <= r.tv ? " mtv" : "") + '">|</span>' : "") +
-        '<span class="mdet' + (j < r.tv ? " mtv" : "") + '"' +
+        const holSep = r.hol && j <= 1 ? " mhol" : "";
+        const holBit = r.hol && !j ? " mhol" : "";
+        return (j ? '<span class="msep' + (j <= r.tv ? " mtv" : "") + holSep +
+            '">|</span>' : "") +
+          '<span class="mdet' + (j < r.tv ? " mtv" : "") + holBit + '"' +
           (shortNets(p) !== p ? ' data-net="' + esc(p) + '" data-net-short="' +
-            esc(shortNets(p)) + '"' : "") + ">" + esc(p) + "</span>")
+            esc(shortNets(p)) + '"' : "") + ">" + esc(p) + "</span>";
+      })
         .join("") + "</span>").join("") +
     "</div></div>";
 }
@@ -907,10 +915,18 @@ function trimHeads() {
     const head = row.querySelector(".sport");
     if (!head) return;
     const s = head.querySelector("[data-short]");
-    row.classList.remove("tvdown");
+    row.classList.remove("tvdown", "holup");
     if (s && s.dataset.full) s.textContent = s.dataset.full;
     const lh = parseFloat(getComputedStyle(head).lineHeight) || 19;
     const tall = () => head.getBoundingClientRect().height > lh * 1.5;
+    // A HOLIDAY LINE THAT WILL NOT HOLD THE DAY sends it up to the header,
+    // where there is room (2026-10-09). This runs first, so what follows
+    // measures the header as it will actually read.
+    const hline = row.querySelector(".mhol") && row.querySelector(".mdl");
+    if (hline) {
+      const dl = parseFloat(getComputedStyle(hline).lineHeight) || 18;
+      if (hline.getBoundingClientRect().height > dl * 1.5) row.classList.add("holup");
+    }
     if (!tall()) return;
     if (head.querySelector(".htv")) row.classList.add("tvdown");
     if (tall() && s) {

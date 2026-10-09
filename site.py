@@ -161,6 +161,10 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 /* THE NETWORK LIVES IN THE HEADER and only comes down when the header cannot
    hold it -- trimHeads puts .tvdown on the card (2026-10-06) */
 .mtv{display:none}
+/* THE DAY shows on its line, or in the header when the line cannot hold it */
+.hhol{display:none}
+.row.holup .hhol{display:inline}
+.row.holup .mhol{display:none}
 .row.tvdown .mtv{display:inline}
 .row.tvdown .htv{display:none}
 .hdow{text-transform:uppercase}

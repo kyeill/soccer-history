@@ -449,7 +449,11 @@ date, so the date does not repeat:
 
 A HOLIDAY CARD WITH SOMETHING ELSE TO SAY sends its date and network up to
 the header as any other busy card does, so the line is the day and his words:
-"New Year's Day 2014 | Adebayor 34', Eriksen 66'".
+"New Year's Day 2014 | Adebayor 34', Eriksen 66'". AND IF THE LINE STILL WILL
+NOT HOLD THE DAY, the day goes up too -- one card does it, the 5-3 against
+Chelsea on New Year's Day 2015, five scorers deep. "NYD 2015" would not have
+saved it either: 361px of the 339 that line has. The header takes the full
+name with room to spare.
 
 THANKSGIVING is the fourth Thursday of November, which is why all six of his
 fall in Europe -- Thursday is Europa League night. BOXING DAY is ten matches,
