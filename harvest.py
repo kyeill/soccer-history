@@ -1077,20 +1077,27 @@ def main():
         cell = str((m.get("mx") or {}).get("footer") or "").strip()
         if not cell:
             continue
-        say = []
+        # THE ORDER HE WRITES IS THE ORDER IT READS (his call 2026-10-09):
+        # words before the instruction lead the line, words after it follow.
+        # "Midweek | Late Winner" reads "Midweek | Holtby 82'".
+        pre, post, asked = [], [], False
         for part in cell.split("|"):
             part = part.strip()
             if not part:
                 continue
             field = ASKS.get(part.lower())
-            if field == "scorers" and m.get("_scorers"):
-                m["scorers"] = m["_scorers"]
-            elif field and m.get("_late"):
-                m[field] = m["_late"]
-            elif not field:
-                say.append(part)
-        if say:
-            m["mx"]["say"] = " | ".join(say)
+            if field:
+                asked = True
+                if field == "scorers" and m.get("_scorers"):
+                    m["scorers"] = m["_scorers"]
+                elif field != "scorers" and m.get("_late"):
+                    m[field] = m["_late"]
+            else:
+                (post if asked else pre).append(part)
+        if pre:
+            m["mx"]["say_pre"] = " | ".join(pre)
+        if post:
+            m["mx"]["say"] = " | ".join(post)
     for m in matches:
         m.pop("_scorers", None)
         m.pop("_late", None)

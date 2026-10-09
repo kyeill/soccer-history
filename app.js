@@ -495,6 +495,8 @@ function card(m) {
   // card has of its own goes in parts; the day, date and network find their
   // place around it (see cardHead's note).
   const parts = [];
+  // HIS WORDS LEAD when he wrote them in front of the instruction (2026-10-09)
+  if (mx.say_pre) parts.push(mx.say_pre);
   // the scorer and minute, already worded by the harvest ("Kane 86'")
   if (m.late_win && !m.scorers) parts.push(m.late_win);
   if (m.late_eq && !m.scorers) parts.push(m.late_eq);

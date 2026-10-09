@@ -405,9 +405,12 @@ either an INSTRUCTION or WORDS OF HIS OWN:
                          would not give one
     Late Winner          the goals from the 80th
     Late Equalizer       the same, read as a point saved
-    anything else        printed exactly as written, and always LAST
+    anything else        printed exactly as written, WHERE HE WROTE IT:
+                         before the instruction it leads the line, after it
+                         it follows (2026-10-09)
 
-So `Scorers | Clinched UCL` reads "Son 12', Kane 64' | Clinched UCL". An
+So `Scorers | Clinched UCL` reads "Son 12', Kane 64' | Clinched UCL", and
+`Midweek | Late Winner` reads "Midweek | Holtby 82'". An
 instruction is never printed. A cell that is nothing BUT a colour word paints
 the line instead of printing, as it always did; a longer phrase is words, and
 words are printed. The Notes column still works and reads just before them.
