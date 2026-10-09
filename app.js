@@ -649,9 +649,9 @@ function card(m) {
 // 2026-10-05). BIG_SIX still leads that tab's Team filter.
 function bigName(id, t, rivals) {
   const n = (t || TEAMS[id] || {}).card || (t || {}).name || id;
-  // the RIVALS tab capitalises Tottenham and nobody else (his call
-  // 2026-10-09); the TV Windows tab still shouts the Top Six
-  const caps = rivals ? id === SPURS : TOP_SIX.indexOf(id) > -1;
+  // the RIVALS tab capitalises Tottenham and nobody else; the TV Windows tab
+  // shouts the Top Six AND Tottenham with them (his calls 2026-10-09)
+  const caps = rivals ? id === SPURS : BIG_SIX.indexOf(id) > -1;
   return caps ? n.toUpperCase() : n;
 }
 /* A EUROPEAN KNOCKOUT ON THE RIVALS TAB NAMES ITS SEASON (his call
@@ -770,7 +770,12 @@ function twoCard(m) {
       else if (m.stage === "Semifinals") mark(col, false);
     }
     // a tie they went out of counts however the second leg itself ended
-    if (euro && KNOCK && (m.legs || m.result === "L")) mark(col, m.comp === "UCL");
+    if (euro && KNOCK && (m.legs || m.result === "L")) {
+      mark(col, m.comp === "UCL");
+      // THE FILL IS THE OPPONENT'S COLOUR (his call 2026-10-09) -- the club
+      // that put them out -- while the border stays the competition's
+      if (m.comp === "UCL") wash = shade(teamColour(m.opp));
+    }
     if (m.opp === SPURS && m.result === "L") {
       mark("#ffffff", true);
       wash = shade(VIEWS.spurs.box);

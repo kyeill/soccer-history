@@ -131,6 +131,9 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
   color:var(--muted);font-style:normal}
 /* the league-phase position in front of the name */
 .rkin{color:var(--rank);font-weight:600;font-variant-numeric:tabular-nums}
+/* on a two-team card BOTH clubs carry a seed, so the numbers are boxed to a
+   width and the names start together whether it is 1 or 15 (2026-10-09) */
+.row.two .rkin{display:inline-block;min-width:1.6em;text-align:right}
 .row.dimmed .rkin{color:var(--muted)}
 .sc.mbox{display:inline-flex;align-items:center;justify-content:center;
   box-sizing:border-box;height:26px;padding:0 8px;border-radius:4px;
@@ -195,6 +198,6 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 <div id="list"></div>
 </div>
 
-<script src="app.js?v=20261009-141308"></script>
+<script src="app.js?v=20261009-142016"></script>
 </body>
 </html>
