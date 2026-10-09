@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-100741. Modelled on games-history's Michigan view (michCard): one card
+   20261009-103120. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-100741";
+const BUILD = "20261009-103120";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -531,13 +531,27 @@ function card(m) {
     // with it, which drops its three-letter day -- the holiday has already
     // said which day it was:
     //     UEL Group Stage MD5
-    //     THANKSGIVING | 11/27/2014 | ESPN 3:05pm
+    //     THANKSGIVING | 11/27/2014 | ESPN3 3:05pm
     //     [MW18] Saturday 10:00am
     //     BOXING DAY | 12/26/2014 | PL Extra Time
     const base = (h.down || h.tail || []).map(p => String(p));
-    if (h.down && base.length) base[0] = base[0].replace(/^[A-Za-z]{3} /, "");
-    head += h.dayTime ? " " + h.dayTime.long : "";
-    rows.push({ items: [m.holiday].concat(base, parts), tv: 0 });
+    // A HOLIDAY THAT CARRIES ITS YEAR IS the date, so the date does not
+    // repeat: "New Year's Day 2023 | Peacock" (his call 2026-10-09)
+    const dated = /\d{4}$/.test(m.holiday);
+    if (dated) base.shift();
+    else if (h.down && base.length) base[0] = base[0].replace(/^[A-Za-z]{3} /, "");
+    if (parts.length) {
+      // ...unless he has something to say as well, and then the date and the
+      // network ride up as they do on any other busy card, so the line is the
+      // day and his words: "New Year's Day 2014 | Adebayor 34', Eriksen 66'"
+      head += h.dayTime ? " " + h.dayTime.short : "";
+      if (!dated && base.length) head += dateUp(base.shift());
+      if (base.length) head += tvUp(base);
+      rows.push({ items: [m.holiday].concat(parts), tv: 0 });
+    } else {
+      head += h.dayTime ? " " + h.dayTime.long : "";
+      rows.push({ items: [m.holiday].concat(base), tv: 0 });
+    }
   } else if (h.down) {
     if (parts.length) {
       const chunk = h.down.slice(1);

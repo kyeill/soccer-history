@@ -518,10 +518,14 @@ def ordinal(n):
 def holiday_of(date):
     """The two days he wants named on a card (2026-10-09): THANKSGIVING, the
     fourth Thursday of November -- which is why every one of his falls in
-    Europe, Thursday being Europa League night -- and BOXING DAY. New Year's
-    Day he did not want.
+    Europe, Thursday being Europa League night -- BOXING DAY, and NEW YEAR'S
+    DAY, which carries its own year.
     """
     y, mth, day = (int(x) for x in date.split("-"))
+    # NEW YEAR'S DAY CARRIES ITS YEAR (his call 2026-10-09), because the name
+    # and the year together ARE the date: "New Year's Day 2023 | Peacock"
+    if mth == 1 and day == 1:
+        return "New Year's Day %d" % y
     if mth == 12 and day == 26:
         return "Boxing Day"
     if mth == 11:

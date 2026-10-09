@@ -441,6 +441,16 @@ it was:
     [MW18] Saturday 10:00am
     Boxing Day | 12/26/2014 | PL Extra Time
 
+NEW YEAR'S DAY CARRIES ITS YEAR, and the name and the year together ARE the
+date, so the date does not repeat:
+
+    [MW18] Sunday 9:00am
+    New Year's Day 2023 | Peacock
+
+A HOLIDAY CARD WITH SOMETHING ELSE TO SAY sends its date and network up to
+the header as any other busy card does, so the line is the day and his words:
+"New Year's Day 2014 | Adebayor 34', Eriksen 66'".
+
 THANKSGIVING is the fourth Thursday of November, which is why all six of his
 fall in Europe -- Thursday is Europa League night. BOXING DAY is ten matches,
 all Premier League. New Year's Day he looked at and did not want.
