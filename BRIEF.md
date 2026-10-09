@@ -461,3 +461,28 @@ name with room to spare.
 THANKSGIVING is the fourth Thursday of November, which is why all six of his
 fall in Europe -- Thursday is Europa League night. BOXING DAY is ten matches,
 all Premier League. New Year's Day he looked at and did not want.
+
+## The Rivals tab (Kyle, 2026-10-09)
+
+It opens on ARSENAL, THIS SEASON, OLDEST FIRST. Only Tottenham is in
+capitals; everyone else reads in proper case, and ESPN's dark Tottenham crest
+is shown as a white silhouette.
+
+THE HEADER: the Premier League reads `[MW5] SAT 9/19/2026 | 10:00am`, and a
+TV window takes the window's own shape and colour, as on his tab. The cups
+wear their colour from the FIRST round here.
+
+WHAT THE CARD WEARS: a cup semifinal takes the border, a final the border and
+the fill. A European knockout they went OUT of is marked -- the Champions
+League filled, the Europa and Conference bordered -- however the last leg
+itself ended. A TOTTENHAM RESULT OUTRANKS ALL OF IT: a win fills the card in
+his navy with a white border, a draw takes the border alone.
+
+A EUROPEAN TIE THEY WENT OUT OF IS ONE CARD, the second leg, with the
+AGGREGATE in the boxes and both legs in the header, the rival's score second
+in each: `UCL Round of 16 (2-0, 1-1)`, `(1-0, 1-1 ET)`, `(1-0, 0-1; 4-3
+pen)`. No date, no time -- neither night is the whole story. 18 of them.
+
+THE GOAL THAT DID FOR THEM: the opponent's goals from the 80th, when the last
+of them won the match or levelled it. 44 cards. The goals are read per match
+and kept in data/rival-goals.json.

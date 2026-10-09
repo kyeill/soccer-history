@@ -40,7 +40,7 @@ def keeps(rival, m, top_four):
     return True
 
 
-def build(rival, e, season, teams, pl_table, mw_map):
+def build(rival, e, season, teams, pl_table, mw_map, goal_store):
     slug = e["league"]["slug"]
     code, _name = h.COMPS[slug]
     c = e["competitions"][0]
@@ -75,6 +75,9 @@ def build(rival, e, season, teams, pl_table, mw_map):
     # does not (Chelsea's 2013 Super Cup)
     if so is None and m["us"] == m["them"] and code != "PL":
         so = h.pens_from_summary(e["id"], rival)
+    if any("extra time" in (n or "").lower() or "aet" in (n or "").lower()
+           for n in notes):
+        m["aet"] = True
     if so is not None:
         m["pens"] = so[1]
         m["result"] = "W" if so[0] else "L"
@@ -97,6 +100,31 @@ def build(rival, e, season, teams, pl_table, mw_map):
         home, away = (rival, tid) if m["home"] else (tid, rival)
         m["nets"] = tv.networks_any(m["date"], teams[home]["name"], teams[away]["name"])
     m["nets"] = tv.clean(m["nets"])
+    # THE GOAL THAT DID FOR THEM (his call 2026-10-09): the opponent's goals
+    # from the 80th, when the last of them won the match or levelled it.
+    # late_flags is read from the OPPONENT's side here, so the rival is the
+    # club it checks against -- and Arsenal and Chelsea are both Top Six, so
+    # its equalizer rule lets them through.
+    if m["result"] in ("D", "L"):
+        goals = goal_store.get(e["id"])
+        if goals is None:
+            try:
+                goals = h.goals_of(slug, e["id"], rival,
+                                   {rival: m["us"], tid: m["them"]})
+            except requests.RequestException as err:
+                # ESPN answers 502 now and then over a few hundred summaries;
+                # an unread match is left unread, not remembered as goalless
+                print("  WARN: goals for %s: %s" % (e["id"], err))
+                goals = None
+            else:
+                goal_store[e["id"]] = goals
+        if goals and goals != "awarded":
+            w, q = h.late_flags(goals, tid, rival,
+                                "W" if m["result"] == "L" else "D")
+            if w:
+                m["late_win"] = w
+            if q:
+                m["late_eq"] = q
     return m
 
 
@@ -113,9 +141,57 @@ def shootout(notes, us):
     return got
 
 
+EURO = ("UCL", "UEL", "UECL")
+
+
+def collapse(ms):
+    """A European knockout tie they went OUT of reads as ONE card: the second
+    leg, with the AGGREGATE as the score and both legs in the header, the
+    rival's score second in each -- "(1-0, 2-2)". The first leg settled
+    nothing on its own, so it goes (his call 2026-10-09).
+    """
+    ties = {}
+    for m in ms:
+        if m["comp"] not in EURO:
+            continue
+        if m["stage"] in ("Group Stage", "League Phase", "Final"):
+            continue
+        ties.setdefault((m["season"], m["comp"], m["stage"], m["opp"]), []).append(m)
+    gone = []
+    for legs in ties.values():
+        if len(legs) != 2:
+            continue
+        legs.sort(key=lambda x: x["date"])
+        ours = sum(x["us"] for x in legs)
+        theirs = sum(x["them"] for x in legs)
+        if ours != theirs:
+            through = ours > theirs
+        elif legs[1].get("pens"):
+            through = legs[1]["result"] == "W"
+        else:
+            away = next((x for x in legs if not x["home"]), None)
+            home = next((x for x in legs if x["home"]), None)
+            if legs[1]["season"] <= 2020 and away and home and \
+                    away["us"] != home["them"]:
+                through = away["us"] > home["them"]
+            else:
+                through = None
+        if through is not False:
+            continue
+        second = legs[1]
+        second["legs"] = ["%d-%d" % (x["them"], x["us"]) for x in legs]
+        second["us"], second["them"] = ours, theirs
+        second["agg"] = True
+        if second.get("aet"):
+            second["legs_aet"] = True
+        gone.append(id(legs[0]))
+    return [m for m in ms if id(m) not in gone]
+
+
 def collect(teams):
     """Every Arsenal and Chelsea match his rules keep, 2013-14 on."""
     this = h.current_season()
+    goal_store = h.load_data("rival-goals.json", {})
     out = []
     for season in range(h.FIRST_SEASON, this + 1):
         over = h.season_over(season)
@@ -133,9 +209,14 @@ def collect(teams):
             # a season still being played has no final table: treat it as top
             # four, which is the wider rule, until it ends
             top_four = (not over) or pl_table.get(rival, 99) <= 4
-            got = [build(rival, e, season, teams, pl_table, mw_map) for e in events]
-            out += [m for m in got if m and keeps(rival, m, top_four)]
+            got = [build(rival, e, season, teams, pl_table, mw_map, goal_store)
+                   for e in events]
+            got = collapse([m for m in got if m])
+            # a tie they went out of is kept whatever the second leg's own
+            # result was: it is the tie the card is about
+            out += [m for m in got if m.get("agg") or keeps(rival, m, top_four)]
     tv.save()
+    h.save_data("rival-goals.json", goal_store)
     out.sort(key=lambda m: (m["date"], m["time"]))
     print("  rivals: %d results (%d Arsenal, %d Chelsea)"
           % (len(out), sum(1 for m in out if m["rival"] == ARSENAL),

@@ -663,8 +663,11 @@ function twoCard(m) {
   const up = hs === null || hs === undefined;
   // a shootout decides who won: the RESULT knows it, the score does not
   const rivalWon = !wins && m.result === "W", rivalLost = !wins && m.result === "L";
+  // A COLLAPSED TIE is the opponent's: the rival went out of it, whatever
+  // the second leg's own score said (2026-10-09)
   const winId = up ? null
     : wins ? (hs > as ? homeId : as > hs ? awayId : null)
+    : m.legs ? m.opp
     : rivalWon ? m.rival : rivalLost ? m.opp : null;
   // HIS TWO CLUBS ARE NEVER IN BOLD (2026-10-02): a win of Arsenal's or
   // Chelsea's is washed like any other, but their name and score stay plain
@@ -710,6 +713,15 @@ function twoCard(m) {
         m.dow.toUpperCase() + ' <span class="hdate">' + fmtDate(m.date) +
         "</span>");
       segs.push(fmtTime(m.time));
+    } else if (m.legs) {
+      // A TIE THEY WENT OUT OF (his call 2026-10-09): the round, then both
+      // legs with the rival's score second -- "(1-0, 2-2)", "(1-0, 1-1 ET)",
+      // "(1-0, 0-1; 4-3 pen)". The score boxes carry the aggregate, and the
+      // date and time go, because neither night is the whole story.
+      segs.push('<span class="hstage" data-short="' + esc(st.short) + '">' +
+        esc(st.full) + "</span> (" + esc(m.legs[0]) + ", " + esc(m.legs[1]) +
+        (m.legs_aet ? " ET" : "") +
+        (m.pens ? "; " + esc(m.pens) + " pen" : "") + ")");
     } else {
       segs.push('<span class="hstage" data-short="' + esc(st.short) + '">' +
         esc(st.full) + "</span>" + esc(st.end || "") + " " + fmtTime(m.time));
@@ -717,6 +729,7 @@ function twoCard(m) {
     }
   }
   const winner = winId;
+  const late = rivals ? (m.late_win || m.late_eq || "") : "";
   // the shootout is in the round's own label now ("League Cup Final (4-3
   // Pen)"), so this card no longer says it twice (2026-10-06)
   // HIS TOTTENHAM MARKS (2026-10-02), the way Michigan's TV windows read: a
@@ -743,7 +756,8 @@ function twoCard(m) {
       if (m.stage === "Final") mark(col, true);
       else if (m.stage === "Semifinals") mark(col, false);
     }
-    if (euro && KNOCK && m.result === "L") mark(col, m.comp === "UCL");
+    // a tie they went out of counts however the second leg itself ended
+    if (euro && KNOCK && (m.legs || m.result === "L")) mark(col, m.comp === "UCL");
     if (m.opp === SPURS && m.result === "L") {
       mark("#ffffff", true);
       wash = shade(VIEWS.spurs.box);
@@ -776,6 +790,9 @@ function twoCard(m) {
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + ">" +
     head + "</div>" +
     '<div class="teams">' + line(awayId, as, hs) + line(homeId, hs, as) + "</div>" +
+    // THE GOAL THAT DID FOR THEM, under the two clubs (his call 2026-10-09)
+    (late ? '<div class="tags mdets"><span class="mdl"><span class="mdet">' +
+      esc(late) + "</span></span></div>" : "") +
     "</div>";
 }
 
