@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-210152. Modelled on games-history's Michigan view (michCard): one card
+   20261009-211242. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-210152";
+const BUILD = "20261009-211242";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -69,6 +69,24 @@ const ARSENAL = "359", CHELSEA = "363";
 // compares them, and an option that said "Super Sunday" while the
 // matches said "Sky Super Sunday" found nothing (his catch 2026-10-02)
 const WINDOWS = ["NBC Saturday", "Sky Sunday"];
+/* WHAT KIND OF WINDOWS MATCH IT IS (his Type filter, 2026-10-09). These are
+   the same two tests that colour the scores, so the dropdown and the card
+   can never disagree: both clubs in the top six reads light blue, and one of
+   them beaten or held by anybody outside it reads the upset orange.
+   Tottenham is left out of the upsets exactly as they are left out of the
+   orange -- their own marks on the card say it already. A fixture yet to be
+   played is still a Top Six tie; it cannot yet be an upset. */
+function isTopSix(m) {
+  return m.team === "windows" &&
+    BIG_SIX.indexOf(m.home) > -1 && BIG_SIX.indexOf(m.away) > -1;
+}
+function isUpset(m) {
+  if (m.team !== "windows" || m.hs === null || m.hs === undefined) return false;
+  const hBig = BIG_SIX.indexOf(m.home) > -1, aBig = BIG_SIX.indexOf(m.away) > -1;
+  if (hBig === aBig) return false;
+  if ((hBig ? m.home : m.away) === SPURS) return false;
+  return hBig ? m.as >= m.hs : m.hs >= m.as;
+}
 // a European header wears its competition's colour, lightened to read on a
 // card; the English cups stay plain
 const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#dcdce6",
@@ -846,13 +864,8 @@ function twoCard(m) {
     // the top six meeting reads light blue, and one of them beaten or held by
     // anyone else reads the upset orange. Tottenham stays out of the orange --
     // their own marks say it already.
-    const hBig = BIG_SIX.indexOf(m.home) > -1, aBig = BIG_SIX.indexOf(m.away) > -1;
-    if (hBig && aBig) cls += " scbig";
-    else if (hBig || aBig) {
-      const big = hBig ? m.home : m.away;
-      const bs = hBig ? hs : as, os = hBig ? as : hs;
-      if (os >= bs && big !== SPURS) cls += " scup";
-    }
+    if (isTopSix(m)) cls += " scbig";
+    else if (isUpset(m)) cls += " scup";
   }
   if (wins && !up && (m.home === SPURS || m.away === SPURS)) {
     const usHome = m.home === SPURS;
@@ -901,7 +914,7 @@ function defaults() {
   const open = rivals || VIEW === "spurs" ? CURRENT
     : (years.length ? Math.max.apply(null, years) : null);
   return { season: open, comp: null, team: null, hl: null, ko: false,
-           window: null, rival: rivals ? ARSENAL : null, net: null,
+           type: null, rival: rivals ? ARSENAL : null, net: null,
            kit: null, elim: false };
 }
 // a Premier League year is a season: 2026-27, not 2026 (his call
@@ -920,7 +933,14 @@ function passes(m, skip) {
     return false;
   }
   if (skip !== "kit" && FILT.kit && (m.mx || {}).kit !== FILT.kit) return false;
-  if (skip !== "window" && FILT.window && m.window !== FILT.window) return false;
+  // THE TYPE OF A WINDOWS MATCH (his call 2026-10-09): what happened on the
+  // card, or which window it was. It replaced the Window menu, which offered
+  // only the latter.
+  if (skip !== "type" && FILT.type) {
+    if (FILT.type === "big" ? !isTopSix(m)
+      : FILT.type === "upset" ? !isUpset(m)
+      : m.window !== FILT.type) return false;
+  }
   if (skip !== "rival" && FILT.rival && m.rival !== FILT.rival) return false;
   if (FILT.ko && !isKnockout(m)) return false;
   if (FILT.elim && !isElim(m)) return false;
@@ -961,8 +981,9 @@ function filterBar() {
     seasons.map(y => [yearLabel(y), y]), FILT.season));
   // TV Windows picks a window instead of a competition; Rivals picks the club
   if (VIEW === "epl" && SUB === "tv") {
-    h += group("Window", select("window", "Both Windows",
-      WINDOWS.map(w => [w, w]), FILT.window));
+    h += group("Type", select("type", "All Types",
+      [["Top Six", "big"], ["Upsets", "upset"], BAR]
+        .concat(WINDOWS.map(w => [w, w])), FILT.type));
   }
   if (VIEW === "epl" && SUB === "rivals") {
     h += group("Rival", select("rival", "Both Rivals",
@@ -1203,7 +1224,7 @@ async function init() {
   });
   document.getElementById("clearbtn").addEventListener("click", () => {
     FILT = { season: null, comp: null, team: null, hl: null, ko: false,
-             window: null, rival: null };
+             type: null, rival: null };
     draw();
     window.scrollTo({ top: 0 });
   });

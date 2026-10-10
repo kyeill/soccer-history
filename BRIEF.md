@@ -346,6 +346,23 @@ won by, and the rival underneath, matching the two leg scores in its header.
 This is a separate thing from the Tottenham tab's rule below, where his own
 team's box comes first whoever was at home.
 
+THE TYPE MENU ON TV WINDOWS (his call 2026-10-09) replaced the Window menu,
+which offered only the two windows. It now asks what KIND of match it was,
+in his order, with a bar between the two sorts of answer:
+
+  Top Six      both clubs in the big six -- 196, and a fixture yet to be
+               played counts, since it is a top-six tie either way
+  Upsets       one of them beaten or held by anybody outside it -- 106.
+               Tottenham is left out, as they are left out of the orange.
+  ------
+  NBC Saturday  296
+  Sky Sunday    359
+
+The first two are the SAME TESTS that colour the scores -- isTopSix() and
+isUpset(), which the card calls too -- so the menu and the card can never
+disagree. The only Top Six cards without the blue are those two unplayed
+fixtures, which have no score to colour.
+
 THE EPL/RIVALS TAB (his calls 2026-10-02): its Year menu reads seasons,
 2026-27, as his own tab does; the Top Six AND TOTTENHAM wear capitals on the
 cards; and the Team menu is grouped exactly as the Tottenham tab's, Tottenham
