@@ -93,3 +93,26 @@ load_sheet read only the block BEFORE the first headerless column, so working
 columns he keeps in the middle of his sheet would have hidden his kit colours
 to their right. Every column is read by its NAME now and a headerless one is
 skipped; where a name repeats, the leftmost wins. 10 marked rows became 135.
+
+## The two clocks are already handled -- do not "fix" them (2026-10-09)
+
+A window is chosen on the UK clock and only then converted to Eastern, which
+is the whole point of reading UK times (his call 2026-09-21). So the few weeks
+each year when the two countries' clocks are out of step need no special case
+at all: the match is found, and the card simply reads an hour later.
+
+  NBC Saturday  286 cards at 12:30 ET and  11 at 1:30pm -- same 17:30 UK
+  Sky Sunday    208 cards at 11:30am and   15 at 12:30pm -- same 16:30 UK
+                123 cards at 11:00am and   13 at 12:00pm -- same 16:00 UK
+
+All 39 of the late ones fall in the two annual gaps and nowhere else: 8-23
+March (the US springs forward on the second Sunday, the UK on the last) and
+25 October - 6 November (the UK falls back on the last Sunday of October, the
+US on the first of November). Nothing has ever been lost to this.
+
+WHAT LOOKS LIKE CLOCK DRIFT AND IS NOT: a kickoff that simply moved. The five
+windows missing from 2025-26 were at 15:30, 15:30, 17:30, 16:30 and 17:30 UK,
+and on every one of those days the OTHER matches were at textbook times --
+14:00, 15:00, 12:30 -- so no date was ever stored in the wrong zone. A whole
+day shifts together or not at all; that is the test to run before believing a
+timezone bug.
