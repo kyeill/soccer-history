@@ -221,7 +221,7 @@ the daily build.
 Second tab, two views (a segmented bar, as in games-history):
 
 - **TV Windows** -- every Saturday and Sunday window match since 2013-14,
-  688 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
+  716 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
   ESPN gives the US network (2024-25 on) and the crests. THE SUNDAY WINDOW
   MOVED: 16:00 UK to 2018-19, 16:30 from 2019-20 -- read per season, with the
   other time taken when a matchweek has nothing at the usual one (2016-18 used
@@ -234,12 +234,32 @@ Second tab, two views (a segmented bar, as in games-history):
   slid the late Sunday game to 15:30 in MW3 and MW8 and to 17:30 in MW20 and
   MW37, and one Saturday to 16:30 -- Liverpool v Fulham in MW32, which NBC
   duly showed at 11:30 ET. So a matchweek with nothing at the usual time
-  falls back to its LAST kickoff that day inside the window's own stretch of
-  the afternoon: 15:00-17:30 on a Sunday, 16:00-17:29 on a Saturday. Sunday
-  evening (19:00 on) and Saturday night (20:00) are their own slots and never
-  stand in. A midweek round with no weekend fixture at all still has no
-  window, and neither has a Saturday whose only 17:30 games were on something
-  other than NBC -- MW30 of 2025-26, where both were.
+  falls back.
+
+  SATURDAY falls back by the clock alone, to its last kickoff from 16:00 up
+  to 17:30. Saturday night (20:00) is its own slot and never stands in.
+
+  SUNDAY HAS NO FLOOR AND NO CEILING (his call 2026-10-09). A week cut back
+  to one early game -- a League Cup final weekend, Christmas Eve -- still has
+  a Sunday window, and so does one whose late game went to 18:00 or the
+  evening. The clock cannot rank those, so THE US CHANNEL DOES: the biggest
+  one took the showcase (NBC, then USA Network, then NBCSN), and the latest
+  kickoff breaks a tie. That is what picks Tottenham v Forest on 7 April
+  2024, on USA Network at 18:00, over the 17:30 that was on cable; and what
+  keeps Villa v Chelsea, on NBC, over the Boxing Day 20:00 of 2021. Before
+  2016-17 nothing lists a channel, so it is the clock. Only two matchweeks
+  in thirteen seasons now have no Sky Sunday, and neither has a Sunday
+  fixture at all.
+
+  WHERE THE TWO SOURCES DISAGREE, NBC WINS (2026-10-09). Everton v Fulham on
+  26 October 2024 is called USA Network by ESPN and NBC by the Premier
+  League's own listing; the NBC-only rule is meant to turn away a window that
+  demonstrably was not on NBC, and one source saying it was is not that. It
+  is the only such disagreement in either season ESPN covers.
+
+  A Saturday whose only 17:30 games were on something other than NBC still
+  has no NBC window -- MW30 of 2025-26, where both were, and MW32 and MW33 of
+  2024-25.
 - **Rivals** -- 281 results: Arsenal 203, Chelsea 78, opening on every year,
   newest first. Arsenal's rule is applied across ALL competitions.
 

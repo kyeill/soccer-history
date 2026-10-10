@@ -32,6 +32,17 @@ def dow(f):
 # THE LAST DAY HAS NO WINDOW (his call 2026-10-09): all ten matches kick off
 # together, so neither broadcaster has a game of its own that afternoon.
 LAST_MD = 38
+
+# WHICH GAME WAS THE SHOWCASE, when the clock cannot say: the one the biggest
+# US channel took. Only used to break a tie in the Sunday fallback below.
+CHANNEL = ["NBC", "USA Network", "NBCSN"]
+
+
+def channel_rank(nets):
+    for i, c in enumerate(CHANNEL):
+        if c in nets:
+            return len(CHANNEL) - i
+    return 0
 # ESPN carries next to no US broadcast before this (3-11 matches a season), so
 # the older windows are not worth a call a day for
 TV_FROM = 2024
@@ -115,6 +126,18 @@ def nets_for(date, home_id, away_id):
     return [], None
 
 
+def us_nets(season, f, ids):
+    """The US broadcast of one fixture: ESPN for the newest seasons, the
+    Premier League's own listing for 2016-17 to 2023-24 (see tv.py)."""
+    nets = []
+    if season >= TV_FROM:
+        nets, _ = nets_for(f["date"], ids.get(h.flat(f["home"])),
+                           ids.get(h.flat(f["away"])))
+    if not nets:
+        nets = tv.networks(season, f["home"], f["away"])
+    return tv.clean(nets)
+
+
 def collect(teams):
     this = h.current_season()
     out = []
@@ -146,16 +169,26 @@ def collect(teams):
         # 2025-26 slid the late Sunday game to 15:30 twice and to 17:30 twice,
         # and one Saturday to 16:30 -- Liverpool v Fulham in MW32, which NBC
         # duly showed at 11:30 ET. So a matchweek with nothing at the usual
-        # time falls back to its LAST kickoff that day inside the window's
-        # own stretch of the afternoon: 15:00-17:30 on a Sunday, 16:00-17:30
-        # on a Saturday. Sunday evening (19:00 on) and Saturday night (20:00)
-        # are their own slots and never stand in.
+        # time falls back.
+        #
+        # SATURDAY falls back by the clock alone, to the last kickoff from
+        # 16:00 up to 17:30. Saturday night (20:00) is its own slot.
+        #
+        # SUNDAY HAS NO FLOOR AND NO CEILING (his call 2026-10-09): a week cut
+        # back to one early game -- a League Cup final weekend, Christmas Eve
+        # -- still has a Sunday window, and so does one whose late game went
+        # to 18:00 or the evening. The clock cannot rank those, so the US
+        # CHANNEL does: the biggest one took the showcase, and the latest
+        # kickoff breaks a tie. That is what picks Tottenham v Forest on
+        # 7 April 2024, on USA Network, over the 17:30 that was on cable; and
+        # what keeps Villa v Chelsea, on NBC, over the Boxing Day 20:00 of
+        # 2021. Before 2016-17 nothing lists a channel, so it is the clock.
         mds = {f["md"] for f in fixtures}
         for md in mds - set(sundays):
-            late = [f for f in fixtures if f["md"] == md and dow(f) == "Sun"
-                    and "15:00" <= f["uk"] <= "17:30"]
-            if late:
-                sundays[md] = max(late, key=lambda f: f["uk"])
+            sun = [f for f in fixtures if f["md"] == md and dow(f) == "Sun"]
+            if sun:
+                sundays[md] = max(sun, key=lambda f: (
+                    channel_rank(us_nets(season, f, ids)), f["uk"]))
         for md in mds - set(saturdays):
             late = [f for f in fixtures if f["md"] == md and dow(f) == "Sat"
                     and "16:00" <= f["uk"] < SATURDAY]
@@ -186,15 +219,10 @@ def collect(teams):
                  "id": "w%s-%s-%s" % (f["date"], home, away)}
             # ESPN for the newest seasons, the Premier League's own listing
             # for 2016-17 to 2023-24 (see tv.py). Nothing before that exists.
-            nets = []
-            if season >= TV_FROM:
-                nets, _ = nets_for(f["date"], home, away)
-            if not nets:
-                nets = tv.networks(season, f["home"], f["away"])
+            nets = us_nets(season, f, ids)
             if not nets:
                 # 2013-14 to 2015-16, which nothing else has
-                nets = tv.networks_any(m["date"], f["home"], f["away"])
-            nets = tv.clean(nets)
+                nets = tv.clean(tv.networks_any(m["date"], f["home"], f["away"]))
             if nets:
                 m["nets"] = nets
             # AN NBC SATURDAY IS ON NBC (his call 2026-10-06). The 17:30 UK
@@ -202,8 +230,16 @@ def collect(teams):
             # 89 of 385 -- and a window named for a network it was not on is
             # no window of his. A match whose US network is simply unknown
             # stays, since nothing says it was not NBC.
+            # ESPN AND THE LEAGUE'S OWN LISTING DISAGREE ONCE (2026-10-09):
+            # Everton v Fulham on 26 October 2024, which ESPN calls USA
+            # Network and the Premier League calls NBC. NBC from EITHER keeps
+            # the match -- the rule is only meant to turn away a window that
+            # demonstrably was not on NBC, and one source saying it was is
+            # not that. It is the only such disagreement in either season
+            # ESPN covers.
             if label == "NBC Saturday" and nets and "NBC" not in nets:
-                continue
+                if "NBC" not in tv.clean(tv.networks(season, f["home"], f["away"])):
+                    continue
             out.append(m)
         if missing:
             print("  WARN: %s clubs not matched to ESPN: %s"
