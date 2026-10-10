@@ -176,6 +176,13 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 .mstar{position:absolute;left:0;top:50%;transform:translateY(-50%);width:22px;
   text-align:center;color:#f2f2f0;font-weight:700;font-size:16px;line-height:1}
 .row.dimmed .mstar{color:#8a8a92}
+/* A HOME MATCH PLAYED SOMEWHERE ELSE: a dagger in the bottom-left corner,
+   in the same gutter the star uses. On the few cards that would carry both,
+   the star takes the top and the dagger keeps the bottom. */
+.mwem{position:absolute;left:0;bottom:0;width:22px;text-align:center;
+  color:#c9c9c4;font-size:15px;line-height:1}
+.row.dimmed .mwem{color:#8a8a92}
+.tags.mdets.both .mstar{top:0;transform:none}
 /* TWO GREY LINES (his call 2026-10-02): a European night's day/date/network
    sits above whatever else the card has to say */
 .tags.mdets{grid-area:tags;display:flex;flex-direction:column;
@@ -220,6 +227,6 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 <div id="list"></div>
 </div>
 
-<script src="app.js?v=20261009-211911"></script>
+<script src="app.js?v=20261009-212923"></script>
 </body>
 </html>

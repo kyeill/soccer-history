@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-211911. Modelled on games-history's Michigan view (michCard): one card
+   20261009-212923. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-211911";
+const BUILD = "20261009-212923";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -650,7 +650,13 @@ function card(m) {
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + "><span>" +
     head + "</span></div>" +
     '<div class="teams">' + oppLine + "</div>" +
-    '<div class="tags mdets">' + (mx.attended ? '<span class="mstar">*</span>' : "") +
+    '<div class="tags mdets' + (mx.attended && m.elsewhere ? " both" : "") +
+      '">' + (mx.attended ? '<span class="mstar">*</span>' : "") +
+    // A HOME MATCH PLAYED SOMEWHERE ELSE wears a dagger in the corner (his
+    // call 2026-10-09) -- the asterisk was already his, for a match he was
+    // at. The ground itself is in the tooltip.
+    (m.elsewhere ? '<span class="mwem" title="Home match played at ' +
+      esc(m.elsewhere) + '">†</span>' : "") +
     // his Footer colour word paints the line his own details sit on
     rows.map((r, i) => '<span class="mdl"' +
       (footCol && i === rows.length - 1 ? ' style="color:' + footCol + '"' : "") + ">" +

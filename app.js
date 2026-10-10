@@ -650,7 +650,13 @@ function card(m) {
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + "><span>" +
     head + "</span></div>" +
     '<div class="teams">' + oppLine + "</div>" +
-    '<div class="tags mdets">' + (mx.attended ? '<span class="mstar">*</span>' : "") +
+    '<div class="tags mdets' + (mx.attended && m.elsewhere ? " both" : "") +
+      '">' + (mx.attended ? '<span class="mstar">*</span>' : "") +
+    // A HOME MATCH PLAYED SOMEWHERE ELSE wears a dagger in the corner (his
+    // call 2026-10-09) -- the asterisk was already his, for a match he was
+    // at. The ground itself is in the tooltip.
+    (m.elsewhere ? '<span class="mwem" title="Home match played at ' +
+      esc(m.elsewhere) + '">†</span>' : "") +
     // his Footer colour word paints the line his own details sit on
     rows.map((r, i) => '<span class="mdl"' +
       (footCol && i === rows.length - 1 ? ' style="color:' + footCol + '"' : "") + ">" +

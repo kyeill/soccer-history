@@ -650,6 +650,19 @@ def pens_from_summary(eid, team):
     return mine > theirs, "%d-%d" % (max(mine, theirs), min(mine, theirs))
 
 
+# THEIR OWN GROUND, in both its lives. A home match anywhere else is one of
+# the 52 they played away from home (his call 2026-10-09): Wembley for the
+# 2016-17 European nights, the whole of 2017-18, and 2018-19 until the new
+# stadium opened -- plus the one League Cup tie at Stadium MK.
+HOME_GROUNDS = ("White Hart Lane", "Tottenham Hotspur Stadium")
+
+
+def elsewhere(where, venue):
+    if where != "H" or not venue:
+        return None
+    return None if any(g in venue for g in HOME_GROUNDS) else venue
+
+
 def venue_place(venue):
     """A neutral ground is named by city -- except Wembley, which is the story."""
     name = (venue or {}).get("fullName") or ""
@@ -692,6 +705,9 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
         "nets": [n.get("media", {}).get("shortName") for n in c.get("broadcasts") or []
                  if n.get("media", {}).get("shortName")],
     }
+    away_home = elsewhere(m["where"], m["venue"])
+    if away_home:
+        m["elsewhere"] = away_home
     if neutral:
         m["place"] = venue_place(c.get("venue"))
     if postponed:

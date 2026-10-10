@@ -334,6 +334,29 @@ leads the line it continues onto.
 labels a match -- an option saying "Super Sunday" while the matches said "Sky
 Super Sunday" found nothing, which is how he caught it.
 
+A HOME MATCH PLAYED SOMEWHERE ELSE WEARS A DAGGER (his call 2026-10-09), in
+the bottom-left corner of the card, in the same gutter the attended star
+uses; the ground is in the tooltip. The ASTERISK was ruled out because it is
+already his, for a match he was at -- on the few cards that would carry both,
+the star takes the top of the gutter and the dagger keeps the bottom.
+
+It is 52 matches, and his memory of them was right to the season. A home
+match counts when ESPN's venue is neither White Hart Lane nor Tottenham
+Hotspur Stadium, so the rule needs no date range and will cover whatever
+comes next:
+
+  2016-17   4 of 27 home matches, EVERY ONE EUROPEAN -- 3 UCL group, 1 UEL
+  2017-18  28 of 28, the whole season, every competition
+  2018-19  20 of 27 -- 14 league, 4 UCL, 2 League Cup -- the last on
+           2 March 2019 against Arsenal, before the new stadium opened
+  2019-20   none
+
+51 were at Wembley and one at STADIUM MK, the League Cup tie of September
+2018, which Wembley could not hold that night. A neutral-ground match is a
+separate thing and already says so in its header; only "H" matches are
+daggered. The flag is set in build_match, which is Tottenham's alone, so the
+other populations cannot pick it up from their own grounds.
+
 HIS TEAM'S SCORE BOX ALWAYS COMES FIRST (his call 2026-10-05), home, away or
 on neutral ground. The cards read home-then-away from 2026-09-21 until then.
 
