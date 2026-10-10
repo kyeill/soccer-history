@@ -221,7 +221,7 @@ the daily build.
 Second tab, two views (a segmented bar, as in games-history):
 
 - **TV Windows** -- every Saturday and Sunday window match since 2013-14,
-  716 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
+  713 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
   ESPN gives the US network (2024-25 on) and the crests. THE SUNDAY WINDOW
   MOVED: 16:00 UK to 2018-19, 16:30 from 2019-20 -- read per season, with the
   other time taken when a matchweek has nothing at the usual one (2016-18 used
@@ -236,8 +236,13 @@ Second tab, two views (a segmented bar, as in games-history):
   duly showed at 11:30 ET. So a matchweek with nothing at the usual time
   falls back.
 
-  SATURDAY falls back by the clock alone, to its last kickoff from 16:00 up
-  to 17:30. Saturday night (20:00) is its own slot and never stands in.
+  SATURDAY DOES NOT FALL BACK AT ALL (his call 2026-10-09). It is always
+  exactly 17:30 UK and always ONE match: a matchweek split over two weekends
+  -- 2019-20 MW26, 2023-24 MW21 -- takes the FIRST of its two. A week with no
+  17:30 simply has no NBC Saturday. The 16:00-17:29 fallback that stood in
+  until then had produced two cards in fourteen seasons: Newcastle v
+  Leicester in 2014-15 MW8, which no source lists a channel for, and
+  Liverpool v Fulham in 2025-26 MW32, which NBC did show at 11:30 ET.
 
   SUNDAY HAS NO FLOOR AND NO CEILING (his call 2026-10-09). A week cut back
   to one early game -- a League Cup final weekend, Christmas Eve -- still has
@@ -251,11 +256,14 @@ Second tab, two views (a segmented bar, as in games-history):
   in thirteen seasons now have no Sky Sunday, and neither has a Sunday
   fixture at all.
 
-  WHERE THE TWO SOURCES DISAGREE, NBC WINS (2026-10-09). Everton v Fulham on
-  26 October 2024 is called USA Network by ESPN and NBC by the Premier
-  League's own listing; the NBC-only rule is meant to turn away a window that
-  demonstrably was not on NBC, and one source saying it was is not that. It
-  is the only such disagreement in either season ESPN covers.
+  AN NBC SATURDAY MUST SAY NBC (his call 2026-10-09, tightening 2026-10-06).
+  It is not enough that nothing contradicts NBC -- a source has to name it,
+  so an unknown channel is turned away too. Where the two sources disagree,
+  NBC from EITHER is enough: Everton v Fulham on 26 October 2024 is USA
+  Network to ESPN and NBC to the Premier League's own listing, and it is the
+  only such disagreement in either season ESPN covers. Tightening this
+  turned away nothing: all 296 surviving cards name NBC and not one of them
+  was ever unknown.
 
   A Saturday whose only 17:30 games were on something other than NBC still
   has no NBC window -- MW30 of 2025-26, where both were, and MW32 and MW33 of

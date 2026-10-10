@@ -161,10 +161,18 @@ def collect(teams):
                 have = sundays.get(f["md"])
                 if not have or (have["uk"] != sun_pref and f["uk"] == sun_pref):
                     sundays[f["md"]] = f
+        # SATURDAY IS ALWAYS EXACTLY 17:30 UK, AND ALWAYS ONE MATCH (his
+        # calls 2026-10-09). A matchweek split over two weekends -- 2019-20
+        # MW26, 2023-24 MW21 -- has two of them, and the window is the FIRST.
+        # A week with no 17:30 at all simply has no NBC Saturday: in fourteen
+        # seasons the 16:00-17:29 fallback that used to stand in had produced
+        # two cards, Newcastle v Leicester in 2014-15 MW8 with no channel
+        # listed anywhere, and Liverpool v Fulham in 2025-26 MW32, which NBC
+        # did show at 11:30 ET.
         saturdays = {}
-        for f in fixtures:
+        for f in sorted(fixtures, key=lambda f: (f["date"], f["uk"])):
             if dow(f) == "Sat" and f["uk"] == SATURDAY:
-                saturdays.setdefault(f["md"], []).append(f)
+                saturdays.setdefault(f["md"], f)
         # A WEEK WHOSE SHOWCASE MOVED STILL HAS ONE (his call 2026-10-09).
         # 2025-26 slid the late Sunday game to 15:30 twice and to 17:30 twice,
         # and one Saturday to 16:30 -- Liverpool v Fulham in MW32, which NBC
@@ -189,15 +197,10 @@ def collect(teams):
             if sun:
                 sundays[md] = max(sun, key=lambda f: (
                     channel_rank(us_nets(season, f, ids)), f["uk"]))
-        for md in mds - set(saturdays):
-            late = [f for f in fixtures if f["md"] == md and dow(f) == "Sat"
-                    and "16:00" <= f["uk"] < SATURDAY]
-            if late:
-                saturdays[md] = [max(late, key=lambda f: f["uk"])]
         for f in fixtures:
             if f["md"] == LAST_MD:
                 continue
-            if dow(f) == "Sat" and any(x is f for x in saturdays.get(f["md"], ())):
+            if dow(f) == "Sat" and saturdays.get(f["md"]) is f:
                 label = "NBC Saturday"
             elif dow(f) == "Sun" and sundays.get(f["md"]) is f:
                 label = "Sky Sunday"
@@ -225,21 +228,19 @@ def collect(teams):
                 nets = tv.clean(tv.networks_any(m["date"], f["home"], f["away"]))
             if nets:
                 m["nets"] = nets
-            # AN NBC SATURDAY IS ON NBC (his call 2026-10-06). The 17:30 UK
-            # kickoff went to USA Network, NBCSN or Peacock often enough --
-            # 89 of 385 -- and a window named for a network it was not on is
-            # no window of his. A match whose US network is simply unknown
-            # stays, since nothing says it was not NBC.
-            # ESPN AND THE LEAGUE'S OWN LISTING DISAGREE ONCE (2026-10-09):
-            # Everton v Fulham on 26 October 2024, which ESPN calls USA
-            # Network and the Premier League calls NBC. NBC from EITHER keeps
-            # the match -- the rule is only meant to turn away a window that
-            # demonstrably was not on NBC, and one source saying it was is
-            # not that. It is the only such disagreement in either season
-            # ESPN covers.
-            if label == "NBC Saturday" and nets and "NBC" not in nets:
-                if "NBC" not in tv.clean(tv.networks(season, f["home"], f["away"])):
+            # AN NBC SATURDAY MUST SAY NBC (his call 2026-10-09, tightening
+            # 2026-10-06). It is not enough that nothing contradicts NBC: a
+            # source has to name it, or the window is not his. ESPN and the
+            # league's own listing disagree exactly once -- Everton v Fulham
+            # on 26 October 2024, USA Network to one and NBC to the other --
+            # and NBC from EITHER is enough. Today this turns away nothing
+            # extra: all 297 surviving cards name NBC and not one is unknown.
+            if label == "NBC Saturday":
+                said = set(nets) | set(tv.clean(
+                    tv.networks(season, f["home"], f["away"])))
+                if "NBC" not in said:
                     continue
+                m["nets"] = sorted(said)
             out.append(m)
         if missing:
             print("  WARN: %s clubs not matched to ESPN: %s"

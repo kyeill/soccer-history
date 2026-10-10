@@ -4088,6 +4088,14 @@
 "USA Network",
 "Universo"
 ],
+"2024|arsenal|astonvilla": [
+"NBC",
+"Universo"
+],
+"2024|arsenal|bournemouth": [
+"NBC",
+"Telemundo"
+],
 "2024|arsenal|brentford": [
 "Telemundo",
 "USA Network",
@@ -4096,6 +4104,15 @@
 "2024|astonvilla|arsenal": [
 "Telemundo",
 "USA Network"
+],
+"2024|astonvilla|chelsea": [
+"NBC",
+"Telemundo"
+],
+"2024|astonvilla|everton": [
+"NBC",
+"Peacock",
+"Universo"
 ],
 "2024|astonvilla|newcastle": [
 "Peacock",
@@ -4107,9 +4124,27 @@
 "USA Network",
 "Universo"
 ],
+"2024|bournemouth|arsenal": [
+"NBC",
+"Telemundo"
+],
+"2024|bournemouth|astonvilla": [
+"NBC",
+"Telemundo"
+],
 "2024|bournemouth|brentford": [
 "USA Network",
 "Universo"
+],
+"2024|brentford|astonvilla": [
+"NBC",
+"Peacock",
+"Telemundo",
+"Universo"
+],
+"2024|brighton|arsenal": [
+"NBC",
+"Telemundo"
 ],
 "2024|brighton|mancity": [
 "USA Network",
@@ -4118,33 +4153,101 @@
 "2024|crystalpalace|arsenal": [
 "USA Network"
 ],
+"2024|crystalpalace|everton": [
+"NBC",
+"Universo"
+],
+"2024|crystalpalace|manutd": [
+"NBC",
+"Peacock",
+"Telemundo"
+],
 "2024|everton|fulham": [
+"NBC",
+"Universo"
+],
+"2024|everton|newcastle": [
 "NBC",
 "Universo"
 ],
 "2024|mancity|chelsea": [
 "Peacock"
 ],
+"2024|mancity|tottenham": [
+"NBC",
+"Universo"
+],
+"2024|manutd|nottinghamforest": [
+"NBC",
+"Universo"
+],
+"2024|nottinghamforest|astonvilla": [
+"NBC",
+"Universo"
+],
 "2024|westham|arsenal": [
 "USA Network"
+],
+"2024|westham|astonvilla": [
+"NBC",
+"Universo"
+],
+"2024|westham|mancity": [
+"NBC",
+"Peacock",
+"Universo"
+],
+"2024|wolves|astonvilla": [
+"NBCSN",
+"Universo"
+],
+"2024|wolves|crystalpalace": [
+"NBC"
 ],
 "2024|wolves|liverpool": [
 "USA Network",
 "Universo"
 ],
 "2025|arsenal|everton": [],
+"2025|arsenal|fulham": [],
+"2025|arsenal|leeds": [
+"NBC",
+"Universo"
+],
 "2025|arsenal|newcastle": [],
+"2025|bournemouth|arsenal": [],
 "2025|bournemouth|liverpool": [],
+"2025|burnley|fulham": [],
+"2025|chelsea|astonvilla": [],
+"2025|chelsea|liverpool": [],
 "2025|chelsea|newcastle": [],
 "2025|chelsea|westham": [],
 "2025|everton|chelsea": [],
 "2025|everton|newcastle": [],
+"2025|fulham|arsenal": [],
+"2025|leeds|liverpool": [],
+"2025|leeds|mancity": [],
+"2025|leeds|newcastle": [
+"NBC"
+],
+"2025|mancity|brentford": [],
+"2025|manutd|brighton": [],
 "2025|manutd|chelsea": [],
 "2025|newcastle|brentford": [],
+"2025|newcastle|mancity": [],
+"2025|nottinghamforest|arsenal": [],
 "2025|nottinghamforest|sunderland": [],
+"2025|sunderland|arsenal": [],
+"2025|tottenham|brighton": [],
 "2025|tottenham|burnley": [],
 "2025|tottenham|chelsea": [],
+"2025|tottenham|liverpool": [],
 "2025|westham|bournemouth": [],
+"2025|westham|tottenham": [
+"NBC",
+"Universo"
+],
+"2025|wolves|mancity": [],
 "d2013-08-17|arsenal|astonvilla": [
 "NBCSN",
 "NBC Sports App"
