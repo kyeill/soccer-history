@@ -33,16 +33,6 @@ def dow(f):
 # together, so neither broadcaster has a game of its own that afternoon.
 LAST_MD = 38
 
-# WHICH GAME WAS THE SHOWCASE, when the clock cannot say: the one the biggest
-# US channel took. Only used to break a tie in the Sunday fallback below.
-CHANNEL = ["NBC", "USA Network", "NBCSN"]
-
-
-def channel_rank(nets):
-    for i, c in enumerate(CHANNEL):
-        if c in nets:
-            return len(CHANNEL) - i
-    return 0
 # ESPN carries next to no US broadcast before this (3-11 matches a season), so
 # the older windows are not worth a call a day for
 TV_FROM = 2024
@@ -173,30 +163,16 @@ def collect(teams):
         for f in sorted(fixtures, key=lambda f: (f["date"], f["uk"])):
             if dow(f) == "Sat" and f["uk"] == SATURDAY:
                 saturdays.setdefault(f["md"], f)
-        # A WEEK WHOSE SHOWCASE MOVED STILL HAS ONE (his call 2026-10-09).
-        # 2025-26 slid the late Sunday game to 15:30 twice and to 17:30 twice,
-        # and one Saturday to 16:30 -- Liverpool v Fulham in MW32, which NBC
-        # duly showed at 11:30 ET. So a matchweek with nothing at the usual
-        # time falls back.
+        # NEITHER SLOT FALLS BACK (his calls 2026-10-09). A window is its
+        # own kickoff time or it is nothing: 17:30 UK on a Saturday, 16:30 on
+        # a Sunday (16:00 to 2018-19). A weekend whose schedule never reached
+        # that time simply had no window, and inventing one from whatever
+        # else was on that day was the wrong answer.
         #
-        # SATURDAY falls back by the clock alone, to the last kickoff from
-        # 16:00 up to 17:30. Saturday night (20:00) is its own slot.
-        #
-        # SUNDAY HAS NO FLOOR AND NO CEILING (his call 2026-10-09): a week cut
-        # back to one early game -- a League Cup final weekend, Christmas Eve
-        # -- still has a Sunday window, and so does one whose late game went
-        # to 18:00 or the evening. The clock cannot rank those, so the US
-        # CHANNEL does: the biggest one took the showcase, and the latest
-        # kickoff breaks a tie. That is what picks Tottenham v Forest on
-        # 7 April 2024, on USA Network, over the 17:30 that was on cable; and
-        # what keeps Villa v Chelsea, on NBC, over the Boxing Day 20:00 of
-        # 2021. Before 2016-17 nothing lists a channel, so it is the clock.
-        mds = {f["md"] for f in fixtures}
-        for md in mds - set(sundays):
-            sun = [f for f in fixtures if f["md"] == md and dow(f) == "Sun"]
-            if sun:
-                sundays[md] = max(sun, key=lambda f: (
-                    channel_rank(us_nets(season, f, ids)), f["uk"]))
+        # It costs 66 weekends of 419 across the thirteen completed seasons,
+        # about five a year: 58 of them had Sunday football at some other
+        # hour, 8 had no Sunday fixture at all. The fallbacks that used to
+        # fill them stood from earlier the same day until he saw the count.
         for f in fixtures:
             if f["md"] == LAST_MD:
                 continue

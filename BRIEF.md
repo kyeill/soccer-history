@@ -221,7 +221,7 @@ the daily build.
 Second tab, two views (a segmented bar, as in games-history):
 
 - **TV Windows** -- every Saturday and Sunday window match since 2013-14,
-  713 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
+  655 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
   ESPN gives the US network (2024-25 on) and the crests. THE SUNDAY WINDOW
   MOVED: 16:00 UK to 2018-19, 16:30 from 2019-20 -- read per season, with the
   other time taken when a matchweek has nothing at the usual one (2016-18 used
@@ -230,31 +230,27 @@ Second tab, two views (a segmented bar, as in games-history):
   MATCHWEEK 38 IS NEVER A WINDOW (his call 2026-10-09): all ten matches kick
   off together, so neither broadcaster has a game of its own that afternoon.
 
-  A WEEK WHOSE SHOWCASE MOVED STILL HAS ONE (his call 2026-10-09). 2025-26
-  slid the late Sunday game to 15:30 in MW3 and MW8 and to 17:30 in MW20 and
-  MW37, and one Saturday to 16:30 -- Liverpool v Fulham in MW32, which NBC
-  duly showed at 11:30 ET. So a matchweek with nothing at the usual time
-  falls back.
+  NEITHER SLOT FALLS BACK (his calls 2026-10-09). A window is its own
+  kickoff time or it is nothing: 17:30 UK on a Saturday, 16:30 on a Sunday
+  (16:00 to 2018-19). A weekend whose schedule never reached that hour simply
+  had no window, and inventing one out of whatever else was on that day --
+  which is what a floor, a ceiling and a US-channel ranking were doing
+  earlier the same day -- was the wrong answer.
 
-  SATURDAY DOES NOT FALL BACK AT ALL (his call 2026-10-09). It is always
-  exactly 17:30 UK and always ONE match: a matchweek split over two weekends
-  -- 2019-20 MW26, 2023-24 MW21 -- takes the FIRST of its two. A week with no
-  17:30 simply has no NBC Saturday. The 16:00-17:29 fallback that stood in
-  until then had produced two cards in fourteen seasons: Newcastle v
-  Leicester in 2014-15 MW8, which no source lists a channel for, and
-  Liverpool v Fulham in 2025-26 MW32, which NBC did show at 11:30 ET.
+  THE SATURDAY IS ALSO ALWAYS ONE MATCH: a matchweek split over two weekends
+  -- 2019-20 MW26, 2023-24 MW21 -- takes the FIRST of its two 17:30 games.
 
-  SUNDAY HAS NO FLOOR AND NO CEILING (his call 2026-10-09). A week cut back
-  to one early game -- a League Cup final weekend, Christmas Eve -- still has
-  a Sunday window, and so does one whose late game went to 18:00 or the
-  evening. The clock cannot rank those, so THE US CHANNEL DOES: the biggest
-  one took the showcase (NBC, then USA Network, then NBCSN), and the latest
-  kickoff breaks a tie. That is what picks Tottenham v Forest on 7 April
-  2024, on USA Network at 18:00, over the 17:30 that was on cable; and what
-  keeps Villa v Chelsea, on NBC, over the Boxing Day 20:00 of 2021. Before
-  2016-17 nothing lists a channel, so it is the clock. Only two matchweeks
-  in thirteen seasons now have no Sky Sunday, and neither has a Sunday
-  fixture at all.
+  WHAT IT COSTS, since he asked before deciding: 66 weekends of 419 across
+  the thirteen completed seasons, about five a year, have no Sunday at the
+  hour. 58 of them had Sunday football at some other time and 8 had no Sunday
+  fixture at all. On the Saturday side 54 matchweeks have no 17:30, but only
+  two of those ever produced a card under the old fallback.
+
+  THE RESULT IS A POPULATION WITH NO EXCEPTIONS IN IT: 296 NBC Saturdays, all
+  at 17:30 UK and all naming NBC; 359 Sky Sundays, all at 16:00 or 16:30; one
+  card per slot per matchweek; and five Eastern kickoff times in the whole
+  set -- 11:00, 11:30, 12:00, 12:30, 1:30 -- the extra ones being the weeks
+  the two countries' clocks are out of step.
 
   AN NBC SATURDAY MUST SAY NBC (his call 2026-10-09, tightening 2026-10-06).
   It is not enough that nothing contradicts NBC -- a source has to name it,
