@@ -243,7 +243,7 @@ Second tab, two views (a segmented bar, as in games-history):
 - **Rivals** -- 281 results: Arsenal 203, Chelsea 78, opening on every year,
   newest first. Arsenal's rule is applied across ALL competitions.
 
-Both draw a TWO-TEAM card (away line over home line, the winner washed), not
+Both draw a TWO-TEAM card (home line over away line, the winner washed), not
 his one-opponent card. A shootout decides the winner, and the header says
 "Pens 5-4".
 
@@ -312,6 +312,15 @@ Super Sunday" found nothing, which is how he caught it.
 
 HIS TEAM'S SCORE BOX ALWAYS COMES FIRST (his call 2026-10-05), home, away or
 on neutral ground. The cards read home-then-away from 2026-09-21 until then.
+
+THE HOME SIDE IS ON TOP AND THE SCORE READS HOME-AWAY (his call 2026-10-09),
+on both views of the tab, because that is how football lists a result
+everywhere else. These cards read away-over-home from 2026-10-02 until then.
+The one exception is a COLLAPSED TWO-LEGGED TIE, which has no home side: it
+keeps the order he set for it, the opponent on top with the aggregate they
+won by, and the rival underneath, matching the two leg scores in its header.
+This is a separate thing from the Tottenham tab's rule below, where his own
+team's box comes first whoever was at home.
 
 THE EPL/RIVALS TAB (his calls 2026-10-02): its Year menu reads seasons,
 2026-27, as his own tab does; the Top Six AND TOTTENHAM wear capitals on the

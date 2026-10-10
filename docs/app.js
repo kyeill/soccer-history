@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-195346. Modelled on games-history's Michigan view (michCard): one card
+   20261009-200946. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-195346";
+const BUILD = "20261009-200946";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -673,15 +673,20 @@ function euroYear(m) {
 }
 function twoCard(m) {
   const wins = m.team === "windows";
+  // THE HOME SIDE IS ON TOP, AND THE SCORE READS HOME-AWAY (his call
+  // 2026-10-09), which is how football lists a result everywhere else.
+  // These cards read away-over-home from 2026-10-02 until then.
+  //
   // A TIE OVER TWO LEGS HAS NO HOME SIDE (his call 2026-10-09): neither
-  // night is the card, so it reads opponent first and rival second, as the
-  // two leg scores in the header do.
-  const homeId = m.legs ? m.rival
+  // night is the card, so it keeps its own order -- opponent first and rival
+  // second, as the two leg scores in the header do -- and takes the top line
+  // for the opponent.
+  const homeId = m.legs ? m.opp
     : wins ? m.home : (m.home ? m.rival : m.opp);
-  const awayId = m.legs ? m.opp
+  const awayId = m.legs ? m.rival
     : wins ? m.away : (m.home ? m.opp : m.rival);
-  const hs = m.legs ? m.us : wins ? m.hs : (m.home ? m.us : m.them);
-  const as = m.legs ? m.them : wins ? m.as : (m.home ? m.them : m.us);
+  const hs = m.legs ? m.them : wins ? m.hs : (m.home ? m.us : m.them);
+  const as = m.legs ? m.us : wins ? m.as : (m.home ? m.them : m.us);
   const up = hs === null || hs === undefined;
   // a shootout decides who won: the RESULT knows it, the score does not
   const rivalWon = !wins && m.result === "W", rivalLost = !wins && m.result === "L";
@@ -877,7 +882,7 @@ function twoCard(m) {
     '" style="--winwash:' + wash + ring + '">' +
     '<div class="sport"' + (headCol ? ' style="color:' + headCol + '"' : "") + ">" +
     head + "</div>" +
-    '<div class="teams">' + line(awayId, as, hs) + line(homeId, hs, as) + "</div>" +
+    '<div class="teams">' + line(homeId, hs, as) + line(awayId, as, hs) + "</div>" +
     // THE GOAL THAT DID FOR THEM, under the two clubs (his call 2026-10-09)
     (late ? '<div class="tags mdets"><span class="mdl"><span class="mdet">' +
       esc(late) + "</span></span></div>" : "") +
