@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261009-211242. Modelled on games-history's Michigan view (michCard): one card
+   20261009-211911. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261009-211242";
+const BUILD = "20261009-211911";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -328,8 +328,11 @@ const DAY_FULL = { SUN: "Sunday", MON: "Monday", TUE: "Tuesday",
   WED: "Wednesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday" };
 function windowOf(m) {
   if (m.comp !== "PL") return null;
-  // his own cards and the rivals' both name two clubs; the windows
-  // population knows its window already (2026-10-09)
+  // A WINDOWS CARD KNOWS ITS OWN WINDOW, so it wears the purple and the blue
+  // his own tab does (his call 2026-10-09). It had been the only one of the
+  // three populations whose headers stayed grey.
+  if (m.team === "windows") return m.window || null;
+  // his own cards and the rivals' both name two clubs
   const me = m.team === "spurs" ? SPURS : m.team === "rivals" ? m.rival : null;
   if (!me) return null;
   const home = m.home ? me : m.opp, away = m.home ? m.opp : me;
@@ -1162,8 +1165,15 @@ function draw() {
   const render = VIEW === "epl" ? twoCard : card;
   // THE TV WINDOWS VIEW KEEPS TO TWO COLUMNS on a desktop (his call
   // 2026-10-09): three of these cards in a row reads as a wall
+  const tv = VIEW === "epl" && SUB === "tv";
+  document.getElementById("list").classList.toggle("two-up", tv);
+  // ...and NBC holds the left column, Sky the right, only while every
+  // matchweek is whole (his call 2026-10-09). Narrow the set and that
+  // pairing is gone, so the blanks it would leave cost more than the
+  // alignment is worth. The Year menu does not narrow it: a season still
+  // arrives in NBC/Sky pairs.
   document.getElementById("list").classList.toggle(
-    "two-up", VIEW === "epl" && SUB === "tv");
+    "pinned", tv && !FILT.type && !FILT.team);
   document.getElementById("list").innerHTML = list.length
     ? list.map(render).join("") : '<div class="empty">No matches.</div>';
   trimHeads();

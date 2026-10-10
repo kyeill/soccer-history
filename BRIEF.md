@@ -346,6 +346,19 @@ won by, and the rival underneath, matching the two leg scores in its header.
 This is a separate thing from the Tottenham tab's rule below, where his own
 team's box comes first whoever was at home.
 
+THE WINDOWS CARDS WEAR THE WINDOW'S COLOUR (his call 2026-10-09), the same
+purple and blue as his own tab -- #c08cff for NBC Saturday, #00b4d8 for Sky
+Sunday. They were the only one of the three populations whose headers stayed
+grey, because windowOf() looked the window up by club and a windows card has
+no club of his. It now reads m.window straight off the match.
+
+NBC KEEPS THE LEFT COLUMN AND SKY THE RIGHT ONLY WHILE EVERY MATCHWEEK IS
+WHOLE (his call 2026-10-09). Narrow the set with the Type or Team menu and
+the pairing is gone, so the blanks the pinning would leave cost more than the
+alignment is worth: the cards simply flow. The YEAR menu does not count, since
+a season still arrives in NBC/Sky pairs. The list carries `pinned` beside
+`two-up` while it holds, and a phone never has two columns to pin.
+
 THE TYPE MENU ON TV WINDOWS (his call 2026-10-09) replaced the Window menu,
 which offered only the two windows. It now asks what KIND of match it was,
 in his order, with a bar between the two sorts of answer:
