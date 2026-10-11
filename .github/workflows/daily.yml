@@ -1,13 +1,23 @@
 name: Daily build
 
-# 6am EASTERN, every day. GitHub schedules in UTC only, so this fires at both
-# 10:00 and 11:00 UTC and the job bails unless it is really 6am in New York --
-# one run a day across daylight saving, instead of drifting an hour twice a
-# year. (The same guard games-history uses.)
+# ONCE A DAY, THE FIRST CHANCE AFTER 6AM EASTERN.
+#
+# This used to ask "is it exactly 6am in New York?" and run only then. GitHub
+# delivers a cron when it has a runner free, not when it says, and on this
+# repo that has meant three to nine hours late -- so the guard turned every
+# run away and the site did not rebuild itself between 24 September and
+# 11 October 2026. Asking for an exact hour cannot work against a best-effort
+# schedule.
+#
+# So it fires every three hours and the guard asks a question that a late run
+# can still answer yes to: is it past 6am in New York, and has today's build
+# not happened yet? The first eligible run does the work and stamps the day
+# in data/last-build; the rest of the day's runs see the stamp and skip in
+# seconds. One build a day, as early as GitHub will allow, and daylight
+# saving takes care of itself.
 on:
   schedule:
-    - cron: "0 10 * * *"
-    - cron: "0 11 * * *"
+    - cron: "0 */3 * * *"
   workflow_dispatch:          # the Run workflow button, any time
 
 permissions:
@@ -21,20 +31,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Is it 6am in New York?
+      # the stamp lives in the repo, so a shallow checkout is enough to read it
+      - uses: actions/checkout@v4
+
+      - name: Is today's build still to come?
         id: clock
         run: |
+          today=$(TZ=America/New_York date +%F)
           hour=$(TZ=America/New_York date +%H)
-          echo "New York hour: $hour"
-          if [ "$hour" != "06" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
-            echo "not 6am -- skipping"
+          last=$(cat data/last-build 2>/dev/null || echo none)
+          echo "New York: $today $hour:00 -- last build $last"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run by hand -- building"
+            echo "go=yes" >> "$GITHUB_OUTPUT"
+          elif [ "$((10#$hour))" -lt 6 ]; then
+            echo "before 6am -- too early, waiting for the next one"
+            echo "go=no" >> "$GITHUB_OUTPUT"
+          elif [ "$last" = "$today" ]; then
+            echo "already built today -- skipping"
             echo "go=no" >> "$GITHUB_OUTPUT"
           else
+            echo "building"
             echo "go=yes" >> "$GITHUB_OUTPUT"
           fi
-
-      - uses: actions/checkout@v4
-        if: steps.clock.outputs.go == 'yes'
 
       - uses: actions/setup-python@v5
         if: steps.clock.outputs.go == 'yes'
@@ -70,6 +89,14 @@ jobs:
       - name: Refresh the Sheet CSVs
         if: steps.clock.outputs.go == 'yes'
         run: python sheet_csv.py
+
+      # THE STAMP IS WRITTEN EVEN IF NOTHING ELSE CHANGED, and written only
+      # once the harvest and the build have both come through: a run that died
+      # on a bad ESPN answer leaves yesterday's date, so the next cron three
+      # hours later tries again instead of calling the day done.
+      - name: Stamp the day
+        if: steps.clock.outputs.go == 'yes'
+        run: TZ=America/New_York date +%F > data/last-build
 
       - name: Commit and push
         if: steps.clock.outputs.go == 'yes'
