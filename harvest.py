@@ -754,11 +754,14 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
             m["goals_bad"] = True
         elif any(g[0] > 90 for g in goals):
             m["aet"] = True
+        # THE SHEET IS THE ONLY SOURCE OF A SCORER LINE (his call
+        # 2026-10-12): "just make me do it". Nothing reaches a card unless
+        # his Footer column asks for it. What the old rules WOULD have shown
+        # is remembered privately, so the build can still tell him which
+        # cards have something waiting.
         w, q = late_flags(goals, SPURS, tid, m["result"])
-        if w:
-            m["late_win"] = w
-        if q:
-            m["late_eq"] = q
+        if w or q:
+            m["_auto_late"] = True
         # A WIN OR A DRAW WITH THE TOP SIX lists every Tottenham scorer (his
         # calls 2026-10-02): "Son 12', Kane 45'+2, Johnson 77'"
         # ONLY against the Top Six -- every win was tried once and read as too
@@ -783,7 +786,7 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
             if late:
                 m["_late"] = listed_goals(late)
             if m.get("_scorers") and m["result"] in ("W", "D") and tid in TOP_SIX:
-                m["scorers"] = m["_scorers"]
+                m["_auto_scorers"] = True
     # THE OPPONENT'S FINISH: its Premier League position that season, or how
     # far it went in THIS competition when it is not a Premier League club.
     # A SEASON STILL BEING PLAYED SETTLES NOTHING (his call 2026-10-07), so it
@@ -1060,8 +1063,7 @@ def main():
     # on the second leg of a tie Tottenham went through.
     for m in matches:
         if m.get("leg") == 1 or (m.get("leg") == 2 and not m.get("through")):
-            m.pop("late_win", None)
-            m.pop("late_eq", None)
+            m.pop("_auto_late", None)
     matches.sort(key=lambda m: (m["date"], m["time"]))
     # THE MATCHDAY OF A GROUP OR LEAGUE PHASE (his call 2026-10-07). ESPN does
     # not number them, but Tottenham play every one, so the order within a
@@ -1166,6 +1168,26 @@ def main():
                 teams[t]["color"] = fix
             if not teams[t].get("logo"):
                 teams[t]["logo"] = "https://a.espncdn.com/i/teamlogos/soccer/500/%s.png" % t
+    # WHAT HIS SHEET HAS NOT PICKED UP YET (his call 2026-10-12). Nothing is
+    # automatic any more, so the useful thing to report is the opposite of
+    # what this used to report: the cards with a late goal or a Top Six
+    # scorer list sitting there that his Footer column has not asked for.
+    # It lists only what the old rules would have printed by themselves, so
+    # it stays short enough to act on.
+    # ASKED PER KIND, not "did the Footer say any of the three". The old
+    # report counted a card whose Footer said "Scorers" as settled even when
+    # its LATE line was still coming from the rules, which is how seventeen
+    # of them hid (2026-10-12).
+    LATE = {"late winner", "late equalizer"}
+    waiting = []
+    for m in matches:
+        cell = str((m.get("mx") or {}).get("footer") or "")
+        got = {p.strip().lower() for p in cell.split("|")}
+        if (m.get("_auto_late") and not (got & LATE)) or            (m.get("_auto_scorers") and "scorers" not in got):
+            waiting.append(m["date"])
+    for m in matches:
+        m.pop("_auto_late", None)
+        m.pop("_auto_scorers", None)
     os.makedirs(OUT, exist_ok=True)
     out = {"built": dt.datetime.now(ET).strftime("%Y-%m-%d %H:%M"),
            "current": this,
@@ -1177,30 +1199,11 @@ def main():
     le = sum(1 for m in matches if m.get("late_eq"))
     print("output/games.json  %d matches, %d opponents, %d late winners, %d late equalizers"
           % (len(matches), len(used) - 1, lw, le))
-    # WHERE EACH SCORER LINE CAME FROM (his call 2026-10-07): he wants to hear
-    # it on every refresh, so he can close the gap and read one source.
-    asks = {"scorers", "late winner", "late equalizer"}
-    auto = []
-    for m in matches:
-        if m.get("team") != "spurs":
-            continue
-        kind = ("scorers" if m.get("scorers")
-                else "late" if m.get("late_win") or m.get("late_eq") else None)
-        if not kind:
-            continue
-        cell = str((m.get("mx") or {}).get("footer") or "")
-        got = {p.strip().lower() for p in cell.split("|")} & asks
-        if kind == "scorers":
-            ok = "scorers" in got
-        else:
-            ok = bool(got)
-        if not ok:
-            auto.append(m["date"])
-    if auto:
-        print("  %d scorer lines the sheet does not ask for, still coming from"
-              " the old rules: %s" % (len(auto), ", ".join(auto)))
+    if waiting:
+        print("  %d cards have scorer info his sheet does not ask for: %s"
+              % (len(waiting), ", ".join(sorted(waiting))))
     else:
-        print("  every scorer line comes from his sheet")
+        print("  his sheet asks for every scorer line there is to show")
 
 
 if __name__ == "__main__":
