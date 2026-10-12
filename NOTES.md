@@ -116,3 +116,24 @@ and on every one of those days the OTHER matches were at textbook times --
 14:00, 15:00, 12:30 -- so no date was ever stored in the wrong zone. A whole
 day shifts together or not at all; that is the test to run before believing a
 timezone bug.
+
+
+## openfootball has the matchweek; ESPN has the result (2026-10-12)
+
+The TV Windows population is built from openfootball because it is the only
+source with the official MATCHWEEK and the UK kickoff time, which is what
+picks a window. Its RESULTS are another matter: on 12 October 2026 its
+2026-27 file still had no score past 20 September, so the weekend's two cards
+sat on the site blank while the Tottenham tab -- which reads ESPN -- had
+Manchester United 1-1 Tottenham the same evening.
+
+So a fixture whose kickoff has passed and which openfootball has no score for
+now takes ESPN's, and only when ESPN calls it STATUS_FULL_TIME. openfootball
+stays the authority wherever it does have the result, and a finished season
+never needs this.
+
+WHAT IS NOT WRONG, before anyone goes looking: the gap between MW5 on
+20 September and MW6 on 10 October is real. ESPN has no Premier League match
+on either weekend in between. And openfootball listing one fixture for most
+of the later matchweeks is just a fixture list that is not published yet, not
+data that has gone missing.

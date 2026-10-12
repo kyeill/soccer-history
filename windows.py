@@ -116,6 +116,29 @@ def nets_for(date, home_id, away_id):
     return [], None
 
 
+def espn_score(date, home_id, away_id):
+    """ESPN's FINAL score for one fixture, or (None, None).
+
+    openfootball carries the official matchweek and the UK kickoff time, which
+    is what picks a window and is why the whole population is built from it --
+    but its RESULTS lag. In October 2026 it was three weeks behind, so the
+    weekend's two cards sat on the site with no score while ESPN had both the
+    same evening. Only a match ESPN calls finished is taken: a kickoff that has
+    not happened must stay upcoming.
+    """
+    _, e = nets_for(date, home_id, away_id)
+    if not e:
+        return None, None
+    c = e["competitions"][0]
+    if (((c.get("status") or {}).get("type") or {}).get("name")) != "STATUS_FULL_TIME":
+        return None, None
+    by = {str(x["id"]): x.get("score") for x in c.get("competitors") or []}
+    try:
+        return int(by[home_id]), int(by[away_id])
+    except (KeyError, TypeError, ValueError):
+        return None, None
+
+
 def us_nets(season, f, ids):
     """The US broadcast of one fixture: ESPN for the newest seasons, the
     Premier League's own listing for 2016-17 to 2023-24 (see tv.py)."""
@@ -196,6 +219,14 @@ def collect(teams):
                  "dow": et.strftime("%a"), "uk": f["uk"],
                  "home": home, "away": away, "hs": f["hs"], "as": f["as"],
                  "id": "w%s-%s-%s" % (f["date"], home, away)}
+            # A SCORE OPENFOOTBALL HAS NOT CAUGHT UP WITH comes from ESPN
+            # (2026-10-12). It only ever fires on the current season: a
+            # finished one is complete, and openfootball stays the authority
+            # wherever it does have the result.
+            if f["hs"] is None and f["date"] < dt.date.today().isoformat():
+                hs, as_ = espn_score(f["date"], home, away)
+                if hs is not None:
+                    m["hs"], m["as"] = hs, as_
             # ESPN for the newest seasons, the Premier League's own listing
             # for 2016-17 to 2023-24 (see tv.py). Nothing before that exists.
             nets = us_nets(season, f, ids)
