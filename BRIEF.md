@@ -334,6 +334,42 @@ leads the line it continues onto.
 labels a match -- an option saying "Super Sunday" while the matches said "Sky
 Super Sunday" found nothing, which is how he caught it.
 
+THE DAY SPELLS ITSELF OUT WHEN NOTHING ELSE WAS ON (his call 2026-10-12), on
+his own league cards and on the rivals' -- SUNDAY 9:00am rather than SUN. It
+used to depend on how busy the card was, which said nothing about the match.
+
+A card STANDS ALONE when no other match in England kicked off strictly inside
+the hour either side. England means the PREMIER LEAGUE, THE FA CUP AND THE
+LEAGUE CUP (he added the two cups while it was being built); Europe does not
+count, and neither does the match itself. 172 of his 417 non-window league
+cards stand alone, and 55 of the rivals' 99.
+
+The kickoffs live in data/slate.json, one entry per date, 583 of them, so the
+build asks ESPN about a day once and every run after that reads it off disk.
+Today and tomorrow are never stored, since a fixture can still move.
+
+WHY ESPN AND NOT OPENFOOTBALL: openfootball carries only 205-244 of the 380
+fixtures in most seasons, so a missing one would make a match look alone when
+it was not. ESPN's scoreboard has the whole day.
+
+THE WINDOW CARDS ARE LEFT ALONE (his call 2026-10-12): "Sky Sunday" and
+"NBC Saturday" name the day themselves, and never show a bare one.
+
+A HOLIDAY SHORTENS BEFORE ANYTHING MOVES (his call 2026-10-12). "New Year's
+Day 2015" reads "NYD 2015" rather than send the network down a line, or the
+day up to the header -- reduce first, move second, in both directions. Only
+New Year's Day has a shorter name worth having; Boxing Day and Thanksgiving
+keep theirs and fall through to the old fallbacks. It is what lets the 2015
+card against Chelsea hold "[MW20] THURSDAY 12:30pm | NBCSN | NYD 2015" on one
+line at 410px, the only card in 737 that the spelled-out day would have
+pushed over.
+
+THE BAR SITS BETWEEN THE TWO FIELDS on a two-team header, not against the
+second one (his catch 2026-10-12). It rides inside the span it introduces, so
+the flex gap fell entirely to its left -- 7.0px before and 3.2px after -- and
+the rule written to even that up never matched, being aimed at a bar that was
+a direct child of .sport. It is 3.0 and 3.2 now.
+
 A HOME MATCH PLAYED SOMEWHERE ELSE WEARS A DAGGER (his call 2026-10-09), in
 the bottom-left corner of the card, in the same gutter the attended star
 uses; the ground is in the tooltip. The ASTERISK was ruled out because it is

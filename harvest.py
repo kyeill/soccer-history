@@ -515,6 +515,57 @@ def ordinal(n):
     return "%d%s" % (n, "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th"))
 
 
+# ---------------------------------------------------------------- the slate
+# WAS ANYBODY ELSE PLAYING? (his call 2026-10-12) A league card spells its day
+# out -- SUNDAY, not SUN -- when nothing else in England kicked off within the
+# hour. ENGLAND means the Premier League, the FA Cup and the League Cup (he
+# added the two cups on 2026-10-12); Europe does not count, and neither does
+# the match itself.
+#
+# The kickoffs are kept in data/slate.json, one entry per date, so the build
+# asks ESPN about a day once and every season after that reads it off disk.
+# Today and tomorrow are never stored: a fixture can still move.
+SLATE_SLUGS = ("eng.1", "eng.fa", "eng.league_cup")
+WITHIN = 3600          # strictly inside the hour (his call 2026-10-12)
+
+
+def slate(date, store):
+    """Every English kickoff on one date, as UTC "YYYY-MM-DDTHH:MM" strings."""
+    if date in store:
+        return store[date]
+    got = []
+    for slug in SLATE_SLUGS:
+        try:
+            d = fetch("%s/%s/scoreboard" % (BASE, slug),
+                      {"dates": date.replace("-", ""), "limit": 500},
+                      cacheable=False)
+        except Exception:
+            continue
+        for e in d.get("events") or []:
+            got.append("%s|%s" % (e["id"], e["date"][:16]))
+    got.sort()
+    if date < (dt.datetime.now(ET).date() + dt.timedelta(days=1)).isoformat():
+        store[date] = got
+    return got
+
+
+def alone_that_hour(m, store):
+    """True when nothing else in England kicked off within the hour."""
+    if m.get("time") == "TBD":
+        return False
+    mine = dt.datetime.strptime(m["date"] + " " + m["time"], "%Y-%m-%d %H:%M"
+                                ).replace(tzinfo=ET).astimezone(dt.timezone.utc)
+    for row in slate(m["date"], store):
+        eid, when = row.split("|", 1)
+        if eid == str(m["id"]):
+            continue
+        k = dt.datetime.strptime(when, "%Y-%m-%dT%H:%M").replace(
+            tzinfo=dt.timezone.utc)
+        if abs((k - mine).total_seconds()) < WITHIN:
+            return False
+    return True
+
+
 def holiday_of(date):
     """The two days he wants named on a card (2026-10-09): THANKSGIVING, the
     fourth Thursday of November -- which is why every one of his falls in
@@ -1138,6 +1189,18 @@ def main():
     import rivals, windows
     matches += rivals.collect(teams)
     matches += windows.collect(teams)
+
+    # WAS ANYBODY ELSE PLAYING? -- on his own league cards and on the rivals'
+    # (his call 2026-10-12). A card that stood alone spells its day out.
+    slate_store = load_data("slate.json", {})
+    for m in matches:
+        if m["comp"] != "PL" or m["team"] not in ("spurs", "rivals"):
+            continue
+        if alone_that_hour(m, slate_store):
+            m["solo"] = True
+    save_data("slate.json", slate_store)
+    print("  the slate: %d dates known, %d league cards stood alone"
+          % (len(slate_store), sum(1 for m in matches if m.get("solo"))))
 
     bad = [m["id"] for m in matches if m.get("goals_bad")]
     if bad:

@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261012-095020. Modelled on games-history's Michigan view (michCard): one card
+   20261012-203526. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261012-095020";
+const BUILD = "20261012-203526";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -326,6 +326,16 @@ function stageText(m) {
        Llorente 87', Moura 90'+5 */
 const DAY_FULL = { SUN: "Sunday", MON: "Monday", TUE: "Tuesday",
   WED: "Wednesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday" };
+/* A HOLIDAY THAT WILL NOT FIT GIVES UP ITS NAME BEFORE ANYTHING LEAVES THE
+   LINE (his call 2026-10-12): "New Year's Day 2015" reads "NYD 2015". Boxing
+   Day and Thanksgiving have no shorter name worth having, so they keep
+   theirs and trimHeads moves on to the network instead. */
+function holShort(h) { return String(h).replace("New Year's Day", "NYD"); }
+function holMark(h) {
+  const t = holShort(h);
+  return t === h ? "" : ' data-hol="' + esc(h) + '" data-hol-short="' +
+    esc(t) + '"';
+}
 function windowOf(m) {
   if (m.comp !== "PL") return null;
   // A WINDOWS CARD KNOWS ITS OWN WINDOW, so it wears the purple and the blue
@@ -345,8 +355,14 @@ function cardHead(m) {
   const dow = m.dow.toUpperCase();
   // the day spells itself out while it has the line to itself, and shortens
   // when the date and network move up beside it
+  // THE DAY SPELLS ITSELF OUT WHEN NOTHING ELSE WAS ON (his call 2026-10-12):
+  // no other Premier League, FA Cup or League Cup match kicked off inside the
+  // hour. It used to depend on how busy the card was, which said nothing
+  // about the match. `pick` is the one the card uses; `long` and `short` stay
+  // because the holiday branch still needs both shapes of the SAME choice.
   const dayTime = { long: (DAY_FULL[dow] || dow) + " " + fmtTime(m.time),
                     short: dow + " " + fmtTime(m.time) };
+  dayTime.pick = m.solo ? dayTime.long : dayTime.short;
   const win = windowOf(m);
   if (m.comp === "PL") {
     const wk = m.mw != null ? "[MW" + m.mw + "]" : "Premier League";
@@ -584,18 +600,19 @@ function card(m) {
       // ...unless he has something to say as well, and then the date and the
       // network ride up as they do on any other busy card, so the line is the
       // day and his words: "New Year's Day 2014 | Adebayor 34', Eriksen 66'"
-      head += h.dayTime ? " " + h.dayTime.short : "";
+      head += h.dayTime ? " " + h.dayTime.pick : "";
       if (!dated && base.length) head += dateUp(base.shift());
       if (base.length) head += tvUp(base);
       rows.push({ items: [m.holiday].concat(parts), tv: 0, hol: true });
     } else {
-      head += h.dayTime ? " " + h.dayTime.long : "";
+      head += h.dayTime ? " " + h.dayTime.pick : "";
       rows.push({ items: [m.holiday].concat(base), tv: 0, hol: true });
     }
     // AND THE DAY IS KEPT UP HERE TOO, hidden: if that line still will not
     // hold it -- the 5-3 against Chelsea, five scorers deep -- trimHeads
     // shows this one instead (his call 2026-10-09)
-    head += '<span class="hhol"> | ' + esc(m.holiday) + "</span>";
+    head += '<span class="hhol"> | <span' + holMark(m.holiday) + ">" +
+      esc(m.holiday) + "</span></span>";
   } else if (h.down) {
     if (parts.length) {
       const chunk = h.down.slice(1);
@@ -606,13 +623,13 @@ function card(m) {
     }
   } else if (parts.length) {
     const tail = h.tail || [];
-    head += (h.dayTime ? " " + h.dayTime.short : "") +
+    head += (h.dayTime ? " " + h.dayTime.pick : "") +
       (tail.length ? dateUp(tail[0]) : "");
     const chunk = tail.slice(1);
     if (chunk.length) head += tvUp(chunk);
     rows.push({ items: chunk.concat(parts), tv: chunk.length });
   } else {
-    head += h.dayTime ? " " + h.dayTime.long : "";
+    head += h.dayTime ? " " + h.dayTime.pick : "";
     rows.push({ items: h.tail || [], tv: 0 });
   }
 
@@ -670,6 +687,7 @@ function card(m) {
         return (j ? '<span class="msep' + (j <= r.tv ? " mtv" : "") + holSep +
             '">|</span>' : "") +
           '<span class="mdet' + (j < r.tv ? " mtv" : "") + holBit + '"' +
+          (holBit ? holMark(p) : "") +
           (shortNets(p) !== p ? ' data-net="' + esc(p) + '" data-net-short="' +
             esc(shortNets(p)) + '"' : "") + ">" + esc(p) + "</span>";
       })
@@ -766,7 +784,9 @@ function twoCard(m) {
     const lab = '<span class="hstage" data-short="' + esc(st.short) + '">' +
       esc(st.full) + "</span>";
     const date = '<span class="hdate">' + fmtDate(m.date) + "</span>";
-    const dayTime = m.dow.toUpperCase() + " " + fmtTime(m.time);
+    // the same rule as his own tab (his call 2026-10-12)
+    const dow = m.dow.toUpperCase();
+    const dayTime = (m.solo ? (DAY_FULL[dow] || dow) : dow) + " " + fmtTime(m.time);
     if (m.comp === "PL") {
       // HIS ORDER (2026-10-09): "[MW5] 9/19/2026 | SAT 10:00am", the window
       // standing in for the day where there was one
@@ -1118,6 +1138,8 @@ function trimHeads() {
     const s = head.querySelector("[data-short]");
     row.classList.remove("tvdown", "holup");
     if (s && s.dataset.full) s.textContent = s.dataset.full;
+    const hols = row.querySelectorAll("[data-hol-short]");
+    hols.forEach(el => { el.textContent = el.dataset.hol; });
     const lh = parseFloat(getComputedStyle(head).lineHeight) || 19;
     const tall = () => head.getBoundingClientRect().height > lh * 1.5;
     // A HOLIDAY LINE THAT WILL NOT HOLD THE DAY sends it up to the header,
@@ -1126,9 +1148,23 @@ function trimHeads() {
     const hline = row.querySelector(".mhol") && row.querySelector(".mdl");
     if (hline) {
       const dl = parseFloat(getComputedStyle(hline).lineHeight) || 18;
-      if (hline.getBoundingClientRect().height > dl * 1.5) row.classList.add("holup");
+      const wraps = () => hline.getBoundingClientRect().height > dl * 1.5;
+      // SHORTEN BEFORE MOVING, here too (his call 2026-10-12): a line that
+      // holds once the holiday reads NYD keeps it, rather than sending the
+      // day up to the header.
+      if (wraps() && hols.length) {
+        hols.forEach(el => { el.textContent = el.dataset.holShort; });
+      }
+      if (wraps()) row.classList.add("holup");
     }
     if (!tall()) return;
+    // THE HOLIDAY SHORTENS FIRST, before anything moves off the line (his
+    // call 2026-10-12): the 2015 New Year's Day card against Chelsea holds
+    // THURSDAY once the day reads NYD.
+    if (hols.length) {
+      hols.forEach(el => { el.textContent = el.dataset.holShort; });
+      if (!tall()) return;
+    }
     if (head.querySelector(".htv")) row.classList.add("tvdown");
     if (tall() && s) {
       s.dataset.full = s.dataset.full || s.textContent;
