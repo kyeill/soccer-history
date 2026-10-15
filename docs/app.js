@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261015-101928. Modelled on games-history's Michigan view (michCard): one card
+   20261015-103031. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261015-101928";
+const BUILD = "20261015-103031";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -805,8 +805,11 @@ function twoCard(m) {
       // HIS ORDER (2026-10-09): "[MW5] 9/19/2026 | SAT 10:00am", the window
       // standing in for the day where there was one
       segs.push((m.mw != null ? "[MW" + m.mw + "] " : "Premier League ") + date);
-      segs.push(win ? '<span class="hstage" data-short="' +
-        esc(win.replace("Sky ", "")) + '">' + esc(win) + "</span> " +
+      // THE WINDOW NEVER SHORTENS HERE EITHER (his call 2026-10-15): "Sunday"
+      // without the Sky is the word worth keeping, so it carries no
+      // data-short. It only ever bit on a Sky Sunday anyway -- stripping
+      // "Sky " from "NBC Saturday" leaves it as it was.
+      segs.push(win ? '<span class="hstage">' + esc(win) + "</span> " +
         fmtTime(m.time) : dayTime);
     } else if (m.comp === "FAC" || m.comp === "LC") {
       // A DOMESTIC CUP CARRIES THE ROUND AND NOTHING ELSE (his call

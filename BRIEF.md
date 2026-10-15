@@ -493,10 +493,16 @@ now and the NETWORK gives way instead -- which is all that is needed: nine
 cards of 359 wrap with the channel added, every one of them NBC Sports Gold
 or NBC Sports App, and NET_SHORT clears all nine at 410px.
 
-ONE SKY SUNDAY HAS NO CHANNEL ANYWHERE: Liverpool 1-1 Norwich City,
-20 September 2015. It falls in the three seasons before the Premier League's
-own listing starts, and livesoccertv has nothing for it either. The card
-simply shows the window and the date.
+IT IS TRUE ON THE RIVALS TAB TOO (his call 2026-10-15): the window label
+there carries no data-short either. It only ever bit on a Sky Sunday anyway,
+since stripping "Sky " from "NBC Saturday" leaves it as it was.
+
+ONE SKY SUNDAY HAD NO CHANNEL ANYWHERE -- Liverpool 1-1 Norwich City,
+20 September 2015, in the three seasons before the Premier League's own
+listing starts, and livesoccertv had nothing for it under either spelling of
+either club. HE KNEW IT: USA Network. It is in windows.NET_FIX, keyed by the
+card's own id rather than its date, since a date holds ten matches. All 360
+Sky Sundays now name a channel.
 
 THE DATE SITS AT THE FAR RIGHT of a windows header (his call 2026-10-09),
 its last digit flush with the scores below it, and so wears no bar. It is the

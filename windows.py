@@ -139,6 +139,13 @@ def espn_score(date, home_id, away_id):
         return None, None
 
 
+# A LISTING NOBODY HAS, supplied by him (2026-10-15). The three seasons before
+# the Premier League's own feed begins depend on livesoccertv, which has
+# nothing for this one -- queried under both spellings of both clubs. Keyed by
+# the card's own id, since a date holds ten matches.
+NET_FIX = {"w2015-09-20-364-381": ["USA Network"]}   # Liverpool 1-1 Norwich
+
+
 def us_nets(season, f, ids):
     """The US broadcast of one fixture: ESPN for the newest seasons, the
     Premier League's own listing for 2016-17 to 2023-24 (see tv.py)."""
@@ -233,6 +240,8 @@ def collect(teams):
             if not nets:
                 # 2013-14 to 2015-16, which nothing else has
                 nets = tv.clean(tv.networks_any(m["date"], f["home"], f["away"]))
+            if m["id"] in NET_FIX:
+                nets = NET_FIX[m["id"]]
             if nets:
                 m["nets"] = nets
             # AN NBC SATURDAY MUST SAY NBC (his call 2026-10-09, tightening
