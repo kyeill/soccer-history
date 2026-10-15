@@ -478,6 +478,26 @@ THE WEIGHT SAYS IT TOO (his call 2026-10-09):
   top six -- takes the weight off BOTH scores. Only their own line lost it
   before 2026-10-09; the opponent's stayed bold. 144 cards.
 
+A SKY SUNDAY NAMES ITS US CHANNEL (his call 2026-10-15): "[MW18] SKY SUNDAY
+11:30am | USA Network". It is the one thing the window's own name does not
+say, and it varies -- NBCSN 184, USA Network 80, Peacock 45, NBC 34, and a
+tail of NBC Sports Gold, PL Extra Time, CNBC and NBC Sports App. His own tab
+has always printed it under the same match; this is the two tabs agreeing.
+
+AN NBC SATURDAY DOES NOT, because his own rule says one of those named NBC or
+it is no window of his, so printing it would say the same thing twice.
+
+THE WINDOW ITSELF NEVER SHORTENS (his call 2026-10-15). "Sunday" without the
+Sky is the one word worth keeping, so the window carries no data-short at all
+now and the NETWORK gives way instead -- which is all that is needed: nine
+cards of 359 wrap with the channel added, every one of them NBC Sports Gold
+or NBC Sports App, and NET_SHORT clears all nine at 410px.
+
+ONE SKY SUNDAY HAS NO CHANNEL ANYWHERE: Liverpool 1-1 Norwich City,
+20 September 2015. It falls in the three seasons before the Premier League's
+own listing starts, and livesoccertv has nothing for it either. The card
+simply shows the window and the date.
+
 THE DATE SITS AT THE FAR RIGHT of a windows header (his call 2026-10-09),
 its last digit flush with the scores below it, and so wears no bar. It is the
 only field outside the bar-separated run, which is why `twoCard` carries it in

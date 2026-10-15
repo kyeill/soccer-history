@@ -772,9 +772,23 @@ function twoCard(m) {
     //     [MW1] NBC Saturday 12:30pm | 8/22/2026
     //     [MW1] Sky Sunday 11:30am | 8/23/2026
     // Saturday's window still says NBC, since it is part of the window's name.
-    segs.push("[MW" + m.mw + "] " + '<span class="hstage" data-short="' +
-      esc(m.window.replace("Sky ", "")) + '">' + esc(m.window) + "</span> " +
-      fmtTime(m.time));
+    // A SKY SUNDAY NAMES ITS US CHANNEL (his call 2026-10-15), as the same
+    // match does on his own tab. An NBC SATURDAY does not: his own rule says
+    // one of those was on NBC or it is no window of his, so printing it would
+    // say the same thing twice.
+    //
+    // THE WINDOW ITSELF NEVER SHORTENS (his call 2026-10-15) -- "Sunday"
+    // without the Sky is the one word worth keeping -- so it carries no
+    // data-short and the NETWORK gives way instead, which is all that is
+    // needed: nine cards of 359, every one of them NBC Sports Gold or
+    // NBC Sports App.
+    const wnet = m.window === "Sky Sunday" ? primaryNet(m.nets, m.season) : "";
+    segs.push("[MW" + m.mw + "] " + '<span class="hstage">' + esc(m.window) +
+      "</span> " + fmtTime(m.time) +
+      (wnet ? ' | <span class="hnet"' +
+        (shortNets(wnet) !== wnet ? ' data-net="' + esc(wnet) +
+          '" data-net-short="' + esc(shortNets(wnet)) + '"' : "") + ">" +
+        esc(wnet) + "</span>" : ""));
     // THE DATE SITS AT THE FAR RIGHT (his call 2026-10-09), lined up with the
     // scores below it, which is why it wears no bar
     right = '<span class="hdate">' + fmtDate(m.date) + "</span>";
@@ -1140,6 +1154,8 @@ function trimHeads() {
     if (s && s.dataset.full) s.textContent = s.dataset.full;
     const hols = row.querySelectorAll("[data-hol-short]");
     hols.forEach(el => { el.textContent = el.dataset.hol; });
+    const hnet = head.querySelector("[data-net-short]");
+    if (hnet && hnet.dataset.net) hnet.textContent = hnet.dataset.net;
     const lh = parseFloat(getComputedStyle(head).lineHeight) || 19;
     const tall = () => head.getBoundingClientRect().height > lh * 1.5;
     // A HOLIDAY LINE THAT WILL NOT HOLD THE DAY sends it up to the header,
@@ -1163,6 +1179,12 @@ function trimHeads() {
     // THURSDAY once the day reads NYD.
     if (hols.length) {
       hols.forEach(el => { el.textContent = el.dataset.holShort; });
+      if (!tall()) return;
+    }
+    // A WINDOWS HEADER GIVES UP THE NETWORK'S FULL NAME, never the window's
+    // (his call 2026-10-15)
+    if (hnet) {
+      hnet.textContent = hnet.dataset.netShort;
       if (!tall()) return;
     }
     if (head.querySelector(".htv")) row.classList.add("tvdown");
