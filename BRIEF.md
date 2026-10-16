@@ -435,6 +435,28 @@ isUpset(), which the card calls too -- so the menu and the card can never
 disagree. The only Top Six cards without the blue are those two unplayed
 fixtures, which have no score to colour.
 
+FOUR MORE ON THE RIVALS TAB (his calls 2026-10-16):
+
+  THE ELIMINATION FILTER TAKES DOMESTIC FINALS. An FA Cup or League Cup final
+  they lost is the night they went out, whatever the trophy. 24 -> 29: ten
+  domestic finals join the European knockouts.
+
+  THE YEAR LEADS A CUP ROUND, as it leads a European knockout: "2026 League
+  Cup Final", "2014 FA Cup Fifth Round". It is the calendar year of the match,
+  not the season, since a cup round belongs to one year.
+
+  A NEUTRAL GROUND READS IN THE HEADER, after the round: "2026 League Cup
+  Final | Wembley", "2025-26 Champions League Final (4-3 Pen) | Budapest".
+  ALL FOURTEEN of them are one-offs -- eleven finals, two Super Cups and a
+  Wembley semifinal -- so a neutral ground also DROPS THE DATE AND TIME, as a
+  domestic cup already did. Four fields is what pushed Budapest to two lines
+  at 410px, and that is what pays for the ground.
+
+  THE TWO OF THEM MEETING FILLS NOTHING. Four cards are Arsenal against
+  Chelsea, and a card washed in Arsenal's red to mark a defeat of Chelsea's
+  reads as though the colour were the point when both clubs are his rivals.
+  The border still says which round it was.
+
 THE EPL/RIVALS TAB (his calls 2026-10-02): its Year menu reads seasons,
 2026-27, as his own tab does; the Top Six AND TOTTENHAM wear capitals on the
 cards; and the Team menu is grouped exactly as the Tottenham tab's, Tottenham

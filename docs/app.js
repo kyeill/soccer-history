@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261016-110236. Modelled on games-history's Michigan view (michCard): one card
+   20261016-091035. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261016-110236";
+const BUILD = "20261016-091035";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -220,6 +220,11 @@ function shortNets(s) {
    played once. A group or league phase is not a knockout. */
 function isElim(m) {
   if (m.team !== "rivals") return false;
+  // A DOMESTIC CUP FINAL THEY LOST IS AN ELIMINATION TOO (his call
+  // 2026-10-16): it is the night they went out, whatever the trophy.
+  if (m.comp === "FAC" || m.comp === "LC") {
+    return m.stage === "Final" && m.result === "L";
+  }
   if (["UCL", "UEL", "UECL"].indexOf(m.comp) < 0) return false;
   if (m.stage === "Group Stage" || m.stage === "League Phase") return false;
   return !!m.legs || m.result === "L";
@@ -711,6 +716,13 @@ function bigName(id, t, rivals) {
 /* A EUROPEAN KNOCKOUT ON THE RIVALS TAB NAMES ITS SEASON (his call
    2026-10-09): "2024-25 UCL Quarterfinals". A group or league phase does
    not -- the date beside it already says which season it was. */
+/* A NEUTRAL GROUND READS IN THE HEADER (his call 2026-10-16), after the
+   round: "2026 League Cup Final | Wembley", "2026 UCL Final | Budapest".
+   Only where the match was actually played on one. */
+function neutral(m) {
+  return m.where === "N" && m.place
+    ? ' <span class="msep">|</span> ' + esc(cityOf(m)) : "";
+}
 function euroYear(m) {
   const euro = ["UCL", "UEL", "UECL"].indexOf(m.comp) > -1;
   if (!euro || m.stage === "Group Stage" || m.stage === "League Phase") return "";
@@ -813,8 +825,10 @@ function twoCard(m) {
         fmtTime(m.time) : dayTime);
     } else if (m.comp === "FAC" || m.comp === "LC") {
       // A DOMESTIC CUP CARRIES THE ROUND AND NOTHING ELSE (his call
-      // 2026-10-09): no date, no time
-      segs.push(lab + esc(st.end || ""));
+      // 2026-10-09): no date, no time -- but THE YEAR LEADS IT (his call
+      // 2026-10-16), as it leads a European knockout, and A NEUTRAL GROUND
+      // FOLLOWS: "2026 League Cup Final | Wembley".
+      segs.push(m.date.slice(0, 4) + " " + lab + esc(st.end || "") + neutral(m));
     } else if (m.legs) {
       // A TIE THEY WENT OUT OF (his call 2026-10-09): the round, then both
       // legs with the rival's score second -- "(1-0, 2-2)", "(1-0, 1-1 ET)",
@@ -826,9 +840,15 @@ function twoCard(m) {
         (m.pens ? "; " + esc(m.pens) + " pen" : "") + ")");
     } else {
       // "UCL Group Stage | 12/11/2013 | WED 2:45pm"
-      segs.push(euroYear(m) + lab + esc(st.end || ""));
-      segs.push(date);
-      segs.push(dayTime);
+      segs.push(euroYear(m) + lab + esc(st.end || "") + neutral(m));
+      // A NEUTRAL GROUND MEANS A ONE-OFF -- every one of the fourteen on this
+      // tab is a final, a Super Cup or a Wembley semifinal -- so it carries
+      // the round and the ground and nothing else, exactly as a domestic cup
+      // does (2026-10-16). Four fields is what pushed Budapest to two lines.
+      if (!neutral(m)) {
+        segs.push(date);
+        segs.push(dayTime);
+      }
     }
   }
   const winner = winId;
@@ -850,6 +870,12 @@ function twoCard(m) {
     ring = ";--celeb:" + colour + ";--celebring:" + colour + "44";
     if (fill) wash = shade(colour);
   };
+  // THE TWO OF THEM MEETING FILLS NOTHING (his call 2026-10-16): a card
+  // washed in Arsenal's red to mark a defeat of Chelsea's reads as though
+  // the colour were the point, when both clubs are his rivals. The border
+  // still says which round it was.
+  const derby = rivals && (m.rival === ARSENAL ? m.opp === CHELSEA
+    : m.opp === ARSENAL);
   if (rivals && !up) {
     // HIS MARKS ON A RIVAL'S CARD (2026-10-09). A cup counts from the
     // semifinal; a European knockout counts when they went out of it, the
@@ -931,6 +957,7 @@ function twoCard(m) {
       ring = ";--celeb:#8a8a92";
     }
   }
+  if (derby) { cls = cls.replace(/ mwash/g, ""); wash = "transparent"; }
   // the bar belongs to the field it introduces, so a wrap never leaves one
   // dangling at the end of a line
   const head = segs.map((x, i) => "<span>" +
