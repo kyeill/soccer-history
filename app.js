@@ -257,14 +257,20 @@ function wentOut(m) {
 function usScorers(m) {
   if (m.team !== "usmnt" || !m.scorers || !m.scorers.length) return false;
   if (m.comp === "WC") return m.result === "W" || m.result === "D";
-  return usKnockout(m) && m.result === "W";
+  // ...and OUTSIDE THE WORLD CUP, only a final (his call 2026-10-16): a Gold
+  // Cup quarterfinal won 6-0 was five names on a line that could not hold
+  // them, and it is not the night anyone remembers.
+  return m.stage === "Final" && m.result === "W";
 }
 /* IN NORTH AMERICA THE CARD NAMES THE CITY (his call 2026-10-16) -- home,
    away or neutral, because that is where he could have been. Anywhere else
    it names one only on neutral ground, as every tab already did. */
-function usGround(m) {
-  return NORTH_AMERICA.indexOf(m.country) > -1
-    ? ((m.city || m.place || "").split(",")[0] || "").trim() : "";
+function usPlace(m) {
+  if (NORTH_AMERICA.indexOf(m.country) > -1) {
+    return ((m.city || m.place || "").split(",")[0] || "").trim();
+  }
+  // anywhere else, the city it has always shown on neutral ground
+  return m.where === "N" && m.place ? cityOf(m) : "";
 }
 function upcoming(m) { return !!m.upcoming || !!m.status; }
 function won(m) { return m.result === "W"; }
@@ -436,24 +442,31 @@ function cardHead(m) {
   // the year leads a final, as it does a Michigan tournament card -- in Europe
   // too, now that the label no longer carries the season: "2019 UCL Final".
   // The city of a final rides up there with it.
-  // THE GROUND READS IN THE HEADER on a United States card (his call
-  // 2026-10-16), after the round, exactly as it does on a rivals final --
-  // not down on the detail line, which five scorers already fill.
-  const us = m.team === "usmnt" ? usGround(m) : "";
-  const head = (!big ? lab
-    : m.date.slice(0, 4) + " " + lab + (!us && m.place ? " | " + esc(cityOf(m)) : "")) +
-    end + (us ? " | " + esc(us) : "");
+  // A UNITED STATES HEADER ALWAYS OPENS WITH THE YEAR (his call 2026-10-16),
+  // and it is the year of the MATCH, not of the tournament it leads to: the
+  // qualifiers played in 2021 read "2021 World Cup Qualifying", not 2022.
+  const usmnt = m.team === "usmnt";
+  // THE GROUND GOES IN THE FOOTER (his call 2026-10-16). He allowed an
+  // exception for cards that also list scorers; the header cannot take it --
+  // the year, the round, the ground and the date put five World Cup group
+  // cards onto two lines, and these labels have no short form to give up.
+  const year = usmnt || big ? m.date.slice(0, 4) + " " : "";
+  // a final's city rides up here on his own tab; on the United States tab
+  // the ground is the footer's, so the header must not say it as well --
+  // the 2021 Nations League final read DENVER twice (caught 2026-10-16)
+  const head = year + lab +
+    (big && !usmnt && m.place ? " | " + esc(cityOf(m)) : "") + end;
   // EVERY CUP -- the domestic ones, Europe, and his other teams' tournaments --
   // carries nothing but the round up top, so the day, date, network and time
   // have a line of their own below the score.
   const down = [dow + " " + dateOf(m), tv];
-  // a neutral ground OUTSIDE North America stays on the detail line, where
-  // it has always been -- Johannesburg in the header left no room for the
-  // date beside it (2026-10-16)
-  if (!big && m.team !== "spurs" && !usGround(m) && m.where === "N" && m.place) {
-    down.push(cityOf(m));
-  }
-  return { head: head, down: down };
+  // THE GROUND IS THE LINE'S, not the network's: it is handed back on its
+  // own rather than pushed into `down`, so it never rides up to the header
+  // with the time and come back down with it. Keeping the time up there is
+  // what lets the 2026 World Cup group card hold its scorers (2026-10-16).
+  const foot = usmnt ? usPlace(m)
+    : (!big && m.team !== "spurs" && m.where === "N" && m.place ? cityOf(m) : "");
+  return { head: head, down: down, ground: foot };
 }
 
 /* ---------- colour words from his Sheet --------------------------------- */
@@ -668,12 +681,13 @@ function card(m) {
     head += '<span class="hhol"> | <span' + holMark(m.holiday) + ">" +
       esc(m.holiday) + "</span></span>";
   } else if (h.down) {
+    const gnd = h.ground ? [h.ground] : [];
     if (parts.length) {
       const chunk = h.down.slice(1);
       head += dateUp(h.down[0]) + (chunk.length ? tvUp(chunk) : "");
-      rows.push({ items: chunk.concat(parts), tv: chunk.length });
+      rows.push({ items: chunk.concat(gnd).concat(parts), tv: chunk.length });
     } else {
-      rows.push({ items: h.down, tv: 0 });
+      rows.push({ items: h.down.concat(gnd), tv: 0 });
     }
   } else if (parts.length) {
     const tail = h.tail || [];

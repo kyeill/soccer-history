@@ -162,6 +162,18 @@ def shootout(notes, us):
 EURO = ("UCL", "UEL", "UECL")
 
 
+def drop_derby_finals(ms):
+    """A FINAL THE TWO OF THEM CONTESTED IS NOBODY'S BAD RESULT (his call
+    2026-10-16): one of his rivals had to lose it. The 2017 and 2020 FA Cup
+    finals are Chelsea's cards with Arsenal on the other side; they go.
+    Rounds before the final stay -- a semifinal is still a night one of them
+    went out.
+    """
+    both = {ARSENAL, CHELSEA}
+    return [m for m in ms
+            if not (m["stage"] == "Final" and m["opp"] in both)]
+
+
 def collapse(ms):
     """EVERY TWO-LEGGED TIE IS ONE RESULT (his call 2026-10-09):
 
@@ -253,7 +265,7 @@ def collect(teams):
             top_four = (not over) or pl_table.get(rival, 99) <= 4
             got = [build(rival, e, season, teams, pl_table, mw_map, goal_store, lp)
                    for e in events]
-            got = collapse([m for m in got if m])
+            got = drop_derby_finals(collapse([m for m in got if m]))
             # a tie they went out of is kept whatever the second leg's own
             # result was: it is the tie the card is about
             out += [m for m in got if m.get("agg") or keeps(rival, m, top_four)]

@@ -202,15 +202,31 @@ SIX ON THE USMNT TAB (his calls 2026-10-16):
   lists the rounds by name rather than guessing. THIRD PLACE is not an
   elimination: they were already out when they got there.
 
-  SCORERS on every World Cup win or draw, and on a knockout win anywhere
-  else -- 36 cards. The harvest keeps the list on every match they did not
-  lose, so the rule can change without a refetch.
+  EVERY HEADER OPENS WITH THE YEAR (his call 2026-10-16), and it is the year
+  of the MATCH, not of the tournament it leads to: the qualifiers played in
+  2021 read "2021 World Cup Qualifying Third Round", not 2022.
 
-  THE GROUND READS IN THE HEADER for anything played in the UNITED STATES,
-  CANADA OR MEXICO -- 104 matches, 102 of which have a city to name -- after
-  the round, as it does on a rivals final. A neutral ground anywhere else
-  stays on the detail line, where it has always been: Johannesburg up in the
-  header left no room for the date beside it.
+  SCORERS on every World Cup win or draw, and OUTSIDE THE WORLD CUP ONLY ON
+  A FINAL (his call 2026-10-16, cutting back the same morning's rule) -- 16
+  cards. A Gold Cup quarterfinal won 6-0 was five names on a line that could
+  not hold them, and it is not the night anyone remembers. The harvest keeps
+  the list on every match they did not lose, so the rule can change again
+  without a refetch.
+
+  THE GROUND READS IN THE FOOTER (his call 2026-10-16) for anything played
+  in the UNITED STATES, CANADA OR MEXICO, and for a neutral ground anywhere
+  else, which is where it has always been. He allowed an exception for cards
+  that also list scorers; the header cannot take it -- the year, the round,
+  the ground and the date put five World Cup group cards onto two lines, and
+  these labels have no short form to give up, as WCQ R3 does.
+
+  THE GROUND IS THE LINE'S, not the network's. It is handed back from
+  cardHead on its own rather than pushed into `down`, so it never rides up to
+  the header with the time and come back down with it. Keeping the time up
+  there is what lets the 2026 World Cup group card hold its scorers.
+
+  A FINAL'S CITY RIDES UP ON HIS OWN TAB but not on this one, or the 2021
+  Nations League final reads DENVER twice.
 
   THE ONLY TIE THEY PLAY OVER TWO LEGS is the Nations League quarterfinal,
   and it now reads as Tottenham's do -- leg, aggregate, who went through.
@@ -497,10 +513,21 @@ FOUR MORE ON THE RIVALS TAB (his calls 2026-10-16):
   domestic cup already did. Four fields is what pushed Budapest to two lines
   at 410px, and that is what pays for the ground.
 
-  THE TWO OF THEM MEETING FILLS NOTHING. Four cards are Arsenal against
-  Chelsea, and a card washed in Arsenal's red to mark a defeat of Chelsea's
-  reads as though the colour were the point when both clubs are his rivals.
-  The border still says which round it was.
+  THE TWO OF THEM MEETING FILLS NOTHING. A card washed in Arsenal's red to
+  mark a defeat of Chelsea's reads as though the colour were the point when
+  both clubs are his rivals. The border still says which round it was.
+
+  AND A FINAL THE TWO OF THEM CONTESTED IS DROPPED ALTOGETHER (his call
+  2026-10-16): one of his rivals had to lose it, so it is nobody's bad
+  result. The 2017 and 2020 FA Cup finals go; 241 -> 239. Rounds before the
+  final stay, since a semifinal is still a night one of them went out.
+
+  EVERY BAR HAS ONE SPACE EACH SIDE (his catch 2026-10-16). The -4px that
+  evens up the LEADING bar of a segment -- the one the flex gap pushes right
+  -- was matching every bar in the header, so the one inside a final's own
+  segment was pulled hard against the word before it: "FINAL| WEMBLEY". The
+  rule now reads `>span>.msep:first-child`, and every bar measures 3.0-3.3px
+  against 3.2px.
 
 THE EPL/RIVALS TAB (his calls 2026-10-02): its Year menu reads seasons,
 2026-27, as his own tab does; the Top Six AND TOTTENHAM wear capitals on the

@@ -69,7 +69,7 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
    entirely on its left -- 7px before, 3.2px after -- and the old rule meant
    to even that up never matched, being written for a bar that was a direct
    child of .sport. */
-.row.two .sport .msep{margin-left:-4px}
+.row.two .sport>span>.msep:first-child{margin-left:-4px}
 /* a filled card: the whole thing wears the winner's colour, so the winner's
    own line stops wearing it too (his call 2026-10-02) */
 .row.two.mwash .tl2.won{background:transparent}
