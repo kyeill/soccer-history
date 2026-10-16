@@ -38,6 +38,23 @@ ATL_COMPS = {
     "campeones.cup": ("CAMP", "Campeones Cup"),
 }
 US_FROM = "2010-01-01"
+# ESPN LEAVES SOME ADDRESSES BLANK AND HAS ONE PLAINLY WRONG (2026-10-16).
+# Every one of these is a stadium whose country is not in doubt. Toyota
+# Stadium is ESPN's own error: its venue 5769 is the one in Frisco, Texas,
+# and it files the address under Toyota, Japan -- which would have kept the
+# 2015 Gold Cup group match out of the North American rule.
+VENUE_FIX = {
+    "RFK Memorial": ("Washington", "USA"),
+    "Georgia Dome": ("Atlanta", "USA"),
+    "Busch Stadium": ("St. Louis", "USA"),
+    "Sporting Park": ("Kansas City", "USA"),
+    "Livestrong Sporting Park": ("Kansas City", "USA"),
+    "Toyota Stadium": ("Frisco", "USA"),
+    "Arnos Vale Stadium": ("Arnos Vale", "St. Vincent and the Grenadines"),
+}
+# bumped whenever a record gains a field, so stored ones are made again from
+# the summaries already on disk
+RECORD_V = 2
 ATL_FROM = 2017
 
 
@@ -68,7 +85,21 @@ def record(team, eid, s, comps, stage_raw=None):
          "home": us.get("homeAway") == "home",
          "venue": venue.get("fullName") or "",
          "city": (venue.get("address") or {}).get("city") or "",
+         # WHERE IT WAS PLAYED (his call 2026-10-16): the card names the
+         # ground for anything in North America, and ESPN's address is the
+         # only thing that tells the three countries apart -- "city" alone is
+         # sometimes a stadium name.
+         "country": (venue.get("address") or {}).get("country") or "",
          "opp": str(them["team"]["id"]), "opp_name": them["team"].get("displayName") or ""}
+    fix = VENUE_FIX.get(m["venue"])
+    if fix:
+        m["city"], m["country"] = fix
+    elif not m["country"] and m["where"] == "H":
+        # a match the United States played AT HOME was in the United States,
+        # which is the only thing the blank addresses need
+        m["country"] = "USA"
+    if team == USA:
+        m["v"] = RECORD_V
     if not status.get("completed"):
         m["upcoming"] = True
         return m
@@ -85,6 +116,26 @@ def record(team, eid, s, comps, stage_raw=None):
         m["pens"], m["result"] = so[1], ("W" if so[0] else "L")
     else:
         m["result"] = "W" if m["us"] > m["them"] else "L" if m["us"] < m["them"] else "D"
+    # WHO SCORED (his call 2026-10-16), kept on every record they did not
+    # lose, so which cards show them can change without a refetch.
+    if team == USA and m["result"] in ("W", "D"):
+        try:
+            goals = h.goals_of(slug, eid, USA,
+                               {USA: m["us"], m["opp"]: m["them"]})
+        except Exception:
+            goals = None
+        if goals and goals != "awarded":
+            order, mins = [], {}
+            for mn, add, tid, who in goals:
+                if tid != USA:
+                    continue
+                who = who or "Goal"
+                if who not in mins:
+                    order.append(who)
+                    mins[who] = []
+                mins[who].append("%d'%s" % (mn, "+%d" % add if add else ""))
+            if order:
+                m["scorers"] = ["%s %s" % (w, ", ".join(mins[w])) for w in order]
     return m
 
 
@@ -137,7 +188,11 @@ def usmnt(store):
         cur = oldest["id"]
     unknown = set()
     for eid, (date, league) in chain.items():
-        if date < US_FROM or "Friendly" in league or eid in done:
+        # a record made before the country and the scorers existed is made
+        # again; its summary is on disk, so this costs no call (2026-10-16)
+        # a record made before a field existed is made again; its summary is
+        # on disk, so this costs no call (2026-10-16)
+        if date < US_FROM or "Friendly" in league or                 (eid in done and done[eid].get("v") == RECORD_V):
             continue
         s = summary(eid, True)
         slug = (s["header"].get("league") or {}).get("slug")
@@ -218,6 +273,44 @@ def neutral_for_usmnt(m):
     return True
 
 
+# THE ONLY TIE THEY PLAY OVER TWO LEGS (his call 2026-10-16) is the Nations
+# League quarterfinal. Everything else that LOOKS like a pair -- the Third and
+# Fourth Rounds of Concacaf qualifying -- is a group played home and away,
+# where an aggregate means nothing: the United States met Jamaica twice in
+# 2012 and twice again in 2013 with four other sides in the same table.
+TWO_LEGGED = {("NL", "Quarterfinals")}
+
+
+def mark_legs(ms):
+    """leg, agg and through on a genuine two-legged tie, as harvest.py does
+    for Tottenham -- minus away goals, which CONCACAF has never used."""
+    ties = {}
+    for m in ms:
+        if (m["comp"], m["stage"]) in TWO_LEGGED:
+            ties.setdefault((m["year"], m["comp"], m["stage"], m["opp"]), []).append(m)
+    for legs in ties.values():
+        legs.sort(key=lambda m: m["date"])
+        if len(legs) != 2 or not all("us" in m for m in legs):
+            continue
+        ours = sum(m["us"] for m in legs)
+        theirs = sum(m["them"] for m in legs)
+        legs[1]["agg"] = "%d-%d" % (ours, theirs)
+        legs[0]["leg"], legs[1]["leg"] = 1, 2
+        # the aggregate first, then the second leg's own shootout -- which
+        # settles the TIE, not the night, so it is read here and not when the
+        # match was built
+        if ours != theirs:
+            legs[1]["through"] = ours > theirs
+        elif legs[1].get("pens"):
+            legs[1]["through"] = legs[1]["result"] == "W"
+        else:
+            so = h.pens_from_summary(legs[1]["id"], USA)
+            if so:
+                legs[1]["pens"], legs[1]["through"] = so[1], so[0]
+        if "through" in legs[1]:
+            legs[0]["through"] = legs[1]["through"]
+
+
 def tidy(team_key, ms):
     """The records as the page reads them."""
     out = []
@@ -231,6 +324,8 @@ def tidy(team_key, ms):
         if m["where"] == "N" and m.get("city"):
             m["place"] = m["city"]
         out.append(m)
+    if team_key == "usmnt":
+        mark_legs(out)
     return out
 
 

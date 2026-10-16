@@ -90,7 +90,15 @@ function isUpset(m) {
 // a European header wears its competition's colour, lightened to read on a
 // card; the English cups stay plain
 const COMP_COLOUR = { UCL: "#5b9bea", UEL: "#f68e1f", UECL: "#2fc27a", USC: "#dcdce6",
-                      FAC: "#d71921", LC: "#008f5e" };
+                      FAC: "#d71921", LC: "#008f5e",
+  // HIS USMNT COLOURS (2026-10-16). Each reads at the weight the European
+  // ones do on a dark card; the two blues sit far enough apart to tell
+  // apart, and they never share a card with the Champions League blue.
+  GC: "#e3b23c",        // the Gold Cup, gold
+  NL: "#2bb3ad",        // the Nations League, teal
+  CA: "#7f93e6",        // Copa America, CONMEBOL's blue lifted to read
+  CCUP: "#1fa0e8",      // the CONCACAF Cup, blue
+  WC: "#f2f2f0" };      // the World Cup, white
 // HIS CUP COLOURS (2026-10-06): BOTH domestic cups wear theirs only from the
 // SEMIFINALS, where the ties move to Wembley -- the rounds before are league
 // clubs against non-league ones and read plain grey. Europe wears its colour
@@ -228,6 +236,35 @@ function isElim(m) {
   if (["UCL", "UEL", "UECL"].indexOf(m.comp) < 0) return false;
   if (m.stage === "Group Stage" || m.stage === "League Phase") return false;
   return !!m.legs || m.result === "L";
+}
+/* THE ROUNDS A UNITED STATES SIDE CAN GO OUT IN (his call 2026-10-16).
+   Concacaf qualifying calls its group phases "Third Round" and "Fourth
+   Round", and they are tables, not ties -- the United States met Jamaica
+   twice in 2012 with four other sides in the same group. THIRD PLACE is not
+   an elimination either: they were already out when they got there. */
+const US_KNOCKOUT = ["Round of 32", "Round of 16", "Second Round",
+                     "Quarterfinals", "Semifinals", "Final"];
+const NORTH_AMERICA = ["USA", "Canada", "Mexico"];
+function usKnockout(m) { return US_KNOCKOUT.indexOf(m.stage) > -1; }
+function wentOut(m) {
+  // a tie over two legs goes out on the aggregate, not on either night
+  return m.leg ? m.through === false : m.result === "L";
+}
+/* WHO SCORED, on the cards he wants it on (his call 2026-10-16): every World
+   Cup win or draw, and a knockout win anywhere else. The harvest keeps the
+   list on every match they did not lose, so this rule can change without a
+   refetch. */
+function usScorers(m) {
+  if (m.team !== "usmnt" || !m.scorers || !m.scorers.length) return false;
+  if (m.comp === "WC") return m.result === "W" || m.result === "D";
+  return usKnockout(m) && m.result === "W";
+}
+/* IN NORTH AMERICA THE CARD NAMES THE CITY (his call 2026-10-16) -- home,
+   away or neutral, because that is where he could have been. Anywhere else
+   it names one only on neutral ground, as every tab already did. */
+function usGround(m) {
+  return NORTH_AMERICA.indexOf(m.country) > -1
+    ? ((m.city || m.place || "").split(",")[0] || "").trim() : "";
 }
 function upcoming(m) { return !!m.upcoming || !!m.status; }
 function won(m) { return m.result === "W"; }
@@ -399,13 +436,23 @@ function cardHead(m) {
   // the year leads a final, as it does a Michigan tournament card -- in Europe
   // too, now that the label no longer carries the season: "2019 UCL Final".
   // The city of a final rides up there with it.
+  // THE GROUND READS IN THE HEADER on a United States card (his call
+  // 2026-10-16), after the round, exactly as it does on a rivals final --
+  // not down on the detail line, which five scorers already fill.
+  const us = m.team === "usmnt" ? usGround(m) : "";
   const head = (!big ? lab
-    : m.date.slice(0, 4) + " " + lab + (m.place ? " | " + esc(cityOf(m)) : "")) + end;
+    : m.date.slice(0, 4) + " " + lab + (!us && m.place ? " | " + esc(cityOf(m)) : "")) +
+    end + (us ? " | " + esc(us) : "");
   // EVERY CUP -- the domestic ones, Europe, and his other teams' tournaments --
   // carries nothing but the round up top, so the day, date, network and time
   // have a line of their own below the score.
   const down = [dow + " " + dateOf(m), tv];
-  if (!big && m.team !== "spurs" && m.where === "N" && m.place) down.push(cityOf(m));
+  // a neutral ground OUTSIDE North America stays on the detail line, where
+  // it has always been -- Johannesburg in the header left no room for the
+  // date beside it (2026-10-16)
+  if (!big && m.team !== "spurs" && !usGround(m) && m.where === "N" && m.place) {
+    down.push(cityOf(m));
+  }
   return { head: head, down: down };
 }
 
@@ -562,7 +609,9 @@ function card(m) {
   // every Tottenham scorer, on a win or a draw with the Top Six -- always the
   // whole list, in order, even when one of them won or saved it late (his
   // calls 2026-10-02), so the late line is left off those cards
-  if (m.scorers) parts.push(m.scorers.join(", "));
+  if (m.scorers && (m.team !== "usmnt" || usScorers(m))) {
+    parts.push(m.scorers.join(", "));
+  }
   if (m.status) parts.push("Postponed");
   // HIS OWN WORDS COME LAST (2026-10-06): the Notes column, and whatever of
   // his Footer column was not an instruction -- the harvest has already told
@@ -659,6 +708,12 @@ function card(m) {
   const phase = m.stage === "Group Stage" || m.stage === "League Phase";
   if (!bc && !up && CUPS.indexOf(m.comp) > -1 && !phase &&
       (m.leg ? m.through === false : L)) {
+    bc = "#8a8a92";
+    cls += " predash";
+  }
+  // THE SAME FOR THE UNITED STATES (his call 2026-10-16): every knockout
+  // they went out of, in any of their competitions.
+  if (!bc && !up && m.team === "usmnt" && usKnockout(m) && wentOut(m)) {
     bc = "#8a8a92";
     cls += " predash";
   }
@@ -1099,7 +1154,27 @@ function filterBar() {
   // in the PREMIER LEAGUE at least once, then the cup-only ones. Read off the
   // whole archive, not the current view, so the lists do not shuffle.
   const inPL = new Set(ALL.filter(m => m.team === "spurs" && m.comp === "PL").map(m => m.opp));
-  const groups = [lead.filter(id => seen.has(id)).map(id => [nameOf(id), id]),
+  // THE CONCACAF NATIONS SIT TOGETHER (his call 2026-10-16), after Mexico and
+  // Canada and before the rest of the world. Who counts is read off the
+  // archive rather than listed here: anybody the United States has met in a
+  // CONCACAF competition is one.
+  const concacaf = () => {
+    // THE GOLD CUP INVITES GUESTS, and a guest is not a CONCACAF nation:
+    // Qatar played the 2021 semifinal and Saudi Arabia the 2025 group stage.
+    // Everyone else the United States has met in the Gold Cup, in Concacaf
+    // qualifying, in the Nations League or in the CONCACAF Cup is a member,
+    // which is why this is read off the archive rather than listed out.
+    const GUESTS = ["4398", "655"];
+    const CCF = new Set(ALL.filter(m => m.team === "usmnt" &&
+      ["GC", "WCQ", "NL", "CCUP"].indexOf(m.comp) > -1 &&
+      GUESTS.indexOf(m.opp) < 0).map(m => m.opp));
+    const rest = ids.filter(id => lead.indexOf(id) < 0);
+    return [lead.filter(id => seen.has(id)).map(id => [nameOf(id), id]),
+            alpha(rest.filter(id => CCF.has(id))),
+            alpha(rest.filter(id => !CCF.has(id)))];
+  };
+  const groups = (population() === "usmnt" ? concacaf()
+    : [lead.filter(id => seen.has(id)).map(id => [nameOf(id), id]),
                   alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id) && inPL.has(id))),
                   alpha(ids.filter(id => lead.indexOf(id) < 0 && english.has(id) && !inPL.has(id))),
                   (() => {
@@ -1109,7 +1184,7 @@ function filterBar() {
                     return lead4.map(id => [nameOf(id), id])
                       .concat(alpha(mine.filter(id => lead4.indexOf(id) < 0)));
                   })(),
-                  alpha(ids.filter(id => !english.has(id) && !euro4(id)))]
+                  alpha(ids.filter(id => !english.has(id) && !euro4(id)))])
     .filter(g => g.length);
   h += group("Team", select("team", "All Teams",
     [].concat.apply([], groups.map((g, i) => (i ? [BAR] : []).concat(g))), FILT.team));

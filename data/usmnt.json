@@ -1105,6 +1105,7 @@
 "264043": {
 "city": "Rustenburg",
 "comp": "WC",
+"country": "South Africa",
 "date": "2010-06-12",
 "dow": "Sat",
 "home": false,
@@ -1112,10 +1113,14 @@
 "opp": "448",
 "opp_name": "England",
 "result": "D",
+"scorers": [
+"Goal 40'"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "14:30",
 "us": 1,
+"v": 2,
 "venue": "Royal Bafokeng Stadium",
 "where": "A",
 "year": 2010
@@ -1123,6 +1128,7 @@
 "264045": {
 "city": "Johannesburg",
 "comp": "WC",
+"country": "South Africa",
 "date": "2010-06-18",
 "dow": "Fri",
 "home": false,
@@ -1130,10 +1136,14 @@
 "opp": "472",
 "opp_name": "Slovenia",
 "result": "D",
+"scorers": [
+"Goal 48', 82'"
+],
 "stage": "Group Stage",
 "them": 2,
 "time": "10:00",
 "us": 2,
+"v": 2,
 "venue": "Emirates Airline Park",
 "where": "A",
 "year": 2010
@@ -1141,6 +1151,7 @@
 "264048": {
 "city": "Pretoria",
 "comp": "WC",
+"country": "South Africa",
 "date": "2010-06-23",
 "dow": "Wed",
 "home": true,
@@ -1148,10 +1159,14 @@
 "opp": "624",
 "opp_name": "Algeria",
 "result": "W",
+"scorers": [
+"Goal 90'+1"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "10:00",
 "us": 1,
+"v": 2,
 "venue": "Loftus Versfeld Stadium",
 "where": "H",
 "year": 2010
@@ -1159,6 +1174,7 @@
 "264108": {
 "city": "Rustenburg",
 "comp": "WC",
+"country": "South Africa",
 "date": "2010-06-26",
 "dow": "Sat",
 "home": true,
@@ -1170,6 +1186,7 @@
 "them": 2,
 "time": "14:30",
 "us": 1,
+"v": 2,
 "venue": "Royal Bafokeng Stadium",
 "where": "H",
 "year": 2010
@@ -1177,6 +1194,7 @@
 "317200": {
 "city": "Detroit",
 "comp": "GC",
+"country": "USA",
 "date": "2011-06-07",
 "dow": "Tue",
 "home": true,
@@ -1184,10 +1202,14 @@
 "opp": "206",
 "opp_name": "Canada",
 "result": "W",
+"scorers": [
+"Goal 14', 61'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "20:00",
 "us": 2,
+"v": 2,
 "venue": "Ford Field",
 "where": "H",
 "year": 2011
@@ -1195,6 +1217,7 @@
 "317202": {
 "city": "Tampa, Florida",
 "comp": "GC",
+"country": "USA",
 "date": "2011-06-11",
 "dow": "Sat",
 "home": true,
@@ -1206,6 +1229,7 @@
 "them": 2,
 "time": "20:00",
 "us": 1,
+"v": 2,
 "venue": "Raymond James Stadium",
 "where": "H",
 "year": 2011
@@ -1213,6 +1237,7 @@
 "317204": {
 "city": "Kansas City, Kansas",
 "comp": "GC",
+"country": "USA",
 "date": "2011-06-14",
 "dow": "Tue",
 "home": false,
@@ -1220,10 +1245,14 @@
 "opp": "7657",
 "opp_name": "Guadeloupe",
 "result": "W",
+"scorers": [
+"Goal 8'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "21:00",
 "us": 1,
+"v": 2,
 "venue": "Children's Mercy Park",
 "where": "A",
 "year": 2011
@@ -1231,6 +1260,7 @@
 "317206": {
 "city": "Houston",
 "comp": "GC",
+"country": "USA",
 "date": "2011-06-22",
 "dow": "Wed",
 "home": true,
@@ -1238,10 +1268,14 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "W",
+"scorers": [
+"Goal 76'"
+],
 "stage": "Semi-finals",
 "them": 0,
 "time": "19:00",
 "us": 1,
+"v": 2,
 "venue": "Reliant Stadium",
 "where": "H",
 "year": 2011
@@ -1249,6 +1283,7 @@
 "317207": {
 "city": "Pasadena",
 "comp": "GC",
+"country": "USA",
 "date": "2011-06-25",
 "dow": "Sat",
 "home": true,
@@ -1260,6 +1295,7 @@
 "them": 4,
 "time": "21:00",
 "us": 2,
+"v": 2,
 "venue": "Rose Bowl",
 "where": "H",
 "year": 2011
@@ -1267,6 +1303,7 @@
 "317919": {
 "city": "Washington",
 "comp": "GC",
+"country": "USA",
 "date": "2011-06-19",
 "dow": "Sun",
 "home": false,
@@ -1274,10 +1311,14 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"Goal 49', 79'"
+],
 "stage": "Quarter-finals",
 "them": 0,
 "time": "15:00",
 "us": 2,
+"v": 2,
 "venue": "RFK Memorial",
 "where": "A",
 "year": 2011
@@ -1285,6 +1326,7 @@
 "333961": {
 "city": "Tampa, Florida",
 "comp": "WCQ",
+"country": "USA",
 "date": "2012-06-08",
 "dow": "Fri",
 "home": true,
@@ -1292,10 +1334,14 @@
 "opp": "2638",
 "opp_name": "Antigua and Barbuda",
 "result": "W",
+"scorers": [
+"Goal 8', 44', 71'"
+],
 "stage": "Third Round",
 "them": 1,
 "time": "19:00",
 "us": 3,
+"v": 2,
 "venue": "Raymond James Stadium",
 "where": "H",
 "year": 2012
@@ -1303,6 +1349,7 @@
 "333963": {
 "city": "Estadio Cementos Progreso",
 "comp": "WCQ",
+"country": "Guatemala",
 "date": "2012-06-12",
 "dow": "Tue",
 "home": false,
@@ -1310,10 +1357,14 @@
 "opp": "2652",
 "opp_name": "Guatemala",
 "result": "D",
+"scorers": [
+"Goal 40'"
+],
 "stage": "Third Round",
 "them": 1,
 "time": "22:00",
 "us": 1,
+"v": 2,
 "venue": "Estadio Nacional Mateo Flores",
 "where": "A",
 "year": 2012
@@ -1321,6 +1372,7 @@
 "333965": {
 "city": "Kingston",
 "comp": "WCQ",
+"country": "Jamaica",
 "date": "2012-09-07",
 "dow": "Fri",
 "home": false,
@@ -1332,6 +1384,7 @@
 "them": 2,
 "time": "20:00",
 "us": 1,
+"v": 2,
 "venue": "Kingston National Stadium",
 "where": "A",
 "year": 2012
@@ -1339,6 +1392,7 @@
 "333967": {
 "city": "Columbus, Ohio",
 "comp": "WCQ",
+"country": "USA",
 "date": "2012-09-11",
 "dow": "Tue",
 "home": true,
@@ -1346,10 +1400,14 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"Gómez 55'"
+],
 "stage": "Third Round",
 "them": 0,
 "time": "20:00",
 "us": 1,
+"v": 2,
 "venue": "Historic Crew Stadium",
 "where": "H",
 "year": 2012
@@ -1357,6 +1415,7 @@
 "333970": {
 "city": "North Sound",
 "comp": "WCQ",
+"country": "Antigua and Barbuda",
 "date": "2012-10-12",
 "dow": "Fri",
 "home": false,
@@ -1364,17 +1423,23 @@
 "opp": "2638",
 "opp_name": "Antigua and Barbuda",
 "result": "W",
+"scorers": [
+"Mattuschka 20'",
+"Sobiech 90'"
+],
 "stage": "Third Round",
 "them": 1,
 "time": "19:00",
 "us": 2,
+"v": 2,
 "venue": "Sir Vivian Richards Stadium",
 "where": "A",
 "year": 2012
 },
 "333971": {
-"city": "",
+"city": "Kansas City",
 "comp": "WCQ",
+"country": "USA",
 "date": "2012-10-16",
 "dow": "Tue",
 "home": true,
@@ -1382,10 +1447,16 @@
 "opp": "2652",
 "opp_name": "Guatemala",
 "result": "W",
+"scorers": [
+"Cigarini 10'",
+"Bonaventura 18'",
+"Meier 36'"
+],
 "stage": "Third Round",
 "them": 1,
 "time": "19:15",
 "us": 3,
+"v": 2,
 "venue": "Sporting Park",
 "where": "H",
 "year": 2012
@@ -1393,6 +1464,7 @@
 "357537": {
 "city": "",
 "comp": "WCQ",
+"country": "Honduras",
 "date": "2013-02-06",
 "dow": "Wed",
 "home": false,
@@ -1404,6 +1476,7 @@
 "them": 2,
 "time": "16:00",
 "us": 1,
+"v": 2,
 "venue": "San Pedro Sula",
 "where": "A",
 "year": 2013
@@ -1411,6 +1484,7 @@
 "357539": {
 "city": "Commerce City, Colorado",
 "comp": "WCQ",
+"country": "USA",
 "date": "2013-03-22",
 "dow": "Fri",
 "home": true,
@@ -1418,10 +1492,14 @@
 "opp": "214",
 "opp_name": "Costa Rica",
 "result": "W",
+"scorers": [
+"Dempsey 16'"
+],
 "stage": "Fourth Round",
 "them": 0,
 "time": "22:11",
 "us": 1,
+"v": 2,
 "venue": "Dick's Sporting Goods Park",
 "where": "H",
 "year": 2013
@@ -1429,6 +1507,7 @@
 "357543": {
 "city": "",
 "comp": "WCQ",
+"country": "Mexico",
 "date": "2013-03-26",
 "dow": "Tue",
 "home": false,
@@ -1440,6 +1519,7 @@
 "them": 0,
 "time": "22:30",
 "us": 0,
+"v": 2,
 "venue": "Estadio Azteca",
 "where": "A",
 "year": 2013
@@ -1447,6 +1527,7 @@
 "357546": {
 "city": "",
 "comp": "WCQ",
+"country": "Jamaica",
 "date": "2013-06-07",
 "dow": "Fri",
 "home": false,
@@ -1454,10 +1535,15 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"Altidore 30'",
+"Evans 90'+2"
+],
 "stage": "Fourth Round",
 "them": 1,
 "time": "21:30",
 "us": 2,
+"v": 2,
 "venue": "National Stadium Kingston",
 "where": "A",
 "year": 2013
@@ -1465,6 +1551,7 @@
 "357549": {
 "city": "Seattle, Washington",
 "comp": "WCQ",
+"country": "USA",
 "date": "2013-06-11",
 "dow": "Tue",
 "home": true,
@@ -1472,10 +1559,15 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "W",
+"scorers": [
+"Altidore 36'",
+"Johnson 53'"
+],
 "stage": "Fourth Round",
 "them": 0,
 "time": "21:30",
 "us": 2,
+"v": 2,
 "venue": "Lumen Field",
 "where": "H",
 "year": 2013
@@ -1483,6 +1575,7 @@
 "357552": {
 "city": "Sandy, Utah",
 "comp": "WCQ",
+"country": "USA",
 "date": "2013-06-18",
 "dow": "Tue",
 "home": true,
@@ -1490,10 +1583,14 @@
 "opp": "215",
 "opp_name": "Honduras",
 "result": "W",
+"scorers": [
+"Altidore 73'"
+],
 "stage": "Fourth Round",
 "them": 0,
 "time": "21:00",
 "us": 1,
+"v": 2,
 "venue": "America First Field",
 "where": "H",
 "year": 2013
@@ -1501,6 +1598,7 @@
 "357555": {
 "city": "",
 "comp": "WCQ",
+"country": "Costa Rica",
 "date": "2013-09-06",
 "dow": "Fri",
 "home": false,
@@ -1512,6 +1610,7 @@
 "them": 3,
 "time": "22:00",
 "us": 1,
+"v": 2,
 "venue": "Estadio Ricardo Saprissa",
 "where": "A",
 "year": 2013
@@ -1519,6 +1618,7 @@
 "357557": {
 "city": "Columbus, Ohio",
 "comp": "WCQ",
+"country": "USA",
 "date": "2013-09-10",
 "dow": "Tue",
 "home": true,
@@ -1526,17 +1626,23 @@
 "opp": "203",
 "opp_name": "Mexico",
 "result": "W",
+"scorers": [
+"Johnson 49'",
+"Donovan 78'"
+],
 "stage": "Fourth Round",
 "them": 0,
 "time": "20:06",
 "us": 2,
+"v": 2,
 "venue": "Historic Crew Stadium",
 "where": "H",
 "year": 2013
 },
 "357560": {
-"city": "",
+"city": "Kansas City",
 "comp": "WCQ",
+"country": "USA",
 "date": "2013-10-11",
 "dow": "Fri",
 "home": true,
@@ -1544,10 +1650,15 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"Zusi 77'",
+"Altidore 81'"
+],
 "stage": "Fourth Round",
 "them": 0,
 "time": "18:36",
 "us": 2,
+"v": 2,
 "venue": "Livestrong Sporting Park",
 "where": "H",
 "year": 2013
@@ -1555,6 +1666,7 @@
 "357563": {
 "city": "Panama City",
 "comp": "WCQ",
+"country": "Panama",
 "date": "2013-10-15",
 "dow": "Tue",
 "home": false,
@@ -1562,10 +1674,16 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "W",
+"scorers": [
+"Orozco 64'",
+"Zusi 90'+2",
+"Jóhannsson 90'+3"
+],
 "stage": "Fourth Round",
 "them": 2,
 "time": "21:30",
 "us": 3,
+"v": 2,
 "venue": "Estadio Rommel Fernández Gutiérrez",
 "where": "A",
 "year": 2013
@@ -1573,6 +1691,7 @@
 "370652": {
 "city": "East Hartford, Connecticut",
 "comp": "GC",
+"country": "USA",
 "date": "2013-07-16",
 "dow": "Tue",
 "home": true,
@@ -1580,10 +1699,14 @@
 "opp": "214",
 "opp_name": "Costa Rica",
 "result": "W",
+"scorers": [
+"Shea 82'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "20:00",
 "us": 1,
+"v": 2,
 "venue": "Pratt & Whitney Stadium at Rentschler Field",
 "where": "H",
 "year": 2013
@@ -1591,6 +1714,7 @@
 "370659": {
 "city": "Sandy, Utah",
 "comp": "GC",
+"country": "USA",
 "date": "2013-07-13",
 "dow": "Sat",
 "home": true,
@@ -1598,10 +1722,16 @@
 "opp": "2647",
 "opp_name": "Cuba",
 "result": "W",
+"scorers": [
+"Donovan 45'+2",
+"Corona 57'",
+"Wondolowski 66', 85'"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "15:30",
 "us": 4,
+"v": 2,
 "venue": "America First Field",
 "where": "H",
 "year": 2013
@@ -1609,6 +1739,7 @@
 "370664": {
 "city": "Portland, Oregon",
 "comp": "GC",
+"country": "USA",
 "date": "2013-07-09",
 "dow": "Tue",
 "home": false,
@@ -1616,10 +1747,17 @@
 "opp": "2641",
 "opp_name": "Belize",
 "result": "W",
+"scorers": [
+"Wondolowski 12', 37', 41'",
+"Holden 58'",
+"Orozco 72'",
+"Donovan 76'"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "23:00",
 "us": 6,
+"v": 2,
 "venue": "Providence Park",
 "where": "A",
 "year": 2013
@@ -1627,6 +1765,7 @@
 "373923": {
 "city": "Baltimore, Maryland",
 "comp": "GC",
+"country": "USA",
 "date": "2013-07-21",
 "dow": "Sun",
 "home": true,
@@ -1634,10 +1773,18 @@
 "opp": "2650",
 "opp_name": "El Salvador",
 "result": "W",
+"scorers": [
+"Goodson 21'",
+"Corona 29'",
+"Johnson 60'",
+"Donovan 78'",
+"Diskerud 83'"
+],
 "stage": "Quarter-finals",
 "them": 1,
 "time": "16:00",
 "us": 5,
+"v": 2,
 "venue": "M&T Bank Stadium",
 "where": "H",
 "year": 2013
@@ -1645,6 +1792,7 @@
 "375655": {
 "city": "Arlington, Texas",
 "comp": "GC",
+"country": "USA",
 "date": "2013-07-24",
 "dow": "Wed",
 "home": true,
@@ -1652,10 +1800,15 @@
 "opp": "215",
 "opp_name": "Honduras",
 "result": "W",
+"scorers": [
+"Johnson 11'",
+"Donovan 27', 53'"
+],
 "stage": "Semi-finals",
 "them": 1,
 "time": "19:00",
 "us": 3,
+"v": 2,
 "venue": "AT&T Stadium",
 "where": "H",
 "year": 2013
@@ -1663,6 +1816,7 @@
 "376024": {
 "city": "Sedan",
 "comp": "GC",
+"country": "France",
 "date": "2013-07-28",
 "dow": "Sun",
 "home": true,
@@ -1670,10 +1824,14 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "W",
+"scorers": [
+"Shea 69'"
+],
 "stage": "Final",
 "them": 0,
 "time": "16:00",
 "us": 1,
+"v": 2,
 "venue": "Stade Louis-Dugauguez",
 "where": "H",
 "year": 2013
@@ -1681,6 +1839,7 @@
 "383247": {
 "city": "Salvador",
 "comp": "WC",
+"country": "Brazil",
 "date": "2014-07-01",
 "dow": "Tue",
 "home": false,
@@ -1692,6 +1851,7 @@
 "them": 2,
 "time": "16:00",
 "us": 1,
+"v": 2,
 "venue": "Casa de Apostas Arena Fonte Nova",
 "where": "A",
 "year": 2014
@@ -1699,6 +1859,7 @@
 "383258": {
 "city": "Recife",
 "comp": "WC",
+"country": "Brazil",
 "date": "2014-06-26",
 "dow": "Thu",
 "home": true,
@@ -1710,6 +1871,7 @@
 "them": 1,
 "time": "12:00",
 "us": 0,
+"v": 2,
 "venue": "Arena Pernambuco",
 "where": "H",
 "year": 2014
@@ -1717,6 +1879,7 @@
 "383273": {
 "city": "Manaus",
 "comp": "WC",
+"country": "Brazil",
 "date": "2014-06-22",
 "dow": "Sun",
 "home": true,
@@ -1724,10 +1887,15 @@
 "opp": "482",
 "opp_name": "Portugal",
 "result": "D",
+"scorers": [
+"Jones 64'",
+"Dempsey 81'"
+],
 "stage": "Group Stage",
 "them": 2,
 "time": "18:00",
 "us": 2,
+"v": 2,
 "venue": "Arena Amazonia",
 "where": "H",
 "year": 2014
@@ -1735,6 +1903,7 @@
 "383290": {
 "city": "Natal",
 "comp": "WC",
+"country": "Brazil",
 "date": "2014-06-16",
 "dow": "Mon",
 "home": false,
@@ -1742,10 +1911,14 @@
 "opp": "4469",
 "opp_name": "Ghana",
 "result": "W",
+"scorers": [
+"Goal 1', 86'"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "18:00",
 "us": 2,
+"v": 2,
 "venue": "Arena das Dunas",
 "where": "A",
 "year": 2014
@@ -1753,6 +1926,7 @@
 "418216": {
 "city": "Kansas City, Kansas",
 "comp": "GC",
+"country": "USA",
 "date": "2015-07-13",
 "dow": "Mon",
 "home": false,
@@ -1760,10 +1934,14 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "D",
+"scorers": [
+"Bradley 55'"
+],
 "stage": "Group Stage ",
 "them": 1,
 "time": "21:30",
 "us": 1,
+"v": 2,
 "venue": "Children's Mercy Park",
 "where": "A",
 "year": 2015
@@ -1771,6 +1949,7 @@
 "418222": {
 "city": "Foxborough, Massachusetts",
 "comp": "GC",
+"country": "USA",
 "date": "2015-07-10",
 "dow": "Fri",
 "home": true,
@@ -1778,17 +1957,22 @@
 "opp": "2654",
 "opp_name": "Haiti",
 "result": "W",
+"scorers": [
+"Dempsey 47'"
+],
 "stage": "Group Stage ",
 "them": 0,
 "time": "20:30",
 "us": 1,
+"v": 2,
 "venue": "Gillette Stadium",
 "where": "H",
 "year": 2015
 },
 "418228": {
-"city": "Toyota",
+"city": "Frisco",
 "comp": "GC",
+"country": "USA",
 "date": "2015-07-07",
 "dow": "Tue",
 "home": true,
@@ -1796,10 +1980,14 @@
 "opp": "215",
 "opp_name": "Honduras",
 "result": "W",
+"scorers": [
+"Dempsey 25', 64'"
+],
 "stage": "Group Stage ",
 "them": 1,
 "time": "21:30",
 "us": 2,
+"v": 2,
 "venue": "Toyota Stadium",
 "where": "H",
 "year": 2015
@@ -1807,17 +1995,20 @@
 "430266": {
 "city": "Chester, Pennsylvania",
 "comp": "GC",
+"country": "USA",
 "date": "2015-07-25",
 "dow": "Sat",
 "home": true,
 "id": "430266",
 "opp": "2659",
 "opp_name": "Panama",
-"result": "D",
+"pens": "3-2",
+"result": "L",
 "stage": "Third Place Game",
 "them": 1,
 "time": "16:00",
 "us": 1,
+"v": 2,
 "venue": "Subaru Park",
 "where": "H",
 "year": 2015
@@ -1825,6 +2016,7 @@
 "430268": {
 "city": "Atlanta",
 "comp": "GC",
+"country": "USA",
 "date": "2015-07-22",
 "dow": "Wed",
 "home": true,
@@ -1836,6 +2028,7 @@
 "them": 2,
 "time": "18:00",
 "us": 1,
+"v": 2,
 "venue": "Georgia Dome",
 "where": "H",
 "year": 2015
@@ -1843,6 +2036,7 @@
 "430272": {
 "city": "Baltimore, Maryland",
 "comp": "GC",
+"country": "USA",
 "date": "2015-07-18",
 "dow": "Sat",
 "home": true,
@@ -1850,10 +2044,17 @@
 "opp": "2647",
 "opp_name": "Cuba",
 "result": "W",
+"scorers": [
+"Dempsey 4', 64', 78'",
+"Zardes 15'",
+"Jóhannsson 32'",
+"González 45'"
+],
 "stage": "Quarter-finals",
 "them": 0,
 "time": "17:00",
 "us": 6,
+"v": 2,
 "venue": "M&T Bank Stadium",
 "where": "H",
 "year": 2015
@@ -1861,6 +2062,7 @@
 "433566": {
 "city": "Pasadena, California",
 "comp": "CCUP",
+"country": "USA",
 "date": "2015-10-10",
 "dow": "Sat",
 "home": false,
@@ -1872,6 +2074,7 @@
 "them": 3,
 "time": "21:30",
 "us": 2,
+"v": 2,
 "venue": "Rose Bowl",
 "where": "A",
 "year": 2015
@@ -1879,6 +2082,7 @@
 "435520": {
 "city": "Jacksonville, Florida",
 "comp": "WCQ",
+"country": "USA",
 "date": "2016-09-06",
 "dow": "Tue",
 "home": true,
@@ -1886,17 +2090,24 @@
 "opp": "2627",
 "opp_name": "Trinidad and Tobago",
 "result": "W",
+"scorers": [
+"Kljestan 44'",
+"Altidore 59', 63'",
+"Arriola 71'"
+],
 "stage": "Fourth Round",
 "them": 0,
 "time": "20:15",
 "us": 4,
+"v": 2,
 "venue": "TIAA Bank Field",
 "where": "H",
 "year": 2016
 },
 "435526": {
-"city": "Arnos Vale Stadium",
+"city": "Arnos Vale",
 "comp": "WCQ",
+"country": "St. Vincent and the Grenadines",
 "date": "2016-09-02",
 "dow": "Fri",
 "home": false,
@@ -1904,10 +2115,18 @@
 "opp": "13584",
 "opp_name": "St. Vincent and the Grenadines",
 "result": "W",
+"scorers": [
+"Wood 28'",
+"Besler 32'",
+"Altidore 43'",
+"Pulisic 71', 90'+2",
+"Kljestan 78'"
+],
 "stage": "Fourth Round",
 "them": 0,
 "time": "15:30",
 "us": 6,
+"v": 2,
 "venue": "Arnos Vale Stadium",
 "where": "A",
 "year": 2016
@@ -1915,6 +2134,7 @@
 "435529": {
 "city": "Columbus, Ohio",
 "comp": "WCQ",
+"country": "USA",
 "date": "2016-03-29",
 "dow": "Tue",
 "home": true,
@@ -1922,10 +2142,17 @@
 "opp": "2652",
 "opp_name": "Guatemala",
 "result": "W",
+"scorers": [
+"Dempsey 12'",
+"Cameron 35'",
+"Zusi 46'",
+"Altidore 89'"
+],
 "stage": "Fourth Round",
 "them": 0,
 "time": "19:25",
 "us": 4,
+"v": 2,
 "venue": "Historic Crew Stadium",
 "where": "H",
 "year": 2016
@@ -1933,6 +2160,7 @@
 "435538": {
 "city": "Estadio Cementos Progreso",
 "comp": "WCQ",
+"country": "Guatemala",
 "date": "2016-03-25",
 "dow": "Fri",
 "home": false,
@@ -1944,6 +2172,7 @@
 "them": 2,
 "time": "22:06",
 "us": 0,
+"v": 2,
 "venue": "Estadio Nacional Mateo Flores",
 "where": "A",
 "year": 2016
@@ -1951,6 +2180,7 @@
 "435544": {
 "city": "Port of Spain",
 "comp": "WCQ",
+"country": "Trinidad and Tobago",
 "date": "2015-11-17",
 "dow": "Tue",
 "home": false,
@@ -1962,6 +2192,7 @@
 "them": 0,
 "time": "18:36",
 "us": 0,
+"v": 2,
 "venue": "Hasely Crawford Stadium",
 "where": "A",
 "year": 2015
@@ -1969,6 +2200,7 @@
 "435549": {
 "city": "St. Louis",
 "comp": "WCQ",
+"country": "USA",
 "date": "2015-11-13",
 "dow": "Fri",
 "home": true,
@@ -1976,10 +2208,14 @@
 "opp": "13584",
 "opp_name": "St. Vincent and the Grenadines",
 "result": "W",
+"scorers": [
+"Goal 11', 29', 31', 51', 58', 74'"
+],
 "stage": "Fourth Round",
 "them": 1,
 "time": "19:10",
 "us": 6,
+"v": 2,
 "venue": "Busch Stadium",
 "where": "H",
 "year": 2015
@@ -1987,6 +2223,7 @@
 "444697": {
 "city": "Glendale, Arizona",
 "comp": "CA",
+"country": "USA",
 "date": "2016-06-25",
 "dow": "Sat",
 "home": true,
@@ -1998,6 +2235,7 @@
 "them": 1,
 "time": "20:00",
 "us": 0,
+"v": 2,
 "venue": "State Farm Stadium",
 "where": "H",
 "year": 2016
@@ -2005,6 +2243,7 @@
 "444699": {
 "city": "Houston, Texas",
 "comp": "CA",
+"country": "USA",
 "date": "2016-06-21",
 "dow": "Tue",
 "home": true,
@@ -2016,6 +2255,7 @@
 "them": 4,
 "time": "21:00",
 "us": 0,
+"v": 2,
 "venue": "NRG Stadium",
 "where": "H",
 "year": 2016
@@ -2023,6 +2263,7 @@
 "444703": {
 "city": "Seattle, Washington",
 "comp": "CA",
+"country": "USA",
 "date": "2016-06-16",
 "dow": "Thu",
 "home": true,
@@ -2030,10 +2271,15 @@
 "opp": "209",
 "opp_name": "Ecuador",
 "result": "W",
+"scorers": [
+"Dempsey 22'",
+"Zardes 65'"
+],
 "stage": "Quarterfinals",
 "them": 1,
 "time": "21:30",
 "us": 2,
+"v": 2,
 "venue": "Lumen Field",
 "where": "H",
 "year": 2016
@@ -2041,6 +2287,7 @@
 "444711": {
 "city": "Philadelphia, Pennsylvania",
 "comp": "CA",
+"country": "USA",
 "date": "2016-06-11",
 "dow": "Sat",
 "home": true,
@@ -2048,10 +2295,14 @@
 "opp": "210",
 "opp_name": "Paraguay",
 "result": "W",
+"scorers": [
+"Dempsey 27'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "19:00",
 "us": 1,
+"v": 2,
 "venue": "Lincoln Financial Field",
 "where": "H",
 "year": 2016
@@ -2059,6 +2310,7 @@
 "444718": {
 "city": "Chicago, Illinois",
 "comp": "CA",
+"country": "USA",
 "date": "2016-06-07",
 "dow": "Tue",
 "home": true,
@@ -2066,10 +2318,17 @@
 "opp": "214",
 "opp_name": "Costa Rica",
 "result": "W",
+"scorers": [
+"Dempsey 9'",
+"Jones 37'",
+"Wood 42'",
+"Zusi 87'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "20:00",
 "us": 4,
+"v": 2,
 "venue": "Soldier Field",
 "where": "H",
 "year": 2016
@@ -2077,6 +2336,7 @@
 "444727": {
 "city": "Santa Clara, California",
 "comp": "CA",
+"country": "USA",
 "date": "2016-06-03",
 "dow": "Fri",
 "home": true,
@@ -2088,6 +2348,7 @@
 "them": 2,
 "time": "21:30",
 "us": 0,
+"v": 2,
 "venue": "Levi's Stadium",
 "where": "H",
 "year": 2016
@@ -2095,6 +2356,7 @@
 "466968": {
 "city": "Ato Boldon Stadium",
 "comp": "WCQ",
+"country": "Trinidad and Tobago",
 "date": "2017-10-10",
 "dow": "Tue",
 "home": false,
@@ -2106,6 +2368,7 @@
 "them": 2,
 "time": "20:00",
 "us": 1,
+"v": 2,
 "venue": "Ato Boldon Stadium",
 "where": "A",
 "year": 2017
@@ -2113,6 +2376,7 @@
 "466970": {
 "city": "Orlando, Florida",
 "comp": "WCQ",
+"country": "USA",
 "date": "2017-10-06",
 "dow": "Fri",
 "home": true,
@@ -2120,10 +2384,16 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "W",
+"scorers": [
+"Pulisic 8'",
+"Altidore 19', 43'",
+"Wood 63'"
+],
 "stage": "Hexagonal",
 "them": 0,
 "time": "19:35",
 "us": 4,
+"v": 2,
 "venue": "Inter&Co Stadium",
 "where": "H",
 "year": 2017
@@ -2131,6 +2401,7 @@
 "466974": {
 "city": "San Pedro Sula",
 "comp": "WCQ",
+"country": "Honduras",
 "date": "2017-09-05",
 "dow": "Tue",
 "home": false,
@@ -2138,10 +2409,14 @@
 "opp": "215",
 "opp_name": "Honduras",
 "result": "D",
+"scorers": [
+"Wood 85'"
+],
 "stage": "Hexagonal",
 "them": 1,
 "time": "17:36",
 "us": 1,
+"v": 2,
 "venue": "Estadio Olímpico Metropolitano",
 "where": "A",
 "year": 2017
@@ -2149,6 +2424,7 @@
 "466975": {
 "city": "Harrison, New Jersey",
 "comp": "WCQ",
+"country": "USA",
 "date": "2017-09-01",
 "dow": "Fri",
 "home": true,
@@ -2160,6 +2436,7 @@
 "them": 2,
 "time": "18:55",
 "us": 0,
+"v": 2,
 "venue": "Sports Illustrated Stadium",
 "where": "H",
 "year": 2017
@@ -2167,6 +2444,7 @@
 "466980": {
 "city": "Mexico City",
 "comp": "WCQ",
+"country": "Mexico",
 "date": "2017-06-11",
 "dow": "Sun",
 "home": false,
@@ -2174,10 +2452,14 @@
 "opp": "203",
 "opp_name": "Mexico",
 "result": "D",
+"scorers": [
+"Bradley 6'"
+],
 "stage": "Hexagonal",
 "them": 1,
 "time": "20:30",
 "us": 1,
+"v": 2,
 "venue": "Estadio Banorte",
 "where": "A",
 "year": 2017
@@ -2185,6 +2467,7 @@
 "466983": {
 "city": "Commerce City, Colorado",
 "comp": "WCQ",
+"country": "USA",
 "date": "2017-06-08",
 "dow": "Thu",
 "home": true,
@@ -2192,10 +2475,14 @@
 "opp": "2627",
 "opp_name": "Trinidad and Tobago",
 "result": "W",
+"scorers": [
+"Pulisic 52', 62'"
+],
 "stage": "Hexagonal",
 "them": 0,
 "time": "20:00",
 "us": 2,
+"v": 2,
 "venue": "Dick's Sporting Goods Park",
 "where": "H",
 "year": 2017
@@ -2203,6 +2490,7 @@
 "466986": {
 "city": "Panama City",
 "comp": "WCQ",
+"country": "Panama",
 "date": "2017-03-28",
 "dow": "Tue",
 "home": false,
@@ -2210,10 +2498,14 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "D",
+"scorers": [
+"Dempsey 39'"
+],
 "stage": "Hexagonal",
 "them": 1,
 "time": "22:05",
 "us": 1,
+"v": 2,
 "venue": "Estadio Rommel Fernández Gutiérrez",
 "where": "A",
 "year": 2017
@@ -2221,6 +2513,7 @@
 "466988": {
 "city": "San Jose, California",
 "comp": "WCQ",
+"country": "USA",
 "date": "2017-03-24",
 "dow": "Fri",
 "home": true,
@@ -2228,10 +2521,17 @@
 "opp": "215",
 "opp_name": "Honduras",
 "result": "W",
+"scorers": [
+"Lletget 5'",
+"Bradley 27'",
+"Dempsey 32', 49', 54'",
+"Pulisic 46'"
+],
 "stage": "Hexagonal",
 "them": 0,
 "time": "22:55",
 "us": 6,
+"v": 2,
 "venue": "PayPal Park",
 "where": "H",
 "year": 2017
@@ -2239,6 +2539,7 @@
 "466992": {
 "city": "Estadio Nacional de Costa Rica",
 "comp": "WCQ",
+"country": "Costa Rica",
 "date": "2016-11-15",
 "dow": "Tue",
 "home": false,
@@ -2250,6 +2551,7 @@
 "them": 4,
 "time": "21:05",
 "us": 0,
+"v": 2,
 "venue": "Estadio Nacional de Costa Rica",
 "where": "A",
 "year": 2016
@@ -2257,6 +2559,7 @@
 "466994": {
 "city": "Columbus, Ohio",
 "comp": "WCQ",
+"country": "USA",
 "date": "2016-11-11",
 "dow": "Fri",
 "home": true,
@@ -2268,6 +2571,7 @@
 "them": 2,
 "time": "20:01",
 "us": 1,
+"v": 2,
 "venue": "Historic Crew Stadium",
 "where": "H",
 "year": 2016
@@ -2275,6 +2579,7 @@
 "475833": {
 "city": "Cleveland, Ohio",
 "comp": "GC",
+"country": "USA",
 "date": "2017-07-15",
 "dow": "Sat",
 "home": false,
@@ -2282,10 +2587,16 @@
 "opp": "2658",
 "opp_name": "Nicaragua",
 "result": "W",
+"scorers": [
+"Corona 36'",
+"Rowe 56'",
+"Miazga 88'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "19:00",
 "us": 3,
+"v": 2,
 "venue": "Huntington Bank Field",
 "where": "A",
 "year": 2017
@@ -2293,6 +2604,7 @@
 "475838": {
 "city": "Tampa, Florida",
 "comp": "GC",
+"country": "USA",
 "date": "2017-07-12",
 "dow": "Wed",
 "home": true,
@@ -2300,10 +2612,15 @@
 "opp": "2728",
 "opp_name": "Martinique",
 "result": "W",
+"scorers": [
+"González 54'",
+"Morris 64', 76'"
+],
 "stage": "Group Stage",
 "them": 2,
 "time": "21:00",
 "us": 3,
+"v": 2,
 "venue": "Raymond James Stadium",
 "where": "H",
 "year": 2017
@@ -2311,6 +2628,7 @@
 "475844": {
 "city": "Nashville, Tennessee",
 "comp": "GC",
+"country": "USA",
 "date": "2017-07-08",
 "dow": "Sat",
 "home": true,
@@ -2318,10 +2636,14 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "D",
+"scorers": [
+"Dwyer 50'"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "16:30",
 "us": 1,
+"v": 2,
 "venue": "Nissan Stadium, Nashville",
 "where": "H",
 "year": 2017
@@ -2329,6 +2651,7 @@
 "475848": {
 "city": "Santa Clara, California",
 "comp": "GC",
+"country": "USA",
 "date": "2017-07-26",
 "dow": "Wed",
 "home": true,
@@ -2336,10 +2659,15 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"Altidore 45'",
+"Morris 88'"
+],
 "stage": "Final",
 "them": 1,
 "time": "21:30",
 "us": 2,
+"v": 2,
 "venue": "Levi's Stadium",
 "where": "H",
 "year": 2017
@@ -2347,6 +2675,7 @@
 "475850": {
 "city": "Arlington, Texas",
 "comp": "GC",
+"country": "USA",
 "date": "2017-07-22",
 "dow": "Sat",
 "home": false,
@@ -2354,10 +2683,15 @@
 "opp": "214",
 "opp_name": "Costa Rica",
 "result": "W",
+"scorers": [
+"Altidore 72'",
+"Dempsey 82'"
+],
 "stage": "Semifinals",
 "them": 0,
 "time": "22:00",
 "us": 2,
+"v": 2,
 "venue": "AT&T Stadium",
 "where": "A",
 "year": 2017
@@ -2365,6 +2699,7 @@
 "475854": {
 "city": "Philadelphia, Pennsylvania",
 "comp": "GC",
+"country": "USA",
 "date": "2017-07-19",
 "dow": "Wed",
 "home": true,
@@ -2372,10 +2707,15 @@
 "opp": "2650",
 "opp_name": "El Salvador",
 "result": "W",
+"scorers": [
+"González 41'",
+"Lichaj 45'+2"
+],
 "stage": "Quarterfinals",
 "them": 0,
 "time": "21:00",
 "us": 2,
+"v": 2,
 "venue": "Lincoln Financial Field",
 "where": "H",
 "year": 2017
@@ -2383,6 +2723,7 @@
 "529165": {
 "city": "Chicago, Illinois",
 "comp": "GC",
+"country": "USA",
 "date": "2019-07-07",
 "dow": "Sun",
 "home": false,
@@ -2394,6 +2735,7 @@
 "them": 1,
 "time": "21:00",
 "us": 0,
+"v": 2,
 "venue": "Soldier Field",
 "where": "A",
 "year": 2019
@@ -2401,6 +2743,7 @@
 "529167": {
 "city": "Nashville, Tennessee",
 "comp": "GC",
+"country": "USA",
 "date": "2019-07-03",
 "dow": "Wed",
 "home": false,
@@ -2408,10 +2751,15 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"McKennie 9'",
+"Pulisic 52', 87'"
+],
 "stage": "Semifinals",
 "them": 1,
 "time": "21:30",
 "us": 3,
+"v": 2,
 "venue": "Nissan Stadium, Nashville",
 "where": "A",
 "year": 2019
@@ -2419,6 +2767,7 @@
 "539219": {
 "city": "Kansas City, Kansas",
 "comp": "GC",
+"country": "USA",
 "date": "2019-06-26",
 "dow": "Wed",
 "home": false,
@@ -2426,10 +2775,14 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "W",
+"scorers": [
+"Altidore 66'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "21:00",
 "us": 1,
+"v": 2,
 "venue": "Children's Mercy Park",
 "where": "A",
 "year": 2019
@@ -2437,6 +2790,7 @@
 "539227": {
 "city": "Cleveland, Ohio",
 "comp": "GC",
+"country": "USA",
 "date": "2019-06-22",
 "dow": "Sat",
 "home": true,
@@ -2444,10 +2798,17 @@
 "opp": "2627",
 "opp_name": "Trinidad and Tobago",
 "result": "W",
+"scorers": [
+"Long 41', 90'",
+"Zardes 66', 69'",
+"Pulisic 73'",
+"Arriola 78'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "20:00",
 "us": 6,
+"v": 2,
 "venue": "Huntington Bank Field",
 "where": "H",
 "year": 2019
@@ -2455,6 +2816,7 @@
 "539235": {
 "city": "Saint Paul, Minnesota",
 "comp": "GC",
+"country": "USA",
 "date": "2019-06-18",
 "dow": "Tue",
 "home": true,
@@ -2462,10 +2824,16 @@
 "opp": "2653",
 "opp_name": "Guyana",
 "result": "W",
+"scorers": [
+"Arriola 28'",
+"Boyd 51', 81'",
+"Zardes 55'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "22:00",
 "us": 4,
+"v": 2,
 "venue": "Allianz Field",
 "where": "H",
 "year": 2019
@@ -2473,6 +2841,7 @@
 "540342": {
 "city": "George Town",
 "comp": "NL",
+"country": "Cayman Islands",
 "date": "2019-11-19",
 "dow": "Tue",
 "home": false,
@@ -2480,10 +2849,15 @@
 "opp": "2647",
 "opp_name": "Cuba",
 "result": "W",
+"scorers": [
+"Sargent 1', 66'",
+"Morris 26', 39'"
+],
 "stage": "League A",
 "them": 0,
 "time": "19:30",
 "us": 4,
+"v": 2,
 "venue": "Truman Bodden Sport Complex",
 "where": "A",
 "year": 2019
@@ -2491,6 +2865,7 @@
 "540346": {
 "city": "Orlando, Florida",
 "comp": "NL",
+"country": "USA",
 "date": "2019-11-15",
 "dow": "Fri",
 "home": true,
@@ -2498,10 +2873,16 @@
 "opp": "206",
 "opp_name": "Canada",
 "result": "W",
+"scorers": [
+"Morris 2'",
+"Zardes 23', 89'",
+"Long 34'"
+],
 "stage": "League A",
 "them": 1,
 "time": "19:00",
 "us": 4,
+"v": 2,
 "venue": "Inter&Co Stadium",
 "where": "H",
 "year": 2019
@@ -2509,6 +2890,7 @@
 "540350": {
 "city": "Toronto",
 "comp": "NL",
+"country": "Canada",
 "date": "2019-10-15",
 "dow": "Tue",
 "home": false,
@@ -2520,6 +2902,7 @@
 "them": 2,
 "time": "19:30",
 "us": 0,
+"v": 2,
 "venue": "BMO Field",
 "where": "A",
 "year": 2019
@@ -2527,6 +2910,7 @@
 "540354": {
 "city": "Washington, District of Columbia",
 "comp": "NL",
+"country": "USA",
 "date": "2019-10-11",
 "dow": "Fri",
 "home": true,
@@ -2534,10 +2918,18 @@
 "opp": "2647",
 "opp_name": "Cuba",
 "result": "W",
+"scorers": [
+"McKennie 1', 5', 13'",
+"Morris 9'",
+"OG 37'",
+"Sargent 40'",
+"Pulisic 62'"
+],
 "stage": "League A",
 "them": 0,
 "time": "19:00",
 "us": 7,
+"v": 2,
 "venue": "Audi Field",
 "where": "H",
 "year": 2019
@@ -2545,6 +2937,7 @@
 "547957": {
 "city": "Philadelphia, Pennsylvania",
 "comp": "GC",
+"country": "USA",
 "date": "2019-06-30",
 "dow": "Sun",
 "home": true,
@@ -2552,10 +2945,14 @@
 "opp": "11678",
 "opp_name": "Curaçao",
 "result": "W",
+"scorers": [
+"McKennie 25'"
+],
 "stage": "Quarterfinals",
 "them": 0,
 "time": "20:30",
 "us": 1,
+"v": 2,
 "venue": "Lincoln Financial Field",
 "where": "H",
 "year": 2019
@@ -2563,6 +2960,7 @@
 "570815": {
 "city": "Denver, Colorado",
 "comp": "NL",
+"country": "USA",
 "date": "2021-06-03",
 "dow": "Thu",
 "home": false,
@@ -2570,10 +2968,14 @@
 "opp": "215",
 "opp_name": "Honduras",
 "result": "W",
+"scorers": [
+"Siebatcheu 89'"
+],
 "stage": "Semifinals",
 "them": 0,
 "time": "19:30",
 "us": 1,
+"v": 2,
 "venue": "Empower Field at Mile High",
 "where": "A",
 "year": 2021
@@ -2581,6 +2983,7 @@
 "570981": {
 "city": "Denver, Colorado",
 "comp": "NL",
+"country": "USA",
 "date": "2021-06-06",
 "dow": "Sun",
 "home": true,
@@ -2588,10 +2991,16 @@
 "opp": "203",
 "opp_name": "Mexico",
 "result": "W",
+"scorers": [
+"Reyna 27'",
+"McKennie 82'",
+"Pulisic 114'"
+],
 "stage": "Final",
 "them": 2,
 "time": "21:36",
 "us": 3,
+"v": 2,
 "venue": "Empower Field at Mile High",
 "where": "H",
 "year": 2021
@@ -2599,6 +3008,7 @@
 "602693": {
 "city": "Austin, Texas",
 "comp": "GC",
+"country": "USA",
 "date": "2021-07-29",
 "dow": "Thu",
 "home": false,
@@ -2606,10 +3016,14 @@
 "opp": "4398",
 "opp_name": "Qatar",
 "result": "W",
+"scorers": [
+"Zardes 86'"
+],
 "stage": "Semifinals",
 "them": 0,
 "time": "19:30",
 "us": 1,
+"v": 2,
 "venue": "Q2 Stadium",
 "where": "A",
 "year": 2021
@@ -2617,6 +3031,7 @@
 "602694": {
 "city": "Arlington, Texas",
 "comp": "GC",
+"country": "USA",
 "date": "2021-07-25",
 "dow": "Sun",
 "home": true,
@@ -2624,10 +3039,14 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"Hoppe 83'"
+],
 "stage": "Quarterfinals",
 "them": 0,
 "time": "21:30",
 "us": 1,
+"v": 2,
 "venue": "AT&T Stadium",
 "where": "H",
 "year": 2021
@@ -2635,6 +3054,7 @@
 "602704": {
 "city": "Kansas City, Kansas",
 "comp": "GC",
+"country": "USA",
 "date": "2021-07-18",
 "dow": "Sun",
 "home": true,
@@ -2642,10 +3062,14 @@
 "opp": "206",
 "opp_name": "Canada",
 "result": "W",
+"scorers": [
+"Moore 1'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "17:00",
 "us": 1,
+"v": 2,
 "venue": "Children's Mercy Park",
 "where": "H",
 "year": 2021
@@ -2653,6 +3077,7 @@
 "602710": {
 "city": "Kansas City, Kansas",
 "comp": "GC",
+"country": "USA",
 "date": "2021-07-15",
 "dow": "Thu",
 "home": false,
@@ -2660,10 +3085,18 @@
 "opp": "2728",
 "opp_name": "Martinique",
 "result": "W",
+"scorers": [
+"Dike 14', 59'",
+"OG 23'",
+"Robinson 50'",
+"Zardes 70'",
+"Gioacchini 90'"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "22:00",
 "us": 6,
+"v": 2,
 "venue": "Children's Mercy Park",
 "where": "A",
 "year": 2021
@@ -2671,6 +3104,7 @@
 "602718": {
 "city": "Kansas City, Kansas",
 "comp": "GC",
+"country": "USA",
 "date": "2021-07-11",
 "dow": "Sun",
 "home": true,
@@ -2678,10 +3112,14 @@
 "opp": "2654",
 "opp_name": "Haiti",
 "result": "W",
+"scorers": [
+"Vines 8'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "20:30",
 "us": 1,
+"v": 2,
 "venue": "Children's Mercy Park",
 "where": "H",
 "year": 2021
@@ -2689,6 +3127,7 @@
 "602722": {
 "city": "Las Vegas, Nevada",
 "comp": "GC",
+"country": "USA",
 "date": "2021-08-01",
 "dow": "Sun",
 "home": true,
@@ -2696,10 +3135,14 @@
 "opp": "203",
 "opp_name": "Mexico",
 "result": "W",
+"scorers": [
+"Robinson 117'"
+],
 "stage": "Final",
 "them": 0,
 "time": "21:00",
 "us": 1,
+"v": 2,
 "venue": "Allegiant Stadium",
 "where": "H",
 "year": 2021
@@ -2707,6 +3150,7 @@
 "606044": {
 "city": "Estadio Nacional de Costa Rica",
 "comp": "WCQ",
+"country": "Costa Rica",
 "date": "2022-03-30",
 "dow": "Wed",
 "home": false,
@@ -2718,6 +3162,7 @@
 "them": 2,
 "time": "21:05",
 "us": 0,
+"v": 2,
 "venue": "Estadio Nacional de Costa Rica",
 "where": "A",
 "year": 2022
@@ -2725,6 +3170,7 @@
 "606048": {
 "city": "Orlando, Florida",
 "comp": "WCQ",
+"country": "USA",
 "date": "2022-03-27",
 "dow": "Sun",
 "home": true,
@@ -2732,10 +3178,16 @@
 "opp": "2659",
 "opp_name": "Panama",
 "result": "W",
+"scorers": [
+"Pulisic 17', 45'+4, 65'",
+"Arriola 23'",
+"Ferreira 27'"
+],
 "stage": "Third Round",
 "them": 1,
 "time": "19:00",
 "us": 5,
+"v": 2,
 "venue": "Inter&Co Stadium",
 "where": "H",
 "year": 2022
@@ -2743,6 +3195,7 @@
 "606052": {
 "city": "Mexico City",
 "comp": "WCQ",
+"country": "Mexico",
 "date": "2022-03-24",
 "dow": "Thu",
 "home": false,
@@ -2754,6 +3207,7 @@
 "them": 0,
 "time": "22:00",
 "us": 0,
+"v": 2,
 "venue": "Estadio Banorte",
 "where": "A",
 "year": 2022
@@ -2761,6 +3215,7 @@
 "606055": {
 "city": "Saint Paul, Minnesota",
 "comp": "WCQ",
+"country": "USA",
 "date": "2022-02-02",
 "dow": "Wed",
 "home": true,
@@ -2768,10 +3223,16 @@
 "opp": "215",
 "opp_name": "Honduras",
 "result": "W",
+"scorers": [
+"McKennie 8'",
+"Zimmerman 37'",
+"Pulisic 67'"
+],
 "stage": "Third Round",
 "them": 0,
 "time": "19:30",
 "us": 3,
+"v": 2,
 "venue": "Allianz Field",
 "where": "H",
 "year": 2022
@@ -2779,6 +3240,7 @@
 "606060": {
 "city": "Hamilton",
 "comp": "WCQ",
+"country": "Canada",
 "date": "2022-01-30",
 "dow": "Sun",
 "home": false,
@@ -2790,6 +3252,7 @@
 "them": 2,
 "time": "15:05",
 "us": 0,
+"v": 2,
 "venue": "Hamilton Stadium",
 "where": "A",
 "year": 2022
@@ -2797,6 +3260,7 @@
 "606062": {
 "city": "Columbus, Ohio",
 "comp": "WCQ",
+"country": "USA",
 "date": "2022-01-27",
 "dow": "Thu",
 "home": true,
@@ -2804,10 +3268,14 @@
 "opp": "2650",
 "opp_name": "El Salvador",
 "result": "W",
+"scorers": [
+"Robinson 52'"
+],
 "stage": "Third Round",
 "them": 0,
 "time": "19:00",
 "us": 1,
+"v": 2,
 "venue": "ScottsMiracle-Gro Field",
 "where": "H",
 "year": 2022
@@ -2815,6 +3283,7 @@
 "606068": {
 "city": "Sabina Park",
 "comp": "WCQ",
+"country": "Jamaica",
 "date": "2021-11-16",
 "dow": "Tue",
 "home": false,
@@ -2822,10 +3291,14 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "D",
+"scorers": [
+"Weah 11'"
+],
 "stage": "Third Round",
 "them": 1,
 "time": "17:00",
 "us": 1,
+"v": 2,
 "venue": "Independence Park",
 "where": "A",
 "year": 2021
@@ -2833,6 +3306,7 @@
 "606071": {
 "city": "Cincinnati, Ohio",
 "comp": "WCQ",
+"country": "USA",
 "date": "2021-11-12",
 "dow": "Fri",
 "home": true,
@@ -2840,10 +3314,15 @@
 "opp": "203",
 "opp_name": "Mexico",
 "result": "W",
+"scorers": [
+"Pulisic 74'",
+"McKennie 85'"
+],
 "stage": "Third Round",
 "them": 0,
 "time": "21:10",
 "us": 2,
+"v": 2,
 "venue": "TQL Stadium",
 "where": "H",
 "year": 2021
@@ -2851,6 +3330,7 @@
 "606073": {
 "city": "Columbus, Ohio",
 "comp": "WCQ",
+"country": "USA",
 "date": "2021-10-13",
 "dow": "Wed",
 "home": true,
@@ -2858,10 +3338,15 @@
 "opp": "214",
 "opp_name": "Costa Rica",
 "result": "W",
+"scorers": [
+"Dest 25'",
+"OG 66'"
+],
 "stage": "Third Round",
 "them": 1,
 "time": "19:00",
 "us": 2,
+"v": 2,
 "venue": "ScottsMiracle-Gro Field",
 "where": "H",
 "year": 2021
@@ -2869,6 +3354,7 @@
 "606080": {
 "city": "Panama City",
 "comp": "WCQ",
+"country": "Panama",
 "date": "2021-10-10",
 "dow": "Sun",
 "home": false,
@@ -2880,6 +3366,7 @@
 "them": 1,
 "time": "18:00",
 "us": 0,
+"v": 2,
 "venue": "Estadio Rommel Fernández Gutiérrez",
 "where": "A",
 "year": 2021
@@ -2887,6 +3374,7 @@
 "606083": {
 "city": "Austin, Texas",
 "comp": "WCQ",
+"country": "USA",
 "date": "2021-10-07",
 "dow": "Thu",
 "home": true,
@@ -2894,10 +3382,14 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"Pepi 49', 62'"
+],
 "stage": "Third Round",
 "them": 0,
 "time": "19:30",
 "us": 2,
+"v": 2,
 "venue": "Q2 Stadium",
 "where": "H",
 "year": 2021
@@ -2905,6 +3397,7 @@
 "606088": {
 "city": "San Pedro Sula",
 "comp": "WCQ",
+"country": "Honduras",
 "date": "2021-09-08",
 "dow": "Wed",
 "home": false,
@@ -2912,10 +3405,17 @@
 "opp": "215",
 "opp_name": "Honduras",
 "result": "W",
+"scorers": [
+"Robinson 48'",
+"Pepi 75'",
+"Aaronson 86'",
+"Lletget 90'+3"
+],
 "stage": "Third Round",
 "them": 1,
 "time": "22:30",
 "us": 4,
+"v": 2,
 "venue": "Estadio Olímpico Metropolitano",
 "where": "A",
 "year": 2021
@@ -2923,6 +3423,7 @@
 "606089": {
 "city": "Nashville, Tennessee",
 "comp": "WCQ",
+"country": "USA",
 "date": "2021-09-05",
 "dow": "Sun",
 "home": true,
@@ -2930,10 +3431,14 @@
 "opp": "206",
 "opp_name": "Canada",
 "result": "D",
+"scorers": [
+"Aaronson 55'"
+],
 "stage": "Third Round",
 "them": 1,
 "time": "20:00",
 "us": 1,
+"v": 2,
 "venue": "Nissan Stadium, Nashville",
 "where": "H",
 "year": 2021
@@ -2941,6 +3446,7 @@
 "606096": {
 "city": "San Salvador",
 "comp": "WCQ",
+"country": "El Salvador",
 "date": "2021-09-02",
 "dow": "Thu",
 "home": false,
@@ -2952,6 +3458,7 @@
 "them": 0,
 "time": "22:05",
 "us": 0,
+"v": 2,
 "venue": "Estadio Cuscatlán",
 "where": "A",
 "year": 2021
@@ -2959,6 +3466,7 @@
 "633787": {
 "city": "Doha",
 "comp": "WC",
+"country": "Qatar",
 "date": "2022-11-21",
 "dow": "Mon",
 "home": true,
@@ -2966,10 +3474,14 @@
 "opp": "578",
 "opp_name": "Wales",
 "result": "D",
+"scorers": [
+"Weah 36'"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "14:00",
 "us": 1,
+"v": 2,
 "venue": "Ahmad bin Ali Stadium",
 "where": "H",
 "year": 2022
@@ -2977,6 +3489,7 @@
 "633804": {
 "city": "Al Khor",
 "comp": "WC",
+"country": "Qatar",
 "date": "2022-11-25",
 "dow": "Fri",
 "home": false,
@@ -2988,6 +3501,7 @@
 "them": 0,
 "time": "14:00",
 "us": 0,
+"v": 2,
 "venue": "Al Bayt Stadium",
 "where": "A",
 "year": 2022
@@ -2995,6 +3509,7 @@
 "633822": {
 "city": "Ar-Rayyan",
 "comp": "WC",
+"country": "Qatar",
 "date": "2022-11-29",
 "dow": "Tue",
 "home": false,
@@ -3002,10 +3517,14 @@
 "opp": "469",
 "opp_name": "Iran",
 "result": "W",
+"scorers": [
+"Pulisic 38'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "14:00",
 "us": 1,
+"v": 2,
 "venue": "Al Thumama Stadium",
 "where": "A",
 "year": 2022
@@ -3013,6 +3532,7 @@
 "633835": {
 "city": "Doha",
 "comp": "WC",
+"country": "Qatar",
 "date": "2022-12-03",
 "dow": "Sat",
 "home": false,
@@ -3024,6 +3544,7 @@
 "them": 3,
 "time": "10:00",
 "us": 1,
+"v": 2,
 "venue": "Khalifa International Stadium",
 "where": "A",
 "year": 2022
@@ -3031,6 +3552,7 @@
 "634300": {
 "city": "Austin, Texas",
 "comp": "NL",
+"country": "USA",
 "date": "2022-06-10",
 "dow": "Fri",
 "home": true,
@@ -3038,10 +3560,15 @@
 "opp": "2651",
 "opp_name": "Grenada",
 "result": "W",
+"scorers": [
+"Ferreira 43', 54', 56', 78'",
+"Arriola 62'"
+],
 "stage": "League A",
 "them": 0,
 "time": "22:00",
 "us": 5,
+"v": 2,
 "venue": "Q2 Stadium",
 "where": "H",
 "year": 2022
@@ -3049,6 +3576,7 @@
 "634303": {
 "city": "San Salvador",
 "comp": "NL",
+"country": "El Salvador",
 "date": "2022-06-14",
 "dow": "Tue",
 "home": false,
@@ -3056,10 +3584,14 @@
 "opp": "2650",
 "opp_name": "El Salvador",
 "result": "D",
+"scorers": [
+"Morris 90'+1"
+],
 "stage": "League A",
 "them": 1,
 "time": "22:00",
 "us": 1,
+"v": 2,
 "venue": "Estadio Cuscatlán",
 "where": "A",
 "year": 2022
@@ -3067,6 +3599,7 @@
 "634307": {
 "city": "St. George's",
 "comp": "NL",
+"country": "Grenada",
 "date": "2023-03-24",
 "dow": "Fri",
 "home": false,
@@ -3074,10 +3607,18 @@
 "opp": "2651",
 "opp_name": "Grenada",
 "result": "W",
+"scorers": [
+"Pepi 4', 53'",
+"Aaronson 20'",
+"McKennie 31', 34'",
+"Pulisic 49'",
+"Zendejas 72'"
+],
 "stage": "League A",
 "them": 1,
 "time": "20:00",
 "us": 7,
+"v": 2,
 "venue": "Kirani James National Stadium",
 "where": "A",
 "year": 2023
@@ -3085,6 +3626,7 @@
 "634311": {
 "city": "Orlando, Florida",
 "comp": "NL",
+"country": "USA",
 "date": "2023-03-27",
 "dow": "Mon",
 "home": true,
@@ -3092,10 +3634,14 @@
 "opp": "2650",
 "opp_name": "El Salvador",
 "result": "W",
+"scorers": [
+"Pepi 62'"
+],
 "stage": "League A",
 "them": 0,
 "time": "19:30",
 "us": 1,
+"v": 2,
 "venue": "Inter&Co Stadium",
 "where": "H",
 "year": 2023
@@ -3103,6 +3649,7 @@
 "667789": {
 "city": "Las Vegas, Nevada",
 "comp": "NL",
+"country": "USA",
 "date": "2023-06-15",
 "dow": "Thu",
 "home": true,
@@ -3110,10 +3657,15 @@
 "opp": "203",
 "opp_name": "Mexico",
 "result": "W",
+"scorers": [
+"Pulisic 37', 46'",
+"Pepi 78'"
+],
 "stage": "Semifinals",
 "them": 0,
 "time": "22:00",
 "us": 3,
+"v": 2,
 "venue": "Allegiant Stadium",
 "where": "H",
 "year": 2023
@@ -3121,6 +3673,7 @@
 "667792": {
 "city": "Las Vegas, Nevada",
 "comp": "NL",
+"country": "USA",
 "date": "2023-06-18",
 "dow": "Sun",
 "home": false,
@@ -3128,10 +3681,15 @@
 "opp": "206",
 "opp_name": "Canada",
 "result": "W",
+"scorers": [
+"Richards 12'",
+"Balogun 34'"
+],
 "stage": "Final",
 "them": 0,
 "time": "21:06",
 "us": 2,
+"v": 2,
 "venue": "Allegiant Stadium",
 "where": "A",
 "year": 2023
@@ -3139,6 +3697,7 @@
 "668477": {
 "city": "Chicago, Illinois",
 "comp": "GC",
+"country": "USA",
 "date": "2023-06-24",
 "dow": "Sat",
 "home": true,
@@ -3146,10 +3705,14 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "D",
+"scorers": [
+"Vazquez 88'"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "22:00",
 "us": 1,
+"v": 2,
 "venue": "Soldier Field",
 "where": "H",
 "year": 2023
@@ -3157,6 +3720,7 @@
 "668486": {
 "city": "St. Louis, Missouri",
 "comp": "GC",
+"country": "USA",
 "date": "2023-06-28",
 "dow": "Wed",
 "home": false,
@@ -3164,10 +3728,16 @@
 "opp": "2662",
 "opp_name": "St. Kitts and Nevis",
 "result": "W",
+"scorers": [
+"Mihailovic 12', 79'",
+"Reynolds 14'",
+"Ferreira 16', 25', 50'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "21:30",
 "us": 6,
+"v": 2,
 "venue": "Energizer Park",
 "where": "A",
 "year": 2023
@@ -3175,6 +3745,7 @@
 "668494": {
 "city": "Charlotte, North Carolina",
 "comp": "GC",
+"country": "USA",
 "date": "2023-07-02",
 "dow": "Sun",
 "home": true,
@@ -3182,10 +3753,17 @@
 "opp": "2627",
 "opp_name": "Trinidad and Tobago",
 "result": "W",
+"scorers": [
+"Ferreira 14', 38', 45'+3",
+"Cowell 65'",
+"Busio 79'",
+"Vazquez 90'+4"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "19:00",
 "us": 6,
+"v": 2,
 "venue": "Bank of America Stadium",
 "where": "H",
 "year": 2023
@@ -3193,6 +3771,7 @@
 "676879": {
 "city": "San Diego, California",
 "comp": "GC",
+"country": "USA",
 "date": "2023-07-12",
 "dow": "Wed",
 "home": true,
@@ -3205,6 +3784,7 @@
 "them": 1,
 "time": "19:30",
 "us": 1,
+"v": 2,
 "venue": "Snapdragon Stadium",
 "where": "H",
 "year": 2023
@@ -3212,6 +3792,7 @@
 "678986": {
 "city": "Cincinnati, Ohio",
 "comp": "GC",
+"country": "USA",
 "date": "2023-07-09",
 "dow": "Sun",
 "home": true,
@@ -3220,10 +3801,15 @@
 "opp_name": "Canada",
 "pens": "3-2",
 "result": "W",
+"scorers": [
+"Vazquez 88'",
+"OG 114'"
+],
 "stage": "Quarterfinals",
 "them": 2,
 "time": "19:30",
 "us": 2,
+"v": 2,
 "venue": "TQL Stadium",
 "where": "H",
 "year": 2023
@@ -3231,6 +3817,7 @@
 "689485": {
 "city": "Austin, Texas",
 "comp": "NL",
+"country": "USA",
 "date": "2023-11-16",
 "dow": "Thu",
 "home": true,
@@ -3238,10 +3825,16 @@
 "opp": "2627",
 "opp_name": "Trinidad and Tobago",
 "result": "W",
+"scorers": [
+"Pepi 82'",
+"Robinson 86'",
+"Reyna 89'"
+],
 "stage": "Quarterfinals",
 "them": 0,
 "time": "21:00",
 "us": 3,
+"v": 2,
 "venue": "Q2 Stadium",
 "where": "H",
 "year": 2023
@@ -3249,6 +3842,7 @@
 "689486": {
 "city": "Port of Spain",
 "comp": "NL",
+"country": "Trinidad and Tobago",
 "date": "2023-11-20",
 "dow": "Mon",
 "home": false,
@@ -3260,6 +3854,7 @@
 "them": 2,
 "time": "19:00",
 "us": 1,
+"v": 2,
 "venue": "Hasely Crawford Stadium",
 "where": "A",
 "year": 2023
@@ -3267,6 +3862,7 @@
 "690324": {
 "city": "",
 "comp": "NL",
+"country": "USA",
 "date": "2024-03-21",
 "dow": "Thu",
 "home": true,
@@ -3274,10 +3870,15 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"OG 90'+6",
+"Wright 96', 109'"
+],
 "stage": "Semifinals",
 "them": 1,
 "time": "19:00",
 "us": 3,
+"v": 2,
 "venue": "",
 "where": "H",
 "year": 2024
@@ -3285,6 +3886,7 @@
 "690709": {
 "city": "Arlington, Texas",
 "comp": "CA",
+"country": "USA",
 "date": "2024-06-23",
 "dow": "Sun",
 "home": true,
@@ -3292,10 +3894,15 @@
 "opp": "204",
 "opp_name": "Bolivia",
 "result": "W",
+"scorers": [
+"Pulisic 3'",
+"Balogun 44'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "18:00",
 "us": 2,
+"v": 2,
 "venue": "AT&T Stadium",
 "where": "H",
 "year": 2024
@@ -3303,6 +3910,7 @@
 "690717": {
 "city": "Atlanta, Georgia",
 "comp": "CA",
+"country": "USA",
 "date": "2024-06-27",
 "dow": "Thu",
 "home": false,
@@ -3314,6 +3922,7 @@
 "them": 2,
 "time": "18:00",
 "us": 1,
+"v": 2,
 "venue": "Mercedes-Benz Stadium",
 "where": "A",
 "year": 2024
@@ -3321,6 +3930,7 @@
 "690725": {
 "city": "Kansas City, Missouri",
 "comp": "CA",
+"country": "USA",
 "date": "2024-07-01",
 "dow": "Mon",
 "home": true,
@@ -3332,6 +3942,7 @@
 "them": 1,
 "time": "21:00",
 "us": 0,
+"v": 2,
 "venue": "GEHA Field at Arrowhead Stadium",
 "where": "H",
 "year": 2024
@@ -3339,6 +3950,7 @@
 "701210": {
 "city": "Arlington, Texas",
 "comp": "NL",
+"country": "USA",
 "date": "2024-03-24",
 "dow": "Sun",
 "home": false,
@@ -3346,10 +3958,15 @@
 "opp": "203",
 "opp_name": "Mexico",
 "result": "W",
+"scorers": [
+"Adams 45'",
+"Reyna 63'"
+],
 "stage": "Final",
 "them": 0,
 "time": "21:15",
 "us": 2,
+"v": 2,
 "venue": "AT&T Stadium",
 "where": "A",
 "year": 2024
@@ -3357,6 +3974,7 @@
 "721462": {
 "city": "Sabina Park",
 "comp": "NL",
+"country": "Jamaica",
 "date": "2024-11-14",
 "dow": "Thu",
 "home": false,
@@ -3364,10 +3982,14 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"Pepi 5'"
+],
 "stage": "Quarterfinals",
 "them": 0,
 "time": "20:00",
 "us": 1,
+"v": 2,
 "venue": "Independence Park",
 "where": "A",
 "year": 2024
@@ -3375,6 +3997,7 @@
 "721468": {
 "city": "St. Louis, Missouri",
 "comp": "NL",
+"country": "USA",
 "date": "2024-11-18",
 "dow": "Mon",
 "home": true,
@@ -3382,10 +4005,17 @@
 "opp": "1038",
 "opp_name": "Jamaica",
 "result": "W",
+"scorers": [
+"Pulisic 13'",
+"OG 33'",
+"Pepi 42'",
+"Weah 56'"
+],
 "stage": "Quarterfinals",
 "them": 2,
 "time": "20:00",
 "us": 4,
+"v": 2,
 "venue": "Energizer Park",
 "where": "H",
 "year": 2024
@@ -3393,6 +4023,7 @@
 "723669": {
 "city": "Inglewood, California",
 "comp": "NL",
+"country": "USA",
 "date": "2025-03-20",
 "dow": "Thu",
 "home": true,
@@ -3404,6 +4035,7 @@
 "them": 1,
 "time": "19:00",
 "us": 0,
+"v": 2,
 "venue": "SoFi Stadium",
 "where": "H",
 "year": 2025
@@ -3411,6 +4043,7 @@
 "723671": {
 "city": "Inglewood, California",
 "comp": "NL",
+"country": "USA",
 "date": "2025-03-23",
 "dow": "Sun",
 "home": false,
@@ -3422,6 +4055,7 @@
 "them": 2,
 "time": "18:00",
 "us": 1,
+"v": 2,
 "venue": "SoFi Stadium",
 "where": "A",
 "year": 2025
@@ -3429,6 +4063,7 @@
 "735319": {
 "city": "San Jose, California",
 "comp": "GC",
+"country": "USA",
 "date": "2025-06-15",
 "dow": "Sun",
 "home": true,
@@ -3436,10 +4071,17 @@
 "opp": "2627",
 "opp_name": "Trinidad and Tobago",
 "result": "W",
+"scorers": [
+"Tillman 16', 41'",
+"Agyemang 44'",
+"Aaronson 82'",
+"Wright 84'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "18:00",
 "us": 5,
+"v": 2,
 "venue": "PayPal Park",
 "where": "H",
 "year": 2025
@@ -3447,6 +4089,7 @@
 "735329": {
 "city": "Austin, Texas",
 "comp": "GC",
+"country": "USA",
 "date": "2025-06-19",
 "dow": "Thu",
 "home": false,
@@ -3454,10 +4097,14 @@
 "opp": "655",
 "opp_name": "Saudi Arabia",
 "result": "W",
+"scorers": [
+"Richards 63'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "21:15",
 "us": 1,
+"v": 2,
 "venue": "Q2 Stadium",
 "where": "A",
 "year": 2025
@@ -3465,6 +4112,7 @@
 "735335": {
 "city": "Arlington, Texas",
 "comp": "GC",
+"country": "USA",
 "date": "2025-06-22",
 "dow": "Sun",
 "home": true,
@@ -3472,10 +4120,15 @@
 "opp": "2654",
 "opp_name": "Haiti",
 "result": "W",
+"scorers": [
+"Tillman 10'",
+"Agyemang 75'"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "19:00",
 "us": 2,
+"v": 2,
 "venue": "AT&T Stadium",
 "where": "H",
 "year": 2025
@@ -3483,6 +4136,7 @@
 "735342": {
 "city": "Minneapolis, Minnesota",
 "comp": "GC",
+"country": "USA",
 "date": "2025-06-29",
 "dow": "Sun",
 "home": true,
@@ -3491,10 +4145,15 @@
 "opp_name": "Costa Rica",
 "pens": "4-3",
 "result": "W",
+"scorers": [
+"Luna 43'",
+"Arfsten 47'"
+],
 "stage": "Quarterfinals",
 "them": 2,
 "time": "19:00",
 "us": 2,
+"v": 2,
 "venue": "U.S. Bank Stadium",
 "where": "H",
 "year": 2025
@@ -3502,6 +4161,7 @@
 "735346": {
 "city": "St. Louis, Missouri",
 "comp": "GC",
+"country": "USA",
 "date": "2025-07-02",
 "dow": "Wed",
 "home": true,
@@ -3509,10 +4169,14 @@
 "opp": "2652",
 "opp_name": "Guatemala",
 "result": "W",
+"scorers": [
+"Luna 4', 15'"
+],
 "stage": "Semifinals",
 "them": 1,
 "time": "19:00",
 "us": 2,
+"v": 2,
 "venue": "Energizer Park",
 "where": "H",
 "year": 2025
@@ -3520,6 +4184,7 @@
 "735348": {
 "city": "Houston, Texas",
 "comp": "GC",
+"country": "USA",
 "date": "2025-07-06",
 "dow": "Sun",
 "home": true,
@@ -3531,6 +4196,7 @@
 "them": 2,
 "time": "19:00",
 "us": 1,
+"v": 2,
 "venue": "NRG Stadium",
 "where": "H",
 "year": 2025
@@ -3538,6 +4204,7 @@
 "760417": {
 "city": "Inglewood, California",
 "comp": "WC",
+"country": "USA",
 "date": "2026-06-12",
 "dow": "Fri",
 "home": true,
@@ -3545,10 +4212,16 @@
 "opp": "210",
 "opp_name": "Paraguay",
 "result": "W",
+"scorers": [
+"OG 7'",
+"Balogun 31', 45'+5",
+"Reyna 90'+8"
+],
 "stage": "Group Stage",
 "them": 1,
 "time": "21:00",
 "us": 4,
+"v": 2,
 "venue": "SoFi Stadium",
 "where": "H",
 "year": 2026
@@ -3556,6 +4229,7 @@
 "760442": {
 "city": "Seattle, Washington",
 "comp": "WC",
+"country": "USA",
 "date": "2026-06-19",
 "dow": "Fri",
 "home": true,
@@ -3563,10 +4237,15 @@
 "opp": "628",
 "opp_name": "Australia",
 "result": "W",
+"scorers": [
+"OG 11'",
+"Freeman 43'"
+],
 "stage": "Group Stage",
 "them": 0,
 "time": "15:00",
 "us": 2,
+"v": 2,
 "venue": "Lumen Field",
 "where": "H",
 "year": 2026
@@ -3574,6 +4253,7 @@
 "760470": {
 "city": "Inglewood, California",
 "comp": "WC",
+"country": "USA",
 "date": "2026-06-25",
 "dow": "Thu",
 "home": false,
@@ -3585,6 +4265,7 @@
 "them": 3,
 "time": "22:00",
 "us": 2,
+"v": 2,
 "venue": "SoFi Stadium",
 "where": "A",
 "year": 2026
@@ -3592,6 +4273,7 @@
 "760494": {
 "city": "Santa Clara, California",
 "comp": "WC",
+"country": "USA",
 "date": "2026-07-01",
 "dow": "Wed",
 "home": true,
@@ -3599,10 +4281,15 @@
 "opp": "452",
 "opp_name": "Bosnia-Herzegovina",
 "result": "W",
+"scorers": [
+"Balogun 45'",
+"Tillman 82'"
+],
 "stage": "Round of 32",
 "them": 0,
 "time": "20:00",
 "us": 2,
+"v": 2,
 "venue": "Levi's Stadium",
 "where": "H",
 "year": 2026
@@ -3610,6 +4297,7 @@
 "760507": {
 "city": "Seattle, Washington",
 "comp": "WC",
+"country": "USA",
 "date": "2026-07-06",
 "dow": "Mon",
 "home": true,
@@ -3621,6 +4309,7 @@
 "them": 4,
 "time": "20:00",
 "us": 1,
+"v": 2,
 "venue": "Lumen Field",
 "where": "H",
 "year": 2026

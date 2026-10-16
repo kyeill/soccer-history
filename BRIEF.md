@@ -187,6 +187,51 @@ Traps already paid for (see memory `reference_espn_api_sept_2026.md`):
   quarterfinals keep home and away.
 - **TV windows:** defined by **UK kickoff time** — Saturday 17:30, Sunday
   16:30 UK.
+
+SIX ON THE USMNT TAB (his calls 2026-10-16):
+
+  THE COMPETITIONS WEAR COLOURS, as the European ones do on his own tab --
+  Gold Cup #e3b23c gold, Nations League #2bb3ad teal, Copa America #7f93e6
+  (CONMEBOL's blue lifted to read), CONCACAF Cup #1fa0e8, World Cup #f2f2f0
+  white. Each is 6:1 or better on the card, the weight the rest read at.
+  Qualifying stays grey: he did not ask for one and it is most of the tab.
+
+  A KNOCKOUT THEY WENT OUT OF WEARS THE DASHED GREY BORDER, as Tottenham's
+  does. ELEVEN of them. Concacaf qualifying calls its group phases "Third
+  Round" and "Fourth Round" and they are TABLES, not ties, so US_KNOCKOUT
+  lists the rounds by name rather than guessing. THIRD PLACE is not an
+  elimination: they were already out when they got there.
+
+  SCORERS on every World Cup win or draw, and on a knockout win anywhere
+  else -- 36 cards. The harvest keeps the list on every match they did not
+  lose, so the rule can change without a refetch.
+
+  THE GROUND READS IN THE HEADER for anything played in the UNITED STATES,
+  CANADA OR MEXICO -- 104 matches, 102 of which have a city to name -- after
+  the round, as it does on a rivals final. A neutral ground anywhere else
+  stays on the detail line, where it has always been: Johannesburg up in the
+  header left no room for the date beside it.
+
+  THE ONLY TIE THEY PLAY OVER TWO LEGS is the Nations League quarterfinal,
+  and it now reads as Tottenham's do -- leg, aggregate, who went through.
+  Everything that LOOKS like a pair in qualifying is a group played home and
+  away: the United States met Jamaica twice in 2012 with four other sides in
+  the same table, where an aggregate means nothing.
+
+  THE CONCACAF NATIONS SIT TOGETHER in the Team menu, after Mexico and
+  Canada and before the rest of the world. Membership is read off the
+  archive -- anyone met in the Gold Cup, Concacaf qualifying, the Nations
+  League or the CONCACAF Cup -- MINUS THE GOLD CUP'S GUESTS, who are not
+  members: Qatar played the 2021 semifinal and Saudi Arabia the 2025 group
+  stage.
+
+  ESPN'S ADDRESSES NEEDED HELP (others.VENUE_FIX): seven matches had no
+  country at all and one had the wrong one -- ESPN files venue 5769, Toyota
+  Stadium in Frisco, Texas, under Toyota, JAPAN, which would have kept the
+  2015 Gold Cup group match out of the North American rule. A match the
+  United States played AT HOME was in the United States, which covers the
+  rest. Records carry `v` so a field added later remakes them from the
+  summaries already on disk, without a single call.
 - **Atlanta United:** the 2020 "MLS is Back" tournament is **out**.
 - **Google Sheet:** a **new** Sheet for Soccer History, not the games-history
   one. Kyle creates it and shares the link.
