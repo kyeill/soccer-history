@@ -54,7 +54,7 @@ VENUE_FIX = {
 }
 # bumped whenever a record gains a field, so stored ones are made again from
 # the summaries already on disk
-RECORD_V = 2
+RECORD_V = 3
 ATL_FROM = 2017
 
 
@@ -91,6 +91,16 @@ def record(team, eid, s, comps, stage_raw=None):
          # sometimes a stadium name.
          "country": (venue.get("address") or {}).get("country") or "",
          "opp": str(them["team"]["id"]), "opp_name": them["team"].get("displayName") or ""}
+    # THE NATIONS LEAGUE READS BY THE YEAR OF ITS FINAL (his call
+    # 2026-10-16): a quarterfinal played in November 2023 belongs to the
+    # edition settled in March 2024, so its card says 2024. ESPN's season
+    # name carries the edition -- "2023-24 Concacaf Nations League" -- and
+    # the ending year is when the final is played, with ONE exception: the
+    # 2019-20 final was put off to June 2021 by the pandemic.
+    if code == "NL":
+        ed = re.match(r"(\d{4})-(\d{2})", season_name)
+        if ed:
+            m["cycle"] = 2021 if ed.group(1) == "2019"                 else int(ed.group(1)[:2] + ed.group(2))
     fix = VENUE_FIX.get(m["venue"])
     if fix:
         m["city"], m["country"] = fix

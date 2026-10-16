@@ -172,6 +172,15 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
    two digits so a 10-goal night does not jump the card */
 .boxes{display:inline-flex;gap:4px}
 .boxes .sc.mbox{min-width:calc(2ch + 16px);padding:0 6px}
+/* ONE BUBBLE ON THE UNITED STATES CARDS (his call 2026-10-16) -- "2-1" the
+   way a Lions score reads on games-history -- so it is sized for the pair */
+.row.mich.onebox .boxes .sc.mbox{min-width:calc(3.4ch + 16px)}
+/* ATLANTA CARRIES NO BUBBLE AT ALL (his call 2026-10-16), as the Tigers'
+   regular season does not: the figures keep the box's geometry so they land
+   where a boxed number would, and sit bare on the line. A defeat greys them,
+   as it greys everything else on a card he lost. */
+.row.mich.nobox .sc.mbox{background:transparent!important;color:var(--ink)!important}
+.row.mich.nobox.dimmed .sc.mbox{color:var(--muted)!important}
 
 /* his Shade column fills the whole card in the opponent's colour */
 .row.mwash{background:var(--winwash)}
@@ -232,6 +241,6 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 <div id="list"></div>
 </div>
 
-<script src="app.js?v=20261016-103825"></script>
+<script src="app.js?v=20261016-142447"></script>
 </body>
 </html>

@@ -1120,7 +1120,7 @@
 "them": 1,
 "time": "14:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Royal Bafokeng Stadium",
 "where": "A",
 "year": 2010
@@ -1143,7 +1143,7 @@
 "them": 2,
 "time": "10:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Emirates Airline Park",
 "where": "A",
 "year": 2010
@@ -1166,7 +1166,7 @@
 "them": 0,
 "time": "10:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Loftus Versfeld Stadium",
 "where": "H",
 "year": 2010
@@ -1186,7 +1186,7 @@
 "them": 2,
 "time": "14:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Royal Bafokeng Stadium",
 "where": "H",
 "year": 2010
@@ -1209,7 +1209,7 @@
 "them": 0,
 "time": "20:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Ford Field",
 "where": "H",
 "year": 2011
@@ -1229,7 +1229,7 @@
 "them": 2,
 "time": "20:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Raymond James Stadium",
 "where": "H",
 "year": 2011
@@ -1252,7 +1252,7 @@
 "them": 0,
 "time": "21:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Children's Mercy Park",
 "where": "A",
 "year": 2011
@@ -1275,7 +1275,7 @@
 "them": 0,
 "time": "19:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Reliant Stadium",
 "where": "H",
 "year": 2011
@@ -1295,7 +1295,7 @@
 "them": 4,
 "time": "21:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Rose Bowl",
 "where": "H",
 "year": 2011
@@ -1318,7 +1318,7 @@
 "them": 0,
 "time": "15:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "RFK Memorial",
 "where": "A",
 "year": 2011
@@ -1341,7 +1341,7 @@
 "them": 1,
 "time": "19:00",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Raymond James Stadium",
 "where": "H",
 "year": 2012
@@ -1364,7 +1364,7 @@
 "them": 1,
 "time": "22:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Estadio Nacional Mateo Flores",
 "where": "A",
 "year": 2012
@@ -1384,7 +1384,7 @@
 "them": 2,
 "time": "20:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Kingston National Stadium",
 "where": "A",
 "year": 2012
@@ -1407,7 +1407,7 @@
 "them": 0,
 "time": "20:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Historic Crew Stadium",
 "where": "H",
 "year": 2012
@@ -1431,7 +1431,7 @@
 "them": 1,
 "time": "19:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Sir Vivian Richards Stadium",
 "where": "A",
 "year": 2012
@@ -1456,7 +1456,7 @@
 "them": 1,
 "time": "19:15",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Sporting Park",
 "where": "H",
 "year": 2012
@@ -1476,7 +1476,7 @@
 "them": 2,
 "time": "16:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "San Pedro Sula",
 "where": "A",
 "year": 2013
@@ -1499,7 +1499,7 @@
 "them": 0,
 "time": "22:11",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Dick's Sporting Goods Park",
 "where": "H",
 "year": 2013
@@ -1519,7 +1519,7 @@
 "them": 0,
 "time": "22:30",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Estadio Azteca",
 "where": "A",
 "year": 2013
@@ -1543,7 +1543,7 @@
 "them": 1,
 "time": "21:30",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "National Stadium Kingston",
 "where": "A",
 "year": 2013
@@ -1567,7 +1567,7 @@
 "them": 0,
 "time": "21:30",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Lumen Field",
 "where": "H",
 "year": 2013
@@ -1590,7 +1590,7 @@
 "them": 0,
 "time": "21:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "America First Field",
 "where": "H",
 "year": 2013
@@ -1610,7 +1610,7 @@
 "them": 3,
 "time": "22:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Estadio Ricardo Saprissa",
 "where": "A",
 "year": 2013
@@ -1634,7 +1634,7 @@
 "them": 0,
 "time": "20:06",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Historic Crew Stadium",
 "where": "H",
 "year": 2013
@@ -1658,7 +1658,7 @@
 "them": 0,
 "time": "18:36",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Livestrong Sporting Park",
 "where": "H",
 "year": 2013
@@ -1683,7 +1683,7 @@
 "them": 2,
 "time": "21:30",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Estadio Rommel Fernández Gutiérrez",
 "where": "A",
 "year": 2013
@@ -1706,7 +1706,7 @@
 "them": 0,
 "time": "20:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Pratt & Whitney Stadium at Rentschler Field",
 "where": "H",
 "year": 2013
@@ -1731,7 +1731,7 @@
 "them": 1,
 "time": "15:30",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "America First Field",
 "where": "H",
 "year": 2013
@@ -1757,7 +1757,7 @@
 "them": 1,
 "time": "23:00",
 "us": 6,
-"v": 2,
+"v": 3,
 "venue": "Providence Park",
 "where": "A",
 "year": 2013
@@ -1784,7 +1784,7 @@
 "them": 1,
 "time": "16:00",
 "us": 5,
-"v": 2,
+"v": 3,
 "venue": "M&T Bank Stadium",
 "where": "H",
 "year": 2013
@@ -1808,7 +1808,7 @@
 "them": 1,
 "time": "19:00",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "AT&T Stadium",
 "where": "H",
 "year": 2013
@@ -1831,7 +1831,7 @@
 "them": 0,
 "time": "16:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Stade Louis-Dugauguez",
 "where": "H",
 "year": 2013
@@ -1851,7 +1851,7 @@
 "them": 2,
 "time": "16:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Casa de Apostas Arena Fonte Nova",
 "where": "A",
 "year": 2014
@@ -1871,7 +1871,7 @@
 "them": 1,
 "time": "12:00",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Arena Pernambuco",
 "where": "H",
 "year": 2014
@@ -1895,7 +1895,7 @@
 "them": 2,
 "time": "18:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Arena Amazonia",
 "where": "H",
 "year": 2014
@@ -1918,7 +1918,7 @@
 "them": 1,
 "time": "18:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Arena das Dunas",
 "where": "A",
 "year": 2014
@@ -1941,7 +1941,7 @@
 "them": 1,
 "time": "21:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Children's Mercy Park",
 "where": "A",
 "year": 2015
@@ -1964,7 +1964,7 @@
 "them": 0,
 "time": "20:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Gillette Stadium",
 "where": "H",
 "year": 2015
@@ -1987,7 +1987,7 @@
 "them": 1,
 "time": "21:30",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Toyota Stadium",
 "where": "H",
 "year": 2015
@@ -2008,7 +2008,7 @@
 "them": 1,
 "time": "16:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Subaru Park",
 "where": "H",
 "year": 2015
@@ -2028,7 +2028,7 @@
 "them": 2,
 "time": "18:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Georgia Dome",
 "where": "H",
 "year": 2015
@@ -2054,7 +2054,7 @@
 "them": 0,
 "time": "17:00",
 "us": 6,
-"v": 2,
+"v": 3,
 "venue": "M&T Bank Stadium",
 "where": "H",
 "year": 2015
@@ -2074,7 +2074,7 @@
 "them": 3,
 "time": "21:30",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Rose Bowl",
 "where": "A",
 "year": 2015
@@ -2099,7 +2099,7 @@
 "them": 0,
 "time": "20:15",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "TIAA Bank Field",
 "where": "H",
 "year": 2016
@@ -2126,7 +2126,7 @@
 "them": 0,
 "time": "15:30",
 "us": 6,
-"v": 2,
+"v": 3,
 "venue": "Arnos Vale Stadium",
 "where": "A",
 "year": 2016
@@ -2152,7 +2152,7 @@
 "them": 0,
 "time": "19:25",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "Historic Crew Stadium",
 "where": "H",
 "year": 2016
@@ -2172,7 +2172,7 @@
 "them": 2,
 "time": "22:06",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Estadio Nacional Mateo Flores",
 "where": "A",
 "year": 2016
@@ -2192,7 +2192,7 @@
 "them": 0,
 "time": "18:36",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Hasely Crawford Stadium",
 "where": "A",
 "year": 2015
@@ -2215,7 +2215,7 @@
 "them": 1,
 "time": "19:10",
 "us": 6,
-"v": 2,
+"v": 3,
 "venue": "Busch Stadium",
 "where": "H",
 "year": 2015
@@ -2235,7 +2235,7 @@
 "them": 1,
 "time": "20:00",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "State Farm Stadium",
 "where": "H",
 "year": 2016
@@ -2255,7 +2255,7 @@
 "them": 4,
 "time": "21:00",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "NRG Stadium",
 "where": "H",
 "year": 2016
@@ -2279,7 +2279,7 @@
 "them": 1,
 "time": "21:30",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Lumen Field",
 "where": "H",
 "year": 2016
@@ -2302,7 +2302,7 @@
 "them": 0,
 "time": "19:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Lincoln Financial Field",
 "where": "H",
 "year": 2016
@@ -2328,7 +2328,7 @@
 "them": 0,
 "time": "20:00",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "Soldier Field",
 "where": "H",
 "year": 2016
@@ -2348,7 +2348,7 @@
 "them": 2,
 "time": "21:30",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Levi's Stadium",
 "where": "H",
 "year": 2016
@@ -2368,7 +2368,7 @@
 "them": 2,
 "time": "20:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Ato Boldon Stadium",
 "where": "A",
 "year": 2017
@@ -2393,7 +2393,7 @@
 "them": 0,
 "time": "19:35",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "Inter&Co Stadium",
 "where": "H",
 "year": 2017
@@ -2416,7 +2416,7 @@
 "them": 1,
 "time": "17:36",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Estadio Olímpico Metropolitano",
 "where": "A",
 "year": 2017
@@ -2436,7 +2436,7 @@
 "them": 2,
 "time": "18:55",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Sports Illustrated Stadium",
 "where": "H",
 "year": 2017
@@ -2459,7 +2459,7 @@
 "them": 1,
 "time": "20:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Estadio Banorte",
 "where": "A",
 "year": 2017
@@ -2482,7 +2482,7 @@
 "them": 0,
 "time": "20:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Dick's Sporting Goods Park",
 "where": "H",
 "year": 2017
@@ -2505,7 +2505,7 @@
 "them": 1,
 "time": "22:05",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Estadio Rommel Fernández Gutiérrez",
 "where": "A",
 "year": 2017
@@ -2531,7 +2531,7 @@
 "them": 0,
 "time": "22:55",
 "us": 6,
-"v": 2,
+"v": 3,
 "venue": "PayPal Park",
 "where": "H",
 "year": 2017
@@ -2551,7 +2551,7 @@
 "them": 4,
 "time": "21:05",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Estadio Nacional de Costa Rica",
 "where": "A",
 "year": 2016
@@ -2571,7 +2571,7 @@
 "them": 2,
 "time": "20:01",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Historic Crew Stadium",
 "where": "H",
 "year": 2016
@@ -2596,7 +2596,7 @@
 "them": 0,
 "time": "19:00",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Huntington Bank Field",
 "where": "A",
 "year": 2017
@@ -2620,7 +2620,7 @@
 "them": 2,
 "time": "21:00",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Raymond James Stadium",
 "where": "H",
 "year": 2017
@@ -2643,7 +2643,7 @@
 "them": 1,
 "time": "16:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Nissan Stadium, Nashville",
 "where": "H",
 "year": 2017
@@ -2667,7 +2667,7 @@
 "them": 1,
 "time": "21:30",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Levi's Stadium",
 "where": "H",
 "year": 2017
@@ -2691,7 +2691,7 @@
 "them": 0,
 "time": "22:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "AT&T Stadium",
 "where": "A",
 "year": 2017
@@ -2715,7 +2715,7 @@
 "them": 0,
 "time": "21:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Lincoln Financial Field",
 "where": "H",
 "year": 2017
@@ -2735,7 +2735,7 @@
 "them": 1,
 "time": "21:00",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Soldier Field",
 "where": "A",
 "year": 2019
@@ -2759,7 +2759,7 @@
 "them": 1,
 "time": "21:30",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Nissan Stadium, Nashville",
 "where": "A",
 "year": 2019
@@ -2782,7 +2782,7 @@
 "them": 0,
 "time": "21:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Children's Mercy Park",
 "where": "A",
 "year": 2019
@@ -2808,7 +2808,7 @@
 "them": 0,
 "time": "20:00",
 "us": 6,
-"v": 2,
+"v": 3,
 "venue": "Huntington Bank Field",
 "where": "H",
 "year": 2019
@@ -2833,7 +2833,7 @@
 "them": 0,
 "time": "22:00",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "Allianz Field",
 "where": "H",
 "year": 2019
@@ -2842,6 +2842,7 @@
 "city": "George Town",
 "comp": "NL",
 "country": "Cayman Islands",
+"cycle": 2021,
 "date": "2019-11-19",
 "dow": "Tue",
 "home": false,
@@ -2857,7 +2858,7 @@
 "them": 0,
 "time": "19:30",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "Truman Bodden Sport Complex",
 "where": "A",
 "year": 2019
@@ -2866,6 +2867,7 @@
 "city": "Orlando, Florida",
 "comp": "NL",
 "country": "USA",
+"cycle": 2021,
 "date": "2019-11-15",
 "dow": "Fri",
 "home": true,
@@ -2882,7 +2884,7 @@
 "them": 1,
 "time": "19:00",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "Inter&Co Stadium",
 "where": "H",
 "year": 2019
@@ -2891,6 +2893,7 @@
 "city": "Toronto",
 "comp": "NL",
 "country": "Canada",
+"cycle": 2021,
 "date": "2019-10-15",
 "dow": "Tue",
 "home": false,
@@ -2902,7 +2905,7 @@
 "them": 2,
 "time": "19:30",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "BMO Field",
 "where": "A",
 "year": 2019
@@ -2911,6 +2914,7 @@
 "city": "Washington, District of Columbia",
 "comp": "NL",
 "country": "USA",
+"cycle": 2021,
 "date": "2019-10-11",
 "dow": "Fri",
 "home": true,
@@ -2929,7 +2933,7 @@
 "them": 0,
 "time": "19:00",
 "us": 7,
-"v": 2,
+"v": 3,
 "venue": "Audi Field",
 "where": "H",
 "year": 2019
@@ -2952,7 +2956,7 @@
 "them": 0,
 "time": "20:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Lincoln Financial Field",
 "where": "H",
 "year": 2019
@@ -2961,6 +2965,7 @@
 "city": "Denver, Colorado",
 "comp": "NL",
 "country": "USA",
+"cycle": 2021,
 "date": "2021-06-03",
 "dow": "Thu",
 "home": false,
@@ -2975,7 +2980,7 @@
 "them": 0,
 "time": "19:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Empower Field at Mile High",
 "where": "A",
 "year": 2021
@@ -2984,6 +2989,7 @@
 "city": "Denver, Colorado",
 "comp": "NL",
 "country": "USA",
+"cycle": 2021,
 "date": "2021-06-06",
 "dow": "Sun",
 "home": true,
@@ -3000,7 +3006,7 @@
 "them": 2,
 "time": "21:36",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Empower Field at Mile High",
 "where": "H",
 "year": 2021
@@ -3023,7 +3029,7 @@
 "them": 0,
 "time": "19:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Q2 Stadium",
 "where": "A",
 "year": 2021
@@ -3046,7 +3052,7 @@
 "them": 0,
 "time": "21:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "AT&T Stadium",
 "where": "H",
 "year": 2021
@@ -3069,7 +3075,7 @@
 "them": 0,
 "time": "17:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Children's Mercy Park",
 "where": "H",
 "year": 2021
@@ -3096,7 +3102,7 @@
 "them": 1,
 "time": "22:00",
 "us": 6,
-"v": 2,
+"v": 3,
 "venue": "Children's Mercy Park",
 "where": "A",
 "year": 2021
@@ -3119,7 +3125,7 @@
 "them": 0,
 "time": "20:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Children's Mercy Park",
 "where": "H",
 "year": 2021
@@ -3142,7 +3148,7 @@
 "them": 0,
 "time": "21:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Allegiant Stadium",
 "where": "H",
 "year": 2021
@@ -3162,7 +3168,7 @@
 "them": 2,
 "time": "21:05",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Estadio Nacional de Costa Rica",
 "where": "A",
 "year": 2022
@@ -3187,7 +3193,7 @@
 "them": 1,
 "time": "19:00",
 "us": 5,
-"v": 2,
+"v": 3,
 "venue": "Inter&Co Stadium",
 "where": "H",
 "year": 2022
@@ -3207,7 +3213,7 @@
 "them": 0,
 "time": "22:00",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Estadio Banorte",
 "where": "A",
 "year": 2022
@@ -3232,7 +3238,7 @@
 "them": 0,
 "time": "19:30",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Allianz Field",
 "where": "H",
 "year": 2022
@@ -3252,7 +3258,7 @@
 "them": 2,
 "time": "15:05",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Hamilton Stadium",
 "where": "A",
 "year": 2022
@@ -3275,7 +3281,7 @@
 "them": 0,
 "time": "19:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "ScottsMiracle-Gro Field",
 "where": "H",
 "year": 2022
@@ -3298,7 +3304,7 @@
 "them": 1,
 "time": "17:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Independence Park",
 "where": "A",
 "year": 2021
@@ -3322,7 +3328,7 @@
 "them": 0,
 "time": "21:10",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "TQL Stadium",
 "where": "H",
 "year": 2021
@@ -3346,7 +3352,7 @@
 "them": 1,
 "time": "19:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "ScottsMiracle-Gro Field",
 "where": "H",
 "year": 2021
@@ -3366,7 +3372,7 @@
 "them": 1,
 "time": "18:00",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Estadio Rommel Fernández Gutiérrez",
 "where": "A",
 "year": 2021
@@ -3389,7 +3395,7 @@
 "them": 0,
 "time": "19:30",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Q2 Stadium",
 "where": "H",
 "year": 2021
@@ -3415,7 +3421,7 @@
 "them": 1,
 "time": "22:30",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "Estadio Olímpico Metropolitano",
 "where": "A",
 "year": 2021
@@ -3438,7 +3444,7 @@
 "them": 1,
 "time": "20:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Nissan Stadium, Nashville",
 "where": "H",
 "year": 2021
@@ -3458,7 +3464,7 @@
 "them": 0,
 "time": "22:05",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Estadio Cuscatlán",
 "where": "A",
 "year": 2021
@@ -3481,7 +3487,7 @@
 "them": 1,
 "time": "14:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Ahmad bin Ali Stadium",
 "where": "H",
 "year": 2022
@@ -3501,7 +3507,7 @@
 "them": 0,
 "time": "14:00",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "Al Bayt Stadium",
 "where": "A",
 "year": 2022
@@ -3524,7 +3530,7 @@
 "them": 0,
 "time": "14:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Al Thumama Stadium",
 "where": "A",
 "year": 2022
@@ -3544,7 +3550,7 @@
 "them": 3,
 "time": "10:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Khalifa International Stadium",
 "where": "A",
 "year": 2022
@@ -3553,6 +3559,7 @@
 "city": "Austin, Texas",
 "comp": "NL",
 "country": "USA",
+"cycle": 2023,
 "date": "2022-06-10",
 "dow": "Fri",
 "home": true,
@@ -3568,7 +3575,7 @@
 "them": 0,
 "time": "22:00",
 "us": 5,
-"v": 2,
+"v": 3,
 "venue": "Q2 Stadium",
 "where": "H",
 "year": 2022
@@ -3577,6 +3584,7 @@
 "city": "San Salvador",
 "comp": "NL",
 "country": "El Salvador",
+"cycle": 2023,
 "date": "2022-06-14",
 "dow": "Tue",
 "home": false,
@@ -3591,7 +3599,7 @@
 "them": 1,
 "time": "22:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Estadio Cuscatlán",
 "where": "A",
 "year": 2022
@@ -3600,6 +3608,7 @@
 "city": "St. George's",
 "comp": "NL",
 "country": "Grenada",
+"cycle": 2023,
 "date": "2023-03-24",
 "dow": "Fri",
 "home": false,
@@ -3618,7 +3627,7 @@
 "them": 1,
 "time": "20:00",
 "us": 7,
-"v": 2,
+"v": 3,
 "venue": "Kirani James National Stadium",
 "where": "A",
 "year": 2023
@@ -3627,6 +3636,7 @@
 "city": "Orlando, Florida",
 "comp": "NL",
 "country": "USA",
+"cycle": 2023,
 "date": "2023-03-27",
 "dow": "Mon",
 "home": true,
@@ -3641,7 +3651,7 @@
 "them": 0,
 "time": "19:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Inter&Co Stadium",
 "where": "H",
 "year": 2023
@@ -3650,6 +3660,7 @@
 "city": "Las Vegas, Nevada",
 "comp": "NL",
 "country": "USA",
+"cycle": 2023,
 "date": "2023-06-15",
 "dow": "Thu",
 "home": true,
@@ -3665,7 +3676,7 @@
 "them": 0,
 "time": "22:00",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Allegiant Stadium",
 "where": "H",
 "year": 2023
@@ -3674,6 +3685,7 @@
 "city": "Las Vegas, Nevada",
 "comp": "NL",
 "country": "USA",
+"cycle": 2023,
 "date": "2023-06-18",
 "dow": "Sun",
 "home": false,
@@ -3689,7 +3701,7 @@
 "them": 0,
 "time": "21:06",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Allegiant Stadium",
 "where": "A",
 "year": 2023
@@ -3712,7 +3724,7 @@
 "them": 1,
 "time": "22:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Soldier Field",
 "where": "H",
 "year": 2023
@@ -3737,7 +3749,7 @@
 "them": 0,
 "time": "21:30",
 "us": 6,
-"v": 2,
+"v": 3,
 "venue": "Energizer Park",
 "where": "A",
 "year": 2023
@@ -3763,7 +3775,7 @@
 "them": 0,
 "time": "19:00",
 "us": 6,
-"v": 2,
+"v": 3,
 "venue": "Bank of America Stadium",
 "where": "H",
 "year": 2023
@@ -3784,7 +3796,7 @@
 "them": 1,
 "time": "19:30",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Snapdragon Stadium",
 "where": "H",
 "year": 2023
@@ -3809,7 +3821,7 @@
 "them": 2,
 "time": "19:30",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "TQL Stadium",
 "where": "H",
 "year": 2023
@@ -3818,6 +3830,7 @@
 "city": "Austin, Texas",
 "comp": "NL",
 "country": "USA",
+"cycle": 2024,
 "date": "2023-11-16",
 "dow": "Thu",
 "home": true,
@@ -3834,7 +3847,7 @@
 "them": 0,
 "time": "21:00",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "Q2 Stadium",
 "where": "H",
 "year": 2023
@@ -3843,6 +3856,7 @@
 "city": "Port of Spain",
 "comp": "NL",
 "country": "Trinidad and Tobago",
+"cycle": 2024,
 "date": "2023-11-20",
 "dow": "Mon",
 "home": false,
@@ -3854,7 +3868,7 @@
 "them": 2,
 "time": "19:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Hasely Crawford Stadium",
 "where": "A",
 "year": 2023
@@ -3863,6 +3877,7 @@
 "city": "",
 "comp": "NL",
 "country": "USA",
+"cycle": 2024,
 "date": "2024-03-21",
 "dow": "Thu",
 "home": true,
@@ -3878,7 +3893,7 @@
 "them": 1,
 "time": "19:00",
 "us": 3,
-"v": 2,
+"v": 3,
 "venue": "",
 "where": "H",
 "year": 2024
@@ -3902,7 +3917,7 @@
 "them": 0,
 "time": "18:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "AT&T Stadium",
 "where": "H",
 "year": 2024
@@ -3922,7 +3937,7 @@
 "them": 2,
 "time": "18:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Mercedes-Benz Stadium",
 "where": "A",
 "year": 2024
@@ -3942,7 +3957,7 @@
 "them": 1,
 "time": "21:00",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "GEHA Field at Arrowhead Stadium",
 "where": "H",
 "year": 2024
@@ -3951,6 +3966,7 @@
 "city": "Arlington, Texas",
 "comp": "NL",
 "country": "USA",
+"cycle": 2024,
 "date": "2024-03-24",
 "dow": "Sun",
 "home": false,
@@ -3966,7 +3982,7 @@
 "them": 0,
 "time": "21:15",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "AT&T Stadium",
 "where": "A",
 "year": 2024
@@ -3975,6 +3991,7 @@
 "city": "Sabina Park",
 "comp": "NL",
 "country": "Jamaica",
+"cycle": 2025,
 "date": "2024-11-14",
 "dow": "Thu",
 "home": false,
@@ -3989,7 +4006,7 @@
 "them": 0,
 "time": "20:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Independence Park",
 "where": "A",
 "year": 2024
@@ -3998,6 +4015,7 @@
 "city": "St. Louis, Missouri",
 "comp": "NL",
 "country": "USA",
+"cycle": 2025,
 "date": "2024-11-18",
 "dow": "Mon",
 "home": true,
@@ -4015,7 +4033,7 @@
 "them": 2,
 "time": "20:00",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "Energizer Park",
 "where": "H",
 "year": 2024
@@ -4024,6 +4042,7 @@
 "city": "Inglewood, California",
 "comp": "NL",
 "country": "USA",
+"cycle": 2025,
 "date": "2025-03-20",
 "dow": "Thu",
 "home": true,
@@ -4035,7 +4054,7 @@
 "them": 1,
 "time": "19:00",
 "us": 0,
-"v": 2,
+"v": 3,
 "venue": "SoFi Stadium",
 "where": "H",
 "year": 2025
@@ -4044,6 +4063,7 @@
 "city": "Inglewood, California",
 "comp": "NL",
 "country": "USA",
+"cycle": 2025,
 "date": "2025-03-23",
 "dow": "Sun",
 "home": false,
@@ -4055,7 +4075,7 @@
 "them": 2,
 "time": "18:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "SoFi Stadium",
 "where": "A",
 "year": 2025
@@ -4081,7 +4101,7 @@
 "them": 0,
 "time": "18:00",
 "us": 5,
-"v": 2,
+"v": 3,
 "venue": "PayPal Park",
 "where": "H",
 "year": 2025
@@ -4104,7 +4124,7 @@
 "them": 0,
 "time": "21:15",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Q2 Stadium",
 "where": "A",
 "year": 2025
@@ -4128,7 +4148,7 @@
 "them": 1,
 "time": "19:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "AT&T Stadium",
 "where": "H",
 "year": 2025
@@ -4153,7 +4173,7 @@
 "them": 2,
 "time": "19:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "U.S. Bank Stadium",
 "where": "H",
 "year": 2025
@@ -4176,7 +4196,7 @@
 "them": 1,
 "time": "19:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Energizer Park",
 "where": "H",
 "year": 2025
@@ -4196,7 +4216,7 @@
 "them": 2,
 "time": "19:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "NRG Stadium",
 "where": "H",
 "year": 2025
@@ -4221,7 +4241,7 @@
 "them": 1,
 "time": "21:00",
 "us": 4,
-"v": 2,
+"v": 3,
 "venue": "SoFi Stadium",
 "where": "H",
 "year": 2026
@@ -4245,7 +4265,7 @@
 "them": 0,
 "time": "15:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Lumen Field",
 "where": "H",
 "year": 2026
@@ -4265,7 +4285,7 @@
 "them": 3,
 "time": "22:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "SoFi Stadium",
 "where": "A",
 "year": 2026
@@ -4289,7 +4309,7 @@
 "them": 0,
 "time": "20:00",
 "us": 2,
-"v": 2,
+"v": 3,
 "venue": "Levi's Stadium",
 "where": "H",
 "year": 2026
@@ -4309,7 +4329,7 @@
 "them": 4,
 "time": "20:00",
 "us": 1,
-"v": 2,
+"v": 3,
 "venue": "Lumen Field",
 "where": "H",
 "year": 2026

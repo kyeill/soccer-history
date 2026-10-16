@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261016-103825. Modelled on games-history's Michigan view (michCard): one card
+   20261016-142447. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261016-103825";
+const BUILD = "20261016-142447";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -450,7 +450,10 @@ function cardHead(m) {
   // exception for cards that also list scorers; the header cannot take it --
   // the year, the round, the ground and the date put five World Cup group
   // cards onto two lines, and these labels have no short form to give up.
-  const year = usmnt || big ? m.date.slice(0, 4) + " " : "";
+  // ...and the Nations League reads by the year of its FINAL, which the
+  // harvest works out from the edition (2026-10-16)
+  const year = usmnt || big
+    ? String(usmnt && m.cycle ? m.cycle : m.date.slice(0, 4)) + " " : "";
   // a final's city rides up here on his own tab; on the United States tab
   // the ground is the footer's, so the header must not say it as well --
   // the 2021 Nations League final read DENVER twice (caught 2026-10-16)
@@ -575,8 +578,15 @@ function card(m) {
   // AN AWARDED MATCH SHOWS NO SCORE AT ALL (his call 2026-10-06): Rennes at
   // home in 2021 was never played -- UEFA gave it to them 3-0 -- so a score
   // on the card would say it was.
+  // ONE BUBBLE ON THE UNITED STATES CARDS (his call 2026-10-16), the way
+  // games-history reads a Lions score: "2-1", his side first as it is in
+  // both boxes everywhere else. ATLANTA CARRIES NO BUBBLE AT ALL -- the
+  // games-history banded card, where the figures sit bare on the line.
+  const oneBox = m.team === "usmnt";
+  const joined = '<span class="' + boxCls(lineUs || lineThem) + '"' +
+    paintBox(GREY, null) + ">" + (up ? "" : m.us + "-" + m.them) + "</span>";
   const boxes = m.awarded ? "" :
-    '<span class="boxes">' + usBox + themBox + "</span>";
+    '<span class="boxes">' + (oneBox ? joined : usBox + themBox) + "</span>";
   // HIS LEG RULES (2026-10-06). A two-legged tie is one result, so the TIE
   // decides how each night reads, not the night's own score:
   //   WON the tie   leg 1 lost  -- grey, but NOT struck through
@@ -704,7 +714,8 @@ function card(m) {
   // a FINAL wears a frame: grey, dashed on a loss, the competition's colour
   // when won -- as the Michigan bowls and title games do. HIS BORDER COLUMN
   // wins over it: a colour word, a hex, or "Opponent" for their colour.
-  let cls = " mich" + (L ? " dimmed" : "") + (mx.shade ? " mwash" : "");
+  let cls = " mich" + (L ? " dimmed" : "") + (mx.shade ? " mwash" : "") +
+    (oneBox ? " onebox" : "") + (m.team === "atlanta" ? " nobox" : "");
   let ring = "";
   let bc = null;
   const bword = String(mx.border || "").trim().toLowerCase();

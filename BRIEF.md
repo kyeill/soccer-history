@@ -206,6 +206,19 @@ SIX ON THE USMNT TAB (his calls 2026-10-16):
   of the MATCH, not of the tournament it leads to: the qualifiers played in
   2021 read "2021 World Cup Qualifying Third Round", not 2022.
 
+  THE NATIONS LEAGUE IS THE EXCEPTION (his call 2026-10-16): it reads by the
+  year of its FINAL, so a quarterfinal played in November 2024 says 2025, the
+  edition it belongs to. ESPN's season name carries the edition -- "2024-25
+  Concacaf Nations League" -- and the ending year is when the final is
+  played, with ONE exception of its own: the 2019-20 final was put off to
+  JUNE 2021 by the pandemic, so that whole edition reads 2021. The harvest
+  works it out and keeps it as `cycle`; nothing outside the Nations League
+  carries one.
+
+  ONE SCORE BUBBLE, not two (his call 2026-10-16) -- "2-1", his side first as
+  it is in both boxes everywhere else, the way a Lions score reads on
+  games-history. Sized for the pair so a two-digit night does not jump.
+
   SCORERS on every World Cup win or draw, and OUTSIDE THE WORLD CUP ONLY ON
   A FINAL (his call 2026-10-16, cutting back the same morning's rule) -- 16
   cards. A Gold Cup quarterfinal won 6-0 was five names on a line that could
@@ -248,7 +261,11 @@ SIX ON THE USMNT TAB (his calls 2026-10-16):
   United States played AT HOME was in the United States, which covers the
   rest. Records carry `v` so a field added later remakes them from the
   summaries already on disk, without a single call.
-- **Atlanta United:** the 2020 "MLS is Back" tournament is **out**.
+- **Atlanta United:** the 2020 "MLS is Back" tournament is **out**. ITS CARDS
+  CARRY NO SCORE BUBBLE AT ALL (his call 2026-10-16), as the Tigers' regular
+  season does not on games-history: the figures keep the box's geometry, so
+  they land where a boxed number would, and sit bare on the line. A defeat
+  greys them, as it greys everything else on a card he lost.
 - **Google Sheet:** a **new** Sheet for Soccer History, not the games-history
   one. Kyle creates it and shares the link.
 
