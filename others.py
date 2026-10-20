@@ -52,9 +52,15 @@ VENUE_FIX = {
     "Toyota Stadium": ("Frisco", "USA"),
     "Arnos Vale Stadium": ("Arnos Vale", "St. Vincent and the Grenadines"),
 }
+# ...and one match has NO VENUE AT ALL in ESPN, so it cannot be keyed by one.
+# The 2024 Nations League SEMIFINAL was at the same ground as the final three
+# days later (his own knowledge, 2026-10-20): AT&T Stadium, Arlington.
+MATCH_VENUE_FIX = {
+    "690324": ("AT&T Stadium", "Arlington, Texas", "USA"),
+}
 # bumped whenever a record gains a field, so stored ones are made again from
 # the summaries already on disk
-RECORD_V = 3
+RECORD_V = 4
 ATL_FROM = 2017
 
 
@@ -101,8 +107,11 @@ def record(team, eid, s, comps, stage_raw=None):
         ed = re.match(r"(\d{4})-(\d{2})", season_name)
         if ed:
             m["cycle"] = 2021 if ed.group(1) == "2019"                 else int(ed.group(1)[:2] + ed.group(2))
+    hard = MATCH_VENUE_FIX.get(str(eid))
     fix = VENUE_FIX.get(m["venue"])
-    if fix:
+    if hard:
+        m["venue"], m["city"], m["country"] = hard
+    elif fix:
         m["city"], m["country"] = fix
     elif not m["country"] and m["where"] == "H":
         # a match the United States played AT HOME was in the United States,

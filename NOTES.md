@@ -137,3 +137,42 @@ WHAT IS NOT WRONG, before anyone goes looking: the gap between MW5 on
 on either weekend in between. And openfootball listing one fixture for most
 of the later matchweeks is just a fixture list that is not published yet, not
 data that has gone missing.
+
+
+## A collapsed row group is invisible to gviz (2026-10-20)
+
+games-history caught this on 2026-09-14; it reached this repo on 2026-10-20,
+when his Tottenham tab read FORTY rows of 709 and the daily build published a
+site stripped of every Footer, shade, border and kit he has ever written. He
+had folded the old seasons away in the browser. Nothing was edited and
+nothing was lost at his end -- gviz simply does not export a collapsed group.
+
+THE FIX IS THE ONE games-history SETTLED ON (2026-10-19), mirrored here. Every
+tab is remembered row by row in data/sheet-cache, and each build merges: a
+date the LIVE read returns wins, and a date only the cache has stands in. So
+he can work with the old seasons folded and the current one open, and the
+daily build still picks up what he fills in.
+
+  an edit needs the row OPEN THROUGH A BUILD, not merely while he types
+  a new row in an open group is live from the first build that sees it
+  a collapsed row keeps whatever it last said
+
+THE CACHE CANNOT FORGET. A deleted row and a collapsed row are both simply
+absent, so a deleted row stands in for ever. To retire one, BLANK ITS CELLS --
+an edit, which wins. To drop it for real: expand everything and run
+`python harvest.py --resnap`.
+
+THE FLOORS ARE THE BACKSTOP, not the mechanism: Tottenham 600, USMNT 120,
+Atlanta 45, well under the real counts. They catch a read that fails even
+with the cache merged in, and abort rather than publish an empty site.
+
+THE FLOOR COUNTS ROWS SEEN, NOT ROWS MARKED -- the first version of it
+counted marked rows and aborted on the USMNT tab, which has 140 rows and no
+annotations at all because he has not started on it. Every dated row is
+cached, blank ones included; only the marked ones reach a card.
+
+THE CACHE WAS SEEDED from the games.json of the last good build (19 October,
+08:39), since his rows were collapsed at the time and a live read could not
+have done it. 710 rows, carrying 207 Footers, 137 shades, 90 borders and 705
+colour sets. `say` and `say_pre` were left out on purpose: they are worked
+out FROM the footer during the build and were never cells of his.

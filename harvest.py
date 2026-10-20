@@ -978,6 +978,64 @@ SHEET_ID = "1sDNdbA0dlk7BBIoURKhwau4VJM7BXYxdUMo9aPdpfjo"
 SHEET_COLS = ["Year", "Date", "Opponent", "Comp", "Case", "Attended", "Shade",
               "Border", "Footer", "Notes", "Team BG", "Team Font", "Opp BG", "Opp Font"]
 
+# A COLLAPSED ROW GROUP IS INVISIBLE TO gviz (games-history caught this
+# 2026-09-14; it reached this repo 2026-10-20, when his Tottenham tab read 40
+# rows of 709 and the daily build published a site stripped of every Footer,
+# shade and kit he has ever written).
+#
+# THE SHEET CACHE, mirroring what games-history settled on 2026-10-19. He
+# wants to WORK with the old seasons folded away and the current one open, so
+# a floor alone -- a loud failure -- is not enough. Every tab is remembered
+# row by row in data/sheet-cache, and each build merges:
+#
+#     a date the live read returns  ->  LIVE wins, always
+#     a date only the cache has     ->  the cache stands in
+#
+# A collapsed row keeps whatever it last said; an open row is authoritative,
+# so an edit needs the row open THROUGH a build, not merely while he types;
+# and a new row in an open group is live from the first build that sees it.
+#
+# THE ONE THING THIS CANNOT DO IS FORGET. A deleted row and a collapsed row
+# are both simply absent, so the cache holds a deleted row for ever. To retire
+# one, BLANK ITS CELLS -- an edit, which wins. To drop it for real, expand
+# everything and run `python harvest.py --resnap`, which ignores the cache and
+# rewrites it from that read.
+#
+# THE FLOORS stay as the backstop, set well under the real counts so ordinary
+# editing never trips them: they catch a read that fails even WITH the cache
+# merged in, rather than letting it publish an empty site.
+SHEET_CACHE = os.path.join(DATA, "sheet-cache")
+SHEET_FLOOR = {"Tottenham": 600, "USMNT": 120, "Atlanta United": 45}
+RESNAP = "--resnap" in sys.argv
+
+
+def sheet_cache(tab, live):
+    """Merge a live tab read with the remembered one, and write it back."""
+    path = os.path.join(SHEET_CACHE, tab + ".json")
+    old = {}
+    if os.path.exists(path) and not RESNAP:
+        try:
+            old = json.load(open(path, encoding="utf-8")).get("rows") or {}
+        except (ValueError, TypeError, KeyError):
+            print("  WARN: the %s cache is unreadable -- rebuilding it from "
+                  "this read" % tab, file=sys.stderr)
+    merged = dict(old)
+    merged.update(live)
+    stood = len(merged) - len(live)
+    if stood:
+        print("  sheet: %s, %d rows stood in from the cache" % (tab, stood))
+    if RESNAP:
+        print("  sheet: %s cache rewritten from scratch (%d rows)" % (tab, len(merged)))
+    os.makedirs(SHEET_CACHE, exist_ok=True)
+    json.dump({"_note": "Last good read of his sheet, row by row. A row the "
+                        "live read does not return -- collapsed in the "
+                        "browser, or a tab that failed -- stands in from here. "
+                        "Rewrite with: python harvest.py --resnap",
+               "rows": merged},
+              open(path, "w", encoding="utf-8"), separators=(",", ":"),
+              ensure_ascii=False, indent=0, sort_keys=True)
+    return merged
+
 
 def sheet_date(s):
     """His Date column, M/D/YY."""
@@ -1005,8 +1063,9 @@ def load_sheet(tab, dates):
         r.raise_for_status()
         body = r.content.decode("utf-8-sig")
     except requests.RequestException as e:
+        # a tab that would not load keeps every row it had
         print("  WARN: could not read the %s tab (%s)" % (tab, e), file=sys.stderr)
-        return {}
+        return floor_check(tab, sheet_cache(tab, {}))
     rows = list(csv.reader(io.StringIO(body)))
     if not rows:
         return {}
@@ -1029,8 +1088,8 @@ def load_sheet(tab, dates):
     hits = sum(1 for d in found if d in dates)
     if not found or hits < 0.5 * len(found):
         print("  WARN: the %s tab is missing (Google sent another tab: %d of %d dates match)"
-              " -- skipped" % (tab, hits, len(found)), file=sys.stderr)
-        return {}
+              " -- its remembered rows stand in" % (tab, hits, len(found)), file=sys.stderr)
+        return floor_check(tab, sheet_cache(tab, {}))
     out = {}
     for raw in rows[1:]:
         cell = lambda k: (raw[col[k]] or "").strip() if k in col and col[k] < len(raw) else ""
@@ -1043,11 +1102,26 @@ def load_sheet(tab, dates):
               "note": cell("notes") or cell("note"),
               "team_bg": cell("team bg"), "team_font": cell("team font"),
               "opp_bg": cell("opp bg"), "opp_font": cell("opp font")}
-        mx = {k: v for k, v in mx.items() if v}
-        if mx:
-            out[d] = mx
-    print("  sheet: %s tab, %d rows marked" % (tab, len(out)))
-    return out
+        # EVERY DATED ROW IS REMEMBERED, marked or not: the floor counts rows
+        # he HAS, and a tab he has not annotated yet -- USMNT, Atlanta -- is
+        # full of blank ones. Only the marked ones reach a card.
+        out[d] = {k: v for k, v in mx.items() if v}
+    merged = floor_check(tab, sheet_cache(tab, out))
+    marked = {d: mx for d, mx in merged.items() if mx}
+    print("  sheet: %s tab, %d rows seen, %d marked" % (tab, len(merged), len(marked)))
+    return marked
+
+
+def floor_check(tab, rows):
+    floor = SHEET_FLOOR.get(tab)
+    if floor and len(rows) < floor:
+        raise SystemExit(
+            "ABORT: his %s tab came to only %d rows, below the floor of %d, "
+            "WITH the cache merged in. Rows collapsed in the browser are "
+            "omitted from the gviz export -- expand them and run again. If "
+            "the rows are gone for good, expand what is left and run "
+            "`python harvest.py --resnap`." % (tab, len(rows), floor))
+    return rows
 
 
 def main():

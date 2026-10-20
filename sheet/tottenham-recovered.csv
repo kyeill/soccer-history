@@ -1,0 +1,711 @@
+Year,Date,Opponent,Comp,Case,Shade,Border,Footer,Kit,Team BG,Team Font,Opp BG,Opp Font
+2013-14,8/18/13,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2013-14,8/22/13,Dinamo Tbilisi,,,,,,Home,#ffffff,#d9d9d9,#354670,#ffffff
+2013-14,8/25/13,Swansea City,,,,,,Home,#ffffff,#132257,#400080,#ffff00
+2013-14,8/29/13,Dinamo Tbilisi,,,,,,Home,#ffffff,#d9d9d9,#354670,#ffffff
+2013-14,9/1/13,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2013-14,9/14/13,Norwich City,,,,,,Home,#ffffff,#132257,#ff0000,#000000
+2013-14,9/19/13,Tromso,,,,,,Home,#ffffff,#d9d9d9,#50abef,#ffffff
+2013-14,9/22/13,Cardiff City,,,True,,Late Winner,Third,#000040,#76c6eb,#ff0000,#000000
+2013-14,9/24/13,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2013-14,9/28/13,Chelsea,,,,Opponent,Scorers,Home,#ffffff,#132257,#034694,#ffffff
+2013-14,10/3/13,Anzhi Makhachkala,,,,,,Home,#ffffff,#d9d9d9,#ffff00,#008800
+2013-14,10/6/13,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2013-14,10/20/13,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2013-14,10/24/13,Sheriff Tiraspol,,,,,,Home,#ffffff,#d9d9d9,#fdcc00,#000000
+2013-14,10/27/13,Hull City,,,True,,Late Winner,Home,#ffffff,#132257,#0000ff,#ff0000
+2013-14,10/30/13,Hull City,,,,,,Home,#ffffff,#132257,#0000ff,#ff0000
+2013-14,11/3/13,Everton,,,,,,Home,#ffffff,#d9d9d9,#003399,#ffffff
+2013-14,11/7/13,Sheriff Tiraspol,,,,,,Home,#ffffff,#d9d9d9,#fdcc00,#000000
+2013-14,11/10/13,Newcastle United,,,,,,Home,#ffffff,#132257,#ffff00,#0000ff
+2013-14,11/24/13,Manchester City,,,,,,Third,#000040,#76c6eb,#6cabdd,#ffffff
+2013-14,11/28/13,Tromso,,,,,,Third,#000040,#76c6eb,#ffffff,#e31e24
+2013-14,12/1/13,Manchester United,,,,,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2013-14,12/4/13,Fulham,,,True,,Midweek | Late Winner,Away,#00a2e8,#000040,#ffffff,#000000
+2013-14,12/7/13,Sunderland,,,,,,Away,#00a2e8,#000040,#ff0000,#ffffff
+2013-14,12/12/13,Anzhi Makhachkala,,,,,,Home,#ffffff,#d9d9d9,#ffff00,#008800
+2013-14,12/15/13,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#f6eb61
+2013-14,12/18/13,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2013-14,12/22/13,Southampton,,,,,,Away,#00a2e8,#000040,#d71920,#ffffff
+2013-14,12/26/13,West Bromwich Albion,,,,,,Home,#ffffff,#132257,#ff0000,#ffffff
+2013-14,12/29/13,Stoke City,,,,,,Home,#ffffff,#132257,#333333,#dff00f
+2013-14,1/1/14,Manchester United,,,True,Opponent,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2013-14,1/4/14,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2013-14,1/11/14,Crystal Palace,,,,,,Home,#ffffff,#132257,#ffcc00,#0000ff
+2013-14,1/19/14,Swansea City,,,,,,Away,#00a2e8,#000040,#000000,#ffffff
+2013-14,1/29/14,Manchester City,,,,,Midweek,Home,#ffffff,#132257,#6cabdd,#ffffff
+2013-14,2/1/14,Hull City,,,,,,Away,#00a2e8,#000040,#f5971d,#000000
+2013-14,2/9/14,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2013-14,2/12/14,Newcastle United,,,,,Midweek,Away,#00a2e8,#000040,#241f20,#ffffff
+2013-14,2/20/14,Dnipro Dnipropetrovsk,,,,Opponent,,Home,#ffffff,#d9d9d9,#016eb4,#ffffff
+2013-14,2/23/14,Norwich City,,,,,,Home,#ffffff,#132257,#00a650,#fff200
+2013-14,2/27/14,Dnipro Dnipropetrovsk,,,True,,,Home,#ffffff,#d9d9d9,#016eb4,#ffffff
+2013-14,3/2/14,Cardiff City,,,,,,Home,#ffffff,#132257,#ff0000,#000000
+2013-14,3/8/14,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2013-14,3/13/14,Benfica,,,,,,Home,#ffffff,#d9d9d9,#ed1c24,#000000
+2013-14,3/16/14,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2013-14,3/20/14,Benfica,,,,,,Home,#ffffff,#132257,#ed1c24,#000000
+2013-14,3/23/14,Southampton,,,True,,Late Winner,Home,#ffffff,#132257,#d71920,#ffffff
+2013-14,3/30/14,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#f6eb61
+2013-14,4/7/14,Sunderland,,,,,,Home,#ffffff,#132257,#ffff00,#000040
+2013-14,4/12/14,West Bromwich Albion,,,,,,Away,#00a2e8,#000040,#122f67,#ffffff
+2013-14,4/19/14,Fulham,,,,,,Home,#ffffff,#132257,#ff0000,#ffffff
+2013-14,4/26/14,Stoke City,,,,,,Third,#000040,#76c6eb,#e03a3e,#ffffff
+2013-14,5/3/14,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2013-14,5/11/14,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2014-15,8/16/14,West Ham United,,,True,Opponent,Scorers,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2014-15,8/21/14,AEL Limassol,,,,,,Home,#ffffff,#d9d9d9,#f9ce00,#24366e
+2014-15,8/24/14,Queens Park Rangers,,,,,,Home,#ffffff,#132257,#ff0000,#000000
+2014-15,8/28/14,AEL Limassol,,,,,,Home,#ffffff,#d9d9d9,#f9ce00,#24366e
+2014-15,8/31/14,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2014-15,9/13/14,Sunderland,,,,,,Third,#ffff00,#000000,#ff0000,#ffffff
+2014-15,9/18/14,Partizan Belgrade,,,,,,Third,#ffff00,#000000,#ffffff,#000000
+2014-15,9/21/14,West Bromwich Albion,,,,,,Home,#ffffff,#132257,#ff0000,#ffffff
+2014-15,9/24/14,Nottingham Forest,,,,Opponent,Late Winner,Home,#ffffff,#132257,#ce1126,#ffffff
+2014-15,9/27/14,Arsenal,,,,Opponent,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2014-15,10/2/14,Besiktas,,,,,,Home,#ffffff,#d9d9d9,#000000,#e00505
+2014-15,10/5/14,Southampton,,,,,,Home,#ffffff,#132257,#d71920,#ffffff
+2014-15,10/18/14,Manchester City,,,,,,Away,#000000,#ffff00,#6cabdd,#ffffff
+2014-15,10/23/14,Asteras Tripoli,,,,,,Home,#ffffff,#d9d9d9,#f4d21d,#2c4686
+2014-15,10/26/14,Newcastle United,,,,,,Home,#ffffff,#132257,#003666,#02c049
+2014-15,10/29/14,Brighton & Hove Albion,,,,,,Home,#ffffff,#132257,#ff0000,#000000
+2014-15,11/2/14,Aston Villa,,,True,,Scorers,Home,#ffffff,#132257,#670e36,#95bfe5
+2014-15,11/6/14,Asteras Tripoli,,,,,,Home,#ffffff,#d9d9d9,#f4d21d,#2c4686
+2014-15,11/9/14,Stoke City,,,,,,Home,#ffffff,#132257,#e03a3e,#ffffff
+2014-15,11/23/14,Hull City,,,True,,Late Winner,Home,#ffffff,#132257,#f5971d,#000000
+2014-15,11/27/14,Partizan Belgrade,,,,,,Home,#ffffff,#d9d9d9,#000000,#ffffff
+2014-15,11/30/14,Everton,,,,,,Home,#ffffff,#132257,#000000,#ffffff
+2014-15,12/3/14,Chelsea,,,,,Midweek,Home,#ffffff,#132257,#034694,#ffffff
+2014-15,12/6/14,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2014-15,12/11/14,Besiktas,,,,,,Third,#ffff00,#000000,#000000,#e00505
+2014-15,12/14/14,Swansea City,,,True,,Late Winner,Away,#000000,#ffff00,#ffffff,#000000
+2014-15,12/17/14,Newcastle United,,,,,,Home,#ffffff,#132257,#003666,#02c049
+2014-15,12/20/14,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2014-15,12/26/14,Leicester City,,,,,,Third,#ffff00,#000000,#003090,#ffffff
+2014-15,12/28/14,Manchester United,,,,Opponent,,Home,#ffffff,#132257,#da291c,#ffffff
+2014-15,1/1/15,Chelsea,,,True,White,Scorers,Home,#ffffff,#132257,#034694,#ffffff
+2014-15,1/5/15,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2014-15,1/10/15,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2014-15,1/14/15,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2014-15,1/17/15,Sunderland,,,True,,Late Winner,Home,#ffffff,#132257,#0297ff,#ffffff
+2014-15,1/21/15,Sheffield United,,,True,,,Home,#ffffff,#132257,#ec2227,#ffffff
+2014-15,1/24/15,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2014-15,1/28/15,Sheffield United,,,True,Opponent,Late Winner,Third,#ffff00,#000000,#ec2227,#ffffff
+2014-15,1/31/15,West Bromwich Albion,,,,,,Third,#ffff00,#000000,#122f67,#ffffff
+2014-15,2/7/15,Arsenal,,,True,Opponent,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2014-15,2/10/15,Liverpool,,,,,Midweek,Home,#ffffff,#132257,#c8102e,#ffffff
+2014-15,2/19/15,Fiorentina,,,,,,Home,#ffffff,#d9d9d9,#482e92,#ffffff
+2014-15,2/22/15,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2014-15,2/26/15,Fiorentina,,,,,,Home,#ffffff,#d9d9d9,#482e92,#ffffff
+2014-15,3/1/15,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2014-15,3/4/15,Swansea City,,,,,Midweek,Home,#ffffff,#132257,#ff0000,#000000
+2014-15,3/7/15,Queens Park Rangers,,,,,Rescheduled,Away,#000000,#ffff00,#1d5ba4,#ffffff
+2014-15,3/15/15,Manchester United,,,,,,Home,#ffffff,#132257,#da291c,#ffffff
+2014-15,3/21/15,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2014-15,4/5/15,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2014-15,4/11/15,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2014-15,4/19/15,Newcastle United,,,,,,Third,#ffff00,#000000,#241f20,#ffffff
+2014-15,4/25/15,Southampton,,,,,,Third,#ffff00,#000000,#d71920,#ffffff
+2014-15,5/3/15,Manchester City,,,,,,Home,#ffffff,#132257,#6cabdd,#ffffff
+2014-15,5/9/15,Stoke City,,,,,,Third,#ffff00,#000000,#e03a3e,#ffffff
+2014-15,5/16/15,Hull City,,,,,,Home,#ffffff,#132257,#f5971d,#000000
+2014-15,5/24/15,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2015-16,8/8/15,Manchester United,,,,,,Home,#ffffff,#132257,#da291c,#ffffff
+2015-16,8/15/15,Stoke City,,,,,,Home,#ffffff,#132257,#e03a3e,#ffffff
+2015-16,8/22/15,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2015-16,8/29/15,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2015-16,9/13/15,Sunderland,,,True,,Late Winner,Third,#2c1947,#ffffff,#ff0000,#ffffff
+2015-16,9/17/15,Qarabag,,,,,,Home,#ffffff,#d9d9d9,#000000,#ffffff
+2015-16,9/20/15,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2015-16,9/23/15,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2015-16,9/26/15,Manchester City,,,True,Opponent,Scorers,Home,#ffffff,#132257,#000026,#3ad2f3
+2015-16,10/1/15,Monaco,,,,,,Away,#347bd5,#17182c,#ffffff,#e51b22
+2015-16,10/4/15,Swansea City,,,,,,Away,#347bd5,#17182c,#ffffff,#000000
+2015-16,10/17/15,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2015-16,10/22/15,Anderlecht,,,,,,Home,#ffffff,#d9d9d9,#512e8f,#ffffff
+2015-16,10/25/15,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2015-16,11/2/15,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2015-16,11/5/15,Anderlecht,,,,Opponent,Late Winner,Home,#ffffff,#d9d9d9,#cff92b,#3b1f8f
+2015-16,11/8/15,Arsenal,,,,Opponent,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2015-16,11/22/15,West Ham United,,,True,,Scorers,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2015-16,11/26/15,Qarabag,,,,,,Home,#ffffff,#d9d9d9,#000000,#ffffff
+2015-16,11/29/15,Chelsea,,,,Opponent,,Home,#ffffff,#132257,#034694,#ffffff
+2015-16,12/5/15,West Bromwich Albion,,,,,,Third,#2c1947,#ffffff,#122f67,#ffffff
+2015-16,12/10/15,Monaco,,,,,,Home,#ffffff,#d9d9d9,#171b39,#ab9f4b
+2015-16,12/13/15,Newcastle United,,,,,,Home,#ffffff,#132257,#101036,#ff5555
+2015-16,12/19/15,Southampton,,,,,,Away,#347bd5,#17182c,#d71920,#ffffff
+2015-16,12/26/15,Norwich City,,,,,,Home,#ffffff,#132257,#00a650,#fff200
+2015-16,12/28/15,Watford,,,True,,Festive Fixtures | Late Winner,Home,#ffffff,#132257,#fbee23,#000000
+2015-16,1/3/16,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2015-16,1/10/16,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2015-16,1/13/16,Leicester City,,,,,Midweek,Home,#ffffff,#132257,#003090,#ffffff
+2015-16,1/16/16,Sunderland,,,,,,Home,#ffffff,#132257,#2eb43b,#fcfefe
+2015-16,1/20/16,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2015-16,1/23/16,Crystal Palace,,,True,Opponent,Late Winner,Home,#ffffff,#132257,#1b458f,#c4122e
+2015-16,1/30/16,Colchester United,,,,,,Home,#ffffff,#132257,#2191cc,#ffffff
+2015-16,2/2/16,Norwich City,,,,,Midweek,Home,#ffffff,#132257,#00a650,#fff200
+2015-16,2/6/16,Watford,,,,,,Home,#ffffff,#132257,#000000,#ffffff
+2015-16,2/14/16,Manchester City,,,True,Opponent,Scorers,Home,#ffffff,#132257,#6cabdd,#ffffff
+2015-16,2/18/16,Fiorentina,,,True,,,Home,#ffffff,#d9d9d9,#482e92,#ffffff
+2015-16,2/21/16,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2015-16,2/25/16,Fiorentina,,,True,,,Home,#ffffff,#d9d9d9,#482e92,#ffffff
+2015-16,2/28/16,Swansea City,,,,,,Home,#ffffff,#132257,#00ff00,#00005d
+2015-16,3/2/16,West Ham United,,,,,Midweek,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2015-16,3/5/16,Arsenal,,,,,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2015-16,3/10/16,Borussia Dortmund,,,,,,Home,#ffffff,#d9d9d9,#fde100,#000000
+2015-16,3/13/16,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2015-16,3/17/16,Borussia Dortmund,,,,,,Home,#ffffff,#d9d9d9,#fde100,#000000
+2015-16,3/20/16,Bournemouth,,,,,,Home,#ffffff,#132257,#ff1493,#ffffff
+2015-16,4/2/16,Liverpool,,,,,Scorers,Home,#ffffff,#132257,#c8102e,#ffffff
+2015-16,4/10/16,Manchester United,,,True,Opponent,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2015-16,4/18/16,Stoke City,,,,,,Away,#347bd5,#17182c,#e03a3e,#ffffff
+2015-16,4/25/16,West Bromwich Albion,,,,,,Home,#ffffff,#132257,#122f67,#ffffff
+2015-16,5/2/16,Chelsea,,,,,Scorers,Home,#ffffff,#132257,#034694,#ffffff
+2015-16,5/8/16,Southampton,,,,,,Home,#ffffff,#132257,#d71920,#ffffff
+2015-16,5/15/16,Newcastle United,,,,,,Away,#347bd5,#17182c,#241f20,#ffffff
+2016-17,8/13/16,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2016-17,8/20/16,Crystal Palace,,,True,,Late Winner,Home,#ffffff,#132257,#1b458f,#c4122e
+2016-17,8/27/16,Liverpool,,,,Opponent,Scorers,Home,#ffffff,#132257,#c8102e,#f6eb61
+2016-17,9/10/16,Stoke City,,,,,,Away,#000000,#daa520,#e03a3e,#ffffff
+2016-17,9/14/16,Monaco,,,,,,Home,#ffffff,#d9d9d9,#171b39,#ab9f4b
+2016-17,9/18/16,Sunderland,,,,,,Home,#ffffff,#132257,#ff0066,#000066
+2016-17,9/21/16,Gillingham,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2016-17,9/24/16,Middlesbrough,,,,,,Third,#daa520,#000000,#e11b22,#ffffff
+2016-17,9/27/16,CSKA Moscow,,,True,,,Home,#ffffff,#d9d9d9,#e01b22,#293484
+2016-17,10/2/16,Manchester City,,,True,Opponent,Scorers,Home,#ffffff,#132257,#660000,#ffff00
+2016-17,10/15/16,West Bromwich Albion,,,,,,Third,#daa520,#000000,#122f67,#ffffff
+2016-17,10/18/16,Bayer Leverkusen,,,,,,Home,#ffffff,#d9d9d9,#000000,#e32221
+2016-17,10/22/16,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2016-17,10/25/16,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#f6eb61
+2016-17,10/29/16,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2016-17,11/2/16,Bayer Leverkusen,,,,,,Home,#ffffff,#d9d9d9,#000000,#e32221
+2016-17,11/6/16,Arsenal,,,,Opponent,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2016-17,11/19/16,West Ham United,,,True,Opponent,Late Winner,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2016-17,11/22/16,Monaco,,,,,,Away,#000000,#daa520,#ffffff,#e51b22
+2016-17,11/26/16,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2016-17,12/3/16,Swansea City,,,,,,Home,#ffffff,#132257,#33ccff,#00003c
+2016-17,12/7/16,CSKA Moscow,,,True,,,Home,#ffffff,#d9d9d9,#e01b22,#293484
+2016-17,12/11/16,Manchester United,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2016-17,12/14/16,Hull City,,,,,Midweek,Home,#ffffff,#132257,#f5971d,#000000
+2016-17,12/18/16,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2016-17,12/28/16,Southampton,,,,,Festive Fixtures,Third,#daa520,#000000,#d71920,#ffffff
+2016-17,1/1/17,Watford,,,,,,Home,#ffffff,#132257,#fbee23,#000000
+2016-17,1/4/17,Chelsea,,,True,Opponent,Midweek | Scorers,Home,#ffffff,#132257,#034694,#ffffff
+2016-17,1/8/17,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2016-17,1/14/17,West Bromwich Albion,,,,,,Home,#ffffff,#132257,#000000,#8cbded
+2016-17,1/21/17,Manchester City,,,,Opponent,Scorers,Home,#ffffff,#132257,#6cabdd,#ffffff
+2016-17,1/28/17,Wycombe Wanderers,,,,Opponent,Late Winner,Home,#ffffff,#132257,#4eb6e3,#003362
+2016-17,1/31/17,Sunderland,,,,,Midweek,Third,#daa520,#000000,#ff0000,#ffffff
+2016-17,2/4/17,Middlesbrough,,,,,,Home,#ffffff,#132257,#001035,#54d9ff
+2016-17,2/11/17,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2016-17,2/16/17,Gent,,,,,,Home,#ffffff,#d9d9d9,#f0ff0f,#0023dd
+2016-17,2/19/17,Fulham,,,,,,Third,#daa520,#000000,#ffffff,#000000
+2016-17,2/23/17,Gent,,,,,,Home,#ffffff,#d9d9d9,#f0ff0f,#0023dd
+2016-17,2/26/17,Stoke City,,,,,,Home,#ffffff,#132257,#2f9aff,#ffffff
+2016-17,3/5/17,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2016-17,3/12/17,Millwall,,,,,,Home,#ffffff,#132257,#ffd100,#ffff00
+2016-17,3/19/17,Southampton,,,,,,Home,#ffffff,#132257,#d71920,#ffffff
+2016-17,4/1/17,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2016-17,4/5/17,Swansea City,,,True,Opponent,Midweek | Late Winner,Third,#daa520,#000000,#ffffff,#000000
+2016-17,4/8/17,Watford,,,,,,Home,#ffffff,#132257,#fbee23,#000000
+2016-17,4/15/17,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2016-17,4/22/17,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2016-17,4/26/17,Crystal Palace,,,,,Rescheduled,Home,#ffffff,#132257,#1b458f,#c4122e
+2016-17,4/30/17,Arsenal,,,True,White,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2016-17,5/5/17,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2016-17,5/14/17,Manchester United,,,True,,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2016-17,5/18/17,Leicester City,,,,,Rescheduled,Third,#daa520,#000000,#003090,#ffffff
+2016-17,5/21/17,Hull City,,,,,,Home,#ffffff,#132257,#f5971d,#000000
+2017-18,8/13/17,Newcastle United,,,,,,Away,#00003c,#ffffff,#241f20,#ffffff
+2017-18,8/20/17,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2017-18,8/27/17,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2017-18,9/9/17,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2017-18,9/13/17,Borussia Dortmund,,,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#fde100,#000000
+2017-18,9/16/17,Swansea City,,,,,,Home,#ffffff,#132257,#e4031a,#ffffff
+2017-18,9/19/17,Barnsley,,,,,,Home,#ffffff,#132257,#ff0000,#ffffff
+2017-18,9/23/17,West Ham United,,,True,,Scorers,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2017-18,9/26/17,APOEL Nicosia,,,True,,,Home,#ffffff,#d9d9d9,#ffdd00,#1601d8
+2017-18,9/30/17,Huddersfield Town,,,,,,Away,#00003c,#ffffff,#0e63ad,#ffffff
+2017-18,10/14/17,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2017-18,10/17/17,Real Madrid,,,True,Opponent,Scorers,Third,#3c0859,#f2ef06,#ffffff,#2fb9cf
+2017-18,10/22/17,Liverpool,,,True,Opponent,Scorers,Home,#ffffff,#132257,#c8102e,#ffffff
+2017-18,10/25/17,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2017-18,10/28/17,Manchester United,,,,,,Home,#ffffff,#132257,#da291c,#ffffff
+2017-18,11/1/17,Real Madrid,,,True,White,Scorers,Home,#ffffff,#d9d9d9,#000000,#21beb2
+2017-18,11/5/17,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2017-18,11/18/17,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2017-18,11/21/17,Borussia Dortmund,,,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#fde100,#000000
+2017-18,11/25/17,West Bromwich Albion,,,,,,Home,#ffffff,#132257,#007f54,#ffffff
+2017-18,11/28/17,Leicester City,,,,,Midweek,Home,#ffffff,#132257,#003090,#ffffff
+2017-18,12/2/17,Watford,,,,,,Home,#ffffff,#132257,#fbee23,#000000
+2017-18,12/6/17,APOEL Nicosia,,,True,,,Home,#ffffff,#d9d9d9,#ffdd00,#1601d8
+2017-18,12/9/17,Stoke City,,,,,,Home,#ffffff,#132257,#e03a3e,#ffffff
+2017-18,12/13/17,Brighton & Hove Albion,,,,,Midweek,Home,#ffffff,#132257,#fbe210,#666633
+2017-18,12/16/17,Manchester City,,,,,,Away,#00003c,#ffffff,#6cabdd,#ffffff
+2017-18,12/23/17,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2017-18,12/26/17,Southampton,,,,,,Home,#ffffff,#132257,#1391a0,#000000
+2017-18,1/2/18,Swansea City,,,,,Festive Fixtures,Away,#00003c,#ffffff,#000000,#ffffff
+2017-18,1/4/18,West Ham United,,,,,Rescheduled,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2017-18,1/7/18,AFC Wimbledon,,,,,,Home,#ffffff,#132257,#2b4690,#ffffff
+2017-18,1/13/18,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2017-18,1/21/18,Southampton,,,,,,Away,#00003c,#ffffff,#d71920,#ffffff
+2017-18,1/27/18,Newport County,,,,,,Home,#ffffff,#132257,#f59d12,#000000
+2017-18,1/31/18,Manchester United,,,True,Opponent,Midweek | Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2017-18,2/4/18,Liverpool,,,True,,Scorers,Home,#ffffff,#132257,#c8102e,#ffffff
+2017-18,2/7/18,Newport County,,,,,,Home,#ffffff,#132257,#f59d12,#000000
+2017-18,2/10/18,Arsenal,,,True,,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2017-18,2/13/18,Juventus,,,,,Scorers,Third,#3c0859,#f2ef06,#ffffff,#000000
+2017-18,2/18/18,Rochdale,,,,,,Home,#ffffff,#132257,#293c8b,#ffffff
+2017-18,2/25/18,Crystal Palace,,,True,,Late Winner,Home,#ffffff,#132257,#1b458f,#c4122e
+2017-18,2/28/18,Rochdale,,,,,,Home,#ffffff,#132257,#293c8b,#ffffff
+2017-18,3/3/18,Huddersfield Town,,,,,,Home,#ffffff,#132257,#00044a,#ff2e6d
+2017-18,3/7/18,Juventus,,,,,,Home,#ffffff,#d9d9d9,#fbc833,#263fa5
+2017-18,3/11/18,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2017-18,3/17/18,Swansea City,,,,,,Away,#00003c,#ffffff,#ffffff,#000000
+2017-18,4/1/18,Chelsea,,,True,Opponent,Scorers,Home,#ffffff,#132257,#034694,#ffffff
+2017-18,4/7/18,Stoke City,,,,,,Away,#00003c,#ffffff,#e03a3e,#ffffff
+2017-18,4/14/18,Manchester City,,,,,,Home,#ffffff,#132257,#851152,#7877bf
+2017-18,4/17/18,Brighton & Hove Albion,,,,,Rescheduled,Away,#00003c,#ffffff,#0057b8,#ffffff
+2017-18,4/21/18,Manchester United,,,,,,Home,#ffffff,#132257,#da291c,#ffffff
+2017-18,4/30/18,Watford,,,,,,Home,#ffffff,#132257,#fbee23,#000000
+2017-18,5/5/18,West Bromwich Albion,,,,,,Home,#ffffff,#132257,#122f67,#ffffff
+2017-18,5/9/18,Newcastle United,,,,,Rescheduled,Home,#ffffff,#132257,#9acdff,#000066
+2017-18,5/13/18,Leicester City,,,True,,Scorers,Home,#ffffff,#132257,#003090,#ffffff
+2018-19,8/11/18,Newcastle United,,,,,,Third,#0cb09c,#152232,#241f20,#ffffff
+2018-19,8/18/18,Fulham,,,,,,Home,#ffffff,#132257,#b21e1e,#ffffff
+2018-19,8/27/18,Manchester United,,,True,,Scorers,Home,#ffffff,#132257,#da291c,#000000
+2018-19,9/2/18,Watford,,,,,,Home,#ffffff,#132257,#fbee23,#ed2127
+2018-19,9/15/18,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2018-19,9/18/18,Inter Milan,,,,,,Home,#ffffff,#d9d9d9,#010e80,#ffffff
+2018-19,9/22/18,Brighton & Hove Albion,,,,,,Third,#0cb09c,#152232,#0057b8,#fcd116
+2018-19,9/26/18,Watford,,,,,,Home,#ffffff,#132257,#047844,#a0da16
+2018-19,9/29/18,Huddersfield Town,,,,,,Third,#0cb09c,#152232,#0e63ad,#ffffff
+2018-19,10/3/18,Barcelona,,,,,,Home,#ffffff,#d9d9d9,#a50044,#004d98
+2018-19,10/6/18,Cardiff City,,,,,,Home,#ffffff,#132257,#0070b5,#ffffff
+2018-19,10/20/18,West Ham United,,,True,,Scorers,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2018-19,10/24/18,PSV Eindhoven,,,,,,Third,#0cb09c,#152232,#f00000,#ffffff
+2018-19,10/29/18,Manchester City,,,,,,Home,#ffffff,#132257,#571e54,#ff7f27
+2018-19,10/31/18,West Ham United,,,,,,Away,#00003e,#affeff,#7a263a,#1bb1e7
+2018-19,11/3/18,Wolverhampton Wanderers,,,,,,Home,#ffffff,#132257,#fdb913,#000000
+2018-19,11/6/18,PSV Eindhoven,,,True,,Late Winner,Home,#ffffff,#d9d9d9,#001c78,#ffffff
+2018-19,11/10/18,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2018-19,11/24/18,Chelsea,,,True,Opponent,Scorers,Home,#ffffff,#132257,#ffde00,#0000dd
+2018-19,11/28/18,Inter Milan,,,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#010e80,#ffffff
+2018-19,12/2/18,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2018-19,12/5/18,Southampton,,,,,Midweek,Home,#ffffff,#132257,#d71920,#ffffff
+2018-19,12/8/18,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2018-19,12/11/18,Barcelona,,,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#a50044,#004d98
+2018-19,12/15/18,Burnley,,,True,,Late Winner,Home,#ffffff,#132257,#5f0040,#99d6ea
+2018-19,12/19/18,Arsenal,,,True,Opponent,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2018-19,12/23/18,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2018-19,12/26/18,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2018-19,12/29/18,Wolverhampton Wanderers,,,,,,Home,#ffffff,#132257,#fdb913,#000000
+2018-19,1/1/19,Cardiff City,,,,,,Home,#ffffff,#132257,#0070b5,#ffffff
+2018-19,1/4/19,Tranmere Rovers,,,,,,Away,#00003e,#affeff,#ffffff,#004494
+2018-19,1/8/19,Chelsea,,,,,Scorers,Home,#ffffff,#132257,#034694,#ffffff
+2018-19,1/13/19,Manchester United,,,,,,Home,#ffffff,#132257,#da291c,#ffffff
+2018-19,1/20/19,Fulham,,,True,,Late Winner,Away,#00003e,#affeff,#ffffff,#000000
+2018-19,1/24/19,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2018-19,1/27/19,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2018-19,1/30/19,Watford,,,True,,Midweek | Late Winner,Home,#ffffff,#132257,#fbee23,#ed2127
+2018-19,2/2/19,Newcastle United,,,True,,Late Winner,Home,#ffffff,#132257,#800000,#002040
+2018-19,2/10/19,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2018-19,2/13/19,Borussia Dortmund,,,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#fde100,#000000
+2018-19,2/23/19,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2018-19,2/27/19,Chelsea,,,,,Midweek,Home,#ffffff,#132257,#034694,#ffffff
+2018-19,3/2/19,Arsenal,,,,Opponent,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2018-19,3/5/19,Borussia Dortmund,,,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#fde100,#000000
+2018-19,3/9/19,Southampton,,,,,,Third,#0cb09c,#152232,#d71920,#ffffff
+2018-19,3/31/19,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2018-19,4/3/19,Crystal Palace,,,,,Rescheduled,Home,#ffffff,#132257,#1b458f,#c4122e
+2018-19,4/9/19,Manchester City,,,True,White,Scorers,Home,#ffffff,#d9d9d9,#571e54,#ff7f27
+2018-19,4/13/19,Huddersfield Town,,,,,,Home,#ffffff,#132257,#000000,#ff0000
+2018-19,4/17/19,Manchester City,,,True,White,Scorers,Third,#0cb09c,#152232,#6cabdd,#ffffff
+2018-19,4/20/19,Manchester City,,,,,,Third,#0cb09c,#152232,#6cabdd,#ffffff
+2018-19,4/23/19,Brighton & Hove Albion,,,True,,Rescheduled | Late Winner,Home,#ffffff,#132257,#106234,#ffffff
+2018-19,4/27/19,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2018-19,4/30/19,Ajax,,,,,,Home,#ffffff,#d9d9d9,#000000,#d2c98b
+2018-19,5/4/19,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2018-19,5/8/19,Ajax,,,True,White,Scorers,Third,#0cb09c,#152232,#d2122e,#ffffff
+2018-19,5/12/19,Everton,,,True,,Scorers | Clinched UCL,Home,#ffffff,#132257,#003399,#ffffff
+2018-19,6/1/19,Liverpool,,,,,,Home,#ffffff,#d9d9d9,#c8102e,#ffffff
+2019-20,8/10/19,Aston Villa,,,True,,Late Winner,Home,#ffffff,#132257,#670e36,#95bfe5
+2019-20,8/17/19,Manchester City,,,,Opponent,Scorers,Away,#14003b,#ffffff,#6cabdd,#ffffff
+2019-20,8/25/19,Newcastle United,,,,,,Home,#ffffff,#132257,#ff6000,#000000
+2019-20,9/1/19,Arsenal,,,,Opponent,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2019-20,9/14/19,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2019-20,9/18/19,Olympiacos,,,,,,Third,#00b3ff,#00003b,#e50000,#ffffff
+2019-20,9/21/19,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2019-20,9/24/19,Colchester United,,,,,,Home,#ffffff,#132257,#2191cc,#ffffff
+2019-20,9/28/19,Southampton,,,,,,Home,#ffffff,#132257,#323232,#e0ff00
+2019-20,10/1/19,Bayern Munich,,,,,,Home,#ffffff,#d9d9d9,#dc052d,#ffffff
+2019-20,10/5/19,Brighton & Hove Albion,,,,,,Third,#00b3ff,#000060,#0057b8,#ffffff
+2019-20,10/19/19,Watford,,,,,,Home,#ffffff,#132257,#084b8a,#ffffff
+2019-20,10/22/19,Red Star Belgrade,,,True,,,Home,#ffffff,#d9d9d9,#0000ff,#ffffff
+2019-20,10/27/19,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2019-20,11/3/19,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2019-20,11/6/19,Red Star Belgrade,,,True,,,Away,#14003b,#ffffff,#ffffff,#ed1c24
+2019-20,11/9/19,Sheffield United,,,,,,Home,#ffffff,#132257,#ec2227,#ffffff
+2019-20,11/23/19,West Ham United,,,True,,Scorers,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2019-20,11/26/19,Olympiacos,,,True,,,Home,#ffffff,#d9d9d9,#0000ff,#e50000
+2019-20,11/30/19,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2019-20,12/4/19,Manchester United,,,,,Midweek,Home,#ffffff,#132257,#da291c,#000000
+2019-20,12/7/19,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2019-20,12/11/19,Bayern Munich,,,,,,Home,#ffffff,#d9d9d9,#dc052d,#ffffff
+2019-20,12/15/19,Wolverhampton Wanderers,,,True,,Late Winner,Away,#14003b,#ffffff,#fdb913,#000000
+2019-20,12/22/19,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2019-20,12/26/19,Brighton & Hove Albion,,,,,,Home,#ffffff,#132257,#000000,#ffffff
+2019-20,12/28/19,Norwich City,,,,,,Away,#14003b,#ffffff,#00a650,#fff200
+2019-20,1/1/20,Southampton,,,,,,Away,#14003b,#ffffff,#d71920,#ffffff
+2019-20,1/5/20,Middlesbrough,,,,,,Home,#ffffff,#132257,#e11b22,#ffffff
+2019-20,1/11/20,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2019-20,1/14/20,Middlesbrough,,,,,,Home,#ffffff,#132257,#e11b22,#ffffff
+2019-20,1/18/20,Watford,,,,,,Home,#ffffff,#132257,#fbee23,#000000
+2019-20,1/22/20,Norwich City,,,,,Midweek,Home,#ffffff,#132257,#00a650,#fff200
+2019-20,1/25/20,Southampton,,,,,,Away,#14003b,#ffffff,#d71920,#ffffff
+2019-20,2/2/20,Manchester City,,,True,Opponent,Scorers,Home,#ffffff,#132257,#000000,#ffec00
+2019-20,2/5/20,Southampton,,,,Opponent,Late Winner,Home,#ffffff,#132257,#323232,#e0ff00
+2019-20,2/16/20,Aston Villa,,,True,,Late Winner,Home,#ffffff,#132257,#670e36,#95bfe5
+2019-20,2/19/20,RB Leipzig,,,,,,Home,#ffffff,#d9d9d9,#000000,#dd0741
+2019-20,2/22/20,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2019-20,3/1/20,Wolverhampton Wanderers,,,,,,Home,#ffffff,#132257,#fdb913,#000000
+2019-20,3/4/20,Norwich City,,,,,,Home,#ffffff,#132257,#00a650,#fff200
+2019-20,3/7/20,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2019-20,3/10/20,RB Leipzig,,,,,,Away,#14003b,#ffffff,#ffffff,#dd0741
+2019-20,6/19/20,Manchester United,,,,,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2019-20,6/23/20,West Ham United,,,True,,Scorers,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2019-20,7/2/20,Sheffield United,,,,,,Third,#00b3ff,#00003b,#ec2227,#ffffff
+2019-20,7/6/20,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2019-20,7/9/20,Bournemouth,,,,,,Third,#00b3ff,#00003b,#da291c,#000000
+2019-20,7/12/20,Arsenal,,,True,,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2019-20,7/15/20,Newcastle United,,,,,,Third,#00b3ff,#00003b,#241f20,#ffffff
+2019-20,7/19/20,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2019-20,7/26/20,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2020-21,9/13/20,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2020-21,9/17/20,Lokomotiv Plovdiv,,,,Opponent,Late Winner,Third,#ffbb00,#00003b,#000000,#ffffff
+2020-21,9/20/20,Southampton,,,,,,Home,#ffffff,#132257,#d71920,#ffffff
+2020-21,9/24/20,KF Shkëndija,,,,,,Third,#ffbb00,#00003b,#f41e34,#000000
+2020-21,9/27/20,Newcastle United,,,,,,Home,#ffffff,#132257,#322656,#e3ed60
+2020-21,9/29/20,Chelsea,,,True,Opponent,Scorers,Home,#ffffff,#132257,#034694,#ffffff
+2020-21,10/1/20,Maccabi Haifa,,,,,,Home,#ffffff,#d9d9d9,#00a651,#ffffff
+2020-21,10/4/20,Manchester United,,,True,Opponent,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2020-21,10/18/20,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2020-21,10/22/20,LASK Linz,,,,,,Home,#ffffff,#d9d9d9,#000000,#ffffff
+2020-21,10/26/20,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2020-21,10/29/20,Antwerp,,,,,,Home,#ffffff,#d9d9d9,#df172b,#ffffff
+2020-21,11/1/20,Brighton & Hove Albion,,,,,,Home,#ffffff,#132257,#0057b8,#ffffff
+2020-21,11/5/20,Ludogorets Razgrad,,,,,,Home,#ffffff,#d9d9d9,#006738,#ffffff
+2020-21,11/8/20,West Bromwich Albion,,,True,,Late Winner,Third,#ffbb00,#00003b,#122f67,#ffffff
+2020-21,11/21/20,Manchester City,,,True,Opponent,Scorers,Home,#ffffff,#132257,#223355,#aa603b
+2020-21,11/26/20,Ludogorets Razgrad,,,,,,Home,#ffffff,#d9d9d9,#006738,#ffffff
+2020-21,11/29/20,Chelsea,,,,Opponent,,Home,#ffffff,#132257,#034694,#ffffff
+2020-21,12/3/20,LASK Linz,,,,,,Third,#ffbb00,#00003b,#ffbcd2,#000000
+2020-21,12/6/20,Arsenal,,,True,Opponent,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2020-21,12/10/20,Antwerp,,,,,,Home,#ffffff,#d9d9d9,#df172b,#ffffff
+2020-21,12/13/20,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2020-21,12/16/20,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2020-21,12/20/20,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2020-21,12/23/20,Stoke City,,,,,,Away,#203e07,#c0d9b2,#e03a3e,#ffffff
+2020-21,12/27/20,Wolverhampton Wanderers,,,,,,Away,#203e07,#c0d9b2,#fdb913,#000000
+2020-21,1/2/21,Leeds United,,,,,,Home,#ffffff,#132257,#600020,#ffffff
+2020-21,1/5/21,Brentford,,,True,Opponent,Scorers,Home,#ffffff,#132257,#444444,#ff0000
+2020-21,1/10/21,Marine,,,,,,Home,#ffffff,#132257,#c9ae79,#000000
+2020-21,1/13/21,Fulham,,,,,Rescheduled,Home,#ffffff,#132257,#ffee00,#000000
+2020-21,1/17/21,Sheffield United,,,,,,Away,#203e07,#c0d9b2,#ec2227,#ffffff
+2020-21,1/25/21,Wycombe Wanderers,,,,Opponent,Late Winner,Home,#ffffff,#132257,#4eb6e3,#003362
+2020-21,1/28/21,Liverpool,,,,,Midweek,Home,#ffffff,#132257,#c8102e,#ffffff
+2020-21,1/31/21,Brighton & Hove Albion,,,,,,Home,#ffffff,#132257,#0057b8,#ffffff
+2020-21,2/4/21,Chelsea,,,,,Midweek,Home,#ffffff,#132257,#034694,#ffffff
+2020-21,2/7/21,West Bromwich Albion,,,,,,Home,#ffffff,#132257,#ff0000,#ffdd00
+2020-21,2/10/21,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2020-21,2/13/21,Manchester City,,,,,,Away,#203e07,#c0d9b2,#6cabdd,#ffffff
+2020-21,2/18/21,Wolfsberger,,,True,,,Third,#ffbb00,#00003b,#ffffff,#000000
+2020-21,2/21/21,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2020-21,2/24/21,Wolfsberger,,,True,,,Home,#ffffff,#d9d9d9,#33c0ff,#ffffff
+2020-21,2/28/21,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2020-21,3/4/21,Fulham,,,,,Rescheduled,Away,#203e07,#c0d9b2,#ffffff,#000000
+2020-21,3/7/21,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2020-21,3/11/21,Dinamo Zagreb,,,,,,Home,#ffffff,#d9d9d9,#1f253d,#c2b760
+2020-21,3/14/21,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2020-21,3/18/21,Dinamo Zagreb,,,,,,Third,#ffbb00,#00003b,#1f253d,#c2b760
+2020-21,3/21/21,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2020-21,4/4/21,Newcastle United,,,,,,Third,#ffbb00,#00003b,#241f20,#ffffff
+2020-21,4/11/21,Manchester United,,,,,,Home,#ffffff,#132257,#da291c,#ffffff
+2020-21,4/16/21,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2020-21,4/21/21,Southampton,,,True,,Rescheduled | Late Winner,Home,#ffffff,#132257,#d71920,#ffffff
+2020-21,4/25/21,Manchester City,,,,,,Away,#203e07,#c0d9b2,#6cabdd,#ffffff
+2020-21,5/2/21,Sheffield United,,,,,,Home,#ffffff,#132257,#024234,#d9bd77
+2020-21,5/8/21,Leeds United,,,,,,Away,#203e07,#c0d9b2,#ffffff,#1e3674
+2020-21,5/16/21,Wolverhampton Wanderers,,,,,,Home,#ffffff,#132257,#75001a,#003926
+2020-21,5/19/21,Aston Villa,,,,,Midweek,Home,#ffffff,#132257,#670e36,#95bfe5
+2020-21,5/23/21,Leicester City,,,True,,Late Winner,Home,#ffffff,#132257,#003090,#ffffff
+2021-22,8/15/21,Manchester City,,,True,Opponent,Scorers,Home,#ffffff,#132257,#6cabdd,#ffffff
+2021-22,8/19/21,Paços de Ferreira,,,,,,Home,#ffffff,#132257,#f5eb00,#009448
+2021-22,8/22/21,Wolverhampton Wanderers,,,,,,Away,#000000,#e5ea8a,#fdb913,#000000
+2021-22,8/26/21,Paços de Ferreira,,,,,,Home,#ffffff,#132257,#f5eb00,#009448
+2021-22,8/29/21,Watford,,,,,,Home,#ffffff,#132257,#fbee23,#ed2127
+2021-22,9/11/21,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2021-22,9/16/21,Rennes,,,,,,Home,#ffffff,#d9d9d9,#e13327,#000000
+2021-22,9/19/21,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#f2df0c
+2021-22,9/22/21,Wolverhampton Wanderers,,,,,,Third,#8000ff,#e5fcbb,#fdb913,#000000
+2021-22,9/26/21,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2021-22,9/30/21,Mura,,,,,,Home,#ffffff,#d9d9d9,#000000,#ffffff
+2021-22,10/3/21,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2021-22,10/17/21,Newcastle United,,,,,,Third,#8000ff,#e5fcbb,#241f20,#ffffff
+2021-22,10/21/21,Vitesse,,,,,,Third,#8000ff,#e5fcbb,#000000,#fcd205
+2021-22,10/24/21,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2021-22,10/27/21,Burnley,,,,,,Away,#000000,#e5ea8a,#5f0040,#99d6ea
+2021-22,10/30/21,Manchester United,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2021-22,11/4/21,Vitesse,,,,,,Home,#ffffff,#d9d9d9,#fcd205,#000000
+2021-22,11/7/21,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2021-22,11/21/21,Leeds United,,,,,,Home,#ffffff,#132257,#1e3674,#ffffff
+2021-22,11/25/21,Mura,,,,,,Third,#8000ff,#e5fcbb,#000000,#ffffff
+2021-22,12/2/21,Brentford,,,,,Midweek,Home,#ffffff,#132257,#fefe2b,#000000
+2021-22,12/5/21,Norwich City,,,,,,Home,#ffffff,#132257,#fd413b,#000000
+2021-22,12/19/21,Liverpool,,,True,,Scorers,Home,#ffffff,#132257,#c8102e,#ffffff
+2021-22,12/22/21,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2021-22,12/26/21,Crystal Palace,,,,,,Home,#ffffff,#132257,#ffdd00,#0000ff
+2021-22,12/28/21,Southampton,,,,,Festive Fixtures,Away,#000000,#e5ea8a,#d71920,#ffffff
+2021-22,1/1/22,Watford,,,True,,Late Winner,Third,#8000ff,#e5fcbb,#fbee23,#ed2127
+2021-22,1/5/22,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2021-22,1/9/22,Morecambe,,,,Opponent,Late Winner,Home,#ffffff,#132257,#981915,#ffffff
+2021-22,1/12/22,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2021-22,1/19/22,Leicester City,,,True,Opponent,Rescheduled | Late Winner,Home,#ffffff,#132257,#003090,#ffffff
+2021-22,1/23/22,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2021-22,2/5/22,Brighton & Hove Albion,,,,,,Home,#ffffff,#132257,#01e9df,#000000
+2021-22,2/9/22,Southampton,,,,,Midweek,Home,#ffffff,#132257,#fff000,#0000ff
+2021-22,2/13/22,Wolverhampton Wanderers,,,,,,Home,#ffffff,#132257,#fdb913,#000000
+2021-22,2/19/22,Manchester City,,,True,White,Scorers,Home,#ffffff,#132257,#6cabdd,#ffffff
+2021-22,2/23/22,Burnley,,,,,Rescheduled,Home,#ffffff,#132257,#5f0040,#99d6ea
+2021-22,2/26/22,Leeds United,,,,,,Third,#8000ff,#e5fcbb,#ffffff,#1e3674
+2021-22,3/1/22,Middlesbrough,,,,,,Home,#ffffff,#132257,#e11b22,#ffffff
+2021-22,3/7/22,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2021-22,3/12/22,Manchester United,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2021-22,3/16/22,Brighton & Hove Albion,,,,,Rescheduled,Away,#000000,#e5ea8a,#0057b8,#ffffff
+2021-22,3/20/22,West Ham United,,,True,,Scorers,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2021-22,4/3/22,Newcastle United,,,,,,Home,#ffffff,#132257,#241f20,#c8a32f
+2021-22,4/9/22,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2021-22,4/16/22,Brighton & Hove Albion,,,,,,Home,#ffffff,#132257,#01e9df,#000000
+2021-22,4/23/22,Brentford,,,,,,Third,#8000ff,#e5fcbb,#e30613,#ffffff
+2021-22,5/1/22,Leicester City,,,,,,Home,#ffffff,#132257,#667378,#fb7abc
+2021-22,5/7/22,Liverpool,,,True,,Scorers,Home,#ffffff,#132257,#c8102e,#ffffff
+2021-22,5/12/22,Arsenal,,,True,White,Rescheduled | Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2021-22,5/15/22,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#99d6ea
+2021-22,5/22/22,Norwich City,,,True,,Clinched UCL,Home,#ffffff,#132257,#00a650,#fff200
+2022-23,8/6/22,Southampton,,,,,,Home,#ffffff,#132257,#2d392d,#ffffff
+2022-23,8/14/22,Chelsea,,,True,Opponent,Scorers,Home,#ffffff,#132257,#034694,#ffffff
+2022-23,8/20/22,Wolverhampton Wanderers,,,,,,Home,#ffffff,#132257,#fdb913,#000000
+2022-23,8/28/22,Nottingham Forest,,,,,,Home,#ffffff,#132257,#ce1126,#ffffff
+2022-23,8/31/22,West Ham United,,,,,Midweek,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2022-23,9/3/22,Fulham,,,,,,Home,#ffffff,#132257,#000000,#ffffff
+2022-23,9/7/22,Marseille,,,True,Opponent,,Home,#ffffff,#d9d9d9,#2fafda,#ffffff
+2022-23,9/13/22,Sporting CP,,,,,,Third,#4cb2d2,#2e3b65,#008057,#ffffff
+2022-23,9/17/22,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2022-23,10/1/22,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2022-23,10/4/22,Eintracht Frankfurt,,,,Opponent,,Home,#ffffff,#d9d9d9,#000000,#ffffff
+2022-23,10/8/22,Brighton & Hove Albion,,,,,,Away,#425fc5,#c0ff60,#ffffff,#0057b8
+2022-23,10/12/22,Eintracht Frankfurt,,,True,Opponent,,Home,#ffffff,#d9d9d9,#000000,#ffffff
+2022-23,10/15/22,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2022-23,10/19/22,Manchester United,,,,,Midweek,Away,#425fc5,#c0ff60,#da291c,#000000
+2022-23,10/23/22,Newcastle United,,,,,,Home,#ffffff,#132257,#001363,#eeb12a
+2022-23,10/26/22,Sporting CP,,,,,,Home,#ffffff,#d9d9d9,#000000,#cdff00
+2022-23,10/29/22,Bournemouth,,,True,,Late Winner,Home,#ffffff,#132257,#da291c,#000000
+2022-23,11/1/22,Marseille,,,True,Opponent,Late Winner,Third,#4cb2d2,#2e3b65,#ffffff,#2fafda
+2022-23,11/6/22,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2022-23,11/9/22,Nottingham Forest,,,,,,Away,#425fc5,#c0ff60,#ce1126,#ffffff
+2022-23,11/12/22,Leeds United,,,True,,Late Winner,Home,#ffffff,#132257,#000000,#f68f30
+2022-23,12/26/22,Brentford,,,,,,Third,#4cb2d2,#2e3b65,#e30613,#ffffff
+2022-23,1/1/23,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2022-23,1/4/23,Crystal Palace,,,,,Midweek,Home,#ffffff,#132257,#1b458f,#c4122e
+2022-23,1/7/23,Portsmouth,,,,,,Home,#ffffff,#132257,#0000ff,#ffffff
+2022-23,1/15/23,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2022-23,1/19/23,Manchester City,,,,,Rescheduled,Home,#ffffff,#132257,#6cabdd,#ffffff
+2022-23,1/23/23,Fulham,,,,,,Away,#425fc5,#c0ff60,#ffffff,#000000
+2022-23,1/28/23,Preston North End,,,,,,Third,#4cb2d2,#2e3b65,#ffffff,#002156
+2022-23,2/5/23,Manchester City,,,True,Opponent,Scorers,Home,#ffffff,#132257,#000000,#d3012c
+2022-23,2/11/23,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2022-23,2/14/23,AC Milan,,,,,,Home,#ffffff,#d9d9d9,#000000,#fb090b
+2022-23,2/19/23,West Ham United,,,True,,Scorers,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2022-23,2/26/23,Chelsea,,,True,,Scorers,Home,#ffffff,#132257,#034694,#ffffff
+2022-23,3/1/23,Sheffield United,,,,,,Away,#425fc5,#c0ff60,#ee2737,#ffffff
+2022-23,3/4/23,Wolverhampton Wanderers,,,,,,Third,#4cb2d2,#2e3b65,#fdb913,#000000
+2022-23,3/8/23,AC Milan,,,,,,Home,#ffffff,#d9d9d9,#000000,#fb090b
+2022-23,3/11/23,Nottingham Forest,,,,,,Home,#ffffff,#132257,#ce1126,#ffffff
+2022-23,3/18/23,Southampton,,,,,,Third,#4cb2d2,#2e3b65,#d71920,#ffffff
+2022-23,4/3/23,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2022-23,4/8/23,Brighton & Hove Albion,,,,,,Home,#ffffff,#132257,#fe5442,#000000
+2022-23,4/15/23,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2022-23,4/23/23,Newcastle United,,,,,,Third,#4cb2d2,#2e3b65,#241f20,#ffffff
+2022-23,4/27/23,Manchester United,,,,Opponent,Midweek | Scorers,Home,#ffffff,#132257,#da291c,#fbe122
+2022-23,4/30/23,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2022-23,5/6/23,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2022-23,5/13/23,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2022-23,5/20/23,Brentford,,,,,,Home,#ffffff,#132257,#000000,#ff0f6b
+2022-23,5/28/23,Leeds United,,,,,,Away,#425fc5,#c0ff60,#ffffff,#1e3674
+2023-24,8/13/23,Brentford,,,,,,Away,#252d40,#868fb0,#e30613,#ffffff
+2023-24,8/19/23,Manchester United,,,True,,Scorers,Home,#ffffff,#d9d9d9,#da291c,#ffffff
+2023-24,8/26/23,Bournemouth,,,,,,Home,#ffffff,#d9d9d9,#da291c,#000000
+2023-24,8/29/23,Fulham,,,,,,Third,#c0a29a,#000000,#000000,#ffffff
+2023-24,9/2/23,Burnley,,,,,,Away,#252d40,#868fb0,#5f0040,#99d6ea
+2023-24,9/16/23,Sheffield United,,,True,Opponent,Late Winner,Home,#ffffff,#d9d9d9,#ffe000,#800000
+2023-24,9/24/23,Arsenal,,,True,Opponent,Scorers,Home,#ffffff,#132257,#ef0107,#ffffff
+2023-24,9/30/23,Liverpool,,,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#c8102e,#ffffff
+2023-24,10/7/23,Luton Town,,,,,,Third,#c0a29a,#000000,#f78f1e,#002d62
+2023-24,10/23/23,Fulham,,,,,,Home,#ffffff,#d9d9d9,#000000,#d49ab1
+2023-24,10/27/23,Crystal Palace,,,,,,Home,#ffffff,#d9d9d9,#1b458f,#c4122e
+2023-24,11/6/23,Chelsea,,,,,,Home,#ffffff,#d9d9d9,#034694,#ffffff
+2023-24,11/11/23,Wolverhampton Wanderers,,,,,,Away,#252d40,#868fb0,#fdb913,#000000
+2023-24,11/26/23,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2023-24,12/3/23,Manchester City,,,True,Opponent,Scorers,Third,#c0a29a,#000000,#6cabdd,#ffffff
+2023-24,12/7/23,West Ham United,,,,,Midweek,Home,#ffffff,#d9d9d9,#7a263a,#ffffff
+2023-24,12/10/23,Newcastle United,,,,,,Home,#ffffff,#d9d9d9,#162335,#cfde11
+2023-24,12/15/23,Nottingham Forest,,,,,,Home,#ffffff,#d9d9d9,#ce1126,#ffffff
+2023-24,12/23/23,Everton,,,,,,Home,#ffffff,#d9d9d9,#fd5a51,#081d32
+2023-24,12/28/23,Brighton & Hove Albion,,,,,Festive Fixtures,Third,#c0a29a,#000000,#0057b8,#ffffff
+2023-24,12/31/23,Bournemouth,,,,,,Home,#ffffff,#d9d9d9,#da291c,#000000
+2023-24,1/5/24,Burnley,,,,,,Home,#ffffff,#d9d9d9,#5f0040,#99d6ea
+2023-24,1/14/24,Manchester United,,,,,Scorers,Home,#ffffff,#d9d9d9,#da291c,#ffffff
+2023-24,1/26/24,Manchester City,,,,,,Home,#ffffff,#d9d9d9,#000000,#2fa9ca
+2023-24,1/31/24,Brentford,,,,,Midweek,Home,#ffffff,#d9d9d9,#000b24,#8bffed
+2023-24,2/3/24,Everton,,,,,,Third,#c0a29a,#000000,#003399,#ffffff
+2023-24,2/10/24,Brighton & Hove Albion,,,True,,Late Winner,Home,#ffffff,#d9d9d9,#000000,#0dbf5d
+2023-24,2/17/24,Wolverhampton Wanderers,,,,,,Home,#ffffff,#d9d9d9,#d00207,#285151
+2023-24,3/2/24,Crystal Palace,,,True,,Late Winner,Home,#ffffff,#d9d9d9,#1b458f,#c4122e
+2023-24,3/10/24,Aston Villa,,,True,,Scorers,Home,#ffffff,#132257,#670e36,#95bfe5
+2023-24,3/16/24,Fulham,,,,,,Away,#252d40,#868fb0,#ffffff,#000000
+2023-24,3/30/24,Luton Town,,,True,,Late Winner,Home,#ffffff,#cccccc,#000000,#ff4608
+2023-24,4/2/24,West Ham United,,,,,Midweek,Home,#ffffff,#cccccc,#7a263a,#1bb1e7
+2023-24,4/7/24,Nottingham Forest,,,,,,Home,#ffffff,#cccccc,#000060,#d47547
+2023-24,4/13/24,Newcastle United,,,,,,Third,#c0a29a,#000000,#241f20,#ffffff
+2023-24,4/28/24,Arsenal,,,,,,Home,#ffffff,#cccccc,#ef0107,#ffffff
+2023-24,5/2/24,Chelsea,,,,,Rescheduled,Home,#ffffff,#cccccc,#034694,#ffffff
+2023-24,5/5/24,Liverpool,,,,,,Home,#ffffff,#cccccc,#c8102e,#ffffff
+2023-24,5/11/24,Burnley,,,True,,Rescheduled | Late Winner,Home,#ffffff,#d9d9d9,#000000,#99d6ea
+2023-24,5/14/24,Manchester City,,,,,Rescheduled | Title Race,Home,#ffffff,#d9d9d9,#000000,#2fa9ca
+2023-24,5/19/24,Sheffield United,,,,,,Away,#252d40,#868fb0,#ec2227,#ffffff
+2024-25,8/19/24,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2024-25,8/24/24,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2024-25,9/1/24,Newcastle United,,,,,,Away,#b9ccf4,#21294e,#241f20,#ffffff
+2024-25,9/15/24,Arsenal,,,,,,Home,#ffffff,#132257,#000000,#009124
+2024-25,9/18/24,Coventry City,,,,Opponent,Late Winner,Third,#00604f,#e4fac9,#059dd9,#ffffff
+2024-25,9/21/24,Brentford,,,True,,,Home,#ffffff,#132257,#00604f,#e4fac9
+2024-25,9/26/24,Qarabag,,UPPER,,,,Home,#ffffff,#d9d9d9,#000000,#ffffff
+2024-25,9/29/24,Manchester United,,,True,,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2024-25,10/3/24,Ferencvaros,,UPPER,,,,Third,#00604f,#e4fac9,#ffffff,#228b22
+2024-25,10/6/24,Brighton & Hove Albion,,,,,,Third,#00604f,#e4fac9,#0057b8,#ffffff
+2024-25,10/19/24,West Ham United,,,True,,Scorers,Home,#ffffff,#132257,#7a263a,#1bb1e7
+2024-25,10/24/24,AZ Alkmaar,,UPPER,,,,Home,#ffffff,#d9d9d9,#db0021,#ffffff
+2024-25,10/27/24,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2024-25,10/30/24,Manchester City,,,True,Opponent,Scorers,Home,#ffffff,#132257,#8c1f2d,#d5a44d
+2024-25,11/3/24,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2024-25,11/7/24,Galatasaray,,,,,,Away,#b9ccf4,#21294e,#a90432,#fdb912
+2024-25,11/10/24,Ipswich Town,,,,,,Home,#ffffff,#132257,#ffc0cb,#ffffff
+2024-25,11/23/24,Manchester City,,,True,Opponent,Scorers,Home,#ffffff,#132257,#6cabdd,#ffffff
+2024-25,11/28/24,Roma,,UPPER,,,,Home,#ffffff,#d9d9d9,#8e1f2f,#f0bc42
+2024-25,12/1/24,Fulham,,,,,,Home,#ffffff,#132257,#cc0000,#000000
+2024-25,12/5/24,Bournemouth,,,,,Midweek,Away,#b9ccf4,#21294e,#da291c,#000000
+2024-25,12/8/24,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2024-25,12/12/24,Rangers,,UPPER,,,,Home,#ffffff,#132257,#1b458f,#ffffff
+2024-25,12/15/24,Southampton,,,,,,Away,#b9ccf4,#21294e,#d71920,#ffffff
+2024-25,12/19/24,Manchester United,,,True,Opponent,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2024-25,12/22/24,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2024-25,12/26/24,Nottingham Forest,,,,,,Away,#b9ccf4,#21294e,#ce1126,#ffffff
+2024-25,12/29/24,Wolverhampton Wanderers,,,,,,Home,#ffffff,#132257,#c200bc,#fc3822
+2024-25,1/4/25,Newcastle United,,,,,,Home,#ffffff,#132257,#800000,#001053
+2024-25,1/8/25,Liverpool,,,,,Scorers,Home,#ffffff,#132257,#c8102e,#ffffff
+2024-25,1/12/25,Tamworth,,,,Opponent,Scorers,Away,#b9ccf4,#21294e,#d72241,#000000
+2024-25,1/15/25,Arsenal,,,,,Midweek,Away,#b9ccf4,#21294e,#ef0107,#ffffff
+2024-25,1/19/25,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2024-25,1/23/25,Hoffenheim,,UPPER,,,,Home,#ffffff,#d9d9d9,#1961b5,#ffffff
+2024-25,1/26/25,Leicester City,,,,,,Home,#ffffff,#132257,#003090,#ffffff
+2024-25,1/30/25,Elfsborg,,UPPER,,,,Home,#ffffff,#d9d9d9,#f7dc14,#000000
+2024-25,2/2/25,Brentford,,,,,,Away,#b9ccf4,#21294e,#e30613,#ffffff
+2024-25,2/6/25,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2024-25,2/9/25,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2024-25,2/16/25,Manchester United,,,True,,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2024-25,2/22/25,Ipswich Town,,,,,,Home,#ffffff,#132257,#0b4088,#ffffff
+2024-25,2/26/25,Manchester City,,,,,Midweek,Home,#ffffff,#132257,#8c1f2d,#d5a44d
+2024-25,3/6/25,AZ Alkmaar,,UPPER,,,,Home,#ffffff,#132257,#db0021,#ffffff
+2024-25,3/9/25,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#ffffff
+2024-25,3/13/25,AZ Alkmaar,,UPPER,True,Opponent,,Home,#ffffff,#d9d9d9,#db0021,#ffffff
+2024-25,3/16/25,Fulham,,,,,,Third,#00604f,#e4fac9,#ffffff,#000000
+2024-25,4/3/25,Chelsea,,,,,Midweek,Home,#ffffff,#132257,#034694,#ffffff
+2024-25,4/6/25,Southampton,,,,,,Home,#ffffff,#132257,#f185c8,#ffffff
+2024-25,4/10/25,Eintracht Frankfurt,,UPPER,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#ff6600,#000000
+2024-25,4/13/25,Wolverhampton Wanderers,,,,,,Away,#b9ccf4,#21294e,#fdb913,#000000
+2024-25,4/17/25,Eintracht Frankfurt,,UPPER,True,Opponent,Scorers,Third,#00604f,#e4fac9,#ffffff,#000000
+2024-25,4/21/25,Nottingham Forest,,,,,,Home,#ffffff,#132257,#ce1126,#ffffff
+2024-25,4/27/25,Liverpool,,,,,,Away,#b9ccf4,#21294e,#c8102e,#ffffff
+2024-25,5/1/25,Bodo/Glimt,,UPPER,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#f9dd00,#000000
+2024-25,5/4/25,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#ffffff
+2024-25,5/8/25,Bodo/Glimt,,UPPER,True,Opponent,Scorers,Third,#00604f,#e4fac9,#f9dd00,#000000
+2024-25,5/11/25,Crystal Palace,,,,,,Home,#ffffff,#132257,#1b458f,#c4122e
+2024-25,5/16/25,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2024-25,5/21/25,Manchester United,,UPPER,True,UEL,Scorers,Home,#ffffff,#d9d9d9,#da291c,#000000
+2024-25,5/25/25,Brighton & Hove Albion,,,,,,Home,#ffffff,#132257,#0057b8,#ffffff
+2025-26,8/13/25,Paris Saint-Germain,,,,,,Home,#ffffff,#d9d9d9,#004170,#da291c
+2025-26,8/16/25,Burnley,,,,,,Home,#ffffff,#132257,#5f0040,#ffffff
+2025-26,8/23/25,Manchester City,,,True,Opponent,Scorers,Away,#000000,#ffffff,#6cabdd,#ffffff
+2025-26,8/30/25,Bournemouth,,,,,,Home,#ffffff,#132257,#da291c,#000000
+2025-26,9/13/25,West Ham United,,,True,,Scorers,Home,#ffffff,#132257,#7a263a,#ffffff
+2025-26,9/16/25,Villarreal,,,True,Opponent,,Home,#ffffff,#d9d9d9,#ffe667,#ff0000
+2025-26,9/20/25,Brighton & Hove Albion,,,,,,Away,#000000,#ffffff,#0057b8,#ffffff
+2025-26,9/24/25,Doncaster Rovers,,,,,,Home,#ffffff,#132257,#ff0000,#ffffff
+2025-26,9/27/25,Wolverhampton Wanderers,,,,,,Home,#ffffff,#132257,#00b1ff,#ffdd00
+2025-26,9/30/25,Bodo/Glimt,,,,,,Away,#000000,#ffffff,#f9dd00,#000000
+2025-26,10/4/25,Leeds United,,,,,,Away,#000000,#ffffff,#ffffff,#1e3674
+2025-26,10/19/25,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2025-26,10/22/25,Monaco,,,,,,Away,#000000,#ffffff,#e51b22,#ffffff
+2025-26,10/26/25,Everton,,,,,,Home,#ffffff,#132257,#003399,#ffffff
+2025-26,10/29/25,Newcastle United,,,,,,Third,#efe14b,#0e2050,#241f20,#ffffff
+2025-26,11/1/25,Chelsea,,,,,,Home,#ffffff,#132257,#034694,#ffffff
+2025-26,11/4/25,F.C. København,,,True,,,Home,#ffffff,#d9d9d9,#224744,#ffffff
+2025-26,11/8/25,Manchester United,,,,Opponent,Scorers,Home,#ffffff,#132257,#da291c,#ffffff
+2025-26,11/23/25,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2025-26,11/26/25,Paris Saint-Germain,,,,,,Third,#efe14b,#0e2050,#004170,#da291c
+2025-26,11/29/25,Fulham,,,,,,Home,#ffffff,#132257,#cc0000,#000000
+2025-26,12/2/25,Newcastle United,,,,,Midweek,Third,#efe14b,#0e2050,#241f20,#ffffff
+2025-26,12/6/25,Brentford,,,,,,Home,#ffffff,#132257,#4a3526,#c1a55d
+2025-26,12/9/25,Slavia Prague,,,True,,,Home,#ffffff,#d9d9d9,#000000,#ee71b1
+2025-26,12/14/25,Nottingham Forest,,,,,,Third,#efe14b,#0e2050,#ce1126,#ffffff
+2025-26,12/20/25,Liverpool,,,,,,Home,#ffffff,#132257,#c8102e,#ffffff
+2025-26,12/28/25,Crystal Palace,,,,,,Third,#efe14b,#0e2050,#1b458f,#c4122e
+2025-26,1/1/26,Brentford,,,,,,Third,#efe14b,#0e2050,#e30613,#ffffff
+2025-26,1/4/26,Sunderland,,,,,,Home,#ffffff,#132257,#0044ff,#ffffff
+2025-26,1/7/26,Bournemouth,,,,,Midweek,Third,#efe14b,#0e2050,#da291c,#000000
+2025-26,1/10/26,Aston Villa,,,,,,Home,#ffffff,#d9d9d9,#670e36,#95bfe5
+2025-26,1/17/26,West Ham United,,,,,,Home,#ffffff,#132257,#7a263a,#ffffff
+2025-26,1/20/26,Borussia Dortmund,,,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#fde100,#000000
+2025-26,1/24/26,Burnley,,,,,,Away,#000000,#ffffff,#5f0040,#ffffff
+2025-26,1/28/26,Eintracht Frankfurt,,,True,Opponent,Scorers,Home,#ffffff,#d9d9d9,#000000,#e1000f
+2025-26,2/1/26,Manchester City,,,,Opponent,Scorers,Home,#ffffff,#132257,#000000,#ffffff
+2025-26,2/7/26,Manchester United,,,,,,Third,#efe14b,#0e2050,#da291c,#ffffff
+2025-26,2/10/26,Newcastle United,,,,,Midweek,Home,#ffffff,#132257,#19196f,#f37e19
+2025-26,2/22/26,Arsenal,,,,,,Home,#ffffff,#132257,#ef0107,#ffffff
+2025-26,3/1/26,Fulham,,,,,,Away,#000000,#ffffff,#ffffff,#000000
+2025-26,3/5/26,Crystal Palace,,,,,Midweek,Home,#ffffff,#132257,#1b458f,#c4122e
+2025-26,3/10/26,Atlético Madrid,,,,,,Away,#000000,#ffffff,#cb3524,#ffffff
+2025-26,3/15/26,Liverpool,,,True,,Scorers,Third,#efe14b,#0e2050,#c8102e,#ffffff
+2025-26,3/18/26,Atlético Madrid,,,,,,Home,#ffffff,#d9d9d9,#cb3524,#ffffff
+2025-26,3/22/26,Nottingham Forest,,,,,,Home,#ffffff,#132257,#ce1126,#ffffff
+2025-26,4/12/26,Sunderland,,,,,,Third,#efe14b,#0e2050,#ff0000,#ffffff
+2025-26,4/18/26,Brighton & Hove Albion,,,,,,Home,#ffffff,#132257,#ffdd00,#00004a
+2025-26,4/25/26,Wolverhampton Wanderers,,,True,Opponent,Scorers | Relegation Race,Away,#000000,#ffffff,#fdb913,#000000
+2025-26,5/3/26,Aston Villa,,,True,,Scorers | Relegation Race,Third,#efe14b,#0e2050,#670e36,#95bfe5
+2025-26,5/11/26,Leeds United,,,,,,Home,#ffffff,#132257,#000000,#ffffff
+2025-26,5/19/26,Chelsea,,,,,Extended Matchweek,Third,#efe14b,#0e2050,#034694,#ffffff
+2025-26,5/24/26,Everton,,,True,,Scorers | Relegation Race,Home,#ffffff,#132257,#003399,#ffffff
+2026-27,8/22/26,Brentford,,,,,,Away,#15203a,#b9656c,#e30613,#ffffff
+2026-27,8/26/26,Charlton Athletic,,,,,,Home,#ffffff,#132257,#342a69,#52cee0
+2026-27,8/29/26,Newcastle United,,,,,,Home,#ffffff,#132257,#0c192c,#5dc6e7
+2026-27,9/5/26,Nottingham Forest,,,,,,Home,#ffffff,#132257,#ce1126,#ffffff
+2026-27,9/12/26,Everton,,,,,,Home,#ffffff,#132257,#466466,#fab355
+2026-27,9/15/26,Liverpool,,,,,,Away,#15203a,#b9656c,#c8102e,#ffffff
+2026-27,9/19/26,Aston Villa,,,,,,Home,#ffffff,#132257,#670e36,#95bfe5
+2026-27,10/10/26,Manchester United,,,,Opponent,Scorers,Away,#15203a,#b9656c,#da291c,#ffffff
+2026-27,12/2/26,Fulham,,,,,Midweek,,,,,
+2026-27,12/29/26,Brighton & Hove Albion,,,,,Festive Fixtures,,,,,
+2026-27,1/3/27,Manchester City,,,,,,,#a897e7,#31265c,,
+2026-27,1/6/27,Fulham,,,,,Midweek,,,,,
+2026-27,2/10/27,Manchester City,,,,,Midweek,,,,,
+2026-27,3/3/27,Bournemouth,,,,,Midweek,,,,,
