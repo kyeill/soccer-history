@@ -5379,7 +5379,16 @@
 "team_bg":"#ffffff",
 "team_font":"#132257"
 },
-"2026-10-24":{},
+"2026-10-24":{
+"border":"Opponent",
+"footer":"Scorers",
+"kit":"Home",
+"opp_bg":"#034694",
+"opp_font":"#f5dc4a",
+"shade":true,
+"team_bg":"#ffffff",
+"team_font":"#132257"
+},
 "2026-10-31":{},
 "2026-11-07":{},
 "2026-11-21":{},
