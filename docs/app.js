@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261026-123340. Modelled on games-history's Michigan view (michCard): one card
+   20261027-151406. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261026-123340";
+const BUILD = "20261027-151406";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
