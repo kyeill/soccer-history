@@ -207,3 +207,54 @@ about how it went for them.
 
 Afterwards: Tottenham 129 knockouts, 0 disagreements; the rivals' 65, one --
 the Sunderland tie, where ESPN is the one that is wrong.
+
+
+## Everything, checked against an outside source (2026-10-28)
+
+He asked for the whole archive to be audited the way the extra-time mark was.
+Four checks, against sources the build does not use for the thing being
+checked. ONE REAL ERROR in 1,297 league cards, and three false alarms that
+were all the audit's own fault -- worth recording, because the same shapes
+will come back.
+
+SCORES: every Premier League card, on all three tabs, against the Premier
+League's own fixtures feed -- 1,297 with a result, matched by (season, home,
+away) so no date or timezone could confuse it. EVERY NAME MATCHED and NOT ONE
+SCORE DISAGREED. That is the strongest guarantee this archive has.
+
+KICKOFFS: one disagreed of 1,297. Tottenham v Southampton, 8 May 2016, which
+ESPN files 90 minutes late at 15:00 BST; openfootball and the league both say
+13:30. The card read 10:00am Eastern and now reads 8:30. It is in
+harvest.KICKOFF_FIX, keyed by event id.
+
+MATCHWEEKS: 42 disagreed, and OURS ARE RIGHT. The league's own "gameweek"
+counts the round AS PLAYED -- 2013-14 runs to FORTY, and its weeks hold
+anywhere from 3 to 17 fixtures. openfootball's matchday is the round a
+fixture BELONGS to: 380 fixtures, 38 matchdays, exactly ten in each. This is
+why BRIEF.md calls openfootball the only source with the official matchweek.
+It also closes the one 2025-26 disagreement left hanging on 2026-10-12: with
+the fixtures keyed properly there is none.
+
+WHO WENT THROUGH: all 25 of his second legs and all 22 collapsed rival ties,
+against whether they actually played a later round. Nothing contradicted.
+
+THE TWO TV SOURCES: 41 Premier League cards where ESPN and the league's
+listing both speak. No clash.
+
+THE THREE FALSE ALARMS, all mine:
+
+  the first run read STATUS_FINAL_PEN as "not extra time" and cried wolf on
+  nine Tottenham knockouts. A shootout is past ninety minutes.
+
+  the tie check ranked "Group Stage" below a qualifying round, so Tottenham
+  reaching the 2021-22 Conference League GROUP STAGE from the playoff round
+  looked like a side that had gone out.
+
+  the TV check asked the PREMIER LEAGUE'S listing about League Cup, FA Cup
+  and Europa League ties and found six "clashes". harvest only ever asks it
+  about PL matches -- the gate is `if code == "PL"` -- and everything else
+  goes to livesoccertv. Restricted properly: no clash at all.
+
+THE LESSON, twice over now: when an audit disagrees with the data, suspect
+the audit first. Three of the four alarms here were the checker, not the
+checked.

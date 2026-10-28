@@ -30,6 +30,13 @@ SPURS = "367"
 # The first four were listed only as "NBC Sports App"; the 2016-17 ones all
 # came back as NBC from the Premier League's own feed, which over-reports the
 # broadcast network for that season.
+# A KICKOFF ESPN HAS WRONG (found 2026-10-28, auditing every league card
+# against the Premier League's own feed). Tottenham v Southampton on 8 May
+# 2016 kicked off at 13:30 BST -- openfootball and the league itself agree --
+# and ESPN files it 90 minutes late at 15:00, which put the card at 10:00am
+# Eastern instead of 8:30. It is the ONLY kickoff of 1,297 that disagreed.
+KICKOFF_FIX = {"422300": "2016-05-08T12:30Z"}
+
 TV_FIX = {"2015-12-13": ["PL Extra Time"],
           "2016-02-02": ["PL Extra Time"],
           "2016-03-13": ["NBCSN"],
@@ -733,7 +740,8 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
     them = next(x for x in c["competitors"] if str(x["id"]) != SPURS)
     tid = str(them["id"])
     info = team_info(tid, teams)
-    when = dt.datetime.strptime(e["date"], "%Y-%m-%dT%H:%MZ").replace(tzinfo=dt.timezone.utc)
+    when = dt.datetime.strptime(KICKOFF_FIX.get(str(e["id"]), e["date"]),
+                                "%Y-%m-%dT%H:%MZ").replace(tzinfo=dt.timezone.utc)
     et, uk = when.astimezone(ET), when.astimezone(UK)
     stage = norm_stage(code, (e.get("seasonType") or {}).get("name"), season,
                        is_qualifier(slug))
