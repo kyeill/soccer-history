@@ -89,6 +89,14 @@ def build(rival, e, season, teams, pl_table, mw_map, goal_store, lp=None):
         m["result"] = "D"
     if tid in pl_table:
         m["fin"] = h.ordinal(pl_table[tid])
+    # OUTSIDE THE TOP FLIGHT THAT SEASON (his call 2026-10-27), which is the
+    # only reading that works: Nottingham Forest knocked Arsenal out in
+    # January 2022 and were promoted that MAY, so judging by today or by the
+    # following season would miss it; Southampton beat them in April 2026
+    # having been in the Premier League the season BEFORE. The table is this
+    # season's, so the question answers itself.
+    elif code in ("FAC", "LC"):
+        m["minnow"] = True
     # THE SEEDS OF A LEAGUE-PHASE KNOCKOUT (his call 2026-10-09): from 2024-25
     # both clubs carry where they finished that phase, in front of the name
     if code in EURO and season >= 2024 and stage not in ("League Phase", ""):

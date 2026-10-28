@@ -539,6 +539,22 @@ FOUR MORE ON THE RIVALS TAB (his calls 2026-10-16):
   result. The 2017 and 2020 FA Cup finals go; 241 -> 239. Rounds before the
   final stay, since a semifinal is still a night one of them went out.
 
+  BEATEN BY A CLUB OUTSIDE THE TOP FLIGHT: the card is FILLED in the colour
+  of whoever did it and wears NO BORDER (his call 2026-10-27). It outranks
+  the round -- going out to a Championship side is the story whichever round
+  it was -- and it is the one cup mark that is a fill without a ring.
+
+  "THAT SEASON" IS THE WHOLE RULE, and he asked for it to be checked. Two of
+  the six would be got wrong by any other reading: NOTTINGHAM FOREST knocked
+  Arsenal out in January 2022 and were PROMOTED THAT MAY, so judging by today
+  or by the following season misses it; SOUTHAMPTON beat them in April 2026
+  having been in the Premier League the season BEFORE. rivals.py asks the
+  table it already holds for that season, so the question answers itself. A
+  control on winter ties confirmed the season field is not shifted.
+
+  The six: Bradford City 2015 (Chelsea), Sheffield Wednesday 2015, Forest
+  2018, Forest 2022, Southampton 2026 and Fleetwood Town, 27 October 2026.
+
   EVERY BAR HAS ONE SPACE EACH SIDE (his catch 2026-10-16). The -4px that
   evens up the LEADING bar of a segment -- the one the flex gap pushes right
   -- was matching every bar in the header, so the one inside a final's own

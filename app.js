@@ -966,7 +966,15 @@ function twoCard(m) {
     const euro = ["UCL", "UEL", "UECL"].indexOf(m.comp) > -1;
     const col = COMP_COLOUR[m.comp] || "#8a8a92";
     if (m.comp === "FAC" || m.comp === "LC") {
-      if (m.stage === "Final") {
+      // BEATEN BY A CLUB OUTSIDE THE TOP FLIGHT (his call 2026-10-27): the
+      // card is FILLED in the colour of whoever did it and wears NO BORDER.
+      // Five of them -- Bradford City, Sheffield Wednesday, Nottingham
+      // Forest twice and Southampton -- and it outranks the round, since
+      // going out to a Championship side is the story whichever round it was.
+      if (m.minnow && m.result === "L") {
+        cls += " mwash";
+        wash = shade(teamColour(m.opp));
+      } else if (m.stage === "Final") {
         mark(col, true);
         // the fill is the club that beat them, as it is in Europe (his call
         // 2026-10-09); the border stays the competition's
