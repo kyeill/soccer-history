@@ -75,6 +75,9 @@ nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--acce
 .row.two.mwash .tl2.won{background:transparent}
 /* HIS TWO CLUBS ARE NEVER IN BOLD (his call 2026-10-02) */
 .row.two .tl2.won.nobold .nm,.row.two .tl2.nobold .sc{font-weight:400}
+/* A SHOOTOUT UNDERLINES THE WINNER'S SCORE (his call 2026-10-27), the same
+   mark his own cards use for a match settled past ninety minutes */
+.row.two .sc.u{text-decoration:underline;text-underline-offset:3px}
 /* HIS RANKING COLOURS, the ones the CFB cards wear (his call 2026-10-09):
    two of the top six meeting reads light blue, one of them beaten or held by
    anyone else reads the upset orange */

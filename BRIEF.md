@@ -554,6 +554,14 @@ FOUR MORE ON THE RIVALS TAB (his calls 2026-10-16):
 
   The six: Bradford City 2015 (Chelsea), Sheffield Wednesday 2015, Forest
   2018, Forest 2022, Southampton 2026 and Fleetwood Town, 27 October 2026.
+  LOSSES ONLY (his call 2026-10-27): a draw with a lower-league side is not
+  the same story.
+
+  A SHOOTOUT UNDERLINES THE WINNER'S SCORE (his call 2026-10-27), the mark
+  his own cards use for a match settled past ninety minutes. Twelve of them,
+  and the header still says "(5-3 Pen)" -- the underline is what tells you at
+  a glance WHICH side took it. EXTRA TIME ALONE CANNOT BE MARKED HERE: a
+  rivals record carries no `aet`, only `pens`.
 
   EVERY BAR HAS ONE SPACE EACH SIDE (his catch 2026-10-16). The -4px that
   evens up the LEADING bar of a segment -- the one the flex gap pushes right
