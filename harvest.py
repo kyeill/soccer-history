@@ -805,6 +805,11 @@ def build_match(e, season, teams, goal_store, finishes, pl_table, mw_map, lp_tab
             m["goals_bad"] = True
         elif any(g[0] > 90 for g in goals):
             m["aet"] = True
+        # ...and ESPN'S OWN STATUS, for a match whose goals were never read
+        # (2026-10-27). The goal list stays the first word, since ESPN files
+        # some older ties as FULL TIME that plainly were not.
+        if "AET" in (status.get("name") or ""):
+            m["aet"] = True
         # THE SHEET IS THE ONLY SOURCE OF A SCORER LINE (his call
         # 2026-10-12): "just make me do it". Nothing reaches a card unless
         # his Footer column asks for it. What the old rules WOULD have shown

@@ -176,3 +176,34 @@ THE CACHE WAS SEEDED from the games.json of the last good build (19 October,
 have done it. 710 rows, carrying 207 Footers, 137 shades, 90 borders and 705
 colour sets. `say` and `say_pre` were left out on purpose: they are worked
 out FROM the footer during the build and were never cells of his.
+
+
+## Extra time needs TWO sources, and the guard it sits in matters (2026-10-27)
+
+He asked for the extra-time mark to be spot-checked, the same test having
+been written twice -- once in harvest.py for his own cards and once in
+rivals.py. Checking it against its own rule would have proved nothing, so all
+194 knockouts on the two tabs were checked against ESPN'S OWN full-time
+STATUS instead. Three things came out of it:
+
+THE AUDIT'S FIRST RUN WAS ITSELF WRONG. It read STATUS_FINAL_PEN as "not
+extra time" and reported nine Tottenham disagreements that were not. A
+penalty shootout is past ninety minutes; the test had to say so.
+
+ESPN'S STATUS IS NOT ENOUGH ON ITS OWN. It files the 2013 League Cup
+quarterfinal against Sunderland as STATUS_FULL_TIME, and its own goal list
+has the winner in the 118th minute. The goal list stays the first word.
+
+NOR IS THE GOAL LIST. Chelsea against Real Madrid in 2022 had no goal list
+stored at all -- an ESPN failure on some earlier run, left unread by design
+rather than remembered as goalless -- so nothing marked a tie that went to
+extra time. Both are asked now, and either is enough.
+
+AND THE FLAG WAS IN THE WRONG PLACE. Set from the status, it first went
+inside `if m["result"] in ("D", "L")`, the guard that looks for the
+OPPONENT'S late goals. Chelsea WON that second leg 3-2 and went out on
+aggregate, so the guard skipped it. Extra time is a fact about the match, not
+about how it went for them.
+
+Afterwards: Tottenham 129 knockouts, 0 disagreements; the rivals' 65, one --
+the Sunderland tie, where ESPN is the one that is wrong.

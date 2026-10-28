@@ -53,6 +53,13 @@ def build(rival, e, season, teams, pl_table, mw_map, goal_store, lp=None):
     et = when.astimezone(h.ET)
     stage = h.norm_stage(code, (e.get("seasonType") or {}).get("name"), season,
                          h.is_qualifier(slug))
+    # PAST NINETY MINUTES, FROM EITHER SIDE (his call 2026-10-27, audited the
+    # same evening). The goal list alone misses a tie whose goals were never
+    # read -- Chelsea v Real Madrid 2022 -- and ESPN's own status alone misses
+    # one it files wrongly: it calls the 2013 League Cup quarterfinal against
+    # Sunderland FULL TIME when the winner came in the 118th minute. So both
+    # are asked, and either is enough.
+    espn_aet = "AET" in (status.get("name") or "")
     notes = [n.get("text") for n in c.get("notes") or [] if n.get("text")]
     neutral = (stage == "Final" or code == "USC" or (code == "FAC" and stage == "Semifinals"))
     m = {"id": e["id"], "team": "rivals", "rival": rival, "season": season,
@@ -121,6 +128,12 @@ def build(rival, e, season, teams, pl_table, mw_map, goal_store, lp=None):
     # late_flags is read from the OPPONENT's side here, so the rival is the
     # club it checks against -- and Arsenal and Chelsea are both Top Six, so
     # its equalizer rule lets them through.
+    # OUTSIDE THE LATE-GOAL GUARD BELOW (caught 2026-10-27): extra time is a
+    # fact about the match, not about how it went for them. Chelsea WON the
+    # second leg against Real Madrid 3-2 in 2022 and went out on aggregate,
+    # so the guard that looks for the opponent's late goals skipped it.
+    if espn_aet:
+        m["aet"] = True
     if m["result"] in ("D", "L"):
         goals = goal_store.get(e["id"])
         if goals is None:
