@@ -852,11 +852,12 @@ function twoCard(m) {
       '" loading="lazy" src="' + esc(t.logo || "") +
       '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
       '<span class="nm">' + seedOf(id) + esc(bigName(id, t, rivals)) + "</span>" +
-      // A SHOOTOUT UNDERLINES THE WINNER'S SCORE (his call 2026-10-27), as it
-      // does on his own cards. The header says "(5-3 Pen)" as well; this is
-      // what tells you at a glance WHICH side took it. Extra time alone
-      // cannot be marked here -- a rivals record carries no `aet`.
-      '<span class="sc' + (!up && m.pens && winId && id === winId ? " u" : "") +
+      // SETTLED PAST NINETY MINUTES UNDERLINES THE WINNER'S SCORE (his calls
+      // 2026-10-27), as it does on his own cards -- a shootout, or extra time
+      // without one. The header says "(5-3 Pen)" as well; the underline is
+      // what tells you at a glance WHICH side took it.
+      '<span class="sc' +
+      (!up && (m.pens || m.aet) && winId && id === winId ? " u" : "") +
       '">' + (up ? "" : score) + "</span></div>";
   };
   // THE HEADER, IN PIECES so a phone breaks it between fields and never in

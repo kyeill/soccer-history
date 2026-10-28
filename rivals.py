@@ -135,6 +135,14 @@ def build(rival, e, season, teams, pl_table, mw_map, goal_store, lp=None):
             else:
                 goal_store[e["id"]] = goals
         if goals and goals != "awarded":
+            # PAST NINETY MINUTES (his call 2026-10-27), the same test his own
+            # cards use: a goal in the 91st minute or later is extra time,
+            # since stoppage time is carried as "added" rather than counted
+            # on. It marks the ties that were settled in extra time WITHOUT a
+            # shootout; one that finished level and went to penalties is
+            # already marked by `pens`.
+            if any(g[0] > 90 for g in goals):
+                m["aet"] = True
             w, q = h.late_flags(goals, tid, rival,
                                 "W" if m["result"] == "L" else "D")
             if w:

@@ -557,11 +557,18 @@ FOUR MORE ON THE RIVALS TAB (his calls 2026-10-16):
   LOSSES ONLY (his call 2026-10-27): a draw with a lower-league side is not
   the same story.
 
-  A SHOOTOUT UNDERLINES THE WINNER'S SCORE (his call 2026-10-27), the mark
-  his own cards use for a match settled past ninety minutes. Twelve of them,
-  and the header still says "(5-3 Pen)" -- the underline is what tells you at
-  a glance WHICH side took it. EXTRA TIME ALONE CANNOT BE MARKED HERE: a
-  rivals record carries no `aet`, only `pens`.
+SETTLED PAST NINETY MINUTES UNDERLINES THE WINNER'S SCORE (his calls
+  2026-10-27), the mark his own cards use: a shootout, or extra time without
+  one. SIXTEEN of them. The header says "(5-3 Pen)" or "(ET)" as well; the
+  underline is what tells you at a glance WHICH side took it.
+
+  `aet` NOW REACHES THE RIVALS RECORDS TOO, by the same test harvest.py uses
+  on his own: a goal in the 91st minute or later, stoppage time being carried
+  as "added" rather than counted on. It found four the shootout mark could
+  not -- Sunderland in the 2013 League Cup, PSG in 2015, Olympiacos in 2020
+  and Liverpool in the 2024 final. A tie that finished level and went to
+  penalties was already covered by `pens`, so the two together leave nothing
+  past ninety minutes unmarked.
 
   EVERY BAR HAS ONE SPACE EACH SIDE (his catch 2026-10-16). The -4px that
   evens up the LEADING bar of a segment -- the one the flex gap pushes right

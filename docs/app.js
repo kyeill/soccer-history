@@ -1,7 +1,7 @@
 /* Soccer History -- the whole app. site.py copies this in and fills
-   20261027-205148. Modelled on games-history's Michigan view (michCard): one card
+   20261027-205921. Modelled on games-history's Michigan view (michCard): one card
    per match, the opponent on a colour stripe, the score in a box. */
-const BUILD = "20261027-205148";
+const BUILD = "20261027-205921";
 const CARD = [0x1e, 0x1e, 0x23];
 const SPURS = "367";
 // the Top Six bar Spurs: they lead the Team filter
@@ -852,11 +852,12 @@ function twoCard(m) {
       '" loading="lazy" src="' + esc(t.logo || "") +
       '" alt="" onerror="this.style.visibility=&quot;hidden&quot;">' +
       '<span class="nm">' + seedOf(id) + esc(bigName(id, t, rivals)) + "</span>" +
-      // A SHOOTOUT UNDERLINES THE WINNER'S SCORE (his call 2026-10-27), as it
-      // does on his own cards. The header says "(5-3 Pen)" as well; this is
-      // what tells you at a glance WHICH side took it. Extra time alone
-      // cannot be marked here -- a rivals record carries no `aet`.
-      '<span class="sc' + (!up && m.pens && winId && id === winId ? " u" : "") +
+      // SETTLED PAST NINETY MINUTES UNDERLINES THE WINNER'S SCORE (his calls
+      // 2026-10-27), as it does on his own cards -- a shootout, or extra time
+      // without one. The header says "(5-3 Pen)" as well; the underline is
+      // what tells you at a glance WHICH side took it.
+      '<span class="sc' +
+      (!up && (m.pens || m.aet) && winId && id === winId ? " u" : "") +
       '">' + (up ? "" : score) + "</span></div>";
   };
   // THE HEADER, IN PIECES so a phone breaks it between fields and never in
