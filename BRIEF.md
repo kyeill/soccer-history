@@ -4,6 +4,15 @@ Written 2026-09-21 at the end of the games-history session, for the chat that
 builds this app. Read all of it before writing code. Kyle's words are
 paraphrased closely; where something is still open it says so.
 
+
+A NOTE ON THE NUMBERS IN THIS FILE (2026-10-29). A count that changes every
+time a match is played -- how many cards a population holds, how many wear a
+mark -- is the misleading kind of stale: wrong without looking wrong. Those
+have been taken out, or dated where they explain WHY a rule exists ("nine
+cards of 359 wrap, so the network shortens"). Counts of things that cannot
+change -- the five Eastern kickoff times, the two Super Cups -- stay as they
+are. The build prints the live totals on every run.
+
 ## What it is
 
 A separate app, **Soccer History**, in this folder, published the same way as
@@ -299,7 +308,7 @@ the daily build.
 Second tab, two views (a segmented bar, as in games-history):
 
 - **TV Windows** -- every Saturday and Sunday window match since 2013-14,
-  655 of them, by matchweek. Fixtures and UK kickoff times from openfootball;
+  by matchweek -- the build prints the count, which grows every weekend. Fixtures and UK kickoff times from openfootball;
   ESPN gives the US network (2024-25 on) and the crests. THE SUNDAY WINDOW
   MOVED: 16:00 UK to 2018-19, 16:30 from 2019-20 -- read per season, with the
   other time taken when a matchweek has nothing at the usual one (2016-18 used
@@ -324,11 +333,11 @@ Second tab, two views (a segmented bar, as in games-history):
   fixture at all. On the Saturday side 54 matchweeks have no 17:30, but only
   two of those ever produced a card under the old fallback.
 
-  THE RESULT IS A POPULATION WITH NO EXCEPTIONS IN IT: 296 NBC Saturdays, all
-  at 17:30 UK and all naming NBC; 359 Sky Sundays, all at 16:00 or 16:30; one
-  card per slot per matchweek; and five Eastern kickoff times in the whole
-  set -- 11:00, 11:30, 12:00, 12:30, 1:30 -- the extra ones being the weeks
-  the two countries' clocks are out of step.
+  THE RESULT IS A POPULATION WITH NO EXCEPTIONS IN IT: every NBC Saturday at
+  17:30 UK and naming NBC, every Sky Sunday at 16:00 or 16:30, one card per
+  slot per matchweek, and FIVE Eastern kickoff times in the whole set --
+  11:00, 11:30, 12:00, 12:30 and 1:30 -- the last two being the weeks the two
+  countries' clocks are out of step.
 
   AN NBC SATURDAY MUST SAY NBC (his call 2026-10-09, tightening 2026-10-06).
   It is not enough that nothing contradicts NBC -- a source has to name it,
@@ -419,8 +428,9 @@ used to depend on how busy the card was, which said nothing about the match.
 A card STANDS ALONE when no other match in England kicked off strictly inside
 the hour either side. England means the PREMIER LEAGUE, THE FA CUP AND THE
 LEAGUE CUP (he added the two cups while it was being built); Europe does not
-count, and neither does the match itself. 172 of his 417 non-window league
-cards stand alone, and 55 of the rivals' 99.
+count, and neither does the match itself. Rather more than half of his
+non-window league cards stand alone, and rather more than half of the
+rivals'.
 
 The kickoffs live in data/slate.json, one entry per date, 583 of them, so the
 build asks ESPN about a day once and every run after that reads it off disk.
@@ -552,14 +562,15 @@ FOUR MORE ON THE RIVALS TAB (his calls 2026-10-16):
   table it already holds for that season, so the question answers itself. A
   control on winter ties confirmed the season field is not shifted.
 
-  The six: Bradford City 2015 (Chelsea), Sheffield Wednesday 2015, Forest
-  2018, Forest 2022, Southampton 2026 and Fleetwood Town, 27 October 2026.
+  As of 28 October 2026, six: Bradford City 2015 (Chelsea), Sheffield
+  Wednesday 2015, Forest 2018, Forest 2022, Southampton 2026 and Fleetwood
+  Town. The list grows.
   LOSSES ONLY (his call 2026-10-27): a draw with a lower-league side is not
   the same story.
 
 SETTLED PAST NINETY MINUTES UNDERLINES THE WINNER'S SCORE (his calls
   2026-10-27), the mark his own cards use: a shootout, or extra time without
-  one. SIXTEEN of them. The header says "(5-3 Pen)" or "(ET)" as well; the
+  one. The header says "(5-3 Pen)" or "(ET)" as well; the
   underline is what tells you at a glance WHICH side took it.
 
   `aet` NOW REACHES THE RIVALS RECORDS TOO, by the same test harvest.py uses
@@ -605,7 +616,7 @@ THE SCORES TAKE THE CFB RANKING COLOURS (his call 2026-10-09), the ones
 games-history uses: TWO OF THE TOP SIX meeting reads light blue (#8fb0d8),
 and one of them BEATEN OR HELD by anyone else reads the upset orange
 (#e0834f). Tottenham is left out of the orange -- their own marks say it
-already. Both scores on the card change, never one. 203 blue, 113 orange.
+already. Both scores on the card change, never one.
 TOTTENHAM here means the whole BIG SIX, Spurs included, not the TOP_SIX
 constant that leaves them out.
 

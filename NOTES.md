@@ -258,3 +258,29 @@ THE THREE FALSE ALARMS, all mine:
 THE LESSON, twice over now: when an audit disagrees with the data, suspect
 the audit first. Three of the four alarms here were the checker, not the
 checked.
+
+
+## A tidying pass (2026-10-29)
+
+DEAD CODE, found by counting every definition's uses rather than by reading:
+app.js `DAYS` (superseded by DAY_FULL), harvest `ORDINAL` (left behind when
+the round names moved), windows `espn_ids` (replaced by the ids collect()
+builds as it goes). Three of eighty-odd definitions -- the rest all earn
+their place.
+
+STALE DELIVERABLES: six one-off CSVs in sheet/ from early October, referenced
+by nothing and long since acted on -- tv-all, tv-all-2, low-contrast, no-tv,
+scorer-lines, footer-gaps. 211 KB. The three that sheet_csv.py REGENERATES
+every build stay, as does tottenham-recovered.csv, which is a pasteable copy
+of his own Sheet work and the only backup of it outside data/sheet-cache.
+
+VOLATILE COUNTS were the real documentation problem, not prose length. A
+count that changes every time a match is played is wrong without LOOKING
+wrong: BRIEF.md still said 655 windows cards (660), 296 NBC Saturdays (298),
+359 Sky Sundays (362). Those are gone or dated now, and the file says so at
+the top. Counts of things that cannot change stay.
+
+NOT TOUCHED, deliberately: the long comments. They carry the WHY -- which of
+his calls, on what date, and what went wrong before -- and that is the part
+that cannot be recovered from the code. Length is not bloat when it is the
+only record of a decision.

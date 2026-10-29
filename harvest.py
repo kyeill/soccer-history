@@ -141,8 +141,6 @@ def save_data(name, obj):
 
 
 # ---------------------------------------------------------------- stages
-ORDINAL = {"1st": "First", "2nd": "Second", "3rd": "Third", "4th": "Fourth",
-           "5th": "Fifth", "6th": "Sixth"}
 NUMBER = {"1": "First", "2": "Second", "3": "Third", "4": "Fourth", "5": "Fifth",
           "6": "Sixth"}
 

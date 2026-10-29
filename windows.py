@@ -82,17 +82,6 @@ def parse(season):
     return out
 
 
-def espn_ids(season):
-    """{flat club name: ESPN id} for that season, from the league table."""
-    table = h.league_table("eng.1", season)
-    out = {}
-    for tid in table:
-        info = h.team_info(tid, h.load_data("teams.json", {}))
-        if info.get("name"):
-            out[h.flat(info["name"])] = tid
-    return out
-
-
 def nets_for(date, home_id, away_id):
     """The US broadcast, from ESPN's scoreboard for that day."""
     try:

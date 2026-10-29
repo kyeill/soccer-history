@@ -124,9 +124,6 @@ function headColour(m) {
   }
   return COMP_COLOUR[m.comp] || null;
 }
-const DAYS = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday",
-               Fri: "Friday", Sat: "Saturday", Sun: "Sunday" };
-
 /* ---------- colour: the same wash maths as games-history ---------------- */
 function shade(hex, lighten, strength) {
   lighten = lighten === undefined ? 0.42 : lighten;
@@ -974,9 +971,8 @@ function twoCard(m) {
     if (m.comp === "FAC" || m.comp === "LC") {
       // BEATEN BY A CLUB OUTSIDE THE TOP FLIGHT (his call 2026-10-27): the
       // card is FILLED in the colour of whoever did it and wears NO BORDER.
-      // Five of them -- Bradford City, Sheffield Wednesday, Nottingham
-      // Forest twice and Southampton -- and it outranks the round, since
-      // going out to a Championship side is the story whichever round it was.
+      // It outranks the round: going out to a Championship side is the
+      // story whichever round it was.
       if (m.minnow && m.result === "L") {
         cls += " mwash";
         wash = shade(teamColour(m.opp));
