@@ -5398,6 +5398,8 @@
 },
 "2026-11-07":{
 "kit":"Third",
+"opp_bg":"#ffffff",
+"opp_font":"#1e3674",
 "team_bg":"#a897e7",
 "team_font":"#31265c"
 },
