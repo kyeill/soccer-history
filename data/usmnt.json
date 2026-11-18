@@ -328,6 +328,14 @@
 "2026-09-26",
 "International Friendly"
 ],
+"401929710": [
+"2026-11-14",
+"Concacaf Nations League"
+],
+"401929766": [
+"2026-11-18",
+"Concacaf Nations League"
+],
 "404033": [
 "2014-09-03",
 "International Friendly"
@@ -1922,6 +1930,59 @@
 "venue": "Arena das Dunas",
 "where": "A",
 "year": 2014
+},
+"401929710": {
+"city": "Miami, Florida",
+"comp": "NL",
+"country": "USA",
+"cycle": 2027,
+"date": "2026-11-14",
+"dow": "Sat",
+"home": false,
+"id": "401929710",
+"opp": "2654",
+"opp_name": "Haiti",
+"result": "W",
+"scorers": [
+"Trusty 10'",
+"Hall 52'",
+"Pulisic 62', 63'",
+"McKennie 68'",
+"Balogun 82'"
+],
+"stage": "Quarterfinals",
+"them": 0,
+"time": "16:30",
+"us": 6,
+"v": 4,
+"venue": "Nu Stadium",
+"where": "A",
+"year": 2026
+},
+"401929766": {
+"city": "Cincinnati, Ohio",
+"comp": "NL",
+"country": "USA",
+"cycle": 2027,
+"date": "2026-11-17",
+"dow": "Tue",
+"home": true,
+"id": "401929766",
+"opp": "2654",
+"opp_name": "Haiti",
+"result": "W",
+"scorers": [
+"Pulisic 25'",
+"Hall 43'"
+],
+"stage": "Quarterfinals",
+"them": 0,
+"time": "19:00",
+"us": 2,
+"v": 4,
+"venue": "TQL Stadium",
+"where": "H",
+"year": 2026
 },
 "418216": {
 "city": "Kansas City, Kansas",
