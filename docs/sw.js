@@ -1,5 +1,5 @@
 
-const CACHE="soccer-history-20261123-120027";
+const CACHE="soccer-history-20261124-132626";
 const ASSETS=["./","./index.html","./manifest.webmanifest"];
 self.addEventListener("install",e=>{
   self.skipWaiting();
